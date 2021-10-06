@@ -1,0 +1,1 @@
+cmd /k "d: & cd D:75810PersonalBlogTY & hexo d -g"
