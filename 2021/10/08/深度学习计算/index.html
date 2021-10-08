@@ -5,14 +5,14 @@
 <meta property="og:site_name" content="Strive&#39;s Blog">
 <meta property="og:description" content="第五章 深度学习计算                           一、层和块                           1.1 块的概念       为了实现更加复杂的网络，引入神经网络块的概念。块可以描述单个层、由多个层组成的组件或整个模型本身。使用块进行抽象的一个好处是可以将一些块组合成更大的组件，这一过程通常是递归的。">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="http://example.com/2021/10/08/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E8%AE%A1%E7%AE%97/images/deepcompute/image-20211008162402538.png">
+<meta property="og:image" content="http://example.com/2021/10/08/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E8%AE%A1%E7%AE%97/images/deepcompute.png">
 <meta property="article:published_time" content="2021-10-08T08:08:10.903Z">
-<meta property="article:modified_time" content="2021-10-08T08:44:12.374Z">
+<meta property="article:modified_time" content="2021-10-08T08:49:54.888Z">
 <meta property="article:author" content="Strive">
 <meta property="article:tag" content="深度学习">
 <meta property="article:tag" content="模型保存读取">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="http://example.com/2021/10/08/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E8%AE%A1%E7%AE%97/images/deepcompute/image-20211008162402538.png"><title>深度学习计算 | Strive's Blog</title><link ref="canonical" href="http://example.com/2021/10/08/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E8%AE%A1%E7%AE%97/"><link rel="dns-prefetch" href="https://cdn.jsdelivr.net"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.12.1/css/all.min.css" type="text/css"><link rel="stylesheet" href="/css/index.css?v=2.6.2"><script>var Stun = window.Stun || {};
+<meta name="twitter:image" content="http://example.com/2021/10/08/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E8%AE%A1%E7%AE%97/images/deepcompute.png"><title>深度学习计算 | Strive's Blog</title><link ref="canonical" href="http://example.com/2021/10/08/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E8%AE%A1%E7%AE%97/"><link rel="dns-prefetch" href="https://cdn.jsdelivr.net"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.12.1/css/all.min.css" type="text/css"><link rel="stylesheet" href="/css/index.css?v=2.6.2"><script>var Stun = window.Stun || {};
 var CONFIG = {
   root: '/',
   algolia: undefined,
@@ -164,7 +164,7 @@ window.CONFIG = CONFIG;</script><meta name="generator" content="Hexo 5.4.0"></he
 <figure class="highlight python"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 实例化module类，生成一个模型，使用torch.save保存state_dict</span></span><br><span class="line">model = TheModelClass()</span><br><span class="line">torch.save(model.state_dict(), <span class="string">&#x27;load_module1.params&#x27;</span>)</span><br><span class="line">optimizer = torch.optim.SGD(model.parameters(), lr=<span class="number">0.001</span>, momentum=<span class="number">0.9</span>)</span><br><span class="line"><span class="comment"># 加载模型参数，需要实例化一个相同的网络模型，调用load_state_dict(torch.load(PATH))加载保存的参数state_dict</span></span><br><span class="line">clone = TheModelClass()</span><br><span class="line">clone.load_state_dict(torch.load(<span class="string">&#x27;load_module1.params&#x27;</span>))</span><br><span class="line">clone.<span class="built_in">eval</span>()</span><br><span class="line"><span class="comment"># 验证参数是否相同</span></span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;Model&#x27;s state_dict&quot;</span>)</span><br><span class="line"><span class="keyword">for</span> param_tensor <span class="keyword">in</span> model.state_dict():</span><br><span class="line">    <span class="built_in">print</span>(param_tensor, <span class="string">&quot;\t&quot;</span>, model.state_dict()[param_tensor] == clone.state_dict()[param_tensor])</span><br></pre></td></tr></table></div></figure>
 
 <p>`</p>
-<p><img src="/2021/10/08/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E8%AE%A1%E7%AE%97/images/deepcompute/image-20211008162402538.png" alt="image-20211008162402538"></p>
+<p><img src="/2021/10/08/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E8%AE%A1%E7%AE%97/images/deepcompute.png" alt="image-20211008162402538"></p>
 
         <h5 id="4-2-2-保存整个模型">
           <a href="#4-2-2-保存整个模型" class="heading-link"><i class="fas fa-link"></i></a><a href="#4-2-2-保存整个模型" class="headerlink" title="4.2.2 保存整个模型"></a>4.2.2 保存整个模型</h5>
