@@ -1,0 +1,99 @@
+<!DOCTYPE html><html lang="zh-CN"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="format-detection" content="telephone=no"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="black"><link rel="icon" href="/images/icons/favicon-16x16.png?v=2.6.2" type="image/png" sizes="16x16"><link rel="icon" href="/images/icons/favicon-32x32.png?v=2.6.2" type="image/png" sizes="32x32"><meta name="description" content="师兄大论文《基于深度学习跨模态行人再识别系统的研究与实现》阅读                           一、论文提出问题与名词解释                           1.1 行人再识别 Re-ID       行人再识别的背景主要是判利用计算机视觉技术判断图像或者视频序列中是否存在特定的行人。其主要应当包括两个方面：行人检测与行">
+<meta property="og:type" content="article">
+<meta property="og:title" content="[object Object]">
+<meta property="og:url" content="http://example.com/2021/10/11/dalunwen/index.html">
+<meta property="og:site_name" content="Strive&#39;s Blog">
+<meta property="og:description" content="师兄大论文《基于深度学习跨模态行人再识别系统的研究与实现》阅读                           一、论文提出问题与名词解释                           1.1 行人再识别 Re-ID       行人再识别的背景主要是判利用计算机视觉技术判断图像或者视频序列中是否存在特定的行人。其主要应当包括两个方面：行人检测与行">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://example.com/2021/10/11/dalunwen/images/dalunwen/image-20211012094040232.png">
+<meta property="og:image" content="http://example.com/2021/10/11/dalunwen/images/dalunwen/image-20211012202618543.png">
+<meta property="og:image" content="http://example.com/2021/10/11/dalunwen/images/dalunwen/image-20211012202816848.png">
+<meta property="og:image" content="http://example.com/2021/10/11/dalunwen/images/dalunwen/image-20211014212357048.png">
+<meta property="article:published_time" content="2021-10-11T13:05:36.544Z">
+<meta property="article:modified_time" content="2021-10-15T07:50:41.808Z">
+<meta property="article:author" content="Strive">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://example.com/2021/10/11/dalunwen/images/dalunwen/image-20211012094040232.png"><title>[object Object] | Strive's Blog</title><link ref="canonical" href="http://example.com/2021/10/11/dalunwen/"><link rel="dns-prefetch" href="https://cdn.jsdelivr.net"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.12.1/css/all.min.css" type="text/css"><link rel="stylesheet" href="/css/index.css?v=2.6.2"><script>var Stun = window.Stun || {};
+var CONFIG = {
+  root: '/',
+  algolia: undefined,
+  assistSearch: undefined,
+  fontIcon: {"prompt":{"success":"fas fa-check-circle","info":"fas fa-arrow-circle-right","warning":"fas fa-exclamation-circle","error":"fas fa-times-circle"},"copyBtn":"fas fa-copy"},
+  sidebar: {"offsetTop":"20px","tocMaxDepth":6},
+  header: {"enable":true,"showOnPost":true,"scrollDownIcon":true},
+  postWidget: {"endText":true},
+  nightMode: {"enable":true},
+  back2top: {"enable":true},
+  codeblock: {"style":"default","highlight":"light","wordWrap":false},
+  reward: false,
+  fancybox: false,
+  zoomImage: {"gapAside":"20px"},
+  galleryWaterfall: undefined,
+  lazyload: false,
+  pjax: undefined,
+  externalLink: {"icon":{"enable":true,"name":"fas fa-external-link-alt"}},
+  shortcuts: undefined,
+  prompt: {"copyButton":"复制","copySuccess":"复制成功","copyError":"复制失败"},
+  sourcePath: {"js":"js","css":"css","images":"images"},
+};
+
+window.CONFIG = CONFIG;</script><meta name="generator" content="Hexo 5.4.0"></head><body><div class="container" id="container"><header class="header" id="header"><div class="header-inner"><nav class="header-nav header-nav--fixed"><div class="header-nav-inner"><div class="header-nav-menubtn"><i class="fas fa-bars"></i></div><div class="header-nav-menu"><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/"><span class="header-nav-menu-item__icon"><i class="fas fa-home"></i></span><span class="header-nav-menu-item__text">首页</span></a></div><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/about/"><span class="header-nav-menu-item__icon"><i class="fas fa-address-card"></i></span><span class="header-nav-menu-item__text">关于</span></a></div><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="javascript:;" onclick="return false;"><span class="header-nav-menu-item__icon"><i class="fas fa-edit"></i></span><span class="header-nav-menu-item__text">文章</span></a><div class="header-nav-submenu"><div class="header-nav-submenu-item"><a class="header-nav-submenu-item__link" href="/archives/"><span class="header-nav-submenu-item__icon"><i class="fas fa-folder-open"></i></span><span class="header-nav-submenu-item__text">归档</span></a></div><div class="header-nav-submenu-item"><a class="header-nav-submenu-item__link" href="/categories/"><span class="header-nav-submenu-item__icon"><i class="fas fa-layer-group"></i></span><span class="header-nav-submenu-item__text">分类</span></a></div><div class="header-nav-submenu-item"><a class="header-nav-submenu-item__link" href="/tags/"><span class="header-nav-submenu-item__icon"><i class="fas fa-tags"></i></span><span class="header-nav-submenu-item__text">标签</span></a></div></div></div></div><div class="header-nav-mode"><div class="mode"><div class="mode-track"><span class="mode-track-moon"></span><span class="mode-track-sun"></span></div><div class="mode-thumb"></div></div></div></div></nav><div class="header-banner"><div class="header-banner-info"><div class="header-banner-info__title">Strive's Blog</div><div class="header-banner-info__subtitle">You gotta conquer the monster in your head and then you'll fly.</div></div><div class="header-banner-arrow"><div class="header-banner-arrow__icon"><i class="fas fa-angle-down"></i></div></div></div></div></header><main class="main" id="main"><div class="main-inner"><div class="content-wrap" id="content-wrap"><div class="content" id="content"><!-- Just used to judge whether it is an article page--><div id="is-post"></div><div class="post"><header class="post-header"><h1 class="post-title">[object Object]</h1><div class="post-meta"><span class="post-meta-item post-meta-item--createtime"><span class="post-meta-item__icon"><i class="far fa-calendar-plus"></i></span><span class="post-meta-item__info">发表于</span><span class="post-meta-item__value">2021-10-11</span></span><span class="post-meta-item post-meta-item--updatetime"><span class="post-meta-item__icon"><i class="far fa-calendar-check"></i></span><span class="post-meta-item__info">更新于</span><span class="post-meta-item__value">2021-10-15</span></span></div></header><div class="post-body">
+        <h3 id="师兄大论文《基于深度学习跨模态行人再识别系统的研究与实现》阅读">
+          <a href="#师兄大论文《基于深度学习跨模态行人再识别系统的研究与实现》阅读" class="heading-link"><i class="fas fa-link"></i></a><a href="#师兄大论文《基于深度学习跨模态行人再识别系统的研究与实现》阅读" class="headerlink" title="师兄大论文《基于深度学习跨模态行人再识别系统的研究与实现》阅读"></a>师兄大论文《<strong>基于深度学习跨模态行人再识别系统的研究与实现</strong>》阅读</h3>
+      
+        <h4 id="一、论文提出问题与名词解释">
+          <a href="#一、论文提出问题与名词解释" class="heading-link"><i class="fas fa-link"></i></a><a href="#一、论文提出问题与名词解释" class="headerlink" title="一、论文提出问题与名词解释"></a>一、论文提出问题与名词解释</h4>
+      
+        <h5 id="1-1-行人再识别-Re-ID">
+          <a href="#1-1-行人再识别-Re-ID" class="heading-link"><i class="fas fa-link"></i></a><a href="#1-1-行人再识别-Re-ID" class="headerlink" title="1.1 行人再识别 Re-ID"></a>1.1 行人再识别 Re-ID</h5>
+      <p>行人再识别的背景主要是判利用计算机视觉技术判断图像或者视频序列中是否存在特定的行人。其主要应当包括两个方面：行人检测与行人识别。</p>
+<p>行人检测方面主要完成利用计算机视觉相关技术判断图像或视频序列中是否包含行人，如果包含行人则对每个行人标注独立的行人框，并将这些行人框裁剪提供给行人再识别系统进行身份识别。</p>
+<p>行人再识别系统完成的功能是根据裁剪后输入的多个行人图片判断是否为同一行人。</p>
+
+        <h5 id="1-2-跨模态行人再识别-IV-ReID">
+          <a href="#1-2-跨模态行人再识别-IV-ReID" class="heading-link"><i class="fas fa-link"></i></a><a href="#1-2-跨模态行人再识别-IV-ReID" class="headerlink" title="1.2 跨模态行人再识别 IV-ReID"></a>1.2 跨模态行人再识别 IV-ReID</h5>
+      <p>当照明条件不佳的时候，RGB摄像头往往表现不佳，但是红外摄像头则可以良好工作。如果给定一个特定的人的可见（或红外图像），系统跨模态的从其他光谱相机中捕获的图库中搜索相应的红外（或可见光）图像可以实现更好的效果。这种交叉模态图像匹配任务称为跨模态行人再识别(IV-REID)</p>
+
+        <h4 id="二、行人检测部分">
+          <a href="#二、行人检测部分" class="heading-link"><i class="fas fa-link"></i></a><a href="#二、行人检测部分" class="headerlink" title="二、行人检测部分"></a>二、行人检测部分</h4>
+      <p>对于行人检测部分，应当归类为目标检测问题。师兄采用的行人检测网络是anchor free检测网络中的CenterNet网络。</p>
+
+        <h5 id="2-1-Anchor-free网络模型">
+          <a href="#2-1-Anchor-free网络模型" class="heading-link"><i class="fas fa-link"></i></a><a href="#2-1-Anchor-free网络模型" class="headerlink" title="2.1 Anchor free网络模型"></a>2.1 Anchor free网络模型</h5>
+      
+        <h5 id="2-1-1-什么是Anchor">
+          <a href="#2-1-1-什么是Anchor" class="heading-link"><i class="fas fa-link"></i></a><a href="#2-1-1-什么是Anchor" class="headerlink" title="2.1.1 什么是Anchor"></a>2.1.1 什么是Anchor</h5>
+      <p>Anchor是在图像上预设好的不同大小，不同长宽比的参照框。借助神经网络强大的拟合能力，不需要再计算Haar/Hog等特征。网络直接输出每个anchor包含（或者说与物体有较大重叠，也就是IoU较大的）物体的概率，以及被检测物体相对于本Anchor的中心点偏移以及长宽比例。如下图</p>
+<p><img src="/2021/10/11/dalunwen/images/dalunwen/image-20211012094040232.png" alt="image-20211012094040232"></p>
+<p>因为anchor的位置都是固定的，所以就可以很容易的换算出来实际物体的位置。以图中的小猫为例，红色的anchor就以99%的概率认为它是一只猫，并同时给出了猫的实际位置相对于该anchor的偏移量，这样，我们将输出解码后就得到了实际猫的位置，如果它能通过NMS（非最大抑制）筛选，它就能顺利的输出来。但是，绿色的anchor就认为它是猫的概率就很小，紫色的anchor虽然与猫有重叠，但是概率只有26%。在训练的时候，也就是给每张图片的物体的Bounding Box，相对于anchor进行编码，如果物体的Bounding Box与某个anchor的IoU较大，例如大于0.5就认为是正样本，否则是负样本（当然，也有算法将大于0.7的设为正样本，小于0.3的算负样本，中间的不计算损失）。</p>
+
+        <h5 id="2-1-2-什么是IoU（Intersection-over-Union）">
+          <a href="#2-1-2-什么是IoU（Intersection-over-Union）" class="heading-link"><i class="fas fa-link"></i></a><a href="#2-1-2-什么是IoU（Intersection-over-Union）" class="headerlink" title="2.1.2 什么是IoU（Intersection over Union）"></a>2.1.2 什么是IoU（Intersection over Union）</h5>
+      <p>IoU是一种测量在特定数据集中检测相应物体准确度的一个标准。IoU是一个简单的测量标准，只要是在输出中得出一个预测范围(bounding boxex)的任务都可以用IoU来进行测量。为了可以使IoU用于测量任意大小形状的物体检测，我们需要：</p>
+<ul>
+<li><p>ground-truth bounding boxes（人为在训练集图像中标出要检测物体的大概范围）</p>
+</li>
+<li><p>我们的算法得出的结果范围。</p>
+</li>
+</ul>
+<p><strong>这个标准用于测量真实和预测之间的相关度，相关度越高该值越高。</strong>其<strong>计算方法是两个区域重叠的部分除以两个区域的集合部分得出的结果</strong>，通过设定的IoU阈值，与IoU计算结果进行比较。如图2所示：</p>
+<img src="/2021/10/11/dalunwen/images/dalunwen/image-20211012202618543.png" alt="image-20211012202618543" style="zoom:50%;">
+
+<p>​                                                                                                                        图2 IoU的计算公式</p>
+<img src="/2021/10/11/dalunwen/images/dalunwen/image-20211012202816848.png" alt="image-20211012202816848" style="zoom:75%;">
+
+
+        <h5 id="2-1-3-CenterNet">
+          <a href="#2-1-3-CenterNet" class="heading-link"><i class="fas fa-link"></i></a><a href="#2-1-3-CenterNet" class="headerlink" title="2.1.3 CenterNet"></a>2.1.3 CenterNet</h5>
+      <p>CenterNet正是Anchor Free的网络模型。CenterNet 首次提出了运用关键点检测算法确定目标中心点。<strong>CenterNet的基本思想是在确定目标中心点的前提下预测目标的宽高。</strong>CenterNet采用了关键点检测的方法，对特征的每个区域取8邻域最大值作为极值点，然后保留100个极值点，作为目标框的中心点，并且通过设置一定的阈值滤除低质量的目标中心点。CenterNet的网络框架如图所示：</p>
+<p><img src="/2021/10/11/dalunwen/images/dalunwen/image-20211014212357048.png" alt="image-20211014212357048"></p>
+</div><footer class="post-footer"><div class="post-ending ending"><div class="ending__text">------ 本文结束，感谢您的阅读 ------</div></div><div class="post-copyright copyright"><div class="copyright-author"><span class="copyright-author__name">本文作者: </span><span class="copyright-author__value"><a href="http://example.com">Strive</a></span></div><div class="copyright-link"><span class="copyright-link__name">本文链接: </span><span class="copyright-link__value"><a href="http://example.com/2021/10/11/dalunwen/">http://example.com/2021/10/11/dalunwen/</a></span></div><div class="copyright-notice"><span class="copyright-notice__name">版权声明: </span><span class="copyright-notice__value">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en" rel="external nofollow" target="_blank">BY-NC-SA</a> 许可协议。转载请注明出处！</span></div></div><nav class="post-paginator paginator"><div class="paginator-next"><a class="paginator-next__link" href="/2021/10/11/Convolutional%20Neural%20Networks/"><span class="paginator-prev__text">卷积神经网络</span><span class="paginator-next__icon"><i class="fas fa-angle-right"></i></span></a></div></nav></footer></div></div></div><div class="sidebar-wrap" id="sidebar-wrap"><aside class="sidebar" id="sidebar"><div class="sidebar-nav"><span class="sidebar-nav-toc current">文章目录</span><span class="sidebar-nav-ov">站点概览</span></div><section class="sidebar-toc"><ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%B8%88%E5%85%84%E5%A4%A7%E8%AE%BA%E6%96%87%E3%80%8A%E5%9F%BA%E4%BA%8E%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E8%B7%A8%E6%A8%A1%E6%80%81%E8%A1%8C%E4%BA%BA%E5%86%8D%E8%AF%86%E5%88%AB%E7%B3%BB%E7%BB%9F%E7%9A%84%E7%A0%94%E7%A9%B6%E4%B8%8E%E5%AE%9E%E7%8E%B0%E3%80%8B%E9%98%85%E8%AF%BB"><span class="toc-number">1.</span> <span class="toc-text">
+          师兄大论文《基于深度学习跨模态行人再识别系统的研究与实现》阅读</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%B8%80%E3%80%81%E8%AE%BA%E6%96%87%E6%8F%90%E5%87%BA%E9%97%AE%E9%A2%98%E4%B8%8E%E5%90%8D%E8%AF%8D%E8%A7%A3%E9%87%8A"><span class="toc-number">1.1.</span> <span class="toc-text">
+          一、论文提出问题与名词解释</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#1-1-%E8%A1%8C%E4%BA%BA%E5%86%8D%E8%AF%86%E5%88%AB-Re-ID"><span class="toc-number">1.1.1.</span> <span class="toc-text">
+          1.1 行人再识别 Re-ID</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#1-2-%E8%B7%A8%E6%A8%A1%E6%80%81%E8%A1%8C%E4%BA%BA%E5%86%8D%E8%AF%86%E5%88%AB-IV-ReID"><span class="toc-number">1.1.2.</span> <span class="toc-text">
+          1.2 跨模态行人再识别 IV-ReID</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BA%8C%E3%80%81%E8%A1%8C%E4%BA%BA%E6%A3%80%E6%B5%8B%E9%83%A8%E5%88%86"><span class="toc-number">1.2.</span> <span class="toc-text">
+          二、行人检测部分</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#2-1-Anchor-free%E7%BD%91%E7%BB%9C%E6%A8%A1%E5%9E%8B"><span class="toc-number">1.2.1.</span> <span class="toc-text">
+          2.1 Anchor free网络模型</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#2-1-1-%E4%BB%80%E4%B9%88%E6%98%AFAnchor"><span class="toc-number">1.2.2.</span> <span class="toc-text">
+          2.1.1 什么是Anchor</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#2-1-2-%E4%BB%80%E4%B9%88%E6%98%AFIoU%EF%BC%88Intersection-over-Union%EF%BC%89"><span class="toc-number">1.2.3.</span> <span class="toc-text">
+          2.1.2 什么是IoU（Intersection over Union）</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#2-1-3-CenterNet"><span class="toc-number">1.2.4.</span> <span class="toc-text">
+          2.1.3 CenterNet</span></a></li></ol></li></ol></li></ol></section><!-- ov = overview--><section class="sidebar-ov hide"><div class="sidebar-ov-author"><div class="sidebar-ov-author__avatar"><img class="sidebar-ov-author__avatar_img" src="/images/icons/photo.png" alt="avatar"></div><p class="sidebar-ov-author__text">To be a great person.</p></div><div class="sidebar-ov-cc"><a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en" target="_blank" rel="noopener" data-popover="知识共享许可协议" data-popover-pos="up"><img src="/images/cc-by-nc-sa.svg"></a></div></section><div class="sidebar-reading"><div class="sidebar-reading-info"><span class="sidebar-reading-info__text">你已阅读了 </span><span class="sidebar-reading-info__num">0</span><span class="sidebar-reading-info__perc">%</span></div><div class="sidebar-reading-line"></div></div></aside></div><div class="clearfix"></div></div></main><footer class="footer" id="footer"><div class="footer-inner"><div><span>Copyright © 2021</span><span class="footer__icon"><i class="fas fa-heart"></i></span><span>Strive</span></div><div><span>由 <a href="http://hexo.io/" title="Hexo" target="_blank" rel="noopener">Hexo</a> 强力驱动</span><span> v5.4.0</span><span class="footer__devider">|</span><span>主题 - <a href="https://github.com/liuyib/hexo-theme-stun/" title="Stun" target="_blank" rel="noopener">Stun</a></span><span> v2.6.2</span></div></div></footer><div class="loading-bar" id="loading-bar"><div class="loading-bar__progress"></div></div><div class="back2top" id="back2top"><span class="back2top__icon"><i class="fas fa-rocket"></i></span></div></div><script src="https://cdn.jsdelivr.net/npm/jquery@v3.4.1/dist/jquery.min.js"></script><script src="https://cdn.jsdelivr.net/npm/velocity-animate@1.5.2/velocity.min.js"></script><script src="https://cdn.jsdelivr.net/npm/velocity-animate@1.5.2/velocity.ui.min.js"></script><script src="/js/utils.js?v=2.6.2"></script><script src="/js/stun-boot.js?v=2.6.2"></script><script src="/js/scroll.js?v=2.6.2"></script><script src="/js/header.js?v=2.6.2"></script><script src="/js/sidebar.js?v=2.6.2"></script></body></html>
