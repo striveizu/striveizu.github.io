@@ -1,0 +1,206 @@
+<!DOCTYPE html><html lang="zh-CN"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="format-detection" content="telephone=no"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="black"><link rel="icon" href="/images/icons/favicon-16x16.png?v=2.6.2" type="image/png" sizes="16x16"><link rel="icon" href="/images/icons/favicon-32x32.png?v=2.6.2" type="image/png" sizes="32x32"><meta name="description" content="师兄大论文《基于深度学习跨模态行人再识别系统的研究与实现》阅读                           一、论文提出问题与名词解释                           1.1 行人再识别 Re-ID       行人再识别的背景主要是判利用计算机视觉技术判断图像或者视频序列中是否存在特定的行人。其主要应当包括两个方面：行人检测与行">
+<meta property="og:type" content="article">
+<meta property="og:title" content="《**基于深度学习跨模态行人再识别系统的研究与实现**》阅读">
+<meta property="og:url" content="http://example.com/2021/10/24/dalunwen/index.html">
+<meta property="og:site_name" content="Strive&#39;s Blog">
+<meta property="og:description" content="师兄大论文《基于深度学习跨模态行人再识别系统的研究与实现》阅读                           一、论文提出问题与名词解释                           1.1 行人再识别 Re-ID       行人再识别的背景主要是判利用计算机视觉技术判断图像或者视频序列中是否存在特定的行人。其主要应当包括两个方面：行人检测与行">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://example.com/images/dalunwen/image-20211012094040232.png">
+<meta property="og:image" content="http://example.com/images/dalunwen/image-20211012202618543.png">
+<meta property="og:image" content="http://example.com/2021/10/24/dalunwen/images/dalunwen/image-20211012202816848.png">
+<meta property="og:image" content="http://example.com/images/dalunwen/image-20211014212357048.png">
+<meta property="og:image" content="http://example.com/images/dalunwen/image-20211024143007780.png">
+<meta property="og:image" content="http://example.com/images/dalunwen/image-20211024143042745.png">
+<meta property="og:image" content="http://example.com/images/dalunwen/image-20211024143117350.png">
+<meta property="og:image" content="http://example.com/images/dalunwen/image-20211024190307293.png">
+<meta property="og:image" content="http://example.com/images/dalunwen/image-20211024204302667.png">
+<meta property="og:image" content="http://example.com/images/dalunwen/image-20211024211727622.png">
+<meta property="og:image" content="http://example.com/images/dalunwen/image-20211024211859494.png">
+<meta property="og:image" content="http://example.com/images/dalunwen/image-20211024212619478.png">
+<meta property="og:image" content="http://example.com/images/dalunwen/image-20211024212738320.png">
+<meta property="og:image" content="http://example.com/images/dalunwen/image-20211024212909969.png">
+<meta property="og:image" content="http://example.com/images/dalunwen/image-20211024213329932.png">
+<meta property="article:published_time" content="2021-10-23T16:00:00.000Z">
+<meta property="article:modified_time" content="2021-10-24T14:07:17.569Z">
+<meta property="article:author" content="Strive">
+<meta property="article:tag" content="深度学习">
+<meta property="article:tag" content="行人再识别">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://example.com/images/dalunwen/image-20211012094040232.png"><title>《**基于深度学习跨模态行人再识别系统的研究与实现**》阅读 | Strive's Blog</title><link ref="canonical" href="http://example.com/2021/10/24/dalunwen/"><link rel="dns-prefetch" href="https://cdn.jsdelivr.net"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.12.1/css/all.min.css" type="text/css"><link rel="stylesheet" href="/css/index.css?v=2.6.2"><script>var Stun = window.Stun || {};
+var CONFIG = {
+  root: '/',
+  algolia: undefined,
+  assistSearch: undefined,
+  fontIcon: {"prompt":{"success":"fas fa-check-circle","info":"fas fa-arrow-circle-right","warning":"fas fa-exclamation-circle","error":"fas fa-times-circle"},"copyBtn":"fas fa-copy"},
+  sidebar: {"offsetTop":"20px","tocMaxDepth":6},
+  header: {"enable":true,"showOnPost":true,"scrollDownIcon":true},
+  postWidget: {"endText":true},
+  nightMode: {"enable":true},
+  back2top: {"enable":true},
+  codeblock: {"style":"default","highlight":"light","wordWrap":false},
+  reward: false,
+  fancybox: false,
+  zoomImage: {"gapAside":"20px"},
+  galleryWaterfall: undefined,
+  lazyload: false,
+  pjax: undefined,
+  externalLink: {"icon":{"enable":true,"name":"fas fa-external-link-alt"}},
+  shortcuts: undefined,
+  prompt: {"copyButton":"复制","copySuccess":"复制成功","copyError":"复制失败"},
+  sourcePath: {"js":"js","css":"css","images":"images"},
+};
+
+window.CONFIG = CONFIG;</script><meta name="generator" content="Hexo 5.4.0"></head><body><div class="container" id="container"><header class="header" id="header"><div class="header-inner"><nav class="header-nav header-nav--fixed"><div class="header-nav-inner"><div class="header-nav-menubtn"><i class="fas fa-bars"></i></div><div class="header-nav-menu"><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/"><span class="header-nav-menu-item__icon"><i class="fas fa-home"></i></span><span class="header-nav-menu-item__text">首页</span></a></div><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/about/"><span class="header-nav-menu-item__icon"><i class="fas fa-address-card"></i></span><span class="header-nav-menu-item__text">关于</span></a></div><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="javascript:;" onclick="return false;"><span class="header-nav-menu-item__icon"><i class="fas fa-edit"></i></span><span class="header-nav-menu-item__text">文章</span></a><div class="header-nav-submenu"><div class="header-nav-submenu-item"><a class="header-nav-submenu-item__link" href="/archives/"><span class="header-nav-submenu-item__icon"><i class="fas fa-folder-open"></i></span><span class="header-nav-submenu-item__text">归档</span></a></div><div class="header-nav-submenu-item"><a class="header-nav-submenu-item__link" href="/categories/"><span class="header-nav-submenu-item__icon"><i class="fas fa-layer-group"></i></span><span class="header-nav-submenu-item__text">分类</span></a></div><div class="header-nav-submenu-item"><a class="header-nav-submenu-item__link" href="/tags/"><span class="header-nav-submenu-item__icon"><i class="fas fa-tags"></i></span><span class="header-nav-submenu-item__text">标签</span></a></div></div></div></div><div class="header-nav-mode"><div class="mode"><div class="mode-track"><span class="mode-track-moon"></span><span class="mode-track-sun"></span></div><div class="mode-thumb"></div></div></div></div></nav><div class="header-banner"><div class="header-banner-info"><div class="header-banner-info__title">Strive's Blog</div><div class="header-banner-info__subtitle">You gotta conquer the monster in your head and then you'll fly.</div></div><div class="header-banner-arrow"><div class="header-banner-arrow__icon"><i class="fas fa-angle-down"></i></div></div></div></div></header><main class="main" id="main"><div class="main-inner"><div class="content-wrap" id="content-wrap"><div class="content" id="content"><!-- Just used to judge whether it is an article page--><div id="is-post"></div><div class="post"><header class="post-header"><h1 class="post-title">《**基于深度学习跨模态行人再识别系统的研究与实现**》阅读</h1><div class="post-meta"><span class="post-meta-item post-meta-item--createtime"><span class="post-meta-item__icon"><i class="far fa-calendar-plus"></i></span><span class="post-meta-item__info">发表于</span><span class="post-meta-item__value">2021-10-24</span></span><span class="post-meta-item post-meta-item--updatetime"><span class="post-meta-item__icon"><i class="far fa-calendar-check"></i></span><span class="post-meta-item__info">更新于</span><span class="post-meta-item__value">2021-10-24</span></span></div></header><div class="post-body">
+        <h3 id="师兄大论文《基于深度学习跨模态行人再识别系统的研究与实现》阅读">
+          <a href="#师兄大论文《基于深度学习跨模态行人再识别系统的研究与实现》阅读" class="heading-link"><i class="fas fa-link"></i></a><a href="#师兄大论文《基于深度学习跨模态行人再识别系统的研究与实现》阅读" class="headerlink" title="师兄大论文《基于深度学习跨模态行人再识别系统的研究与实现》阅读"></a>师兄大论文《<strong>基于深度学习跨模态行人再识别系统的研究与实现</strong>》阅读</h3>
+      
+        <h4 id="一、论文提出问题与名词解释">
+          <a href="#一、论文提出问题与名词解释" class="heading-link"><i class="fas fa-link"></i></a><a href="#一、论文提出问题与名词解释" class="headerlink" title="一、论文提出问题与名词解释"></a>一、论文提出问题与名词解释</h4>
+      
+        <h5 id="1-1-行人再识别-Re-ID">
+          <a href="#1-1-行人再识别-Re-ID" class="heading-link"><i class="fas fa-link"></i></a><a href="#1-1-行人再识别-Re-ID" class="headerlink" title="1.1 行人再识别 Re-ID"></a>1.1 行人再识别 Re-ID</h5>
+      <p>行人再识别的背景主要是判利用计算机视觉技术判断图像或者视频序列中是否存在特定的行人。其主要应当包括两个方面：行人检测与行人识别。</p>
+<p>行人检测方面主要完成利用计算机视觉相关技术判断图像或视频序列中是否包含行人，如果包含行人则对每个行人标注独立的行人框，并将这些行人框裁剪提供给行人再识别系统进行身份识别。</p>
+<p>行人再识别系统完成的功能是根据裁剪后输入的多个行人图片判断是否为同一行人。</p>
+
+        <h5 id="1-2-跨模态行人再识别-IV-ReID">
+          <a href="#1-2-跨模态行人再识别-IV-ReID" class="heading-link"><i class="fas fa-link"></i></a><a href="#1-2-跨模态行人再识别-IV-ReID" class="headerlink" title="1.2 跨模态行人再识别 IV-ReID"></a>1.2 跨模态行人再识别 IV-ReID</h5>
+      <p>当照明条件不佳的时候，RGB摄像头往往表现不佳，但是红外摄像头则可以良好工作。如果给定一个特定的人的可见（或红外图像），系统跨模态的从其他光谱相机中捕获的图库中搜索相应的红外（或可见光）图像可以实现更好的效果。这种交叉模态图像匹配任务称为跨模态行人再识别(IV-REID)</p>
+
+        <h4 id="二、行人检测部分">
+          <a href="#二、行人检测部分" class="heading-link"><i class="fas fa-link"></i></a><a href="#二、行人检测部分" class="headerlink" title="二、行人检测部分"></a>二、行人检测部分</h4>
+      <p>对于行人检测部分，应当归类为目标检测问题。师兄采用的行人检测网络是anchor free检测网络中的CenterNet网络。</p>
+
+        <h5 id="2-1-Anchor-free网络模型">
+          <a href="#2-1-Anchor-free网络模型" class="heading-link"><i class="fas fa-link"></i></a><a href="#2-1-Anchor-free网络模型" class="headerlink" title="2.1 Anchor free网络模型"></a>2.1 Anchor free网络模型</h5>
+      
+        <h6 id="2-1-1-什么是Anchor">
+          <a href="#2-1-1-什么是Anchor" class="heading-link"><i class="fas fa-link"></i></a><a href="#2-1-1-什么是Anchor" class="headerlink" title="2.1.1 什么是Anchor"></a>2.1.1 什么是Anchor</h6>
+      <p>Anchor是在图像上预设好的不同大小，不同长宽比的参照框。借助神经网络强大的拟合能力，不需要再计算Haar/Hog等特征。网络直接输出每个anchor包含（或者说与物体有较大重叠，也就是IoU较大的）物体的概率，以及被检测物体相对于本Anchor的中心点偏移以及长宽比例。如下图</p>
+<p><img src="/images/dalunwen/image-20211012094040232.png" alt="image-20211012094040232"></p>
+<p>因为anchor的位置都是固定的，所以就可以很容易的换算出来实际物体的位置。以图中的小猫为例，红色的anchor就以99%的概率认为它是一只猫，并同时给出了猫的实际位置相对于该anchor的偏移量，这样，我们将输出解码后就得到了实际猫的位置，如果它能通过NMS（非最大抑制）筛选，它就能顺利的输出来。但是，绿色的anchor就认为它是猫的概率就很小，紫色的anchor虽然与猫有重叠，但是概率只有26%。在训练的时候，也就是给每张图片的物体的Bounding Box，相对于anchor进行编码，如果物体的Bounding Box与某个anchor的IoU较大，例如大于0.5就认为是正样本，否则是负样本（当然，也有算法将大于0.7的设为正样本，小于0.3的算负样本，中间的不计算损失）。</p>
+
+        <h6 id="2-1-2-什么是IoU（Intersection-over-Union）">
+          <a href="#2-1-2-什么是IoU（Intersection-over-Union）" class="heading-link"><i class="fas fa-link"></i></a><a href="#2-1-2-什么是IoU（Intersection-over-Union）" class="headerlink" title="2.1.2 什么是IoU（Intersection over Union）"></a>2.1.2 什么是IoU（Intersection over Union）</h6>
+      <p>IoU是一种测量在特定数据集中检测相应物体准确度的一个标准。IoU是一个简单的测量标准，只要是在输出中得出一个预测范围(bounding boxex)的任务都可以用IoU来进行测量。为了可以使IoU用于测量任意大小形状的物体检测，我们需要：</p>
+<ul>
+<li><p>ground-truth bounding boxes（人为在训练集图像中标出要检测物体的大概范围）</p>
+</li>
+<li><p>我们的算法得出的结果范围。</p>
+</li>
+</ul>
+<p><strong>这个标准用于测量真实和预测之间的相关度，相关度越高该值越高。</strong>其<strong>计算方法是两个区域重叠的部分除以两个区域的集合部分得出的结果</strong>，通过设定的IoU阈值，与IoU计算结果进行比较。如图2所示：</p>
+<img src="/images/dalunwen/image-20211012202618543.png" alt="image-20211012202618543" style="zoom:50%;">
+
+<p>​                                                                                                                        图2 IoU的计算公式</p>
+<img src="/2021/10/24/dalunwen/images/dalunwen/image-20211012202816848.png" alt="image-20211012202816848" style="zoom:75%;">
+
+
+        <h6 id="2-1-3-CenterNet">
+          <a href="#2-1-3-CenterNet" class="heading-link"><i class="fas fa-link"></i></a><a href="#2-1-3-CenterNet" class="headerlink" title="2.1.3 CenterNet"></a>2.1.3 CenterNet</h6>
+      <p>CenterNet正是Anchor Free的网络模型。CenterNet 首次提出了运用关键点检测算法确定目标中心点。<strong>CenterNet的基本思想是在确定目标中心点的前提下预测目标的宽高。</strong>CenterNet采用了关键点检测的方法，对特征的每个区域取8邻域最大值作为极值点，然后保留100个极值点，作为目标框的中心点，并且通过设置一定的阈值滤除低质量的目标中心点。CenterNet的网络框架如图所示：</p>
+<p><img src="/images/dalunwen/image-20211014212357048.png" alt="image-20211014212357048"></p>
+
+        <h5 id="2-2-本论文对CenterNet的改进">
+          <a href="#2-2-本论文对CenterNet的改进" class="heading-link"><i class="fas fa-link"></i></a><a href="#2-2-本论文对CenterNet的改进" class="headerlink" title="2.2 本论文对CenterNet的改进"></a>2.2 本论文对CenterNet的改进</h5>
+      <p>论文提出了两个对CenterNet的改进方向。由于CenterNet的基本思路是先利用预测中心点算法预测目标中心点，再在中心点的基础上预测宽高。出现检测不准的情况可能是1、网络未预测正确的目标中心点，后面宽高预测分支即使十分精准也会出现误检框，2、目标中心点预测精准但是而宽高预测分支未输出正确的宽高，那么也会造成误检框。并为此改进了网络的结构与损失函数。</p>
+
+        <h6 id="2-2-1-网络结构的改进">
+          <a href="#2-2-1-网络结构的改进" class="heading-link"><i class="fas fa-link"></i></a><a href="#2-2-1-网络结构的改进" class="headerlink" title="2.2.1 网络结构的改进"></a>2.2.1 网络结构的改进</h6>
+      <p>对于中心预测分支主要采取的方法是提取特征图8-临域内最大值作为目标的中心点。由于有时会出现极值点并不是目标的中心点的情况，师兄在上图的原有CenterNet的结构中加入了注意力网络中的全局上下文模块（Global Context Block）。</p>
+<p>注意力网络可以使局部区域加权后特征值变大，我们利用此特性进行训练并约束网络，使训练图片的目标中心点分配较高的权重，非目标中心点分配较低的权重，使特征图的极值点均为目标中心点，避免产生中心点误检的情况。</p>
+
+        <h6 id="2-2-2-损失函数改进">
+          <a href="#2-2-2-损失函数改进" class="heading-link"><i class="fas fa-link"></i></a><a href="#2-2-2-损失函数改进" class="headerlink" title="2.2.2 损失函数改进"></a>2.2.2 损失函数改进</h6>
+      <p>CenterNet的预测分支的损失函数是Smooth L1 loss，原理是对检测框进行宽高的回归优化，但是没有将检测框视作一个整体进行优化，导致检测网络的精度较低。</p>
+<p>CIOU loss，此损失函数兼顾了预测框与真实框的相交程度、欧式距离、长宽比等多个因素，且较为容易收敛，旨在使预测框更加符合真实框,其公式为：<img src="/images/dalunwen/image-20211024143007780.png" alt="image-20211024143007780">。</p>
+<p>其中，<img src="/images/dalunwen/image-20211024143042745.png" alt="image-20211024143042745" style="zoom:65%;">表示预测框与真实框中心点的欧式距离，c表示预测框和真实框的最小外接矩形的对角线距离。<img src="/images/dalunwen/image-20211024143117350.png" alt="image-20211024143117350" style="zoom:67%;">表示真实框与目标框长宽比的距离。</p>
+
+        <h4 id="三、跨模态行人再识别部分">
+          <a href="#三、跨模态行人再识别部分" class="heading-link"><i class="fas fa-link"></i></a><a href="#三、跨模态行人再识别部分" class="headerlink" title="三、跨模态行人再识别部分"></a>三、跨模态行人再识别部分</h4>
+      
+        <h5 id="3-1-评估指标">
+          <a href="#3-1-评估指标" class="heading-link"><i class="fas fa-link"></i></a><a href="#3-1-评估指标" class="headerlink" title="3.1 评估指标"></a>3.1 评估指标</h5>
+      
+        <h6 id="3-1-1-CMC曲线">
+          <a href="#3-1-1-CMC曲线" class="heading-link"><i class="fas fa-link"></i></a><a href="#3-1-1-CMC曲线" class="headerlink" title="3.1.1 CMC曲线"></a>3.1.1 CMC曲线</h6>
+      <p>CMC曲线全称为累计匹配曲线，是图像检索领域的重要检测指标。在行人再识别测试时，分别输入查询目标库的图片（query）和候选库图片（gallery），计算查询库中每一个行人与候选库中的每一个行人的相似度，并根据相似度进行排序，相似度列表由一个二维矩阵表示。相似度列表的横坐标为n，表示相似度排名，纵坐标为Rank_n，表示排序靠前的行人与目标行人具有相同ID的概率，例如，某个模型进行测试，取排序前十的图片进行分析，前十中共有5张正确图片被召回，这5张正确图片的排序下标为1，2，5，7，8，那么该模型的rank_1为100%，rank_5为60%，rank_10为50%。因此，可以根据此指标来判断模型的分类能力。</p>
+
+        <h6 id="3-1-2-mAP-平均检索精度">
+          <a href="#3-1-2-mAP-平均检索精度" class="heading-link"><i class="fas fa-link"></i></a><a href="#3-1-2-mAP-平均检索精度" class="headerlink" title="3.1.2 mAP 平均检索精度"></a>3.1.2 mAP 平均检索精度</h6>
+      <p>当gallery图库中出现大量的同一个行人的图片时，被召回率会大大提高，在rank机制下，误判的图片几乎不起作用，此时Rank就不能很好地判断模型的好坏，于是研究人员提出使用平均检索精度（mAP）来评估算法的优劣。mAP为查询目标库中所有图片的检索精度的平均值，即query中所有图片查准率的平均值。例如，有两个模型验证性能的好坏，我们进行测试，第一个模型有4个正确图片被召回，第二个模型也有4个正确图片被召回，第一个模型被召回的正确图片排序下标为1，2，3，5，第二个模型被召回的正确图片排序下标为1，3，5，6。那么第一个模型的平均准确率为（1/1+2/2+3/3+4/5）/4=0.95，第二个模型的平均准确率为（1/1+2/3+3/5+4/6）/4=0.75，从上述计算可以看出第一个模型效果更好，因此，此指标有力的弥补了Rank指标的缺陷。</p>
+
+        <h5 id="3-2-跨模态行人再识别算法的思路">
+          <a href="#3-2-跨模态行人再识别算法的思路" class="heading-link"><i class="fas fa-link"></i></a><a href="#3-2-跨模态行人再识别算法的思路" class="headerlink" title="3.2 跨模态行人再识别算法的思路"></a>3.2 跨模态行人再识别算法的思路</h5>
+      <p>跨模态行人再识别主要是使用RGB图片与红外图片做跨模态学习。RGB图片通常具有较高的空间分辨率和可观的细节和明暗对比，因此，它们适合于人类的视觉感知。然而，这些图像很容易受到恶劣条件的影响，如光照差、雾和恶劣天气。但是，描述物体热辐射的红外图像具有一定抗干扰的能力，但其通常分辨率较低，纹理较差。因此，红外图片与RGB图片所具有的共性集中在纹理、轮廓、图案等外观信息，比如同一个行人穿有一件带有logo图案的衣服，那么不管是他的红外图片还是他的RGB图片都会有显眼的logo图案，且图案纹理轮廓相似度极大。</p>
+<p>神经网络的较浅层提取的特征主要关注图像的纹理颜色等外观细节，而提取的深层特征则包含语义信息。我们认为红外图片和可见光图片的低层次的外观特征具有更高相似性，所以学习低层次特征能够得到更具有可辨性的共性特征。</p>
+
+        <h5 id="3-3-具体算法框架">
+          <a href="#3-3-具体算法框架" class="heading-link"><i class="fas fa-link"></i></a><a href="#3-3-具体算法框架" class="headerlink" title="3.3 具体算法框架"></a>3.3 具体算法框架</h5>
+      <p><img src="/images/dalunwen/image-20211024190307293.png" alt="image-20211024190307293"></p>
+<p>网络架构是采用常用的跨模态网络结构——双流网络，模型的骨干网络是ResNet-50，以前的方法只采用最深层的特征来编码图片，例如来自ResNet-50最后一个卷积层的输出。最后一个卷积层输出的是深层特征，即有关于图片的语义信息。尽管高级特征对于形成抽象概念用于物体识别确实有用，但它们可能会丢弃颜色和纹理等低级信号，这些信息是人物识别的重要线索。此外，卷积神经网络深层特征的分辨率较小，可能无法看到细节，如衣服上的图案，面部特征，细微的姿势差异等。这表明提取多层次特征，并且利用多层次特征的信息优势互补有利于行人重识别任务。</p>
+
+        <h6 id="3-3-1-特征提取">
+          <a href="#3-3-1-特征提取" class="heading-link"><i class="fas fa-link"></i></a><a href="#3-3-1-特征提取" class="headerlink" title="3.3.1 特征提取"></a>3.3.1 特征提取</h6>
+      <p>如上文所述，师兄认为深层特征会忽略图片的一些纹理细节，而这些细节对于身份识别是有帮助的。因此师兄分别提取RGB图像、红外图像在ResNet-50的block_2、block_3、block_4层的输出作为浅层特征、中层特征、深层特征，分别用X1、X2、X3、X4、X5、X6表示。然后分别对两种图片的浅层、中层、深层特征表示做向量拼接作为特征融合。融合后的特征分别用B1、B2、B3表示。公式如下。</p>
+<p><img src="/images/dalunwen/image-20211024204302667.png" alt="image-20211024204302667"></p>
+<p>concatenate表示向量拼接，相比特征直接相加，其主要优势是特征融合前后特征维度不变，保证信息不会丢失，X1、X4表示RGB图片和红外图片的浅层特征，X2、X5表示RGB图片和红外图片的中层特征，X3、X6表示RGB图片和红外图片的深层特征，0表示在batch维度上进行拼接，即RGB特征和红外特征进行融合，消除模态差异。</p>
+
+        <h6 id="3-3-2-特征分割">
+          <a href="#3-3-2-特征分割" class="heading-link"><i class="fas fa-link"></i></a><a href="#3-3-2-特征分割" class="headerlink" title="3.3.2 特征分割"></a>3.3.2 特征分割</h6>
+      <p><strong>将图像特征分割成不同的局部特征能够显著提高行人再识别的准确性。其次，全局特征能够捕捉最显著的外观特征，而局部特征可以捕捉图像的细节</strong>，将图像特征分成局部特征和全局特征已经得到广泛的应用。由于<strong>低层特征分辨率更高，包含更多位置、细节信息，但是由于经过的卷积更少，其语义性更低，噪声更多，而高层特征具有更强的语义信息，但是分辨率很低，对细节的感知能力较差，中层特征介于两者之间。</strong>因此对高层层和中层特征X3,X2做特征分割。对于X1不分割，对于X2分割为两个局部特征，对于X3分割为三个局部特征，这样分割更加符合人体结构构造，例如上半身，下半身（或头、上半身、下半身）。且通过实验结果表明，这种分割的方法达到的效果最好。其公式如下，</p>
+<p><img src="/images/dalunwen/image-20211024211727622.png" alt="image-20211024211727622"></p>
+<p>P1、P2为中层特征的局部特征，P3、P4、P5为深层特征的局部特征。同时将低层次特征、中层次特征和高层次特征的全局特征保留，其公式如下，</p>
+<p><img src="/images/dalunwen/image-20211024211859494.png" alt="image-20211024211859494"></p>
+<p>正如之前写的卷积神经网络那篇博文，池化操作的<strong>首要作用是降采样汇合结果中的一个元素对应于原输入数据的一个子区域（sub-region），因此汇合相当于在空间范围内做了维度约减（spatially dimension reduction），从而使模型可以抽取更广范围的特征。同时减小了下一层输入大小，进而减小计算量和参数个数。</strong>其次池化操作还具有<strong>降维、去除冗余信息、对特征进行压缩、简化网络复杂度、减小计算量、减小内存消耗等等。</strong>因此对B1,B2,B3做池化操作提取出三个层次的全局特征G1,G2,G3。</p>
+<p>同时，对分割出的局部特征P1-P5作降维操作得到局部特征。旨在减少运算量并滤除冗余信息，其公式如下，</p>
+<p><img src="/images/dalunwen/image-20211024212619478.png" alt="image-20211024212619478"></p>
+<p>其中，R1、R2、R3、R4、R5表示三个层次的局部特征，即分割后的特征在通道维度上降维为256得到局部特征。</p>
+
+        <h6 id="3-3-3-对于全局特征的损失函数">
+          <a href="#3-3-3-对于全局特征的损失函数" class="heading-link"><i class="fas fa-link"></i></a><a href="#3-3-3-对于全局特征的损失函数" class="headerlink" title="3.3.3 对于全局特征的损失函数"></a>3.3.3 对于全局特征的损失函数</h6>
+      <p>对于全局特征求两个损失函数，分别是用于度量学习的三元组损失（Triplet loss）和用于分类的交叉熵损失（Softmax loss）。对于全局特征B1、B2、B3采用交叉熵损失函数和三元组损失函数联合优化，其公式如下，</p>
+<p><img src="/images/dalunwen/image-20211024212738320.png" alt="image-20211024212738320"></p>
+<p>其中，L1、L3、L7表示三个层次的全局特征的三元组损失，L2、L4、L8表示三个层次的全局特征的交叉熵损失。</p>
+
+        <h6 id="3-3-4-对于局部特征的损失函数">
+          <a href="#3-3-4-对于局部特征的损失函数" class="heading-link"><i class="fas fa-link"></i></a><a href="#3-3-4-对于局部特征的损失函数" class="headerlink" title="3.3.4 对于局部特征的损失函数"></a>3.3.4 对于局部特征的损失函数</h6>
+      <p>对于局部特征仅仅采用交叉熵损失函数进行优化，原因是<strong>局部特征可能会出现特征未对齐问题，导致局部特征可能存在巨大变化，因此，三元组损失在训练期间可能会破坏模型优化。</strong>其公式如下，</p>
+<p><img src="/images/dalunwen/image-20211024212909969.png" alt="image-20211024212909969"></p>
+<p>其中，L5、L6表示中层局部特征的交叉熵损失，L9、L10、L11表示深层局部特征的交叉熵损失。</p>
+
+        <h6 id="3-3-5-总损失函数">
+          <a href="#3-3-5-总损失函数" class="heading-link"><i class="fas fa-link"></i></a><a href="#3-3-5-总损失函数" class="headerlink" title="3.3.5 总损失函数"></a>3.3.5 总损失函数</h6>
+      <p>由于学习低层次特征可以获得更多的跨模态共性特征，所以我们提取了网络中的多层次特征。然而，我们发现<strong>不同任务损失的尺度差异非常大，如果采取简单相加的方式，整体损失函数将不会是最佳的，导致网络模型得不到充分的优化</strong>。</p>
+<p>因此，我们采用多任务学习的方法，结合多个损失函数，利用同<strong>方差不确定性</strong>同时学习多个目标。我们将同方差不确定性解释为依赖于任务的加权。我们<strong>设置了三个可学习的超参数，分别集成到每个任务的损失中，三个噪声参数分别作为低层特征、中层特征和高层特征损失的权重因子。然后，将所有经过适当加权的损失相加，得到最优的总损失，从而达到对不同层次特征进行优化的目的</strong>。因此，我们最终的总损失函数为:</p>
+<p><img src="/images/dalunwen/image-20211024213329932.png" alt="image-20211024213329932"></p>
+
+        <h4 id="四-结论">
+          <a href="#四-结论" class="heading-link"><i class="fas fa-link"></i></a><a href="#四-结论" class="headerlink" title="四 结论"></a>四 结论</h4>
+      <p>师兄分别在行人再识别的两个部分进行改进，在行人检测部分对网络结构进行改进，在CenterNet的基础上加入了注意力模块，提升了预测目标中心点的精度。在损失函数部分将CenterNet的损失函数改进为CIOU，将检测框视作一个整体进行优化。</p>
+<p>在行人识别部分使用了跨模态的学习方法。采用了以ResNet-50为主干网络的双流网络去分别提取RGB图像与红外图像的低、中、高层特征。并采取向量拼接作为特征融合消除模态间差异。并采取特征分割将特征分为全局特征与局部特征。全局特征的提取方法是分别对特征融合后的低中高层特征作最大值池化操作。为了更好的提取细节特征，对中层与高层特征作特征分割之后将分割后的深层特征降维处理滤除冗余信息得到局部特征。并分别对局部特征与全局特征提出了对应的损失函数。最终取得了较好的效果</p>
+</div><footer class="post-footer"><div class="post-ending ending"><div class="ending__text">------ 本文结束，感谢您的阅读 ------</div></div><div class="post-copyright copyright"><div class="copyright-author"><span class="copyright-author__name">本文作者: </span><span class="copyright-author__value"><a href="http://example.com">Strive</a></span></div><div class="copyright-link"><span class="copyright-link__name">本文链接: </span><span class="copyright-link__value"><a href="http://example.com/2021/10/24/dalunwen/">http://example.com/2021/10/24/dalunwen/</a></span></div><div class="copyright-notice"><span class="copyright-notice__name">版权声明: </span><span class="copyright-notice__value">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en" rel="external nofollow" target="_blank">BY-NC-SA</a> 许可协议。转载请注明出处！</span></div></div><div class="post-tags"><span class="post-tags-item"><span class="post-tags-item__icon"><i class="fas fa-tag"></i></span><a class="post-tags-item__link" href="http://example.com/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/">深度学习</a></span><span class="post-tags-item"><span class="post-tags-item__icon"><i class="fas fa-tag"></i></span><a class="post-tags-item__link" href="http://example.com/tags/%E8%A1%8C%E4%BA%BA%E5%86%8D%E8%AF%86%E5%88%AB/">行人再识别</a></span></div><nav class="post-paginator paginator"><div class="paginator-next"><a class="paginator-next__link" href="/2021/10/20/LeNet/"><span class="paginator-prev__text">传统网络实现之LeNet</span><span class="paginator-next__icon"><i class="fas fa-angle-right"></i></span></a></div></nav></footer></div></div></div><div class="sidebar-wrap" id="sidebar-wrap"><aside class="sidebar" id="sidebar"><div class="sidebar-nav"><span class="sidebar-nav-toc current">文章目录</span><span class="sidebar-nav-ov">站点概览</span></div><section class="sidebar-toc"><ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%B8%88%E5%85%84%E5%A4%A7%E8%AE%BA%E6%96%87%E3%80%8A%E5%9F%BA%E4%BA%8E%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E8%B7%A8%E6%A8%A1%E6%80%81%E8%A1%8C%E4%BA%BA%E5%86%8D%E8%AF%86%E5%88%AB%E7%B3%BB%E7%BB%9F%E7%9A%84%E7%A0%94%E7%A9%B6%E4%B8%8E%E5%AE%9E%E7%8E%B0%E3%80%8B%E9%98%85%E8%AF%BB"><span class="toc-number">1.</span> <span class="toc-text">
+          师兄大论文《基于深度学习跨模态行人再识别系统的研究与实现》阅读</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%B8%80%E3%80%81%E8%AE%BA%E6%96%87%E6%8F%90%E5%87%BA%E9%97%AE%E9%A2%98%E4%B8%8E%E5%90%8D%E8%AF%8D%E8%A7%A3%E9%87%8A"><span class="toc-number">1.1.</span> <span class="toc-text">
+          一、论文提出问题与名词解释</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#1-1-%E8%A1%8C%E4%BA%BA%E5%86%8D%E8%AF%86%E5%88%AB-Re-ID"><span class="toc-number">1.1.1.</span> <span class="toc-text">
+          1.1 行人再识别 Re-ID</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#1-2-%E8%B7%A8%E6%A8%A1%E6%80%81%E8%A1%8C%E4%BA%BA%E5%86%8D%E8%AF%86%E5%88%AB-IV-ReID"><span class="toc-number">1.1.2.</span> <span class="toc-text">
+          1.2 跨模态行人再识别 IV-ReID</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BA%8C%E3%80%81%E8%A1%8C%E4%BA%BA%E6%A3%80%E6%B5%8B%E9%83%A8%E5%88%86"><span class="toc-number">1.2.</span> <span class="toc-text">
+          二、行人检测部分</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#2-1-Anchor-free%E7%BD%91%E7%BB%9C%E6%A8%A1%E5%9E%8B"><span class="toc-number">1.2.1.</span> <span class="toc-text">
+          2.1 Anchor free网络模型</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#2-1-1-%E4%BB%80%E4%B9%88%E6%98%AFAnchor"><span class="toc-number">1.2.1.1.</span> <span class="toc-text">
+          2.1.1 什么是Anchor</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#2-1-2-%E4%BB%80%E4%B9%88%E6%98%AFIoU%EF%BC%88Intersection-over-Union%EF%BC%89"><span class="toc-number">1.2.1.2.</span> <span class="toc-text">
+          2.1.2 什么是IoU（Intersection over Union）</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#2-1-3-CenterNet"><span class="toc-number">1.2.1.3.</span> <span class="toc-text">
+          2.1.3 CenterNet</span></a></li></ol></li><li class="toc-item toc-level-5"><a class="toc-link" href="#2-2-%E6%9C%AC%E8%AE%BA%E6%96%87%E5%AF%B9CenterNet%E7%9A%84%E6%94%B9%E8%BF%9B"><span class="toc-number">1.2.2.</span> <span class="toc-text">
+          2.2 本论文对CenterNet的改进</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#2-2-1-%E7%BD%91%E7%BB%9C%E7%BB%93%E6%9E%84%E7%9A%84%E6%94%B9%E8%BF%9B"><span class="toc-number">1.2.2.1.</span> <span class="toc-text">
+          2.2.1 网络结构的改进</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#2-2-2-%E6%8D%9F%E5%A4%B1%E5%87%BD%E6%95%B0%E6%94%B9%E8%BF%9B"><span class="toc-number">1.2.2.2.</span> <span class="toc-text">
+          2.2.2 损失函数改进</span></a></li></ol></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%B8%89%E3%80%81%E8%B7%A8%E6%A8%A1%E6%80%81%E8%A1%8C%E4%BA%BA%E5%86%8D%E8%AF%86%E5%88%AB%E9%83%A8%E5%88%86"><span class="toc-number">1.3.</span> <span class="toc-text">
+          三、跨模态行人再识别部分</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#3-1-%E8%AF%84%E4%BC%B0%E6%8C%87%E6%A0%87"><span class="toc-number">1.3.1.</span> <span class="toc-text">
+          3.1 评估指标</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#3-1-1-CMC%E6%9B%B2%E7%BA%BF"><span class="toc-number">1.3.1.1.</span> <span class="toc-text">
+          3.1.1 CMC曲线</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#3-1-2-mAP-%E5%B9%B3%E5%9D%87%E6%A3%80%E7%B4%A2%E7%B2%BE%E5%BA%A6"><span class="toc-number">1.3.1.2.</span> <span class="toc-text">
+          3.1.2 mAP 平均检索精度</span></a></li></ol></li><li class="toc-item toc-level-5"><a class="toc-link" href="#3-2-%E8%B7%A8%E6%A8%A1%E6%80%81%E8%A1%8C%E4%BA%BA%E5%86%8D%E8%AF%86%E5%88%AB%E7%AE%97%E6%B3%95%E7%9A%84%E6%80%9D%E8%B7%AF"><span class="toc-number">1.3.2.</span> <span class="toc-text">
+          3.2 跨模态行人再识别算法的思路</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#3-3-%E5%85%B7%E4%BD%93%E7%AE%97%E6%B3%95%E6%A1%86%E6%9E%B6"><span class="toc-number">1.3.3.</span> <span class="toc-text">
+          3.3 具体算法框架</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#3-3-1-%E7%89%B9%E5%BE%81%E6%8F%90%E5%8F%96"><span class="toc-number">1.3.3.1.</span> <span class="toc-text">
+          3.3.1 特征提取</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#3-3-2-%E7%89%B9%E5%BE%81%E5%88%86%E5%89%B2"><span class="toc-number">1.3.3.2.</span> <span class="toc-text">
+          3.3.2 特征分割</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#3-3-3-%E5%AF%B9%E4%BA%8E%E5%85%A8%E5%B1%80%E7%89%B9%E5%BE%81%E7%9A%84%E6%8D%9F%E5%A4%B1%E5%87%BD%E6%95%B0"><span class="toc-number">1.3.3.3.</span> <span class="toc-text">
+          3.3.3 对于全局特征的损失函数</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#3-3-4-%E5%AF%B9%E4%BA%8E%E5%B1%80%E9%83%A8%E7%89%B9%E5%BE%81%E7%9A%84%E6%8D%9F%E5%A4%B1%E5%87%BD%E6%95%B0"><span class="toc-number">1.3.3.4.</span> <span class="toc-text">
+          3.3.4 对于局部特征的损失函数</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#3-3-5-%E6%80%BB%E6%8D%9F%E5%A4%B1%E5%87%BD%E6%95%B0"><span class="toc-number">1.3.3.5.</span> <span class="toc-text">
+          3.3.5 总损失函数</span></a></li></ol></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%9B%9B-%E7%BB%93%E8%AE%BA"><span class="toc-number">1.4.</span> <span class="toc-text">
+          四 结论</span></a></li></ol></li></ol></section><!-- ov = overview--><section class="sidebar-ov hide"><div class="sidebar-ov-author"><div class="sidebar-ov-author__avatar"><img class="sidebar-ov-author__avatar_img" src="/images/icons/photo.png" alt="avatar"></div><p class="sidebar-ov-author__text">To be a great person.</p></div><div class="sidebar-ov-cc"><a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en" target="_blank" rel="noopener" data-popover="知识共享许可协议" data-popover-pos="up"><img src="/images/cc-by-nc-sa.svg"></a></div></section><div class="sidebar-reading"><div class="sidebar-reading-info"><span class="sidebar-reading-info__text">你已阅读了 </span><span class="sidebar-reading-info__num">0</span><span class="sidebar-reading-info__perc">%</span></div><div class="sidebar-reading-line"></div></div></aside></div><div class="clearfix"></div></div></main><footer class="footer" id="footer"><div class="footer-inner"><div><span>Copyright © 2021</span><span class="footer__icon"><i class="fas fa-heart"></i></span><span>Strive</span></div><div><span>由 <a href="http://hexo.io/" title="Hexo" target="_blank" rel="noopener">Hexo</a> 强力驱动</span><span> v5.4.0</span><span class="footer__devider">|</span><span>主题 - <a href="https://github.com/liuyib/hexo-theme-stun/" title="Stun" target="_blank" rel="noopener">Stun</a></span><span> v2.6.2</span></div></div></footer><div class="loading-bar" id="loading-bar"><div class="loading-bar__progress"></div></div><div class="back2top" id="back2top"><span class="back2top__icon"><i class="fas fa-rocket"></i></span></div></div><script src="https://cdn.jsdelivr.net/npm/jquery@v3.4.1/dist/jquery.min.js"></script><script src="https://cdn.jsdelivr.net/npm/velocity-animate@1.5.2/velocity.min.js"></script><script src="https://cdn.jsdelivr.net/npm/velocity-animate@1.5.2/velocity.ui.min.js"></script><script src="/js/utils.js?v=2.6.2"></script><script src="/js/stun-boot.js?v=2.6.2"></script><script src="/js/scroll.js?v=2.6.2"></script><script src="/js/header.js?v=2.6.2"></script><script src="/js/sidebar.js?v=2.6.2"></script></body></html>
