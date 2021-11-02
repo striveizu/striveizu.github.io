@@ -444,6 +444,98 @@ window.CONFIG = CONFIG;</script><meta name="generator" content="Hexo 5.4.0"></he
 </ul>
 <p>十月绝不摆烂！！！！</p>
 <p><img src="/images/week%20summary001/image-20211009160233635.png" alt="image-20211009160233635"></p>
+</div></div></article><article class="postlist-item post"><header class="post-header"><h1 class="post-title"><a class="post-title__link" href="/2021/10/08/labsever/">实验室服务器探索</a></h1><div class="post-meta"><span class="post-meta-item post-meta-item--createtime"><span class="post-meta-item__icon"><i class="far fa-calendar-plus"></i></span><span class="post-meta-item__info">发表于</span><span class="post-meta-item__value">2021-10-08</span></span><span class="post-meta-item post-meta-item--updatetime"><span class="post-meta-item__icon"><i class="far fa-calendar-check"></i></span><span class="post-meta-item__info">更新于</span><span class="post-meta-item__value">2021-11-02</span></span></div></header><div class="post-body"><div class="post-excerpt">
+        <h3 id="前置准备：">
+          <a href="#前置准备：" class="heading-link"><i class="fas fa-link"></i></a><a href="#前置准备：" class="headerlink" title="前置准备："></a>前置准备：</h3>
+      <p>由于没找到便捷的传文件到服务器的方法，有时需要从自己电脑中粘贴代码到服务器的编译器上运行，可以在登录服务器之前点击显示选项在本地资源上点击剪贴板，这样自己电脑的代码就能复制粘贴到服务器编译器上了。</p>
+<p><img src="/2021/10/08/labsever/images/labsever/image-20211102104735926.png" alt="image-20211102104735926"></p>
+<p><img src="/2021/10/08/labsever/images/labsever/image-20211102104817924.png" alt="image-20211102104817924"></p>
+
+        <h3 id="一、安装Anaconda">
+          <a href="#一、安装Anaconda" class="heading-link"><i class="fas fa-link"></i></a><a href="#一、安装Anaconda" class="headerlink" title="一、安装Anaconda"></a>一、安装Anaconda</h3>
+      <p>首先进入到具有Anaconda安装包的目录下，记得指令中的dxs是自己的用户名</p>
+<p><code>cd /home/dxs/anaconda</code></p>
+<p><img src="/2021/10/08/labsever/images/labsever/image-20211101202849128.png" alt="image-20211101202849128"></p>
+<p>输入命令： <code>bash Anaconda3-5.2.0-Linux-x86_64.sh</code></p>
+<p>回车开始执行安装程序</p>
+<p>出现许可协议后一直按回车到出现是否接受(yes/no)</p>
+<p>一直输入yes直到出现最后一步有一个询问你是否安装vscode，emm如果你没有需要就输入no。</p>
+
+        <h3 id="二、安装pycharm">
+          <a href="#二、安装pycharm" class="heading-link"><i class="fas fa-link"></i></a><a href="#二、安装pycharm" class="headerlink" title="二、安装pycharm"></a>二、安装pycharm</h3>
+      <p>首先进入到具有Anaconda安装包的目录下</p>
+<p><code>cd home/dxs/anaconda</code>, 回车</p>
+<p>输入ls查看pycharm文件夹的文件夹名<img src="/2021/10/08/labsever/images/labsever/image-20211101205032654.png" alt="image-20211101205032654"></p>
+<p>linux下的复制快捷键是<strong>ctrl+alt+c</strong></p>
+<p>粘贴是<strong>ctrl+alt+v</strong></p>
+<p>使用复制快捷键复制这个长文件夹名，输入cd 粘贴文件夹名/bin</p>
+<p><code>cd pycharm-community-2020.2.2/bin</code></p>
+<p>回车，如上图所示红线下面的命令</p>
+<p>然后输入 <code>./pycharm.sh</code> 回车开始安装</p>
+<p>然后会弹出对话框</p>
+<p><img src="/2021/10/08/labsever/images/labsever/image-20211101205511516.png" alt="image-20211101205511516"></p>
+<p><img src="/2021/10/08/labsever/images/labsever/image-20211101205539700.png" alt="image-20211101205539700"></p>
+<p>选择界面风格</p>
+<p><img src="/2021/10/08/labsever/images/labsever/image-20211101205632388.png" alt="image-20211101205632388"></p>
+<p>选一个好看的点击next</p>
+<p>下一个界面不要选择创建直接下一步就完成了安装</p>
+
+        <h4 id="下次怎么进入pycharm">
+          <a href="#下次怎么进入pycharm" class="heading-link"><i class="fas fa-link"></i></a><a href="#下次怎么进入pycharm" class="headerlink" title="下次怎么进入pycharm"></a>下次怎么进入pycharm</h4>
+      <p>先给它创建一个快捷方式，在桌面上右键选择create launcher</p>
+<p><img src="/2021/10/08/labsever/images/labsever/image-20211101211141456.png" alt="image-20211101211141456"></p>
+<p>输入名字，点击command旁边的小文件夹，找到pycharm的bin文件夹找到pycharm.sh选中点击open</p>
+<p><img src="/2021/10/08/labsever/images/labsever/image-20211101211401520.png" alt="image-20211101211401520"></p>
+<p>点击icon给它选择一个图标，search icon中选择image files，在弹出的选择目录中还在这个bin目录里面可以找到这个图标，选择点击ok就好啦</p>
+<p><img src="/2021/10/08/labsever/images/labsever/image-20211101211556431.png" alt="image-20211101211556431"></p>
+<p><img src="/2021/10/08/labsever/images/labsever/image-20211101211710022.png" alt="image-20211101211710022"></p>
+<p><img src="/2021/10/08/labsever/images/labsever/image-20211101211747217.png" alt="image-20211101211747217"></p>
+<p>打上第一个勾点击create，桌面上就有pycharm了，双击打开点击launch anyway就打开了</p>
+<p><img src="/2021/10/08/labsever/images/labsever/image-20211101211825065.png" alt="image-20211101211825065"></p>
+<p><img src="/2021/10/08/labsever/images/labsever/image-20211101211905407.png" alt="image-20211101211905407"></p>
+
+        <h3 id="三、pytorch环境搭建">
+          <a href="#三、pytorch环境搭建" class="heading-link"><i class="fas fa-link"></i></a><a href="#三、pytorch环境搭建" class="headerlink" title="三、pytorch环境搭建"></a>三、pytorch环境搭建</h3>
+      <p>右击桌面找到Applications-&gt;system-&gt;Xfce Terminal点击打开终端</p>
+<p><img src="/2021/10/08/labsever/images/labsever/image-20211102102926834.png" alt="image-20211102102926834"></p>
+<p>1、进入conda环境，在终端中输入下面指令进入到创建好的torchgpu虚拟环境</p>
+<figure class="highlight plaintext"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">source activate torchgpu</span><br></pre></td></tr></table></div></figure>
+
+<p>3、安装pytorch</p>
+<p><img src="/2021/10/08/labsever/images/labsever/image-20211101221521349.png" alt="image-20211101221521349"></p>
+<p><code>conda install pytorch torchvision torchaudio cudatoolkit=10.2 -c pytorch</code> 复制这行代码，回车开始安装</p>
+<p>出现yes/no全部yes即可</p>
+<p>4、安装李沐的d2l包，里面附带有jupyter，推荐安装</p>
+<p><code>pip install d2l</code></p>
+<p>至此pytorch需要的一些包和环境安装完毕</p>
+
+        <h3 id="四、尝试使用jupyter编写代码">
+          <a href="#四、尝试使用jupyter编写代码" class="heading-link"><i class="fas fa-link"></i></a><a href="#四、尝试使用jupyter编写代码" class="headerlink" title="四、尝试使用jupyter编写代码"></a>四、尝试使用jupyter编写代码</h3>
+      <p>按照上面的方法打开终端并进入到torchgpu环境下，输入 <code>jupyter notebook</code>回车会弹出浏览器,即可使用jupyter编写代码</p>
+<p><img src="/2021/10/08/labsever/images/labsever/image-20211102104101453.png" alt="image-20211102104101453"></p>
+<p><img src="/2021/10/08/labsever/images/labsever/image-20211102104150415.png" alt="image-20211102104150415"></p>
+
+        <h3 id="五、尝试使用pycharm编写代码">
+          <a href="#五、尝试使用pycharm编写代码" class="heading-link"><i class="fas fa-link"></i></a><a href="#五、尝试使用pycharm编写代码" class="headerlink" title="五、尝试使用pycharm编写代码"></a>五、尝试使用pycharm编写代码</h3>
+      <p>pycharm还是跟windows上一样设置环境为创建的conda虚拟环境torchgpu</p>
+<p>点击file-&gt;settings-&gt;Project Interpreter-&gt;小齿轮按钮</p>
+<p><img src="/2021/10/08/labsever/images/labsever/image-20211102110238056.png" alt="image-20211102110238056"></p>
+<p>conda environments-&gt;existing enviornment点击小文件夹按钮</p>
+<p>依次找到路径 /home/dxs(自己的用户名)/anaconda3/envs/torchgpu/bin/python</p>
+<p>点击ok apply</p>
+<p>返回之后右下角出现（torchgpu）说明环境已经切换完毕</p>
+<p><img src="/2021/10/08/labsever/images/labsever/image-20211102110856616.png" alt="image-20211102110856616"></p>
+
+        <h3 id="六、使用gpu之前的一些注意事项">
+          <a href="#六、使用gpu之前的一些注意事项" class="heading-link"><i class="fas fa-link"></i></a><a href="#六、使用gpu之前的一些注意事项" class="headerlink" title="六、使用gpu之前的一些注意事项"></a>六、使用gpu之前的一些注意事项</h3>
+      <p>使用gpu之前先打开终端输入 <code>nvidia-smi</code>查看显卡的使用状态</p>
+<p><img src="/2021/10/08/labsever/images/labsever/image-20211102111112560.png" alt="image-20211102111112560"></p>
+<p>可以看到第一块显卡（GPU0）的显存使用很大，我们尽量选择较为空闲的显卡比如GPU7，以避免与师兄师姐争用显存，从GPU7显存使用2MiB可见较为空闲，因此在训练的代码中注意将训练设备设置成CUDA:7 即GPU7</p>
+<p>原代码：</p>
+<p><img src="/2021/10/08/labsever/images/labsever/image-20211102111531575.png" alt="image-20211102111531575"></p>
+<p>只使用GPU7的改正的代码：</p>
+<p><img src="/2021/10/08/labsever/images/labsever/image-20211102111612414.png" alt="image-20211102111612414"></p>
+<p>到此，实验室服务器探索暂时告一段落，以后有需要会接着尝试。</p>
 </div></div></article><article class="postlist-item post"><header class="post-header"><h1 class="post-title"><a class="post-title__link" href="/2021/10/08/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E8%AE%A1%E7%AE%97/">深度学习计算</a></h1><div class="post-meta"><span class="post-meta-item post-meta-item--createtime"><span class="post-meta-item__icon"><i class="far fa-calendar-plus"></i></span><span class="post-meta-item__info">发表于</span><span class="post-meta-item__value">2021-10-08</span></span><span class="post-meta-item post-meta-item--updatetime"><span class="post-meta-item__icon"><i class="far fa-calendar-check"></i></span><span class="post-meta-item__info">更新于</span><span class="post-meta-item__value">2021-10-09</span></span></div></header><div class="post-body"><div class="post-excerpt">
         <h3 id="第五章-深度学习计算">
           <a href="#第五章-深度学习计算" class="heading-link"><i class="fas fa-link"></i></a><a href="#第五章-深度学习计算" class="headerlink" title="第五章 深度学习计算"></a>第五章 深度学习计算</h3>
@@ -588,98 +680,6 @@ window.CONFIG = CONFIG;</script><meta name="generator" content="Hexo 5.4.0"></he
         <h5 id="4-2-3-检查点方式（checkpoints）">
           <a href="#4-2-3-检查点方式（checkpoints）" class="heading-link"><i class="fas fa-link"></i></a><a href="#4-2-3-检查点方式（checkpoints）" class="headerlink" title="4.2.3 检查点方式（checkpoints）"></a>4.2.3 检查点方式（checkpoints）</h5>
       <p><del>暂未遇见，以后填坑</del></p>
-</div></div></article><article class="postlist-item post"><header class="post-header"><h1 class="post-title"><a class="post-title__link" href="/2021/10/08/labsever/">深度学习计算</a></h1><div class="post-meta"><span class="post-meta-item post-meta-item--createtime"><span class="post-meta-item__icon"><i class="far fa-calendar-plus"></i></span><span class="post-meta-item__info">发表于</span><span class="post-meta-item__value">2021-10-08</span></span><span class="post-meta-item post-meta-item--updatetime"><span class="post-meta-item__icon"><i class="far fa-calendar-check"></i></span><span class="post-meta-item__info">更新于</span><span class="post-meta-item__value">2021-11-02</span></span></div></header><div class="post-body"><div class="post-excerpt">
-        <h3 id="前置准备：">
-          <a href="#前置准备：" class="heading-link"><i class="fas fa-link"></i></a><a href="#前置准备：" class="headerlink" title="前置准备："></a>前置准备：</h3>
-      <p>由于没找到便捷的传文件到服务器的方法，有时需要从自己电脑中粘贴代码到服务器的编译器上运行，可以在登录服务器之前点击显示选项在本地资源上点击剪贴板，这样自己电脑的代码就能复制粘贴到服务器编译器上了。</p>
-<p><img src="/2021/10/08/labsever/images/labsever/image-20211102104735926.png" alt="image-20211102104735926"></p>
-<p><img src="/2021/10/08/labsever/images/labsever/image-20211102104817924.png" alt="image-20211102104817924"></p>
-
-        <h3 id="一、安装Anaconda">
-          <a href="#一、安装Anaconda" class="heading-link"><i class="fas fa-link"></i></a><a href="#一、安装Anaconda" class="headerlink" title="一、安装Anaconda"></a>一、安装Anaconda</h3>
-      <p>首先进入到具有Anaconda安装包的目录下，记得指令中的dxs是自己的用户名</p>
-<p><code>cd /home/dxs/anaconda</code></p>
-<p><img src="/2021/10/08/labsever/images/labsever/image-20211101202849128.png" alt="image-20211101202849128"></p>
-<p>输入命令： <code>bash Anaconda3-5.2.0-Linux-x86_64.sh</code></p>
-<p>回车开始执行安装程序</p>
-<p>出现许可协议后一直按回车到出现是否接受(yes/no)</p>
-<p>一直输入yes直到出现最后一步有一个询问你是否安装vscode，emm如果你没有需要就输入no。</p>
-
-        <h3 id="二、安装pycharm">
-          <a href="#二、安装pycharm" class="heading-link"><i class="fas fa-link"></i></a><a href="#二、安装pycharm" class="headerlink" title="二、安装pycharm"></a>二、安装pycharm</h3>
-      <p>首先进入到具有Anaconda安装包的目录下</p>
-<p><code>cd home/dxs/anaconda</code>, 回车</p>
-<p>输入ls查看pycharm文件夹的文件夹名<img src="/2021/10/08/labsever/images/labsever/image-20211101205032654.png" alt="image-20211101205032654"></p>
-<p>linux下的复制快捷键是<strong>ctrl+alt+c</strong></p>
-<p>粘贴是<strong>ctrl+alt+v</strong></p>
-<p>使用复制快捷键复制这个长文件夹名，输入cd 粘贴文件夹名/bin</p>
-<p><code>cd pycharm-community-2020.2.2/bin</code></p>
-<p>回车，如上图所示红线下面的命令</p>
-<p>然后输入 <code>./pycharm.sh</code> 回车开始安装</p>
-<p>然后会弹出对话框</p>
-<p><img src="/2021/10/08/labsever/images/labsever/image-20211101205511516.png" alt="image-20211101205511516"></p>
-<p><img src="/2021/10/08/labsever/images/labsever/image-20211101205539700.png" alt="image-20211101205539700"></p>
-<p>选择界面风格</p>
-<p><img src="/2021/10/08/labsever/images/labsever/image-20211101205632388.png" alt="image-20211101205632388"></p>
-<p>选一个好看的点击next</p>
-<p>下一个界面不要选择创建直接下一步就完成了安装</p>
-
-        <h4 id="下次怎么进入pycharm">
-          <a href="#下次怎么进入pycharm" class="heading-link"><i class="fas fa-link"></i></a><a href="#下次怎么进入pycharm" class="headerlink" title="下次怎么进入pycharm"></a>下次怎么进入pycharm</h4>
-      <p>先给它创建一个快捷方式，在桌面上右键选择create launcher</p>
-<p><img src="/2021/10/08/labsever/images/labsever/image-20211101211141456.png" alt="image-20211101211141456"></p>
-<p>输入名字，点击command旁边的小文件夹，找到pycharm的bin文件夹找到pycharm.sh选中点击open</p>
-<p><img src="/2021/10/08/labsever/images/labsever/image-20211101211401520.png" alt="image-20211101211401520"></p>
-<p>点击icon给它选择一个图标，search icon中选择image files，在弹出的选择目录中还在这个bin目录里面可以找到这个图标，选择点击ok就好啦</p>
-<p><img src="/2021/10/08/labsever/images/labsever/image-20211101211556431.png" alt="image-20211101211556431"></p>
-<p><img src="/2021/10/08/labsever/images/labsever/image-20211101211710022.png" alt="image-20211101211710022"></p>
-<p><img src="/2021/10/08/labsever/images/labsever/image-20211101211747217.png" alt="image-20211101211747217"></p>
-<p>打上第一个勾点击create，桌面上就有pycharm了，双击打开点击launch anyway就打开了</p>
-<p><img src="/2021/10/08/labsever/images/labsever/image-20211101211825065.png" alt="image-20211101211825065"></p>
-<p><img src="/2021/10/08/labsever/images/labsever/image-20211101211905407.png" alt="image-20211101211905407"></p>
-
-        <h3 id="三、pytorch环境搭建">
-          <a href="#三、pytorch环境搭建" class="heading-link"><i class="fas fa-link"></i></a><a href="#三、pytorch环境搭建" class="headerlink" title="三、pytorch环境搭建"></a>三、pytorch环境搭建</h3>
-      <p>右击桌面找到Applications-&gt;system-&gt;Xfce Terminal点击打开终端</p>
-<p><img src="/2021/10/08/labsever/images/labsever/image-20211102102926834.png" alt="image-20211102102926834"></p>
-<p>1、进入conda环境，在终端中输入下面指令进入到创建好的torchgpu虚拟环境</p>
-<figure class="highlight plaintext"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">source activate torchgpu</span><br></pre></td></tr></table></div></figure>
-
-<p>3、安装pytorch</p>
-<p><img src="/2021/10/08/labsever/images/labsever/image-20211101221521349.png" alt="image-20211101221521349"></p>
-<p><code>conda install pytorch torchvision torchaudio cudatoolkit=10.2 -c pytorch</code> 复制这行代码，回车开始安装</p>
-<p>出现yes/no全部yes即可</p>
-<p>4、安装李沐的d2l包，里面附带有jupyter，推荐安装</p>
-<p><code>pip install d2l</code></p>
-<p>至此pytorch需要的一些包和环境安装完毕</p>
-
-        <h3 id="四、尝试使用jupyter编写代码">
-          <a href="#四、尝试使用jupyter编写代码" class="heading-link"><i class="fas fa-link"></i></a><a href="#四、尝试使用jupyter编写代码" class="headerlink" title="四、尝试使用jupyter编写代码"></a>四、尝试使用jupyter编写代码</h3>
-      <p>按照上面的方法打开终端并进入到torchgpu环境下，输入 <code>jupyter notebook</code>回车会弹出浏览器,即可使用jupyter编写代码</p>
-<p><img src="/2021/10/08/labsever/images/labsever/image-20211102104101453.png" alt="image-20211102104101453"></p>
-<p><img src="/2021/10/08/labsever/images/labsever/image-20211102104150415.png" alt="image-20211102104150415"></p>
-
-        <h3 id="五、尝试使用pycharm编写代码">
-          <a href="#五、尝试使用pycharm编写代码" class="heading-link"><i class="fas fa-link"></i></a><a href="#五、尝试使用pycharm编写代码" class="headerlink" title="五、尝试使用pycharm编写代码"></a>五、尝试使用pycharm编写代码</h3>
-      <p>pycharm还是跟windows上一样设置环境为创建的conda虚拟环境torchgpu</p>
-<p>点击file-&gt;settings-&gt;Project Interpreter-&gt;小齿轮按钮</p>
-<p><img src="/2021/10/08/labsever/images/labsever/image-20211102110238056.png" alt="image-20211102110238056"></p>
-<p>conda environments-&gt;existing enviornment点击小文件夹按钮</p>
-<p>依次找到路径 /home/dxs(自己的用户名)/anaconda3/envs/torchgpu/bin/python</p>
-<p>点击ok apply</p>
-<p>返回之后右下角出现（torchgpu）说明环境已经切换完毕</p>
-<p><img src="/2021/10/08/labsever/images/labsever/image-20211102110856616.png" alt="image-20211102110856616"></p>
-
-        <h3 id="六、使用gpu之前的一些注意事项">
-          <a href="#六、使用gpu之前的一些注意事项" class="heading-link"><i class="fas fa-link"></i></a><a href="#六、使用gpu之前的一些注意事项" class="headerlink" title="六、使用gpu之前的一些注意事项"></a>六、使用gpu之前的一些注意事项</h3>
-      <p>使用gpu之前先打开终端输入 <code>nvidia-smi</code>查看显卡的使用状态</p>
-<p><img src="/2021/10/08/labsever/images/labsever/image-20211102111112560.png" alt="image-20211102111112560"></p>
-<p>可以看到第一块显卡（GPU0）的显存使用很大，我们尽量选择较为空闲的显卡比如GPU7，以避免与师兄师姐争用显存，从GPU7显存使用2MiB可见较为空闲，因此在训练的代码中注意将训练设备设置成CUDA:7 即GPU7</p>
-<p>原代码：</p>
-<p><img src="/2021/10/08/labsever/images/labsever/image-20211102111531575.png" alt="image-20211102111531575"></p>
-<p>只使用GPU7的改正的代码：</p>
-<p><img src="/2021/10/08/labsever/images/labsever/image-20211102111612414.png" alt="image-20211102111612414"></p>
-<p>到此，实验室服务器探索暂时告一段落，以后有需要会接着尝试。</p>
 </div></div></article><article class="postlist-item post"><header class="post-header"><h1 class="post-title"><a class="post-title__link" href="/2021/09/08/Softmax/">Softmax的Pytorch实现分类任务</a></h1><div class="post-meta"><span class="post-meta-item post-meta-item--createtime"><span class="post-meta-item__icon"><i class="far fa-calendar-plus"></i></span><span class="post-meta-item__info">发表于</span><span class="post-meta-item__value">2021-09-08</span></span><span class="post-meta-item post-meta-item--updatetime"><span class="post-meta-item__icon"><i class="far fa-calendar-check"></i></span><span class="post-meta-item__info">更新于</span><span class="post-meta-item__value">2021-09-15</span></span></div></header><div class="post-body"><div class="post-excerpt">
         <h4 id="一、Softmax回归的相关原理">
           <a href="#一、Softmax回归的相关原理" class="heading-link"><i class="fas fa-link"></i></a><a href="#一、Softmax回归的相关原理" class="headerlink" title="一、Softmax回归的相关原理"></a>一、Softmax回归的相关原理</h4>
