@@ -28,7 +28,361 @@ var CONFIG = {
   sourcePath: {"js":"js","css":"css","images":"images"},
 };
 
-window.CONFIG = CONFIG;</script><meta name="generator" content="Hexo 5.4.0"></head><body><div class="container" id="container"><header class="header" id="header"><div class="header-inner"><nav class="header-nav header-nav--fixed"><div class="header-nav-inner"><div class="header-nav-menubtn"><i class="fas fa-bars"></i></div><div class="header-nav-menu"><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/"><span class="header-nav-menu-item__icon"><i class="fas fa-home"></i></span><span class="header-nav-menu-item__text">首页</span></a></div><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/about/"><span class="header-nav-menu-item__icon"><i class="fas fa-address-card"></i></span><span class="header-nav-menu-item__text">关于</span></a></div><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="javascript:;" onclick="return false;"><span class="header-nav-menu-item__icon"><i class="fas fa-edit"></i></span><span class="header-nav-menu-item__text">文章</span></a><div class="header-nav-submenu"><div class="header-nav-submenu-item"><a class="header-nav-submenu-item__link" href="/archives/"><span class="header-nav-submenu-item__icon"><i class="fas fa-folder-open"></i></span><span class="header-nav-submenu-item__text">归档</span></a></div><div class="header-nav-submenu-item"><a class="header-nav-submenu-item__link" href="/categories/"><span class="header-nav-submenu-item__icon"><i class="fas fa-layer-group"></i></span><span class="header-nav-submenu-item__text">分类</span></a></div><div class="header-nav-submenu-item"><a class="header-nav-submenu-item__link" href="/tags/"><span class="header-nav-submenu-item__icon"><i class="fas fa-tags"></i></span><span class="header-nav-submenu-item__text">标签</span></a></div></div></div></div><div class="header-nav-mode"><div class="mode"><div class="mode-track"><span class="mode-track-moon"></span><span class="mode-track-sun"></span></div><div class="mode-thumb"></div></div></div></div></nav><div class="header-banner"><div class="header-banner-info"><div class="header-banner-info__title">Strive's Blog</div><div class="header-banner-info__subtitle">You gotta conquer the monster in your head and then you'll fly.</div></div><div class="header-banner-arrow"><div class="header-banner-arrow__icon"><i class="fas fa-angle-down"></i></div></div></div></div></header><main class="main" id="main"><div class="main-inner"><div class="content-wrap" id="content-wrap"><div class="content content-home" id="content"><section class="postlist"><article class="postlist-item post"><header class="post-header"><h1 class="post-title"><a class="post-title__link" href="/2021/12/17/ResNet/">传统网络实现之ResNet</a></h1><div class="post-meta"><span class="post-meta-item post-meta-item--createtime"><span class="post-meta-item__icon"><i class="far fa-calendar-plus"></i></span><span class="post-meta-item__info">发表于</span><span class="post-meta-item__value">2021-12-17</span></span><span class="post-meta-item post-meta-item--updatetime"><span class="post-meta-item__icon"><i class="far fa-calendar-check"></i></span><span class="post-meta-item__info">更新于</span><span class="post-meta-item__value">2021-12-17</span></span></div></header><div class="post-body"><div class="post-excerpt">
+window.CONFIG = CONFIG;</script><meta name="generator" content="Hexo 5.4.0"></head><body><div class="container" id="container"><header class="header" id="header"><div class="header-inner"><nav class="header-nav header-nav--fixed"><div class="header-nav-inner"><div class="header-nav-menubtn"><i class="fas fa-bars"></i></div><div class="header-nav-menu"><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/"><span class="header-nav-menu-item__icon"><i class="fas fa-home"></i></span><span class="header-nav-menu-item__text">首页</span></a></div><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/about/"><span class="header-nav-menu-item__icon"><i class="fas fa-address-card"></i></span><span class="header-nav-menu-item__text">关于</span></a></div><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="javascript:;" onclick="return false;"><span class="header-nav-menu-item__icon"><i class="fas fa-edit"></i></span><span class="header-nav-menu-item__text">文章</span></a><div class="header-nav-submenu"><div class="header-nav-submenu-item"><a class="header-nav-submenu-item__link" href="/archives/"><span class="header-nav-submenu-item__icon"><i class="fas fa-folder-open"></i></span><span class="header-nav-submenu-item__text">归档</span></a></div><div class="header-nav-submenu-item"><a class="header-nav-submenu-item__link" href="/categories/"><span class="header-nav-submenu-item__icon"><i class="fas fa-layer-group"></i></span><span class="header-nav-submenu-item__text">分类</span></a></div><div class="header-nav-submenu-item"><a class="header-nav-submenu-item__link" href="/tags/"><span class="header-nav-submenu-item__icon"><i class="fas fa-tags"></i></span><span class="header-nav-submenu-item__text">标签</span></a></div></div></div></div><div class="header-nav-mode"><div class="mode"><div class="mode-track"><span class="mode-track-moon"></span><span class="mode-track-sun"></span></div><div class="mode-thumb"></div></div></div></div></nav><div class="header-banner"><div class="header-banner-info"><div class="header-banner-info__title">Strive's Blog</div><div class="header-banner-info__subtitle">你我期许的绝非遥不可及</div></div><div class="header-banner-arrow"><div class="header-banner-arrow__icon"><i class="fas fa-angle-down"></i></div></div></div></div></header><main class="main" id="main"><div class="main-inner"><div class="content-wrap" id="content-wrap"><div class="content content-home" id="content"><section class="postlist"><article class="postlist-item post"><header class="post-header"><h1 class="post-title"><a class="post-title__link" href="/2021/12/27/ReID-base/">行人重识别需要的一些基础</a></h1><div class="post-meta"><span class="post-meta-item post-meta-item--createtime"><span class="post-meta-item__icon"><i class="far fa-calendar-plus"></i></span><span class="post-meta-item__info">发表于</span><span class="post-meta-item__value">2021-12-27</span></span><span class="post-meta-item post-meta-item--updatetime"><span class="post-meta-item__icon"><i class="far fa-calendar-check"></i></span><span class="post-meta-item__info">更新于</span><span class="post-meta-item__value">2021-12-27</span></span></div></header><div class="post-body"><div class="post-excerpt">
+        <h3 id="行人重识别需要的一些基础">
+          <a href="#行人重识别需要的一些基础" class="heading-link"><i class="fas fa-link"></i></a><a href="#行人重识别需要的一些基础" class="headerlink" title="行人重识别需要的一些基础"></a>行人重识别需要的一些基础</h3>
+      
+        <h4 id="一、回顾神经网络的一些基础">
+          <a href="#一、回顾神经网络的一些基础" class="heading-link"><i class="fas fa-link"></i></a><a href="#一、回顾神经网络的一些基础" class="headerlink" title="一、回顾神经网络的一些基础"></a>一、回顾神经网络的一些基础</h4>
+      
+        <h4 id="1-1-卷积回顾">
+          <a href="#1-1-卷积回顾" class="heading-link"><i class="fas fa-link"></i></a><a href="#1-1-卷积回顾" class="headerlink" title="1.1 卷积回顾"></a>1.1 卷积回顾</h4>
+      
+        <h5 id="1-1-1-普通卷积">
+          <a href="#1-1-1-普通卷积" class="heading-link"><i class="fas fa-link"></i></a><a href="#1-1-1-普通卷积" class="headerlink" title="1.1.1 普通卷积"></a>1.1.1 普通卷积</h5>
+      <p>卷积的功能是特征提取。步长不等于0的时候起到下采样的作用。卷积层的参数量的计算公式如下：</p>
+<p><img src="/images/ReID-base/image-20211224100331547.png" alt="image-20211224100331547"></p>
+<p>一个小Tips：填充padding和kernel_size往往需要配套使用，主要设计是让<strong>2*padding+1=k</strong>。从而使输出size只与stride和输入的尺寸有关。举例如kernel_size选择为3*3，一般选择padding=1，k=5选择padding=2。输出特征图的size计算公式如下</p>
+<p><img src="/images/ReID-base/image-20211224100452800.png" alt="image-20211224100452800"></p>
+
+        <h5 id="1-1-2-1-1卷积">
+          <a href="#1-1-2-1-1卷积" class="heading-link"><i class="fas fa-link"></i></a><a href="#1-1-2-1-1卷积" class="headerlink" title="1.1.2 1*1卷积"></a>1.1.2 1*1卷积</h5>
+      <p><img src="/images/ReID-base/image-20211224102629624.png" alt="image-20211224102629624"></p>
+<p>一般不独立使用。主要是作为降维操作使用，如ResNet的BottleNeck层的快速连接中为了考虑训练时间成本对特征图先用1*1卷积层降维再升维。</p>
+
+        <h5 id="1-1-3-分组卷积">
+          <a href="#1-1-3-分组卷积" class="heading-link"><i class="fas fa-link"></i></a><a href="#1-1-3-分组卷积" class="headerlink" title="1.1.3 分组卷积"></a>1.1.3 分组卷积</h5>
+      <p>完成的功能：对输入特征图在通道层面平均分成几组，每组在对应的卷积层做卷积之后再在通道维度上做拼接得到输出。</p>
+<p><img src="/images/ReID-base/image-20211224103125148.png" alt="image-20211224103125148"></p>
+<p>代码实现：修改Conv2d的group参数值</p>
+<p><img src="/images/ReID-base/image-20211224103153758.png" alt="image-20211224103153758"></p>
+<p>常用的情形：</p>
+<p>由于分组卷积需要的参数量较少，常用于模型特别大作为模型压缩的一种手段。常作为对显存不够的一种妥协。</p>
+<p>缺点：</p>
+<p>由于分组卷积并不是整个feature map参与卷积特征提取，而是每一部分的输出只与一部分的特征图有关系，特征图之间的局部信息没有完全打通。两部分的输出之间可能存在的信息被忽略。</p>
+
+        <h5 id="1-1-4-Channel-wise-Depthwise-Convolution">
+          <a href="#1-1-4-Channel-wise-Depthwise-Convolution" class="heading-link"><i class="fas fa-link"></i></a><a href="#1-1-4-Channel-wise-Depthwise-Convolution" class="headerlink" title="1.1.4 Channel-wise/Depthwise Convolution"></a>1.1.4 Channel-wise/Depthwise Convolution</h5>
+      <p><img src="/images/ReID-base/image-20211224103739036.png" alt="image-20211224103739036"></p>
+
+        <h5 id="1-1-5-空洞卷积（Dilated-Convolution">
+          <a href="#1-1-5-空洞卷积（Dilated-Convolution" class="heading-link"><i class="fas fa-link"></i></a><a href="#1-1-5-空洞卷积（Dilated-Convolution" class="headerlink" title="1.1.5 空洞卷积（Dilated Convolution)"></a>1.1.5 空洞卷积（Dilated Convolution)</h5>
+      <p>空洞卷积引入了一个称为 “**扩张率(dilation rate)**”的超参数(hyper-parameter)，该参数定义了卷积核处理数据时各值的间距。扩张率中文也叫空洞数(Hole Size)。空洞卷积完成的操作如下图所示：</p>
+<p><img src="/images/ReID-base/image-20211224142608718.png" alt="image-20211224142608718"></p>
+<p><img src="/images/ReID-base/dilation.gif" alt="image-20211224142608718"></p>
+<p>上图中，黑色的圆点表示3×3卷积核，灰色地带表示卷积之后的感受野。a，b，c为：</p>
+<ul>
+<li>a是普通的卷积过程**(dilation rate = 1)**,卷积后的感受野为3，正常的卷积过程dilation默认值为1</li>
+<li>b是dilation rate = 2的空洞卷积,卷积后的感受野为5</li>
+<li>c是dilation rate = 3的空洞卷积,卷积后的感受野为7</li>
+</ul>
+<p>使用空洞卷积的优点在于：不改变输出特征图的尺寸的情况下，增大了感受野。神经元感受野的值越大表示其能接触到的原始图像范围就越大，也意味着它可能蕴含更为全局，语义层次更高的特征；相反，值越小则表示其所包含的特征越趋向局部和细节。因此感受野的值可以用来大致判断每一层的抽象层次。</p>
+<p>当每层的卷积核大小设为3×3不变，每一层设置不同的dilation rate，那么每层的感受野也就不同。每层得到的输出特征图中也就获得了多尺度的信息，而且特征图的尺寸并没有发生变化。如果采用较大的卷积核实现扩大感受野，后续还需要加入池化层等下采样从而丢失信息。空洞卷积就避免了这一信息损失。</p>
+<p>感受野计算过程如下：</p>
+<p><img src="/images/ReID-base/image-20211224150656786.png" alt="image-20211224150656786"></p>
+
+        <h4 id="1-2-模型压缩与加速">
+          <a href="#1-2-模型压缩与加速" class="heading-link"><i class="fas fa-link"></i></a><a href="#1-2-模型压缩与加速" class="headerlink" title="1.2 模型压缩与加速"></a>1.2 模型压缩与加速</h4>
+      
+        <h5 id="1-2-1-理论基础">
+          <a href="#1-2-1-理论基础" class="heading-link"><i class="fas fa-link"></i></a><a href="#1-2-1-理论基础" class="headerlink" title="1.2.1 理论基础"></a>1.2.1 理论基础</h5>
+      <p>必要性<br> 在许多网络结构中，如VGG-16网络，参数数量1亿3千多万，占用500MB空间，需要进行309亿次浮点运算才能完成一次图像识别任务。</p>
+<p>可行性<br> 论文<Predicting parameters in deep learning>提出，其实在很多深度的神经网络中存在着显著的冗余。仅仅使用很少一部分（5%）权值就足以预测剩余的权值。该论文还提出这些剩下的权值甚至可以直接不用被学习。也就是说，仅仅训练一小部分原来的权值参数就有可能达到和原来网络相近甚至超过原来网络的性能（可以看作一种正则化）。</Predicting></p>
+<p>最终目的<br> 最大程度的减小模型复杂度，减少模型存储需要的空间，也致力于加速模型的训练和推测</p>
+
+        <h5 id="1-2-2-方法分类">
+          <a href="#1-2-2-方法分类" class="heading-link"><i class="fas fa-link"></i></a><a href="#1-2-2-方法分类" class="headerlink" title="1.2.2 方法分类"></a>1.2.2 方法分类</h5>
+      <p><img src="/images/ReID-base/image-20211224163346434.png" alt="image-20211224163346434"></p>
+
+        <h5 id="1-2-3-前端压缩：">
+          <a href="#1-2-3-前端压缩：" class="heading-link"><i class="fas fa-link"></i></a><a href="#1-2-3-前端压缩：" class="headerlink" title="1.2.3 前端压缩："></a>1.2.3 前端压缩：</h5>
+      <p>①、知识蒸馏</p>
+<p>采取的方法是迁移学习，通过预训练好的教师模型(Teacher Model)的输出作为监督信号取训练另外一个轻量化的网络(Student Model)</p>
+<p><img src="/images/ReID-base/image-20211225090519930.png" alt="image-20211225090519930"></p>
+<p><img src="/images/ReID-base/image-20211225090645290.png" alt="image-20211225090645290"></p>
+<p>学生和老师都对图片分别预测，目的是让学生和老师预测结果的概率分布尽可能像。老师和学生的预测结果p1,p2。对p1和p2计算KL散度作为一种loss加入到学生网络的loss Lc2中共同优化。</p>
+
+        <h4 id="二-行人重识别-度量学习与表征学习">
+          <a href="#二-行人重识别-度量学习与表征学习" class="heading-link"><i class="fas fa-link"></i></a><a href="#二-行人重识别-度量学习与表征学习" class="headerlink" title="二 行人重识别   度量学习与表征学习"></a>二 行人重识别   度量学习与表征学习</h4>
+      <p><img src="/images/ReID-base/image-20211225092537689.png" alt="image-20211225092537689"></p>
+
+        <h5 id="2-1-系统构成">
+          <a href="#2-1-系统构成" class="heading-link"><i class="fas fa-link"></i></a><a href="#2-1-系统构成" class="headerlink" title="2.1 系统构成"></a>2.1 系统构成</h5>
+      <p><img src="/images/ReID-base/image-20211225092830122.png" alt="image-20211225092830122"></p>
+<p>原始视频帧进行行人检测模块生成Gallery集，待检索图片集称之为Probe。虽然系统分为两个模块但是学术研究大多只集中在行人重识别的特征提取部分。</p>
+<p><img src="/images/ReID-base/image-20211225100413384.png" alt="image-20211225100413384"></p>
+
+        <h5 id="2-2-评价指标">
+          <a href="#2-2-评价指标" class="heading-link"><i class="fas fa-link"></i></a><a href="#2-2-评价指标" class="headerlink" title="2.2 评价指标"></a>2.2 评价指标</h5>
+      <p>①rank-k/top-k</p>
+<p><img src="/images/ReID-base/image-20211225101543620.png" alt="image-20211225101543620"></p>
+<p>rank-k计算的是整个探针集Probe中的所有图片的命中概率。</p>
+<p>对Probe1，和Probe3，Rank1击中，那么整个探针集的rank1就是2/5=0.4</p>
+<p>Probe2 Rank-4击中，与Probe1和Probe3加起来就是3/5=0.6的Rank-5</p>
+<p>② CMC曲线</p>
+<p>其实就是Rank-k的曲线</p>
+<p><img src="/images/ReID-base/image-20211225102201277.png" alt="image-20211225102201277"></p>
+<p>③ mAP(mean average precision)</p>
+<p>反映检索的人在数据库中所有正确图片排在排序列表前面的成都，更加全面的衡量ReID算法的性能。</p>
+<p>以下图Probe1为例，排序列表里面有3张正确的身份图片。分别是Top1、Top4、Top9</p>
+<p>ap的计算如下图所示，mAP是对Query集里全部的AP取平均。</p>
+<p><img src="/images/ReID-base/image-20211225102415691.png" alt="image-20211225102415691"></p>
+<p>④ 评价模式</p>
+<p><img src="/images/ReID-base/image-20211225103052466.png" alt="image-20211225103052466"></p>
+
+        <h5 id="2-3-表征学习常用的损失Loss">
+          <a href="#2-3-表征学习常用的损失Loss" class="heading-link"><i class="fas fa-link"></i></a><a href="#2-3-表征学习常用的损失Loss" class="headerlink" title="2.3 表征学习常用的损失Loss"></a>2.3 表征学习常用的损失Loss</h5>
+      
+        <h6 id="2-3-1-损失的分类">
+          <a href="#2-3-1-损失的分类" class="heading-link"><i class="fas fa-link"></i></a><a href="#2-3-1-损失的分类" class="headerlink" title="2.3.1 损失的分类"></a>2.3.1 损失的分类</h6>
+      <p><img src="/images/ReID-base/image-20211225143228526.png" alt="image-20211225143228526"></p>
+<p><img src="/images/ReID-base/image-20211225143426922.png" alt="image-20211225143426922"></p>
+
+        <h6 id="2-3-2-分类损失">
+          <a href="#2-3-2-分类损失" class="heading-link"><i class="fas fa-link"></i></a><a href="#2-3-2-分类损失" class="headerlink" title="2.3.2 分类损失"></a>2.3.2 分类损失</h6>
+      <p><img src="/images/ReID-base/image-20211225143943301.png" alt="image-20211225143943301"></p>
+<p>为什么在测试阶段需要丢弃分类FC层？因为在训练集和测试集中的行人ID并不相同，直接用训练集的FC输出分类ID毫无意义。因此在测试阶段直接使用训练的特征提取层提取的Probe的特征向量与Gallery比对检索。</p>
+
+        <h6 id="2-3-3-属性损失">
+          <a href="#2-3-3-属性损失" class="heading-link"><i class="fas fa-link"></i></a><a href="#2-3-3-属性损失" class="headerlink" title="2.3.3 属性损失"></a>2.3.3 属性损失</h6>
+      <p><img src="/images/ReID-base/image-20211225144337836.png" alt="image-20211225144337836"></p>
+<p>由于行人具有一系列的属性，比如头发的颜色，上衣的颜色，裤子颜色，鞋子的种类以及颜色等等。这些每一个属性都可以和ID一样作为一个分类来输出分类结果。因此每个属性都可以通过softmax计算交叉熵损失与ID损失一起组成总的loss进行优化。</p>
+<p>当然属性损失作为分类损失的类似，在测试阶段由于ID、属性等等与训练集不同，在测试阶段还是将所有的分类FC全部丢弃掉，指使用特征提取层。</p>
+
+        <h6 id="2-3-4-验证损失">
+          <a href="#2-3-4-验证损失" class="heading-link"><i class="fas fa-link"></i></a><a href="#2-3-4-验证损失" class="headerlink" title="2.3.4 验证损失"></a>2.3.4 验证损失</h6>
+      <p><img src="/images/ReID-base/image-20211225145235952.png" alt="image-20211225145235952"></p>
+<p>验证损失一般是训练一个特征提取网络，同时输入两张图片提取特征之后将两个特征进行特征融合(比如直接相减计算特征向量的差异)，融合后的特征输入到后续网络通过特征提取计算作为一个二分类问题输出是/否属于一个ID。用于二分类的损失成为验证损失(如上图右上角的Verification Subnet)。</p>
+<p>验证损失往往和ID损失一起使用，共同优化整个网络。如右下角的(Classification Subnet)，两张图片可以分别计算ID Loss。</p>
+
+        <h6 id="2-3-5-表征学习的总结">
+          <a href="#2-3-5-表征学习的总结" class="heading-link"><i class="fas fa-link"></i></a><a href="#2-3-5-表征学习的总结" class="headerlink" title="2.3.5 表征学习的总结"></a>2.3.5 表征学习的总结</h6>
+      <p><img src="/images/ReID-base/image-20211225145942198.png" alt="image-20211225145942198"></p>
+
+        <h5 id="2-4-度量学习">
+          <a href="#2-4-度量学习" class="heading-link"><i class="fas fa-link"></i></a><a href="#2-4-度量学习" class="headerlink" title="2.4 度量学习"></a>2.4 度量学习</h5>
+      <p><img src="/images/ReID-base/image-20211225150221293.png" alt="image-20211225150221293"></p>
+<p>使用简单化的描述语言来说就是，度量学习ReID任务主要需要做以下工作</p>
+<p>①、训练出一个特征提取网络，对图片提取出特征向量。</p>
+<p>②、定义一个距离度量损失函数，计算两张图片特征向量之间的度量距离。</p>
+<p>③、计算度量损失函数，最优化度量损失函数使相同行人的图片对之间的距离尽可能小，不同行人的图片对之间的距离尽可能大。通过最优化度量损失函数去优化特征提取网络。</p>
+<p><em><strong>深度学习解决ReID问题的目标在于提取更优的特征，更加具有度量属性的特征。</strong></em></p>
+
+        <h6 id="2-4-1-度量学习的流程">
+          <a href="#2-4-1-度量学习的流程" class="heading-link"><i class="fas fa-link"></i></a><a href="#2-4-1-度量学习的流程" class="headerlink" title="2.4.1 度量学习的流程"></a>2.4.1 度量学习的流程</h6>
+      <p>基本也是行人检测–特征提取–训练的流程。</p>
+<p><img src="/images/ReID-base/image-20211225151200154.png" alt="image-20211225151200154"></p>
+
+        <h5 id="2-5-度量学习的损失函数">
+          <a href="#2-5-度量学习的损失函数" class="heading-link"><i class="fas fa-link"></i></a><a href="#2-5-度量学习的损失函数" class="headerlink" title="2.5 度量学习的损失函数"></a>2.5 度量学习的损失函数</h5>
+      
+        <h6 id="2-5-1-对比损失Contrastive-loss">
+          <a href="#2-5-1-对比损失Contrastive-loss" class="heading-link"><i class="fas fa-link"></i></a><a href="#2-5-1-对比损失Contrastive-loss" class="headerlink" title="2.5.1 对比损失Contrastive loss"></a>2.5.1 对比损失Contrastive loss</h6>
+      <p><img src="/images/ReID-base/image-20211227094927928.png" alt="image-20211227094927928"></p>
+<p>对比损失的损失函数如上图<em>Lc</em>所示。</p>
+<p>当输入的一对图片是正样本对a,b时，因为正样本y=1，<em>Lc</em>的后半部分为0，优化目标就是<em>Lc</em>的前半部分，也就是a和b特征向量的距离。通过优化器最小化损失函数使正样本对间的距离趋于0。</p>
+<p>当输入的一对图片是负样本对a,b时，因为负样本y=0，<em>Lc</em>的前半部分为0，优化目标就是<em>Lc</em>的后半部分。由于<img src="/images/ReID-base/image-20211227102409369.png" alt="image-20211227102409369" style="zoom:40%;"></p>
+<p>z = α-距离。当二者之间的距离大于α时, z小于0，max(z, 0) = 0，无需优化。当二者之间的距离越小于α时, z大于0， <em>Lc</em>越大，优化器将优化 <em>Lc</em>使其向0的方向优化，即使二者之间的距离向大于α的方向优化。也就实现了推开负样本的期望功能。其中α是自己设置的一个超参数，作为负样本分开的阈值。</p>
+
+        <h6 id="2-5-2-三元组损失Triplet-loss">
+          <a href="#2-5-2-三元组损失Triplet-loss" class="heading-link"><i class="fas fa-link"></i></a><a href="#2-5-2-三元组损失Triplet-loss" class="headerlink" title="2.5.2 三元组损失Triplet loss"></a>2.5.2 三元组损失Triplet loss</h6>
+      <p><img src="/images/ReID-base/image-20211227104924310.png" alt="image-20211227104924310"></p>
+<p>三元组损失主要将样本分为Anchor、Positive、Negative。一个三元组的构成方式是从训练集中随机选取一个样本，该样本称为Anchor，记为x_a， 然后再随机抽取一个与Anchor属于同一类的样本x_p和一个与Anchor属于不同类的样本x_n。由此构成一个(Anchor、Positive、Negative)三元组。Triplet Loss的目的在于通过学习，让x_a和x_p特征表达之间的距离尽可能小，而x_a和x_n之间的距离尽可能大。并且要让_a和x_n之间的距离和x_a和x_p之间的距离之间存在一个最小间隔α。即目标函数的优化方向为：</p>
+<p><img src="/images/ReID-base/image-20211227105706609.png" alt="image-20211227105706609"></p>
+<p>因此损失函数的形式为</p>
+<p><img src="/images/ReID-base/image-20211227110756868.png" alt="image-20211227110756868"></p>
+<p><img src="/images/ReID-base/image-20211227111029204.png" alt="image-20211227111029204"></p>
+
+        <h6 id="2-5-3-改进的三元组损失">
+          <a href="#2-5-3-改进的三元组损失" class="heading-link"><i class="fas fa-link"></i></a><a href="#2-5-3-改进的三元组损失" class="headerlink" title="2.5.3 改进的三元组损失"></a>2.5.3 改进的三元组损失</h6>
+      <p><img src="/images/ReID-base/image-20211227111131013.png" alt="image-20211227111131013"></p>
+<p>其实就在原三元组损失的基础上加上了一项x_a和x_p之间的距离。使得在满足三元组损失优化目标的同时使x_a和x_p之间的距离尽可能的小。</p>
+
+        <h6 id="2-5-4-四元组损失-Quadruplet-loss">
+          <a href="#2-5-4-四元组损失-Quadruplet-loss" class="heading-link"><i class="fas fa-link"></i></a><a href="#2-5-4-四元组损失-Quadruplet-loss" class="headerlink" title="2.5.4 四元组损失 Quadruplet loss"></a>2.5.4 四元组损失 Quadruplet loss</h6>
+      <p><img src="/images/ReID-base/image-20211227111507714.png" alt="image-20211227111507714"></p>
+<p>四元组损失也是基于三元组损失的基础上，但是需要四张图片组成一个四元组。一个四元组的构成为从训练集中随机选取一个样本，该样本称为Anchor，记为x_a， 然后再随机抽取一个与Anchor属于同一类的样本x_p和<strong>两个</strong>与Anchor属于不同类的样本x_n1和x_n2。并且这两个负样本n1和n2<strong>分别属于两个不同的ID</strong>。</p>
+<p>四元组损失的公式如上图所示。第一项使正常的三元组损失。而第二项分别计算Anchor和正样本的距离da,p和两个负样本的距离dn1,n2。使得正样本之间的距离不仅小于正、负样本对的距离，也小于两张来自不同类负样本之间的距离。</p>
+<p>功能：</p>
+<p>进一步缩小正样本之间的距离，在推开正负样本对的距离的同时推开不同类的负样本对之间的距离。</p>
+
+        <h6 id="2-5-5-TriHard-Loss-Batch-Hard-Loss-批难三元组损失">
+          <a href="#2-5-5-TriHard-Loss-Batch-Hard-Loss-批难三元组损失" class="heading-link"><i class="fas fa-link"></i></a><a href="#2-5-5-TriHard-Loss-Batch-Hard-Loss-批难三元组损失" class="headerlink" title="2.5.5 TriHard Loss/Batch-Hard Loss 批难三元组损失"></a>2.5.5 TriHard Loss/Batch-Hard Loss 批难三元组损失</h6>
+      <p><img src="/images/ReID-base/image-20211227112344030.png" alt="image-20211227112344030"></p>
+<p><img src="/images/ReID-base/image-20211227134125333.png" alt="image-20211227134125333"></p>
+<p><img src="/images/ReID-base/image-20211227142426071.png" alt="image-20211227142426071"></p>
+<p>如图所示，TriHard Loss实现的方式是构建这样一个距离矩阵。如上图，每个batch选取N个ID的行人，每个ID选取3张图片。将这个batch内的全部图片两两计算距离填入上方的矩阵。对角线上表示同一张图片自己到自己的距离，因此为0。红色矩阵块表示同一个ID的三张图片之间的距离，绿色矩阵块表示不同ID的图片之间的距离。衡量是否Hrad然是通过距离来衡量。<strong>对于红色矩阵，也就是正样本对来说，红色矩阵的每一行的最大值，以第一行为例，这一行代表行人1-1这张图片与三个正样本的距离，对于正样本来说，正样本之间的距离越大，说明越Hard。</strong>因此将红色矩阵组合起来求每一行的最大值组成一列，这一列就代表了这个batch里面的每一张图片与其对应的最Hard样本的距离。</p>
+<p><strong>同理，对正负样本对来说，距离越小越Hard</strong>。将绿色矩阵拼在一起组成方阵，求每一行的最小值。每一行的最小值组成的一列Tensor就是正负样本对的最难距离。</p>
+<p><img src="/images/ReID-base/image-20211227145701227.png" alt="image-20211227145701227"></p>
+<p>根据上述公式，累加之后除以批量大小就得到了TriHard loss。</p>
+
+        <h6 id="2-5-6-Triplet-loss-with-adaptive-weights-自适应权重三元组">
+          <a href="#2-5-6-Triplet-loss-with-adaptive-weights-自适应权重三元组" class="heading-link"><i class="fas fa-link"></i></a><a href="#2-5-6-Triplet-loss-with-adaptive-weights-自适应权重三元组" class="headerlink" title="2.5.6 Triplet loss with adaptive weights 自适应权重三元组"></a>2.5.6 Triplet loss with adaptive weights 自适应权重三元组</h6>
+      <p>批难三元组由于只考虑了极端样本的信息，有些信息没有考虑到。</p>
+<p>有文章指出批难三元组损失在某些极端情况下，比如数据集有一定数量的标注错误可能会因为训练时梯度特别大而导致网络崩溃。当网络使用批难三元组难以收敛的情况下可以考虑自适应权重三元组。</p>
+<p><img src="/images/ReID-base/image-20211227150111074.png" alt="image-20211227150111074"></p>
+
+        <h6 id="2-5-7-度量学习的总结">
+          <a href="#2-5-7-度量学习的总结" class="heading-link"><i class="fas fa-link"></i></a><a href="#2-5-7-度量学习的总结" class="headerlink" title="2.5.7 度量学习的总结"></a>2.5.7 度量学习的总结</h6>
+      <p><img src="/images/ReID-base/image-20211227150524190.png" alt="image-20211227150524190"></p>
+<p>度量学习和表征学习往往可以用来共同训练一个模型，将多个损失组合在一起共同优化一个模型。这种做法也是业界精确度比较高的一种做法。</p>
+<p><img src="/images/ReID-base/image-20211227151111989.png" alt="image-20211227151111989"></p>
+</div></div></article><article class="postlist-item post"><header class="post-header"><h1 class="post-title"><a class="post-title__link" href="/2021/12/24/C++Chapter2/">C++Primer 第二章学习笔记</a></h1><div class="post-meta"><span class="post-meta-item post-meta-item--createtime"><span class="post-meta-item__icon"><i class="far fa-calendar-plus"></i></span><span class="post-meta-item__info">发表于</span><span class="post-meta-item__value">2021-12-24</span></span><span class="post-meta-item post-meta-item--updatetime"><span class="post-meta-item__icon"><i class="far fa-calendar-check"></i></span><span class="post-meta-item__info">更新于</span><span class="post-meta-item__value">2021-12-27</span></span></div></header><div class="post-body"><div class="post-excerpt">
+        <h3 id="C-Primer第二章–变量和基本类型">
+          <a href="#C-Primer第二章–变量和基本类型" class="heading-link"><i class="fas fa-link"></i></a><a href="#C-Primer第二章–变量和基本类型" class="headerlink" title="C++ Primer第二章–变量和基本类型"></a>C++ Primer第二章–变量和基本类型</h3>
+      <p><em><strong>数据类型是程序的基础，它告诉了我们数据的意义以及我们能在数据上执行的操作。</strong></em></p>
+
+        <h4 id="一、基本内置类型">
+          <a href="#一、基本内置类型" class="heading-link"><i class="fas fa-link"></i></a><a href="#一、基本内置类型" class="headerlink" title="一、基本内置类型"></a>一、基本内置类型</h4>
+      <p>基本内置类型主要包括<strong>算术类型</strong>和<strong>空类型</strong></p>
+
+        <h5 id="1-1-算术类型">
+          <a href="#1-1-算术类型" class="heading-link"><i class="fas fa-link"></i></a><a href="#1-1-算术类型" class="headerlink" title="1.1 算术类型"></a>1.1 算术类型</h5>
+      <p>算术类型主要分为<strong>整型</strong>（integral type），和<strong>浮点型</strong>。其中<strong>字符类型</strong>与<strong>布尔类型</strong>均包括在整型之内。</p>
+<p><img src="/images/C++Chapter2/image-20211224201207827.png" alt="image-20211224201207827"></p>
+<p><strong>注：由于float类型精度有限，实际应用中常用的是double，并且二者在计算代价上相差无几。</strong></p>
+
+        <h5 id="1-2-带符号类型与不带符号类型">
+          <a href="#1-2-带符号类型与不带符号类型" class="heading-link"><i class="fas fa-link"></i></a><a href="#1-2-带符号类型与不带符号类型" class="headerlink" title="1.2 带符号类型与不带符号类型"></a>1.2 带符号类型与不带符号类型</h5>
+      <p>除去bool和扩展的字符类型之外，其它的整型可以划分为带符号和无符号的。带符号的可以表示正数、负数和0，无符号类型只能表示大于等于0的值。</p>
+<p>C++中需要无符号的值的时候，在前面加上<strong>unsinged</strong>即可，如int-&gt;unsigned int。</p>
+
+        <h5 id="1-3-字面值常量">
+          <a href="#1-3-字面值常量" class="heading-link"><i class="fas fa-link"></i></a><a href="#1-3-字面值常量" class="headerlink" title="1.3 字面值常量"></a>1.3 字面值常量</h5>
+      <p>字面值常量(literal)是指一类仅从字面上理解就能看出值的常量。每个字面值都对应一种数据类型。具体来说，字面值常量分为<strong>整型</strong>和<strong>浮点型</strong>字面值。</p>
+<p><strong>整型字面值常量</strong></p>
+<p>整型字面值可以写成十进制、八进制或者十六进制。以<strong>0开头的数表示八进制数，以0x开头的代表16进制数。</strong></p>
+<p>如：</p>
+<p><img src="/images/C++Chapter2/image-20211225195058728.png" alt="image-20211225195058728"></p>
+<p><strong>浮点型字面值</strong></p>
+<p>表现为一个小鼠或科学计数法表示的指数，指数部分用E或者e标识，但该指数实际上以10为底</p>
+<p><img src="/images/C++Chapter2/image-20211225200452808.png" alt="image-20211225200452808"></p>
+<p><strong>字符型字面值</strong></p>
+<p>表现为单引号括起来的字符或者双引号括起来的字符串。</p>
+<p>一个细节是字符串字面值实际上是由常量字符构成的数组，编译器在每个字符串的结尾处会添加一个空字符（’\0’），因此字符串的字面值的实际长度会比字符串的实际内容多1。</p>
+<p>如：</p>
+<p>‘A’ 表示一个字符型字面值，长度为1</p>
+<p>“A”表示一个字符串型字面值，长度为2</p>
+<p>可以通过添加前缀和后缀来改变字面值的默认类型</p>
+<p><img src="/images/C++Chapter2/image-20211225204253158.png" alt="image-20211225204253158"></p>
+<p><img src="/images/C++Chapter2/image-20211225204325836.png" alt="image-20211225204325836"></p>
+
+        <h4 id="二、变量">
+          <a href="#二、变量" class="heading-link"><i class="fas fa-link"></i></a><a href="#二、变量" class="headerlink" title="二、变量"></a>二、变量</h4>
+      <p><em><strong>变量实际上提供一个具名的、可供程序操作的存储空间。</strong></em>数据类型决定变量所占据的空间的大小和布局方式、以及该空间能存储的值的范围、变量能参与的运算。</p>
+<p><strong>对象是指一块能存储数据并且具有某种类型的内存空间。</strong></p>
+
+        <h5 id="2-1-变量的初始化">
+          <a href="#2-1-变量的初始化" class="heading-link"><i class="fas fa-link"></i></a><a href="#2-1-变量的初始化" class="headerlink" title="2.1 变量的初始化"></a>2.1 变量的初始化</h5>
+      
+        <h6 id="2-1-1-初始值">
+          <a href="#2-1-1-初始值" class="heading-link"><i class="fas fa-link"></i></a><a href="#2-1-1-初始值" class="headerlink" title="2.1.1 初始值"></a>2.1.1 初始值</h6>
+      <p>变量在创建的时候获得了一个特定的值，我们说这个对象被初始化了。</p>
+<p><strong>初始化不是赋值，初始化是在创建变量的时候赋予变量一个初始值。而赋值的定义是把对象的当前值擦除掉，用一个新的值替代。</strong></p>
+
+        <h6 id="2-1-2-列表初始化">
+          <a href="#2-1-2-列表初始化" class="heading-link"><i class="fas fa-link"></i></a><a href="#2-1-2-列表初始化" class="headerlink" title="2.1.2 列表初始化"></a>2.1.2 列表初始化</h6>
+      <p>使用一个大括号{}来对变量进行初始化的方式叫做列表初始化。主要有以下第二、第三种方式：</p>
+<p><img src="/images/C++Chapter2/image-20211225205300870.png" alt="image-20211225205300870"></p>
+<p>这种初始化的好处在于：<strong>如果我们使用列表初始化且初始值存在丢失信息的风险，编译器会报错且不予执行。在一定程度上避免了变量的类型与初始值类型不匹配类型强转导致的数值丢失</strong></p>
+<p><img src="/images/C++Chapter2/image-20211225205559552.png" alt="image-20211225205559552"></p>
+<p><img src="/images/C++Chapter2/image-20211225205729977.png" alt="image-20211225205729977"></p>
+
+        <h5 id="2-2-变量声明和定义">
+          <a href="#2-2-变量声明和定义" class="heading-link"><i class="fas fa-link"></i></a><a href="#2-2-变量声明和定义" class="headerlink" title="2.2 变量声明和定义"></a>2.2 变量声明和定义</h5>
+      <p>C++支持分离式编译，程序可以拆分成多个文件，一个文件可以使用其它文件中定义的函数和变量。但是使用其他文件中的变量需要在程序中声明。声明和定义是不同的。定义不仅会规定变量的类型与名字，而且会额外申请存储空间。而声明则不需要申请存储空间。声明需要在变量名前添加<strong>关键字extern</strong>，而且<strong>不能对声明的变量做显式初始化。</strong></p>
+<p><strong>extern语句如果包含了初始值就不再是声明，而是定义了。</strong></p>
+<p><img src="/images/C++Chapter2/image-20211225215525019.png" alt="image-20211225215525019"></p>
+<p><strong>一个变量只能定义一次，但可以多次声明。</strong></p>
+
+        <h5 id="2-3-标识符">
+          <a href="#2-3-标识符" class="heading-link"><i class="fas fa-link"></i></a><a href="#2-3-标识符" class="headerlink" title="2.3 标识符"></a>2.3 标识符</h5>
+      <p>C++中的标识符必须以字母或者下划线开头。定义在函数体外的标识符不能以下划线开头。</p>
+<p><img src="/images/C++Chapter2/image-20211225215816509.png" alt="image-20211225215816509"></p>
+
+        <h4 id="三、复合类型">
+          <a href="#三、复合类型" class="heading-link"><i class="fas fa-link"></i></a><a href="#三、复合类型" class="headerlink" title="三、复合类型"></a>三、复合类型</h4>
+      
+        <h5 id="3-1-引用">
+          <a href="#3-1-引用" class="heading-link"><i class="fas fa-link"></i></a><a href="#3-1-引用" class="headerlink" title="3.1 引用"></a>3.1 引用</h5>
+      <p>引用类型通过将声明符号写成&amp;d的形式来定义，d是被引用的变量名。但是引用并非创建了一个新对象，它实际上是一个已经定义的对象的<strong>别名</strong>。</p>
+<p><img src="/images/C++Chapter2/image-20211225220329035.png" alt="image-20211225220329035"></p>
+<p>程序是将引用与它的初始值<strong>绑定</strong>在一起，而不是直接把初始值拷贝过去。因此<strong>引用必须初始化。</strong>并且一旦初始化完成，无法令引用重新绑定到另外一个对象。</p>
+<p>定义了引用后，对引用对象所做的所有操作都是在被绑定的原对象上直接进行操作的。</p>
+<p>引用只能使用对象对其初始化，而且定义引用的类型要与被绑定的对象的类型完全一致。</p>
+<p><img src="/images/C++Chapter2/image-20211225220759531.png" alt="image-20211225220759531"></p>
+
+        <h5 id="3-2-指针">
+          <a href="#3-2-指针" class="heading-link"><i class="fas fa-link"></i></a><a href="#3-2-指针" class="headerlink" title="3.2 指针"></a>3.2 指针</h5>
+      <p>指针也是”指向”另外一种类型的对象的复合类型。它和引用都可以实现对其它对象的间接访问。但是它和指针有很多不同点，具体如下：</p>
+<p><strong>①、指针本身就是一个对象，而引用只是一个”别名”，并非创建了一个新对象。</strong></p>
+<p><strong>②、指针允许赋值和拷贝，而对引用实际上只是给被引用的对象赋值。</strong></p>
+<p><strong>③、指针在生命周期之内可以先后指向不同的对象，而引用只能绑定在一个对象上，不允许改变。</strong></p>
+<p><strong>④、指针不需要在定义的时候赋初值</strong></p>
+<p><strong>定义方法</strong></p>
+<p><img src="/images/C++Chapter2/image-20211225222534490.png" alt="image-20211225222534490"></p>
+<p><strong>指针对象实际上存放的是某个对象的地址，想要获取这个地址需要使用取地址符&amp;</strong></p>
+<p><img src="/images/C++Chapter2/image-20211225222656042.png" alt="image-20211225222656042"></p>
+<p>p是一个指针变量，指向变量ival，并且p实际上存放的是变量ival的地址。</p>
+<p><img src="/images/C++Chapter2/image-20211225222930490.png" alt="image-20211225222930490"></p>
+<p><img src="/images/C++Chapter2/image-20211225222957674.png" alt="image-20211225222957674"></p>
+<p><strong>利用指针访问对象</strong></p>
+<p>如果指针指向了一个对象，允许使用解引用符(操作符*)来访问该对象。对指针解引用会得到所指的对象。</p>
+<p><img src="/images/C++Chapter2/image-20211226133703807.png" alt="image-20211226133703807"></p>
+<p><strong>空指针</strong></p>
+<p>当暂时不知道指针应该指向何处的时候，应当先对指针初始化为空，空指针的初始化操作是：int *p = <strong>nullptr</strong>;。nullptr是一种特殊的字面值，它可以转化成任意的指针类型。</p>
+<p><strong>指向指针的指针</strong></p>
+<p>*的个数可以区分指针的级别，因此**表示指向指针对象的指针。</p>
+<p><img src="/images/C++Chapter2/image-20211226135121453.png" alt="image-20211226135121453"></p>
+<p>此时要通过ppi来访问原对象，需要两次解引用，即**ppi</p>
+
+        <h5 id="3-3-const限定符">
+          <a href="#3-3-const限定符" class="heading-link"><i class="fas fa-link"></i></a><a href="#3-3-const限定符" class="headerlink" title="3.3 const限定符"></a>3.3 const限定符</h5>
+      <p>使用const限定符修饰的变量是一种不可改变值的变量，也可称为const常量。任何对const常量赋值的操作都将报错。因为const常量一经定义就不可改变，因此const对象必须初始化。</p>
+<p>如：<code>const int bufSize = 512;</code></p>
+<p>默认状态下，const限定符仅对文件内生效，如果需要跨文件使用，需要对const常量的定义前加上extern</p>
+<p><code>extern const int bufSize = 512;</code></p>
+<p>当在当在其他文件中需要使用该变量的时候，也需要在文件中使用extern进行声明。</p>
+<p><code>extern const int bufSize;</code></p>
+
+        <h6 id="3-3-1-const的引用">
+          <a href="#3-3-1-const的引用" class="heading-link"><i class="fas fa-link"></i></a><a href="#3-3-1-const的引用" class="headerlink" title="3.3.1 const的引用"></a>3.3.1 const的引用</h6>
+      <p>和普通对象一样，我们也可以把引用绑定到const对象上，称之为<strong>对常量的引用</strong>。但是由于被绑定的对象是一个常量，因此不可以改变被引用对象的值。</p>
+<p><code>const int c1 = 1024; </code></p>
+<p><code>const int &amp;r1 = c1;</code></p>
+<p>与一般的引用不同的是，常量引用的类型并不一定需要与其所引用的对象的类型完全一致。允许常量引用绑定一个非常量对象、字面值、甚至是一个表达式。<strong>因为编译器会自动创建一个与常量引用类型相同的临时常量，这个并将常量引用绑定的非常量对象、字面值、甚至是一个表达式的值拷贝给这个临时常量。最后将这个常量引用绑定到这个临时常量。</strong></p>
+<p><img src="/images/C++Chapter2/image-20211226152752659.png" alt="image-20211226152752659"></p>
+<p>常量引用仅仅对引用的操作做出了限定，但是对被引用绑定的对象是否是常量并未作规定。</p>
+
+        <h6 id="3-3-2-const和指针">
+          <a href="#3-3-2-const和指针" class="heading-link"><i class="fas fa-link"></i></a><a href="#3-3-2-const和指针" class="headerlink" title="3.3.2 const和指针"></a>3.3.2 const和指针</h6>
+      </div></div></article><article class="postlist-item post"><header class="post-header"><h1 class="post-title"><a class="post-title__link" href="/2021/12/23/object-detect/">物体识别</a></h1><div class="post-meta"><span class="post-meta-item post-meta-item--createtime"><span class="post-meta-item__icon"><i class="far fa-calendar-plus"></i></span><span class="post-meta-item__info">发表于</span><span class="post-meta-item__value">2021-12-23</span></span><span class="post-meta-item post-meta-item--updatetime"><span class="post-meta-item__icon"><i class="far fa-calendar-check"></i></span><span class="post-meta-item__info">更新于</span><span class="post-meta-item__value">2021-12-24</span></span></div></header><div class="post-body"><div class="post-excerpt">
+        <h3 id="一、物体识别相关术语解释">
+          <a href="#一、物体识别相关术语解释" class="heading-link"><i class="fas fa-link"></i></a><a href="#一、物体识别相关术语解释" class="headerlink" title="一、物体识别相关术语解释"></a>一、物体识别相关术语解释</h3>
+      
+        <h4 id="1-1-锚框、边缘框">
+          <a href="#1-1-锚框、边缘框" class="heading-link"><i class="fas fa-link"></i></a><a href="#1-1-锚框、边缘框" class="headerlink" title="1.1 锚框、边缘框"></a>1.1 锚框、边缘框</h4>
+      <p><em>边界框</em>（bounding box）来描述对象的空间位置，一般描述的是物体的真实所在位置。 边界框是矩形的，由矩形左上角的以及右下角的x和y坐标决定。目标检测算法通常会在输入图像中采样大量的区域，然后判断这些区域中是否包含我们感兴趣的目标，并调整区域边界从而更准确地预测目标的<em>真实边界框</em>（ground-truth bounding box）。锚框（anchor box）一般是预测算法预先提出的一组框，它是以每个像素为中心，生成多个缩放比和宽高比（aspect ratio）不同的边界框。算法检测预设置的锚框内是否有关注的物体，如果有，预测锚框到真实边缘框的偏移，从而对锚框进行调整。</p>
+
+        <h5 id="1-1-1-锚框标注">
+          <a href="#1-1-1-锚框标注" class="heading-link"><i class="fas fa-link"></i></a><a href="#1-1-1-锚框标注" class="headerlink" title="1.1.1 锚框标注"></a>1.1.1 锚框标注</h5>
+      <p>对于一张图片来进行目标检测，我们可能会生成大量的锚框。对每个锚框来说都是一个训练样本。我们需要将每个锚框要么标注成背景，要么关联上一个真实的边缘框。因此我们需要对锚框进行标注，常用的做法是计算每个锚框与每个边缘框的IoU，分别取最大值将锚框标注成边缘框相同的标注。</p>
+
+        <h5 id="1-2-NMS非极大值抑制输出">
+          <a href="#1-2-NMS非极大值抑制输出" class="heading-link"><i class="fas fa-link"></i></a><a href="#1-2-NMS非极大值抑制输出" class="headerlink" title="1.2 NMS非极大值抑制输出"></a>1.2 NMS非极大值抑制输出</h5>
+      <p>因为每个锚框都预测一个边缘框，因此可能出现很多锚框预测一个相同的边缘框，如图所示</p>
+<p><img src="/2021/12/23/object-detect/images/object-detect/image-20211223100019550.png" alt="image-20211223100019550"></p>
+<p>这些框之间的区别仅仅在于覆盖的范围不同。使用NMS可以合并相似的预测，主要的流程是先选中非背景类的最大预测值，然后去掉所有其它和这个最大预测锚框的IoU值大于Theta值(一个自己设置的阈值)的预测，重复以上流程。</p>
+
+        <h4 id="1-2-比较锚框与真实框的相似度指标–IOU">
+          <a href="#1-2-比较锚框与真实框的相似度指标–IOU" class="heading-link"><i class="fas fa-link"></i></a><a href="#1-2-比较锚框与真实框的相似度指标–IOU" class="headerlink" title="1.2 比较锚框与真实框的相似度指标–IOU"></a>1.2 比较锚框与真实框的相似度指标–IOU</h4>
+      <p>IoU往往用来计算两个框之间的相似度，计算公式是给定两个集合A和B，用它的交集闭上并集。</p>
+<p><img src="/2021/12/23/object-detect/images/object-detect/image-20211223094115028.png" alt="image-20211223094115028"></p>
+<p><img src="/2021/12/23/object-detect/images/object-detect/image-20211223094125414.png" alt="image-20211223094125414"></p>
+
+        <h3 id="二、基于锚框的检测算法的流程">
+          <a href="#二、基于锚框的检测算法的流程" class="heading-link"><i class="fas fa-link"></i></a><a href="#二、基于锚框的检测算法的流程" class="headerlink" title="二、基于锚框的检测算法的流程"></a>二、基于锚框的检测算法的流程</h3>
+      <h4 id><a href="#" class="headerlink" title></a><img src="/2021/12/23/object-detect/images/object-detect/image-20211223100414222.png" alt="image-20211223100414222"></h4></div></div></article><article class="postlist-item post"><header class="post-header"><h1 class="post-title"><a class="post-title__link" href="/2021/12/17/ResNet/">传统网络实现之ResNet</a></h1><div class="post-meta"><span class="post-meta-item post-meta-item--createtime"><span class="post-meta-item__icon"><i class="far fa-calendar-plus"></i></span><span class="post-meta-item__info">发表于</span><span class="post-meta-item__value">2021-12-17</span></span><span class="post-meta-item post-meta-item--updatetime"><span class="post-meta-item__icon"><i class="far fa-calendar-check"></i></span><span class="post-meta-item__info">更新于</span><span class="post-meta-item__value">2021-12-17</span></span></div></header><div class="post-body"><div class="post-excerpt">
         <h3 id="经典网络架构实现之ResNet">
           <a href="#经典网络架构实现之ResNet" class="heading-link"><i class="fas fa-link"></i></a><a href="#经典网络架构实现之ResNet" class="headerlink" title="经典网络架构实现之ResNet"></a>经典网络架构实现之ResNet</h3>
       
@@ -752,266 +1106,4 @@ window.CONFIG = CONFIG;</script><meta name="generator" content="Hexo 5.4.0"></he
 <p>（3）实现非线性（这个可以想一下，relu函数，是不是有点类似的感觉？）。</p>
 <p>（4）可以扩大感知野。</p>
 <p>（5）可以实现不变性，其中不变形性包括，平移不变性、旋转不变性和尺度不变性。汇合操作使模型更关注是否存在某些特征而不是特征具体的位置<br>，可看作是一种很强的先验，使特征学习包含某种程度自由度，能容忍一些特征微小的位移。</p>
-</div></div></article><article class="postlist-item post"><header class="post-header"><h1 class="post-title"><a class="post-title__link" href="/2021/10/09/week%20summary001/">每周计划与总结001</a></h1><div class="post-meta"><span class="post-meta-item post-meta-item--createtime"><span class="post-meta-item__icon"><i class="far fa-calendar-plus"></i></span><span class="post-meta-item__info">发表于</span><span class="post-meta-item__value">2021-10-09</span></span><span class="post-meta-item post-meta-item--updatetime"><span class="post-meta-item__icon"><i class="far fa-calendar-check"></i></span><span class="post-meta-item__info">更新于</span><span class="post-meta-item__value">2021-10-09</span></span></div></header><div class="post-body"><div class="post-excerpt">
-        <h4 id="前言">
-          <a href="#前言" class="heading-link"><i class="fas fa-link"></i></a><a href="#前言" class="headerlink" title="前言"></a>前言</h4>
-      <p>不知不觉就混吃等死混到了十月第一周都结束了。<del>本来打算十月开始就做一个，结果假期一拖就拖到了现在</del>。立个小目标每周不断更好吧TVT。</p>
-
-        <h4 id="上周总结">
-          <a href="#上周总结" class="heading-link"><i class="fas fa-link"></i></a><a href="#上周总结" class="headerlink" title="上周总结"></a>上周总结</h4>
-      <p><del>上周为祖国母亲庆生所以摸了。</del>除了稍微过了下数理统计与矩阵论的课本与课件，和结束了长达半个月的《动手学深度学习》第五章。</p>
-<p><img src="/images/week%20summary001/image-20211009160317243.png" alt="image-20211009160317243"></p>
-
-        <h4 id="下周（10-11-10-17）计划">
-          <a href="#下周（10-11-10-17）计划" class="heading-link"><i class="fas fa-link"></i></a><a href="#下周（10-11-10-17）计划" class="headerlink" title="下周（10.11-10.17）计划"></a>下周（10.11-10.17）计划</h4>
-      <ul>
-<li><p>《动手学深度学习》第六章结束</p>
-</li>
-<li><p>六级试卷*2</p>
-</li>
-<li><p>《算法导论》1-3章</p>
-</li>
-<li><p>《c++ Primer》3-4章</p>
-</li>
-<li><p>矩阵论、数理统计复习</p>
-</li>
-<li><p>睡前半小时《平凡的世界》<del>半年读了7章。。。从这周开始一定好好读书</del></p>
-</li>
-</ul>
-<p>十月绝不摆烂！！！！</p>
-<p><img src="/images/week%20summary001/image-20211009160233635.png" alt="image-20211009160233635"></p>
-</div></div></article><article class="postlist-item post"><header class="post-header"><h1 class="post-title"><a class="post-title__link" href="/2021/10/08/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E8%AE%A1%E7%AE%97/">深度学习计算</a></h1><div class="post-meta"><span class="post-meta-item post-meta-item--createtime"><span class="post-meta-item__icon"><i class="far fa-calendar-plus"></i></span><span class="post-meta-item__info">发表于</span><span class="post-meta-item__value">2021-10-08</span></span><span class="post-meta-item post-meta-item--updatetime"><span class="post-meta-item__icon"><i class="far fa-calendar-check"></i></span><span class="post-meta-item__info">更新于</span><span class="post-meta-item__value">2021-10-09</span></span></div></header><div class="post-body"><div class="post-excerpt">
-        <h3 id="第五章-深度学习计算">
-          <a href="#第五章-深度学习计算" class="heading-link"><i class="fas fa-link"></i></a><a href="#第五章-深度学习计算" class="headerlink" title="第五章 深度学习计算"></a>第五章 深度学习计算</h3>
-      
-        <h4 id="一、层和块">
-          <a href="#一、层和块" class="heading-link"><i class="fas fa-link"></i></a><a href="#一、层和块" class="headerlink" title="一、层和块"></a>一、层和块</h4>
-      
-        <h5 id="1-1-块的概念">
-          <a href="#1-1-块的概念" class="heading-link"><i class="fas fa-link"></i></a><a href="#1-1-块的概念" class="headerlink" title="1.1 块的概念"></a>1.1 块的概念</h5>
-      <p>为了实现更加复杂的网络，引入神经网络块的概念。块可以描述单个层、由多个层组成的组件或整个模型本身。使用块进行抽象的一个好处是可以将一些块组合成更大的组件，这一过程通常是递归的。</p>
-
-        <h5 id="1-2-Pytorch中块的简洁实现">
-          <a href="#1-2-Pytorch中块的简洁实现" class="heading-link"><i class="fas fa-link"></i></a><a href="#1-2-Pytorch中块的简洁实现" class="headerlink" title="1.2 Pytorch中块的简洁实现"></a>1.2 Pytorch中块的简洁实现</h5>
-      <p>之前学习的章节中一直在使用的nn.Sequential方法实际上就是定义了一个块。通过实例化<code>nn.Sequential</code>来构建我们的模型，层的执行顺序是作为参数传递的。简而言之，<code>nn.Sequential</code>定义了一种特殊的<code>Module</code>，即在PyTorch中表示一个块的类。它维护了一个由<code>Module</code>组成的有序列表，注意，两个全连接层都是<code>Linear</code>类的实例，<code>Linear</code>类本身就是<code>Module</code>的子类。正向传播（<code>forward</code>）函数也非常简单：它将列表中的每个块连接在一起，将每个块的输出作为下一个块的输入。</p>
-<p>如：<code>net = nn.Sequential(nn.Linear(20, 256), nn.ReLU(), nn.Linear(256, 10))</code></p>
-<p>实际上就定义了一个块，块中包含了两个线性层和一个ReLU层。</p>
-
-        <h5 id="1-3-自定义块">
-          <a href="#1-3-自定义块" class="heading-link"><i class="fas fa-link"></i></a><a href="#1-3-自定义块" class="headerlink" title="1.3 自定义块"></a>1.3 自定义块</h5>
-      <p><code>Sequential</code>类使模型构造变得简单，允许我们组合新的结构，而不必定义自己的类。然而，并不是所有的架构都是简单的顺序结构。当需要更大的灵活性时，我们需要定义自己的块。例如，我们可能希望在正向传播函数中执行Python的控制流。此外，我们可能希望执行任意的数学运算，而不是简单地依赖预定义的神经网络层。</p>
-<p>自定义块必须提供的基本功能：</p>
-<ol>
-<li>将输入数据作为其正向传播函数的参数。</li>
-<li>通过正向传播函数来生成输出。请注意，输出的形状可能与输入的形状不同。例如，我们上面模型中的第一个全连接的层接收任意维的输入，但是返回一个维度256的输出。</li>
-<li>计算其输出关于输入的梯度，可通过其反向传播函数进行访问。通常这是自动发生的。</li>
-<li>存储和访问正向传播计算所需的参数。</li>
-<li>根据需要初始化模型参数。</li>
-</ol>
-
-        <h4 id="二、参数管理">
-          <a href="#二、参数管理" class="heading-link"><i class="fas fa-link"></i></a><a href="#二、参数管理" class="headerlink" title="二、参数管理"></a>二、参数管理</h4>
-      <p>假设模型是一个具有单隐藏层的多层感知机。</p>
-<p>``</p>
-<figure class="highlight python"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> torch</span><br><span class="line"><span class="keyword">from</span> torch <span class="keyword">import</span> nn</span><br><span class="line"></span><br><span class="line">net = nn.Sequential(nn.Linear(<span class="number">4</span>, <span class="number">8</span>), nn.ReLU(), nn.Linear(<span class="number">8</span>, <span class="number">1</span>))</span><br><span class="line">X = torch.rand(size=(<span class="number">2</span>, <span class="number">4</span>))</span><br><span class="line">net(X)</span><br></pre></td></tr></table></div></figure>
-
-
-        <h5 id="2-1-参数访问">
-          <a href="#2-1-参数访问" class="heading-link"><i class="fas fa-link"></i></a><a href="#2-1-参数访问" class="headerlink" title="2.1 参数访问"></a>2.1 参数访问</h5>
-      <p>当通过Sequential类定义模型时，由于Sequential类似于一个Module的列表，可以通过索引来访问模型的任意层。可以通过以下方法检查第二个全连接层的参数</p>
-<p><code>print(net[2].state_dict())</code></p>
-<p>输出为</p>
-<p>OrderedDict([(‘weight’, tensor([[-0.0578,  0.2847,  0.0501, -0.1246,  0.2490, -0.0303,  0.1356,  0.2373]])), (‘bias’, tensor([0.1629]))])</p>
-<p>显然第二个全连接层有两个参数，weight和bias，可以通过  <code>net[2].bias</code> 访问参数，通过  <code>net[2].bias.data</code> 得到bias的实际的数值，也可以通过.grad来访问具体参数的梯度值。</p>
-
-        <h5 id="2-2-一次性访问所有参数">
-          <a href="#2-2-一次性访问所有参数" class="heading-link"><i class="fas fa-link"></i></a><a href="#2-2-一次性访问所有参数" class="headerlink" title="2.2 一次性访问所有参数"></a>2.2 一次性访问所有参数</h5>
-      <p>可以通过Module.named_parameters()方法一次性访问查看一个层或者一个网络的所有参数</p>
-<p>例：查看第一层的所有参数的数据大小</p>
-<p><code>print(*[(name, parameter.shape) for name, parameter in net[0].named_parameters()])</code></p>
-<p>查看整个网络的全部参数</p>
-<p><code>print(*[(name, parameter) for name, parameter in net.named_parameters()])</code></p>
-<p>自定义的网络层亦可以使用相同方式查看参数</p>
-
-        <h5 id="2-3-参数初始化">
-          <a href="#2-3-参数初始化" class="heading-link"><i class="fas fa-link"></i></a><a href="#2-3-参数初始化" class="headerlink" title="2.3 参数初始化"></a>2.3 参数初始化</h5>
-      <p>参数初始化的常用方法是编写一个函数调用内置初始化器，然后使用module.apply()函数应用初始化方法。</p>
-<p>例：将参数以正态分布初始化</p>
-<p>`</p>
-<figure class="highlight python"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">init_normal</span>(<span class="params">m</span>):</span></span><br><span class="line">    <span class="keyword">if</span> <span class="built_in">type</span>(m) == nn.Linear:</span><br><span class="line">        nn.init.normal_(m.weight, mean=<span class="number">0</span>, std=<span class="number">0.01</span>)</span><br><span class="line">        nn.init.zeros_(m.bias)</span><br><span class="line">net.apply(init_normal)</span><br></pre></td></tr></table></div></figure>
-
-<p>`</p>
-<p>可以定义多个初始化方法，分别应用与不同的层</p>
-<p>`</p>
-<figure class="highlight python"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">xavier</span>(<span class="params">m</span>):</span></span><br><span class="line">    <span class="keyword">if</span> <span class="built_in">type</span>(m) == nn.Linear:</span><br><span class="line">        nn.init.xavier_uniform_(m.weight)</span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">init_42</span>(<span class="params">m</span>):</span></span><br><span class="line">    <span class="keyword">if</span> <span class="built_in">type</span>(m) == nn.Linear:</span><br><span class="line">        nn.init.constant_(m.weight, <span class="number">42</span>)</span><br><span class="line"></span><br><span class="line">net[<span class="number">0</span>].apply(xavier)</span><br><span class="line">net[<span class="number">2</span>].apply(init_42)</span><br></pre></td></tr></table></div></figure>
-
-<p>`</p>
-
-        <h4 id="三、自定义层">
-          <a href="#三、自定义层" class="heading-link"><i class="fas fa-link"></i></a><a href="#三、自定义层" class="headerlink" title="三、自定义层"></a>三、自定义层</h4>
-      <p>有时需要完成一些深度学习框架内未提供的功能，需要通过自定义层来实现。只需要继承基础层类(nn.Module)实现正向传播即可。</p>
-
-        <h4 id="3-1-不带参数的层">
-          <a href="#3-1-不带参数的层" class="heading-link"><i class="fas fa-link"></i></a><a href="#3-1-不带参数的层" class="headerlink" title="3.1 不带参数的层"></a>3.1 不带参数的层</h4>
-      <p>例：定义一个层次实现从输入中减去均值。</p>
-<p>`</p>
-<figure class="highlight python"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> torch</span><br><span class="line"><span class="keyword">import</span> torch.nn.functional <span class="keyword">as</span> F</span><br><span class="line"><span class="keyword">from</span> torch <span class="keyword">import</span> nn</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">CenteredLayer</span>(<span class="params">nn.Module</span>):</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span>(<span class="params">self</span>):</span></span><br><span class="line">        <span class="built_in">super</span>().__init__()</span><br><span class="line">     </span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">forward</span>(<span class="params">self, X</span>):</span></span><br><span class="line">        <span class="keyword">return</span> X - X.mean()</span><br><span class="line">    </span><br><span class="line">    </span><br><span class="line">layer = CenteredLayer()</span><br><span class="line">layer(torch.FloatTensor([<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>]))</span><br></pre></td></tr></table></div></figure>
-
-<p>`</p>
-<p>输出为：</p>
-<p><code>tensor([-2., -1.,  0.,  1.,  2.])</code></p>
-
-        <h4 id="3-2-带参数的层">
-          <a href="#3-2-带参数的层" class="heading-link"><i class="fas fa-link"></i></a><a href="#3-2-带参数的层" class="headerlink" title="3.2 带参数的层"></a>3.2 带参数的层</h4>
-      <p>我们也可以定义带参数的层，这些参数可以通过训练进行调整。我们可以使用内置函数来创建参数，这些函数提供一些基本的管理功能。比如管理访问、初始化、共享、保存和加载模型参数。</p>
-<p>例：定义实现一个全连接层，并使用ReLU激活函数处理输出。</p>
-<p>`</p>
-<figure class="highlight python"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">MyLinear</span>(<span class="params">nn.Module</span>):</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span>(<span class="params">self, in_units, units</span>):</span></span><br><span class="line">        <span class="built_in">super</span>().__init__()</span><br><span class="line">        self.weight = nn.Parameter(torch.randn(in_units, units))</span><br><span class="line">        self.bias = nn.Parameter(torch.randn(units,))</span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">forward</span>(<span class="params">self, X</span>):</span></span><br><span class="line">        linear = torch.matmul(X, self.weight.data) + self.bias.data</span><br><span class="line">        <span class="keyword">return</span> F.relu(linear)</span><br></pre></td></tr></table></div></figure>
-
-<p>`</p>
-
-        <h4 id="四、读取与保存参数和模型">
-          <a href="#四、读取与保存参数和模型" class="heading-link"><i class="fas fa-link"></i></a><a href="#四、读取与保存参数和模型" class="headerlink" title="四、读取与保存参数和模型"></a>四、读取与保存参数和模型</h4>
-      <p>当我们对所训练出的模型足够满意，可以使用Pytorch提供的一些方法保存训练好的模型与参数以用来直接推理。此外，当运行一个耗时较长的训练过程时，最佳的做法是定期保存中间结果（检查点），以确保在服务器电源被不小心断掉时不会损失几天的计算结果。</p>
-
-        <h4 id="4-1-state-dict">
-          <a href="#4-1-state-dict" class="heading-link"><i class="fas fa-link"></i></a><a href="#4-1-state-dict" class="headerlink" title="4.1 state_dict"></a>4.1 state_dict</h4>
-      <p>state_dict是一个Python字典，它保存所有层与它的parameter tensor的映射。但是只有具有可学习参数的(torch.nn.Module)层和Registered buffers (batchnorm’s running_mean)才会在state_dict中有条目。同时优化器对象也有一个<em>state_dict</em>，其中包含有关优化器状态的信息，以及使用的超参数。</p>
-<p>例：</p>
-<p>`</p>
-<figure class="highlight python"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Define model</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">TheModelClass</span>(<span class="params">nn.Module</span>):</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span>(<span class="params">self</span>):</span></span><br><span class="line">        <span class="built_in">super</span>(TheModelClass, self).__init__()</span><br><span class="line">        <span class="comment">#自定义参数层</span></span><br><span class="line">        self.conv1 = nn.Conv2d(<span class="number">3</span>, <span class="number">6</span>, <span class="number">5</span>)</span><br><span class="line">        self.pool = nn.MaxPool2d(<span class="number">2</span>, <span class="number">2</span>)</span><br><span class="line">        self.conv2 = nn.Conv2d(<span class="number">6</span>, <span class="number">16</span>, <span class="number">5</span>)</span><br><span class="line">        self.fc1 = nn.Linear(<span class="number">16</span> * <span class="number">5</span> * <span class="number">5</span>, <span class="number">120</span>)</span><br><span class="line">        self.fc2 = nn.Linear(<span class="number">120</span>, <span class="number">84</span>)</span><br><span class="line">        self.fc3 = nn.Linear(<span class="number">84</span>, <span class="number">10</span>)</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">forward</span>(<span class="params">self, x</span>):</span></span><br><span class="line">        x = self.pool(F.relu(self.conv1(x)))</span><br><span class="line">        x = self.pool(F.relu(self.conv2(x)))</span><br><span class="line">        x = x.view(-<span class="number">1</span>, <span class="number">16</span> * <span class="number">5</span> * <span class="number">5</span>)</span><br><span class="line">        x = F.relu(self.fc1(x))</span><br><span class="line">        x = F.relu(self.fc2(x))</span><br><span class="line">        x = self.fc3(x)</span><br><span class="line">        <span class="keyword">return</span> x</span><br><span class="line"></span><br><span class="line"><span class="comment"># Initialize model</span></span><br><span class="line">model = TheModelClass()</span><br><span class="line"></span><br><span class="line"><span class="comment"># Initialize optimizer</span></span><br><span class="line">optimizer = optim.SGD(model.parameters(), lr=<span class="number">0.001</span>, momentum=<span class="number">0.9</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># Print model&#x27;s state_dict</span></span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;Model&#x27;s state_dict:&quot;</span>)</span><br><span class="line"><span class="keyword">for</span> param_tensor <span class="keyword">in</span> model.state_dict():</span><br><span class="line">    <span class="built_in">print</span>(param_tensor, <span class="string">&quot;\t&quot;</span>, model.state_dict()[param_tensor].size())</span><br><span class="line"></span><br><span class="line"><span class="comment"># Print optimizer&#x27;s state_dict</span></span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;Optimizer&#x27;s state_dict:&quot;</span>)</span><br><span class="line"><span class="keyword">for</span> var_name <span class="keyword">in</span> optimizer.state_dict():</span><br><span class="line">    <span class="built_in">print</span>(var_name, <span class="string">&quot;\t&quot;</span>, optimizer.state_dict()[var_name])</span><br></pre></td></tr></table></div></figure>
-
-<p>`</p>
-<p>输出：</p>
-<p>`</p>
-<figure class="highlight python"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">Model<span class="string">&#x27;s state_dict:</span></span><br><span class="line"><span class="string">conv1.weight     torch.Size([6, 3, 5, 5])</span></span><br><span class="line"><span class="string">conv1.bias   torch.Size([6])</span></span><br><span class="line"><span class="string">conv2.weight     torch.Size([16, 6, 5, 5])</span></span><br><span class="line"><span class="string">conv2.bias   torch.Size([16])</span></span><br><span class="line"><span class="string">fc1.weight   torch.Size([120, 400])</span></span><br><span class="line"><span class="string">fc1.bias     torch.Size([120])</span></span><br><span class="line"><span class="string">fc2.weight   torch.Size([84, 120])</span></span><br><span class="line"><span class="string">fc2.bias     torch.Size([84])</span></span><br><span class="line"><span class="string">fc3.weight   torch.Size([10, 84])</span></span><br><span class="line"><span class="string">fc3.bias     torch.Size([10])</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">Optimizer&#x27;</span>s state_dict:</span><br><span class="line">state    &#123;&#125;</span><br><span class="line">param_groups     [&#123;<span class="string">&#x27;lr&#x27;</span>: <span class="number">0.001</span>, <span class="string">&#x27;momentum&#x27;</span>: <span class="number">0.9</span>, <span class="string">&#x27;dampening&#x27;</span>: <span class="number">0</span>, <span class="string">&#x27;weight_decay&#x27;</span>: <span class="number">0</span>, <span class="string">&#x27;nesterov&#x27;</span>: <span class="literal">False</span>, <span class="string">&#x27;params&#x27;</span>: [<span class="number">4675713712</span>, <span class="number">4675713784</span>, <span class="number">4675714000</span>, <span class="number">4675714072</span>, <span class="number">4675714216</span>, <span class="number">4675714288</span>, <span class="number">4675714432</span>, <span class="number">4675714504</span>, <span class="number">4675714648</span>, <span class="number">4675714720</span>]&#125;]</span><br></pre></td></tr></table></div></figure>
-
-<p>`</p>
-
-        <h4 id="4-2-保存和加载模型">
-          <a href="#4-2-保存和加载模型" class="heading-link"><i class="fas fa-link"></i></a><a href="#4-2-保存和加载模型" class="headerlink" title="4.2 保存和加载模型"></a>4.2 保存和加载模型</h4>
-      
-        <h5 id="4-2-1-推荐方式：保存-加载state-dict">
-          <a href="#4-2-1-推荐方式：保存-加载state-dict" class="heading-link"><i class="fas fa-link"></i></a><a href="#4-2-1-推荐方式：保存-加载state-dict" class="headerlink" title="4.2.1 推荐方式：保存/加载state_dict"></a>4.2.1 推荐方式：保存/加载state_dict</h5>
-      <p>保存模型进行推理时，只需要保存训练好的模型的学习参数即可。使用该函数保存模型的<em>state_dict</em><code>torch.save()</code>将为以后恢复模型提供最大的灵活性，这就是为什么它是保存模型的推荐方法。</p>
-<p>一个常见的 PyTorch 约定是使用<code>.pt</code>或 <code>.pth</code>文件扩展名保存模型。</p>
-<p>请记住，在运行推理之前，必须调用<code>model.eval()</code>将 dropout 和批处理规范化层设置为评估模式。不这样做会产生不一致的推理结果。</p>
-<p>保存：</p>
-<p><code>torch.save(model.state_dict(), PATH)</code></p>
-<p>加载：</p>
-<p>`</p>
-<figure class="highlight plaintext"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">model = TheModelClass(*args, **kwargs)</span><br><span class="line">model.load_state_dict(torch.load(PATH))</span><br><span class="line">model.eval()</span><br></pre></td></tr></table></div></figure>
-
-<p>`</p>
-<p>对上述定义的model进行保存和加载state_dict验证：</p>
-<p>`</p>
-<figure class="highlight python"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 实例化module类，生成一个模型，使用torch.save保存state_dict</span></span><br><span class="line">model = TheModelClass()</span><br><span class="line">torch.save(model.state_dict(), <span class="string">&#x27;load_module1.params&#x27;</span>)</span><br><span class="line">optimizer = torch.optim.SGD(model.parameters(), lr=<span class="number">0.001</span>, momentum=<span class="number">0.9</span>)</span><br><span class="line"><span class="comment"># 加载模型参数，需要实例化一个相同的网络模型，调用load_state_dict(torch.load(PATH))加载保存的参数state_dict</span></span><br><span class="line">clone = TheModelClass()</span><br><span class="line">clone.load_state_dict(torch.load(<span class="string">&#x27;load_module1.params&#x27;</span>))</span><br><span class="line">clone.<span class="built_in">eval</span>()</span><br><span class="line"><span class="comment"># 验证参数是否相同</span></span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;Model&#x27;s state_dict&quot;</span>)</span><br><span class="line"><span class="keyword">for</span> param_tensor <span class="keyword">in</span> model.state_dict():</span><br><span class="line">    <span class="built_in">print</span>(param_tensor, <span class="string">&quot;\t&quot;</span>, model.state_dict()[param_tensor] == clone.state_dict()[param_tensor])</span><br></pre></td></tr></table></div></figure>
-
-<p>`</p>
-<p><img src="/images/deepcompute/deepcompute.png" alt="image-20211008162402538"></p>
-
-        <h5 id="4-2-2-保存整个模型">
-          <a href="#4-2-2-保存整个模型" class="heading-link"><i class="fas fa-link"></i></a><a href="#4-2-2-保存整个模型" class="headerlink" title="4.2.2 保存整个模型"></a>4.2.2 保存整个模型</h5>
-      <p>保存整个模型，在加载的时候就可以不用再实例化，直接<code>model = torch.load(PATH))</code>即可</p>
-<p>保存：</p>
-<p><code>torch.save(model, PATH)</code></p>
-<p>加载：</p>
-<p>`</p>
-<figure class="highlight python"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 前提条件是这个模型类已经在某处定义</span></span><br><span class="line">model = torch.load(PATH))</span><br><span class="line">model.<span class="built_in">eval</span>()</span><br></pre></td></tr></table></div></figure>
-
-<p>`</p>
-
-        <h5 id="4-2-3-检查点方式（checkpoints）">
-          <a href="#4-2-3-检查点方式（checkpoints）" class="heading-link"><i class="fas fa-link"></i></a><a href="#4-2-3-检查点方式（checkpoints）" class="headerlink" title="4.2.3 检查点方式（checkpoints）"></a>4.2.3 检查点方式（checkpoints）</h5>
-      <p><del>暂未遇见，以后填坑</del></p>
-</div></div></article><article class="postlist-item post"><header class="post-header"><h1 class="post-title"><a class="post-title__link" href="/2021/09/08/Softmax/">Softmax的Pytorch实现分类任务</a></h1><div class="post-meta"><span class="post-meta-item post-meta-item--createtime"><span class="post-meta-item__icon"><i class="far fa-calendar-plus"></i></span><span class="post-meta-item__info">发表于</span><span class="post-meta-item__value">2021-09-08</span></span><span class="post-meta-item post-meta-item--updatetime"><span class="post-meta-item__icon"><i class="far fa-calendar-check"></i></span><span class="post-meta-item__info">更新于</span><span class="post-meta-item__value">2021-09-15</span></span></div></header><div class="post-body"><div class="post-excerpt">
-        <h4 id="一、Softmax回归的相关原理">
-          <a href="#一、Softmax回归的相关原理" class="heading-link"><i class="fas fa-link"></i></a><a href="#一、Softmax回归的相关原理" class="headerlink" title="一、Softmax回归的相关原理"></a>一、Softmax回归的相关原理</h4>
-      
-        <h4 id="1、Softmax的引入">
-          <a href="#1、Softmax的引入" class="heading-link"><i class="fas fa-link"></i></a><a href="#1、Softmax的引入" class="headerlink" title="1、Softmax的引入"></a>1、Softmax的引入</h4>
-      <p>在机器学习和深度学习中，分类和回归是常见的两个问题。其中回归模型往往是通过输入一系列的特征，经过一定的处理输出一个预测值，如通过输入房屋的面积、房间数量等特征通过回归模型可以预测得到这间房屋的价格。而分类问题往往希望通过输入一些特征得到一个分类。如输入一张图像输入这张图像的类别(如是猫还是狗)。在实际的操作中，我们对硬性类别感兴趣，即属于何种类别。但我们往往得到的是软性类别，即得到属于每个类别的概率，概率最大的类别即为类别的预测值。得到这种概率的结果往往并不困难，只需要在简单的线性模型的输出层前套一层softmax函数即可实现。</p>
-
-        <h4 id="2、Softmax函数">
-          <a href="#2、Softmax函数" class="heading-link"><i class="fas fa-link"></i></a><a href="#2、Softmax函数" class="headerlink" title="2、Softmax函数"></a>2、Softmax函数</h4>
-      <p>由上所述，分类问题的重点是如何将模型的输出映射成概率。SoftMax函数的功能就是将多个神经元的输出映射到（0，1）的区间内，从而将这种输出看作概率。下图非常清晰的显示了Softmax的计算过程。</p>
-<p><img src="/images/softmax-1.png" alt="upload successful"><br>假设有一个数组V，Vi表示数组中第i个元素，则该元素的Softmax值为</p>
-<p><img src="/images/softmax-2.png" alt="upload successful"><br>softmax直白来说就是将原来神经元的输出3,1,-3套上softmax函数映射成为取值范围为(0,1)的值，而这些值的累和为1（满足概率的性质），那么我们就可以将它理解成概率，在最后选取输出结点的时候，我们就可以选取概率最大（也就是值对应最大的）结点，作为我们的预测结果进行输出。</p>
-
-        <h4 id="3、交叉熵损失函数">
-          <a href="#3、交叉熵损失函数" class="heading-link"><i class="fas fa-link"></i></a><a href="#3、交叉熵损失函数" class="headerlink" title="3、交叉熵损失函数"></a>3、交叉熵损失函数</h4>
-      <p>在分类问题中，尤其是在神经网络中，交叉熵函数非常常见。因为经常涉及到分类问题，需要计算各类别的概率，所以交叉熵损失函数又都是与sigmoid函数或者softmax函数成对出现。</p>
-<p>比如用神经网络最后一层作为概率输出，一般最后一层神经网络的计算方式如下：<br>1.网络的最后一层得到每个类别的scores。<br>2.score与sigmoid函数或者softmax函数进行计算得到概率输出。<br>3.第二步得到的类别概率与真实类别标签的one-hot形式进行交叉熵计算。<br>熵，熵的本质是香农信息量的期望。<br>熵在信息论中代表随机变量不确定度的度量。一个离散型随机变量X的熵 H(X)定义为：</p>
-<p><img src="/images/softmax-3.png" alt="upload successful"><br>交叉熵刻画的是实际输出概率和期望输出概率的距离，交叉熵的值越小，则两个概率分布越接近，即实际与期望差距越小。假设概率分布p(xi)为期望输出，概率分布为q(xi)为实际输出，H(X)为交叉熵。则交叉熵的计算表达式为:</p>
-<p><img src="/images/softmax-4.png" alt="upload successful"></p>
-
-        <h3 id="二、Fashion-MNIST数据集">
-          <a href="#二、Fashion-MNIST数据集" class="heading-link"><i class="fas fa-link"></i></a><a href="#二、Fashion-MNIST数据集" class="headerlink" title="二、Fashion-MNIST数据集"></a>二、Fashion-MNIST数据集</h3>
-      
-        <h4 id="1、简介">
-          <a href="#1、简介" class="heading-link"><i class="fas fa-link"></i></a><a href="#1、简介" class="headerlink" title="1、简介"></a>1、简介</h4>
-      <p>Fashion-MNIST 是一个替代 MNIST 手写数字集 的图像数据集。 它是由 Zalando（一家德国的时尚科技公司）旗下的研究部门提供。其涵盖了来自 10 种类别的共 7 万个不同商品的正面图片。<br>Fashion-MNIST 的大小、格式和训练集/测试集划分与原始的 MNIST 完全一致。60000/10000 的训练测试数据划分，28x28 的灰度图片。你可以直接用它来测试你的机器学习和深度学习算法性能，且不需要改动任何的代码。</p>
-
-        <h4 id="2、数据集的内容">
-          <a href="#2、数据集的内容" class="heading-link"><i class="fas fa-link"></i></a><a href="#2、数据集的内容" class="headerlink" title="2、数据集的内容"></a>2、数据集的内容</h4>
-      <p>训练集和测试集数据的格式相同，通过获取迭代器的第一个元素可以得知，数据格式是一个具有两个元素的列表。第一个列表表示28*28图像的Tensor表示，第二个元素是一个1个元素的Tensor，它的取值为0-9，分别代表10类图像。</p>
-<p><img src="/images/softmax1.png" alt="upload successful"></p>
-<p><img src="/images/softmax.png" alt="upload successful"></p>
-
-        <h3 id="三、具体代码实现">
-          <a href="#三、具体代码实现" class="heading-link"><i class="fas fa-link"></i></a><a href="#三、具体代码实现" class="headerlink" title="三、具体代码实现"></a>三、具体代码实现</h3>
-      
-        <h4 id="1、使用到的包">
-          <a href="#1、使用到的包" class="heading-link"><i class="fas fa-link"></i></a><a href="#1、使用到的包" class="headerlink" title="1、使用到的包"></a>1、使用到的包</h4>
-      <p>``</p>
-<figure class="highlight python"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> torch</span><br><span class="line"><span class="keyword">import</span> torchvision</span><br><span class="line"><span class="keyword">from</span> torch <span class="keyword">import</span> nn</span><br><span class="line"><span class="keyword">from</span> torch.utils <span class="keyword">import</span> data</span><br><span class="line"><span class="keyword">from</span> torchvision <span class="keyword">import</span> transforms</span><br><span class="line"><span class="keyword">import</span> warnings</span><br><span class="line">warnings.filterwarnings(<span class="string">&quot;ignore&quot;</span>)</span><br></pre></td></tr></table></div></figure>
-
-
-        <h4 id="2、加载数据集">
-          <a href="#2、加载数据集" class="heading-link"><i class="fas fa-link"></i></a><a href="#2、加载数据集" class="headerlink" title="2、加载数据集"></a>2、加载数据集</h4>
-      <p>通过Pytorch中的<code>torchvision.datasets</code>提供的函数进行数据集的加载</p>
-<p>``</p>
-<figure class="highlight python"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">load_data_fashion_mnist</span>(<span class="params">batch_size, resize=<span class="literal">None</span></span>):</span></span><br><span class="line">    <span class="string">&quot;&quot;&quot;获得数据集，并加载成iterable类型&quot;&quot;&quot;</span></span><br><span class="line">    <span class="comment">#定义转换函数trans，使用transforms.ToTensor()将图像转化成Tensor形式</span></span><br><span class="line">    <span class="comment">#class torchvision.transforms.ToTensor</span></span><br><span class="line">    <span class="comment">#把一个取值范围是[0,255]的PIL.Image或者shape为(H,W,C)的numpy.ndarray，转换成形状为[C,H,W]，取值范围是[0,1.0]的torch.FloadTensor</span></span><br><span class="line">    trans = [transforms.ToTensor()]</span><br><span class="line">    <span class="keyword">if</span> resize:</span><br><span class="line">        trans.insert(<span class="number">0</span>, transforms.Resize(resize))</span><br><span class="line">    trans = transforms.Compose(trans)</span><br><span class="line">    mnist_train = torchvision.datasets.FashionMNIST(root=<span class="string">&quot;../data&quot;</span>, train=<span class="literal">True</span>, transform=trans, download=<span class="literal">True</span>)</span><br><span class="line">    mnist_test = torchvision.datasets.FashionMNIST(root=<span class="string">&quot;../data&quot;</span>, train=<span class="literal">False</span>, transform=trans, download=<span class="literal">True</span>)</span><br><span class="line">    <span class="keyword">return</span> (data.DataLoader(mnist_train, batch_size=batch_size, shuffle=<span class="literal">True</span>, num_workers=<span class="number">4</span>),</span><br><span class="line">            data.DataLoader(mnist_test, batch_size=batch_size, shuffle=<span class="literal">True</span>, num_workers=<span class="number">4</span>))</span><br></pre></td></tr></table></div></figure>
-
-<p>其中，使用<code>ToTensor()</code>方法实际上是一种对图像的归一化处理。假设原图像是8位灰度图像，那么读入的像素矩阵最大值为256，最小值为1，定义矩阵为I，J＝I／256，就是归一化的图像矩阵，就是说归一化之后所有的像素值都在［0，1］区间内。</p>
-<p>归一化处理的好处在于：<br>(1)归一化能够防止净输入绝对值过大引起的神经元输出饱和现象。<br>(2)归一化可以加快训练网络的收敛性.<del>（实际上不知道为什么要归一化，待进一步学习回来填坑）</del></p>
-<p><code>transforms.Compose()</code>可以将多个转换函数组合在一起，参数是一个由转换函数组成的列表，如trans表示的那样。</p>
-<p><code>torchvision.datasets.FashionMNIST(root=&quot;../data&quot;, train=True, transform=trans, download=True)</code><br>函数功能：使用<code>torchvision.datasets</code>提供的数据集加载方法下载并加载MNIST数据集<br>参数的解析：<code>root</code>：存放数据集的目录，<code>train</code>：True表示训练集，False表示测试集。 <code>download</code> : <code>True</code> = 从互联网上下载数据集, <code>transform</code>：转换函数，对数据集图像进行一些处理。</p>
-<p><code>data.DataLoader(mnist_train, batch_size=batch_size, shuffle=True, num_workers=4)</code><br>函数功能：</p>
-<p><img src="/images/softmax3.png" alt="upload successful"></p>
-
-        <h4 id="3、计算精确度">
-          <a href="#3、计算精确度" class="heading-link"><i class="fas fa-link"></i></a><a href="#3、计算精确度" class="headerlink" title="3、计算精确度"></a>3、计算精确度</h4>
-      <p>``</p>
-<figure class="highlight python"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">accuracy</span>(<span class="params">y_hat, y</span>):</span></span><br><span class="line">    <span class="string">&quot;&quot;&quot;函数功能：统计预测正确的数量&quot;&quot;&quot;</span></span><br><span class="line">    <span class="string">&quot;&quot;&quot;网络中输入batch_size*784,网络线性层784*10，结果为batch_size*10的矩阵，第二个维度为预测结果，最大的索引即为预测类别&quot;&quot;&quot;</span></span><br><span class="line">    <span class="string">&quot;&quot;&quot;numpy 返回最大的元素索引，def argmax(a, axis=None, out=None)</span></span><br><span class="line"><span class="string">    a—-输入array</span></span><br><span class="line"><span class="string">    axis—-为0代表列方向，为1代表行方向</span></span><br><span class="line"><span class="string">    out—-结果写到这个array里面&quot;&quot;&quot;</span></span><br><span class="line">    <span class="string">&quot;&quot;&quot;y.type:[序号]&quot;&quot;&quot;</span></span><br><span class="line">    y_hat = y_hat.argmax(axis=<span class="number">1</span>)</span><br><span class="line">    cmp = y_hat.<span class="built_in">type</span>(y.dtype) == y</span><br><span class="line">    <span class="keyword">return</span> <span class="built_in">float</span>(cmp.<span class="built_in">type</span>(y.dtype).<span class="built_in">sum</span>())</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Accumulator</span>:</span></span><br><span class="line">    <span class="string">&quot;&quot;&quot;在n个变量上累加。&quot;&quot;&quot;</span></span><br><span class="line">    <span class="comment">#新建一个长度为n的列表，列表中每个元素都是一个待累加的变量</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span>(<span class="params">self, n</span>):</span></span><br><span class="line">        self.data = [<span class="number">0.0</span>] * n</span><br><span class="line">    <span class="comment">#add方法实现将data的值与add方法参数传入的值进行加和，zip方法实现将iterable对象打包成元组的列表</span></span><br><span class="line">    <span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="string">    &gt;&gt;&gt;a = [1,2,3]</span></span><br><span class="line"><span class="string">    &gt;&gt;&gt; b = [4,5,6]</span></span><br><span class="line"><span class="string">    &gt;&gt;&gt; c = [4,5,6,7,8]</span></span><br><span class="line"><span class="string">    &gt;&gt;&gt; zipped = zip(a,b)     # 打包为元组的列表</span></span><br><span class="line"><span class="string">    [(1, 4), (2, 5), (3, 6)]</span></span><br><span class="line"><span class="string">    &quot;&quot;&quot;</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">add</span>(<span class="params">self, *args</span>):</span></span><br><span class="line">        self.data = [a + <span class="built_in">float</span>(b) <span class="keyword">for</span> a, b <span class="keyword">in</span> <span class="built_in">zip</span>(self.data, args)]</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">reset</span>(<span class="params">self</span>):</span></span><br><span class="line">        self.data = [<span class="number">0.0</span>] * <span class="built_in">len</span>(self.data)</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__getitem__</span>(<span class="params">self, idx</span>):</span></span><br><span class="line">        <span class="keyword">return</span> self.data[idx]</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">evaluate_accuracy</span>(<span class="params">net, data_iter</span>):</span></span><br><span class="line">    <span class="string">&quot;&quot;&quot;计算在指定数据集上模型的精度&quot;&quot;&quot;</span></span><br><span class="line">    <span class="keyword">if</span> <span class="built_in">isinstance</span>(net, torch.nn.Module):</span><br><span class="line">        net.<span class="built_in">eval</span>()<span class="comment">#将模型置于评估模式，不计算梯度</span></span><br><span class="line">    metric = Accumulator(<span class="number">2</span>)</span><br><span class="line">    <span class="keyword">for</span> X, y <span class="keyword">in</span> data_iter:</span><br><span class="line">        metric.add(accuracy(net(X), y), y.numel())<span class="comment">#numel()返回数组中元素个数</span></span><br><span class="line">    <span class="comment">#此时metric[0]存放的是网络中预测准确的个数，metric[1]存放数据集中的标签的总数</span></span><br><span class="line">    <span class="keyword">return</span> metric[<span class="number">0</span>] / metric[<span class="number">1</span>]</span><br></pre></td></tr></table></div></figure>
-
-
-        <h4 id="4、定义网络结构">
-          <a href="#4、定义网络结构" class="heading-link"><i class="fas fa-link"></i></a><a href="#4、定义网络结构" class="headerlink" title="4、定义网络结构"></a>4、定义网络结构</h4>
-      <p>使用torch提供的<code>nn.Sequential</code>方法创建一个顺序容器，<code>Modules</code> 会以他们传入的顺序被添加到容器中。并使用使用torch提供的<code>nn.init</code>方法对线性层的权值<code>weight</code>初始化为均值为0，标准差为0.01的正态分布。</p>
-<figure class="highlight python"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#Flatten层用来将输入“压平”，即把多维的输入一维化，常用在从卷积层到全连接层的过渡。Flatten不影响batch的大小。实际完成的功能为将28*28的图像矩阵转换成1*784的一维向量。</span></span><br><span class="line"><span class="comment">#FashionMnist数据集为28*28=784的灰度图像，共有10个分类，因此为784*10的线性层</span></span><br><span class="line"><span class="comment">#class torch.nn.Linear(in_features, out_features, bias=True)</span></span><br><span class="line"><span class="comment">#Linear的两个参数：weight和bias</span></span><br><span class="line"><span class="comment">#定义网络结构</span></span><br><span class="line">net = nn.Sequential(</span><br><span class="line">    nn.Flatten(),</span><br><span class="line">    nn.Linear(<span class="number">784</span>, <span class="number">10</span>)</span><br><span class="line">)</span><br><span class="line"></span><br><span class="line"><span class="comment">#网络权值初始化</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">init_weights</span>(<span class="params">m</span>):</span></span><br><span class="line">    <span class="keyword">if</span> <span class="built_in">type</span>(m) == nn.Linear:</span><br><span class="line">        nn.init.normal_(m.weight, <span class="number">0</span>, <span class="number">0.01</span>)</span><br><span class="line">net.apply(init_weights)</span><br></pre></td></tr></table></div></figure>
-<p>通过阅读代码可以发现在顺序容器nn.Sequential里面并没有定义和Softmax相关的层次，实际上Pytorch实现中将交叉熵损失和softmax结合在了一起，网络采用具有10个输出的线性模型即可。</p>
-
-        <h4 id="五、定义优化器与损失函数">
-          <a href="#五、定义优化器与损失函数" class="heading-link"><i class="fas fa-link"></i></a><a href="#五、定义优化器与损失函数" class="headerlink" title="五、定义优化器与损失函数"></a>五、定义优化器与损失函数</h4>
-      <p>使用交叉熵损失函数度量预测概率的准确性。并使用随机梯度下降作为模型的优化器。</p>
-<figure class="highlight python"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#定义损失函数</span></span><br><span class="line">loss = torch.nn.CrossEntropyLoss()</span><br><span class="line"><span class="comment">#定义优化器</span></span><br><span class="line">trainer = torch.optim.SGD(net.parameters(), lr=<span class="number">0.1</span>)</span><br></pre></td></tr></table></div></figure>
-
-
-        <h4 id="六、定义训练器与训练函数">
-          <a href="#六、定义训练器与训练函数" class="heading-link"><i class="fas fa-link"></i></a><a href="#六、定义训练器与训练函数" class="headerlink" title="六、定义训练器与训练函数"></a>六、定义训练器与训练函数</h4>
-      <figure class="highlight python"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">train_epoch_ch3</span>(<span class="params">net, train_iter, loss, updater</span>):</span></span><br><span class="line">    <span class="keyword">if</span> <span class="built_in">isinstance</span>(net, torch.nn.Module):</span><br><span class="line">        net.train()</span><br><span class="line">    <span class="comment">#统计每一个epoch,损失函数总和、预测正确的数量、样本总数</span></span><br><span class="line">    metric = Accumulator(<span class="number">3</span>)</span><br><span class="line">    <span class="keyword">for</span> X, y <span class="keyword">in</span> train_iter:</span><br><span class="line">        y_hat = net(X)<span class="comment">#预测值</span></span><br><span class="line">        l = loss(y_hat, y)<span class="comment">#计算交叉熵损失</span></span><br><span class="line">        updater.zero_grad()<span class="comment">#</span></span><br><span class="line">        l.backward()</span><br><span class="line">        updater.step()</span><br><span class="line">        metric.add(l, accuracy(y_hat, y), y.numel())</span><br><span class="line">    <span class="comment">#返回训练损失和训练准确率</span></span><br><span class="line">    <span class="keyword">return</span> metric[<span class="number">0</span>] / metric[<span class="number">2</span>], metric[<span class="number">1</span>] / metric[<span class="number">2</span>]</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">train_ch3</span>(<span class="params">net, train_iter, test_iter, loss, num_epochs, updater</span>):</span></span><br><span class="line">    <span class="keyword">if</span> __name__ == <span class="string">&#x27;__main__&#x27;</span>:</span><br><span class="line">        <span class="keyword">for</span> epoch <span class="keyword">in</span> <span class="built_in">range</span>(num_epochs):</span><br><span class="line">            train_metrics = train_epoch_ch3(net, train_iter, loss, updater)</span><br><span class="line">            test_acc = evaluate_accuracy(net, test_iter)</span><br><span class="line">            <span class="built_in">print</span>(<span class="string">f&#x27;epoch:<span class="subst">&#123;epoch + <span class="number">1</span>&#125;</span>,训练集损失:<span class="subst">&#123;train_metrics[<span class="number">0</span>]&#125;</span>,训练集准确率:<span class="subst">&#123;train_metrics[<span class="number">1</span>]&#125;</span>,测试集准确率:<span class="subst">&#123;test_acc&#125;</span>&#x27;</span>)</span><br></pre></td></tr></table></div></figure>
-
-
-        <h4 id="七、数据加载与调用训练器进行训练">
-          <a href="#七、数据加载与调用训练器进行训练" class="heading-link"><i class="fas fa-link"></i></a><a href="#七、数据加载与调用训练器进行训练" class="headerlink" title="七、数据加载与调用训练器进行训练"></a>七、数据加载与调用训练器进行训练</h4>
-      <figure class="highlight python"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#加载数据</span></span><br><span class="line">batch_size = <span class="number">256</span></span><br><span class="line">train_iter, test_iter = load_data_fashion_mnist(batch_size)</span><br><span class="line">num_epochs = <span class="number">100</span></span><br><span class="line"><span class="comment">#开始训练</span></span><br><span class="line">train_ch3(net, train_iter, test_iter, loss, num_epochs, trainer)</span><br></pre></td></tr></table></div></figure>
-
-        <h4 id="八、结果展示">
-          <a href="#八、结果展示" class="heading-link"><i class="fas fa-link"></i></a><a href="#八、结果展示" class="headerlink" title="八、结果展示"></a>八、结果展示</h4>
-      <p><img src="/images/softmax-result.png" alt="upload successful"></p>
-
-        <h4 id="九、总结">
-          <a href="#九、总结" class="heading-link"><i class="fas fa-link"></i></a><a href="#九、总结" class="headerlink" title="九、总结"></a>九、总结</h4>
-      <p>如结果图展示，仅仅在线性模型的基础上加上一层Softmax并采用交叉熵损失即可实现分类任务。但是准确率较低只有0.85左右。以后可以尝试更多的Epoch和更深的网络层次查看是否可以达到更强的效果。</p>
 </div></div></article></section><nav class="paginator"><div class="paginator-inner"><span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/"><i class="fas fa-angle-right"></i></a></div></nav></div></div><div class="sidebar-wrap" id="sidebar-wrap"><aside class="sidebar" id="sidebar"><section class="sidebar-toc hide"></section><!-- ov = overview--><section class="sidebar-ov"><div class="sidebar-ov-author"><div class="sidebar-ov-author__avatar"><img class="sidebar-ov-author__avatar_img" src="/images/icons/photo.png" alt="avatar"></div><p class="sidebar-ov-author__text">To be a great person.</p></div><div class="sidebar-ov-cc"><a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en" target="_blank" rel="noopener" data-popover="知识共享许可协议" data-popover-pos="up"><img src="/images/cc-by-nc-sa.svg"></a></div></section></aside></div><div class="clearfix"></div></div></main><footer class="footer" id="footer"><div class="footer-inner"><div><span>Copyright © 2021</span><span class="footer__icon"><i class="fas fa-heart"></i></span><span>Strive</span></div><div><span>由 <a href="http://hexo.io/" title="Hexo" target="_blank" rel="noopener">Hexo</a> 强力驱动</span><span> v5.4.0</span><span class="footer__devider">|</span><span>主题 - <a href="https://github.com/liuyib/hexo-theme-stun/" title="Stun" target="_blank" rel="noopener">Stun</a></span><span> v2.6.2</span></div></div></footer><div class="loading-bar" id="loading-bar"><div class="loading-bar__progress"></div></div><div class="back2top" id="back2top"><span class="back2top__icon"><i class="fas fa-rocket"></i></span></div></div><script src="https://cdn.jsdelivr.net/npm/jquery@v3.4.1/dist/jquery.min.js"></script><script src="https://cdn.jsdelivr.net/npm/velocity-animate@1.5.2/velocity.min.js"></script><script src="https://cdn.jsdelivr.net/npm/velocity-animate@1.5.2/velocity.ui.min.js"></script><script src="/js/utils.js?v=2.6.2"></script><script src="/js/stun-boot.js?v=2.6.2"></script><script src="/js/scroll.js?v=2.6.2"></script><script src="/js/header.js?v=2.6.2"></script><script src="/js/sidebar.js?v=2.6.2"></script></body></html>
