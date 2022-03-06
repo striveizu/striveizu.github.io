@@ -1,52 +1,52 @@
 <!DOCTYPE html><html lang="zh-CN"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="format-detection" content="telephone=no"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="black"><link rel="icon" href="/images/icons/favicon-16x16.png?v=2.6.2" type="image/png" sizes="16x16"><link rel="icon" href="/images/icons/favicon-32x32.png?v=2.6.2" type="image/png" sizes="32x32"><meta name="description" content="行人重识别需要的一些基础                           一、回顾神经网络的一些基础                           1.1 卷积回顾                           1.1.1 普通卷积       卷积的功能是特征提取。步长不等于0的时候起到下采样的作用。卷积层的参数量的计算公式如下：  一个小">
 <meta property="og:type" content="article">
 <meta property="og:title" content="行人重识别需要的一些基础">
-<meta property="og:url" content="http://example.com/2021/12/27/ReID-base/index.html">
+<meta property="og:url" content="https://striveizu.top/2021/12/27/ReID-base/index.html">
 <meta property="og:site_name" content="Strive&#39;s Blog">
 <meta property="og:description" content="行人重识别需要的一些基础                           一、回顾神经网络的一些基础                           1.1 卷积回顾                           1.1.1 普通卷积       卷积的功能是特征提取。步长不等于0的时候起到下采样的作用。卷积层的参数量的计算公式如下：  一个小">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="http://example.com/images/ReID-base/image-20211224100331547.png">
-<meta property="og:image" content="http://example.com/images/ReID-base/image-20211224100452800.png">
-<meta property="og:image" content="http://example.com/images/ReID-base/image-20211224102629624.png">
-<meta property="og:image" content="http://example.com/images/ReID-base/image-20211224103125148.png">
-<meta property="og:image" content="http://example.com/images/ReID-base/image-20211224103153758.png">
-<meta property="og:image" content="http://example.com/images/ReID-base/image-20211224103739036.png">
-<meta property="og:image" content="http://example.com/images/ReID-base/image-20211224142608718.png">
-<meta property="og:image" content="http://example.com/images/ReID-base/dilation.gif">
-<meta property="og:image" content="http://example.com/images/ReID-base/image-20211224150656786.png">
-<meta property="og:image" content="http://example.com/images/ReID-base/image-20211224163346434.png">
-<meta property="og:image" content="http://example.com/images/ReID-base/image-20211225090519930.png">
-<meta property="og:image" content="http://example.com/images/ReID-base/image-20211225090645290.png">
-<meta property="og:image" content="http://example.com/images/ReID-base/image-20211225092537689.png">
-<meta property="og:image" content="http://example.com/images/ReID-base/image-20211225092830122.png">
-<meta property="og:image" content="http://example.com/images/ReID-base/image-20211225100413384.png">
-<meta property="og:image" content="http://example.com/images/ReID-base/image-20211225101543620.png">
-<meta property="og:image" content="http://example.com/images/ReID-base/image-20211225102201277.png">
-<meta property="og:image" content="http://example.com/images/ReID-base/image-20211225102415691.png">
-<meta property="og:image" content="http://example.com/images/ReID-base/image-20211225103052466.png">
-<meta property="og:image" content="http://example.com/images/ReID-base/image-20211225143228526.png">
-<meta property="og:image" content="http://example.com/images/ReID-base/image-20211225143426922.png">
-<meta property="og:image" content="http://example.com/images/ReID-base/image-20211225143943301.png">
-<meta property="og:image" content="http://example.com/images/ReID-base/image-20211225144337836.png">
-<meta property="og:image" content="http://example.com/images/ReID-base/image-20211225145235952.png">
-<meta property="og:image" content="http://example.com/images/ReID-base/image-20211225145942198.png">
-<meta property="og:image" content="http://example.com/images/ReID-base/image-20211225150221293.png">
-<meta property="og:image" content="http://example.com/images/ReID-base/image-20211225151200154.png">
-<meta property="og:image" content="http://example.com/images/ReID-base/image-20211227094927928.png">
-<meta property="og:image" content="http://example.com/images/ReID-base/image-20211227102409369.png">
-<meta property="og:image" content="http://example.com/images/ReID-base/image-20211227104924310.png">
-<meta property="og:image" content="http://example.com/images/ReID-base/image-20211227105706609.png">
-<meta property="og:image" content="http://example.com/images/ReID-base/image-20211227110756868.png">
-<meta property="og:image" content="http://example.com/images/ReID-base/image-20211227111029204.png">
-<meta property="og:image" content="http://example.com/images/ReID-base/image-20211227111131013.png">
-<meta property="og:image" content="http://example.com/images/ReID-base/image-20211227111507714.png">
-<meta property="og:image" content="http://example.com/images/ReID-base/image-20211227112344030.png">
-<meta property="og:image" content="http://example.com/images/ReID-base/image-20211227134125333.png">
-<meta property="og:image" content="http://example.com/images/ReID-base/image-20211227142426071.png">
-<meta property="og:image" content="http://example.com/images/ReID-base/image-20211227145701227.png">
-<meta property="og:image" content="http://example.com/images/ReID-base/image-20211227150111074.png">
-<meta property="og:image" content="http://example.com/images/ReID-base/image-20211227150524190.png">
-<meta property="og:image" content="http://example.com/images/ReID-base/image-20211227151111989.png">
+<meta property="og:image" content="https://striveizu.top/images/ReID-base/image-20211224100331547.png">
+<meta property="og:image" content="https://striveizu.top/images/ReID-base/image-20211224100452800.png">
+<meta property="og:image" content="https://striveizu.top/images/ReID-base/image-20211224102629624.png">
+<meta property="og:image" content="https://striveizu.top/images/ReID-base/image-20211224103125148.png">
+<meta property="og:image" content="https://striveizu.top/images/ReID-base/image-20211224103153758.png">
+<meta property="og:image" content="https://striveizu.top/images/ReID-base/image-20211224103739036.png">
+<meta property="og:image" content="https://striveizu.top/images/ReID-base/image-20211224142608718.png">
+<meta property="og:image" content="https://striveizu.top/images/ReID-base/dilation.gif">
+<meta property="og:image" content="https://striveizu.top/images/ReID-base/image-20211224150656786.png">
+<meta property="og:image" content="https://striveizu.top/images/ReID-base/image-20211224163346434.png">
+<meta property="og:image" content="https://striveizu.top/images/ReID-base/image-20211225090519930.png">
+<meta property="og:image" content="https://striveizu.top/images/ReID-base/image-20211225090645290.png">
+<meta property="og:image" content="https://striveizu.top/images/ReID-base/image-20211225092537689.png">
+<meta property="og:image" content="https://striveizu.top/images/ReID-base/image-20211225092830122.png">
+<meta property="og:image" content="https://striveizu.top/images/ReID-base/image-20211225100413384.png">
+<meta property="og:image" content="https://striveizu.top/images/ReID-base/image-20211225101543620.png">
+<meta property="og:image" content="https://striveizu.top/images/ReID-base/image-20211225102201277.png">
+<meta property="og:image" content="https://striveizu.top/images/ReID-base/image-20211225102415691.png">
+<meta property="og:image" content="https://striveizu.top/images/ReID-base/image-20211225103052466.png">
+<meta property="og:image" content="https://striveizu.top/images/ReID-base/image-20211225143228526.png">
+<meta property="og:image" content="https://striveizu.top/images/ReID-base/image-20211225143426922.png">
+<meta property="og:image" content="https://striveizu.top/images/ReID-base/image-20211225143943301.png">
+<meta property="og:image" content="https://striveizu.top/images/ReID-base/image-20211225144337836.png">
+<meta property="og:image" content="https://striveizu.top/images/ReID-base/image-20211225145235952.png">
+<meta property="og:image" content="https://striveizu.top/images/ReID-base/image-20211225145942198.png">
+<meta property="og:image" content="https://striveizu.top/images/ReID-base/image-20211225150221293.png">
+<meta property="og:image" content="https://striveizu.top/images/ReID-base/image-20211225151200154.png">
+<meta property="og:image" content="https://striveizu.top/images/ReID-base/image-20211227094927928.png">
+<meta property="og:image" content="https://striveizu.top/images/ReID-base/image-20211227102409369.png">
+<meta property="og:image" content="https://striveizu.top/images/ReID-base/image-20211227104924310.png">
+<meta property="og:image" content="https://striveizu.top/images/ReID-base/image-20211227105706609.png">
+<meta property="og:image" content="https://striveizu.top/images/ReID-base/image-20211227110756868.png">
+<meta property="og:image" content="https://striveizu.top/images/ReID-base/image-20211227111029204.png">
+<meta property="og:image" content="https://striveizu.top/images/ReID-base/image-20211227111131013.png">
+<meta property="og:image" content="https://striveizu.top/images/ReID-base/image-20211227111507714.png">
+<meta property="og:image" content="https://striveizu.top/images/ReID-base/image-20211227112344030.png">
+<meta property="og:image" content="https://striveizu.top/images/ReID-base/image-20211227134125333.png">
+<meta property="og:image" content="https://striveizu.top/images/ReID-base/image-20211227142426071.png">
+<meta property="og:image" content="https://striveizu.top/images/ReID-base/image-20211227145701227.png">
+<meta property="og:image" content="https://striveizu.top/images/ReID-base/image-20211227150111074.png">
+<meta property="og:image" content="https://striveizu.top/images/ReID-base/image-20211227150524190.png">
+<meta property="og:image" content="https://striveizu.top/images/ReID-base/image-20211227151111989.png">
 <meta property="article:published_time" content="2021-12-26T16:00:00.000Z">
 <meta property="article:modified_time" content="2021-12-27T07:17:10.589Z">
 <meta property="article:author" content="Strive">
@@ -54,7 +54,7 @@
 <meta property="article:tag" content="CNN">
 <meta property="article:tag" content="行人重识别">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="http://example.com/images/ReID-base/image-20211224100331547.png"><title>行人重识别需要的一些基础 | Strive's Blog</title><link ref="canonical" href="http://example.com/2021/12/27/ReID-base/"><link rel="dns-prefetch" href="https://cdn.jsdelivr.net"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.12.1/css/all.min.css" type="text/css"><link rel="stylesheet" href="/css/index.css?v=2.6.2"><script>var Stun = window.Stun || {};
+<meta name="twitter:image" content="https://striveizu.top/images/ReID-base/image-20211224100331547.png"><title>行人重识别需要的一些基础 | Strive's Blog</title><link ref="canonical" href="https://striveizu.top/2021/12/27/ReID-base/"><link rel="dns-prefetch" href="https://cdn.jsdelivr.net"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.12.1/css/all.min.css" type="text/css"><link rel="stylesheet" href="/css/index.css?v=2.6.2"><script>var Stun = window.Stun || {};
 var CONFIG = {
   root: '/',
   algolia: undefined,
@@ -277,7 +277,7 @@ window.CONFIG = CONFIG;</script><meta name="generator" content="Hexo 5.4.0"></he
       <p><img src="/images/ReID-base/image-20211227150524190.png" alt="image-20211227150524190"></p>
 <p>度量学习和表征学习往往可以用来共同训练一个模型，将多个损失组合在一起共同优化一个模型。这种做法也是业界精确度比较高的一种做法。</p>
 <p><img src="/images/ReID-base/image-20211227151111989.png" alt="image-20211227151111989"></p>
-</div><footer class="post-footer"><div class="post-ending ending"><div class="ending__text">------ 本文结束，感谢您的阅读 ------</div></div><div class="post-copyright copyright"><div class="copyright-author"><span class="copyright-author__name">本文作者: </span><span class="copyright-author__value"><a href="http://example.com">Strive</a></span></div><div class="copyright-link"><span class="copyright-link__name">本文链接: </span><span class="copyright-link__value"><a href="http://example.com/2021/12/27/ReID-base/">http://example.com/2021/12/27/ReID-base/</a></span></div><div class="copyright-notice"><span class="copyright-notice__name">版权声明: </span><span class="copyright-notice__value">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en" rel="external nofollow" target="_blank">BY-NC-SA</a> 许可协议。转载请注明出处！</span></div></div><div class="post-tags"><span class="post-tags-item"><span class="post-tags-item__icon"><i class="fas fa-tag"></i></span><a class="post-tags-item__link" href="http://example.com/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/">深度学习</a></span><span class="post-tags-item"><span class="post-tags-item__icon"><i class="fas fa-tag"></i></span><a class="post-tags-item__link" href="http://example.com/tags/CNN/">CNN</a></span><span class="post-tags-item"><span class="post-tags-item__icon"><i class="fas fa-tag"></i></span><a class="post-tags-item__link" href="http://example.com/tags/%E8%A1%8C%E4%BA%BA%E9%87%8D%E8%AF%86%E5%88%AB/">行人重识别</a></span></div><nav class="post-paginator paginator"><div class="paginator-prev"><a class="paginator-prev__link" href="/2021/12/28/ReID-features/"><span class="paginator-prev__icon"><i class="fas fa-angle-left"></i></span><span class="paginator-prev__text">行人重识别常用的局部特征</span></a></div><div class="paginator-next"><a class="paginator-next__link" href="/2021/12/24/C-Chapter2/"><span class="paginator-prev__text">C++Primer 第二章学习笔记</span><span class="paginator-next__icon"><i class="fas fa-angle-right"></i></span></a></div></nav></footer></div></div></div><div class="sidebar-wrap" id="sidebar-wrap"><aside class="sidebar" id="sidebar"><div class="sidebar-nav"><span class="sidebar-nav-toc current">文章目录</span><span class="sidebar-nav-ov">站点概览</span></div><section class="sidebar-toc"><ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%A1%8C%E4%BA%BA%E9%87%8D%E8%AF%86%E5%88%AB%E9%9C%80%E8%A6%81%E7%9A%84%E4%B8%80%E4%BA%9B%E5%9F%BA%E7%A1%80"><span class="toc-number">1.</span> <span class="toc-text">
+</div><footer class="post-footer"><div class="post-ending ending"><div class="ending__text">------ 本文结束，感谢您的阅读 ------</div></div><div class="post-copyright copyright"><div class="copyright-author"><span class="copyright-author__name">本文作者: </span><span class="copyright-author__value"><a href="https://striveizu.top">Strive</a></span></div><div class="copyright-link"><span class="copyright-link__name">本文链接: </span><span class="copyright-link__value"><a href="https://striveizu.top/2021/12/27/ReID-base/">https://striveizu.top/2021/12/27/ReID-base/</a></span></div><div class="copyright-notice"><span class="copyright-notice__name">版权声明: </span><span class="copyright-notice__value">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en" rel="external nofollow" target="_blank">BY-NC-SA</a> 许可协议。转载请注明出处！</span></div></div><div class="post-tags"><span class="post-tags-item"><span class="post-tags-item__icon"><i class="fas fa-tag"></i></span><a class="post-tags-item__link" href="https://striveizu.top/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/">深度学习</a></span><span class="post-tags-item"><span class="post-tags-item__icon"><i class="fas fa-tag"></i></span><a class="post-tags-item__link" href="https://striveizu.top/tags/CNN/">CNN</a></span><span class="post-tags-item"><span class="post-tags-item__icon"><i class="fas fa-tag"></i></span><a class="post-tags-item__link" href="https://striveizu.top/tags/%E8%A1%8C%E4%BA%BA%E9%87%8D%E8%AF%86%E5%88%AB/">行人重识别</a></span></div><nav class="post-paginator paginator"><div class="paginator-prev"><a class="paginator-prev__link" href="/2021/12/28/ReID-features/"><span class="paginator-prev__icon"><i class="fas fa-angle-left"></i></span><span class="paginator-prev__text">行人重识别常用的局部特征</span></a></div><div class="paginator-next"><a class="paginator-next__link" href="/2021/12/24/C-Chapter2/"><span class="paginator-prev__text">C++Primer 第二章学习笔记</span><span class="paginator-next__icon"><i class="fas fa-angle-right"></i></span></a></div></nav></footer></div></div></div><div class="sidebar-wrap" id="sidebar-wrap"><aside class="sidebar" id="sidebar"><div class="sidebar-nav"><span class="sidebar-nav-toc current">文章目录</span><span class="sidebar-nav-ov">站点概览</span></div><section class="sidebar-toc"><ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%A1%8C%E4%BA%BA%E9%87%8D%E8%AF%86%E5%88%AB%E9%9C%80%E8%A6%81%E7%9A%84%E4%B8%80%E4%BA%9B%E5%9F%BA%E7%A1%80"><span class="toc-number">1.</span> <span class="toc-text">
           行人重识别需要的一些基础</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%B8%80%E3%80%81%E5%9B%9E%E9%A1%BE%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E7%9A%84%E4%B8%80%E4%BA%9B%E5%9F%BA%E7%A1%80"><span class="toc-number">1.1.</span> <span class="toc-text">
           一、回顾神经网络的一些基础</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#1-1-%E5%8D%B7%E7%A7%AF%E5%9B%9E%E9%A1%BE"><span class="toc-number">1.2.</span> <span class="toc-text">
           1.1 卷积回顾</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#1-1-1-%E6%99%AE%E9%80%9A%E5%8D%B7%E7%A7%AF"><span class="toc-number">1.2.1.</span> <span class="toc-text">
