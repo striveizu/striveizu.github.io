@@ -1,0 +1,107 @@
+<!DOCTYPE html><html lang="zh-CN"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="format-detection" content="telephone=no"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="black"><link rel="icon" href="/images/icons/favicon-16x16.png?v=2.6.2" type="image/png" sizes="16x16"><link rel="icon" href="/images/icons/favicon-32x32.png?v=2.6.2" type="image/png" sizes="32x32"><meta name="description" content="DLA网络模型：一种深度网络特征融合方法                     DLA简介       DLA网络模型出自CVPR 2018 的论文 Deep Layer Aggregation，中文翻译为深层聚合。CNN为多种计算机视觉任务提供了很好的解决方案。随着视觉任务对高性能算法更严格的追求，Backbone的设计成为了一个很重要的主题。作者在摘要中指出计算机视觉识别任务需要从低到高的层">
+<meta property="og:type" content="article">
+<meta property="og:title" content="DLA模型">
+<meta property="og:url" content="http://example.com/2022/01/28/DLA/index.html">
+<meta property="og:site_name" content="Strive&#39;s Blog">
+<meta property="og:description" content="DLA网络模型：一种深度网络特征融合方法                     DLA简介       DLA网络模型出自CVPR 2018 的论文 Deep Layer Aggregation，中文翻译为深层聚合。CNN为多种计算机视觉任务提供了很好的解决方案。随着视觉任务对高性能算法更严格的追求，Backbone的设计成为了一个很重要的主题。作者在摘要中指出计算机视觉识别任务需要从低到高的层">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://example.com/2022/01/28/DLA/image-20220202095121590.png">
+<meta property="og:image" content="http://example.com/2022/01/28/DLA/image-20220203092920174.png">
+<meta property="og:image" content="http://example.com/2022/01/28/DLA/image-20220203093447689.png">
+<meta property="og:image" content="http://example.com/2022/01/28/DLA/image-20220203101438312.png">
+<meta property="og:image" content="http://example.com/2022/01/28/DLA/image-20220129212334052.png">
+<meta property="og:image" content="http://example.com/2022/01/28/DLA/image-20220129212846106.png">
+<meta property="og:image" content="http://example.com/2022/01/28/DLA/image-20220203161128542.png">
+<meta property="article:published_time" content="2022-01-28T12:31:30.000Z">
+<meta property="article:modified_time" content="2022-03-06T02:12:11.299Z">
+<meta property="article:author" content="Strive">
+<meta property="article:tag" content="深度学习">
+<meta property="article:tag" content="CNN">
+<meta property="article:tag" content="网络模型实现">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://example.com/2022/01/28/DLA/image-20220202095121590.png"><title>DLA模型 | Strive's Blog</title><link ref="canonical" href="http://example.com/2022/01/28/DLA/"><link rel="dns-prefetch" href="https://cdn.jsdelivr.net"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.12.1/css/all.min.css" type="text/css"><link rel="stylesheet" href="/css/index.css?v=2.6.2"><script>var Stun = window.Stun || {};
+var CONFIG = {
+  root: '/',
+  algolia: undefined,
+  assistSearch: undefined,
+  fontIcon: {"prompt":{"success":"fas fa-check-circle","info":"fas fa-arrow-circle-right","warning":"fas fa-exclamation-circle","error":"fas fa-times-circle"},"copyBtn":"fas fa-copy"},
+  sidebar: {"offsetTop":"20px","tocMaxDepth":6},
+  header: {"enable":true,"showOnPost":true,"scrollDownIcon":true},
+  postWidget: {"endText":true},
+  nightMode: {"enable":true},
+  back2top: {"enable":true},
+  codeblock: {"style":"default","highlight":"light","wordWrap":false},
+  reward: false,
+  fancybox: false,
+  zoomImage: {"gapAside":"20px"},
+  galleryWaterfall: undefined,
+  lazyload: false,
+  pjax: undefined,
+  externalLink: {"icon":{"enable":true,"name":"fas fa-external-link-alt"}},
+  shortcuts: undefined,
+  prompt: {"copyButton":"复制","copySuccess":"复制成功","copyError":"复制失败"},
+  sourcePath: {"js":"js","css":"css","images":"images"},
+};
+
+window.CONFIG = CONFIG;</script><meta name="generator" content="Hexo 5.4.0"></head><body><div class="container" id="container"><header class="header" id="header"><div class="header-inner"><nav class="header-nav header-nav--fixed"><div class="header-nav-inner"><div class="header-nav-menubtn"><i class="fas fa-bars"></i></div><div class="header-nav-menu"><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/"><span class="header-nav-menu-item__icon"><i class="fas fa-home"></i></span><span class="header-nav-menu-item__text">首页</span></a></div><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/about/"><span class="header-nav-menu-item__icon"><i class="fas fa-address-card"></i></span><span class="header-nav-menu-item__text">关于</span></a></div><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="javascript:;" onclick="return false;"><span class="header-nav-menu-item__icon"><i class="fas fa-edit"></i></span><span class="header-nav-menu-item__text">文章</span></a><div class="header-nav-submenu"><div class="header-nav-submenu-item"><a class="header-nav-submenu-item__link" href="/archives/"><span class="header-nav-submenu-item__icon"><i class="fas fa-folder-open"></i></span><span class="header-nav-submenu-item__text">归档</span></a></div><div class="header-nav-submenu-item"><a class="header-nav-submenu-item__link" href="/categories/"><span class="header-nav-submenu-item__icon"><i class="fas fa-layer-group"></i></span><span class="header-nav-submenu-item__text">分类</span></a></div><div class="header-nav-submenu-item"><a class="header-nav-submenu-item__link" href="/tags/"><span class="header-nav-submenu-item__icon"><i class="fas fa-tags"></i></span><span class="header-nav-submenu-item__text">标签</span></a></div></div></div></div><div class="header-nav-mode"><div class="mode"><div class="mode-track"><span class="mode-track-moon"></span><span class="mode-track-sun"></span></div><div class="mode-thumb"></div></div></div></div></nav><div class="header-banner"><div class="header-banner-info"><div class="header-banner-info__title">Strive's Blog</div><div class="header-banner-info__subtitle">你我期许的绝非遥不可及</div></div><div class="header-banner-arrow"><div class="header-banner-arrow__icon"><i class="fas fa-angle-down"></i></div></div></div></div></header><main class="main" id="main"><div class="main-inner"><div class="content-wrap" id="content-wrap"><div class="content" id="content"><!-- Just used to judge whether it is an article page--><div id="is-post"></div><div class="post"><header class="post-header"><h1 class="post-title">DLA模型</h1><div class="post-meta"><span class="post-meta-item post-meta-item--createtime"><span class="post-meta-item__icon"><i class="far fa-calendar-plus"></i></span><span class="post-meta-item__info">发表于</span><span class="post-meta-item__value">2022-01-28</span></span><span class="post-meta-item post-meta-item--updatetime"><span class="post-meta-item__icon"><i class="far fa-calendar-check"></i></span><span class="post-meta-item__info">更新于</span><span class="post-meta-item__value">2022-03-06</span></span></div></header><div class="post-body"><p>DLA网络模型：一种深度网络特征融合方法</p>
+
+        <h4 id="DLA简介">
+          <a href="#DLA简介" class="heading-link"><i class="fas fa-link"></i></a><a href="#DLA简介" class="headerlink" title="DLA简介"></a>DLA简介</h4>
+      <p>DLA网络模型出自CVPR 2018 的论文 Deep Layer Aggregation，中文翻译为深层聚合。CNN为多种计算机视觉任务提供了很好的解决方案。随着视觉任务对高性能算法更严格的追求，Backbone的设计成为了一个很重要的主题。作者在摘要中指出计算机视觉识别任务需要从低到高的层次提取不同层次的信息。因此当前的网络设计方向是如何加宽加深网络层次以提取更多的特征。如ResNet，通过引入跳跃连接使得网络有能力到达很深的层次。设计更深或更宽的网络架构虽然确实可以更好的提取特征，但也带来了更多的参数数量和难优化问题。更深的层提取更多语义和更全局的特征，但这些并不能证明最后一层是任何任务的最终表示。事实上，skip connections已经被证明对于分类和回归以及更结构化的任务是有效的。如何更好的聚合不同层次提取的特征，就像深度和宽度一样，是网络架构的一个关键维度。因此作者认为：设计更深更宽的网络结构固然重要，<strong>但如何更好的聚合层和块更值得研究。</strong></p>
+<p>经过复杂的分析，<strong>更深的网络层能提取到更多语义和全局的特征，但是这并不能表明最后一层就是任务需要的表示。</strong>实际上“跳跃连接”已经证明了对于分类、回归以及其他结构化问题的有效性。因此，如何聚合，尤其是深度与宽度上的聚合，对于网络结构的优化是一个非常重要的技术。</p>
+<p>作者认为，在计算机视觉任务中，仅是加深网络层次，但层和层之间相互孤立是不行的。<strong>混合和聚合不同层提取的特征表示，可以改进对图像是什么和在哪里的推断。</strong>尽管ResNet加入了skip connections的设计，已经组合了不同层次的特征表示，但这些连接本质上是浅层的连接，仅仅通过相加操作来融合不同层次的特征。</p>
+<p>作者通过更深层次的聚合来增强标准体系结构，以便更好地跨层融合信息。我们的深层聚合结构迭代和分层地合并特征层次，使网络具有更高的精度和更少的参数。跨架构和任务的实验表明，与现有的分支和合并方案相比，深层聚合方案提高了识别和分辨率。</p>
+
+        <h4 id="第一章-DLA的基本组成模块–IDA和HDA">
+          <a href="#第一章-DLA的基本组成模块–IDA和HDA" class="heading-link"><i class="fas fa-link"></i></a><a href="#第一章-DLA的基本组成模块–IDA和HDA" class="headerlink" title="第一章 DLA的基本组成模块–IDA和HDA"></a>第一章 DLA的基本组成模块–IDA和HDA</h4>
+      <p>DLA，即深度聚合。在论文中，作者将聚合<em>Aggregation</em>定义为网络架构中不同层次特征表示的组合。多个layer组合为一个block，多个block再根据分辨率组合为一个stage，<strong>DLA则主要探讨block和stage的组合</strong>（stage间网络保持一致分辨率，那么空间融合发生在stage间，语义融合发生在stage内）。如果一组<em>Aggregation</em>是复合的、非线性的，并且较早的聚合层的输出输入到后面的多个聚合层。作者介绍了两种深层聚合结构：IDA(iterative deep aggregation迭代式深度聚合)和HDA(hierarchical deep aggregation层级深度聚合)。IDA专注于跨分辨率和尺度的融合，而HDA专注于融合所有提取自不同模块和通道的特征。下图1的c和f分别展示了IDA和HDA的结构。</p>
+<p><img src="/2022/01/28/DLA/image-20220202095121590.png" alt="image-20220202095121590"></p>
+<p>​                                                                              图 1 HDA IDA 基本结构</p>
+
+        <h5 id="1-1-IDA-Iterative-Deep-Aggregation-迭代深度聚合结构">
+          <a href="#1-1-IDA-Iterative-Deep-Aggregation-迭代深度聚合结构" class="heading-link"><i class="fas fa-link"></i></a><a href="#1-1-IDA-Iterative-Deep-Aggregation-迭代深度聚合结构" class="headerlink" title="1.1 IDA Iterative Deep Aggregation 迭代深度聚合结构"></a>1.1 IDA Iterative Deep Aggregation 迭代深度聚合结构</h5>
+      <p>如上文所说，多个layer组合为一个block，多个block再根据分辨率组合为一个stage。更深层次的阶段语义更加丰富，但空间信息更加粗糙。从浅层到深层的skip connection可以融合尺度和分辨率。在IDA结构中，作者建议逐渐的增加和加深IDA结构的特征表示。不同层的聚合从最浅的层次和最小的尺度开始并逐步增加深度和尺度。作者指出不断地聚合不同阶段提取的特征，可以细化浅层的特征。</p>
+<p><img src="/2022/01/28/DLA/image-20220203092920174.png" alt="image-20220203092920174"></p>
+<p>上图中绿色的方块称作“Aggregation Node”，Aggregation Node在特征由浅到深传播的同时聚集特征。从上图中也可以看出，IDA以stage为基本单位，IDA结构在多个stage外部增加连接和Aggregation Node。</p>
+<p><img src="/2022/01/28/DLA/image-20220203093447689.png" alt="image-20220203093447689"></p>
+<p>在上面的公式中， <em><strong>I</strong></em>表示整个IDA模块， <em><strong>N</strong></em>表示Aggregation Node。例如***N(x1, x2)***表示一个输入为x1和x2的Aggregation Node，即图中最左侧的绿色方块。</p>
+
+        <h4 id="1-2-HDA-Hierarchical-Deep-Aggregation-层次深度聚合结构">
+          <a href="#1-2-HDA-Hierarchical-Deep-Aggregation-层次深度聚合结构" class="heading-link"><i class="fas fa-link"></i></a><a href="#1-2-HDA-Hierarchical-Deep-Aggregation-层次深度聚合结构" class="headerlink" title="1.2 HDA (Hierarchical Deep Aggregation)层次深度聚合结构"></a>1.2 HDA (Hierarchical Deep Aggregation)层次深度聚合结构</h4>
+      <p>虽然IDA有效地融合了多个stage的特征，但是没有对stage内部多个block的特征进行融合。作者提出了HDA（Hierarchical Deep Aggregation）结构增强stage内部多个block的融合，如下图所示：</p>
+<p><img src="/2022/01/28/DLA/image-20220203101438312.png" alt="image-20220203101438312"></p>
+<p>在树的中间聚合中，我们将聚合节点的输出返回到主干，作为下一个子树的输入，如图所示。这将传播前面所有块的聚合，而不是单独传播前面的块，以更好地保留特性。  </p>
+
+        <h4 id="第三章-代码实现">
+          <a href="#第三章-代码实现" class="heading-link"><i class="fas fa-link"></i></a><a href="#第三章-代码实现" class="headerlink" title="第三章 代码实现"></a>第三章 代码实现</h4>
+      
+        <h5 id="3-1-聚合节点-Aggregation-Nodes">
+          <a href="#3-1-聚合节点-Aggregation-Nodes" class="heading-link"><i class="fas fa-link"></i></a><a href="#3-1-聚合节点-Aggregation-Nodes" class="headerlink" title="3.1 聚合节点 Aggregation Nodes"></a>3.1 聚合节点 Aggregation Nodes</h5>
+      <p>聚合节点的的主要功能是组合和压缩它们的输入。节点学习选择和投射重要的信息，并在它们的输出作为输入时保持相同的维度。可以使用任意网络结构构造Aggregation Node，为减少计算量，作者使用单个“卷积-BN-激活函数”结构来构造Aggregation Node，一般情况下使用1x1卷积。</p>
+
+        <h4 id="第四章-实验设计">
+          <a href="#第四章-实验设计" class="heading-link"><i class="fas fa-link"></i></a><a href="#第四章-实验设计" class="headerlink" title="第四章 实验设计"></a>第四章 实验设计</h4>
+      <p>用CIFAR-10分类数据集测试DLA模型的效果。论文中分类任务实验使用SGD作为优化器执行120个epoch，动量为0.9，权重衰减10−4，批处理大小为256并以0.1的学习速率开始训练，每30个epoch减少10个学习速率。并Resize成256，并随机裁剪成224×224。根据我可怜的单卡12G的显存取舍，最终采用下面的训练方式。训练集预处理：随机裁剪224×224，随机中心翻转，并作均值化处理。测试集预处理：Resize成256×256，中心裁剪224×224，并均值化处理。batch_size选择64，训练50个epoch，初始学习率采取0.1，动量为0.9，权重衰减10−4，每训练20个epoch，学习率×0.1。</p>
+
+        <h4 id="第五章-结果展示">
+          <a href="#第五章-结果展示" class="heading-link"><i class="fas fa-link"></i></a><a href="#第五章-结果展示" class="headerlink" title="第五章 结果展示"></a>第五章 结果展示</h4>
+      <p>在CIFAR-10分类任务中达到了93.530%的准确率，比之前尝试过的的ResNet、AlexNet网络模型效果都要出色。有力的证明了DLA网络模型具有优秀的提取图像特征能力。</p>
+<p><img src="/2022/01/28/DLA/image-20220129212334052.png" alt="image-20220129212334052"></p>
+<p><img src="/2022/01/28/DLA/image-20220129212846106.png" alt="image-20220129212846106"></p>
+<p>后又尝试120epoch,batch_size为60，起始学习率0.1，动量0.9，权重衰减0.0001，每30个epoch学习率×0.1，最终达到94.9%准确率。</p>
+<p><img src="/2022/01/28/DLA/image-20220203161128542.png" alt="image-20220203161128542"></p>
+<p>没有引入预训练模型，充分证明了DLA优秀的提取特征能力。</p>
+
+        <h4 id="结语">
+          <a href="#结语" class="heading-link"><i class="fas fa-link"></i></a><a href="#结语" class="headerlink" title="结语"></a>结语</h4>
+      <p>DLA的代码还没有来得及认真学习，暂时搁置，后面有时间再来研究。</p>
+</div><footer class="post-footer"><div class="post-ending ending"><div class="ending__text">------ 本文结束，感谢您的阅读 ------</div></div><div class="post-copyright copyright"><div class="copyright-author"><span class="copyright-author__name">本文作者: </span><span class="copyright-author__value"><a href="http://example.com">Strive</a></span></div><div class="copyright-link"><span class="copyright-link__name">本文链接: </span><span class="copyright-link__value"><a href="http://example.com/2022/01/28/DLA/">http://example.com/2022/01/28/DLA/</a></span></div><div class="copyright-notice"><span class="copyright-notice__name">版权声明: </span><span class="copyright-notice__value">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en" rel="external nofollow" target="_blank">BY-NC-SA</a> 许可协议。转载请注明出处！</span></div></div><div class="post-tags"><span class="post-tags-item"><span class="post-tags-item__icon"><i class="fas fa-tag"></i></span><a class="post-tags-item__link" href="http://example.com/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/">深度学习</a></span><span class="post-tags-item"><span class="post-tags-item__icon"><i class="fas fa-tag"></i></span><a class="post-tags-item__link" href="http://example.com/tags/CNN/">CNN</a></span><span class="post-tags-item"><span class="post-tags-item__icon"><i class="fas fa-tag"></i></span><a class="post-tags-item__link" href="http://example.com/tags/%E7%BD%91%E7%BB%9C%E6%A8%A1%E5%9E%8B%E5%AE%9E%E7%8E%B0/">网络模型实现</a></span></div><nav class="post-paginator paginator"><div class="paginator-prev"><a class="paginator-prev__link" href="/2022/02/01/Attention/"><span class="paginator-prev__icon"><i class="fas fa-angle-left"></i></span><span class="paginator-prev__text">Attention</span></a></div><div class="paginator-next"><a class="paginator-next__link" href="/2022/01/28/caikeng001/"><span class="paginator-prev__text">深度学习踩坑记录001——训练集loss正常下降，测试集一动不动</span><span class="paginator-next__icon"><i class="fas fa-angle-right"></i></span></a></div></nav></footer></div></div></div><div class="sidebar-wrap" id="sidebar-wrap"><aside class="sidebar" id="sidebar"><div class="sidebar-nav"><span class="sidebar-nav-toc current">文章目录</span><span class="sidebar-nav-ov">站点概览</span></div><section class="sidebar-toc"><ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#DLA%E7%AE%80%E4%BB%8B"><span class="toc-number">1.</span> <span class="toc-text">
+          DLA简介</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%AC%AC%E4%B8%80%E7%AB%A0-DLA%E7%9A%84%E5%9F%BA%E6%9C%AC%E7%BB%84%E6%88%90%E6%A8%A1%E5%9D%97%E2%80%93IDA%E5%92%8CHDA"><span class="toc-number">2.</span> <span class="toc-text">
+          第一章 DLA的基本组成模块–IDA和HDA</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#1-1-IDA-Iterative-Deep-Aggregation-%E8%BF%AD%E4%BB%A3%E6%B7%B1%E5%BA%A6%E8%81%9A%E5%90%88%E7%BB%93%E6%9E%84"><span class="toc-number">2.1.</span> <span class="toc-text">
+          1.1 IDA Iterative Deep Aggregation 迭代深度聚合结构</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#1-2-HDA-Hierarchical-Deep-Aggregation-%E5%B1%82%E6%AC%A1%E6%B7%B1%E5%BA%A6%E8%81%9A%E5%90%88%E7%BB%93%E6%9E%84"><span class="toc-number">3.</span> <span class="toc-text">
+          1.2 HDA (Hierarchical Deep Aggregation)层次深度聚合结构</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%AC%AC%E4%B8%89%E7%AB%A0-%E4%BB%A3%E7%A0%81%E5%AE%9E%E7%8E%B0"><span class="toc-number">4.</span> <span class="toc-text">
+          第三章 代码实现</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#3-1-%E8%81%9A%E5%90%88%E8%8A%82%E7%82%B9-Aggregation-Nodes"><span class="toc-number">4.1.</span> <span class="toc-text">
+          3.1 聚合节点 Aggregation Nodes</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%AC%AC%E5%9B%9B%E7%AB%A0-%E5%AE%9E%E9%AA%8C%E8%AE%BE%E8%AE%A1"><span class="toc-number">5.</span> <span class="toc-text">
+          第四章 实验设计</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%AC%AC%E4%BA%94%E7%AB%A0-%E7%BB%93%E6%9E%9C%E5%B1%95%E7%A4%BA"><span class="toc-number">6.</span> <span class="toc-text">
+          第五章 结果展示</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%BB%93%E8%AF%AD"><span class="toc-number">7.</span> <span class="toc-text">
+          结语</span></a></li></ol></section><!-- ov = overview--><section class="sidebar-ov hide"><div class="sidebar-ov-author"><div class="sidebar-ov-author__avatar"><img class="sidebar-ov-author__avatar_img" src="/images/icons/photo.png" alt="avatar"></div><p class="sidebar-ov-author__text">To be a great person.</p></div><div class="sidebar-ov-cc"><a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en" target="_blank" rel="noopener" data-popover="知识共享许可协议" data-popover-pos="up"><img src="/images/cc-by-nc-sa.svg"></a></div></section><div class="sidebar-reading"><div class="sidebar-reading-info"><span class="sidebar-reading-info__text">你已阅读了 </span><span class="sidebar-reading-info__num">0</span><span class="sidebar-reading-info__perc">%</span></div><div class="sidebar-reading-line"></div></div></aside></div><div class="clearfix"></div></div></main><footer class="footer" id="footer"><div class="footer-inner"><div><span>Copyright © 2022</span><span class="footer__icon"><i class="fas fa-heart"></i></span><span>Strive</span></div><div><span>由 <a href="http://hexo.io/" title="Hexo" target="_blank" rel="noopener">Hexo</a> 强力驱动</span><span> v5.4.0</span><span class="footer__devider">|</span><span>主题 - <a href="https://github.com/liuyib/hexo-theme-stun/" title="Stun" target="_blank" rel="noopener">Stun</a></span><span> v2.6.2</span></div></div></footer><div class="loading-bar" id="loading-bar"><div class="loading-bar__progress"></div></div><div class="back2top" id="back2top"><span class="back2top__icon"><i class="fas fa-rocket"></i></span></div></div><script src="https://cdn.jsdelivr.net/npm/jquery@v3.4.1/dist/jquery.min.js"></script><script src="https://cdn.jsdelivr.net/npm/velocity-animate@1.5.2/velocity.min.js"></script><script src="https://cdn.jsdelivr.net/npm/velocity-animate@1.5.2/velocity.ui.min.js"></script><script src="/js/utils.js?v=2.6.2"></script><script src="/js/stun-boot.js?v=2.6.2"></script><script src="/js/scroll.js?v=2.6.2"></script><script src="/js/header.js?v=2.6.2"></script><script src="/js/sidebar.js?v=2.6.2"></script></body></html>
