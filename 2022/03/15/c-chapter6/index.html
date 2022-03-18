@@ -1,0 +1,95 @@
+<!DOCTYPE html><html lang="zh-CN"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="format-detection" content="telephone=no"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="black"><link rel="icon" href="/images/icons/favicon-16x16.png?v=2.6.2" type="image/png" sizes="16x16"><link rel="icon" href="/images/icons/favicon-32x32.png?v=2.6.2" type="image/png" sizes="32x32"><meta name="description" content="第六章 函数                           6.1 局部对象       在C++中，名字有作用域，对象有生命周期。 名字的作用域指的是程序文本的一部分，名字在其中可见。 对象的生命周期是程序执行过程中该对象存在的一段时间。 对于函数来说，函数体是一个语句块，语句块构成一个新的作用域。我们可以在作用域中定义变量，在作用域中定义的变量统称">
+<meta property="og:type" content="article">
+<meta property="og:title" content="c++chapter6">
+<meta property="og:url" content="https://striveizu.top/2022/03/15/c-chapter6/index.html">
+<meta property="og:site_name" content="Strive&#39;s Blog">
+<meta property="og:description" content="第六章 函数                           6.1 局部对象       在C++中，名字有作用域，对象有生命周期。 名字的作用域指的是程序文本的一部分，名字在其中可见。 对象的生命周期是程序执行过程中该对象存在的一段时间。 对于函数来说，函数体是一个语句块，语句块构成一个新的作用域。我们可以在作用域中定义变量，在作用域中定义的变量统称">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://striveizu.top/2022/03/15/c-chapter6/image-20220317201112834.png">
+<meta property="og:image" content="https://striveizu.top/2022/03/15/c-chapter6/image-20220317201750020.png">
+<meta property="article:published_time" content="2022-03-15T12:24:55.000Z">
+<meta property="article:modified_time" content="2022-03-17T13:24:36.446Z">
+<meta property="article:author" content="Strive">
+<meta property="article:tag" content="C++">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://striveizu.top/2022/03/15/c-chapter6/image-20220317201112834.png"><title>c++chapter6 | Strive's Blog</title><link ref="canonical" href="https://striveizu.top/2022/03/15/c-chapter6/"><link rel="dns-prefetch" href="https://cdn.jsdelivr.net"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.12.1/css/all.min.css" type="text/css"><link rel="stylesheet" href="/css/index.css?v=2.6.2"><script>var Stun = window.Stun || {};
+var CONFIG = {
+  root: '/',
+  algolia: undefined,
+  assistSearch: undefined,
+  fontIcon: {"prompt":{"success":"fas fa-check-circle","info":"fas fa-arrow-circle-right","warning":"fas fa-exclamation-circle","error":"fas fa-times-circle"},"copyBtn":"fas fa-copy"},
+  sidebar: {"offsetTop":"20px","tocMaxDepth":6},
+  header: {"enable":true,"showOnPost":true,"scrollDownIcon":true},
+  postWidget: {"endText":true},
+  nightMode: {"enable":true},
+  back2top: {"enable":true},
+  codeblock: {"style":"default","highlight":"light","wordWrap":false},
+  reward: false,
+  fancybox: false,
+  zoomImage: {"gapAside":"20px"},
+  galleryWaterfall: undefined,
+  lazyload: false,
+  pjax: undefined,
+  externalLink: {"icon":{"enable":true,"name":"fas fa-external-link-alt"}},
+  shortcuts: undefined,
+  prompt: {"copyButton":"复制","copySuccess":"复制成功","copyError":"复制失败"},
+  sourcePath: {"js":"js","css":"css","images":"images"},
+};
+
+window.CONFIG = CONFIG;</script><meta name="generator" content="Hexo 5.4.0"></head><body><div class="container" id="container"><header class="header" id="header"><div class="header-inner"><nav class="header-nav header-nav--fixed"><div class="header-nav-inner"><div class="header-nav-menubtn"><i class="fas fa-bars"></i></div><div class="header-nav-menu"><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/"><span class="header-nav-menu-item__icon"><i class="fas fa-home"></i></span><span class="header-nav-menu-item__text">首页</span></a></div><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/about/"><span class="header-nav-menu-item__icon"><i class="fas fa-address-card"></i></span><span class="header-nav-menu-item__text">关于</span></a></div><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="javascript:;" onclick="return false;"><span class="header-nav-menu-item__icon"><i class="fas fa-edit"></i></span><span class="header-nav-menu-item__text">文章</span></a><div class="header-nav-submenu"><div class="header-nav-submenu-item"><a class="header-nav-submenu-item__link" href="/archives/"><span class="header-nav-submenu-item__icon"><i class="fas fa-folder-open"></i></span><span class="header-nav-submenu-item__text">归档</span></a></div><div class="header-nav-submenu-item"><a class="header-nav-submenu-item__link" href="/categories/"><span class="header-nav-submenu-item__icon"><i class="fas fa-layer-group"></i></span><span class="header-nav-submenu-item__text">分类</span></a></div><div class="header-nav-submenu-item"><a class="header-nav-submenu-item__link" href="/tags/"><span class="header-nav-submenu-item__icon"><i class="fas fa-tags"></i></span><span class="header-nav-submenu-item__text">标签</span></a></div></div></div></div><div class="header-nav-mode"><div class="mode"><div class="mode-track"><span class="mode-track-moon"></span><span class="mode-track-sun"></span></div><div class="mode-thumb"></div></div></div></div></nav><div class="header-banner"><div class="header-banner-info"><div class="header-banner-info__title">Strive's Blog</div><div class="header-banner-info__subtitle">你我期许的绝非遥不可及</div></div><div class="header-banner-arrow"><div class="header-banner-arrow__icon"><i class="fas fa-angle-down"></i></div></div></div></div></header><main class="main" id="main"><div class="main-inner"><div class="content-wrap" id="content-wrap"><div class="content" id="content"><!-- Just used to judge whether it is an article page--><div id="is-post"></div><div class="post"><header class="post-header"><h1 class="post-title">c++chapter6</h1><div class="post-meta"><span class="post-meta-item post-meta-item--createtime"><span class="post-meta-item__icon"><i class="far fa-calendar-plus"></i></span><span class="post-meta-item__info">发表于</span><span class="post-meta-item__value">2022-03-15</span></span><span class="post-meta-item post-meta-item--updatetime"><span class="post-meta-item__icon"><i class="far fa-calendar-check"></i></span><span class="post-meta-item__info">更新于</span><span class="post-meta-item__value">2022-03-17</span></span></div></header><div class="post-body">
+        <h4 id="第六章-函数">
+          <a href="#第六章-函数" class="heading-link"><i class="fas fa-link"></i></a><a href="#第六章-函数" class="headerlink" title="第六章 函数"></a>第六章 函数</h4>
+      
+        <h4 id="6-1-局部对象">
+          <a href="#6-1-局部对象" class="heading-link"><i class="fas fa-link"></i></a><a href="#6-1-局部对象" class="headerlink" title="6.1 局部对象"></a>6.1 局部对象</h4>
+      <p>在C++中，名字有作用域，对象有生命周期。</p>
+<p><strong>名字的作用域指的是程序文本的一部分，名字在其中可见。</strong></p>
+<p><strong>对象的生命周期是程序执行过程中该对象存在的一段时间。</strong></p>
+<p>对于函数来说，函数体是一个语句块，语句块构成一个新的<strong>作用域</strong>。我们可以在作用域中定义变量，在<strong>作用域中定义的变量统称为局部变量。仅在函数的作用域内可见</strong></p>
+
+        <h5 id="6-1-1-普通局部对象">
+          <a href="#6-1-1-普通局部对象" class="heading-link"><i class="fas fa-link"></i></a><a href="#6-1-1-普通局部对象" class="headerlink" title="6.1.1 普通局部对象"></a>6.1.1 普通局部对象</h5>
+      <p>普通局部变量对应的对象只有当函数的控制路径经过变量定义语句时创建该对象，到达变量定义所在的块的末尾时将其销毁。</p>
+
+        <h5 id="6-1-2-局部静态对象">
+          <a href="#6-1-2-局部静态对象" class="heading-link"><i class="fas fa-link"></i></a><a href="#6-1-2-局部静态对象" class="headerlink" title="6.1.2 局部静态对象"></a>6.1.2 局部静态对象</h5>
+      <p>由于普通局部变量的对象的生命周期在执行到变量定义所在块的末尾即结束，有时又需要让局部变量的生命周期贯穿函数调用及之后的时间，可以把局部变量定义成<strong>static类型</strong>。定义成static的对象在程序执行路径第一次经过对象定义语句时被初始化，<strong>直到程序终止才被销毁。</strong></p>
+
+        <h4 id="6-2-函数声明-又称函数原型">
+          <a href="#6-2-函数声明-又称函数原型" class="heading-link"><i class="fas fa-link"></i></a><a href="#6-2-函数声明-又称函数原型" class="headerlink" title="6.2 函数声明 又称函数原型"></a>6.2 函数声明 又称函数原型</h4>
+      <p>函数的名字必须在使用之前声明，<strong>函数只能定义一次，但是可以声明多次。</strong></p>
+<p>如果一个函数永不被使用，可以只有声明没有定义。</p>
+<p><strong>函数的声明和函数的定义非常类似，但是函数的声明无需写函数体，只需要在函数名和参数列表后加；即可。</strong></p>
+<p>函数的声明<strong>一般在头文件中使用，</strong>可以确保所有文件同一函数声明保持一致，并且方便修改函数的接口。</p>
+
+        <h4 id="6-3-参数传递">
+          <a href="#6-3-参数传递" class="heading-link"><i class="fas fa-link"></i></a><a href="#6-3-参数传递" class="headerlink" title="6.3 参数传递"></a>6.3 参数传递</h4>
+      
+        <h5 id="6-3-1-形参实参">
+          <a href="#6-3-1-形参实参" class="heading-link"><i class="fas fa-link"></i></a><a href="#6-3-1-形参实参" class="headerlink" title="6.3.1 形参实参"></a>6.3.1 形参实参</h5>
+      <p>形参是函数声明时，括号里参数列表的参数。<strong>函数执行的第一步是定义并初始化它的形参</strong>。<strong>实参是形参的初始值，每次调用函数时都会重新创建它的形参，并用传入的实参对形参进行初始化。</strong></p>
+<p>如果<strong>形参是引用类型，那么形参会作为实参的别名与实参绑定</strong>，否则将实参的值拷贝后赋值给形参。</p>
+<p>当形参是引用类型时，我们说<strong>它对应的实参被引用传递</strong>，或者函数被传引用调用。由于形参是实参的引用，所以<strong>函数对形参的修改都会直接作用在实参上</strong>。因此<strong>想要对外部的对象使用函数修改，需要将形参声明为引用类型。</strong></p>
+<p>如果形参不是引用类型，形参和实参是两个独立对象。形参只是使用实参的值拷贝赋值<strong>。函数对形参的修改不会作用在实参上。</strong>这种形式的实参被值传递，或者参数被传值调用。</p>
+
+        <h5 id="6-3-2-传值参数">
+          <a href="#6-3-2-传值参数" class="heading-link"><i class="fas fa-link"></i></a><a href="#6-3-2-传值参数" class="headerlink" title="6.3.2 传值参数"></a>6.3.2 传值参数</h5>
+      <p>当初始化一个非引用类型的变量时，初始值被拷贝给变量，此时对变量的改动不会影响初始值。 </p>
+<p>当形参是一个指针类型时<strong>，初始化该指针类型变量时，与非引用类型相同执行拷贝赋值。</strong>由于形参被赋予的值是实参的值，实参也是指针类型的值，也就是一个<strong>地址。</strong>因此<strong>形参实参虽然是两个变量，但是都指向同一个地址。</strong>此时在函数中就可以使用指针来修改函数外部的对象。</p>
+<p><img src="/2022/03/15/c-chapter6/image-20220317201112834.png" alt="image-20220317201112834"></p>
+
+        <h5 id="6-3-3-传引用参数">
+          <a href="#6-3-3-传引用参数" class="heading-link"><i class="fas fa-link"></i></a><a href="#6-3-3-传引用参数" class="headerlink" title="6.3.3 传引用参数"></a>6.3.3 传引用参数</h5>
+      <p>由于形参不是引用类型时，会对形参进行拷贝初始化。但是<strong>拷贝大的类型或者容器对象比较低效，甚至有的类类型往往不支持拷贝操作。因此，函数的形参往往可以声明成引用类型</strong></p>
+<p>如果不需要对原实参进行修改，可<strong>以将形参声明成对常量的引用</strong>从而避免改变被引对象。</p>
+<p><img src="/2022/03/15/c-chapter6/image-20220317201750020.png" alt="image-20220317201750020"></p>
+</div><footer class="post-footer"><div class="post-ending ending"><div class="ending__text">------ 本文结束，感谢您的阅读 ------</div></div><div class="post-copyright copyright"><div class="copyright-author"><span class="copyright-author__name">本文作者: </span><span class="copyright-author__value"><a href="https://striveizu.top">Strive</a></span></div><div class="copyright-link"><span class="copyright-link__name">本文链接: </span><span class="copyright-link__value"><a href="https://striveizu.top/2022/03/15/c-chapter6/">https://striveizu.top/2022/03/15/c-chapter6/</a></span></div><div class="copyright-notice"><span class="copyright-notice__name">版权声明: </span><span class="copyright-notice__value">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en" rel="external nofollow" target="_blank">BY-NC-SA</a> 许可协议。转载请注明出处！</span></div></div><div class="post-tags"><span class="post-tags-item"><span class="post-tags-item__icon"><i class="fas fa-tag"></i></span><a class="post-tags-item__link" href="https://striveizu.top/tags/C/">C++</a></span></div><nav class="post-paginator paginator"><div class="paginator-next"><a class="paginator-next__link" href="/2022/03/15/Intra-Inter-Camera-Similarity-for-Unsupervised-Person-Re-Identification/"><span class="paginator-prev__text">Intra-Inter Camera Similarity for Unsupervised Person Re-Identification</span><span class="paginator-next__icon"><i class="fas fa-angle-right"></i></span></a></div></nav></footer></div></div></div><div class="sidebar-wrap" id="sidebar-wrap"><aside class="sidebar" id="sidebar"><div class="sidebar-nav"><span class="sidebar-nav-toc current">文章目录</span><span class="sidebar-nav-ov">站点概览</span></div><section class="sidebar-toc"><ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%AC%AC%E5%85%AD%E7%AB%A0-%E5%87%BD%E6%95%B0"><span class="toc-number">1.</span> <span class="toc-text">
+          第六章 函数</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#6-1-%E5%B1%80%E9%83%A8%E5%AF%B9%E8%B1%A1"><span class="toc-number">2.</span> <span class="toc-text">
+          6.1 局部对象</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#6-1-1-%E6%99%AE%E9%80%9A%E5%B1%80%E9%83%A8%E5%AF%B9%E8%B1%A1"><span class="toc-number">2.1.</span> <span class="toc-text">
+          6.1.1 普通局部对象</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#6-1-2-%E5%B1%80%E9%83%A8%E9%9D%99%E6%80%81%E5%AF%B9%E8%B1%A1"><span class="toc-number">2.2.</span> <span class="toc-text">
+          6.1.2 局部静态对象</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#6-2-%E5%87%BD%E6%95%B0%E5%A3%B0%E6%98%8E-%E5%8F%88%E7%A7%B0%E5%87%BD%E6%95%B0%E5%8E%9F%E5%9E%8B"><span class="toc-number">3.</span> <span class="toc-text">
+          6.2 函数声明 又称函数原型</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#6-3-%E5%8F%82%E6%95%B0%E4%BC%A0%E9%80%92"><span class="toc-number">4.</span> <span class="toc-text">
+          6.3 参数传递</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#6-3-1-%E5%BD%A2%E5%8F%82%E5%AE%9E%E5%8F%82"><span class="toc-number">4.1.</span> <span class="toc-text">
+          6.3.1 形参实参</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#6-3-2-%E4%BC%A0%E5%80%BC%E5%8F%82%E6%95%B0"><span class="toc-number">4.2.</span> <span class="toc-text">
+          6.3.2 传值参数</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#6-3-3-%E4%BC%A0%E5%BC%95%E7%94%A8%E5%8F%82%E6%95%B0"><span class="toc-number">4.3.</span> <span class="toc-text">
+          6.3.3 传引用参数</span></a></li></ol></li></ol></section><!-- ov = overview--><section class="sidebar-ov hide"><div class="sidebar-ov-author"><div class="sidebar-ov-author__avatar"><img class="sidebar-ov-author__avatar_img" src="/images/icons/photo.png" alt="avatar"></div><p class="sidebar-ov-author__text">To be a great person.</p></div><div class="sidebar-ov-cc"><a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en" target="_blank" rel="noopener" data-popover="知识共享许可协议" data-popover-pos="up"><img src="/images/cc-by-nc-sa.svg"></a></div></section><div class="sidebar-reading"><div class="sidebar-reading-info"><span class="sidebar-reading-info__text">你已阅读了 </span><span class="sidebar-reading-info__num">0</span><span class="sidebar-reading-info__perc">%</span></div><div class="sidebar-reading-line"></div></div></aside></div><div class="clearfix"></div></div></main><footer class="footer" id="footer"><div class="footer-inner"><div><span>Copyright © 2022</span><span class="footer__icon"><i class="fas fa-heart"></i></span><span>Strive</span></div><div><span>由 <a href="http://hexo.io/" title="Hexo" target="_blank" rel="noopener">Hexo</a> 强力驱动</span><span> v5.4.0</span><span class="footer__devider">|</span><span>主题 - <a href="https://github.com/liuyib/hexo-theme-stun/" title="Stun" target="_blank" rel="noopener">Stun</a></span><span> v2.6.2</span></div></div></footer><div class="loading-bar" id="loading-bar"><div class="loading-bar__progress"></div></div><div class="back2top" id="back2top"><span class="back2top__icon"><i class="fas fa-rocket"></i></span></div></div><script src="https://cdn.jsdelivr.net/npm/jquery@v3.4.1/dist/jquery.min.js"></script><script src="https://cdn.jsdelivr.net/npm/velocity-animate@1.5.2/velocity.min.js"></script><script src="https://cdn.jsdelivr.net/npm/velocity-animate@1.5.2/velocity.ui.min.js"></script><script src="/js/utils.js?v=2.6.2"></script><script src="/js/stun-boot.js?v=2.6.2"></script><script src="/js/scroll.js?v=2.6.2"></script><script src="/js/header.js?v=2.6.2"></script><script src="/js/sidebar.js?v=2.6.2"></script></body></html>

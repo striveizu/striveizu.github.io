@@ -1,0 +1,156 @@
+<!DOCTYPE html><html lang="zh-CN"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="format-detection" content="telephone=no"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="black"><link rel="icon" href="/images/icons/favicon-16x16.png?v=2.6.2" type="image/png" sizes="16x16"><link rel="icon" href="/images/icons/favicon-32x32.png?v=2.6.2" type="image/png" sizes="32x32"><meta name="description" content="CVPR2021 Intra-Inter Camera Similarity for Unsupervised Person Re-Identification 学习笔记                           研究问题的提出       作者提出，现有的无监督行人再识别工作主要可以分为3类：a)使用领域自适应的方法来对齐源域和目标域之间的特征分">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Intra-Inter Camera Similarity for Unsupervised Person Re-Identification">
+<meta property="og:url" content="https://striveizu.top/2022/03/15/Intra-Inter-Camera-Similarity-for-Unsupervised-Person-Re-Identification/index.html">
+<meta property="og:site_name" content="Strive&#39;s Blog">
+<meta property="og:description" content="CVPR2021 Intra-Inter Camera Similarity for Unsupervised Person Re-Identification 学习笔记                           研究问题的提出       作者提出，现有的无监督行人再识别工作主要可以分为3类：a)使用领域自适应的方法来对齐源域和目标域之间的特征分">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://striveizu.top/2022/03/15/Intra-Inter-Camera-Similarity-for-Unsupervised-Person-Re-Identification/image-20220315155149175.png">
+<meta property="og:image" content="https://striveizu.top/2022/03/15/Intra-Inter-Camera-Similarity-for-Unsupervised-Person-Re-Identification/image-20220316101320508.png">
+<meta property="og:image" content="https://striveizu.top/2022/03/15/Intra-Inter-Camera-Similarity-for-Unsupervised-Person-Re-Identification/image-20220316110011649.png">
+<meta property="og:image" content="https://striveizu.top/2022/03/15/Intra-Inter-Camera-Similarity-for-Unsupervised-Person-Re-Identification/image-20220316150635596.png">
+<meta property="og:image" content="https://striveizu.top/2022/03/15/Intra-Inter-Camera-Similarity-for-Unsupervised-Person-Re-Identification/image-20220316155520101.png">
+<meta property="og:image" content="https://striveizu.top/2022/03/15/Intra-Inter-Camera-Similarity-for-Unsupervised-Person-Re-Identification/image-20220316160343155.png">
+<meta property="og:image" content="https://striveizu.top/2022/03/15/Intra-Inter-Camera-Similarity-for-Unsupervised-Person-Re-Identification/image-20220316160215628.png">
+<meta property="og:image" content="https://striveizu.top/2022/03/15/Intra-Inter-Camera-Similarity-for-Unsupervised-Person-Re-Identification/image-20220316163553469.png">
+<meta property="og:image" content="https://striveizu.top/2022/03/15/Intra-Inter-Camera-Similarity-for-Unsupervised-Person-Re-Identification/image-20220317093426792.png">
+<meta property="og:image" content="https://striveizu.top/2022/03/15/Intra-Inter-Camera-Similarity-for-Unsupervised-Person-Re-Identification/image-20220318102313151.png">
+<meta property="og:image" content="https://striveizu.top/2022/03/15/Intra-Inter-Camera-Similarity-for-Unsupervised-Person-Re-Identification/image-20220318145607532.png">
+<meta property="og:image" content="https://striveizu.top/2022/03/15/Intra-Inter-Camera-Similarity-for-Unsupervised-Person-Re-Identification/image-20220318151403114.png">
+<meta property="og:image" content="https://striveizu.top/2022/03/15/Intra-Inter-Camera-Similarity-for-Unsupervised-Person-Re-Identification/image-20220318152603753.png">
+<meta property="og:image" content="https://striveizu.top/2022/03/15/Intra-Inter-Camera-Similarity-for-Unsupervised-Person-Re-Identification/image-20220318164844414.png">
+<meta property="og:image" content="https://striveizu.top/2022/03/15/Intra-Inter-Camera-Similarity-for-Unsupervised-Person-Re-Identification/image-20220318170233715.png">
+<meta property="og:image" content="https://striveizu.top/2022/03/15/Intra-Inter-Camera-Similarity-for-Unsupervised-Person-Re-Identification/image-20220318170242296.png">
+<meta property="article:published_time" content="2022-03-15T06:58:19.000Z">
+<meta property="article:modified_time" content="2022-03-18T09:03:38.695Z">
+<meta property="article:author" content="Strive">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://striveizu.top/2022/03/15/Intra-Inter-Camera-Similarity-for-Unsupervised-Person-Re-Identification/image-20220315155149175.png"><title>Intra-Inter Camera Similarity for Unsupervised Person Re-Identification | Strive's Blog</title><link ref="canonical" href="https://striveizu.top/2022/03/15/Intra-Inter-Camera-Similarity-for-Unsupervised-Person-Re-Identification/"><link rel="dns-prefetch" href="https://cdn.jsdelivr.net"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.12.1/css/all.min.css" type="text/css"><link rel="stylesheet" href="/css/index.css?v=2.6.2"><script>var Stun = window.Stun || {};
+var CONFIG = {
+  root: '/',
+  algolia: undefined,
+  assistSearch: undefined,
+  fontIcon: {"prompt":{"success":"fas fa-check-circle","info":"fas fa-arrow-circle-right","warning":"fas fa-exclamation-circle","error":"fas fa-times-circle"},"copyBtn":"fas fa-copy"},
+  sidebar: {"offsetTop":"20px","tocMaxDepth":6},
+  header: {"enable":true,"showOnPost":true,"scrollDownIcon":true},
+  postWidget: {"endText":true},
+  nightMode: {"enable":true},
+  back2top: {"enable":true},
+  codeblock: {"style":"default","highlight":"light","wordWrap":false},
+  reward: false,
+  fancybox: false,
+  zoomImage: {"gapAside":"20px"},
+  galleryWaterfall: undefined,
+  lazyload: false,
+  pjax: undefined,
+  externalLink: {"icon":{"enable":true,"name":"fas fa-external-link-alt"}},
+  shortcuts: undefined,
+  prompt: {"copyButton":"复制","copySuccess":"复制成功","copyError":"复制失败"},
+  sourcePath: {"js":"js","css":"css","images":"images"},
+};
+
+window.CONFIG = CONFIG;</script><meta name="generator" content="Hexo 5.4.0"></head><body><div class="container" id="container"><header class="header" id="header"><div class="header-inner"><nav class="header-nav header-nav--fixed"><div class="header-nav-inner"><div class="header-nav-menubtn"><i class="fas fa-bars"></i></div><div class="header-nav-menu"><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/"><span class="header-nav-menu-item__icon"><i class="fas fa-home"></i></span><span class="header-nav-menu-item__text">首页</span></a></div><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/about/"><span class="header-nav-menu-item__icon"><i class="fas fa-address-card"></i></span><span class="header-nav-menu-item__text">关于</span></a></div><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="javascript:;" onclick="return false;"><span class="header-nav-menu-item__icon"><i class="fas fa-edit"></i></span><span class="header-nav-menu-item__text">文章</span></a><div class="header-nav-submenu"><div class="header-nav-submenu-item"><a class="header-nav-submenu-item__link" href="/archives/"><span class="header-nav-submenu-item__icon"><i class="fas fa-folder-open"></i></span><span class="header-nav-submenu-item__text">归档</span></a></div><div class="header-nav-submenu-item"><a class="header-nav-submenu-item__link" href="/categories/"><span class="header-nav-submenu-item__icon"><i class="fas fa-layer-group"></i></span><span class="header-nav-submenu-item__text">分类</span></a></div><div class="header-nav-submenu-item"><a class="header-nav-submenu-item__link" href="/tags/"><span class="header-nav-submenu-item__icon"><i class="fas fa-tags"></i></span><span class="header-nav-submenu-item__text">标签</span></a></div></div></div></div><div class="header-nav-mode"><div class="mode"><div class="mode-track"><span class="mode-track-moon"></span><span class="mode-track-sun"></span></div><div class="mode-thumb"></div></div></div></div></nav><div class="header-banner"><div class="header-banner-info"><div class="header-banner-info__title">Strive's Blog</div><div class="header-banner-info__subtitle">你我期许的绝非遥不可及</div></div><div class="header-banner-arrow"><div class="header-banner-arrow__icon"><i class="fas fa-angle-down"></i></div></div></div></div></header><main class="main" id="main"><div class="main-inner"><div class="content-wrap" id="content-wrap"><div class="content" id="content"><!-- Just used to judge whether it is an article page--><div id="is-post"></div><div class="post"><header class="post-header"><h1 class="post-title">Intra-Inter Camera Similarity for Unsupervised Person Re-Identification</h1><div class="post-meta"><span class="post-meta-item post-meta-item--createtime"><span class="post-meta-item__icon"><i class="far fa-calendar-plus"></i></span><span class="post-meta-item__info">发表于</span><span class="post-meta-item__value">2022-03-15</span></span><span class="post-meta-item post-meta-item--updatetime"><span class="post-meta-item__icon"><i class="far fa-calendar-check"></i></span><span class="post-meta-item__info">更新于</span><span class="post-meta-item__value">2022-03-18</span></span></div></header><div class="post-body">
+        <h3 id="CVPR2021-Intra-Inter-Camera-Similarity-for-Unsupervised-Person-Re-Identification-学习笔记">
+          <a href="#CVPR2021-Intra-Inter-Camera-Similarity-for-Unsupervised-Person-Re-Identification-学习笔记" class="heading-link"><i class="fas fa-link"></i></a><a href="#CVPR2021-Intra-Inter-Camera-Similarity-for-Unsupervised-Person-Re-Identification-学习笔记" class="headerlink" title="CVPR2021 Intra-Inter Camera Similarity for Unsupervised Person Re-Identification 学习笔记"></a>CVPR2021 Intra-Inter Camera Similarity for Unsupervised Person Re-Identification 学习笔记</h3>
+      
+        <h4 id="研究问题的提出">
+          <a href="#研究问题的提出" class="heading-link"><i class="fas fa-link"></i></a><a href="#研究问题的提出" class="headerlink" title="研究问题的提出"></a>研究问题的提出</h4>
+      <p>作者提出，现有的无监督行人再识别工作主要可以分为3类：a)使用领域自适应的方法来对齐源域和目标域之间的特征分布。b)应用GAN网络执行图像风格迁移并维护源域上的身份标注。3）通过聚类算法、KNN等算法对图像进行聚类，在目标域上生成伪标签进行训练。前两者将Re-ID任务看作是一个迁移学习的任务，需要利用源域上的标注。而基于伪标签生成的ReID方法可以在完全无监督的情况下训练ReID模型，从而具有更好的灵活性。</p>
+<p>目前大多数基于伪标签生成的ReID方法都是先计算样本相似度，然后通过聚类等算法把相似的样本分配给相同的伪标签。在此过程中计算的样本相似度在很大程度上决定了ReID的准确性。<strong>但是现有的无监督ReID方法很难学习到可靠的样本相似度，特别是来自于不同相机的样本，由于相机之间的参数设置不同，这些因素可能会显著影响图片中人的外观，从而直接对全部的图片进行聚类，不考虑相机之间的领域差距，无法生成高质量的伪标签，从而影响ReID的性能和精度。</strong></p>
+<p>下图是对DukeMTMC-ReID子集的特征的 t-SNE 可视化，由下图1（a）可看出提取来自不同相机之间的样本的特征分布存在差异。</p>
+<p><img src="/2022/03/15/Intra-Inter-Camera-Similarity-for-Unsupervised-Person-Re-Identification/image-20220315155149175.png" alt="image-20220315155149175"></p>
+<p>​                                                                                    图1 不同颜色表示来自不同相机的样本</p>
+
+        <h4 id="作者提出的方法">
+          <a href="#作者提出的方法" class="heading-link"><i class="fas fa-link"></i></a><a href="#作者提出的方法" class="headerlink" title="作者提出的方法"></a>作者提出的方法</h4>
+      <p>行人再识别的任务是在未标记的任务图像数据集上，选取一张人物图像q，输入到ReID模型中产生一个特征向量，以从图库集中检索包含同一个人的图像Ig。模型应保证q和Ig比q和其他图片共享更多相似特征。</p>
+<p> 作者使用以下公式来描述一张图片的外观，其中I表示摄像机c捕获的人p的图像，Ap表示人p的外观，Sc表示摄像机c的位置、参数等设置，En表示姿势、光照、遮挡等影响Icn外观的其它随机因素。<br>$$<br>I_{n}^{c}= A_{p}+S_{c}+E_{n}<br>$$<br>聚类生成伪标签的过程的挑战在于模型通过学习特征减轻Sc和En的影响，并根据Ap找到跨相机的图像簇。作者为了解决这个问题提出使用两阶段执行伪标签预测，从而逐步增强学习到的特征f对En和Sc的鲁棒性。</p>
+<p><strong>第一阶段：</strong>对相机内（同一相机编号）的图像使用现有的聚类伪标签生成算法，根据聚类结果训练模型可以增强对En的鲁棒性。假设对第C个相机获得的图片的聚类结果为Tc，则在第c个相机上的训练损失函数为：</p>
+<p><img src="/2022/03/15/Intra-Inter-Camera-Similarity-for-Unsupervised-Person-Re-Identification/image-20220316101320508.png" alt="image-20220316101320508"></p>
+<p>其中m表示聚类簇ID，作为图片In的伪标签用于损失计算。为了保证在不同相机下对En的鲁棒性，作者提出<strong>不同的相机上可以使用共享的提取特征f来计算相机内损失。</strong>通过<strong>使用多分支CNN来计算不同相机的相机内损失，每个分支对应一个分类器，他们共享网络主干提取的特征f。</strong></p>
+<p>第二阶段：通过跨摄像机对同一个人的图像进行聚类，从而增强模型对Sc的鲁棒性。作者认为：摄像机 c 上的分类器有望在其他摄像机上具有区分性。因此，我们可以根据分类分数识别来自不同相机的同一个人的图像，并通过相机间相似度来扩大它们的相似度。作者定义了相机间相似度来扩大来自不同相机的同一身份图像相似度。如果直接使用学习到的特征f来测量聚类的相似性会受到Sc的影响，作者添加了对分类分数相似的衡量。即</p>
+<p><img src="/2022/03/15/Intra-Inter-Camera-Similarity-for-Unsupervised-Person-Re-Identification/image-20220316110011649.png" alt="image-20220316110011649"></p>
+<p>其中，Im和In是来自不同相机的两张图片，fm和fn是主干网络提取的两张图片的特征，Sm和Sn是通过两个分类器计算的分类分数，Δ（Sm和Sn）是Im和In来自同一身份的概率。</p>
+
+        <h5 id="1-相机内训练">
+          <a href="#1-相机内训练" class="heading-link"><i class="fas fa-link"></i></a><a href="#1-相机内训练" class="headerlink" title="1 相机内训练"></a>1 相机内训练</h5>
+      <p>训练框架如图2所示，相机内训练是在每个相机内单独进行的。它通过使用 由CNN计算得到的 特征 f  计算的相机内相似性进行聚类来生成伪标签。相机间训练通过使用相机间相似度对所有样本进行聚类来生成伪标签，该相似度是用分类分数计算的。这两个阶段在整个训练过程中交替执行，以优化  ReID 特征 f，并具有互补的相机内和相机间损失。</p>
+<p><img src="/2022/03/15/Intra-Inter-Camera-Similarity-for-Unsupervised-Person-Re-Identification/image-20220316150635596.png" alt="image-20220316150635596"></p>
+<p>​                                                                                        图2 训练框架</p>
+<p>相机内训练阶段根据每张图片的相机索引将训练集X划分为子集Xc，利用特征f计算的相似度对每个子集进行聚类，在每个簇中分配具有相同的标签的图片从而将每个Xc转换成标记数据集。相机内训练的损失函数表示为：</p>
+<p><img src="/2022/03/15/Intra-Inter-Camera-Similarity-for-Unsupervised-Person-Re-Identification/image-20220316155520101.png" alt="image-20220316155520101"></p>
+<p>其中F(Wc,)表示为一个带有可学习参数的分类器Wc，分类器输出的分类分数score与聚类得到的groundtruth标签m（聚类得到的簇ID）计算一个softmax交叉熵损失。则单个相机c的相机内损失函数可以表示为：</p>
+<p><img src="/2022/03/15/Intra-Inter-Camera-Similarity-for-Unsupervised-Person-Re-Identification/image-20220316160343155.png" alt="image-20220316160343155"></p>
+<p>相机内训练把训练每个相机看作一个训练任务，使用多任务训练的方法训练模型，整体损失就可以表示成所有相机内损失的加和。</p>
+<p><img src="/2022/03/15/Intra-Inter-Camera-Similarity-for-Unsupervised-Person-Re-Identification/image-20220316160215628.png" alt="image-20220316160215628"></p>
+
+        <h5 id="2-相机间训练">
+          <a href="#2-相机间训练" class="heading-link"><i class="fas fa-link"></i></a><a href="#2-相机间训练" class="headerlink" title="2 相机间训练"></a>2 相机间训练</h5>
+      <p>为了估计来自不同相机的两个样本属于同一身份的概率。<strong>需要一个与域无关的特征。</strong>作者认为：<strong>属于同一身份的样本在每个分类器中分类的概率分布应当相似。</strong>使用Jaccard相似系数计算图片Im和In的分类分数Sm和Sn的相似度。J<strong>accard相似系数用于比较有限样本集之间的相似性与差异性。Jaccard系数值越大，样本相似度越高。</strong>因此此相似度反映了Im和In来自同一身份的概率。</p>
+<p>其中分类分数Sm是图片Im通过backbone提取的特征fm在C个分类器输出的分类分数连接而成的向量。</p>
+<p><img src="/2022/03/15/Intra-Inter-Camera-Similarity-for-Unsupervised-Person-Re-Identification/image-20220316163553469.png" alt="image-20220316163553469"></p>
+<p>其中p(k|fm,wc)指的是特征fm在第C个相机分类器中预测为第k类的概率，Wc指的是第C个相机训练的分类器的参数。</p>
+<p>Jaccard相似系数计算公式如下，其中∩是两个向量的元素最小值，∪是两个向量的元素最大值：</p>
+<p><img src="/2022/03/15/Intra-Inter-Camera-Similarity-for-Unsupervised-Person-Re-Identification/image-20220317093426792.png" alt="image-20220317093426792"></p>
+<p>最终相机间损失表示为：</p>
+<p><img src="/2022/03/15/Intra-Inter-Camera-Similarity-for-Unsupervised-Person-Re-Identification/image-20220318102313151.png" alt="image-20220318102313151"></p>
+<p>其中B是训练小批量，l是softmax交叉熵损失，m是聚类结果分配的伪标签，λ是损失权重，Ltriplet是hard-batch三元组损失。我们从每个簇中随机选择  P 个簇和 K 个样本来构建训练 mini-batch B</p>
+<p>由于相机间训练需要将每张图片都要经过全部的分类器得到分类分数向量，因此想要使Δ（Sm, Sn）有着较好的效果，需要在每个相机上训练的分类器都要在其他相机得到的图片上有着良好的泛化效果。作者提出了AIBN以进一步提高不同分类器的泛化能力。</p>
+
+        <h5 id="3-AIBN">
+          <a href="#3-AIBN" class="heading-link"><i class="fas fa-link"></i></a><a href="#3-AIBN" class="headerlink" title="3 AIBN"></a>3 AIBN</h5>
+      <p>首先为什么需要归一化（规范化层）？</p>
+<p>数据预处理的方式通常会对最终结果产生巨大影响。在训练刚开始的时候我们一般需要标准化输入特征，使其平均值为0，方差为1。即尽量使数据的分布在正态分布上，这样的标准化可以很好的与我们的优化器配合使用，它可以将参数的量级进行统一。</p>
+<p>第二，对于典型的多层感知机或卷积神经网络。当我们训练时，<strong>中间层中的变量（例如，多层感知机中的仿射变换输出）可能具有更广的变化范围</strong>：不论是沿着从输入到输出的层，跨同一层中的单元，或是<strong>随着时间的推移，模型参数的随着训练更新变幻莫测。</strong> 批量规范化的发明者非正式地假设，<strong>这些变量分布中的这种偏移可能会阻碍网络的收敛。</strong>因此我们需要在每次训练迭代中，对数据输入进行规范化处理，以加速网络的收敛。</p>
+<p>更深层的网络很复杂，容易过拟合。 这意味着正则化变得更加重要。</p>
+<p>Normalization 归一化</p>
+
+        <h6 id="3-1-Instance-Normalization-实例归一化">
+          <a href="#3-1-Instance-Normalization-实例归一化" class="heading-link"><i class="fas fa-link"></i></a><a href="#3-1-Instance-Normalization-实例归一化" class="headerlink" title="3.1 Instance Normalization 实例归一化"></a>3.1 Instance Normalization 实例归一化</h6>
+      <p>IN常常用在图像风格化中，图像风格化生成的结果依赖于某个图像实例，因此对输入的规范化处理应该基于每个样本自身的分布。因此是在单一样本中对HW维度做归一化。</p>
+<p><img src="/2022/03/15/Intra-Inter-Camera-Similarity-for-Unsupervised-Person-Re-Identification/image-20220318145607532.png" alt="image-20220318145607532"></p>
+
+        <h6 id="3-2-Batch-Normalization-批量归一化">
+          <a href="#3-2-Batch-Normalization-批量归一化" class="heading-link"><i class="fas fa-link"></i></a><a href="#3-2-Batch-Normalization-批量归一化" class="headerlink" title="3.2 Batch Normalization 批量归一化"></a>3.2 Batch Normalization 批量归一化</h6>
+      <p><img src="/2022/03/15/Intra-Inter-Camera-Similarity-for-Unsupervised-Person-Re-Identification/image-20220318151403114.png" alt="image-20220318151403114"></p>
+<p>直观上理解就是BN和IN都是做Normalization，BN是对一个batch上的全部特征图在通道上计算均值方差做归一化操作。</p>
+
+        <h6 id="3-3-AIBN作者提出的Adaptive-Instance-and-Batch-Normalization">
+          <a href="#3-3-AIBN作者提出的Adaptive-Instance-and-Batch-Normalization" class="heading-link"><i class="fas fa-link"></i></a><a href="#3-3-AIBN作者提出的Adaptive-Instance-and-Batch-Normalization" class="headerlink" title="3.3 AIBN作者提出的Adaptive Instance and Batch Normalization"></a>3.3 AIBN作者提出的Adaptive Instance and Batch Normalization</h6>
+      <p>对样本特征的归一化处理，结合实体和batch两个层面的考虑。实验结果表明其有效性</p>
+<p><img src="/2022/03/15/Intra-Inter-Camera-Similarity-for-Unsupervised-Person-Re-Identification/image-20220318152603753.png" alt="image-20220318152603753"></p>
+
+        <h4 id="实验结果">
+          <a href="#实验结果" class="heading-link"><i class="fas fa-link"></i></a><a href="#实验结果" class="headerlink" title="实验结果"></a>实验结果</h4>
+      
+        <h5 id="实现细节">
+          <a href="#实现细节" class="heading-link"><i class="fas fa-link"></i></a><a href="#实现细节" class="headerlink" title="实现细节"></a>实现细节</h5>
+      <p>使用ResNet-50作为主干网络来提取特征， 在训练过程中，输入图像的大小被调整为 256×128。执行随机翻转和随机擦除等图像增强策略。在每一轮中，我们<strong>依次执行相机内阶段和相机间阶段。</strong>训练轮数设置为 40。</p>
+<p>在相机内训练阶段，每个相机的batch大小为 8。 使用SGD来优化网络模型。ResNet-50 基础层的学习率为 0.0005，其他层的学习率为 0.005。</p>
+<p>在相机间训练阶段，使用 P = 16 个随机选择的簇和 每个簇K =4 个随机采样的图像。mini-batch设置为64。也使用 SGD 优化模型。  ResNet-50 基础层的学习率为 0.001，其他层的学习率为 0.01。相机间损失函数方程中的损失权重λ固定为 1。triplet-loss  的Margin固定为 0.3。训练逐渐统一来自不同相机的特征分布。</p>
+<p>对于 Market1501 和 DukeMTMC-ReID，我们在每个阶段都训练模型 2 个 epoch。对于 MSMT17，我们在相机内阶段训练模型 12 个  epoch，在相机间阶段训练 2 个 epoch。我们使用standard Agglomerative<br>Hierarchical method聚类方法进行聚类。对于 Market1501 和  DukeMTMC-ReID，相机内阶段每个相机的cluster数量设置为 600，相机间阶段为 800。对于 MSMT17，相机内阶段每个相机的cluster数量为 600，相机间阶段为  1200。尽管在每个相机内执行了额外的聚类，但这比在整个集合上聚类更有效。因此，我们方法的计算复杂度是可以接受的。在 Market1501 上使用 GPU  完成训练大约需要 4-5 小时。对于 AIBN，混合权重 α 初始化为 0.5。我们将 ResNet-50 的 layer3 和 layer4 中的所有 BN  替换为 AIBN。每个 BottleNeck 模块共享混合权重。</p>
+
+        <h5 id="实验结果-1">
+          <a href="#实验结果-1" class="heading-link"><i class="fas fa-link"></i></a><a href="#实验结果-1" class="headerlink" title="实验结果"></a>实验结果</h5>
+      <p>stage1指相机内训练阶段，stage2指相机间训练阶段。</p>
+<p><img src="/2022/03/15/Intra-Inter-Camera-Similarity-for-Unsupervised-Person-Re-Identification/image-20220318164844414.png" alt="image-20220318164844414"></p>
+<p><img src="/2022/03/15/Intra-Inter-Camera-Similarity-for-Unsupervised-Person-Re-Identification/image-20220318170233715.png" alt="image-20220318170233715"></p>
+<p><img src="/2022/03/15/Intra-Inter-Camera-Similarity-for-Unsupervised-Person-Re-Identification/image-20220318170242296.png" alt="image-20220318170242296"></p>
+
+        <h4 id="结论">
+          <a href="#结论" class="heading-link"><i class="fas fa-link"></i></a><a href="#结论" class="headerlink" title="结论"></a>结论</h4>
+      <p>本文提出了一种用于无监督人  ReID 的相机内相似度方法，该方法通过生成相机内和相机间伪标签来迭代优化相机间相似度。相机内训练阶段被提议使用生成的相机内伪标签来训练多分支  CNN。基于在相机内训练阶段训练的每个分类器产生的分类分数，可以计算出更鲁棒的相机间相似度。然后可以使用通过在具有这种相机间相似性的相机之间执行聚类生成的伪标签来训练网络。此外，引入  AIBN 以提高网络的泛化能力。大量的实验结果证明了该方法在无监督人 ReID 中的有效性。</p>
+</div><footer class="post-footer"><div class="post-ending ending"><div class="ending__text">------ 本文结束，感谢您的阅读 ------</div></div><div class="post-copyright copyright"><div class="copyright-author"><span class="copyright-author__name">本文作者: </span><span class="copyright-author__value"><a href="https://striveizu.top">Strive</a></span></div><div class="copyright-link"><span class="copyright-link__name">本文链接: </span><span class="copyright-link__value"><a href="https://striveizu.top/2022/03/15/Intra-Inter-Camera-Similarity-for-Unsupervised-Person-Re-Identification/">https://striveizu.top/2022/03/15/Intra-Inter-Camera-Similarity-for-Unsupervised-Person-Re-Identification/</a></span></div><div class="copyright-notice"><span class="copyright-notice__name">版权声明: </span><span class="copyright-notice__value">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en" rel="external nofollow" target="_blank">BY-NC-SA</a> 许可协议。转载请注明出处！</span></div></div><nav class="post-paginator paginator"><div class="paginator-prev"><a class="paginator-prev__link" href="/2022/03/15/c-chapter6/"><span class="paginator-prev__icon"><i class="fas fa-angle-left"></i></span><span class="paginator-prev__text">c++chapter6</span></a></div><div class="paginator-next"><a class="paginator-next__link" href="/2022/03/13/c-Chapter4/"><span class="paginator-prev__text">C++Chapter4、5学习笔记</span><span class="paginator-next__icon"><i class="fas fa-angle-right"></i></span></a></div></nav></footer></div></div></div><div class="sidebar-wrap" id="sidebar-wrap"><aside class="sidebar" id="sidebar"><div class="sidebar-nav"><span class="sidebar-nav-toc current">文章目录</span><span class="sidebar-nav-ov">站点概览</span></div><section class="sidebar-toc"><ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#CVPR2021-Intra-Inter-Camera-Similarity-for-Unsupervised-Person-Re-Identification-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0"><span class="toc-number">1.</span> <span class="toc-text">
+          CVPR2021 Intra-Inter Camera Similarity for Unsupervised Person Re-Identification 学习笔记</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%A0%94%E7%A9%B6%E9%97%AE%E9%A2%98%E7%9A%84%E6%8F%90%E5%87%BA"><span class="toc-number">1.1.</span> <span class="toc-text">
+          研究问题的提出</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BD%9C%E8%80%85%E6%8F%90%E5%87%BA%E7%9A%84%E6%96%B9%E6%B3%95"><span class="toc-number">1.2.</span> <span class="toc-text">
+          作者提出的方法</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#1-%E7%9B%B8%E6%9C%BA%E5%86%85%E8%AE%AD%E7%BB%83"><span class="toc-number">1.2.1.</span> <span class="toc-text">
+          1 相机内训练</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#2-%E7%9B%B8%E6%9C%BA%E9%97%B4%E8%AE%AD%E7%BB%83"><span class="toc-number">1.2.2.</span> <span class="toc-text">
+          2 相机间训练</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#3-AIBN"><span class="toc-number">1.2.3.</span> <span class="toc-text">
+          3 AIBN</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#3-1-Instance-Normalization-%E5%AE%9E%E4%BE%8B%E5%BD%92%E4%B8%80%E5%8C%96"><span class="toc-number">1.2.3.1.</span> <span class="toc-text">
+          3.1 Instance Normalization 实例归一化</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#3-2-Batch-Normalization-%E6%89%B9%E9%87%8F%E5%BD%92%E4%B8%80%E5%8C%96"><span class="toc-number">1.2.3.2.</span> <span class="toc-text">
+          3.2 Batch Normalization 批量归一化</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#3-3-AIBN%E4%BD%9C%E8%80%85%E6%8F%90%E5%87%BA%E7%9A%84Adaptive-Instance-and-Batch-Normalization"><span class="toc-number">1.2.3.3.</span> <span class="toc-text">
+          3.3 AIBN作者提出的Adaptive Instance and Batch Normalization</span></a></li></ol></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%AE%9E%E9%AA%8C%E7%BB%93%E6%9E%9C"><span class="toc-number">1.3.</span> <span class="toc-text">
+          实验结果</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%AE%9E%E7%8E%B0%E7%BB%86%E8%8A%82"><span class="toc-number">1.3.1.</span> <span class="toc-text">
+          实现细节</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%AE%9E%E9%AA%8C%E7%BB%93%E6%9E%9C-1"><span class="toc-number">1.3.2.</span> <span class="toc-text">
+          实验结果</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%BB%93%E8%AE%BA"><span class="toc-number">1.4.</span> <span class="toc-text">
+          结论</span></a></li></ol></li></ol></section><!-- ov = overview--><section class="sidebar-ov hide"><div class="sidebar-ov-author"><div class="sidebar-ov-author__avatar"><img class="sidebar-ov-author__avatar_img" src="/images/icons/photo.png" alt="avatar"></div><p class="sidebar-ov-author__text">To be a great person.</p></div><div class="sidebar-ov-cc"><a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en" target="_blank" rel="noopener" data-popover="知识共享许可协议" data-popover-pos="up"><img src="/images/cc-by-nc-sa.svg"></a></div></section><div class="sidebar-reading"><div class="sidebar-reading-info"><span class="sidebar-reading-info__text">你已阅读了 </span><span class="sidebar-reading-info__num">0</span><span class="sidebar-reading-info__perc">%</span></div><div class="sidebar-reading-line"></div></div></aside></div><div class="clearfix"></div></div></main><footer class="footer" id="footer"><div class="footer-inner"><div><span>Copyright © 2022</span><span class="footer__icon"><i class="fas fa-heart"></i></span><span>Strive</span></div><div><span>由 <a href="http://hexo.io/" title="Hexo" target="_blank" rel="noopener">Hexo</a> 强力驱动</span><span> v5.4.0</span><span class="footer__devider">|</span><span>主题 - <a href="https://github.com/liuyib/hexo-theme-stun/" title="Stun" target="_blank" rel="noopener">Stun</a></span><span> v2.6.2</span></div></div></footer><div class="loading-bar" id="loading-bar"><div class="loading-bar__progress"></div></div><div class="back2top" id="back2top"><span class="back2top__icon"><i class="fas fa-rocket"></i></span></div></div><script src="https://cdn.jsdelivr.net/npm/jquery@v3.4.1/dist/jquery.min.js"></script><script src="https://cdn.jsdelivr.net/npm/velocity-animate@1.5.2/velocity.min.js"></script><script src="https://cdn.jsdelivr.net/npm/velocity-animate@1.5.2/velocity.ui.min.js"></script><script src="/js/utils.js?v=2.6.2"></script><script src="/js/stun-boot.js?v=2.6.2"></script><script src="/js/scroll.js?v=2.6.2"></script><script src="/js/header.js?v=2.6.2"></script><script src="/js/sidebar.js?v=2.6.2"></script></body></html>
