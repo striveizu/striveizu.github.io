@@ -28,7 +28,680 @@ var CONFIG = {
   sourcePath: {"js":"js","css":"css","images":"images"},
 };
 
-window.CONFIG = CONFIG;</script><meta name="generator" content="Hexo 5.4.0"></head><body><div class="container" id="container"><header class="header" id="header"><div class="header-inner"><nav class="header-nav header-nav--fixed"><div class="header-nav-inner"><div class="header-nav-menubtn"><i class="fas fa-bars"></i></div><div class="header-nav-menu"><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/"><span class="header-nav-menu-item__icon"><i class="fas fa-home"></i></span><span class="header-nav-menu-item__text">首页</span></a></div><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/about/"><span class="header-nav-menu-item__icon"><i class="fas fa-address-card"></i></span><span class="header-nav-menu-item__text">关于</span></a></div><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="javascript:;" onclick="return false;"><span class="header-nav-menu-item__icon"><i class="fas fa-edit"></i></span><span class="header-nav-menu-item__text">文章</span></a><div class="header-nav-submenu"><div class="header-nav-submenu-item"><a class="header-nav-submenu-item__link" href="/archives/"><span class="header-nav-submenu-item__icon"><i class="fas fa-folder-open"></i></span><span class="header-nav-submenu-item__text">归档</span></a></div><div class="header-nav-submenu-item"><a class="header-nav-submenu-item__link" href="/categories/"><span class="header-nav-submenu-item__icon"><i class="fas fa-layer-group"></i></span><span class="header-nav-submenu-item__text">分类</span></a></div><div class="header-nav-submenu-item"><a class="header-nav-submenu-item__link" href="/tags/"><span class="header-nav-submenu-item__icon"><i class="fas fa-tags"></i></span><span class="header-nav-submenu-item__text">标签</span></a></div></div></div></div><div class="header-nav-mode"><div class="mode"><div class="mode-track"><span class="mode-track-moon"></span><span class="mode-track-sun"></span></div><div class="mode-thumb"></div></div></div></div></nav><div class="header-banner"><div class="header-banner-info"><div class="header-banner-info__title">Strive's Blog</div><div class="header-banner-info__subtitle">你我期许的绝非遥不可及</div></div><div class="header-banner-arrow"><div class="header-banner-arrow__icon"><i class="fas fa-angle-down"></i></div></div></div></div></header><main class="main" id="main"><div class="main-inner"><div class="content-wrap" id="content-wrap"><div class="content content-home" id="content"><section class="postlist"><article class="postlist-item post"><header class="post-header"><h1 class="post-title"><a class="post-title__link" href="/2022/03/15/c-chapter6/">c++chapter6</a></h1><div class="post-meta"><span class="post-meta-item post-meta-item--createtime"><span class="post-meta-item__icon"><i class="far fa-calendar-plus"></i></span><span class="post-meta-item__info">发表于</span><span class="post-meta-item__value">2022-03-15</span></span><span class="post-meta-item post-meta-item--updatetime"><span class="post-meta-item__icon"><i class="far fa-calendar-check"></i></span><span class="post-meta-item__info">更新于</span><span class="post-meta-item__value">2022-03-17</span></span></div></header><div class="post-body"><div class="post-excerpt">
+window.CONFIG = CONFIG;</script><meta name="generator" content="Hexo 5.4.0"></head><body><div class="container" id="container"><header class="header" id="header"><div class="header-inner"><nav class="header-nav header-nav--fixed"><div class="header-nav-inner"><div class="header-nav-menubtn"><i class="fas fa-bars"></i></div><div class="header-nav-menu"><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/"><span class="header-nav-menu-item__icon"><i class="fas fa-home"></i></span><span class="header-nav-menu-item__text">首页</span></a></div><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/about/"><span class="header-nav-menu-item__icon"><i class="fas fa-address-card"></i></span><span class="header-nav-menu-item__text">关于</span></a></div><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="javascript:;" onclick="return false;"><span class="header-nav-menu-item__icon"><i class="fas fa-edit"></i></span><span class="header-nav-menu-item__text">文章</span></a><div class="header-nav-submenu"><div class="header-nav-submenu-item"><a class="header-nav-submenu-item__link" href="/archives/"><span class="header-nav-submenu-item__icon"><i class="fas fa-folder-open"></i></span><span class="header-nav-submenu-item__text">归档</span></a></div><div class="header-nav-submenu-item"><a class="header-nav-submenu-item__link" href="/categories/"><span class="header-nav-submenu-item__icon"><i class="fas fa-layer-group"></i></span><span class="header-nav-submenu-item__text">分类</span></a></div><div class="header-nav-submenu-item"><a class="header-nav-submenu-item__link" href="/tags/"><span class="header-nav-submenu-item__icon"><i class="fas fa-tags"></i></span><span class="header-nav-submenu-item__text">标签</span></a></div></div></div></div><div class="header-nav-mode"><div class="mode"><div class="mode-track"><span class="mode-track-moon"></span><span class="mode-track-sun"></span></div><div class="mode-thumb"></div></div></div></div></nav><div class="header-banner"><div class="header-banner-info"><div class="header-banner-info__title">Strive's Blog</div><div class="header-banner-info__subtitle">你我期许的绝非遥不可及</div></div><div class="header-banner-arrow"><div class="header-banner-arrow__icon"><i class="fas fa-angle-down"></i></div></div></div></div></header><main class="main" id="main"><div class="main-inner"><div class="content-wrap" id="content-wrap"><div class="content content-home" id="content"><section class="postlist"><article class="postlist-item post"><header class="post-header"><h1 class="post-title"><a class="post-title__link" href="/2022/03/30/Javaday04/">Javaday04</a></h1><div class="post-meta"><span class="post-meta-item post-meta-item--createtime"><span class="post-meta-item__icon"><i class="far fa-calendar-plus"></i></span><span class="post-meta-item__info">发表于</span><span class="post-meta-item__value">2022-03-30</span></span><span class="post-meta-item post-meta-item--updatetime"><span class="post-meta-item__icon"><i class="far fa-calendar-check"></i></span><span class="post-meta-item__info">更新于</span><span class="post-meta-item__value">2022-04-01</span></span></div></header><div class="post-body"><div class="post-excerpt">
+        <h2 id="Javaday04–继承">
+          <a href="#Javaday04–继承" class="heading-link"><i class="fas fa-link"></i></a><a href="#Javaday04–继承" class="headerlink" title="Javaday04–继承"></a>Javaday04–继承</h2>
+      
+        <h3 id="1-继承">
+          <a href="#1-继承" class="heading-link"><i class="fas fa-link"></i></a><a href="#1-继承" class="headerlink" title="1 继承"></a>1 继承</h3>
+      <p><img src="/2022/03/30/Javaday04/image-20220330201425736.png" alt="image-20220330201425736"></p>
+<img src="/2022/03/30/Javaday04/image-20220330202317460.png" alt="image-20220330202317460" style="zoom:80%;">
+
+
+        <h4 id="1-1-继承设计规范">
+          <a href="#1-1-继承设计规范" class="heading-link"><i class="fas fa-link"></i></a><a href="#1-1-继承设计规范" class="headerlink" title="1.1 继承设计规范"></a>1.1 继承设计规范</h4>
+      <p>子类们的相同的特征（共性属性、共性方法）放在父类中定义，子类独有的属性和方法放在自己的类里。</p>
+
+        <h4 id="1-2-继承的内存分配">
+          <a href="#1-2-继承的内存分配" class="heading-link"><i class="fas fa-link"></i></a><a href="#1-2-继承的内存分配" class="headerlink" title="1.2 继承的内存分配"></a>1.2 继承的内存分配</h4>
+      <p>新建一个子类对象的时候，会在堆内存中开辟一块空间，但在这个子类空间中会分成两块空间：父类空间和子类空间。</p>
+<p>父类空间包含父类的属性和方法。</p>
+<p><img src="/2022/03/30/Javaday04/image-20220330204144813.png" alt="image-20220330204144813"></p>
+
+        <h4 id="1-3-继承的特点">
+          <a href="#1-3-继承的特点" class="heading-link"><i class="fas fa-link"></i></a><a href="#1-3-继承的特点" class="headerlink" title="1.3 继承的特点"></a>1.3 继承的特点</h4>
+      <p><img src="/2022/03/30/Javaday04/image-20220330204609974.png" alt="image-20220330204609974"></p>
+<p>1、子类不能继承父类的构造器</p>
+<p>2、子类<strong>可以继承父类的私有成员，但是不能直接访问。</strong></p>
+<p><img src="/2022/03/30/Javaday04/image-20220330204901816.png" alt="image-20220330204901816"></p>
+<p>3、子类是否可以继承父类的静态成员</p>
+<p>子类可以<strong>共享访问</strong>父类的静态成员，但是由于静态成员在内存中仅保存一份，因此严格来说子类可以访问父类的静态成员，但是不是继承了父类的静态成员。</p>
+<p>4、Java中不支持多继承</p>
+<p>5、Java中支持多层继承，即子类A继承父类B，父类B可以继承父类C</p>
+<p><img src="/2022/03/30/Javaday04/image-20220330205513163.png" alt="image-20220330205513163"></p>
+<p><img src="/2022/03/30/Javaday04/image-20220330210115742.png" alt="image-20220330210115742"></p>
+
+        <h4 id="1-4-方法重写">
+          <a href="#1-4-方法重写" class="heading-link"><i class="fas fa-link"></i></a><a href="#1-4-方法重写" class="headerlink" title="1.4 方法重写"></a>1.4 方法重写</h4>
+      <p>方法重写的原则：<strong>声明不变</strong>，<strong>重新实现</strong></p>
+<p><img src="/2022/03/30/Javaday04/image-20220330210417765.png" alt="image-20220330210417765"></p>
+<p>@Override重写方法注解，在重写方法上面加上这个@Override重写方法注解，1可以提示别人这是个重写方法，2可以对重写方法进行校验。</p>
+<p><img src="/2022/03/30/Javaday04/image-20220330211315630.png" alt="image-20220330211315630"></p>
+<figure class="highlight java"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Override</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">call</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="keyword">super</span>.call();    <span class="comment">//实现父类被重写方法的功能；</span></span><br><span class="line">    <span class="comment">//视频通话  子类需要的父类方法未实现的的功能</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></div></figure>
+
+
+        <h4 id="1-5-子类构造器">
+          <a href="#1-5-子类构造器" class="heading-link"><i class="fas fa-link"></i></a><a href="#1-5-子类构造器" class="headerlink" title="1.5 子类构造器"></a>1.5 子类构造器</h4>
+      <p><img src="/2022/03/30/Javaday04/image-20220331190626860.png" alt="image-20220331190626860"></p>
+<p><img src="/2022/03/30/Javaday04/image-20220331190937717.png" alt="image-20220331190937717"></p>
+<p>子类想要生成一个有参构造器，若操作的属性是继承自父类，可以在父类中定义有参构造器，在子类中写一个有参构造器，在有参构造器中调用super（）从而对继承自父类的属性初始化。</p>
+<p><img src="/2022/03/30/Javaday04/image-20220331193006642.png" alt="image-20220331193006642"></p>
+<p><img src="/2022/03/30/Javaday04/image-20220331193332182.png" alt="image-20220331193332182"></p>
+<p><img src="/2022/03/30/Javaday04/image-20220331193808954.png" alt="image-20220331193808954"></p>
+<p>super()；、this()；一定要放在构造器的第一行。</p>
+
+        <h3 id="2-包、类、修饰符">
+          <a href="#2-包、类、修饰符" class="heading-link"><i class="fas fa-link"></i></a><a href="#2-包、类、修饰符" class="headerlink" title="2 包、类、修饰符"></a>2 包、类、修饰符</h3>
+      
+        <h4 id="2-1-包">
+          <a href="#2-1-包" class="heading-link"><i class="fas fa-link"></i></a><a href="#2-1-包" class="headerlink" title="2.1 包"></a>2.1 包</h4>
+      <p><img src="/2022/03/30/Javaday04/image-20220331194326550.png" alt="image-20220331194326550"></p>
+<p>如果这个类中使用不同包下的相同类名，此时默认只能导入一个类的包，另一个类要使用全名访问。</p>
+<figure class="highlight java"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//已知it1和it2两个包都含有student类</span></span><br><span class="line"><span class="keyword">import</span> com.strive.<span class="keyword">package</span>.it1.Student;</span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Test</span></span>&#123;</span><br><span class="line">    Student s = <span class="keyword">new</span> Student();     <span class="comment">//默认使用的是导入的it1包里的Student类</span></span><br><span class="line">    <span class="comment">//使用不同包下的相同类名，另一个类要使用全名访问</span></span><br><span class="line">    <span class="comment">//全名指的是 包名.类名</span></span><br><span class="line">    com.strive.<span class="keyword">package</span>.it2.Student s2 = <span class="keyword">new</span> com.strive.<span class="keyword">package</span>.it2.Student();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></div></figure>
+
+
+        <h4 id="2-2-权限修饰符">
+          <a href="#2-2-权限修饰符" class="heading-link"><i class="fas fa-link"></i></a><a href="#2-2-权限修饰符" class="headerlink" title="2.2 权限修饰符"></a>2.2 权限修饰符</h4>
+      <p><img src="/2022/03/30/Javaday04/image-20220331201839088.png" alt="image-20220331201839088"></p>
+<p><img src="/2022/03/30/Javaday04/image-20220331201851415.png" alt="image-20220331201851415"></p>
+<p>注意：在子类中使用父类对象，不能访问protected的属性和方法。</p>
+<p>权限修饰符的一般要求：</p>
+<p>1、成员变量一般私有</p>
+<p>2、成员方法一般设为公开</p>
+<p>3、如果该成员只希望本类访问，使用private修饰</p>
+<p>4、如果只希望本类、同一个包下的其他类和子类访问，使用protected修饰</p>
+<p><strong>注意：</strong></p>
+<p>虽然在父类中声明为private的私有成员变量，<strong>子类继承父类的时候还是会继承到对应的私有成员变量</strong>，但是<strong>不能直接访问</strong>，<strong>可以通过父类中public的getter\setter方法来访问。</strong></p>
+
+        <h4 id="2-3-final关键字">
+          <a href="#2-3-final关键字" class="heading-link"><i class="fas fa-link"></i></a><a href="#2-3-final关键字" class="headerlink" title="2.3 final关键字"></a>2.3 final关键字</h4>
+      <p><img src="/2022/03/30/Javaday04/image-20220331203411405.png" alt="image-20220331203411405"></p>
+<p><img src="/2022/03/30/Javaday04/image-20220331210937667.png" alt="image-20220331210937667"></p>
+
+        <h4 id="2-4-常量">
+          <a href="#2-4-常量" class="heading-link"><i class="fas fa-link"></i></a><a href="#2-4-常量" class="headerlink" title="2.4 常量"></a>2.4 常量</h4>
+      <p>常量是使用了public static final修饰的成员变量，必须有初始化值，在程序执行过程中不能被改变。</p>
+<p><strong>常量</strong>的命名规范：<strong>英文单词全部大写，单词之间使用下划线连接</strong>。</p>
+<p> <img src="/2022/03/30/Javaday04/image-20220401201220826.png" alt="image-20220401201220826"></p>
+<p>常量可以作为信息的标志和分类，使程序可读性好，实现软编码形式。</p>
+
+        <h3 id="3、枚举">
+          <a href="#3、枚举" class="heading-link"><i class="fas fa-link"></i></a><a href="#3、枚举" class="headerlink" title="3、枚举"></a>3、枚举</h3>
+      <img src="/2022/03/30/Javaday04/image-20220401202029813.png" alt="image-20220401202029813" style="zoom:80%;">
+
+<p><img src="/2022/03/30/Javaday04/image-20220401202441434.png" alt="image-20220401202441434"></p>
+<p><img src="/2022/03/30/Javaday04/image-20220401204813709.png" alt="image-20220401204813709"></p>
+<p><img src="/2022/03/30/Javaday04/image-20220401210527624.png" alt="image-20220401210527624"></p>
+<p>枚举一般用来表示信息标志、信息分类，但是一般不用来表示具体值，如果需要表示具体的值，比如字符串，还是需要常量来表示。</p>
+
+        <h3 id="4-抽象类和抽象方法">
+          <a href="#4-抽象类和抽象方法" class="heading-link"><i class="fas fa-link"></i></a><a href="#4-抽象类和抽象方法" class="headerlink" title="4 抽象类和抽象方法"></a>4 抽象类和抽象方法</h3>
+      <p><img src="/2022/03/30/Javaday04/image-20220401211302877.png" alt="image-20220401211302877"></p>
+<img src="/2022/03/30/Javaday04/image-20220401213528952.png" alt="image-20220401213528952" style="zoom:80%;">
+
+<p><img src="/2022/03/30/Javaday04/image-20220401220341315.png" alt="image-20220401220341315"></p>
+<p>抽象类不能被实例化！</p>
+</div></div></article><article class="postlist-item post"><header class="post-header"><h1 class="post-title"><a class="post-title__link" href="/2022/03/30/AGW%E4%BB%A3%E7%A0%81%E5%AD%A6%E4%B9%A001-SYSU%E6%95%B0%E6%8D%AE%E9%9B%86%E9%A2%84%E5%A4%84%E7%90%86/">AGW代码学习01-SYSU数据集预处理</a></h1><div class="post-meta"><span class="post-meta-item post-meta-item--createtime"><span class="post-meta-item__icon"><i class="far fa-calendar-plus"></i></span><span class="post-meta-item__info">发表于</span><span class="post-meta-item__value">2022-03-30</span></span><span class="post-meta-item post-meta-item--updatetime"><span class="post-meta-item__icon"><i class="far fa-calendar-check"></i></span><span class="post-meta-item__info">更新于</span><span class="post-meta-item__value">2022-04-01</span></span></div></header><div class="post-body"><div class="post-excerpt">
+        <h3 id="AGW代码学习">
+          <a href="#AGW代码学习" class="heading-link"><i class="fas fa-link"></i></a><a href="#AGW代码学习" class="headerlink" title="AGW代码学习"></a>AGW代码学习</h3>
+      
+        <h4 id="1-SYSU数据集介绍">
+          <a href="#1-SYSU数据集介绍" class="heading-link"><i class="fas fa-link"></i></a><a href="#1-SYSU数据集介绍" class="headerlink" title="1 SYSU数据集介绍"></a>1 SYSU数据集介绍</h4>
+      <p>SYSU-MM01数据集是常用的跨模态行人再识别数据集之一。SYSU-MM01包含由6台相机拍摄的图像，包括2个红外相机和4个RGB相机。详见下列表格，每一列：相机的索引号，拍摄地点，室内还是室外，白天还是黑夜，ID数目，每个ID有多少不同的连续RGB帧，每个ID有多少不同的连续IR帧。</p>
+<p><img src="/2022/03/30/AGW%E4%BB%A3%E7%A0%81%E5%AD%A6%E4%B9%A001-SYSU%E6%95%B0%E6%8D%AE%E9%9B%86%E9%A2%84%E5%A4%84%E7%90%86/image-20220330094237480.png" alt="image-20220330094237480"></p>
+<p><strong>文件描述</strong></p>
+<p>在下载的文件中，包含: 6个camera文件夹，1个exp标签文件夹。 “ cam1”到“ cam6”：每个目录的名称是ID。值得注意，并非所有人都出现在所有6台摄像机中。其中 <strong>cam3 cam6 是红外场景IR，cam1 cam2 cam4 cam5 是真实场景RGB。</strong></p>
+<p>exp：用于训练和测试的一个固定的分割。 为了获得训练，验证和测试ID，可以使用“ txt”或“ mat”文件。 available_id包含的491个有效ID（至少在2个摄像机中出现）。 train_id，val_id和test_id是非重叠的，它们的并集是available_id。</p>
+<p><img src="/2022/03/30/AGW%E4%BB%A3%E7%A0%81%E5%AD%A6%E4%B9%A001-SYSU%E6%95%B0%E6%8D%AE%E9%9B%86%E9%A2%84%E5%A4%84%E7%90%86/image-20220330094417641.png" alt="image-20220330094417641"><img src="/2022/03/30/AGW%E4%BB%A3%E7%A0%81%E5%AD%A6%E4%B9%A001-SYSU%E6%95%B0%E6%8D%AE%E9%9B%86%E9%A2%84%E5%A4%84%E7%90%86/image-20220330094439450.png" alt="image-20220330094439450"></p>
+<p><strong>数据集提供的评估协议</strong></p>
+<p>在SYSU-MM01数据集中有<strong>491个有效的ID</strong>。我们有一个固定的分割，<strong>使用296个身份用于训练</strong>，<strong>99个用于验证</strong>，<strong>96个用于测试</strong>。在训练期间，训练集中在所有的照相机中的296人的所有图像都可以应用。</p>
+<p><strong>在测试阶段，用IR搜索RGB。</strong>RGB相机的样本用于gallery，红外相机的样品用于probe。我们设计了<strong>全搜索模式和室内搜索模式</strong>两种模式。<strong>对于所有搜索模式，RGB相机1、2、4和5用于gallery集，红外相机3和6用于probe集</strong>。对于<strong>室内搜索模式，使用RGB摄像头1和2（不包括室外摄像机4和5）用于gallery集，红外摄像机3和6用于probe。</strong></p>
+<p>对于这两种模式，我们都采用了<strong>单镜头和多镜头的设置</strong>。对于每个RGB相机下的单个身份，选择一个身份图像来形成gallery集，称为单镜头（<strong>一个ID在一个cam中只随机选择一个图像作为gallery</strong>）；<strong>选择10个图像形成gallery集，称为多镜头</strong>。对于probe集，将使用所有图像。当给定一个probe图像，通过计算probe图像和gallery图像之间的相似性来进行匹配。注意，<strong>要在不同位置的摄像机之间进行匹配。</strong>相机2和相机3在相同的位置，所以相机3的probe图像要跳过相机2的gallery图像。在计算了相似性后，我们可以根据相似性的降序得到一个排名列表。</p>
+<p>这个数据集具有挑战性，因为一些人的图像是在室内环境中拍摄的，而有些是在室外环境中。它有491人，每个人至少被两个不同的照相机捕捉。<strong>单镜头全搜索模式评估协议是最具挑战性的情况。</strong></p>
+
+        <h4 id="2-数据集预处理部分代码-pre-process-sysu-py">
+          <a href="#2-数据集预处理部分代码-pre-process-sysu-py" class="heading-link"><i class="fas fa-link"></i></a><a href="#2-数据集预处理部分代码-pre-process-sysu-py" class="headerlink" title="2 数据集预处理部分代码 pre_process_sysu.py"></a>2 数据集预处理部分代码 pre_process_sysu.py</h4>
+      <p>AGW使用**.npy**格式来存储与加载数据集和标签。</p>
+
+        <h5 id="2-1-数据集加载部分">
+          <a href="#2-1-数据集加载部分" class="heading-link"><i class="fas fa-link"></i></a><a href="#2-1-数据集加载部分" class="headerlink" title="2.1 数据集加载部分"></a>2.1 数据集加载部分</h5>
+      <figure class="highlight python"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 加载模块与引入数据集路径</span></span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"><span class="keyword">from</span> PIL <span class="keyword">import</span> Image</span><br><span class="line"><span class="keyword">import</span> pdb</span><br><span class="line"><span class="keyword">import</span> os</span><br><span class="line"></span><br><span class="line"><span class="comment"># 数据集路径</span></span><br><span class="line">data_path = <span class="string">&#x27;/home/datasets/prml/computervision/re-id/sysu-mm01/ori_data&#x27;</span></span><br><span class="line"><span class="comment"># 标注出rgb相机和红外相机</span></span><br><span class="line">rgb_cameras = [<span class="string">&#x27;cam1&#x27;</span>,<span class="string">&#x27;cam2&#x27;</span>,<span class="string">&#x27;cam4&#x27;</span>,<span class="string">&#x27;cam5&#x27;</span>]</span><br><span class="line">ir_cameras = [<span class="string">&#x27;cam3&#x27;</span>,<span class="string">&#x27;cam6&#x27;</span>]</span><br></pre></td></tr></table></div></figure>
+
+
+        <h5 id="2-2-从划分协议中提取图像ID">
+          <a href="#2-2-从划分协议中提取图像ID" class="heading-link"><i class="fas fa-link"></i></a><a href="#2-2-从划分协议中提取图像ID" class="headerlink" title="2.2 从划分协议中提取图像ID"></a>2.2 从划分协议中提取图像ID</h5>
+      <p>根据SYSU数据集提供的划分协议，使用296个身份作为训练集，99个身份用于验证。训练集和测试集的行人ID都保存在exp文件夹下的train_id.txt和val_id.txt下。</p>
+<img src="/2022/03/30/AGW%E4%BB%A3%E7%A0%81%E5%AD%A6%E4%B9%A001-SYSU%E6%95%B0%E6%8D%AE%E9%9B%86%E9%A2%84%E5%A4%84%E7%90%86/image-20220330110926297.png" alt="image-20220330110926297" style="zoom:80%;">
+
+<p>打开train_id.txt可见训练集中的ID以数字形式出现，以逗号为分割排成一行。</p>
+<p><img src="/2022/03/30/AGW%E4%BB%A3%E7%A0%81%E5%AD%A6%E4%B9%A001-SYSU%E6%95%B0%E6%8D%AE%E9%9B%86%E9%A2%84%E5%A4%84%E7%90%86/image-20220330111038854.png" alt="image-20220330111038854"></p>
+<figure class="highlight python"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 3.找到训练集和验证集的ID，并预处理</span></span><br><span class="line"><span class="comment"># 找到划分协议文件</span></span><br><span class="line">file_path_train = os.path.join(data_path,<span class="string">&#x27;exp/train_id.txt&#x27;</span>)</span><br><span class="line">file_path_val   = os.path.join(data_path,<span class="string">&#x27;exp/val_id.txt&#x27;</span>)</span><br><span class="line"><span class="keyword">with</span> <span class="built_in">open</span>(file_path_train, <span class="string">&#x27;r&#x27;</span>) <span class="keyword">as</span> file:</span><br><span class="line">    ids = file.read().splitlines()             <span class="comment"># splitlines按照行(&#x27;\r&#x27;, &#x27;\r\n&#x27;, \n&#x27;)分隔，返回一个包含各行作为元素的列表</span></span><br><span class="line">    ids = [<span class="built_in">int</span>(y) <span class="keyword">for</span> y <span class="keyword">in</span> ids[<span class="number">0</span>].split(<span class="string">&#x27;,&#x27;</span>)]  <span class="comment"># ids[0]表示提取出的第一行去掉引号，然后按逗号分隔，形成整数型列表</span></span><br><span class="line">    id_train = [<span class="string">&quot;%04d&quot;</span> % x <span class="keyword">for</span> x <span class="keyword">in</span> ids]       <span class="comment"># 将从划分协议中提取的ID转变成4位整数，与数据集文件夹的ID形式对应</span></span><br><span class="line">    <span class="comment"># print(id_train)                           # [&#x27;0001&#x27;, &#x27;0002&#x27;, &#x27;0004&#x27;, &#x27;0005&#x27;, &#x27;0007&#x27;...&#x27;0533&#x27;]</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">with</span> <span class="built_in">open</span>(file_path_val, <span class="string">&#x27;r&#x27;</span>) <span class="keyword">as</span> file:</span><br><span class="line">    ids = file.read().splitlines()</span><br><span class="line">    ids = [<span class="built_in">int</span>(y) <span class="keyword">for</span> y <span class="keyword">in</span> ids[<span class="number">0</span>].split(<span class="string">&#x27;,&#x27;</span>)]</span><br><span class="line">    id_val = [<span class="string">&quot;%04d&quot;</span> % x <span class="keyword">for</span> x <span class="keyword">in</span> ids]</span><br><span class="line">    <span class="comment"># print(id_val)                             # [&#x27;0334&#x27;, &#x27;0335&#x27;, &#x27;0336&#x27;, &#x27;0337&#x27;, &#x27;0338&#x27;...]</span></span><br><span class="line">    </span><br><span class="line"><span class="comment"># 合并训练和测试ID</span></span><br><span class="line">id_train.extend(id_val)</span><br></pre></td></tr></table></div></figure>
+
+
+        <h5 id="2-3-依据提取到的行人ID找到对应的图片数据">
+          <a href="#2-3-依据提取到的行人ID找到对应的图片数据" class="heading-link"><i class="fas fa-link"></i></a><a href="#2-3-依据提取到的行人ID找到对应的图片数据" class="headerlink" title="2.3 依据提取到的行人ID找到对应的图片数据"></a>2.3 依据提取到的行人ID找到对应的图片数据</h5>
+      <p>SYSU数据集的格式是相机ID\行人身份ID\图片编号.jpg</p>
+<p><img src="/2022/03/30/AGW%E4%BB%A3%E7%A0%81%E5%AD%A6%E4%B9%A001-SYSU%E6%95%B0%E6%8D%AE%E9%9B%86%E9%A2%84%E5%A4%84%E7%90%86/image-20220330111448414.png" alt="image-20220330111448414"></p>
+<p>由于每个行人身份不一定在每个相机中都被拍摄到，因此需要遍历相机ID来查询根据上述代码提取到的行人ID来找到对应的图像。</p>
+<figure class="highlight python"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 4.找到训练集ID对应的所有RGB和IR图像</span></span><br><span class="line">files_rgb = []    <span class="comment"># 保存RGB图像路径的列表</span></span><br><span class="line">files_ir = []     <span class="comment"># 保存IR图像路径的列表</span></span><br><span class="line"><span class="keyword">for</span> <span class="built_in">id</span> <span class="keyword">in</span> <span class="built_in">sorted</span>(id_train):   <span class="comment"># 按着ID从小到大的顺序(sorted)</span></span><br><span class="line">    <span class="keyword">for</span> cam <span class="keyword">in</span> rgb_cameras:   <span class="comment"># 遍历RGB相机</span></span><br><span class="line">        img_dir = os.path.join(data_path, cam, <span class="built_in">id</span>)  <span class="comment"># 该相机下该行人ID的文件夹</span></span><br><span class="line">        <span class="keyword">if</span> os.path.isdir(img_dir):</span><br><span class="line">            new_files = <span class="built_in">sorted</span>([img_dir+<span class="string">&#x27;/&#x27;</span>+i <span class="keyword">for</span> i <span class="keyword">in</span> os.listdir(img_dir)])  <span class="comment"># os.listdir 返回包含的文件名字的列表</span></span><br><span class="line">            files_rgb.extend(new_files)   <span class="comment"># 添加到训练集中RGB图像路径的列表</span></span><br><span class="line">            </span><br><span class="line">    <span class="keyword">for</span> cam <span class="keyword">in</span> ir_cameras:</span><br><span class="line">        img_dir = os.path.join(data_path, cam, <span class="built_in">id</span>)</span><br><span class="line">        <span class="keyword">if</span> os.path.isdir(img_dir):</span><br><span class="line">            new_files = <span class="built_in">sorted</span>([img_dir+<span class="string">&#x27;/&#x27;</span>+i <span class="keyword">for</span> i <span class="keyword">in</span> os.listdir(img_dir)])</span><br><span class="line">            files_ir.extend(new_files)</span><br></pre></td></tr></table></div></figure>
+
+
+        <h5 id="2-4-对行人ID重新打标签">
+          <a href="#2-4-对行人ID重新打标签" class="heading-link"><i class="fas fa-link"></i></a><a href="#2-4-对行人ID重新打标签" class="headerlink" title="2.4 对行人ID重新打标签"></a>2.4 对行人ID重新打标签</h5>
+      <p>由于在训练阶段，ReID任务可以看作是一个多分类问题，<strong>提取的训练和验证集是从总的行人ID中随机抽出的，行人ID并不连续，直接使用行人ID作为训练label并不是一个好的选择</strong>，因此需要对行人身份重新打标签，让标签连续。</p>
+<p>实现的方法其实就是<strong>利用Python中的set()集合元素不重复的特性</strong>，将行人ID放入集合，<strong>集合的索引index是一个从0开始的连续值</strong>，<strong>将索引和值对调就可以实现对行人ID进行relabel的功能。</strong></p>
+<figure class="highlight python"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 5.重新打标签(将混乱的标签一一对应变为0-394的新标签)</span></span><br><span class="line"><span class="comment"># 训练集296个身份，验证集99个身份，296+99=395</span></span><br><span class="line">pid_container = <span class="built_in">set</span>()    <span class="comment"># 集合可以保证里面的元素不重复，直接将索引和值倒置，就可以获得0-394的新label</span></span><br><span class="line"><span class="comment"># 根据实际的图片路径来提取实际用到的行人身份ID</span></span><br><span class="line"><span class="keyword">for</span> img_path <span class="keyword">in</span> files_ir:</span><br><span class="line">    <span class="comment"># 从图像路径中提取倒数第13位到倒数第9位(不包括第9位)的行人ID，文件路径****(行人ID)/****(图片编号).jpg</span></span><br><span class="line">    pid = <span class="built_in">int</span>(img_path[-<span class="number">13</span>:-<span class="number">9</span>])   </span><br><span class="line">    pid_container.add(pid)</span><br><span class="line">pid2label = &#123;pid:label <span class="keyword">for</span> label, pid <span class="keyword">in</span> <span class="built_in">enumerate</span>(pid_container)&#125;  <span class="comment"># 直接将索引和值倒置，就可以获得0-394的新label</span></span><br><span class="line"><span class="comment"># pid2label&#123;(key)行人ID:(value)set的index&#125;</span></span><br></pre></td></tr></table></div></figure>
+
+
+        <h5 id="2-5-读取图像、label">
+          <a href="#2-5-读取图像、label" class="heading-link"><i class="fas fa-link"></i></a><a href="#2-5-读取图像、label" class="headerlink" title="2.5 读取图像、label"></a>2.5 读取图像、label</h5>
+      <figure class="highlight python"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line">fix_image_width = <span class="number">144</span></span><br><span class="line">fix_image_height = <span class="number">288</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">read_imgs</span>(<span class="params">train_image</span>):</span></span><br><span class="line">    train_img = []</span><br><span class="line">    train_label = []</span><br><span class="line">    <span class="keyword">for</span> img_path <span class="keyword">in</span> train_image:</span><br><span class="line">        <span class="comment"># img</span></span><br><span class="line">        img = Image.<span class="built_in">open</span>(img_path)</span><br><span class="line">        img = img.resize((fix_image_width, fix_image_height), Image.ANTIALIAS) <span class="comment"># Image.ANTIALIAS高质量、抗锯齿</span></span><br><span class="line">        pix_array = np.array(img)</span><br><span class="line"></span><br><span class="line">        train_img.append(pix_array) </span><br><span class="line">        </span><br><span class="line">        <span class="comment"># label</span></span><br><span class="line">        pid = <span class="built_in">int</span>(img_path[-<span class="number">13</span>:-<span class="number">9</span>])  <span class="comment"># 从图片路径中提取行人ID</span></span><br><span class="line">        pid = pid2label[pid]         <span class="comment"># 将行人ID转换成label</span></span><br><span class="line">        train_label.append(pid)</span><br><span class="line">    <span class="keyword">return</span> np.array(train_img), np.array(train_label)</span><br><span class="line"></span><br><span class="line"><span class="comment"># rgb imges</span></span><br><span class="line">train_img, train_label = read_imgs(files_rgb)</span><br><span class="line">np.save(data_path + <span class="string">&#x27;train_rgb_resized_img.npy&#x27;</span>, train_img)</span><br><span class="line">np.save(data_path + <span class="string">&#x27;train_rgb_resized_label.npy&#x27;</span>, train_label)</span><br><span class="line"></span><br><span class="line"><span class="comment"># ir imges</span></span><br><span class="line">train_img, train_label = read_imgs(files_ir)</span><br><span class="line">np.save(data_path + <span class="string">&#x27;train_ir_resized_img.npy&#x27;</span>, train_img)</span><br><span class="line">np.save(data_path + <span class="string">&#x27;train_ir_resized_label.npy&#x27;</span>, train_label)</span><br></pre></td></tr></table></div></figure>
+
+
+        <h4 id="3-损失函数部分代码loss-py">
+          <a href="#3-损失函数部分代码loss-py" class="heading-link"><i class="fas fa-link"></i></a><a href="#3-损失函数部分代码loss-py" class="headerlink" title="3 损失函数部分代码loss.py"></a>3 损失函数部分代码loss.py</h4>
+      <p>三元组损失是行人再识别常用的损失函数，三元组损失函数的输入为三张输入图片，分别为固定图片a (Anchor)、正样本图片p (Positive)和负样本图片n (Negative)，a与p组成正样本对，a与n组成负样本对，则三元组损失表示为：</p>
+<p><img src="/2022/03/30/AGW%E4%BB%A3%E7%A0%81%E5%AD%A6%E4%B9%A001-SYSU%E6%95%B0%E6%8D%AE%E9%9B%86%E9%A2%84%E5%A4%84%E7%90%86/image-20220401153544661.png" alt="image-20220401153544661"></p>
+<p>其中，(z)+代表max(z,0)，α是根据实际需要设定的阈值参数。如图所示，<strong>三元组损失函数拉近了正样本对，推开负样本对，使得相同标签图像特征能够在特征空间上聚集</strong>，从而训练网络。</p>
+<p>但是如果在数据集中随机采样选择的图片作为正负样本对很多都是简单易区分的，不利于网络的训练，所以对于每个固定图片a在一个训练批次内选择距离最远的正样本图片p和距离最近的负样本图片n来训练网络，增强网络的泛化能力，从而使网络学习到更好的表征。</p>
+<p><img src="/2022/03/30/AGW%E4%BB%A3%E7%A0%81%E5%AD%A6%E4%B9%A001-SYSU%E6%95%B0%E6%8D%AE%E9%9B%86%E9%A2%84%E5%A4%84%E7%90%86/image-20220401154750251.png" alt="image-20220401154750251"></p>
+<p>其中，α是根据实际需要设定的阈值参数。<br>在实际进行计算损失函数过程中，由于难样本三元组损失特殊的计算方式，所以需要自己定义采样器，实现每个batchsize的N张图片是包括<code>P（图片分类数）×K（每个分类数的样本数）</code>，当某个类数量不足K张时，允许重复抽取。</p>
+
+        <h5 id="3-1-难样本挖掘三元组损失OriTripletLoss">
+          <a href="#3-1-难样本挖掘三元组损失OriTripletLoss" class="heading-link"><i class="fas fa-link"></i></a><a href="#3-1-难样本挖掘三元组损失OriTripletLoss" class="headerlink" title="3.1 难样本挖掘三元组损失OriTripletLoss"></a>3.1 难样本挖掘三元组损失OriTripletLoss</h5>
+      
+        <h5 id="3-1-1-OriTripletLoss类的初始化函数">
+          <a href="#3-1-1-OriTripletLoss类的初始化函数" class="heading-link"><i class="fas fa-link"></i></a><a href="#3-1-1-OriTripletLoss类的初始化函数" class="headerlink" title="3.1.1 OriTripletLoss类的初始化函数"></a>3.1.1 OriTripletLoss类的初始化函数</h5>
+      <p>主要定义一下计算普通三元组损失的损失函数和需要的阈值参数margin。nn.MarginRankingLoss(margin=margin)实现的计算公式就是上文的三元组损失计算。</p>
+<figure class="highlight python"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">__init__</span>(<span class="params">self, batch_size, margin=<span class="number">0.3</span></span>):</span></span><br><span class="line">    <span class="built_in">super</span>(OriTripletLoss, self).__init__()</span><br><span class="line">    self.margin = margin</span><br><span class="line">    <span class="comment"># nn.MarginRankingLoss(margin=margin)是一个简单的三元组损失函数</span></span><br><span class="line">    <span class="comment"># 功能： 计算两个向量之间的相似度，当两个向量之间的距离大于margin，则loss为正，小于margin，loss为0。</span></span><br><span class="line">    self.ranking_loss = nn.MarginRankingLoss(margin=margin)</span><br></pre></td></tr></table></div></figure>
+
+
+        <h5 id="3-1-2-forward部分">
+          <a href="#3-1-2-forward部分" class="heading-link"><i class="fas fa-link"></i></a><a href="#3-1-2-forward部分" class="headerlink" title="3.1.2 forward部分"></a>3.1.2 forward部分</h5>
+      <p>代码如下：</p>
+<figure class="highlight python"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">forward</span>(<span class="params">self, inputs, targets</span>):</span></span><br><span class="line">    <span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="string">    Args:</span></span><br><span class="line"><span class="string">    - inputs: feature matrix with shape (batch_size, feat_dim)</span></span><br><span class="line"><span class="string">    - targets: ground truth labels with shape (num_classes)</span></span><br><span class="line"><span class="string">    &quot;&quot;&quot;</span></span><br><span class="line">    n = inputs.size(<span class="number">0</span>)   <span class="comment"># n为batchsize</span></span><br><span class="line">    </span><br><span class="line">    <span class="comment"># 计算欧式距离部分</span></span><br><span class="line">    <span class="comment"># 欧氏距离：特征向量a和b的欧氏距离为（a-b）的平方再开放</span></span><br><span class="line">    dist = torch.<span class="built_in">pow</span>(inputs, <span class="number">2</span>).<span class="built_in">sum</span>(dim=<span class="number">1</span>, keepdim=<span class="literal">True</span>).expand(n, n)</span><br><span class="line">    dist = dist + dist.t()</span><br><span class="line">    <span class="comment"># dist.addmm_(a1, a2, inputs, inputs.t())  即dist = a1 * dist + a2 * inputs * inputs.t()</span></span><br><span class="line">    <span class="comment"># dist = dist - 2 * (inputs@inputs.t())</span></span><br><span class="line">    dist.addmm_(<span class="number">1</span>, -<span class="number">2</span>, inputs, inputs.t())</span><br><span class="line">    <span class="comment"># 为了数值稳定性，将低于min的值统一赋予min，便于反向传播和数值稳定性</span></span><br><span class="line">    dist = dist.clamp(<span class="built_in">min</span>=<span class="number">1e-12</span>).sqrt()  <span class="comment"># for numerical stability</span></span><br><span class="line">    </span><br><span class="line">    <span class="comment"># 寻找难样本部分</span></span><br><span class="line">    mask = targets.expand(n, n).eq(targets.expand(n, n).t())</span><br><span class="line">    dist_ap, dist_an = [], []</span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(n):</span><br><span class="line">        <span class="comment"># unsqueeze(0)，在在第0维度增加一个维度</span></span><br><span class="line">        dist_ap.append(dist[i][mask[i]].<span class="built_in">max</span>().unsqueeze(<span class="number">0</span>))</span><br><span class="line">        dist_an.append(dist[i][mask[i] == <span class="number">0</span>].<span class="built_in">min</span>().unsqueeze(<span class="number">0</span>))</span><br><span class="line">    dist_ap = torch.cat(dist_ap)</span><br><span class="line">    dist_an = torch.cat(dist_an)</span><br><span class="line">    </span><br><span class="line">    <span class="comment"># 计算损失部分</span></span><br><span class="line">    y = torch.ones_like(dist_an)</span><br><span class="line">    loss = self.ranking_loss(dist_an, dist_ap, y)</span><br><span class="line">    </span><br><span class="line">    <span class="comment"># compute accuracy</span></span><br><span class="line">    correct = torch.ge(dist_an, dist_ap).<span class="built_in">sum</span>().item()</span><br><span class="line">    <span class="keyword">return</span> loss, correct</span><br></pre></td></tr></table></div></figure>
+
+<p>接下来分部分来解释代码</p>
+<p>首先明确函数的输入。</p>
+<p>输入：<strong>batch_size张图片的特征向量</strong>，所以inputs的形状为<code>batch_size * featuer_dimension</code></p>
+<p><code>targets</code>为batch_size张图片的分类标签，形状为batch_size维向量。</p>
+
+        <h6 id="计算欧式距离部分">
+          <a href="#计算欧式距离部分" class="heading-link"><i class="fas fa-link"></i></a><a href="#计算欧式距离部分" class="headerlink" title="计算欧式距离部分"></a>计算欧式距离部分</h6>
+      <p>为了寻找难样本，需要计算整个batch中的所有图片两两之间的欧式距离，组成欧式距离矩阵。</p>
+<p>为了减小运算复杂度，采用完全平方公式来计算（a-b）²，即a²+b²-2ab</p>
+<p>首先通过对特征向量每个元素求平方，然后按行累加得到一个n×1×1的向量，n是batchsize，每个元素平方加和得到向量的平方和，再将其扩展成一个n×n的矩阵。</p>
+<img src="/2022/03/30/AGW%E4%BB%A3%E7%A0%81%E5%AD%A6%E4%B9%A001-SYSU%E6%95%B0%E6%8D%AE%E9%9B%86%E9%A2%84%E5%A4%84%E7%90%86/image-20220401175829360.png" alt="image-20220401175829360" style="zoom:80%;">
+
+<img src="/2022/03/30/AGW%E4%BB%A3%E7%A0%81%E5%AD%A6%E4%B9%A001-SYSU%E6%95%B0%E6%8D%AE%E9%9B%86%E9%A2%84%E5%A4%84%E7%90%86/image-20220401175859820.png" alt="image-20220401175859820" style="zoom:80%;">
+
+<figure class="highlight python"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">n = inputs.size(<span class="number">0</span>)   <span class="comment"># n为batchsize</span></span><br><span class="line"><span class="comment"># 计算欧式距离部分</span></span><br><span class="line"><span class="comment"># 欧氏距离：特征向量a和b的欧氏距离为（a-b）的平方再开方</span></span><br><span class="line">dist = torch.<span class="built_in">pow</span>(inputs, <span class="number">2</span>).<span class="built_in">sum</span>(dim=<span class="number">1</span>, keepdim=<span class="literal">True</span>).expand(n, n)</span><br><span class="line">dist = dist + dist.t()</span><br><span class="line"><span class="comment"># dist.addmm_(a1, a2, inputs, inputs.t())  即dist = a1 * dist + a2 * inputs * inputs.t()</span></span><br><span class="line"><span class="comment"># dist = dist - 2 * (inputs@inputs.t())</span></span><br><span class="line">dist.addmm_(<span class="number">1</span>, -<span class="number">2</span>, inputs, inputs.t())</span><br><span class="line"><span class="comment"># 为了数值稳定性，将低于min的值统一赋予min，便于反向传播和数值稳定性</span></span><br><span class="line">dist = dist.clamp(<span class="built_in">min</span>=<span class="number">1e-12</span>).sqrt()  <span class="comment"># for numerical stability</span></span><br></pre></td></tr></table></div></figure>
+
+
+        <h6 id="寻找难样本部分">
+          <a href="#寻找难样本部分" class="heading-link"><i class="fas fa-link"></i></a><a href="#寻找难样本部分" class="headerlink" title="寻找难样本部分"></a>寻找难样本部分</h6>
+      <p><strong>利用mask来搜索正负样本</strong><br>假设targets= [1,1,2,2,3,3,4,4]<br>由于batchsize = P*K，所以代码中所得到的的mask形状如下图。<br><strong>第i行第j列代表第i张和第j张是否为相同类别。</strong></p>
+<figure class="highlight python"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">tensor([[ <span class="literal">True</span>,  <span class="literal">True</span>, <span class="literal">False</span>, <span class="literal">False</span>, <span class="literal">False</span>, <span class="literal">False</span>, <span class="literal">False</span>, <span class="literal">False</span>],</span><br><span class="line">        [ <span class="literal">True</span>,  <span class="literal">True</span>, <span class="literal">False</span>, <span class="literal">False</span>, <span class="literal">False</span>, <span class="literal">False</span>, <span class="literal">False</span>, <span class="literal">False</span>],</span><br><span class="line">        [<span class="literal">False</span>, <span class="literal">False</span>,  <span class="literal">True</span>,  <span class="literal">True</span>, <span class="literal">False</span>, <span class="literal">False</span>, <span class="literal">False</span>, <span class="literal">False</span>],</span><br><span class="line">        [<span class="literal">False</span>, <span class="literal">False</span>,  <span class="literal">True</span>,  <span class="literal">True</span>, <span class="literal">False</span>, <span class="literal">False</span>, <span class="literal">False</span>, <span class="literal">False</span>],</span><br><span class="line">        [<span class="literal">False</span>, <span class="literal">False</span>, <span class="literal">False</span>, <span class="literal">False</span>,  <span class="literal">True</span>,  <span class="literal">True</span>, <span class="literal">False</span>, <span class="literal">False</span>],</span><br><span class="line">        [<span class="literal">False</span>, <span class="literal">False</span>, <span class="literal">False</span>, <span class="literal">False</span>,  <span class="literal">True</span>,  <span class="literal">True</span>, <span class="literal">False</span>, <span class="literal">False</span>],</span><br><span class="line">        [<span class="literal">False</span>, <span class="literal">False</span>, <span class="literal">False</span>, <span class="literal">False</span>, <span class="literal">False</span>, <span class="literal">False</span>,  <span class="literal">True</span>,  <span class="literal">True</span>],</span><br><span class="line">        [<span class="literal">False</span>, <span class="literal">False</span>, <span class="literal">False</span>, <span class="literal">False</span>, <span class="literal">False</span>, <span class="literal">False</span>,  <span class="literal">True</span>,  <span class="literal">True</span>]])</span><br></pre></td></tr></table></div></figure>
+
+
+
+<figure class="highlight python"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">mask = targets.expand(n, n).eq(targets.expand(n, n).t())</span><br><span class="line">dist_ap, dist_an = [], []</span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(n):</span><br><span class="line">    <span class="comment"># unsqueeze(0)，在在第0维度增加一个维度</span></span><br><span class="line">    dist_ap.append(dist[i][mask[i]].<span class="built_in">max</span>().unsqueeze(<span class="number">0</span>))</span><br><span class="line">    dist_an.append(dist[i][mask[i] == <span class="number">0</span>].<span class="built_in">min</span>().unsqueeze(<span class="number">0</span>))</span><br><span class="line">dist_ap = torch.cat(dist_ap)</span><br><span class="line">dist_an = torch.cat(dist_an)</span><br></pre></td></tr></table></div></figure>
+
+</div></div></article><article class="postlist-item post"><header class="post-header"><h1 class="post-title"><a class="post-title__link" href="/2022/03/26/javaday3/">javaday3</a></h1><div class="post-meta"><span class="post-meta-item post-meta-item--createtime"><span class="post-meta-item__icon"><i class="far fa-calendar-plus"></i></span><span class="post-meta-item__info">发表于</span><span class="post-meta-item__value">2022-03-26</span></span><span class="post-meta-item post-meta-item--updatetime"><span class="post-meta-item__icon"><i class="far fa-calendar-check"></i></span><span class="post-meta-item__info">更新于</span><span class="post-meta-item__value">2022-03-29</span></span></div></header><div class="post-body"><div class="post-excerpt">
+        <h3 id="Java语法速通day3–常用API和面向对象进阶">
+          <a href="#Java语法速通day3–常用API和面向对象进阶" class="heading-link"><i class="fas fa-link"></i></a><a href="#Java语法速通day3–常用API和面向对象进阶" class="headerlink" title="Java语法速通day3–常用API和面向对象进阶"></a>Java语法速通day3–常用API和面向对象进阶</h3>
+      
+        <h4 id="1-String类">
+          <a href="#1-String类" class="heading-link"><i class="fas fa-link"></i></a><a href="#1-String类" class="headerlink" title="1 String类"></a>1 String类</h4>
+      <p>java.lang.String类代表字符串类，String类定义的变量可以用于指向字符串对象，然后操作该字符串。</p>
+<p>String对象常被称为<strong>不可变字符串类型</strong>，它的<strong>对象在创建之后不可修改。</strong></p>
+<p><img src="/2022/03/26/javaday3/image-20220326104026758.png" alt="image-20220326104026758"></p>
+<p>原来创建的在字符串常量池中的对象并没有发生变化，只是两个字符串常量做运算之后的值存放在堆内存中，将运算后的对象地址赋值给变量名。</p>
+<p><img src="/2022/03/26/javaday3/image-20220326114029403.png" alt="image-20220326114029403"></p>
+<p> <strong>以双引号””方式给出的字符串对象，在字符串常量池中存储，且相同的内容在字符串常量池中只存储一份。</strong></p>
+<p><strong>通过构造器new对象，每new一次都会产生一个新对象，放在堆内存中。</strong></p>
+<p><img src="/2022/03/26/javaday3/image-20220326140311854.png" alt="image-20220326140311854"></p>
+<p><img src="/2022/03/26/javaday3/image-20220326140403960.png" alt="image-20220326140403960"></p>
+<p><img src="/2022/03/26/javaday3/image-20220326142123017.png" alt="image-20220326142123017"></p>
+<p><img src="/2022/03/26/javaday3/image-20220326142513873.png" alt="image-20220326142513873"></p>
+
+        <h5 id="1-1-字符串比较">
+          <a href="#1-1-字符串比较" class="heading-link"><i class="fas fa-link"></i></a><a href="#1-1-字符串比较" class="headerlink" title="1.1 字符串比较"></a>1.1 字符串比较</h5>
+      <p>Java中直接使用==来比较两个字符串是否相等是不合适的，常常会有出乎意料的情况出现。</p>
+<p>因此Java提供了字符串比较API equals</p>
+<p><img src="/2022/03/26/javaday3/image-20220326143135045.png" alt="image-20220326143135045"></p>
+<p><strong>忽略大小写比较内容的API常用于验证码等业务逻辑。</strong></p>
+<p><img src="/2022/03/26/javaday3/image-20220326151421263.png" alt="image-20220326151421263"></p>
+
+        <h4 id="2-ArrayList">
+          <a href="#2-ArrayList" class="heading-link"><i class="fas fa-link"></i></a><a href="#2-ArrayList" class="headerlink" title="2 ArrayList"></a>2 ArrayList</h4>
+      <p>数组一旦定义，其长度无法修改，存储的对象类型也是确定的，也就不能对数组进行增删。</p>
+<p>因此数组不适用于个数不确定，需要增删的业务场景。</p>
+<p>因此需要一个新的大小可变容器类型：集合，类似于C++中的Vector，但是C++中的Vector类型仍然固定。</p>
+<p><img src="/2022/03/26/javaday3/image-20220326154756814.png" alt="image-20220326154756814"></p>
+<p><img src="/2022/03/26/javaday3/image-20220326160454790.png" alt="image-20220326160454790"></p>
+
+        <h5 id="2-1-泛型概述">
+          <a href="#2-1-泛型概述" class="heading-link"><i class="fas fa-link"></i></a><a href="#2-1-泛型概述" class="headerlink" title="2.1 泛型概述"></a>2.1 泛型概述</h5>
+      <p>由于ArrayList集合并不限制存储元素的类型，可以在里面任意存放不同类型的数据。</p>
+<p>由于实际业务场景可能需要对存储元素的类型进行限制，因此需要<strong>使用泛型来约束ArrayList集合操作的数据类型。</strong></p>
+<p><img src="/2022/03/26/javaday3/image-20220326162219763.png" alt="image-20220326162219763"></p>
+
+        <h4 id="3-成员变量">
+          <a href="#3-成员变量" class="heading-link"><i class="fas fa-link"></i></a><a href="#3-成员变量" class="headerlink" title="3 成员变量"></a>3 成员变量</h4>
+      
+        <h5 id="3-1-成员变量的类型：">
+          <a href="#3-1-成员变量的类型：" class="heading-link"><i class="fas fa-link"></i></a><a href="#3-1-成员变量的类型：" class="headerlink" title="3.1 成员变量的类型："></a>3.1 成员变量的类型：</h5>
+      <p>成员变量分为两种：<strong>静态成员变量</strong>和<strong>实例成员变量。</strong></p>
+<p><strong>使用static修饰的成员变量称为静态成员变量。</strong></p>
+<p><img src="/2022/03/26/javaday3/image-20220328211547878.png" alt="image-20220328211547878"></p>
+<p><strong>static</strong>称为静态修饰符，它修饰的成员变量<strong>在内存中只存储一份</strong>，<strong>可以被整个类的所有对象所共享</strong>。</p>
+<p>使用静态成员变量推荐使用<strong>类名.静态成员变量</strong>来访问，当然用对象来访问也是可以的，在声明静态成员变量的类中，访问静态成员变量可以忽略类名。</p>
+<p><img src="/2022/03/26/javaday3/image-20220328212543744.png" alt="image-20220328212543744"></p>
+
+        <h5 id="3-2-static成员变量的内存机制">
+          <a href="#3-2-static成员变量的内存机制" class="heading-link"><i class="fas fa-link"></i></a><a href="#3-2-static成员变量的内存机制" class="headerlink" title="3.2 static成员变量的内存机制"></a>3.2 static成员变量的内存机制</h5>
+      <p><img src="/2022/03/26/javaday3/image-20220328213240917.png" alt="image-20220328213240917"></p>
+<p>在加载类的同时在堆内存中加载User类的静态成员变量，且只加载一次。</p>
+
+        <h4 id="4-成员方法">
+          <a href="#4-成员方法" class="heading-link"><i class="fas fa-link"></i></a><a href="#4-成员方法" class="headerlink" title="4 成员方法"></a>4 成员方法</h4>
+      <p>成员方法和成员变量一样，也分为实例成员方法和静态成员方法</p>
+<p><img src="/2022/03/26/javaday3/image-20220328213511472.png" alt="image-20220328213511472"></p>
+<p>静态方法也是为了便于共享，归属于类，可以直接使用类名访问。</p>
+<p> <img src="/2022/03/26/javaday3/image-20220328214209900.png" alt="image-20220328214209900"></p>
+<p><img src="/2022/03/26/javaday3/image-20220329172529133.png" alt="image-20220329172529133"></p>
+<p> <strong>实例方法是属于当前对象的，静态方法是属于类的。</strong></p>
+<p>静态方法是属于整个类所共享的，因此任何成员都可以访问静态方法，可以随便调用。</p>
+
+        <h4 id="5-工具类">
+          <a href="#5-工具类" class="heading-link"><i class="fas fa-link"></i></a><a href="#5-工具类" class="headerlink" title="5 工具类"></a>5 工具类</h4>
+      <p>工具类中<strong>含有一些静态方法</strong>，每个方法都是完成一个共用的功能为目的，用于给系统开发人员共同使用。</p>
+<p>静态方法的调用：<strong>类名.静态方法</strong></p>
+<p>举个例子：登录功能需要验证码，检查功能可能也需要使用验证码。</p>
+<p><strong>那么验证码生成的功能可以写成一个静态方法，放在工具类中。</strong></p>
+<p><img src="/2022/03/26/javaday3/image-20220329200037647.png" alt="image-20220329200037647"></p>
+<p><img src="/2022/03/26/javaday3/image-20220329200244551.png" alt="image-20220329200244551"></p>
+<p>由于工具类无需创建对象，可以<strong>将工具类的构造器进行私有化</strong>，将工具类隐藏可以避免创建工具类对象。</p>
+<figure class="highlight java"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//私有化构造器</span></span><br><span class="line"><span class="function"><span class="keyword">private</span> <span class="title">utils</span><span class="params">()</span></span>&#123;&#125;</span><br></pre></td></tr></table></div></figure>
+
+
+        <h4 id="6-代码块">
+          <a href="#6-代码块" class="heading-link"><i class="fas fa-link"></i></a><a href="#6-代码块" class="headerlink" title="6 代码块"></a>6 代码块</h4>
+      <p>代码块是类的五大成分之一（成员变量、构造器、方法、代码块、内部类），代码块定义在类中的方法之外。</p>
+<p><img src="/2022/03/26/javaday3/image-20220329204453012.png" alt="image-20220329204453012"></p>
+<p>静态代码块优先加载，随类一起加载。由于main等方法都是等类加载完才提取到方法区，因此静态代码块执行的优先级高于main等。</p>
+<p>构造代码块可以说是实例代码块，它是属于对象的，每次调用构造器创建对象之前会执行构造代码块，并且<strong>执行顺序优于构造器</strong>。</p>
+<p>举例：斗地主游戏</p>
+<p><img src="/2022/03/26/javaday3/image-20220329210527846.png" alt="image-20220329210527846"></p>
+<p>比如静态集合的初始化可以放在静态方法块里面。因为静态集合只需要初始化一次，因此可以在静态方法块里专门实现。</p>
+<p>如果将静态资源的初始化写在main方法里，由于main方法可能需要执行多次，因此也可能会对静态资源做多次初始化。</p>
+<p>而将静态资源的初始化写在静态代码块里，就可以随着类的加载而加载并且只执行一次，避免重复初始化。</p>
+
+        <h4 id="7-单例设计模式">
+          <a href="#7-单例设计模式" class="heading-link"><i class="fas fa-link"></i></a><a href="#7-单例设计模式" class="headerlink" title="7 单例设计模式"></a>7 单例设计模式</h4>
+      <p><strong>单例模式</strong>指的是该设计模式可以保证系统中，应用该模式的这个类永远只有一个实例，即<strong>这个类永远只能创建一个对象</strong>。</p>
+<p>如为了节省系统内存，任务管理器这个对象只需要一个就够了。</p>
+<p><img src="/2022/03/26/javaday3/image-20220329213047377.png" alt="image-20220329213047377"></p>
+
+        <h5 id="7-1-饿汉单例设计模式">
+          <a href="#7-1-饿汉单例设计模式" class="heading-link"><i class="fas fa-link"></i></a><a href="#7-1-饿汉单例设计模式" class="headerlink" title="7.1 饿汉单例设计模式"></a>7.1 饿汉单例设计模式</h5>
+      <p>饿汉单例的设计模式是在用类获取对象的时候，<strong>对象已经提前为你创建好了。</strong></p>
+<p><img src="/2022/03/26/javaday3/image-20220329213235506.png" alt="image-20220329213235506"></p>
+<p>单例的第一步是<strong>一定要把构造器私有化</strong>。</p>
+<p>由于静态变量只加载一次，并且静态对象优先级较高，随类一起加载。<strong>使用静态变量在类中存储一个实例</strong>，在<strong>类加载的时候该实例已经创建完成了。</strong></p>
+<figure class="highlight java"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//饿汉单例实现</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">SingleInstance1</span> </span>&#123;</span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 饿汉单例设计模式</span></span><br><span class="line"><span class="comment">     * 设计方式：</span></span><br><span class="line"><span class="comment">     * 1、将构造器设为私有，避免外部调用构造器生成对象</span></span><br><span class="line"><span class="comment">     * 2、声明一个静态变量，静态变量用来存储单例类的对象，这样就可以保证只该类只有一个对象</span></span><br><span class="line"><span class="comment">     *</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> SingleInstance1 instance = <span class="keyword">new</span> SingleInstance1();</span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="title">SingleInstance1</span><span class="params">()</span></span>&#123;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></div></figure>
+
+
+
+
+        <h5 id="7-2-懒汉单例">
+          <a href="#7-2-懒汉单例" class="heading-link"><i class="fas fa-link"></i></a><a href="#7-2-懒汉单例" class="headerlink" title="7.2 懒汉单例"></a>7.2 懒汉单例</h5>
+      <p>懒汉单例类指的是只有在真正需要该对象的时候，才去创建一个对象（延迟加载对象）</p>
+<img src="/2022/03/26/javaday3/image-20220329214654283.png" alt="image-20220329214654283" style="zoom:50%;">
+
+<figure class="highlight java"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//懒汉单例实现</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">SingleInstance2</span> </span>&#123;</span><br><span class="line">    <span class="comment">/*</span></span><br><span class="line"><span class="comment">    懒汉单例设计模式：</span></span><br><span class="line"><span class="comment">    1、将构造器设置为私有</span></span><br><span class="line"><span class="comment">    2、定义一个静态变量存储单例对象</span></span><br><span class="line"><span class="comment">    3、需要提供一个方法来返回单例对象，但同样只需要一个对象，只创建一次。</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="comment">//1、将构造器设置为私有</span></span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="title">SingleInstance2</span><span class="params">()</span></span>&#123;&#125;</span><br><span class="line">    <span class="comment">//2、定义一个静态变量存储单例对象</span></span><br><span class="line">    <span class="comment">//由于懒汉单例需要在真正使用该对象的时候才创建，如果将静态对象声明成public，可能会造成外部使用类名误调用未初始化的单例对象</span></span><br><span class="line">    <span class="comment">//因此保险起见，可以将静态变量声明成private，避免调用到未初始化的对象</span></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> SingleInstance2 instance;</span><br><span class="line">    <span class="comment">//3、需要提供一个方法来返回单例对象，但同样只需要一个对象，只创建一次。</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> SingleInstance2 <span class="title">getInstance</span><span class="params">()</span></span>&#123;</span><br><span class="line">        <span class="comment">//只创建一次，因此只在instance为空的时候才调用构造器</span></span><br><span class="line">        <span class="keyword">if</span>(instance == <span class="keyword">null</span>)&#123;</span><br><span class="line">            instance = <span class="keyword">new</span> SingleInstance2();</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> instance;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//测试代码</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">test</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        <span class="comment">//使用饿汉单例获得对象</span></span><br><span class="line">        SingleInstance1 s2 = SingleInstance1.instance;</span><br><span class="line">        <span class="comment">//使用懒汉单例获得对象</span></span><br><span class="line">        SingleInstance2 s3 = SingleInstance2.getInstance();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></div></figure>
+
+
+        <h5 id="7-3-二者的比较">
+          <a href="#7-3-二者的比较" class="heading-link"><i class="fas fa-link"></i></a><a href="#7-3-二者的比较" class="headerlink" title="7.3 二者的比较"></a>7.3 二者的比较</h5>
+      <p>饿汉单例：</p>
+<p>由于使用静态变量存储并直接调用构造器生成一个单例对象，<strong>随类一起加载并生成，速度较快</strong>，但是当可能不会使用到此单例的时候会无端浪费内存，</p>
+<p>懒汉单例：</p>
+<p>直到需要单例对象的时候才使用写好的返回单例对象的方法来获得单例对象，<strong>速度可能没有饿汉快，但是节省内存。</strong></p>
+</div></div></article><article class="postlist-item post"><header class="post-header"><h1 class="post-title"><a class="post-title__link" href="/2022/03/24/javaday2/">javaday2</a></h1><div class="post-meta"><span class="post-meta-item post-meta-item--createtime"><span class="post-meta-item__icon"><i class="far fa-calendar-plus"></i></span><span class="post-meta-item__info">发表于</span><span class="post-meta-item__value">2022-03-24</span></span><span class="post-meta-item post-meta-item--updatetime"><span class="post-meta-item__icon"><i class="far fa-calendar-check"></i></span><span class="post-meta-item__info">更新于</span><span class="post-meta-item__value">2022-03-26</span></span></div></header><div class="post-body"><div class="post-excerpt">
+        <h3 id="Java语法速通day2–面向对象">
+          <a href="#Java语法速通day2–面向对象" class="heading-link"><i class="fas fa-link"></i></a><a href="#Java语法速通day2–面向对象" class="headerlink" title="Java语法速通day2–面向对象"></a>Java语法速通day2–面向对象</h3>
+      
+        <h4 id="1-类的定义方法">
+          <a href="#1-类的定义方法" class="heading-link"><i class="fas fa-link"></i></a><a href="#1-类的定义方法" class="headerlink" title="1 类的定义方法"></a>1 类的定义方法</h4>
+      <p><img src="/2022/03/24/javaday2/image-20220324210240795.png" alt="image-20220324210240795"></p>
+<p><img src="/2022/03/24/javaday2/image-20220324211144038.png" alt="image-20220324211144038"></p>
+<p><img src="/2022/03/24/javaday2/image-20220324211207668.png" alt="image-20220324211207668"></p>
+<p><strong>一个文件中只能有一个public类，类名首字母建议大写。</strong></p>
+
+        <h5 id="1-1-对象在内存中的分配机制">
+          <a href="#1-1-对象在内存中的分配机制" class="heading-link"><i class="fas fa-link"></i></a><a href="#1-1-对象在内存中的分配机制" class="headerlink" title="1.1 对象在内存中的分配机制"></a>1.1 对象在内存中的分配机制</h5>
+      <p><img src="/2022/03/24/javaday2/image-20220324213624549.png" alt="image-20220324213624549"></p>
+<p><img src="/2022/03/24/javaday2/image-20220324213742196.png" alt="image-20220324213742196"></p>
+<p>如上图例子所示，代码首先将main方法加载进方法区，然后执行第一行代码创建对象。此时将Car的类、成员变量和成员方法加载进方法区。</p>
+<p>然后在栈内存中创建一个<strong>局部变量c1，即变量名</strong>，再执行new方法在堆内存中开辟一块区域，该区域用于存放c1变量的数据，然后将该块数据的地址传递给局部变量c1。</p>
+<p>再执行给对象的成员变量赋值操作，首<strong>先根据变量名从栈内存中找到堆内存的地址，将值拷贝赋值到堆内存的对应区域中。</strong></p>
+<p>当调用成员方法时，还是通过变量找到堆内存地址，再从堆内存中找到成员方法引用地址，从而从方法区中找到成员方法。然后<strong>将run方法转移到栈内存中运行。</strong></p>
+<p>JAVA中值类型的只有short,char,byte,int,long,double,float,boolean八大基本类型，其他的所有类型都是引用类型。如果是值类型的数组，比如int[]，那里面存的就是值类型。引用类型，就存引用咯！</p>
+<p><img src="/2022/03/24/javaday2/image-20220326095249992.png" alt="image-20220326095249992"></p>
+<p><img src="/2022/03/24/javaday2/image-20220326095153676.png" alt="image-20220326095153676"></p>
+
+        <h5 id="1-2-垃圾回收机制">
+          <a href="#1-2-垃圾回收机制" class="heading-link"><i class="fas fa-link"></i></a><a href="#1-2-垃圾回收机制" class="headerlink" title="1.2 垃圾回收机制"></a>1.2 垃圾回收机制</h5>
+      <p>Java存在自动垃圾回收器，会定期清理<strong>堆内存中</strong>的<strong>没有被任何变量引用（指向）的对象。</strong></p>
+
+        <h4 id="2-构造器">
+          <a href="#2-构造器" class="heading-link"><i class="fas fa-link"></i></a><a href="#2-构造器" class="headerlink" title="2 构造器"></a>2 构造器</h4>
+      <p>构造器是一个定义在类中的，<strong>用于初始化类的对象</strong>。<strong>它返回的是对象的地址。</strong></p>
+<p>构造器的格式为：</p>
+<p><img src="/2022/03/24/javaday2/image-20220325203343231.png" alt="image-20220325203343231"></p>
+<p>构造器的分类和作用：</p>
+<p>无参构造器：初始化对象时，成员变量的数据均采用默认值。</p>
+<p>有参构造器：初始化对象的时候，可以接收参数为对象进行赋值。</p>
+
+        <h4 id="3-this关键字">
+          <a href="#3-this关键字" class="heading-link"><i class="fas fa-link"></i></a><a href="#3-this关键字" class="headerlink" title="3 this关键字"></a>3 this关键字</h4>
+      <p>this关键字可以出现在<strong>构造器、方法</strong>中，<strong>this关键字代表当前对象的地址。</strong></p>
+<p>this可以用于指定访问当前对象的成员变量、成员方法</p>
+<p><img src="/2022/03/24/javaday2/image-20220325213858713.png" alt="image-20220325213858713"></p>
+<p>如上图所示，形参name和成员变量name相同，直接name=name;不能完成将name赋值给当前对象的成员变量，因此可以使用this.name指定将name的值传递给当前对象的成员变量。</p>
+<p>总结就是this常常用于形参和成员变量有冲突的情形下，this可以区分出成员变量而不是局部变量。</p>
+
+        <h4 id="4-封装">
+          <a href="#4-封装" class="heading-link"><i class="fas fa-link"></i></a><a href="#4-封装" class="headerlink" title="4 封装"></a>4 封装</h4>
+      <p>面向对象的三大特征：<strong>封装、继承、多态</strong></p>
+<p><strong>封装的原则：对象代表什么，就得封装对应的数据，并提供数据对应的行为。</strong></p>
+<p>举个栗子：</p>
+<p><strong>人关门，关门方法应该设计在门类里。</strong></p>
+<p>门是自己关上的，<strong>人只是调用了门对象的关门方法。</strong></p>
+<p>人画圆，<strong>画的方法也应该设计在圆形类里。</strong></p>
+<p>圆形是自己画出来的，人只是<strong>调用了圆形的画</strong>这一方法。</p>
+<p><img src="/2022/03/24/javaday2/image-20220325215204003.png" alt="image-20220325215204003"></p>
+<p><img src="/2022/03/24/javaday2/image-20220325215654019.png" alt="image-20220325215654019"></p>
+<p>成员变量通常都设置成私有类型，私有类型只能在当前类中访问。因此类需要提供getter、setter方法，使用对象调用相关的方法获得、修改对象的成员变量。</p>
+
+        <h4 id="5-JavaBean">
+          <a href="#5-JavaBean" class="heading-link"><i class="fas fa-link"></i></a><a href="#5-JavaBean" class="headerlink" title="5 JavaBean"></a>5 JavaBean</h4>
+      <p><img src="/2022/03/24/javaday2/image-20220325220126564.png" alt="image-20220325220126564"></p>
+<p>getter、setter方法可以使用IDEA直接生成：右键-&gt;generator-&gt;getter\setter。</p>
+<p>当不使用有参数构造器时，由于默认有一个无参构造器，因此不需要额外写出。</p>
+<p><strong>但是当使用了有参构造器的时候，标准JavaBean必须声明一个无参数构造器。</strong></p>
+
+        <h4 id="6-成员变量和局部变量">
+          <a href="#6-成员变量和局部变量" class="heading-link"><i class="fas fa-link"></i></a><a href="#6-成员变量和局部变量" class="headerlink" title="6 成员变量和局部变量"></a>6 成员变量和局部变量</h4>
+      <p><img src="/2022/03/24/javaday2/image-20220325221126416.png" alt="image-20220325221126416"></p>
+</div></div></article><article class="postlist-item post"><header class="post-header"><h1 class="post-title"><a class="post-title__link" href="/2022/03/23/TPAMI-2021-ReID-Survey/">TPAMI 2021 ReID-Survey</a></h1><div class="post-meta"><span class="post-meta-item post-meta-item--createtime"><span class="post-meta-item__icon"><i class="far fa-calendar-plus"></i></span><span class="post-meta-item__info">发表于</span><span class="post-meta-item__value">2022-03-23</span></span><span class="post-meta-item post-meta-item--updatetime"><span class="post-meta-item__icon"><i class="far fa-calendar-check"></i></span><span class="post-meta-item__info">更新于</span><span class="post-meta-item__value">2022-03-29</span></span></div></header><div class="post-body"><div class="post-excerpt">
+        <h3 id="TPAMI-2021-ReID行人再识别综述-学习笔记">
+          <a href="#TPAMI-2021-ReID行人再识别综述-学习笔记" class="heading-link"><i class="fas fa-link"></i></a><a href="#TPAMI-2021-ReID行人再识别综述-学习笔记" class="headerlink" title="TPAMI 2021 ReID行人再识别综述 学习笔记"></a>TPAMI 2021 ReID行人再识别综述 学习笔记</h3>
+      
+        <h4 id="1-INTRODUCTION">
+          <a href="#1-INTRODUCTION" class="heading-link"><i class="fas fa-link"></i></a><a href="#1-INTRODUCTION" class="headerlink" title="1 INTRODUCTION"></a>1 INTRODUCTION</h4>
+      <p>作者首先将现有的ReID方法分为两大趋势：<strong>Closed-world和Open-world</strong>。作者对这两者的描述具体如下图所示：</p>
+<p><img src="/2022/03/23/TPAMI-2021-ReID-Survey/image-20220323150606035.png" alt="image-20220323150606035"></p>
+<p>Closed-World ReID方法具体有以下特征：</p>
+<p>1、原始数据一般都是单模态可见光相机捕获的图像/视频表示。</p>
+<p>2、训练和测试是使用基于原图像生成的bounding box来做的，bounding box主要包含行人的信息。</p>
+<p>3、<strong>具有充足的带标注数据。</strong>（无监督行人再识别并不具有）</p>
+<p>4、系统假设所有的标注信息都是正确的。</p>
+<p>5、所有的Query一定出现在图库集。</p>
+<p>Open-World ReID方法具有相对应的以下特征：</p>
+<p>1、在实际应用场景中，我们可能需要处理异构的图像数据，因此<strong>Open-World ReID方法的数据可能是多模态的</strong>，如红外图像、素描sketches、深度图像甚至是文本描述等等。</p>
+<p>2、开放世界ReID<strong>可能需要端到端的行人搜索。</strong>即输入的是原始图像，系统需要对原始图像做行人检测。</p>
+<p>3、开放世界场景中，我们可能<strong>没有足够的标注数据</strong>（即有限的标签），甚至没有任何标注信息。</p>
+<p>4、由于标注错误（即标签噪声）或不完美的检测/跟踪结果（即样本噪声、部分 Re-ID），<strong>标注噪声通常是不可避免的。</strong></p>
+<p>5、被查询的人可能不存在于图库集。</p>
+
+        <h4 id="2-Closed-World-Person-Re-Identification">
+          <a href="#2-Closed-World-Person-Re-Identification" class="heading-link"><i class="fas fa-link"></i></a><a href="#2-Closed-World-Person-Re-Identification" class="headerlink" title="2 Closed-World Person Re-Identification"></a>2 Closed-World Person Re-Identification</h4>
+      <p>一个标准的Closed-World Person ReID通常包含三个主要的组成部分：1）特征表示学习，专注于开发特征构建策略，2）度量学习，旨在设计具有不同损失函数的训练目标。3）排名优化，主要用于优化检索到的排名列表。</p>
+
+        <h5 id="2-1-特征表示学习">
+          <a href="#2-1-特征表示学习" class="heading-link"><i class="fas fa-link"></i></a><a href="#2-1-特征表示学习" class="headerlink" title="2.1 特征表示学习"></a>2.1 特征表示学习</h5>
+      <p>对于行人再识别问题，有4种主要的特征学习策略。如下图1所示，主要可以分为 a)全局特征表示，对每个行人图片学习一个全局特征向量。 b）局部特征，将行人图片按照一定的策略分为几个局部部分，对每个局部提取特征，最后将局部特征按照一定的策略进行特征聚合得到提取的特征向量。 c）辅助特征，使用辅助信息学习特征表示。 d)视频特征，使用多个图片帧和时间信息学习视频特征表示。</p>
+<p><img src="/2022/03/23/TPAMI-2021-ReID-Survey/image-20220324091747159.png" alt="image-20220324091747159"></p>
+<p>​                                                                               图1 常用的特征表示学习策略</p>
+
+        <h6 id="2-1-1-全局特征表示学习">
+          <a href="#2-1-1-全局特征表示学习" class="heading-link"><i class="fas fa-link"></i></a><a href="#2-1-1-全局特征表示学习" class="headerlink" title="2.1.1 全局特征表示学习"></a>2.1.1 全局特征表示学习</h6>
+      <p><strong>全局特征表示学习是为每个人的图像提取一个全局特征向量。</strong>常见的全局特征表示学习通常是通过将每个身份视为不同的类，将训练过程构建成多分类问题，使用深度神经网络提取全局的特征向量，并将该特征向量作为多分类问题处理。</p>
+<p><strong>注意力信息。</strong>注意力信息近年来越来越受到关注，<strong>合理利用注意力信息可以增强表示学习。</strong></p>
+<p>具体来说利用注意力机制可以分为单个人物图片内的注意力机制，和多个人物图像内的注意力机制。</p>
+<p>单张图片内的注意力机制典型的策略包括像素级注意力和通道特征相应重新加权、背景抑制和空间信息集成。目的主要在于增强对错位、不完美检测的鲁棒性。</p>
+<p>多张图片内的的行人检测的目的在于通过注意力机制挖掘多个图像之间的关系来增强和改进特征学习。主要的方法有：基于上下文感知的注意力特征学习方法，结合序列内和序列间的注意力，用于成对的特征对齐和细化。组相似性是另一种跨图像的注意力方法，它通过利用局部和全局相似性建模多个图像。</p>
+
+        <h6 id="2-1-2-局部特征表示学习">
+          <a href="#2-1-2-局部特征表示学习" class="heading-link"><i class="fas fa-link"></i></a><a href="#2-1-2-局部特征表示学习" class="headerlink" title="2.1.2 局部特征表示学习"></a>2.1.2 局部特征表示学习</h6>
+      <p>由于属于同一身份的图像在不同拍摄角度、不同相机，图像可能会有一定程度的扭曲和错位。此时可以通过局部特征表示学习图像的部分/区域特征以抵抗图像错位。</p>
+<p>对人体的局部部位划分主要可以通过两种形式来划分：</p>
+<p>1）通过人体姿态估计自动生成局部划分。</p>
+<p>2）通过大致水平划分。</p>
+<p>对于自动人体部位检测，比较流行的解决方案是结合全身表示特征和局部特征。改善局部特征表示的常用方法有<strong>多通道聚合、多尺度上下文感知卷积、多级特征分解和双线性池化。</strong>另一种解决方案<strong>是增强系统对背景杂波的鲁棒性</strong>，具体来说是通过<strong>人体姿势驱动匹配</strong>，<strong>姿势引导部分注意力模块</strong>、<strong>语义部分对齐</strong>。使用人体解析技术来获得语义上有意义的身体部位，这提供了很好的部分特征。然而，它们需要一个额外的姿态检测器，并且容易出现噪声姿态检测[77]。</p>
+<p>对于水平划分的区域特征采用均匀划分得到横条纹部分，比较灵活，但对重度遮挡和大背景杂波比较敏感。</p>
+
+        <h6 id="2-1-3-辅助特征学习">
+          <a href="#2-1-3-辅助特征学习" class="heading-link"><i class="fas fa-link"></i></a><a href="#2-1-3-辅助特征学习" class="headerlink" title="2.1.3  辅助特征学习"></a>2.1.3  辅助特征学习</h6>
+      <p>辅助特征表示学习通常需要额外的注释信息（例如语义属性[71]）或使用生成/增强的训练样本来加强特征表示。</p>
+<p><strong>语义属性信息</strong></p>
+<p>一些工作提出了一种深度属性学习网络，通过结合预测的语义属性信息，增强了半监督学习中特征表示的泛化性和鲁棒性。语义属性通常和注意力机制方案结合起来增强改进部分特征学习，语义属性还可以用作无监督学习中的辅助监督信息。</p>
+<p><img src="/2022/03/23/TPAMI-2021-ReID-Survey/image-20220325134709734.png" alt="image-20220325134709734"></p>
+<p><strong>视角信息 Viewpoint Information</strong> </p>
+<p>摄像头的视角信息也常常被用来增强特征表示学习。</p>
+<p> Multi-Level Factorisation Net (MLFN)尝试在多个语义级别上学习身份判别和视图不变的特征表示。关于视角信息还有角度正则化、视角感知特征学习（AAAI2020 Viewpoint-Aware Loss with Angular Regularization for Person Re-Identification）</p>
+<p><strong>领域信息</strong></p>
+<p><strong>数据增强</strong></p>
+<p>普遍使用的数据增强方法是随机调整图像的大小、裁剪和水平翻转。此外，有论文提出生成对抗性遮挡样本、随机擦除策略等向输入图像中添加随机噪声，这些方法通过增强样本，丰富了监督信息，提高了测试集的泛化性。batch DropBlock随机丢弃一个特征图中的区域块，有助于加强注意力特征学习。</p>
+
+        <h6 id="2-1-4-架构设计">
+          <a href="#2-1-4-架构设计" class="heading-link"><i class="fas fa-link"></i></a><a href="#2-1-4-架构设计" class="headerlink" title="2.1.4 架构设计"></a>2.1.4 架构设计</h6>
+      <p>行人ReID作为一个特定的行人检索问题，现有的大多数工作都是采用为图像分类设计的网络架构作为backbone。最广泛使用的主干架构是ResNet50。行人ReID架构设计为了实现更好的ReID性能，最常见的修改是将最后一个卷积层的Kernel的大小更改为1，在最后一个池化层中采用自适应平均池化层，以及在池化层后添加具有BatchNorm的瓶颈层。</p>
+<p> BraidNet提出了一个带有专门设计的 WConv 层和 Channel Scaling 层的网络结构。 WConv  层提取两个图像的差异信息以增强对未对齐的鲁棒性，通道缩放层优化每个输入通道的缩放因子。多级因子分解网络（MLFN）[112]包含多个堆叠块以在特定级别对各种潜在因子进行建模，并且动态选择因子以制定最终表示。开发了一种具有卷积相似度模块的高效全卷积连体网络[137]，以优化多级相似度测量。通过使用深度卷积可以有效地捕获和优化相似度。效率是  Re-ID 架构设计的另一个重要因素。一个高效的小规模网络，即 OmniScale  网络（OSNet）[138]，是通过结合点卷积和深度卷积来设计的。为了实现多尺度特征学习，引入了由多个卷积流组成的残差块。</p>
+
+        <h5 id="2-2-深度度量学习">
+          <a href="#2-2-深度度量学习" class="heading-link"><i class="fas fa-link"></i></a><a href="#2-2-深度度量学习" class="headerlink" title="2.2 深度度量学习"></a>2.2 深度度量学习</h5>
+      <p>如今，基于度量学习的作用已经被损失函数的设计所替代，以指导特征表示学习。</p>
+
+        <h6 id="2-2-1-损失函数设计">
+          <a href="#2-2-1-损失函数设计" class="heading-link"><i class="fas fa-link"></i></a><a href="#2-2-1-损失函数设计" class="headerlink" title="2.2.1 损失函数设计"></a>2.2.1 损失函数设计</h6>
+      <p><strong>Identity Loss</strong>身份损失函数</p>
+<p>身份损失函数将行人再识别的训练过程视为一个图像多分类问题。采用池化层或嵌入层的输出作为特征提取器。一般来说身份损失使用softmax编码的交叉熵损失，计算公式为：</p>
+<p><img src="/2022/03/23/TPAMI-2021-ReID-Survey/image-20220325154528371.png" alt="image-20220325154528371"></p>
+<p>其中n表示每个批次中的训练样本数，xi是输入图像，yi是给定的图像标签，p(yi|xi)是经过softmax函数编码得到的预测概率。</p>
+<p>即标签平滑是另外一种简单有效的策略，它通常集成到标准的 softmax 交叉熵损失实现中。其基本思想是避免模型拟合过度自信的注释标签，提高泛化性。</p>
+<p><strong>Verification Loss</strong></p>
+<p><img src="/2022/03/23/TPAMI-2021-ReID-Survey/image-20220325160537705.png" alt="image-20220325160537705"></p>
+<p>verification loss可以度量两个样本之间的关系,其结构图如上图所示。输入为一对(两张)图片，这两张图片可以为同一行人，也可以为不同行人。每一对训练图片都有一个标签(same/not)，其中表示两张图片属于同一个行人(正样本对)，反之表示它们属于不同行人(负样本对)。<br>先介绍对比损失（contrastive loss）：<br><img src="/2022/03/23/TPAMI-2021-ReID-Survey/image-20220325160608151.png" alt="image-20220325160608151"></p>
+<p>dij：表示两个输入样本xi和xj的嵌入特征之间的欧氏距离。<br>δij；s二进制标签指示器(当xi和xj属于同一标识时，δij=1，否则)。<br>ρ： 是边距参数，是一个超参。</p>
+<p>（如果两张图片属于同一身份，δij=1，L=dij²，此时最小化损失函数拉近这两张图片的欧氏距离，如果不属于同一身份，最小化L实际上是保证二者的欧氏距离大于一个边界参数ρ）</p>
+<p><strong>二进制验证损失 Binary verification</strong></p>
+<p>验证网络将差分特征分为正或负。一般情况下差分特征fij是通过差分方程计算得到，差分方程fij=(fi-fj)²，其中fi和fj是两个图像样本xi和xj的嵌入特征，我们使用p(δij | fij )表示输入对(xi和xj)被识别为δij（0或1)的概率。所以带有的cross-entropy 的verification loss表示如下：</p>
+<p><img src="/2022/03/23/TPAMI-2021-ReID-Survey/image-20220325161824808.png" alt="image-20220325161824808"></p>
+<p><strong>通常将Verification loss 与identity loss结合可以得到不错的效果。</strong></p>
+<p><strong>三元组损失</strong></p>
+<p>三元组损失通常将ReID模型训练过程视为一个检索排序的过程，最基本的思想是正样本对之间的距离应当比负样本对小于一个预定义的边界距离margin。</p>
+<p><img src="/2022/03/23/TPAMI-2021-ReID-Survey/image-20220325165017399.png" alt="image-20220325165017399"></p>
+<p>通常，一个三元组包含一个锚样本 xi、一个具有相同身份的正样本 xj 和一个来自不同身份的负样本 xk。带有边距参数的三元组损失由如下公式所示：</p>
+<p><img src="/2022/03/23/TPAMI-2021-ReID-Survey/image-20220325164831256.png" alt="image-20220325164831256"></p>
+<p>如果我们直接优化上述损失函数，那么大部分容易三元组将主导训练过程，导致可辨别性有限。因此实际操作中已经设计了各种信息丰富的三元组挖掘方法如（难批三元组），每个训练批次中最难的正负挖掘有利于模型的学习。</p>
+<p>为了进一步丰富三元组监督，有研究提出了四元组损失，每个四元组包括一个锚样本，一个正样本和两个挖掘的负样本。四联体是用基于边际的在线硬负挖掘来制定的。优化四元组关系会导致更小的类内变异和更大的类间变异。 </p>
+<p><strong>Triplet loss和identity  loss的结合是深度Re-ID模型学习最流行的解决方案之一、这两个组件对于判别特征表示学习是互惠互利的。</strong></p>
+<p><strong>OIM LOSS 在线实例匹配</strong></p>
+<p>传统的行人重识别的特征学习主要使用pair-wise或者triplet distance loss functions，但是这两种方法都不是很有效的，因为它们一次都只能用少量的数据做比较，对于N个输入数据，会存在N^2组合的可能性，这会导致计算量很大，特别是当N很大的时候，网络会学习得很慢，而目前有研究提出采用不同的采样数据的方法可以在一定程度上提高速度和效果，比如triplet loss就有很多种变种形式，但是<strong>当N不断增加时，采样难度也在提升</strong>；另一种常用的方法就是使用Softmax loss function去区分行人的身份identities，就把行人重识别问题当成是多分类问题去做，这样就解决了pair-wise或者triplet distance loss functions不能一次比较所有样本的缺陷，但是Softmax loss function也存在它的缺点，就是<strong>随着行人类型（不同身份的人）数量的增多，训练一个如此庞大的Softmax 分类器会变得及其的慢</strong>，甚至更糟糕的时候网络会无法收敛。<br>OIM的原理是：利用<strong>来自所有 labeled identities 特征组成一个 lookup table（查询表）</strong> ，与mini-batch样本之间进行距离比较；另外还有全景图中出现的许多 <strong>unlabeled identities 都可以被视为是天然的negatives（负样本）</strong>，因此也可以<strong>将它们的特征存储在circular queue（循环队列）中并进行比较。</strong>这也是行人重识别加上行人搜索后带来的一个天然优势，因为<strong>传统的行人重识别都是采用裁切好的行人图像，自然就不会存在那些没有label的人参与训练了。</strong>而且<strong>OIM损失函数是无参数的</strong>，在后面的实验结果可以看出，它是比 Softmax loss 收敛得更快和更好的。<br>OIM中的几个概念：<br>labeled identity：与目标行人相吻合的proposal。<br>unlabeled identities：包含行人但不是目标行人的proposal。<br>background clutter：包含非行人物体或者背景的proposal。<br>在OIM损失函数中只考虑前两者，即 labeled identity 和 unlabeled identities。</p>
+<p>lookup table（LUT）：把所有 labeled identities 的特征组成一个查询表lookup table，那么之后我只需要将需要查询的mini-batch的每个样本去跟这个查询表的已知标签的样本进行距离比较，就可以知道当前的这个人是什么身份了。</p>
+<p>circular queue：跟LUT同理，我们把 unlabeled identities 当作是负样本，也可以存在一个循环队列circular queue中，为什么这边不也一样叫LUT，这是因为这里的circular queue在每一轮迭代过后，会将新的特征向量压入队列中，并剔除那些过时的，呈现一个循环的过程。</p>
+
+        <h6 id="2-2-2-训练策略">
+          <a href="#2-2-2-训练策略" class="heading-link"><i class="fas fa-link"></i></a><a href="#2-2-2-训练策略" class="headerlink" title="2.2.2 训练策略"></a>2.2.2 训练策略</h6>
+      <p>批量采样策略在ReID模型学习中起着非常重要的作用。因为不同身份的标注训练图像数量之间的变化非常大，严重的不平衡的正负样本对增加了训练策略设计的额外难度。</p>
+<p><strong>处理样本不平衡问题最常用的训练策略是身份抽样</strong>，即对于每个训练batch，随机选择一定数量的身份，然后从每个选定的身份中抽取几张图像，这样的批量采样策略保证了信息丰富的正负挖掘。</p>
+<p>为了处理正负样本之间的不平衡问题，<strong>常用的方法是采用自适应采样以调整正负样本之间的贡献。</strong>为了自适应地组合多个损失函数，多重损失动态训练策略 [156]  自适应地重新加权身份损失和三元组损失，提取它们之间共享的适当分量。这种多损失训练策略可以带来一致的性能提升。</p>
+
+        <h4 id="2-3-排序优化">
+          <a href="#2-3-排序优化" class="heading-link"><i class="fas fa-link"></i></a><a href="#2-3-排序优化" class="headerlink" title="2.3 排序优化"></a>2.3 排序优化</h4>
+      <p>排序优化对于提高测试阶段的检索性能起着至关重要的作用。</p>
+
+        <h5 id="2-3-1-Re-ranking">
+          <a href="#2-3-1-Re-ranking" class="heading-link"><i class="fas fa-link"></i></a><a href="#2-3-1-Re-ranking" class="headerlink" title="2.3.1 Re-ranking"></a>2.3.1 Re-ranking</h5>
+      </div></div></article><article class="postlist-item post"><header class="post-header"><h1 class="post-title"><a class="post-title__link" href="/2022/03/21/Javaday1/">Javaday1</a></h1><div class="post-meta"><span class="post-meta-item post-meta-item--createtime"><span class="post-meta-item__icon"><i class="far fa-calendar-plus"></i></span><span class="post-meta-item__info">发表于</span><span class="post-meta-item__value">2022-03-21</span></span><span class="post-meta-item post-meta-item--updatetime"><span class="post-meta-item__icon"><i class="far fa-calendar-check"></i></span><span class="post-meta-item__info">更新于</span><span class="post-meta-item__value">2022-03-22</span></span></div></header><div class="post-body"><div class="post-excerpt">
+        <h3 id="Java语法速通day1">
+          <a href="#Java语法速通day1" class="heading-link"><i class="fas fa-link"></i></a><a href="#Java语法速通day1" class="headerlink" title="Java语法速通day1"></a>Java语法速通day1</h3>
+      
+        <h4 id="1-方法">
+          <a href="#1-方法" class="heading-link"><i class="fas fa-link"></i></a><a href="#1-方法" class="headerlink" title="1 方法"></a>1 方法</h4>
+      <p>方法的格式如下图所示：</p>
+<p><img src="/2022/03/21/Javaday1/image-20220321213139564.png" alt="image-20220321213139564"></p>
+<p><img src="/2022/03/21/Javaday1/image-20220322201944346.png" alt="image-20220322201944346"></p>
+<p>调用方法的时候，会将方法加载进栈内存中执行。+</p>
+
+        <h5 id="1-1-Java的参数传递机制">
+          <a href="#1-1-Java的参数传递机制" class="heading-link"><i class="fas fa-link"></i></a><a href="#1-1-Java的参数传递机制" class="headerlink" title="1.1 Java的参数传递机制"></a>1.1 Java的参数传递机制</h5>
+      <p><img src="/2022/03/21/Javaday1/image-20220322202612205.png" alt="image-20220322202612205"></p>
+<p>对于基本数据类型（int double等），传输实参给形参，只是将实参的值传递给形参。因此使用方法调用使用实参的值，对形参进行改变不会改变实参的值。（可以理解成c++中的拷贝复制，并没有使用引用类型。对形参操作不会影响实参。）</p>
+<p>但是对于<strong>引用类型如字符串string\数组类型</strong>，数组类型作为形参传递给函数形参时。<strong>由于数组名的值实际上存储的是该数组的地址</strong>，因此将该数组名的值拷贝给形参，形参也就获得了原数组的地址。因此函数对数组作为形参，对数组进行改变是作用在原数组上的。</p>
+<p>如下图代码所示，对于普通类型int a，将该值传递给change的形参n，对形参做出改变不会影响原本的实参a.</p>
+<p>对数组类型arr，传递值给形参实际上传递的是数组的地址，对该数组进行改变实际上是对实参进行的改变。</p>
+<img src="/2022/03/21/Javaday1/image-20220322203646940.png" alt="image-20220322203646940" style="zoom:50%;">
+
+<p><img src="/2022/03/21/Javaday1/image-20220322205138775.png" alt="image-20220322205138775"></p>
+<p><img src="/2022/03/21/Javaday1/image-20220322205209266.png" alt="image-20220322205209266"></p>
+
+        <h5 id="1-2-方法重载">
+          <a href="#1-2-方法重载" class="heading-link"><i class="fas fa-link"></i></a><a href="#1-2-方法重载" class="headerlink" title="1.2 方法重载"></a>1.2 方法重载</h5>
+      <p><strong>同一个类中，出现多个方法名称相同，但是形参列表不一样，那么这些方法就是重载方法。</strong></p>
+<p>和C++一致，调用方法的时候会通过参数不同来区分调用的到底是哪个方法。</p>
+<p><img src="/2022/03/21/Javaday1/image-20220322210517722.png" alt="image-20220322210517722"></p>
+</div></div></article><article class="postlist-item post"><header class="post-header"><h1 class="post-title"><a class="post-title__link" href="/2022/03/20/Javaday0/">Javaday0</a></h1><div class="post-meta"><span class="post-meta-item post-meta-item--createtime"><span class="post-meta-item__icon"><i class="far fa-calendar-plus"></i></span><span class="post-meta-item__info">发表于</span><span class="post-meta-item__value">2022-03-20</span></span><span class="post-meta-item post-meta-item--updatetime"><span class="post-meta-item__icon"><i class="far fa-calendar-check"></i></span><span class="post-meta-item__info">更新于</span><span class="post-meta-item__value">2022-03-21</span></span></div></header><div class="post-body"><div class="post-excerpt"><p>经典弃坑开新坑。。。。C++感觉还是算了吧</p>
+
+        <h3 id="Java语法速通DAY0">
+          <a href="#Java语法速通DAY0" class="heading-link"><i class="fas fa-link"></i></a><a href="#Java语法速通DAY0" class="headerlink" title="Java语法速通DAY0"></a>Java语法速通DAY0</h3>
+      
+        <h4 id="1-IDEA相关">
+          <a href="#1-IDEA相关" class="heading-link"><i class="fas fa-link"></i></a><a href="#1-IDEA相关" class="headerlink" title="1 IDEA相关"></a>1 IDEA相关</h4>
+      
+        <h5 id="1-1-IDEA代码组织架构">
+          <a href="#1-1-IDEA代码组织架构" class="heading-link"><i class="fas fa-link"></i></a><a href="#1-1-IDEA代码组织架构" class="headerlink" title="1.1 IDEA代码组织架构"></a>1.1 IDEA代码组织架构</h5>
+      <p>IDEA代码的组织架构从上到下主要可以分为4个层次：project-module-package-class。</p>
+<p><img src="/2022/03/20/Javaday0/image-20220320143612721.png" alt="image-20220320143612721"></p>
+<p>如下入所示，JavaCode是一个project，project下建立了一个module：hello-app，在源代码src下建立了一个package，在package下建立了java文件，即class:helloworld。</p>
+<p><img src="/2022/03/20/Javaday0/image-20220320143728146.png" alt="image-20220320143728146"></p>
+
+        <h5 id="1-2-IDEA相关快捷键">
+          <a href="#1-2-IDEA相关快捷键" class="heading-link"><i class="fas fa-link"></i></a><a href="#1-2-IDEA相关快捷键" class="headerlink" title="1.2 IDEA相关快捷键"></a>1.2 IDEA相关快捷键</h5>
+      <p><img src="/2022/03/20/Javaday0/image-20220320144011781.png" alt="image-20220320144011781"></p>
+
+        <h4 id="2-Java中的数据类型">
+          <a href="#2-Java中的数据类型" class="heading-link"><i class="fas fa-link"></i></a><a href="#2-Java中的数据类型" class="headerlink" title="2 Java中的数据类型"></a>2 Java中的数据类型</h4>
+      <p><img src="/2022/03/20/Javaday0/image-20220320152213807.png" alt="image-20220320152213807"></p>
+<p>由于系统默认的整数、小数类型分别是int和double，想要写字面值使用long和float需要对字面值进行说明。</p>
+<p>注意当写一个字面值赋值给long类型，需要在字面值其后加一个L来标识。</p>
+<p>float类型也是如此，需要在其后加一个F来标识。</p>
+<figure class="highlight java"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">long</span> lg = <span class="number">88946548946L</span>;</span><br><span class="line"><span class="keyword">float</span> f = <span class="number">3.1415926F</span>;</span><br></pre></td></tr></table></div></figure>
+
+
+        <h4 id="3-Java中的类型转换">
+          <a href="#3-Java中的类型转换" class="heading-link"><i class="fas fa-link"></i></a><a href="#3-Java中的类型转换" class="headerlink" title="3 Java中的类型转换"></a>3 Java中的类型转换</h4>
+      
+        <h5 id="3-1-自动类型转换">
+          <a href="#3-1-自动类型转换" class="heading-link"><i class="fas fa-link"></i></a><a href="#3-1-自动类型转换" class="headerlink" title="3.1 自动类型转换"></a>3.1 自动类型转换</h5>
+      <p>在Java中，类型范围小的变量可以直接赋值给类型范围大的变量。</p>
+<p><img src="/2022/03/20/Javaday0/image-20220320153234283.png" alt="image-20220320153234283"></p>
+<p><img src="/2022/03/20/Javaday0/image-20220320153300695.png" alt="image-20220320153300695"></p>
+<p>byte、short、char类型在运算的过程中会当成int类型参与计算，计算结果也是int型。</p>
+
+        <h5 id="3-2-强制类型转换">
+          <a href="#3-2-强制类型转换" class="heading-link"><i class="fas fa-link"></i></a><a href="#3-2-强制类型转换" class="headerlink" title="3.2 强制类型转换"></a>3.2 强制类型转换</h5>
+      <p><img src="/2022/03/20/Javaday0/image-20220320154052817.png" alt="image-20220320154052817"><img src="/2022/03/20/Javaday0/image-20220320154053103.png" alt="image-20220320154053103"></p>
+
+        <h4 id="4-Java中的基础运算符">
+          <a href="#4-Java中的基础运算符" class="heading-link"><i class="fas fa-link"></i></a><a href="#4-Java中的基础运算符" class="headerlink" title="4 Java中的基础运算符"></a>4 Java中的基础运算符</h4>
+      
+        <h5 id="4-1-号">
+          <a href="#4-1-号" class="heading-link"><i class="fas fa-link"></i></a><a href="#4-1-号" class="headerlink" title="4.1 +号"></a>4.1 +号</h5>
+      <p>在字符串中，+号可以充当连接符号。可以将字符串与字符串、字符串与其他变量连接在一起。</p>
+<p>运算前提：能算则算，算不了当连接符。比如整型和字符类型char可以运算，但是整型与字符串类型不能运算，当连接符使用。</p>
+<p>如：</p>
+<figure class="highlight java"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> a = <span class="number">5</span>;</span><br></pre></td></tr></table></div></figure>
+
+<p><img src="/2022/03/20/Javaday0/image-20220320160221184.png" alt="image-20220320160221184"></p>
+
+        <h5 id="4-2-逻辑运算符">
+          <a href="#4-2-逻辑运算符" class="heading-link"><i class="fas fa-link"></i></a><a href="#4-2-逻辑运算符" class="headerlink" title="4.2 逻辑运算符"></a>4.2 逻辑运算符</h5>
+      <p><img src="/2022/03/20/Javaday0/image-20220320163916568.png" alt="image-20220320163916568"></p>
+<p>与C++不同，逻辑与、或只需要1个&amp;、|。</p>
+<p>在C++中的逻辑与、或被称为短路与、短路或。短路逻辑运算符由于如果满足一定的条件，运算符右边的表达式就可以无需计算，因此执行的速度要比逻辑单与、或操作要快。<strong>因此短路逻辑运算符在实际开发中较为常用。</strong></p>
+<p><img src="/2022/03/20/Javaday0/image-20220320164107662.png" alt="image-20220320164107662"></p>
+
+        <h5 id="4-3-三元运算符">
+          <a href="#4-3-三元运算符" class="heading-link"><i class="fas fa-link"></i></a><a href="#4-3-三元运算符" class="headerlink" title="4.3 三元运算符"></a>4.3 三元运算符</h5>
+      <p>与C++中的三元运算符相同，若表达式为真返回值1，否则返回值2.</p>
+<figure class="highlight java"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">expression ? 值<span class="number">1</span> ：值<span class="number">2</span></span><br></pre></td></tr></table></div></figure>
+
+
+        <h4 id="5-Java的基本输入输出">
+          <a href="#5-Java的基本输入输出" class="heading-link"><i class="fas fa-link"></i></a><a href="#5-Java的基本输入输出" class="headerlink" title="5. Java的基本输入输出"></a>5. Java的基本输入输出</h4>
+      <p>想要从键盘输入中读取输入，需要导入Scanner包</p>
+<figure class="highlight java"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> java.util.Scanner;</span><br></pre></td></tr></table></div></figure>
+
+<p>想要获取键盘输入，需要新建一个扫描器对象，然后调用next方法接受键盘输入。扫描器对象仅需新建一次，以后需要获取键盘输入时仅需根据获取键盘输入的类型调用对应的next方法即可。</p>
+<figure class="highlight java"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">System.out.println(<span class="string">&quot;请输入年龄&quot;</span>);</span><br><span class="line">Scanner sc = <span class="keyword">new</span> Scanner(System.in);</span><br><span class="line"><span class="comment">//代码在此等待键盘输入，int对应的next方法是nextInt()</span></span><br><span class="line"><span class="keyword">int</span> age = sc.nextInt();</span><br><span class="line">System.out.println(<span class="string">&quot;请输入姓名&quot;</span>);</span><br><span class="line"><span class="comment">//代码在此等待键盘输入，String对应的next方法是next()</span></span><br><span class="line">String name = sc.next();</span><br><span class="line">System.out.println(<span class="string">&quot;欢迎:&quot;</span> + name + <span class="string">&quot;，年龄：&quot;</span> + age);</span><br></pre></td></tr></table></div></figure>
+
+<p><img src="/2022/03/20/Javaday0/image-20220320170420823.png" alt="image-20220320170420823"></p>
+
+        <h4 id="6-Java中的控制语句">
+          <a href="#6-Java中的控制语句" class="heading-link"><i class="fas fa-link"></i></a><a href="#6-Java中的控制语句" class="headerlink" title="6. Java中的控制语句"></a>6. Java中的控制语句</h4>
+      
+        <h5 id="6-1-if语句">
+          <a href="#6-1-if语句" class="heading-link"><i class="fas fa-link"></i></a><a href="#6-1-if语句" class="headerlink" title="6.1 if语句"></a>6.1 if语句</h5>
+      <p>同C++</p>
+
+        <h5 id="6-2-switch-case">
+          <a href="#6-2-switch-case" class="heading-link"><i class="fas fa-link"></i></a><a href="#6-2-switch-case" class="headerlink" title="6.2 switch-case"></a>6.2 switch-case</h5>
+      <p><img src="/2022/03/20/Javaday0/image-20220320171705565.png" alt="image-20220320171705565"></p>
+<p>基本同C++，但是有以下几点注意事项：</p>
+<p>1、表达式类型只能是byte、short、int、char、枚举类型和String。<strong>不支持double\float\long</strong></p>
+<p>2、case不允许重复，且<strong>只能是字面值不能是变量</strong></p>
+<p>3、与C++中相同，如果分支执行代码没有break;会顺序执行以下所有的分支，或者直到碰到break;退出。<strong>这种特性叫做穿透性</strong>，适用于很多分支的执行代码相同的情况，这种情况只需要合理利用穿透性，将很多分支相同的执行代码写在最后一个相同情况的执行代码中即可，使代码简洁高效。</p>
+<figure class="highlight java"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//合理利用穿透性，输入月份输出有多少天</span></span><br><span class="line">Scanner sc = <span class="keyword">new</span> Scanner(System.in);</span><br><span class="line"><span class="keyword">int</span> month = sc.nextInt();</span><br><span class="line"><span class="keyword">switch</span>(month)&#123;</span><br><span class="line">    <span class="keyword">case</span> <span class="number">1</span> :</span><br><span class="line">    <span class="keyword">case</span> <span class="number">3</span> :</span><br><span class="line">    <span class="keyword">case</span> <span class="number">5</span> :</span><br><span class="line">    <span class="keyword">case</span> <span class="number">7</span> :</span><br><span class="line">    <span class="keyword">case</span> <span class="number">8</span> :</span><br><span class="line">    <span class="keyword">case</span> <span class="number">10</span> :</span><br><span class="line">    <span class="keyword">case</span> <span class="number">12</span> :</span><br><span class="line">       System.out.println(month + <span class="string">&quot;有31天&quot;</span>);</span><br><span class="line">       <span class="keyword">break</span>;</span><br><span class="line">    <span class="keyword">case</span> <span class="number">4</span>:</span><br><span class="line">    <span class="keyword">case</span> <span class="number">6</span>:</span><br><span class="line">    <span class="keyword">case</span> <span class="number">9</span>:</span><br><span class="line">    <span class="keyword">case</span> <span class="number">11</span>:</span><br><span class="line">       System.out.println(month + <span class="string">&quot;有30天&quot;</span>);</span><br><span class="line">       <span class="keyword">break</span>;</span><br><span class="line">    <span class="keyword">case</span> <span class="number">2</span>:</span><br><span class="line">       System.out.println(month + <span class="string">&quot;闰年有29天，其余28天&quot;</span>);</span><br><span class="line">       <span class="keyword">break</span>;</span><br><span class="line">    <span class="keyword">default</span>:</span><br><span class="line">       System.out.println(<span class="string">&quot;输入格式不正确&quot;</span>);</span><br><span class="line">       &#125;</span><br></pre></td></tr></table></div></figure>
+
+
+        <h5 id="6-3-for循环、while、do-while">
+          <a href="#6-3-for循环、while、do-while" class="heading-link"><i class="fas fa-link"></i></a><a href="#6-3-for循环、while、do-while" class="headerlink" title="6.3 for循环、while、do-while"></a>6.3 for循环、while、do-while</h5>
+      <p>全部语法格式都同C++，do-while一定先执行一次循环体。</p>
+<p><img src="/2022/03/20/Javaday0/image-20220320173502990.png" alt="image-20220320173502990"></p>
+<p><img src="/2022/03/20/Javaday0/image-20220320213301453.png" alt="image-20220320213301453"></p>
+
+        <h4 id="7-Java生成随机数的Random类">
+          <a href="#7-Java生成随机数的Random类" class="heading-link"><i class="fas fa-link"></i></a><a href="#7-Java生成随机数的Random类" class="headerlink" title="7 Java生成随机数的Random类"></a>7 Java生成随机数的Random类</h4>
+      <p>Random类在java.util.Random类中。先生成一个Random类的对象，然后调用方法nextInt(bound)获得0-bound区间内的随机整数</p>
+<figure class="highlight java"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> java.util.Random;</span><br><span class="line"></span><br><span class="line">Random rand = <span class="keyword">new</span> Random();</span><br><span class="line"><span class="keyword">int</span> seed = rand.nextInt(<span class="number">99</span>);</span><br><span class="line"><span class="keyword">int</span> seed1 = rand.nextInt(<span class="number">99</span>) + <span class="number">5</span>;     <span class="comment">//生成5-104q</span></span><br></pre></td></tr></table></div></figure>
+
+
+        <h4 id="8-Java的数组类型">
+          <a href="#8-Java的数组类型" class="heading-link"><i class="fas fa-link"></i></a><a href="#8-Java的数组类型" class="headerlink" title="8 Java的数组类型"></a>8 Java的数组类型</h4>
+      
+        <h5 id="8-1-数组静态初始化">
+          <a href="#8-1-数组静态初始化" class="heading-link"><i class="fas fa-link"></i></a><a href="#8-1-数组静态初始化" class="headerlink" title="8.1 数组静态初始化"></a>8.1 数组静态初始化</h5>
+      <p><img src="/2022/03/20/Javaday0/image-20220321145417588.png" alt="image-20220321145417588"></p>
+<p>Java的数组名称存储的是指向数组第一个元素的地址。<strong>数组是引用类型</strong></p>
+<p>Java中数组有一个属性length，可以使用length获取数组长度。</p>
+<figure class="highlight java"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span>[] ages = <span class="keyword">new</span> <span class="keyword">int</span>[]&#123;<span class="number">12</span>, <span class="number">24</span>, <span class="number">36</span>&#125;;</span><br><span class="line"><span class="keyword">int</span> len = ages.leghth;             <span class="comment">//获取数组的最大索引</span></span><br></pre></td></tr></table></div></figure>
+
+
+        <h5 id="8-2-数组动态初始化">
+          <a href="#8-2-数组动态初始化" class="heading-link"><i class="fas fa-link"></i></a><a href="#8-2-数组动态初始化" class="headerlink" title="8.2 数组动态初始化"></a>8.2 数组动态初始化</h5>
+      <p>一开始不指定数组元素初始值的方法叫做数组的动态初始化。只指定数组的长度，不指定初始值，系统自动给数组元素赋值一个默认值。</p>
+<figure class="highlight java"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">double</span>[] scores = <span class="keyword">new</span> <span class="keyword">double</span>[<span class="number">3</span>];</span><br></pre></td></tr></table></div></figure>
+
+<p><img src="/2022/03/20/Javaday0/image-20220321150537876.png" alt="image-20220321150537876"></p>
+
+        <h4 id="9-Java内存分配">
+          <a href="#9-Java内存分配" class="heading-link"><i class="fas fa-link"></i></a><a href="#9-Java内存分配" class="headerlink" title="9 Java内存分配"></a>9 Java内存分配</h4>
+      <p>Java内存分配主要可以分为栈、堆、方法区、本地方法栈、寄存器五个区域。</p>
+<p><img src="/2022/03/20/Javaday0/image-20220321204240706.png" alt="image-20220321204240706"></p>
+<p><img src="/2022/03/20/Javaday0/image-20220321204659694.png" alt="image-20220321204659694"></p>
+<p>运行代码，首先将字节码和main方法加载进方法区，执行方法。</p>
+<p>在栈内存中创建变量a和数组对象arr，new部分在堆内存中开辟存储空间。</p>
+<p>执行下面三个修改数组值的操作，实际上是通过栈内存中找到堆内存中的数组起始地址，然后根据此地址对堆内存中的数值进行修改。</p>
+<p><strong>数组的变量名实际上存储的是数组的起始地址。</strong></p>
+<p>因此对数组进行赋值拷贝实际上是给另外一个数组名一个与原数组相同的地址。</p>
+<figure class="highlight java"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span>[] arr = &#123;<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>&#125;;</span><br><span class="line"><span class="keyword">int</span>[] arr1 = arr;     <span class="comment">//arr与arr1指向的是同一个数组，实际上是将Arr的地址赋值给a</span></span><br></pre></td></tr></table></div></figure>
+
+</div></div></article><article class="postlist-item post"><header class="post-header"><h1 class="post-title"><a class="post-title__link" href="/2022/03/15/c-chapter6/">c++chapter6</a></h1><div class="post-meta"><span class="post-meta-item post-meta-item--createtime"><span class="post-meta-item__icon"><i class="far fa-calendar-plus"></i></span><span class="post-meta-item__info">发表于</span><span class="post-meta-item__value">2022-03-15</span></span><span class="post-meta-item post-meta-item--updatetime"><span class="post-meta-item__icon"><i class="far fa-calendar-check"></i></span><span class="post-meta-item__info">更新于</span><span class="post-meta-item__value">2022-03-20</span></span></div></header><div class="post-body"><div class="post-excerpt">
         <h4 id="第六章-函数">
           <a href="#第六章-函数" class="heading-link"><i class="fas fa-link"></i></a><a href="#第六章-函数" class="headerlink" title="第六章 函数"></a>第六章 函数</h4>
       
@@ -54,6 +727,14 @@ window.CONFIG = CONFIG;</script><meta name="generator" content="Hexo 5.4.0"></he
 <p><strong>函数的声明和函数的定义非常类似，但是函数的声明无需写函数体，只需要在函数名和参数列表后加；即可。</strong></p>
 <p>函数的声明<strong>一般在头文件中使用，</strong>可以确保所有文件同一函数声明保持一致，并且方便修改函数的接口。</p>
 
+        <h5 id="为什么要使用函数声明！！！">
+          <a href="#为什么要使用函数声明！！！" class="heading-link"><i class="fas fa-link"></i></a><a href="#为什么要使用函数声明！！！" class="headerlink" title="为什么要使用函数声明！！！"></a>为什么要使用函数声明！！！</h5>
+      <p><strong>对于单个源文件的程序，通常是将函数定义放到 main() 的后面</strong>，将函数声明放到 main() 的前面，这样就使得代码结构清晰明了，主次分明。</p>
+<p>使用者往往只关心函数的功能和函数的调用形式，很少关心函数的实现细节，<strong>将函数定义放在最后，就是尽量屏蔽不重要的信息</strong>，凸显关键的信息。将函数声明放到 main() 的前面，在定义函数时也不用关注它们的调用顺序了，哪个函数先定义，哪个函数后定义，都无所谓了。</p>
+<p>然而在实际开发中，往往都是几千行、上万行、百万行的代码，将这些代码都放在一个源文件中简直是灾难，不但检索麻烦，而且打开文件也很慢，所以必须将这些代码分散到多个文件中。<strong>对于多个文件的程序，通常是将函数定义放到源文件（<code>.c</code>文件）中，将函数的声明放到头文件（<code>.h</code>文件）中</strong>，使用函数时引入对应的头文件就可以，编译器会在链接阶段找到函数体。</p>
+<p>前面我们在使用 printf()、puts()、scanf() 等函数时引入了 stdio.h 头文件，很多初学者认为 stdio.h 中包含了函数定义（也就是函数体），只要有了头文件就能运行，其实不然，<strong>头文件中包含的都是函数声明，而不是函数定义，函数定义都放在了其它的源文件中，这些源文件已经提前编译好了，并以动态链接库或者静态链接库的形式存在</strong>，只有头文件没有系统库的话，在链接阶段就会报错，程序根本不能运行。</p>
+<p>除了函数，变量也有定义和声明之分。实际开发过程中，变量定义需要放在源文件（<code>.c</code>文件）中，变量声明需要放在头文件（<code>.h</code>文件）中，在链接程序时会将它们对应起来</p>
+
         <h4 id="6-3-参数传递">
           <a href="#6-3-参数传递" class="heading-link"><i class="fas fa-link"></i></a><a href="#6-3-参数传递" class="headerlink" title="6.3 参数传递"></a>6.3 参数传递</h4>
       
@@ -75,6 +756,83 @@ window.CONFIG = CONFIG;</script><meta name="generator" content="Hexo 5.4.0"></he
       <p>由于形参不是引用类型时，会对形参进行拷贝初始化。但是<strong>拷贝大的类型或者容器对象比较低效，甚至有的类类型往往不支持拷贝操作。因此，函数的形参往往可以声明成引用类型</strong></p>
 <p>如果不需要对原实参进行修改，可<strong>以将形参声明成对常量的引用</strong>从而避免改变被引对象。</p>
 <p><img src="/2022/03/15/c-chapter6/image-20220317201750020.png" alt="image-20220317201750020"></p>
+
+        <h4 id="6-4-返回类型和return语句">
+          <a href="#6-4-返回类型和return语句" class="heading-link"><i class="fas fa-link"></i></a><a href="#6-4-返回类型和return语句" class="headerlink" title="6.4 返回类型和return语句"></a>6.4 返回类型和return语句</h4>
+      <p>return语句终止当前正在执行的函数并将控制权返回到调用该函数的地方。</p>
+<p>return语句返回一个值的方式和初始化一个变量或者形参的方式完全一致，<strong>返回的值用于拷贝初始化调用点的一个临时量</strong>，这个临时量就是函数调用的结果。</p>
+
+        <h5 id="6-4-1-返回引用类型的函数">
+          <a href="#6-4-1-返回引用类型的函数" class="heading-link"><i class="fas fa-link"></i></a><a href="#6-4-1-返回引用类型的函数" class="headerlink" title="6.4.1 返回引用类型的函数"></a>6.4.1 返回引用类型的函数</h5>
+      <p>与一般的引用类型一样，返回引用类型的函数，返回值是被引对象的一个别名。<strong>指的是该函数的返回值是被引对象的一个引用，直接绑定与该被引对象。</strong></p>
+<figure class="highlight c++"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">const</span> string &amp;<span class="title">shorterString</span><span class="params">(<span class="keyword">const</span> string &amp;s1, <span class="keyword">const</span> string &amp;s2)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">return</span> s1.<span class="built_in">size</span>() &lt;= s2.<span class="built_in">size</span>() ? s1 : s2;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></div></figure>
+
+<p>该函数完成的功能是比较两个string类型的形参的长短，挑出较短的那个并返回其引用。 函数的返回值是绑定在s1和s2较短那个的引用。</p>
+<p><strong>注意：返回引用的函数，返回值必须是绑定在函数外部定义的已经存在的对象。不能尝试返回局部变量的引用，因为函数结束时局部变量占用的空间会随之释放。</strong></p>
+<p><img src="/2022/03/15/c-chapter6/image-20220319160729616.png" alt="image-20220319160729616"></p>
+<p><img src="/2022/03/15/c-chapter6/image-20220319170332106.png" alt="image-20220319170332106"></p>
+
+        <h5 id="6-4-2-列表初始化返回值">
+          <a href="#6-4-2-列表初始化返回值" class="heading-link"><i class="fas fa-link"></i></a><a href="#6-4-2-列表初始化返回值" class="headerlink" title="6.4.2 列表初始化返回值"></a>6.4.2 列表初始化返回值</h5>
+      <p>函数可以返回花括号包围的值的列表，<strong>此处的列表用于对函数返回的临时变量进行初始化</strong>，如果列表为空，返回的值由函数的返回类型决定。</p>
+<p><img src="/2022/03/15/c-chapter6/image-20220319171514163.png" alt="image-20220319171514163"></p>
+<p>如果函数返回的是内置类型，用于列表初始化的列表最多包含一个值，如果返回的是类类型，由类本身定义初始值应该如何使用。</p>
+
+        <h5 id="6-4-3-返回数组指针">
+          <a href="#6-4-3-返回数组指针" class="heading-link"><i class="fas fa-link"></i></a><a href="#6-4-3-返回数组指针" class="headerlink" title="6.4.3 返回数组指针"></a>6.4.3 返回数组指针</h5>
+      <p><strong>因为数组不能被拷贝，所以函数不能返回数组。</strong></p>
+<p>但是函数可以返回数组的指针或者引用来间接返回数组类型。</p>
+<p>想要定义一个返回数组的指针或引用</p>
+<p><strong>方法1：使用类型别名</strong></p>
+<figure class="highlight c++"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">using</span> arrT = <span class="keyword">int</span>[<span class="number">10</span>];        <span class="comment">//arrT是一个类型别名，它表示的类型是含有10个元素的整数数组</span></span><br><span class="line"><span class="function">arrT* <span class="title">fun</span><span class="params">(<span class="keyword">int</span> i)</span></span>;            <span class="comment">//函数声明，返回类型是含有10个元素的整数数组的指针</span></span><br></pre></td></tr></table></div></figure>
+
+<p><strong>方法2：直接返回一个数组指针的函数</strong></p>
+<figure class="highlight c++"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> arr[<span class="number">10</span>];                 <span class="comment">//arr是一个含有10个元素的整数数组</span></span><br><span class="line"><span class="keyword">int</span> *p1[<span class="number">10</span>];                <span class="comment">//p1是一个含有10个指针的数组，指针指向的元素是int</span></span><br><span class="line"><span class="built_in"><span class="keyword">int</span></span> (*p2)[<span class="number">10</span>] = &amp;arr;       <span class="comment">//p2是一个指针 指向的是含有10个元素的整数数组</span></span><br><span class="line"><span class="comment">//因此指向数组的指针声明应当是（*指针名）[数组大小]</span></span><br><span class="line"><span class="comment">//所以返回类型是数组指针的函数声明应当是：</span></span><br><span class="line"><span class="built_in">Type</span> (*<span class="built_in">function</span>(parameter_list))[dimension];</span><br><span class="line"><span class="comment">//声明一个函数func，返回类型是指向s</span></span><br><span class="line"><span class="built_in"><span class="keyword">int</span></span> (*<span class="built_in">func</span>(<span class="keyword">int</span> i))[<span class="number">10</span>];</span><br></pre></td></tr></table></div></figure>
+
+
+        <h5 id="方法3：尾置返回类型">
+          <a href="#方法3：尾置返回类型" class="heading-link"><i class="fas fa-link"></i></a><a href="#方法3：尾置返回类型" class="headerlink" title="方法3：尾置返回类型"></a>方法3：尾置返回类型</h5>
+      <p>尾置返回类型跟在形参列表后面并以一个-&gt;符号开头，表示函数真正的返回类型跟在形参列表之后，在本该出现返回类型的地方放置一个auto</p>
+<figure class="highlight c++"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//func接受一个int类型的实参，返回一个指针，该指针指向含有10个整数的数组</span></span><br><span class="line"><span class="function"><span class="keyword">auto</span> <span class="title">func</span><span class="params">(<span class="keyword">int</span> i)</span> -&gt;<span class="title">int</span><span class="params">(*)</span>[10]</span>;</span><br></pre></td></tr></table></div></figure>
+
+
+        <h4 id="6-5-函数重载">
+          <a href="#6-5-函数重载" class="heading-link"><i class="fas fa-link"></i></a><a href="#6-5-函数重载" class="headerlink" title="6.5 函数重载"></a>6.5 函数重载</h4>
+      <p>函数重载指的是在同一作用域中，几个函数名字相同但形参列表不同。这些函数接受的形参列表不一样，但是执行的操作非常类似。调用这些函数时，编译器会根据传递的实参类型推断想要的是哪个函数。</p>
+<p><strong>注意：形参的名字只起到记忆作用，实际上判断两个重载函数的形参列表是否一致，只判断对应的形参的类型。</strong></p>
+
+        <h4 id="6-6-默认实参">
+          <a href="#6-6-默认实参" class="heading-link"><i class="fas fa-link"></i></a><a href="#6-6-默认实参" class="headerlink" title="6.6 默认实参"></a>6.6 默认实参</h4>
+      <p>在函数定义的时候，可以为形参制定一些默认值作为默认实参。和Python相似，使用默认实参的时候只需要在调用函数的时候忽略该实参就可以了。因此设计含有默认实参的函数，需要合理调整参数顺序，将经常使用默认值的形参出现在后面，方便直接忽略。</p>
+<figure class="highlight c++"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">typedef</span> string::size_type sz;</span><br><span class="line"><span class="function">string <span class="title">screen</span><span class="params">(sz ht = <span class="number">24</span>, sz wid = <span class="number">80</span>, <span class="keyword">char</span> back =<span class="string">&#x27; &#x27;</span>)</span></span>;</span><br><span class="line"></span><br><span class="line">string window;</span><br><span class="line">window = <span class="built_in">screen</span>();      <span class="comment">//等价于screen(24, 80, &#x27; &#x27;);</span></span><br></pre></td></tr></table></div></figure>
+
+<p><strong>通常应当在函数声明中指定默认实参，并将该声明放在合适的头文件中。</strong></p>
+<p>局部变量不能作为默认实参，除此之外，只要表达式的类型能够转换成形参所需的类型，该表达式就可以作为默认实参。</p>
+
+        <h4 id="6-7-调试帮助">
+          <a href="#6-7-调试帮助" class="heading-link"><i class="fas fa-link"></i></a><a href="#6-7-调试帮助" class="headerlink" title="6.7 调试帮助"></a>6.7 调试帮助</h4>
+      
+        <h5 id="6-7-1-assert预处理宏">
+          <a href="#6-7-1-assert预处理宏" class="heading-link"><i class="fas fa-link"></i></a><a href="#6-7-1-assert预处理宏" class="headerlink" title="6.7.1 assert预处理宏"></a>6.7.1 assert预处理宏</h5>
+      <p>assert宏使用一个表达式作为它的条件，如果表达式为假，assert输出信息并终止程序运行，如果为真，则assert什么也不做。</p>
+<p><strong>assert常用于检查不能发生的条件。</strong></p>
+<figure class="highlight c++"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">assert</span>(word.<span class="built_in">size</span>() &gt; threshold);</span><br></pre></td></tr></table></div></figure>
+
+
+        <h4 id="6-8-函数指针">
+          <a href="#6-8-函数指针" class="heading-link"><i class="fas fa-link"></i></a><a href="#6-8-函数指针" class="headerlink" title="6.8 函数指针"></a>6.8 函数指针</h4>
+      <p>函数指针指向的是函数而非对象。</p>
+<p>对于一个函数，想要声明一个可以指向该函数的指针，只需要将函数名用指针名代替即可。</p>
+<figure class="highlight c++"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">bool</span> <span class="title">lengthCompare</span><span class="params">(<span class="keyword">const</span> string &amp;, <span class="keyword">const</span> string &amp;)</span></span>;</span><br><span class="line"><span class="comment">//使用指针名代替函数名即可，括号缺一不可，去掉指针名的括号会定义成返回类型为指针的函数</span></span><br><span class="line"><span class="comment">//只是声明了一个指向形参列表为(const string &amp;, const string &amp;)函数的指针，并未对指针初始化</span></span><br><span class="line"><span class="built_in"><span class="keyword">bool</span></span> (*pf)(<span class="keyword">const</span> string &amp;, <span class="keyword">const</span> string &amp;);     </span><br></pre></td></tr></table></div></figure>
+
+
+        <h5 id="6-8-1-函数指针的使用">
+          <a href="#6-8-1-函数指针的使用" class="heading-link"><i class="fas fa-link"></i></a><a href="#6-8-1-函数指针的使用" class="headerlink" title="6.8.1 函数指针的使用"></a>6.8.1 函数指针的使用</h5>
+      <p><strong>将函数名作为一个值使用的时候，该函数会自动转换成指针。我们可以使用指向函数的指针调用函数，无需解引用。</strong></p>
+<figure class="highlight c++"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">bool</span> <span class="title">lengthCompare</span><span class="params">(<span class="keyword">const</span> string &amp;, <span class="keyword">const</span> string &amp;)</span></span>;</span><br><span class="line"><span class="comment">//使用指针名代替函数名即可，括号缺一不可，去掉指针名的括号会定义成返回类型为指针的函数</span></span><br><span class="line"><span class="comment">//只是声明了一个指向形参列表为(const string &amp;, const string &amp;)函数的指针，并未对指针初始化</span></span><br><span class="line"><span class="built_in"><span class="keyword">bool</span></span> (*pf)(<span class="keyword">const</span> string &amp;, <span class="keyword">const</span> string &amp;);   </span><br><span class="line">pf = lengthCompare;       <span class="comment">//声明了一个指向函数lengthCompare的指针pf</span></span><br><span class="line">pf = &amp;lengthCompare;      <span class="comment">//与上句等价，取地址符是可选的</span></span><br><span class="line"><span class="keyword">bool</span> b2 = <span class="built_in">pf</span>(<span class="string">&quot;hello&quot;</span>, <span class="string">&quot;goodbye&quot;</span>);          <span class="comment">//调用函数</span></span><br><span class="line"><span class="keyword">bool</span> b3 = (*pf)(<span class="string">&quot;hello&quot;</span>, <span class="string">&quot;goodbye&quot;</span>);       <span class="comment">//对指针进行解引用，调用函数，与上句等价</span></span><br><span class="line"><span class="keyword">bool</span> b4 = <span class="built_in">lengthCompare</span>(<span class="string">&quot;hello&quot;</span>, <span class="string">&quot;goodbye&quot;</span>);          <span class="comment">//调用函数</span></span><br></pre></td></tr></table></div></figure>
+
+<p><strong>函数指针形参</strong></p>
+<p>（基础还没学完已经准备跑路Java了（逃））</p>
 </div></div></article><article class="postlist-item post"><header class="post-header"><h1 class="post-title"><a class="post-title__link" href="/2022/03/15/Intra-Inter-Camera-Similarity-for-Unsupervised-Person-Re-Identification/">Intra-Inter Camera Similarity for Unsupervised Person Re-Identification</a></h1><div class="post-meta"><span class="post-meta-item post-meta-item--createtime"><span class="post-meta-item__icon"><i class="far fa-calendar-plus"></i></span><span class="post-meta-item__info">发表于</span><span class="post-meta-item__value">2022-03-15</span></span><span class="post-meta-item post-meta-item--updatetime"><span class="post-meta-item__icon"><i class="far fa-calendar-check"></i></span><span class="post-meta-item__info">更新于</span><span class="post-meta-item__value">2022-03-18</span></span></div></header><div class="post-body"><div class="post-excerpt">
         <h3 id="CVPR2021-Intra-Inter-Camera-Similarity-for-Unsupervised-Person-Re-Identification-学习笔记">
           <a href="#CVPR2021-Intra-Inter-Camera-Similarity-for-Unsupervised-Person-Re-Identification-学习笔记" class="heading-link"><i class="fas fa-link"></i></a><a href="#CVPR2021-Intra-Inter-Camera-Similarity-for-Unsupervised-Person-Re-Identification-学习笔记" class="headerlink" title="CVPR2021 Intra-Inter Camera Similarity for Unsupervised Person Re-Identification 学习笔记"></a>CVPR2021 Intra-Inter Camera Similarity for Unsupervised Person Re-Identification 学习笔记</h3>
@@ -279,353 +1037,4 @@ window.CONFIG = CONFIG;</script><meta name="generator" content="Hexo 5.4.0"></he
       <p>例：编写一段程序，从标准输入读取两个整数，输出第一个数除以第二个数的结果。当第二个数为0时抛出异常，catch子句为用户输出提示信息，询问是否输入新数据并重新执行try语句块的内容。</p>
 <figure class="highlight c++"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">input_devide</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> a, b;</span><br><span class="line">    cout&lt;&lt; <span class="string">&quot;please input two num:&quot;</span>;</span><br><span class="line">    <span class="comment">//由于输入错误需要重新执行try语句块的内容，使用while来控制</span></span><br><span class="line">    <span class="keyword">while</span>(cin &gt;&gt; a &gt;&gt; b)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">try</span>&#123;</span><br><span class="line">            <span class="comment">//异常检测语句块，检测b是否为0</span></span><br><span class="line">            <span class="keyword">if</span>(b == <span class="number">0</span>)</span><br><span class="line">                <span class="comment">//抛出参数错误异常</span></span><br><span class="line">                <span class="keyword">throw</span> <span class="built_in">invalid_argument</span>(<span class="string">&quot;输入的第二个数为0，请检查&quot;</span>);</span><br><span class="line">        &#125;<span class="built_in"><span class="keyword">catch</span></span>(invalid_argument err)&#123;</span><br><span class="line">            <span class="comment">//特别注意catch语句括号内是一个异常对象的声明，虽然可以不命名，但是命名可以利用它输出一些提示</span></span><br><span class="line">            cout &lt;&lt; err.<span class="built_in">what</span>() &lt;&lt; <span class="string">&quot;\n try again? input y or n&quot;</span> &lt;&lt; endl;</span><br><span class="line">			<span class="keyword">char</span> c;</span><br><span class="line">			cin &gt;&gt; c;</span><br><span class="line">			<span class="keyword">if</span> (!cin || c == <span class="string">&#x27;n&#x27;</span>)</span><br><span class="line">				<span class="keyword">break</span>;</span><br><span class="line">			<span class="keyword">else</span> <span class="keyword">if</span>(!cin || c == <span class="string">&#x27;y&#x27;</span>)</span><br><span class="line">			&#123;</span><br><span class="line">				cout &lt;&lt; <span class="string">&quot;please input two num:&quot;</span>;</span><br><span class="line">				<span class="keyword">continue</span>;</span><br><span class="line">			&#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">double</span> result = <span class="built_in"><span class="keyword">double</span></span>(a) / b;</span><br><span class="line">		cout &lt;&lt; result&lt;&lt;endl;</span><br><span class="line">		cout &lt;&lt; <span class="string">&quot;please input two num:&quot;</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></div></figure>
 
-</div></div></article><article class="postlist-item post"><header class="post-header"><h1 class="post-title"><a class="post-title__link" href="/2022/03/10/Group-aware-Label-Transfer-for-Domain-Adaptive-Person-Re-identification/">Group-aware Label Transfer for Domain Adaptive Person Re-identification</a></h1><div class="post-meta"><span class="post-meta-item post-meta-item--createtime"><span class="post-meta-item__icon"><i class="far fa-calendar-plus"></i></span><span class="post-meta-item__info">发表于</span><span class="post-meta-item__value">2022-03-10</span></span><span class="post-meta-item post-meta-item--updatetime"><span class="post-meta-item__icon"><i class="far fa-calendar-check"></i></span><span class="post-meta-item__info">更新于</span><span class="post-meta-item__value">2022-03-11</span></span></div></header><div class="post-body"><div class="post-excerpt">
-        <h3 id="2021-CVPR-Group-aware-Label-Transfer-for-Domain-Adaptive-Person-Re-identification学习笔记">
-          <a href="#2021-CVPR-Group-aware-Label-Transfer-for-Domain-Adaptive-Person-Re-identification学习笔记" class="heading-link"><i class="fas fa-link"></i></a><a href="#2021-CVPR-Group-aware-Label-Transfer-for-Domain-Adaptive-Person-Re-identification学习笔记" class="headerlink" title="2021 CVPR Group-aware Label Transfer for Domain Adaptive Person Re-identification学习笔记"></a>2021 CVPR Group-aware Label Transfer for Domain Adaptive Person Re-identification学习笔记</h3>
-      
-        <h4 id="研究背景">
-          <a href="#研究背景" class="heading-link"><i class="fas fa-link"></i></a><a href="#研究背景" class="headerlink" title="研究背景"></a>研究背景</h4>
-      <p>作者认为：现有的无监督行人再识别方法通常包括三个步骤：<strong>使用带标签的源域数据进行特征预训练，对目标数据域进行基于聚类的伪标签预测，以及使用伪标签对特征进行学习以及网络微调</strong>。其中最后两个步骤通常反复进行，以相互加强促进。但是这种基于伪标签生成的方法存在以下问题:</p>
-<p>1)通过聚类生成的伪标签通常会包含不正确的标签，这是由于源数据域和目标数据域存在域差异（数据分布存在差异）。<strong>生成的错误伪标签用于接下来的特征学习会误导网络学习到错误的特征，从而损害域适应性能。</strong>虽然聚类中的标签细化是容易实现的，但是通常是离线高耗时的方案，需要对整个数据集进行遍历。因此作者认为：在训练时在线提炼聚类不正确的样本有助于模型学习到更鲁棒更准确的特征。</p>
-<p>2）由于行人再识别问题，目标域缺乏身份信息，很难根据人的身份信息对图像进行聚类。但是现实中每个人的外表都具有自己的特点，不同的人可能具有相似的外表但身份不同。（例如，两个男人穿着相同的红色外套和相似的黑色裤子如图1所示）</p>
-<p><img src="/2022/03/10/Group-aware-Label-Transfer-for-Domain-Adaptive-Person-Re-identification/image-20220310110110131.png" alt="image-20220310110110131"></p>
-
-        <h4 id="作者工作">
-          <a href="#作者工作" class="heading-link"><i class="fas fa-link"></i></a><a href="#作者工作" class="headerlink" title="作者工作"></a>作者工作</h4>
-      <p>1、作者提出了一个统一的框架，把聚类和特征学习集成在一起。提高了模型在目标域上的特征表示能力。</p>
-<p>2、提出了一种基于标签转移的组感知特征学习策略来细化伪标签，这为提高表示学习的质量提供了良好的潜在伪标签组。</p>
-<h4 id><a href="#" class="headerlink" title></a></h4></div></div></article><article class="postlist-item post"><header class="post-header"><h1 class="post-title"><a class="post-title__link" href="/2022/03/07/C-Chapter3/">C++Chapter3</a></h1><div class="post-meta"><span class="post-meta-item post-meta-item--createtime"><span class="post-meta-item__icon"><i class="far fa-calendar-plus"></i></span><span class="post-meta-item__info">发表于</span><span class="post-meta-item__value">2022-03-07</span></span><span class="post-meta-item post-meta-item--updatetime"><span class="post-meta-item__icon"><i class="far fa-calendar-check"></i></span><span class="post-meta-item__info">更新于</span><span class="post-meta-item__value">2022-03-12</span></span></div></header><div class="post-body"><div class="post-excerpt">
-        <h3 id="C-Primer第三章-字符串、向量、数组-学习笔记">
-          <a href="#C-Primer第三章-字符串、向量、数组-学习笔记" class="heading-link"><i class="fas fa-link"></i></a><a href="#C-Primer第三章-字符串、向量、数组-学习笔记" class="headerlink" title="C++ Primer第三章 字符串、向量、数组 学习笔记"></a>C++ Primer第三章 字符串、向量、数组 学习笔记</h3>
-      
-        <h4 id="3-1-标准库-using声明">
-          <a href="#3-1-标准库-using声明" class="heading-link"><i class="fas fa-link"></i></a><a href="#3-1-标准库-using声明" class="headerlink" title="3.1 标准库 using声明"></a>3.1 标准库 using声明</h4>
-      <p>之前使用过的cin cout都属于标准库std里面的库函数，需要显式的使用域操作符<em>std::cin</em>来标识命名空间std，这种方式略显繁琐。在实际使用中可以直接使用using声明在开头标识出所需的命名空间</p>
-<p><code>using namespace::name</code>如 <code>using std::cin</code>。</p>
-<p><strong>头文件不应当包含using声明，如果头文件包含了using声明，那么使用了该头文件的全部文件都会拥有该名字，可能会产生始料未及的命名冲突。</strong></p>
-
-        <h4 id="3-2-String">
-          <a href="#3-2-String" class="heading-link"><i class="fas fa-link"></i></a><a href="#3-2-String" class="headerlink" title="3.2 String"></a>3.2 String</h4>
-      
-        <h5 id="3-2-1-直接初始化与拷贝初始化">
-          <a href="#3-2-1-直接初始化与拷贝初始化" class="heading-link"><i class="fas fa-link"></i></a><a href="#3-2-1-直接初始化与拷贝初始化" class="headerlink" title="3.2.1 直接初始化与拷贝初始化"></a>3.2.1 直接初始化与拷贝初始化</h5>
-      <p><strong>使用等号=进行的初始化叫做拷贝初始化</strong>，编译器将等号右边的初始值拷贝到新对象中去。反之，不使用等号，执行的是直接初始化。</p>
-<p><img src="/2022/03/07/C-Chapter3/image-20220307211628021.png" alt="image-20220307211628021"></p>
-<p><img src="/2022/03/07/C-Chapter3/image-20220307211809645.png" alt="image-20220307211809645"></p>
-
-        <h5 id="3-2-2-string对象的操作">
-          <a href="#3-2-2-string对象的操作" class="heading-link"><i class="fas fa-link"></i></a><a href="#3-2-2-string对象的操作" class="headerlink" title="3.2.2 string对象的操作"></a>3.2.2 string对象的操作</h5>
-      <figure class="highlight c++"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//string对象的内置操作</span></span><br><span class="line">OS&lt;&lt;s;              <span class="comment">//将s写入到输出流os中，返回os</span></span><br><span class="line">is&gt;&gt;s;              <span class="comment">//从输入流is中读取字符串赋值给s，字符串以空白分隔，返回is</span></span><br><span class="line"><span class="built_in">getline</span>(is, s);     <span class="comment">//从is中读取一行赋值给s，返回is</span></span><br><span class="line">s.<span class="built_in">empty</span>();          <span class="comment">//返回bool类型值判断s是否为空</span></span><br><span class="line">s.<span class="built_in">size</span>();           <span class="comment">//返回s中字符的数量</span></span><br><span class="line">s[n]；              <span class="comment">//返回s中第n个字符的引用</span></span><br><span class="line"> </span><br></pre></td></tr></table></div></figure>
-
-
-        <h5 id="3-2-3-string对象的读取">
-          <a href="#3-2-3-string对象的读取" class="heading-link"><i class="fas fa-link"></i></a><a href="#3-2-3-string对象的读取" class="headerlink" title="3.2.3 string对象的读取"></a>3.2.3 string对象的读取</h5>
-      <p>使用 <code>cin &gt;&gt; word</code> 来读取字符串，遇到空格或者换行符会终止。如果想要保留字符串中的空格，则需要用到getline(is, s);getline函数的两个参数是一个输入流和一个string对象。</p>
-<p><img src="/2022/03/07/C-Chapter3/image-20220307214214927.png" alt="image-20220307214214927"></p>
-
-        <h5 id="3-2-4-size与string-size-type">
-          <a href="#3-2-4-size与string-size-type" class="heading-link"><i class="fas fa-link"></i></a><a href="#3-2-4-size与string-size-type" class="headerlink" title="3.2.4 size与string::size_type"></a>3.2.4 size与string::size_type</h5>
-      <p>s.size();的功能是返回s中字符的数量，则size返回的一定是一个非负整数。但size返回的类型并不是简单的int或者unsigned类型 ，而是特殊的<strong>string::size_type</strong>类型的值。string类和其它大多数标准库类型都定义了几种配套的类型，它们体现了标准库类型与机器无关的特性。</p>
-<p>由于size函数返回的是一个无符号的整型数，在表达式中不能简单地与int混用，否则会出现意想不到的错误。</p>
-<p><img src="/2022/03/07/C-Chapter3/image-20220307220417443.png" alt="image-20220307220417443"></p>
-
-        <h5 id="3-2-5-范围for语句">
-          <a href="#3-2-5-范围for语句" class="heading-link"><i class="fas fa-link"></i></a><a href="#3-2-5-范围for语句" class="headerlink" title="3.2.5 范围for语句"></a>3.2.5 范围for语句</h5>
-      <p>语句结构：</p>
-<figure class="highlight plaintext"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">for (declaration: expression)</span><br><span class="line">     statement</span><br></pre></td></tr></table></div></figure>
-
-<p>expression部分是一个对象，用于表示一个序列，declaration部分负责定义一个变量，用于循环遍历访问序列中的基础元素。</p>
-<p>如string对象就是一个字符序列，下面的语句可以将string对象中的全部字符按行输出:</p>
-<figure class="highlight c++"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function">string <span class="title">str</span><span class="params">(<span class="string">&quot;some string&quot;</span>)</span></span>;</span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">auto</span> c: str)</span><br><span class="line">    cout &lt;&lt; c &lt;&lt;endl;</span><br></pre></td></tr></table></div></figure>
-
-<p><img src="/2022/03/07/C-Chapter3/image-20220307223234957.png" alt="image-20220307223234957"></p>
-<p>例2：将字符串里的全部字母转换成大写</p>
-<figure class="highlight c++"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function">string <span class="title">s</span><span class="params">(<span class="string">&quot;hello world!!!&quot;</span>)</span></span>;</span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">auto</span> &amp;c : s):</span><br><span class="line">    c = <span class="built_in">toupper</span>(c);</span><br></pre></td></tr></table></div></figure>
-
-<p>通过&amp;c声明一个引用，该引用指向s的字符，使用cctype库中的toupper(c)将字符转换成大写。</p>
-
-        <h5 id="3-2-6-使用下标">
-          <a href="#3-2-6-使用下标" class="heading-link"><i class="fas fa-link"></i></a><a href="#3-2-6-使用下标" class="headerlink" title="3.2.6 使用下标"></a>3.2.6 使用下标</h5>
-      <p>想要访问string对象的单个字符时，需要使用到string的下标。<strong>下标运算符[]接收的输入参数的类型是string::size_type的值</strong>。</p>
-<p>因此想要使用下标执行迭代，下标应当声明成string::size_type类型。</p>
-<figure class="highlight c++"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//函数功能：将字符串s的第一个词改成大写</span></span><br><span class="line"><span class="comment">//依次处理s中的字符直到我们处理完全部字符或者遇到一个空白</span></span><br><span class="line"><span class="comment">//decltype(s.size()) index 将index的类型声明为自动推断size类型</span></span><br><span class="line"><span class="function">string <span class="title">s</span><span class="params">(<span class="string">&quot;some string&quot;</span>)</span></span>;</span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">decltype</span>(s.<span class="built_in">size</span>()) index = <span class="number">0</span>;index != s.<span class="built_in">size</span>() &amp;&amp; !<span class="built_in">isspace</span>(s[index]); ++index)</span><br><span class="line">   s[index] = <span class="built_in">toupper</span>(s[index]);</span><br></pre></td></tr></table></div></figure>
-
-
-        <h4 id="3-3-标准库类型Vector">
-          <a href="#3-3-标准库类型Vector" class="heading-link"><i class="fas fa-link"></i></a><a href="#3-3-标准库类型Vector" class="headerlink" title="3.3 标准库类型Vector"></a>3.3 标准库类型Vector</h4>
-      <p>vector类型表示对象的集合，其中所有对象的类型均相同。集合内的对象可以按索引寻址。</p>
-
-        <h5 id="3-3-1-vector的声明">
-          <a href="#3-3-1-vector的声明" class="heading-link"><i class="fas fa-link"></i></a><a href="#3-3-1-vector的声明" class="headerlink" title="3.3.1 vector的声明"></a>3.3.1 vector的声明</h5>
-      <p>需要声明使用vector标准库</p>
-<p><code>#include&lt;vector&gt;</code></p>
-<figure class="highlight c++"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">vector&lt;存储对象类型&gt; name;</span><br><span class="line">vector&lt;<span class="keyword">int</span>&gt; ivec;               <span class="comment">//声明了一个空vector，对象类型是int</span></span><br><span class="line"><span class="function">vector&lt;T&gt; <span class="title">v2</span><span class="params">(n, val)</span></span>;         <span class="comment">//声明了vector，对象类型是T，包含n个重复元素，元素的值都是val</span></span><br><span class="line">vector&lt;string&gt; svec;            <span class="comment">//默认初始化，声明了一个空vector</span></span><br><span class="line">vector&lt;string&gt; v1&#123;<span class="string">&quot;a&quot;</span>, <span class="string">&quot;an&quot;</span>, <span class="string">&quot;the&quot;</span>&#125;;  <span class="comment">//列表初始化</span></span><br><span class="line"><span class="function">vector&lt;<span class="keyword">int</span>&gt; <span class="title">ivec</span><span class="params">(<span class="number">10</span>)</span></span>;                 <span class="comment">//只给定容纳对象的数量，执行值初始化，初始化的初值根据类定义默认初始化而定</span></span><br></pre></td></tr></table></div></figure>
-
-<p><img src="/2022/03/07/C-Chapter3/image-20220308204623002.png" alt="image-20220308204623002"></p>
-
-        <h5 id="3-3-2-vector的添加">
-          <a href="#3-3-2-vector的添加" class="heading-link"><i class="fas fa-link"></i></a><a href="#3-3-2-vector的添加" class="headerlink" title="3.3.2 vector的添加"></a>3.3.2 vector的添加</h5>
-      <p><img src="/2022/03/07/C-Chapter3/image-20220308204957499.png" alt="image-20220308204957499"></p>
-<p><strong>vector类型具有成员函数push_back</strong>，作用是将一个元素当成vector的尾元素压栈进vector，因此vector可以方便的动态增长。</p>
-<figure class="highlight c++"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//从标准输入流中读取单词，将其作为vector对象的元素存储</span></span><br><span class="line">vector&lt;string&gt; text;     <span class="comment">//声明一个空的string类型的vector</span></span><br><span class="line">string word;</span><br><span class="line"><span class="keyword">while</span>(cin&gt;&gt;word)</span><br><span class="line">&#123;</span><br><span class="line">    text.<span class="built_in">push_back</span>(word);</span><br><span class="line">&#125;    </span><br></pre></td></tr></table></div></figure>
-
-<p><img src="/2022/03/07/C-Chapter3/image-20220308205448807.png" alt="image-20220308205448807"></p>
-<p><img src="/2022/03/07/C-Chapter3/image-20220308205736683.png" alt="image-20220308205736683"></p>
-
-        <h4 id="3-4-迭代器">
-          <a href="#3-4-迭代器" class="heading-link"><i class="fas fa-link"></i></a><a href="#3-4-迭代器" class="headerlink" title="3.4 迭代器"></a>3.4 迭代器</h4>
-      <p>C++中的容器如Vector等和不属于容器的string对象都可以使用迭代器来间接访问对象元素。</p>
-
-        <h5 id="3-4-1-迭代器的使用">
-          <a href="#3-4-1-迭代器的使用" class="heading-link"><i class="fas fa-link"></i></a><a href="#3-4-1-迭代器的使用" class="headerlink" title="3.4.1 迭代器的使用"></a>3.4.1 迭代器的使用</h5>
-      <p>迭代器通常通过两个成员来使用：begin和end。<strong>begin成员负责返回指向第一个元素的迭代器，end成员则负责返回指向容器尾元素的下一位置的迭代器。</strong>可以理解成数据结构队列中的队首指针和队尾指针。</p>
-<p><img src="/2022/03/07/C-Chapter3/image-20220309084314018.png" alt="image-20220309084314018"></p>
-<p><strong>++iter令迭代器指示容器中的下一个元素，解引用返回迭代器的元素的引用。因为end迭代器并不指向一个实际存在的元素，因此并不能对其进行递增和解引用。</strong></p>
-<p>例：将string对象中的第一个单词改写成大写形式</p>
-<figure class="highlight c++"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function">string <span class="title">s</span><span class="params">(<span class="string">&quot;hello word&quot;</span>)</span></span>;</span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">auto</span> c = s.<span class="built_in">begin</span>(); c != s.<span class="built_in">end</span>() &amp;&amp; !<span class="built_in">isspace</span>(*c); ++c)</span><br><span class="line">&#123;</span><br><span class="line">	*c = <span class="built_in">toupper</span>(*c);</span><br><span class="line">&#125;</span><br><span class="line">cout &lt;&lt; s</span><br></pre></td></tr></table></div></figure>
-
-
-        <h5 id="3-4-2-迭代器类型">
-          <a href="#3-4-2-迭代器类型" class="heading-link"><i class="fas fa-link"></i></a><a href="#3-4-2-迭代器类型" class="headerlink" title="3.4.2 迭代器类型"></a>3.4.2 迭代器类型</h5>
-      <p>迭代器成员begin和end的返回的具体类型由其指向的对象是否是常量决定。如果对象是常量，begin和end返回的类型是 <code>const_iterator</code>，如果对象不是常量返回 <code>iterator</code>。</p>
-<p><img src="/2022/03/07/C-Chapter3/image-20220309090608780.png" alt="image-20220309090608780"></p>
-<p>但如果需要的迭代器对象只需要读操作而无需写操作，我们最好使用常量迭代器类型。使用成员cbegin和cend来获得const_iterator类型的返回值。</p>
-<p><code>auto it3 = v.cbegin();</code></p>
-
-        <h5 id="3-4-3-解引用和成员访问">
-          <a href="#3-4-3-解引用和成员访问" class="heading-link"><i class="fas fa-link"></i></a><a href="#3-4-3-解引用和成员访问" class="headerlink" title="3.4.3 解引用和成员访问"></a>3.4.3 解引用和成员访问</h5>
-      <p>解引用迭代器可以获得迭代器所指的对象，但是如果获得的对象是类的对象，可能需要进一步获得类的成员。因此定义了箭头运算符直接获得对象的成员。</p>
-<figure class="highlight c++"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">vector&lt;string&gt; s&#123;<span class="string">&quot;hello&quot;</span>, <span class="string">&quot;word&quot;</span>&#125;;</span><br><span class="line"><span class="keyword">auto</span> it = s.<span class="built_in">begin</span>();</span><br><span class="line">*it;                                <span class="comment">//解引用迭代器获得其指向的元素</span></span><br><span class="line">(*it).<span class="built_in">empty</span>();                      <span class="comment">//解引用，并访问元素的成员函数empty()</span></span><br><span class="line">it-&gt;<span class="built_in">empty</span>();                        <span class="comment">//解引用，并访问元素的成员函数empty(),等于(*it).empty();</span></span><br></pre></td></tr></table></div></figure>
-
-<p><img src="/2022/03/07/C-Chapter3/image-20220309092351481.png" alt="image-20220309092351481"></p>
-<p><img src="/2022/03/07/C-Chapter3/image-20220309092409997.png" alt="image-20220309092409997"></p>
-<p><strong>凡是使用了迭代器的循环体，如范围for循环，都不要向迭代器所属的容器中添加元素。</strong></p>
-
-        <h5 id="3-4-5-迭代器支持的运算">
-          <a href="#3-4-5-迭代器支持的运算" class="heading-link"><i class="fas fa-link"></i></a><a href="#3-4-5-迭代器支持的运算" class="headerlink" title="3.4.5 迭代器支持的运算"></a>3.4.5 迭代器支持的运算</h5>
-      <p><img src="/2022/03/07/C-Chapter3/image-20220309092701856.png" alt="image-20220309092701856"></p>
-<p><img src="/2022/03/07/C-Chapter3/image-20220309093640606.png" alt="image-20220309093640606"></p>
-
-        <h4 id="3-5-数组">
-          <a href="#3-5-数组" class="heading-link"><i class="fas fa-link"></i></a><a href="#3-5-数组" class="headerlink" title="3.5 数组"></a>3.5 数组</h4>
-      <p>数组也是存放一组相同类型对象的容器，但是数组的大小确定不变，不能随意向数组中增加元素。</p>
-
-        <h5 id="3-5-1-数组的特殊要求">
-          <a href="#3-5-1-数组的特殊要求" class="heading-link"><i class="fas fa-link"></i></a><a href="#3-5-1-数组的特殊要求" class="headerlink" title="3.5.1 数组的特殊要求"></a>3.5.1 数组的特殊要求</h5>
-      <p>1、字符数组存储字面值会多保存一个空字符。</p>
-<p>字符串字面值的结尾有一个空字符，使用字符串字面值对字符数组进行拷贝初始化，这个空字符也会被拷贝到字符数组中去。</p>
-<p><img src="/2022/03/07/C-Chapter3/image-20220312185641858.png" alt="image-20220312185641858"></p>
-<p>2、数组不允许拷贝和用数组赋值。</p>
-<p><img src="/2022/03/07/C-Chapter3/image-20220312190316038.png" alt="image-20220312190316038"></p>
-
-        <h5 id="3-5-2-数组的访问">
-          <a href="#3-5-2-数组的访问" class="heading-link"><i class="fas fa-link"></i></a><a href="#3-5-2-数组的访问" class="headerlink" title="3.5.2 数组的访问"></a>3.5.2 数组的访问</h5>
-      <p>使用数组下标时，通常将下标类型定义为<strong>size_t</strong>类型，size_t是一种机器相关的无符号类型，它足够表示内存中任意对象的大小。</p>
-
-        <h5 id="3-5-3-指针与数组">
-          <a href="#3-5-3-指针与数组" class="heading-link"><i class="fas fa-link"></i></a><a href="#3-5-3-指针与数组" class="headerlink" title="3.5.3 指针与数组"></a>3.5.3 指针与数组</h5>
-      <p><img src="/2022/03/07/C-Chapter3/image-20220312220848005.png" alt="image-20220312220848005"></p>
-<p><strong>想要获取数组的首指针和尾指针，可以使用begin和end函数，但是与vector\string等容器的迭代器的使用不同的是，数组对象的begin\end并不是成员函数，需要将数组作为他们的参数</strong></p>
-<figure class="highlight c++"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> ia[] = &#123;<span class="number">0</span>,<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>,<span class="number">6</span>,<span class="number">7</span>,<span class="number">8</span>,<span class="number">9</span>&#125;;   <span class="comment">//列表初始化</span></span><br><span class="line"><span class="keyword">int</span> *beg = <span class="built_in">begin</span>(ia);               <span class="comment">//获取指向首元素的指针</span></span><br><span class="line"><span class="keyword">int</span> *last = <span class="built_in">end</span>(ia);                <span class="comment">//获取指向尾元素的下一位置的指针</span></span><br></pre></td></tr></table></div></figure>
-
-<p><img src="/2022/03/07/C-Chapter3/image-20220312221515520.png" alt="image-20220312221515520"></p>
-<p><strong>指针的解引用和指针运算</strong></p>
-<p><strong>指针加上一个整数还是指针，若它指向了一个元素，则允许解引用该指针</strong></p>
-<p>数组的名字通常是一个指向数组首元素的指针。</p>
-<figure class="highlight c++"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> ia[] = &#123;<span class="number">2</span>,<span class="number">4</span>,<span class="number">6</span>,<span class="number">8</span>,<span class="number">9</span>&#125;;   <span class="comment">//列表初始化</span></span><br><span class="line"><span class="keyword">int</span> last = *(ia + <span class="number">4</span>);     <span class="comment">//正确，指针ia指向0号元素；加4就是指向4号元素，last初始化为9</span></span><br></pre></td></tr></table></div></figure>
-
-<p><img src="/2022/03/07/C-Chapter3/image-20220312222040023.png" alt="image-20220312222040023"></p>
-</div></div></article><article class="postlist-item post"><header class="post-header"><h1 class="post-title"><a class="post-title__link" href="/2022/02/26/CenterNet%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/">win11/Linux CenterNet环境配置记录</a></h1><div class="post-meta"><span class="post-meta-item post-meta-item--createtime"><span class="post-meta-item__icon"><i class="far fa-calendar-plus"></i></span><span class="post-meta-item__info">发表于</span><span class="post-meta-item__value">2022-02-26</span></span><span class="post-meta-item post-meta-item--updatetime"><span class="post-meta-item__icon"><i class="far fa-calendar-check"></i></span><span class="post-meta-item__info">更新于</span><span class="post-meta-item__value">2022-03-06</span></span></div></header><div class="post-body"><div class="post-excerpt">
-        <h3 id="win11-Linux-CenterNet环境配置记录">
-          <a href="#win11-Linux-CenterNet环境配置记录" class="heading-link"><i class="fas fa-link"></i></a><a href="#win11-Linux-CenterNet环境配置记录" class="headerlink" title="win11/Linux CenterNet环境配置记录"></a>win11/Linux CenterNet环境配置记录</h3>
-      
-        <h4 id="安装环境">
-          <a href="#安装环境" class="heading-link"><i class="fas fa-link"></i></a><a href="#安装环境" class="headerlink" title="安装环境:"></a>安装环境:</h4>
-      <p>RTX 3060+CUDA11.1+pytorch1.8</p>
-<p>windows版本：win11(10也兼容)</p>
-<p>ubuntu:16.04</p>
-
-        <h4 id="0-预备工作">
-          <a href="#0-预备工作" class="heading-link"><i class="fas fa-link"></i></a><a href="#0-预备工作" class="headerlink" title="0 预备工作"></a>0 预备工作</h4>
-      <p>下载vs2017/2015，编译DCN需要(仅windows需要)</p>
-<p>为CenterNet创建一个Conda环境（可选）</p>
-<p>注：pytorch版本需根据自身CUDA CUDNN版本实际选择，选择和CUDA版本匹配的即可</p>
-<figure class="highlight plaintext"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">conda create --name CenterNet python=3.6</span><br><span class="line">conda activate CenterNet</span><br><span class="line">conda install pytorch==1.8.0 torchvision==0.9.0 torchaudio==0.8.0 cudatoolkit=11.1 -c pytorch -c conda-forge</span><br></pre></td></tr></table></div></figure>
-
-
-
-
-        <h4 id="1-下载CenterNet代码">
-          <a href="#1-下载CenterNet代码" class="heading-link"><i class="fas fa-link"></i></a><a href="#1-下载CenterNet代码" class="headerlink" title="1 下载CenterNet代码"></a>1 下载CenterNet代码</h4>
-      <p><code>git clone https://github.com/xingyizhou/CenterNet.git</code></p>
-
-        <h4 id="2-安装相关的需求包">
-          <a href="#2-安装相关的需求包" class="heading-link"><i class="fas fa-link"></i></a><a href="#2-安装相关的需求包" class="headerlink" title="2 安装相关的需求包"></a>2 安装相关的需求包</h4>
-      <figure class="highlight plaintext"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cd CenterNet</span><br><span class="line">pip install -r requirements.txt</span><br></pre></td></tr></table></div></figure>
-
-
-        <h4 id="3-安装cocotools">
-          <a href="#3-安装cocotools" class="heading-link"><i class="fas fa-link"></i></a><a href="#3-安装cocotools" class="headerlink" title="3 安装cocotools"></a>3 安装cocotools</h4>
-      <figure class="highlight plaintext"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip install pycocotools</span><br></pre></td></tr></table></div></figure>
-
-
-        <h4 id="4-编译DCNv2">
-          <a href="#4-编译DCNv2" class="heading-link"><i class="fas fa-link"></i></a><a href="#4-编译DCNv2" class="headerlink" title="4 编译DCNv2"></a>4 编译DCNv2</h4>
-      <p>由于我选择的pytorch版本较高：1.8，因此从github上下载适合1.8的DCNv2源码</p>
-<figure class="highlight plaintext"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git clone https://github.com/jinfagang/DCNv2_latest.git</span><br></pre></td></tr></table></div></figure>
-
-<p>进入到CenterNet\src\lib\models\networks</p>
-<p>删除原有DCNv2文件夹</p>
-<p>将clone下来的DCNv2_latest文件夹重命名为DCNv2</p>
-<p>进入DCNv2文件夹</p>
-
-        <h5 id="4-1-windows系统编译DCNv2：">
-          <a href="#4-1-windows系统编译DCNv2：" class="heading-link"><i class="fas fa-link"></i></a><a href="#4-1-windows系统编译DCNv2：" class="headerlink" title="4.1 windows系统编译DCNv2："></a>4.1 windows系统编译DCNv2：</h5>
-      <p>编译之前确保已经安装了vs2015或vs2017，2019尝试不成功。</p>
-<p>在anaconda prompt中编译DCNv2</p>
-<p>激活CenterNet虚拟环境之后执行 <code>python setup.py build develop</code></p>
-<p><img src="/2022/02/26/CenterNet%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/image-20220225220337277.png" alt="image-20220225220337277"></p>
-<p>至此 windows环境下CenterNet环境搭建完成，NMS编译看自身需求，有需要可自行CSDN</p>
-
-        <h5 id="4-2-Linux系统编译DCNv2：">
-          <a href="#4-2-Linux系统编译DCNv2：" class="heading-link"><i class="fas fa-link"></i></a><a href="#4-2-Linux系统编译DCNv2：" class="headerlink" title="4.2 Linux系统编译DCNv2："></a>4.2 Linux系统编译DCNv2：</h5>
-      <p>确保CUDA CUDNN Pytorch等组件安装成功，首先打开terminal激活centernet环境。</p>
-<p>进入到DCNv2文件夹，如果没有sudo权限，可以用文件编辑器打开DCNv2文件夹下的make.sh文件，将文件中的sudo全部删除即可。</p>
-<p>在terminal中执行 <code>./make.sh</code></p>
-<p>至此，Linux环境下CenterNet环境搭建完成，NMS编译看自身需求，有需要可自行CSDN</p>
-
-        <h4 id="问题1：Windows下DCNv2编译，显示cl找不到指定文件。">
-          <a href="#问题1：Windows下DCNv2编译，显示cl找不到指定文件。" class="heading-link"><i class="fas fa-link"></i></a><a href="#问题1：Windows下DCNv2编译，显示cl找不到指定文件。" class="headerlink" title="问题1：Windows下DCNv2编译，显示cl找不到指定文件。"></a>问题1：Windows下DCNv2编译，显示cl找不到指定文件。</h4>
-      <p>问题截图如下：</p>
-<p><img src="/2022/02/26/CenterNet%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/image-20220225210626090.png" alt="image-20220225210626090"></p>
-<p><img src="/2022/02/26/CenterNet%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/image-20220225210639634.png" alt="image-20220225210639634"></p>
-<p>解决办法：安装vs2017，在vs2017的安装目录找到<img src="/2022/02/26/CenterNet%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/image-20220225212021136.png" alt="image-20220225212021136"></p>
-<p>找到cl.exe</p>
-<p><img src="/2022/02/26/CenterNet%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/image-20220225212115441.png" alt="image-20220225212115441"></p>
-<p>将这个地址添加到环境变量的Path中</p>
-<p><img src="/2022/02/26/CenterNet%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/image-20220225212225783.png" alt="image-20220225212225783"></p>
-<p>再执行，编译成功</p>
-<p><img src="/2022/02/26/CenterNet%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/image-20220225212301425.png" alt="image-20220225212301425"></p>
-<p><img src="/2022/02/26/CenterNet%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/image-20220225211739815.png" alt="image-20220225211739815"></p>
-
-        <h4 id="问题2：Linux下DCNv2编译，显示no-such-file-or-directory-usr-local-cuda-10-0等。">
-          <a href="#问题2：Linux下DCNv2编译，显示no-such-file-or-directory-usr-local-cuda-10-0等。" class="heading-link"><i class="fas fa-link"></i></a><a href="#问题2：Linux下DCNv2编译，显示no-such-file-or-directory-usr-local-cuda-10-0等。" class="headerlink" title="问题2：Linux下DCNv2编译，显示no such file or directory:/usr/local/cuda-10.0等。"></a>问题2：Linux下DCNv2编译，显示no such file or directory:/usr/local/cuda-10.0等。</h4>
-      <p>未留下问题截图，解决方法为找到自己的cuda安装目录，打开terminal执行：</p>
-<p>注意等号两边不能有空格</p>
-<figure class="highlight plaintext"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">export CUDA_HOME=你的cuda安装目录</span><br><span class="line">如：</span><br><span class="line">export CUDA_HOME=/dxs/cuda-10.2</span><br></pre></td></tr></table></div></figure>
-
-<p>执行完之后再进行编译</p>
-</div></div></article><article class="postlist-item post"><header class="post-header"><h1 class="post-title"><a class="post-title__link" href="/2022/02/21/object-detect-EVALUATION-METRICS/">目标检测常用的评估指标</a></h1><div class="post-meta"><span class="post-meta-item post-meta-item--createtime"><span class="post-meta-item__icon"><i class="far fa-calendar-plus"></i></span><span class="post-meta-item__info">发表于</span><span class="post-meta-item__value">2022-02-21</span></span><span class="post-meta-item post-meta-item--updatetime"><span class="post-meta-item__icon"><i class="far fa-calendar-check"></i></span><span class="post-meta-item__info">更新于</span><span class="post-meta-item__value">2022-03-06</span></span></div></header><div class="post-body"><div class="post-excerpt"><p>目标检测常用的评估指标</p>
-
-        <h5 id="混淆矩阵">
-          <a href="#混淆矩阵" class="heading-link"><i class="fas fa-link"></i></a><a href="#混淆矩阵" class="headerlink" title="混淆矩阵"></a>混淆矩阵</h5>
-      <p><img src="/2022/02/21/object-detect-EVALUATION-METRICS/image-20220221163303518.png" alt="image-20220221163303518"></p>
-<p>混淆矩阵定义如上所示，对于二分类问题来说，根据预测值结果可以将预测结果分为<strong>真正例（Ture Positive，TP）</strong>、<strong>真负例（True Negative，TN）</strong>、<strong>假正例（False Positive，FP）、假负例（False Negative，FN）</strong>。其中，<strong>TP表示预测为正样本且实际为正样本的样本数</strong>，<strong>TN表示预测为负样本但实际为正样本的样本数，FP为预测为正样本实际为负样本的样本数，FN表示预测为负样本实际为负样本的样本数。</strong></p>
-
-        <h5 id="AP-AR">
-          <a href="#AP-AR" class="heading-link"><i class="fas fa-link"></i></a><a href="#AP-AR" class="headerlink" title="AP AR"></a>AP AR</h5>
-      <p><strong>准确率Precision又称为查准率</strong>，表示<strong>模型预测为正例的样本占实际为正例的样本的比例</strong>。<strong>召回率Recall又称为查全率</strong>，表示测试集<strong>中所有正样本被正确识别的比例。</strong>计算方法为：</p>
-<img src="/2022/02/21/object-detect-EVALUATION-METRICS/image-20220221164603650.png" alt="image-20220221164603650" style="zoom:200%;">
-
-<p>目标检测中判断是正样本还是负样本与两个指标有关，分别为<strong>交并比（IOU）阈值</strong>和<strong>置信度（Confidence）阈值</strong>。置信度即认为算法预测目标框中存在目标的确信度，对于每个预测目标框，都会使用置信度阈值进行过滤，滤除一些低质量的预测框，置信度阈值一般设为0.35。<strong>当预测目标框的置信度大于阈值时，才认为该预测框中存在目标，即该预测框为正样本，否则则认为该预测框中为背景，即该预测框为负样本。</strong>其次我们介绍交并比的定义，交并比是用来衡量真实目标框和算法预测目标框的重合程度，如图3.1所示，IOU的值就等于图3.1中黄色重合部分的面积与红色框和绿色框的面积之和的比值。<strong>当预测框和真实框重合达到一定阈值时，我们就认为预测框预测正确，即真正例True Positive，否则为假正例False Positive，一般该阈值我们称为IOU阈值，常设为0.5左右。</strong></p>
-<img src="/2022/02/21/object-detect-EVALUATION-METRICS/image-20220221164742376.png" alt="image-20220221164742376" style="zoom:150%;">
-
-<p><strong>平均准确率AP为表示不同查全率下的查准率的加权平均。</strong></p>
-<p><img src="/2022/02/21/object-detect-EVALUATION-METRICS/image-20220221170540931.png" alt="image-20220221170540931"></p>
-<p>而均值平均准确率为确定置信度阈值的前提下调整不同IOU阈值得到的平均准确率的和的均值。而IOU阈值一般取0.5,0.55,0.6,…,0.95等10个值，其公式如下所示：</p>
-<img src="/2022/02/21/object-detect-EVALUATION-METRICS/image-20220221170654735.png" alt="image-20220221170654735" style="zoom:200%;">
-</div></div></article><article class="postlist-item post"><header class="post-header"><h1 class="post-title"><a class="post-title__link" href="/2022/02/01/Attention/">Attention</a></h1><div class="post-meta"><span class="post-meta-item post-meta-item--createtime"><span class="post-meta-item__icon"><i class="far fa-calendar-plus"></i></span><span class="post-meta-item__info">发表于</span><span class="post-meta-item__value">2022-02-01</span></span><span class="post-meta-item post-meta-item--updatetime"><span class="post-meta-item__icon"><i class="far fa-calendar-check"></i></span><span class="post-meta-item__info">更新于</span><span class="post-meta-item__value">2022-03-06</span></span></div></header><div class="post-body"><div class="post-excerpt"><p>深度学习中的注意力机制</p>
-
-        <h4 id="简介">
-          <a href="#简介" class="heading-link"><i class="fas fa-link"></i></a><a href="#简介" class="headerlink" title="简介"></a>简介</h4>
-      <p>注意力机制，顾名思义是向人类的注意力学习的结果。人类视野开阔，但是视野只能聚焦在一个小范围，或一个点，这种就叫做注意力。</p>
-<p>视觉注意力机制是人类视觉所特有的大脑信号处理机制。人类视觉通过快速扫描全局图像，获得需要重点关注的目标区域，也就是一般所说的注意力焦点，而后对这一区域投入更多注意力资源，以获取更多所需要关注目标的细节信息，而抑制其他无用信息。</p>
-</div></div></article><article class="postlist-item post"><header class="post-header"><h1 class="post-title"><a class="post-title__link" href="/2022/01/28/DLA/">DLA模型</a></h1><div class="post-meta"><span class="post-meta-item post-meta-item--createtime"><span class="post-meta-item__icon"><i class="far fa-calendar-plus"></i></span><span class="post-meta-item__info">发表于</span><span class="post-meta-item__value">2022-01-28</span></span><span class="post-meta-item post-meta-item--updatetime"><span class="post-meta-item__icon"><i class="far fa-calendar-check"></i></span><span class="post-meta-item__info">更新于</span><span class="post-meta-item__value">2022-03-06</span></span></div></header><div class="post-body"><div class="post-excerpt"><p>DLA网络模型：一种深度网络特征融合方法</p>
-
-        <h4 id="DLA简介">
-          <a href="#DLA简介" class="heading-link"><i class="fas fa-link"></i></a><a href="#DLA简介" class="headerlink" title="DLA简介"></a>DLA简介</h4>
-      <p>DLA网络模型出自CVPR 2018 的论文 Deep Layer Aggregation，中文翻译为深层聚合。CNN为多种计算机视觉任务提供了很好的解决方案。随着视觉任务对高性能算法更严格的追求，Backbone的设计成为了一个很重要的主题。作者在摘要中指出计算机视觉识别任务需要从低到高的层次提取不同层次的信息。因此当前的网络设计方向是如何加宽加深网络层次以提取更多的特征。如ResNet，通过引入跳跃连接使得网络有能力到达很深的层次。设计更深或更宽的网络架构虽然确实可以更好的提取特征，但也带来了更多的参数数量和难优化问题。更深的层提取更多语义和更全局的特征，但这些并不能证明最后一层是任何任务的最终表示。事实上，skip connections已经被证明对于分类和回归以及更结构化的任务是有效的。如何更好的聚合不同层次提取的特征，就像深度和宽度一样，是网络架构的一个关键维度。因此作者认为：设计更深更宽的网络结构固然重要，<strong>但如何更好的聚合层和块更值得研究。</strong></p>
-<p>经过复杂的分析，<strong>更深的网络层能提取到更多语义和全局的特征，但是这并不能表明最后一层就是任务需要的表示。</strong>实际上“跳跃连接”已经证明了对于分类、回归以及其他结构化问题的有效性。因此，如何聚合，尤其是深度与宽度上的聚合，对于网络结构的优化是一个非常重要的技术。</p>
-<p>作者认为，在计算机视觉任务中，仅是加深网络层次，但层和层之间相互孤立是不行的。<strong>混合和聚合不同层提取的特征表示，可以改进对图像是什么和在哪里的推断。</strong>尽管ResNet加入了skip connections的设计，已经组合了不同层次的特征表示，但这些连接本质上是浅层的连接，仅仅通过相加操作来融合不同层次的特征。</p>
-<p>作者通过更深层次的聚合来增强标准体系结构，以便更好地跨层融合信息。我们的深层聚合结构迭代和分层地合并特征层次，使网络具有更高的精度和更少的参数。跨架构和任务的实验表明，与现有的分支和合并方案相比，深层聚合方案提高了识别和分辨率。</p>
-
-        <h4 id="第一章-DLA的基本组成模块–IDA和HDA">
-          <a href="#第一章-DLA的基本组成模块–IDA和HDA" class="heading-link"><i class="fas fa-link"></i></a><a href="#第一章-DLA的基本组成模块–IDA和HDA" class="headerlink" title="第一章 DLA的基本组成模块–IDA和HDA"></a>第一章 DLA的基本组成模块–IDA和HDA</h4>
-      <p>DLA，即深度聚合。在论文中，作者将聚合<em>Aggregation</em>定义为网络架构中不同层次特征表示的组合。多个layer组合为一个block，多个block再根据分辨率组合为一个stage，<strong>DLA则主要探讨block和stage的组合</strong>（stage间网络保持一致分辨率，那么空间融合发生在stage间，语义融合发生在stage内）。如果一组<em>Aggregation</em>是复合的、非线性的，并且较早的聚合层的输出输入到后面的多个聚合层。作者介绍了两种深层聚合结构：IDA(iterative deep aggregation迭代式深度聚合)和HDA(hierarchical deep aggregation层级深度聚合)。IDA专注于跨分辨率和尺度的融合，而HDA专注于融合所有提取自不同模块和通道的特征。下图1的c和f分别展示了IDA和HDA的结构。</p>
-<p><img src="/2022/01/28/DLA/image-20220202095121590.png" alt="image-20220202095121590"></p>
-<p>​                                                                              图 1 HDA IDA 基本结构</p>
-
-        <h5 id="1-1-IDA-Iterative-Deep-Aggregation-迭代深度聚合结构">
-          <a href="#1-1-IDA-Iterative-Deep-Aggregation-迭代深度聚合结构" class="heading-link"><i class="fas fa-link"></i></a><a href="#1-1-IDA-Iterative-Deep-Aggregation-迭代深度聚合结构" class="headerlink" title="1.1 IDA Iterative Deep Aggregation 迭代深度聚合结构"></a>1.1 IDA Iterative Deep Aggregation 迭代深度聚合结构</h5>
-      <p>如上文所说，多个layer组合为一个block，多个block再根据分辨率组合为一个stage。更深层次的阶段语义更加丰富，但空间信息更加粗糙。从浅层到深层的skip connection可以融合尺度和分辨率。在IDA结构中，作者建议逐渐的增加和加深IDA结构的特征表示。不同层的聚合从最浅的层次和最小的尺度开始并逐步增加深度和尺度。作者指出不断地聚合不同阶段提取的特征，可以细化浅层的特征。</p>
-<p><img src="/2022/01/28/DLA/image-20220203092920174.png" alt="image-20220203092920174"></p>
-<p>上图中绿色的方块称作“Aggregation Node”，Aggregation Node在特征由浅到深传播的同时聚集特征。从上图中也可以看出，IDA以stage为基本单位，IDA结构在多个stage外部增加连接和Aggregation Node。</p>
-<p><img src="/2022/01/28/DLA/image-20220203093447689.png" alt="image-20220203093447689"></p>
-<p>在上面的公式中， <em><strong>I</strong></em>表示整个IDA模块， <em><strong>N</strong></em>表示Aggregation Node。例如***N(x1, x2)***表示一个输入为x1和x2的Aggregation Node，即图中最左侧的绿色方块。</p>
-
-        <h4 id="1-2-HDA-Hierarchical-Deep-Aggregation-层次深度聚合结构">
-          <a href="#1-2-HDA-Hierarchical-Deep-Aggregation-层次深度聚合结构" class="heading-link"><i class="fas fa-link"></i></a><a href="#1-2-HDA-Hierarchical-Deep-Aggregation-层次深度聚合结构" class="headerlink" title="1.2 HDA (Hierarchical Deep Aggregation)层次深度聚合结构"></a>1.2 HDA (Hierarchical Deep Aggregation)层次深度聚合结构</h4>
-      <p>虽然IDA有效地融合了多个stage的特征，但是没有对stage内部多个block的特征进行融合。作者提出了HDA（Hierarchical Deep Aggregation）结构增强stage内部多个block的融合，如下图所示：</p>
-<p><img src="/2022/01/28/DLA/image-20220203101438312.png" alt="image-20220203101438312"></p>
-<p>在树的中间聚合中，我们将聚合节点的输出返回到主干，作为下一个子树的输入，如图所示。这将传播前面所有块的聚合，而不是单独传播前面的块，以更好地保留特性。  </p>
-
-        <h4 id="第三章-代码实现">
-          <a href="#第三章-代码实现" class="heading-link"><i class="fas fa-link"></i></a><a href="#第三章-代码实现" class="headerlink" title="第三章 代码实现"></a>第三章 代码实现</h4>
-      
-        <h5 id="3-1-聚合节点-Aggregation-Nodes">
-          <a href="#3-1-聚合节点-Aggregation-Nodes" class="heading-link"><i class="fas fa-link"></i></a><a href="#3-1-聚合节点-Aggregation-Nodes" class="headerlink" title="3.1 聚合节点 Aggregation Nodes"></a>3.1 聚合节点 Aggregation Nodes</h5>
-      <p>聚合节点的的主要功能是组合和压缩它们的输入。节点学习选择和投射重要的信息，并在它们的输出作为输入时保持相同的维度。可以使用任意网络结构构造Aggregation Node，为减少计算量，作者使用单个“卷积-BN-激活函数”结构来构造Aggregation Node，一般情况下使用1x1卷积。</p>
-
-        <h4 id="第四章-实验设计">
-          <a href="#第四章-实验设计" class="heading-link"><i class="fas fa-link"></i></a><a href="#第四章-实验设计" class="headerlink" title="第四章 实验设计"></a>第四章 实验设计</h4>
-      <p>用CIFAR-10分类数据集测试DLA模型的效果。论文中分类任务实验使用SGD作为优化器执行120个epoch，动量为0.9，权重衰减10−4，批处理大小为256并以0.1的学习速率开始训练，每30个epoch减少10个学习速率。并Resize成256，并随机裁剪成224×224。根据我可怜的单卡12G的显存取舍，最终采用下面的训练方式。训练集预处理：随机裁剪224×224，随机中心翻转，并作均值化处理。测试集预处理：Resize成256×256，中心裁剪224×224，并均值化处理。batch_size选择64，训练50个epoch，初始学习率采取0.1，动量为0.9，权重衰减10−4，每训练20个epoch，学习率×0.1。</p>
-
-        <h4 id="第五章-结果展示">
-          <a href="#第五章-结果展示" class="heading-link"><i class="fas fa-link"></i></a><a href="#第五章-结果展示" class="headerlink" title="第五章 结果展示"></a>第五章 结果展示</h4>
-      <p>在CIFAR-10分类任务中达到了93.530%的准确率，比之前尝试过的的ResNet、AlexNet网络模型效果都要出色。有力的证明了DLA网络模型具有优秀的提取图像特征能力。</p>
-<p><img src="/2022/01/28/DLA/image-20220129212334052.png" alt="image-20220129212334052"></p>
-<p><img src="/2022/01/28/DLA/image-20220129212846106.png" alt="image-20220129212846106"></p>
-<p>后又尝试120epoch,batch_size为60，起始学习率0.1，动量0.9，权重衰减0.0001，每30个epoch学习率×0.1，最终达到94.9%准确率。</p>
-<p><img src="/2022/01/28/DLA/image-20220203161128542.png" alt="image-20220203161128542"></p>
-<p>没有引入预训练模型，充分证明了DLA优秀的提取特征能力。</p>
-
-        <h4 id="结语">
-          <a href="#结语" class="heading-link"><i class="fas fa-link"></i></a><a href="#结语" class="headerlink" title="结语"></a>结语</h4>
-      <p>DLA的代码还没有来得及认真学习，暂时搁置，后面有时间再来研究。</p>
-</div></div></article><article class="postlist-item post"><header class="post-header"><h1 class="post-title"><a class="post-title__link" href="/2022/01/28/caikeng001/">深度学习踩坑记录001——训练集loss正常下降，测试集一动不动</a></h1><div class="post-meta"><span class="post-meta-item post-meta-item--createtime"><span class="post-meta-item__icon"><i class="far fa-calendar-plus"></i></span><span class="post-meta-item__info">发表于</span><span class="post-meta-item__value">2022-01-28</span></span><span class="post-meta-item post-meta-item--updatetime"><span class="post-meta-item__icon"><i class="far fa-calendar-check"></i></span><span class="post-meta-item__info">更新于</span><span class="post-meta-item__value">2022-03-06</span></span></div></header><div class="post-body"><div class="post-excerpt">
-        <h3 id="踩坑记录001">
-          <a href="#踩坑记录001" class="heading-link"><i class="fas fa-link"></i></a><a href="#踩坑记录001" class="headerlink" title="踩坑记录001"></a>踩坑记录001</h3>
-      <p>回家混了好几天才开始干点正事，开摆！</p>
-<p>新年的第一篇博客本来想写一下Ubuntu系统的安装、Nvidia驱动的安装和CenterNet运行环境的配置。可是在学校的时候一直在混，Liunx上写博客还没有找到很方便的方式，踩过的坑很多都忘记了。</p>
-<p><strong>以后踩坑一定要及时记录</strong>！</p>
-<p>由于一两个月没有搞代码了，刚回家就碰见了个非常脑残小儿科的问题却一直没有解决。</p>
-
-        <h4 id="问题描述">
-          <a href="#问题描述" class="heading-link"><i class="fas fa-link"></i></a><a href="#问题描述" class="headerlink" title="问题描述"></a>问题描述</h4>
-      <p>回家做一个ResNet50的CIFAR10分类找找之前遗忘的知识，出现了训练集的loss正常下降、准确率正常上升。而测试集的loss却几乎不下降甚至还有反增，准确率保持非常低的水平不变。如下图所示：</p>
-<p><img src="/2022/01/28/caikeng001/image-20220128123827445.png" alt="image-20220128123827445"></p>
-<p>可见训练集准确度已经到了很高的程度，但是测试集的loss和准确率几乎没有什么变化。仔细检查代码（指查了三天）发现在数据的预处理部分，训练集做了Resize、随机翻转和均值化操作，但是测试集没有作任何处理。</p>
-<figure class="highlight python"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">myTransforms = transforms.Compose([</span><br><span class="line">    transforms.Resize((<span class="number">32</span>, <span class="number">32</span>)),</span><br><span class="line">    transforms.RandomHorizontalFlip(p=<span class="number">0.5</span>),</span><br><span class="line">    transforms.ToTensor(),</span><br><span class="line">    transforms.Normalize((<span class="number">0.485</span>, <span class="number">0.456</span>, <span class="number">0.406</span>), (<span class="number">0.229</span>, <span class="number">0.224</span>, <span class="number">0.225</span>))</span><br><span class="line">])</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># 数据加载部分</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">load_dataset</span>(<span class="params">batch_size</span>):</span></span><br><span class="line">    train_set = torchvision.datasets.CIFAR10(</span><br><span class="line">        root=<span class="string">&#x27;../data/cifar&#x27;</span>, train=<span class="literal">True</span>, download=<span class="literal">True</span>, transform=myTransforms)</span><br><span class="line">    test_set = torchvision.datasets.CIFAR10(</span><br><span class="line">        root=<span class="string">&#x27;../data/cifar&#x27;</span>, train=<span class="literal">False</span>, download=<span class="literal">True</span>, transform=transforms.ToTensor())</span><br><span class="line">    train_iter = data.DataLoader(train_set, batch_size=batch_size, shuffle=<span class="literal">True</span>, num_workers=<span class="number">2</span>)</span><br><span class="line">    test_iter = data.DataLoader(test_set, batch_size=batch_size, shuffle=<span class="literal">True</span>, num_workers=<span class="number">2</span>)</span><br><span class="line">    <span class="keyword">return</span> train_iter, test_iter</span><br></pre></td></tr></table></div></figure>
-
-<p>即问题出在训练集和测试集没有作相同的预处理。引用知乎一个很恰当的比喻是：<strong>你复习了一整晚的高数课本，可是第二天考线性代数，虽然二者都属于数学范畴，但是你拿高数知识解线代怎么能做的好呢？</strong>对数据集作预处理，如均值化操作，实际上对数据的分布作了改变。训练集训练的是一个数据分布，直接拿训练的网络对另外一个数据分布的测试集作测试，效果肯定不好。</p>
-
-        <h4 id="问题解决方法">
-          <a href="#问题解决方法" class="heading-link"><i class="fas fa-link"></i></a><a href="#问题解决方法" class="headerlink" title="问题解决方法"></a>问题解决方法</h4>
-      <p>将数据加载的预处理统一，训练集和测试集使用相同的预处理方式。</p>
-<figure class="highlight python"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 数据加载部分</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">load_dataset</span>(<span class="params">batch_size</span>):</span></span><br><span class="line">    train_set = torchvision.datasets.CIFAR10(</span><br><span class="line">        root=<span class="string">&#x27;../data/cifar&#x27;</span>, train=<span class="literal">True</span>, download=<span class="literal">True</span>, transform=myTransforms)</span><br><span class="line">    test_set = torchvision.datasets.CIFAR10(</span><br><span class="line">        root=<span class="string">&#x27;../data/cifar&#x27;</span>, train=<span class="literal">False</span>, download=<span class="literal">True</span>, transform=myTransforms)</span><br><span class="line">    train_iter = data.DataLoader(train_set, batch_size=batch_size, shuffle=<span class="literal">True</span>, num_workers=<span class="number">2</span>)</span><br><span class="line">    test_iter = data.DataLoader(test_set, batch_size=batch_size, shuffle=<span class="literal">True</span>, num_workers=<span class="number">2</span>)</span><br><span class="line">    <span class="keyword">return</span> train_iter, test_iter</span><br></pre></td></tr></table></div></figure>
-
-<p><img src="/2022/01/28/caikeng001/image-20220128115856272.png" alt="image-20220128115856272"></p>
-<p>测试集准确率就正常上升了。</p>
-
-        <h4 id="学习与反思">
-          <a href="#学习与反思" class="heading-link"><i class="fas fa-link"></i></a><a href="#学习与反思" class="headerlink" title="学习与反思"></a>学习与反思</h4>
-      <p>借用知乎回答“深度学习中为什么要对测试集进行与训练集一样的数据预处理？”</p>
-<p>作者：深海<br>链接：<span class="exturl"><a class="exturl__link" target="_blank" rel="noopener" href="https://www.zhihu.com/question/479694291/answer/2061254022">https://www.zhihu.com/question/479694291/answer/2061254022</a><span class="exturl__icon"><i class="fas fa-external-link-alt"></i></span></span></p>
-<p>我们拿标准化举例，标准化也是数据预处理的过程，我们假设将要标准化的某个特征服从高斯分布。</p>
-<p>在神经网络中也可以看作是使网络收敛更加稳定的trick（因为标准化后大部分数值落在一定区间内）。</p>
-<p>我们只能通过训练集获得到数据中该特征的所有可能的情况，我们假设我们拿到的训练集是足够有代表性的，能够从训练集中尽可能逼近数据本身服从的概率分布（这也就是为什么扩充数据能够提升模型泛化能力，我们拿到的数据越多，越能接近数据本身的分布，如果我们拿到全量数据，那么本身的分布就确定下来了，假设数据的某个特征服从高斯分布，那么它的均值和方差也确定了，如果我们能拿到全量数据，那也就没必要做机器学习了）。</p>
-<p>所以我们是拿训练集中数据的某个特征代表了全部数据的这个特征，用它的均值和方差代表了全部数据的均值和方差。这就很容易理解了，测试集要使用训练集的均值和方差进行标准化，不就是在用我们假设的数据特征服从的均值和方差进行标准化吗？</p>
-<p>所以不只是深度学习，传统机器学习算法的预处理也需要这么做。深度学习做了标准化后能够对网络的训练有一些益处罢了，这也是为什么做bn，ln的原因，以及网络中用到的各种归一化的trick，对深度学习中网络优化过程中数值的稳定性有一定的帮助。</p>
-<p>寒假回家第6天了，今天才刚开始做了点东西（虽然没有什么卵用）。除夕之前一定要把DLA跑通。。。。。</p>
-<p><img src="/2022/01/28/caikeng001/image-20220128140116390.png" alt="image-20220128140116390"></p>
-</div></div></article></section><nav class="paginator"><div class="paginator-inner"><span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/2/"><i class="fas fa-angle-right"></i></a></div></nav></div></div><div class="sidebar-wrap" id="sidebar-wrap"><aside class="sidebar" id="sidebar"><section class="sidebar-toc hide"></section><!-- ov = overview--><section class="sidebar-ov"><div class="sidebar-ov-author"><div class="sidebar-ov-author__avatar"><img class="sidebar-ov-author__avatar_img" src="/images/icons/photo.png" alt="avatar"></div><p class="sidebar-ov-author__text">To be a great person.</p></div><div class="sidebar-ov-cc"><a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en" target="_blank" rel="noopener" data-popover="知识共享许可协议" data-popover-pos="up"><img src="/images/cc-by-nc-sa.svg"></a></div></section></aside></div><div class="clearfix"></div></div></main><footer class="footer" id="footer"><div class="footer-inner"><div><span>Copyright © 2022</span><span class="footer__icon"><i class="fas fa-heart"></i></span><span>Strive</span></div><div><span>由 <a href="http://hexo.io/" title="Hexo" target="_blank" rel="noopener">Hexo</a> 强力驱动</span><span> v5.4.0</span><span class="footer__devider">|</span><span>主题 - <a href="https://github.com/liuyib/hexo-theme-stun/" title="Stun" target="_blank" rel="noopener">Stun</a></span><span> v2.6.2</span></div></div></footer><div class="loading-bar" id="loading-bar"><div class="loading-bar__progress"></div></div><div class="back2top" id="back2top"><span class="back2top__icon"><i class="fas fa-rocket"></i></span></div></div><script src="https://cdn.jsdelivr.net/npm/jquery@v3.4.1/dist/jquery.min.js"></script><script src="https://cdn.jsdelivr.net/npm/velocity-animate@1.5.2/velocity.min.js"></script><script src="https://cdn.jsdelivr.net/npm/velocity-animate@1.5.2/velocity.ui.min.js"></script><script src="/js/utils.js?v=2.6.2"></script><script src="/js/stun-boot.js?v=2.6.2"></script><script src="/js/scroll.js?v=2.6.2"></script><script src="/js/header.js?v=2.6.2"></script><script src="/js/sidebar.js?v=2.6.2"></script></body></html>
+</div></div></article></section><nav class="paginator"><div class="paginator-inner"><span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><span class="space">&hellip;</span><a class="page-number" href="/page/4/">4</a><a class="extend next" rel="next" href="/page/2/"><i class="fas fa-angle-right"></i></a></div></nav></div></div><div class="sidebar-wrap" id="sidebar-wrap"><aside class="sidebar" id="sidebar"><section class="sidebar-toc hide"></section><!-- ov = overview--><section class="sidebar-ov"><div class="sidebar-ov-author"><div class="sidebar-ov-author__avatar"><img class="sidebar-ov-author__avatar_img" src="/images/icons/photo.png" alt="avatar"></div><p class="sidebar-ov-author__text">To be a great person.</p></div><div class="sidebar-ov-cc"><a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en" target="_blank" rel="noopener" data-popover="知识共享许可协议" data-popover-pos="up"><img src="/images/cc-by-nc-sa.svg"></a></div></section></aside></div><div class="clearfix"></div></div></main><footer class="footer" id="footer"><div class="footer-inner"><div><span>Copyright © 2022</span><span class="footer__icon"><i class="fas fa-heart"></i></span><span>Strive</span></div><div><span>由 <a href="http://hexo.io/" title="Hexo" target="_blank" rel="noopener">Hexo</a> 强力驱动</span><span> v5.4.0</span><span class="footer__devider">|</span><span>主题 - <a href="https://github.com/liuyib/hexo-theme-stun/" title="Stun" target="_blank" rel="noopener">Stun</a></span><span> v2.6.2</span></div></div></footer><div class="loading-bar" id="loading-bar"><div class="loading-bar__progress"></div></div><div class="back2top" id="back2top"><span class="back2top__icon"><i class="fas fa-rocket"></i></span></div></div><script src="https://cdn.jsdelivr.net/npm/jquery@v3.4.1/dist/jquery.min.js"></script><script src="https://cdn.jsdelivr.net/npm/velocity-animate@1.5.2/velocity.min.js"></script><script src="https://cdn.jsdelivr.net/npm/velocity-animate@1.5.2/velocity.ui.min.js"></script><script src="/js/utils.js?v=2.6.2"></script><script src="/js/stun-boot.js?v=2.6.2"></script><script src="/js/scroll.js?v=2.6.2"></script><script src="/js/header.js?v=2.6.2"></script><script src="/js/sidebar.js?v=2.6.2"></script></body></html>

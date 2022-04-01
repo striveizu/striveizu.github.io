@@ -1,0 +1,181 @@
+<!DOCTYPE html><html lang="zh-CN"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="format-detection" content="telephone=no"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="black"><link rel="icon" href="/images/icons/favicon-16x16.png?v=2.6.2" type="image/png" sizes="16x16"><link rel="icon" href="/images/icons/favicon-32x32.png?v=2.6.2" type="image/png" sizes="32x32"><meta name="description" content="Javaday04–继承                           1 继承                              1.1 继承设计规范       子类们的相同的特征（共性属性、共性方法）放在父类中定义，子类独有的属性和方法放在自己的类里。                     1.2 继承的内存分配       新建一个子">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Javaday04">
+<meta property="og:url" content="https://striveizu.top/2022/03/30/Javaday04/index.html">
+<meta property="og:site_name" content="Strive&#39;s Blog">
+<meta property="og:description" content="Javaday04–继承                           1 继承                              1.1 继承设计规范       子类们的相同的特征（共性属性、共性方法）放在父类中定义，子类独有的属性和方法放在自己的类里。                     1.2 继承的内存分配       新建一个子">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://striveizu.top/2022/03/30/Javaday04/image-20220330201425736.png">
+<meta property="og:image" content="https://striveizu.top/2022/03/30/Javaday04/image-20220330202317460.png">
+<meta property="og:image" content="https://striveizu.top/2022/03/30/Javaday04/image-20220330204144813.png">
+<meta property="og:image" content="https://striveizu.top/2022/03/30/Javaday04/image-20220330204609974.png">
+<meta property="og:image" content="https://striveizu.top/2022/03/30/Javaday04/image-20220330204901816.png">
+<meta property="og:image" content="https://striveizu.top/2022/03/30/Javaday04/image-20220330205513163.png">
+<meta property="og:image" content="https://striveizu.top/2022/03/30/Javaday04/image-20220330210115742.png">
+<meta property="og:image" content="https://striveizu.top/2022/03/30/Javaday04/image-20220330210417765.png">
+<meta property="og:image" content="https://striveizu.top/2022/03/30/Javaday04/image-20220330211315630.png">
+<meta property="og:image" content="https://striveizu.top/2022/03/30/Javaday04/image-20220331190626860.png">
+<meta property="og:image" content="https://striveizu.top/2022/03/30/Javaday04/image-20220331190937717.png">
+<meta property="og:image" content="https://striveizu.top/2022/03/30/Javaday04/image-20220331193006642.png">
+<meta property="og:image" content="https://striveizu.top/2022/03/30/Javaday04/image-20220331193332182.png">
+<meta property="og:image" content="https://striveizu.top/2022/03/30/Javaday04/image-20220331193808954.png">
+<meta property="og:image" content="https://striveizu.top/2022/03/30/Javaday04/image-20220331194326550.png">
+<meta property="og:image" content="https://striveizu.top/2022/03/30/Javaday04/image-20220331201839088.png">
+<meta property="og:image" content="https://striveizu.top/2022/03/30/Javaday04/image-20220331201851415.png">
+<meta property="og:image" content="https://striveizu.top/2022/03/30/Javaday04/image-20220331203411405.png">
+<meta property="og:image" content="https://striveizu.top/2022/03/30/Javaday04/image-20220331210937667.png">
+<meta property="og:image" content="https://striveizu.top/2022/03/30/Javaday04/image-20220401201220826.png">
+<meta property="og:image" content="https://striveizu.top/2022/03/30/Javaday04/image-20220401202029813.png">
+<meta property="og:image" content="https://striveizu.top/2022/03/30/Javaday04/image-20220401202441434.png">
+<meta property="og:image" content="https://striveizu.top/2022/03/30/Javaday04/image-20220401204813709.png">
+<meta property="og:image" content="https://striveizu.top/2022/03/30/Javaday04/image-20220401210527624.png">
+<meta property="og:image" content="https://striveizu.top/2022/03/30/Javaday04/image-20220401211302877.png">
+<meta property="og:image" content="https://striveizu.top/2022/03/30/Javaday04/image-20220401213528952.png">
+<meta property="og:image" content="https://striveizu.top/2022/03/30/Javaday04/image-20220401220341315.png">
+<meta property="article:published_time" content="2022-03-30T12:11:23.000Z">
+<meta property="article:modified_time" content="2022-04-01T14:08:40.264Z">
+<meta property="article:author" content="Strive">
+<meta property="article:tag" content="Java">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://striveizu.top/2022/03/30/Javaday04/image-20220330201425736.png"><title>Javaday04 | Strive's Blog</title><link ref="canonical" href="https://striveizu.top/2022/03/30/Javaday04/"><link rel="dns-prefetch" href="https://cdn.jsdelivr.net"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.12.1/css/all.min.css" type="text/css"><link rel="stylesheet" href="/css/index.css?v=2.6.2"><script>var Stun = window.Stun || {};
+var CONFIG = {
+  root: '/',
+  algolia: undefined,
+  assistSearch: undefined,
+  fontIcon: {"prompt":{"success":"fas fa-check-circle","info":"fas fa-arrow-circle-right","warning":"fas fa-exclamation-circle","error":"fas fa-times-circle"},"copyBtn":"fas fa-copy"},
+  sidebar: {"offsetTop":"20px","tocMaxDepth":6},
+  header: {"enable":true,"showOnPost":true,"scrollDownIcon":true},
+  postWidget: {"endText":true},
+  nightMode: {"enable":true},
+  back2top: {"enable":true},
+  codeblock: {"style":"default","highlight":"light","wordWrap":false},
+  reward: false,
+  fancybox: false,
+  zoomImage: {"gapAside":"20px"},
+  galleryWaterfall: undefined,
+  lazyload: false,
+  pjax: undefined,
+  externalLink: {"icon":{"enable":true,"name":"fas fa-external-link-alt"}},
+  shortcuts: undefined,
+  prompt: {"copyButton":"复制","copySuccess":"复制成功","copyError":"复制失败"},
+  sourcePath: {"js":"js","css":"css","images":"images"},
+};
+
+window.CONFIG = CONFIG;</script><meta name="generator" content="Hexo 5.4.0"></head><body><div class="container" id="container"><header class="header" id="header"><div class="header-inner"><nav class="header-nav header-nav--fixed"><div class="header-nav-inner"><div class="header-nav-menubtn"><i class="fas fa-bars"></i></div><div class="header-nav-menu"><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/"><span class="header-nav-menu-item__icon"><i class="fas fa-home"></i></span><span class="header-nav-menu-item__text">首页</span></a></div><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/about/"><span class="header-nav-menu-item__icon"><i class="fas fa-address-card"></i></span><span class="header-nav-menu-item__text">关于</span></a></div><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="javascript:;" onclick="return false;"><span class="header-nav-menu-item__icon"><i class="fas fa-edit"></i></span><span class="header-nav-menu-item__text">文章</span></a><div class="header-nav-submenu"><div class="header-nav-submenu-item"><a class="header-nav-submenu-item__link" href="/archives/"><span class="header-nav-submenu-item__icon"><i class="fas fa-folder-open"></i></span><span class="header-nav-submenu-item__text">归档</span></a></div><div class="header-nav-submenu-item"><a class="header-nav-submenu-item__link" href="/categories/"><span class="header-nav-submenu-item__icon"><i class="fas fa-layer-group"></i></span><span class="header-nav-submenu-item__text">分类</span></a></div><div class="header-nav-submenu-item"><a class="header-nav-submenu-item__link" href="/tags/"><span class="header-nav-submenu-item__icon"><i class="fas fa-tags"></i></span><span class="header-nav-submenu-item__text">标签</span></a></div></div></div></div><div class="header-nav-mode"><div class="mode"><div class="mode-track"><span class="mode-track-moon"></span><span class="mode-track-sun"></span></div><div class="mode-thumb"></div></div></div></div></nav><div class="header-banner"><div class="header-banner-info"><div class="header-banner-info__title">Strive's Blog</div><div class="header-banner-info__subtitle">你我期许的绝非遥不可及</div></div><div class="header-banner-arrow"><div class="header-banner-arrow__icon"><i class="fas fa-angle-down"></i></div></div></div></div></header><main class="main" id="main"><div class="main-inner"><div class="content-wrap" id="content-wrap"><div class="content" id="content"><!-- Just used to judge whether it is an article page--><div id="is-post"></div><div class="post"><header class="post-header"><h1 class="post-title">Javaday04</h1><div class="post-meta"><span class="post-meta-item post-meta-item--createtime"><span class="post-meta-item__icon"><i class="far fa-calendar-plus"></i></span><span class="post-meta-item__info">发表于</span><span class="post-meta-item__value">2022-03-30</span></span><span class="post-meta-item post-meta-item--updatetime"><span class="post-meta-item__icon"><i class="far fa-calendar-check"></i></span><span class="post-meta-item__info">更新于</span><span class="post-meta-item__value">2022-04-01</span></span></div></header><div class="post-body">
+        <h2 id="Javaday04–继承">
+          <a href="#Javaday04–继承" class="heading-link"><i class="fas fa-link"></i></a><a href="#Javaday04–继承" class="headerlink" title="Javaday04–继承"></a>Javaday04–继承</h2>
+      
+        <h3 id="1-继承">
+          <a href="#1-继承" class="heading-link"><i class="fas fa-link"></i></a><a href="#1-继承" class="headerlink" title="1 继承"></a>1 继承</h3>
+      <p><img src="/2022/03/30/Javaday04/image-20220330201425736.png" alt="image-20220330201425736"></p>
+<img src="/2022/03/30/Javaday04/image-20220330202317460.png" alt="image-20220330202317460" style="zoom:80%;">
+
+
+        <h4 id="1-1-继承设计规范">
+          <a href="#1-1-继承设计规范" class="heading-link"><i class="fas fa-link"></i></a><a href="#1-1-继承设计规范" class="headerlink" title="1.1 继承设计规范"></a>1.1 继承设计规范</h4>
+      <p>子类们的相同的特征（共性属性、共性方法）放在父类中定义，子类独有的属性和方法放在自己的类里。</p>
+
+        <h4 id="1-2-继承的内存分配">
+          <a href="#1-2-继承的内存分配" class="heading-link"><i class="fas fa-link"></i></a><a href="#1-2-继承的内存分配" class="headerlink" title="1.2 继承的内存分配"></a>1.2 继承的内存分配</h4>
+      <p>新建一个子类对象的时候，会在堆内存中开辟一块空间，但在这个子类空间中会分成两块空间：父类空间和子类空间。</p>
+<p>父类空间包含父类的属性和方法。</p>
+<p><img src="/2022/03/30/Javaday04/image-20220330204144813.png" alt="image-20220330204144813"></p>
+
+        <h4 id="1-3-继承的特点">
+          <a href="#1-3-继承的特点" class="heading-link"><i class="fas fa-link"></i></a><a href="#1-3-继承的特点" class="headerlink" title="1.3 继承的特点"></a>1.3 继承的特点</h4>
+      <p><img src="/2022/03/30/Javaday04/image-20220330204609974.png" alt="image-20220330204609974"></p>
+<p>1、子类不能继承父类的构造器</p>
+<p>2、子类<strong>可以继承父类的私有成员，但是不能直接访问。</strong></p>
+<p><img src="/2022/03/30/Javaday04/image-20220330204901816.png" alt="image-20220330204901816"></p>
+<p>3、子类是否可以继承父类的静态成员</p>
+<p>子类可以<strong>共享访问</strong>父类的静态成员，但是由于静态成员在内存中仅保存一份，因此严格来说子类可以访问父类的静态成员，但是不是继承了父类的静态成员。</p>
+<p>4、Java中不支持多继承</p>
+<p>5、Java中支持多层继承，即子类A继承父类B，父类B可以继承父类C</p>
+<p><img src="/2022/03/30/Javaday04/image-20220330205513163.png" alt="image-20220330205513163"></p>
+<p><img src="/2022/03/30/Javaday04/image-20220330210115742.png" alt="image-20220330210115742"></p>
+
+        <h4 id="1-4-方法重写">
+          <a href="#1-4-方法重写" class="heading-link"><i class="fas fa-link"></i></a><a href="#1-4-方法重写" class="headerlink" title="1.4 方法重写"></a>1.4 方法重写</h4>
+      <p>方法重写的原则：<strong>声明不变</strong>，<strong>重新实现</strong></p>
+<p><img src="/2022/03/30/Javaday04/image-20220330210417765.png" alt="image-20220330210417765"></p>
+<p>@Override重写方法注解，在重写方法上面加上这个@Override重写方法注解，1可以提示别人这是个重写方法，2可以对重写方法进行校验。</p>
+<p><img src="/2022/03/30/Javaday04/image-20220330211315630.png" alt="image-20220330211315630"></p>
+<figure class="highlight java"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Override</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">call</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="keyword">super</span>.call();    <span class="comment">//实现父类被重写方法的功能；</span></span><br><span class="line">    <span class="comment">//视频通话  子类需要的父类方法未实现的的功能</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></div></figure>
+
+
+        <h4 id="1-5-子类构造器">
+          <a href="#1-5-子类构造器" class="heading-link"><i class="fas fa-link"></i></a><a href="#1-5-子类构造器" class="headerlink" title="1.5 子类构造器"></a>1.5 子类构造器</h4>
+      <p><img src="/2022/03/30/Javaday04/image-20220331190626860.png" alt="image-20220331190626860"></p>
+<p><img src="/2022/03/30/Javaday04/image-20220331190937717.png" alt="image-20220331190937717"></p>
+<p>子类想要生成一个有参构造器，若操作的属性是继承自父类，可以在父类中定义有参构造器，在子类中写一个有参构造器，在有参构造器中调用super（）从而对继承自父类的属性初始化。</p>
+<p><img src="/2022/03/30/Javaday04/image-20220331193006642.png" alt="image-20220331193006642"></p>
+<p><img src="/2022/03/30/Javaday04/image-20220331193332182.png" alt="image-20220331193332182"></p>
+<p><img src="/2022/03/30/Javaday04/image-20220331193808954.png" alt="image-20220331193808954"></p>
+<p>super()；、this()；一定要放在构造器的第一行。</p>
+
+        <h3 id="2-包、类、修饰符">
+          <a href="#2-包、类、修饰符" class="heading-link"><i class="fas fa-link"></i></a><a href="#2-包、类、修饰符" class="headerlink" title="2 包、类、修饰符"></a>2 包、类、修饰符</h3>
+      
+        <h4 id="2-1-包">
+          <a href="#2-1-包" class="heading-link"><i class="fas fa-link"></i></a><a href="#2-1-包" class="headerlink" title="2.1 包"></a>2.1 包</h4>
+      <p><img src="/2022/03/30/Javaday04/image-20220331194326550.png" alt="image-20220331194326550"></p>
+<p>如果这个类中使用不同包下的相同类名，此时默认只能导入一个类的包，另一个类要使用全名访问。</p>
+<figure class="highlight java"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//已知it1和it2两个包都含有student类</span></span><br><span class="line"><span class="keyword">import</span> com.strive.<span class="keyword">package</span>.it1.Student;</span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Test</span></span>&#123;</span><br><span class="line">    Student s = <span class="keyword">new</span> Student();     <span class="comment">//默认使用的是导入的it1包里的Student类</span></span><br><span class="line">    <span class="comment">//使用不同包下的相同类名，另一个类要使用全名访问</span></span><br><span class="line">    <span class="comment">//全名指的是 包名.类名</span></span><br><span class="line">    com.strive.<span class="keyword">package</span>.it2.Student s2 = <span class="keyword">new</span> com.strive.<span class="keyword">package</span>.it2.Student();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></div></figure>
+
+
+        <h4 id="2-2-权限修饰符">
+          <a href="#2-2-权限修饰符" class="heading-link"><i class="fas fa-link"></i></a><a href="#2-2-权限修饰符" class="headerlink" title="2.2 权限修饰符"></a>2.2 权限修饰符</h4>
+      <p><img src="/2022/03/30/Javaday04/image-20220331201839088.png" alt="image-20220331201839088"></p>
+<p><img src="/2022/03/30/Javaday04/image-20220331201851415.png" alt="image-20220331201851415"></p>
+<p>注意：在子类中使用父类对象，不能访问protected的属性和方法。</p>
+<p>权限修饰符的一般要求：</p>
+<p>1、成员变量一般私有</p>
+<p>2、成员方法一般设为公开</p>
+<p>3、如果该成员只希望本类访问，使用private修饰</p>
+<p>4、如果只希望本类、同一个包下的其他类和子类访问，使用protected修饰</p>
+<p><strong>注意：</strong></p>
+<p>虽然在父类中声明为private的私有成员变量，<strong>子类继承父类的时候还是会继承到对应的私有成员变量</strong>，但是<strong>不能直接访问</strong>，<strong>可以通过父类中public的getter\setter方法来访问。</strong></p>
+
+        <h4 id="2-3-final关键字">
+          <a href="#2-3-final关键字" class="heading-link"><i class="fas fa-link"></i></a><a href="#2-3-final关键字" class="headerlink" title="2.3 final关键字"></a>2.3 final关键字</h4>
+      <p><img src="/2022/03/30/Javaday04/image-20220331203411405.png" alt="image-20220331203411405"></p>
+<p><img src="/2022/03/30/Javaday04/image-20220331210937667.png" alt="image-20220331210937667"></p>
+
+        <h4 id="2-4-常量">
+          <a href="#2-4-常量" class="heading-link"><i class="fas fa-link"></i></a><a href="#2-4-常量" class="headerlink" title="2.4 常量"></a>2.4 常量</h4>
+      <p>常量是使用了public static final修饰的成员变量，必须有初始化值，在程序执行过程中不能被改变。</p>
+<p><strong>常量</strong>的命名规范：<strong>英文单词全部大写，单词之间使用下划线连接</strong>。</p>
+<p> <img src="/2022/03/30/Javaday04/image-20220401201220826.png" alt="image-20220401201220826"></p>
+<p>常量可以作为信息的标志和分类，使程序可读性好，实现软编码形式。</p>
+
+        <h3 id="3、枚举">
+          <a href="#3、枚举" class="heading-link"><i class="fas fa-link"></i></a><a href="#3、枚举" class="headerlink" title="3、枚举"></a>3、枚举</h3>
+      <img src="/2022/03/30/Javaday04/image-20220401202029813.png" alt="image-20220401202029813" style="zoom:80%;">
+
+<p><img src="/2022/03/30/Javaday04/image-20220401202441434.png" alt="image-20220401202441434"></p>
+<p><img src="/2022/03/30/Javaday04/image-20220401204813709.png" alt="image-20220401204813709"></p>
+<p><img src="/2022/03/30/Javaday04/image-20220401210527624.png" alt="image-20220401210527624"></p>
+<p>枚举一般用来表示信息标志、信息分类，但是一般不用来表示具体值，如果需要表示具体的值，比如字符串，还是需要常量来表示。</p>
+
+        <h3 id="4-抽象类和抽象方法">
+          <a href="#4-抽象类和抽象方法" class="heading-link"><i class="fas fa-link"></i></a><a href="#4-抽象类和抽象方法" class="headerlink" title="4 抽象类和抽象方法"></a>4 抽象类和抽象方法</h3>
+      <p><img src="/2022/03/30/Javaday04/image-20220401211302877.png" alt="image-20220401211302877"></p>
+<img src="/2022/03/30/Javaday04/image-20220401213528952.png" alt="image-20220401213528952" style="zoom:80%;">
+
+<p><img src="/2022/03/30/Javaday04/image-20220401220341315.png" alt="image-20220401220341315"></p>
+<p>抽象类不能被实例化！</p>
+</div><footer class="post-footer"><div class="post-ending ending"><div class="ending__text">------ 本文结束，感谢您的阅读 ------</div></div><div class="post-copyright copyright"><div class="copyright-author"><span class="copyright-author__name">本文作者: </span><span class="copyright-author__value"><a href="https://striveizu.top">Strive</a></span></div><div class="copyright-link"><span class="copyright-link__name">本文链接: </span><span class="copyright-link__value"><a href="https://striveizu.top/2022/03/30/Javaday04/">https://striveizu.top/2022/03/30/Javaday04/</a></span></div><div class="copyright-notice"><span class="copyright-notice__name">版权声明: </span><span class="copyright-notice__value">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en" rel="external nofollow" target="_blank">BY-NC-SA</a> 许可协议。转载请注明出处！</span></div></div><div class="post-tags"><span class="post-tags-item"><span class="post-tags-item__icon"><i class="fas fa-tag"></i></span><a class="post-tags-item__link" href="https://striveizu.top/tags/Java/">Java</a></span></div><nav class="post-paginator paginator"><div class="paginator-next"><a class="paginator-next__link" href="/2022/03/30/AGW%E4%BB%A3%E7%A0%81%E5%AD%A6%E4%B9%A001-SYSU%E6%95%B0%E6%8D%AE%E9%9B%86%E9%A2%84%E5%A4%84%E7%90%86/"><span class="paginator-prev__text">AGW代码学习01-SYSU数据集预处理</span><span class="paginator-next__icon"><i class="fas fa-angle-right"></i></span></a></div></nav></footer></div></div></div><div class="sidebar-wrap" id="sidebar-wrap"><aside class="sidebar" id="sidebar"><div class="sidebar-nav"><span class="sidebar-nav-toc current">文章目录</span><span class="sidebar-nav-ov">站点概览</span></div><section class="sidebar-toc"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Javaday04%E2%80%93%E7%BB%A7%E6%89%BF"><span class="toc-number">1.</span> <span class="toc-text">
+          Javaday04–继承</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-%E7%BB%A7%E6%89%BF"><span class="toc-number">1.1.</span> <span class="toc-text">
+          1 继承</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-1-%E7%BB%A7%E6%89%BF%E8%AE%BE%E8%AE%A1%E8%A7%84%E8%8C%83"><span class="toc-number">1.1.1.</span> <span class="toc-text">
+          1.1 继承设计规范</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#1-2-%E7%BB%A7%E6%89%BF%E7%9A%84%E5%86%85%E5%AD%98%E5%88%86%E9%85%8D"><span class="toc-number">1.1.2.</span> <span class="toc-text">
+          1.2 继承的内存分配</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#1-3-%E7%BB%A7%E6%89%BF%E7%9A%84%E7%89%B9%E7%82%B9"><span class="toc-number">1.1.3.</span> <span class="toc-text">
+          1.3 继承的特点</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#1-4-%E6%96%B9%E6%B3%95%E9%87%8D%E5%86%99"><span class="toc-number">1.1.4.</span> <span class="toc-text">
+          1.4 方法重写</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#1-5-%E5%AD%90%E7%B1%BB%E6%9E%84%E9%80%A0%E5%99%A8"><span class="toc-number">1.1.5.</span> <span class="toc-text">
+          1.5 子类构造器</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-%E5%8C%85%E3%80%81%E7%B1%BB%E3%80%81%E4%BF%AE%E9%A5%B0%E7%AC%A6"><span class="toc-number">1.2.</span> <span class="toc-text">
+          2 包、类、修饰符</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#2-1-%E5%8C%85"><span class="toc-number">1.2.1.</span> <span class="toc-text">
+          2.1 包</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-2-%E6%9D%83%E9%99%90%E4%BF%AE%E9%A5%B0%E7%AC%A6"><span class="toc-number">1.2.2.</span> <span class="toc-text">
+          2.2 权限修饰符</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-3-final%E5%85%B3%E9%94%AE%E5%AD%97"><span class="toc-number">1.2.3.</span> <span class="toc-text">
+          2.3 final关键字</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-4-%E5%B8%B8%E9%87%8F"><span class="toc-number">1.2.4.</span> <span class="toc-text">
+          2.4 常量</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3%E3%80%81%E6%9E%9A%E4%B8%BE"><span class="toc-number">1.3.</span> <span class="toc-text">
+          3、枚举</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-%E6%8A%BD%E8%B1%A1%E7%B1%BB%E5%92%8C%E6%8A%BD%E8%B1%A1%E6%96%B9%E6%B3%95"><span class="toc-number">1.4.</span> <span class="toc-text">
+          4 抽象类和抽象方法</span></a></li></ol></li></ol></section><!-- ov = overview--><section class="sidebar-ov hide"><div class="sidebar-ov-author"><div class="sidebar-ov-author__avatar"><img class="sidebar-ov-author__avatar_img" src="/images/icons/photo.png" alt="avatar"></div><p class="sidebar-ov-author__text">To be a great person.</p></div><div class="sidebar-ov-cc"><a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en" target="_blank" rel="noopener" data-popover="知识共享许可协议" data-popover-pos="up"><img src="/images/cc-by-nc-sa.svg"></a></div></section><div class="sidebar-reading"><div class="sidebar-reading-info"><span class="sidebar-reading-info__text">你已阅读了 </span><span class="sidebar-reading-info__num">0</span><span class="sidebar-reading-info__perc">%</span></div><div class="sidebar-reading-line"></div></div></aside></div><div class="clearfix"></div></div></main><footer class="footer" id="footer"><div class="footer-inner"><div><span>Copyright © 2022</span><span class="footer__icon"><i class="fas fa-heart"></i></span><span>Strive</span></div><div><span>由 <a href="http://hexo.io/" title="Hexo" target="_blank" rel="noopener">Hexo</a> 强力驱动</span><span> v5.4.0</span><span class="footer__devider">|</span><span>主题 - <a href="https://github.com/liuyib/hexo-theme-stun/" title="Stun" target="_blank" rel="noopener">Stun</a></span><span> v2.6.2</span></div></div></footer><div class="loading-bar" id="loading-bar"><div class="loading-bar__progress"></div></div><div class="back2top" id="back2top"><span class="back2top__icon"><i class="fas fa-rocket"></i></span></div></div><script src="https://cdn.jsdelivr.net/npm/jquery@v3.4.1/dist/jquery.min.js"></script><script src="https://cdn.jsdelivr.net/npm/velocity-animate@1.5.2/velocity.min.js"></script><script src="https://cdn.jsdelivr.net/npm/velocity-animate@1.5.2/velocity.ui.min.js"></script><script src="/js/utils.js?v=2.6.2"></script><script src="/js/stun-boot.js?v=2.6.2"></script><script src="/js/scroll.js?v=2.6.2"></script><script src="/js/header.js?v=2.6.2"></script><script src="/js/sidebar.js?v=2.6.2"></script></body></html>

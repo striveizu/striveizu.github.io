@@ -1,0 +1,214 @@
+<!DOCTYPE html><html lang="zh-CN"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="format-detection" content="telephone=no"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="black"><link rel="icon" href="/images/icons/favicon-16x16.png?v=2.6.2" type="image/png" sizes="16x16"><link rel="icon" href="/images/icons/favicon-32x32.png?v=2.6.2" type="image/png" sizes="32x32"><meta name="description" content="经典弃坑开新坑。。。。C++感觉还是算了吧                     Java语法速通DAY0                           1 IDEA相关                           1.1 IDEA代码组织架构       IDEA代码的组织架构从上到下主要可以分为4个层次：project-module-package-class。  如下入所示，">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Javaday0">
+<meta property="og:url" content="https://striveizu.top/2022/03/20/Javaday0/index.html">
+<meta property="og:site_name" content="Strive&#39;s Blog">
+<meta property="og:description" content="经典弃坑开新坑。。。。C++感觉还是算了吧                     Java语法速通DAY0                           1 IDEA相关                           1.1 IDEA代码组织架构       IDEA代码的组织架构从上到下主要可以分为4个层次：project-module-package-class。  如下入所示，">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://striveizu.top/2022/03/20/Javaday0/image-20220320143612721.png">
+<meta property="og:image" content="https://striveizu.top/2022/03/20/Javaday0/image-20220320143728146.png">
+<meta property="og:image" content="https://striveizu.top/2022/03/20/Javaday0/image-20220320144011781.png">
+<meta property="og:image" content="https://striveizu.top/2022/03/20/Javaday0/image-20220320152213807.png">
+<meta property="og:image" content="https://striveizu.top/2022/03/20/Javaday0/image-20220320153234283.png">
+<meta property="og:image" content="https://striveizu.top/2022/03/20/Javaday0/image-20220320153300695.png">
+<meta property="og:image" content="https://striveizu.top/2022/03/20/Javaday0/image-20220320154052817.png">
+<meta property="og:image" content="https://striveizu.top/2022/03/20/Javaday0/image-20220320154053103.png">
+<meta property="og:image" content="https://striveizu.top/2022/03/20/Javaday0/image-20220320160221184.png">
+<meta property="og:image" content="https://striveizu.top/2022/03/20/Javaday0/image-20220320163916568.png">
+<meta property="og:image" content="https://striveizu.top/2022/03/20/Javaday0/image-20220320164107662.png">
+<meta property="og:image" content="https://striveizu.top/2022/03/20/Javaday0/image-20220320170420823.png">
+<meta property="og:image" content="https://striveizu.top/2022/03/20/Javaday0/image-20220320171705565.png">
+<meta property="og:image" content="https://striveizu.top/2022/03/20/Javaday0/image-20220320173502990.png">
+<meta property="og:image" content="https://striveizu.top/2022/03/20/Javaday0/image-20220320213301453.png">
+<meta property="og:image" content="https://striveizu.top/2022/03/20/Javaday0/image-20220321145417588.png">
+<meta property="og:image" content="https://striveizu.top/2022/03/20/Javaday0/image-20220321150537876.png">
+<meta property="og:image" content="https://striveizu.top/2022/03/20/Javaday0/image-20220321204240706.png">
+<meta property="og:image" content="https://striveizu.top/2022/03/20/Javaday0/image-20220321204659694.png">
+<meta property="article:published_time" content="2022-03-20T06:32:24.000Z">
+<meta property="article:modified_time" content="2022-03-21T12:54:10.701Z">
+<meta property="article:author" content="Strive">
+<meta property="article:tag" content="Java">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://striveizu.top/2022/03/20/Javaday0/image-20220320143612721.png"><title>Javaday0 | Strive's Blog</title><link ref="canonical" href="https://striveizu.top/2022/03/20/Javaday0/"><link rel="dns-prefetch" href="https://cdn.jsdelivr.net"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.12.1/css/all.min.css" type="text/css"><link rel="stylesheet" href="/css/index.css?v=2.6.2"><script>var Stun = window.Stun || {};
+var CONFIG = {
+  root: '/',
+  algolia: undefined,
+  assistSearch: undefined,
+  fontIcon: {"prompt":{"success":"fas fa-check-circle","info":"fas fa-arrow-circle-right","warning":"fas fa-exclamation-circle","error":"fas fa-times-circle"},"copyBtn":"fas fa-copy"},
+  sidebar: {"offsetTop":"20px","tocMaxDepth":6},
+  header: {"enable":true,"showOnPost":true,"scrollDownIcon":true},
+  postWidget: {"endText":true},
+  nightMode: {"enable":true},
+  back2top: {"enable":true},
+  codeblock: {"style":"default","highlight":"light","wordWrap":false},
+  reward: false,
+  fancybox: false,
+  zoomImage: {"gapAside":"20px"},
+  galleryWaterfall: undefined,
+  lazyload: false,
+  pjax: undefined,
+  externalLink: {"icon":{"enable":true,"name":"fas fa-external-link-alt"}},
+  shortcuts: undefined,
+  prompt: {"copyButton":"复制","copySuccess":"复制成功","copyError":"复制失败"},
+  sourcePath: {"js":"js","css":"css","images":"images"},
+};
+
+window.CONFIG = CONFIG;</script><meta name="generator" content="Hexo 5.4.0"></head><body><div class="container" id="container"><header class="header" id="header"><div class="header-inner"><nav class="header-nav header-nav--fixed"><div class="header-nav-inner"><div class="header-nav-menubtn"><i class="fas fa-bars"></i></div><div class="header-nav-menu"><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/"><span class="header-nav-menu-item__icon"><i class="fas fa-home"></i></span><span class="header-nav-menu-item__text">首页</span></a></div><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/about/"><span class="header-nav-menu-item__icon"><i class="fas fa-address-card"></i></span><span class="header-nav-menu-item__text">关于</span></a></div><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="javascript:;" onclick="return false;"><span class="header-nav-menu-item__icon"><i class="fas fa-edit"></i></span><span class="header-nav-menu-item__text">文章</span></a><div class="header-nav-submenu"><div class="header-nav-submenu-item"><a class="header-nav-submenu-item__link" href="/archives/"><span class="header-nav-submenu-item__icon"><i class="fas fa-folder-open"></i></span><span class="header-nav-submenu-item__text">归档</span></a></div><div class="header-nav-submenu-item"><a class="header-nav-submenu-item__link" href="/categories/"><span class="header-nav-submenu-item__icon"><i class="fas fa-layer-group"></i></span><span class="header-nav-submenu-item__text">分类</span></a></div><div class="header-nav-submenu-item"><a class="header-nav-submenu-item__link" href="/tags/"><span class="header-nav-submenu-item__icon"><i class="fas fa-tags"></i></span><span class="header-nav-submenu-item__text">标签</span></a></div></div></div></div><div class="header-nav-mode"><div class="mode"><div class="mode-track"><span class="mode-track-moon"></span><span class="mode-track-sun"></span></div><div class="mode-thumb"></div></div></div></div></nav><div class="header-banner"><div class="header-banner-info"><div class="header-banner-info__title">Strive's Blog</div><div class="header-banner-info__subtitle">你我期许的绝非遥不可及</div></div><div class="header-banner-arrow"><div class="header-banner-arrow__icon"><i class="fas fa-angle-down"></i></div></div></div></div></header><main class="main" id="main"><div class="main-inner"><div class="content-wrap" id="content-wrap"><div class="content" id="content"><!-- Just used to judge whether it is an article page--><div id="is-post"></div><div class="post"><header class="post-header"><h1 class="post-title">Javaday0</h1><div class="post-meta"><span class="post-meta-item post-meta-item--createtime"><span class="post-meta-item__icon"><i class="far fa-calendar-plus"></i></span><span class="post-meta-item__info">发表于</span><span class="post-meta-item__value">2022-03-20</span></span><span class="post-meta-item post-meta-item--updatetime"><span class="post-meta-item__icon"><i class="far fa-calendar-check"></i></span><span class="post-meta-item__info">更新于</span><span class="post-meta-item__value">2022-03-21</span></span></div></header><div class="post-body"><p>经典弃坑开新坑。。。。C++感觉还是算了吧</p>
+
+        <h3 id="Java语法速通DAY0">
+          <a href="#Java语法速通DAY0" class="heading-link"><i class="fas fa-link"></i></a><a href="#Java语法速通DAY0" class="headerlink" title="Java语法速通DAY0"></a>Java语法速通DAY0</h3>
+      
+        <h4 id="1-IDEA相关">
+          <a href="#1-IDEA相关" class="heading-link"><i class="fas fa-link"></i></a><a href="#1-IDEA相关" class="headerlink" title="1 IDEA相关"></a>1 IDEA相关</h4>
+      
+        <h5 id="1-1-IDEA代码组织架构">
+          <a href="#1-1-IDEA代码组织架构" class="heading-link"><i class="fas fa-link"></i></a><a href="#1-1-IDEA代码组织架构" class="headerlink" title="1.1 IDEA代码组织架构"></a>1.1 IDEA代码组织架构</h5>
+      <p>IDEA代码的组织架构从上到下主要可以分为4个层次：project-module-package-class。</p>
+<p><img src="/2022/03/20/Javaday0/image-20220320143612721.png" alt="image-20220320143612721"></p>
+<p>如下入所示，JavaCode是一个project，project下建立了一个module：hello-app，在源代码src下建立了一个package，在package下建立了java文件，即class:helloworld。</p>
+<p><img src="/2022/03/20/Javaday0/image-20220320143728146.png" alt="image-20220320143728146"></p>
+
+        <h5 id="1-2-IDEA相关快捷键">
+          <a href="#1-2-IDEA相关快捷键" class="heading-link"><i class="fas fa-link"></i></a><a href="#1-2-IDEA相关快捷键" class="headerlink" title="1.2 IDEA相关快捷键"></a>1.2 IDEA相关快捷键</h5>
+      <p><img src="/2022/03/20/Javaday0/image-20220320144011781.png" alt="image-20220320144011781"></p>
+
+        <h4 id="2-Java中的数据类型">
+          <a href="#2-Java中的数据类型" class="heading-link"><i class="fas fa-link"></i></a><a href="#2-Java中的数据类型" class="headerlink" title="2 Java中的数据类型"></a>2 Java中的数据类型</h4>
+      <p><img src="/2022/03/20/Javaday0/image-20220320152213807.png" alt="image-20220320152213807"></p>
+<p>由于系统默认的整数、小数类型分别是int和double，想要写字面值使用long和float需要对字面值进行说明。</p>
+<p>注意当写一个字面值赋值给long类型，需要在字面值其后加一个L来标识。</p>
+<p>float类型也是如此，需要在其后加一个F来标识。</p>
+<figure class="highlight java"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">long</span> lg = <span class="number">88946548946L</span>;</span><br><span class="line"><span class="keyword">float</span> f = <span class="number">3.1415926F</span>;</span><br></pre></td></tr></table></div></figure>
+
+
+        <h4 id="3-Java中的类型转换">
+          <a href="#3-Java中的类型转换" class="heading-link"><i class="fas fa-link"></i></a><a href="#3-Java中的类型转换" class="headerlink" title="3 Java中的类型转换"></a>3 Java中的类型转换</h4>
+      
+        <h5 id="3-1-自动类型转换">
+          <a href="#3-1-自动类型转换" class="heading-link"><i class="fas fa-link"></i></a><a href="#3-1-自动类型转换" class="headerlink" title="3.1 自动类型转换"></a>3.1 自动类型转换</h5>
+      <p>在Java中，类型范围小的变量可以直接赋值给类型范围大的变量。</p>
+<p><img src="/2022/03/20/Javaday0/image-20220320153234283.png" alt="image-20220320153234283"></p>
+<p><img src="/2022/03/20/Javaday0/image-20220320153300695.png" alt="image-20220320153300695"></p>
+<p>byte、short、char类型在运算的过程中会当成int类型参与计算，计算结果也是int型。</p>
+
+        <h5 id="3-2-强制类型转换">
+          <a href="#3-2-强制类型转换" class="heading-link"><i class="fas fa-link"></i></a><a href="#3-2-强制类型转换" class="headerlink" title="3.2 强制类型转换"></a>3.2 强制类型转换</h5>
+      <p><img src="/2022/03/20/Javaday0/image-20220320154052817.png" alt="image-20220320154052817"><img src="/2022/03/20/Javaday0/image-20220320154053103.png" alt="image-20220320154053103"></p>
+
+        <h4 id="4-Java中的基础运算符">
+          <a href="#4-Java中的基础运算符" class="heading-link"><i class="fas fa-link"></i></a><a href="#4-Java中的基础运算符" class="headerlink" title="4 Java中的基础运算符"></a>4 Java中的基础运算符</h4>
+      
+        <h5 id="4-1-号">
+          <a href="#4-1-号" class="heading-link"><i class="fas fa-link"></i></a><a href="#4-1-号" class="headerlink" title="4.1 +号"></a>4.1 +号</h5>
+      <p>在字符串中，+号可以充当连接符号。可以将字符串与字符串、字符串与其他变量连接在一起。</p>
+<p>运算前提：能算则算，算不了当连接符。比如整型和字符类型char可以运算，但是整型与字符串类型不能运算，当连接符使用。</p>
+<p>如：</p>
+<figure class="highlight java"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> a = <span class="number">5</span>;</span><br></pre></td></tr></table></div></figure>
+
+<p><img src="/2022/03/20/Javaday0/image-20220320160221184.png" alt="image-20220320160221184"></p>
+
+        <h5 id="4-2-逻辑运算符">
+          <a href="#4-2-逻辑运算符" class="heading-link"><i class="fas fa-link"></i></a><a href="#4-2-逻辑运算符" class="headerlink" title="4.2 逻辑运算符"></a>4.2 逻辑运算符</h5>
+      <p><img src="/2022/03/20/Javaday0/image-20220320163916568.png" alt="image-20220320163916568"></p>
+<p>与C++不同，逻辑与、或只需要1个&amp;、|。</p>
+<p>在C++中的逻辑与、或被称为短路与、短路或。短路逻辑运算符由于如果满足一定的条件，运算符右边的表达式就可以无需计算，因此执行的速度要比逻辑单与、或操作要快。<strong>因此短路逻辑运算符在实际开发中较为常用。</strong></p>
+<p><img src="/2022/03/20/Javaday0/image-20220320164107662.png" alt="image-20220320164107662"></p>
+
+        <h5 id="4-3-三元运算符">
+          <a href="#4-3-三元运算符" class="heading-link"><i class="fas fa-link"></i></a><a href="#4-3-三元运算符" class="headerlink" title="4.3 三元运算符"></a>4.3 三元运算符</h5>
+      <p>与C++中的三元运算符相同，若表达式为真返回值1，否则返回值2.</p>
+<figure class="highlight java"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">expression ? 值<span class="number">1</span> ：值<span class="number">2</span></span><br></pre></td></tr></table></div></figure>
+
+
+        <h4 id="5-Java的基本输入输出">
+          <a href="#5-Java的基本输入输出" class="heading-link"><i class="fas fa-link"></i></a><a href="#5-Java的基本输入输出" class="headerlink" title="5. Java的基本输入输出"></a>5. Java的基本输入输出</h4>
+      <p>想要从键盘输入中读取输入，需要导入Scanner包</p>
+<figure class="highlight java"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> java.util.Scanner;</span><br></pre></td></tr></table></div></figure>
+
+<p>想要获取键盘输入，需要新建一个扫描器对象，然后调用next方法接受键盘输入。扫描器对象仅需新建一次，以后需要获取键盘输入时仅需根据获取键盘输入的类型调用对应的next方法即可。</p>
+<figure class="highlight java"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">System.out.println(<span class="string">&quot;请输入年龄&quot;</span>);</span><br><span class="line">Scanner sc = <span class="keyword">new</span> Scanner(System.in);</span><br><span class="line"><span class="comment">//代码在此等待键盘输入，int对应的next方法是nextInt()</span></span><br><span class="line"><span class="keyword">int</span> age = sc.nextInt();</span><br><span class="line">System.out.println(<span class="string">&quot;请输入姓名&quot;</span>);</span><br><span class="line"><span class="comment">//代码在此等待键盘输入，String对应的next方法是next()</span></span><br><span class="line">String name = sc.next();</span><br><span class="line">System.out.println(<span class="string">&quot;欢迎:&quot;</span> + name + <span class="string">&quot;，年龄：&quot;</span> + age);</span><br></pre></td></tr></table></div></figure>
+
+<p><img src="/2022/03/20/Javaday0/image-20220320170420823.png" alt="image-20220320170420823"></p>
+
+        <h4 id="6-Java中的控制语句">
+          <a href="#6-Java中的控制语句" class="heading-link"><i class="fas fa-link"></i></a><a href="#6-Java中的控制语句" class="headerlink" title="6. Java中的控制语句"></a>6. Java中的控制语句</h4>
+      
+        <h5 id="6-1-if语句">
+          <a href="#6-1-if语句" class="heading-link"><i class="fas fa-link"></i></a><a href="#6-1-if语句" class="headerlink" title="6.1 if语句"></a>6.1 if语句</h5>
+      <p>同C++</p>
+
+        <h5 id="6-2-switch-case">
+          <a href="#6-2-switch-case" class="heading-link"><i class="fas fa-link"></i></a><a href="#6-2-switch-case" class="headerlink" title="6.2 switch-case"></a>6.2 switch-case</h5>
+      <p><img src="/2022/03/20/Javaday0/image-20220320171705565.png" alt="image-20220320171705565"></p>
+<p>基本同C++，但是有以下几点注意事项：</p>
+<p>1、表达式类型只能是byte、short、int、char、枚举类型和String。<strong>不支持double\float\long</strong></p>
+<p>2、case不允许重复，且<strong>只能是字面值不能是变量</strong></p>
+<p>3、与C++中相同，如果分支执行代码没有break;会顺序执行以下所有的分支，或者直到碰到break;退出。<strong>这种特性叫做穿透性</strong>，适用于很多分支的执行代码相同的情况，这种情况只需要合理利用穿透性，将很多分支相同的执行代码写在最后一个相同情况的执行代码中即可，使代码简洁高效。</p>
+<figure class="highlight java"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//合理利用穿透性，输入月份输出有多少天</span></span><br><span class="line">Scanner sc = <span class="keyword">new</span> Scanner(System.in);</span><br><span class="line"><span class="keyword">int</span> month = sc.nextInt();</span><br><span class="line"><span class="keyword">switch</span>(month)&#123;</span><br><span class="line">    <span class="keyword">case</span> <span class="number">1</span> :</span><br><span class="line">    <span class="keyword">case</span> <span class="number">3</span> :</span><br><span class="line">    <span class="keyword">case</span> <span class="number">5</span> :</span><br><span class="line">    <span class="keyword">case</span> <span class="number">7</span> :</span><br><span class="line">    <span class="keyword">case</span> <span class="number">8</span> :</span><br><span class="line">    <span class="keyword">case</span> <span class="number">10</span> :</span><br><span class="line">    <span class="keyword">case</span> <span class="number">12</span> :</span><br><span class="line">       System.out.println(month + <span class="string">&quot;有31天&quot;</span>);</span><br><span class="line">       <span class="keyword">break</span>;</span><br><span class="line">    <span class="keyword">case</span> <span class="number">4</span>:</span><br><span class="line">    <span class="keyword">case</span> <span class="number">6</span>:</span><br><span class="line">    <span class="keyword">case</span> <span class="number">9</span>:</span><br><span class="line">    <span class="keyword">case</span> <span class="number">11</span>:</span><br><span class="line">       System.out.println(month + <span class="string">&quot;有30天&quot;</span>);</span><br><span class="line">       <span class="keyword">break</span>;</span><br><span class="line">    <span class="keyword">case</span> <span class="number">2</span>:</span><br><span class="line">       System.out.println(month + <span class="string">&quot;闰年有29天，其余28天&quot;</span>);</span><br><span class="line">       <span class="keyword">break</span>;</span><br><span class="line">    <span class="keyword">default</span>:</span><br><span class="line">       System.out.println(<span class="string">&quot;输入格式不正确&quot;</span>);</span><br><span class="line">       &#125;</span><br></pre></td></tr></table></div></figure>
+
+
+        <h5 id="6-3-for循环、while、do-while">
+          <a href="#6-3-for循环、while、do-while" class="heading-link"><i class="fas fa-link"></i></a><a href="#6-3-for循环、while、do-while" class="headerlink" title="6.3 for循环、while、do-while"></a>6.3 for循环、while、do-while</h5>
+      <p>全部语法格式都同C++，do-while一定先执行一次循环体。</p>
+<p><img src="/2022/03/20/Javaday0/image-20220320173502990.png" alt="image-20220320173502990"></p>
+<p><img src="/2022/03/20/Javaday0/image-20220320213301453.png" alt="image-20220320213301453"></p>
+
+        <h4 id="7-Java生成随机数的Random类">
+          <a href="#7-Java生成随机数的Random类" class="heading-link"><i class="fas fa-link"></i></a><a href="#7-Java生成随机数的Random类" class="headerlink" title="7 Java生成随机数的Random类"></a>7 Java生成随机数的Random类</h4>
+      <p>Random类在java.util.Random类中。先生成一个Random类的对象，然后调用方法nextInt(bound)获得0-bound区间内的随机整数</p>
+<figure class="highlight java"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> java.util.Random;</span><br><span class="line"></span><br><span class="line">Random rand = <span class="keyword">new</span> Random();</span><br><span class="line"><span class="keyword">int</span> seed = rand.nextInt(<span class="number">99</span>);</span><br><span class="line"><span class="keyword">int</span> seed1 = rand.nextInt(<span class="number">99</span>) + <span class="number">5</span>;     <span class="comment">//生成5-104q</span></span><br></pre></td></tr></table></div></figure>
+
+
+        <h4 id="8-Java的数组类型">
+          <a href="#8-Java的数组类型" class="heading-link"><i class="fas fa-link"></i></a><a href="#8-Java的数组类型" class="headerlink" title="8 Java的数组类型"></a>8 Java的数组类型</h4>
+      
+        <h5 id="8-1-数组静态初始化">
+          <a href="#8-1-数组静态初始化" class="heading-link"><i class="fas fa-link"></i></a><a href="#8-1-数组静态初始化" class="headerlink" title="8.1 数组静态初始化"></a>8.1 数组静态初始化</h5>
+      <p><img src="/2022/03/20/Javaday0/image-20220321145417588.png" alt="image-20220321145417588"></p>
+<p>Java的数组名称存储的是指向数组第一个元素的地址。<strong>数组是引用类型</strong></p>
+<p>Java中数组有一个属性length，可以使用length获取数组长度。</p>
+<figure class="highlight java"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span>[] ages = <span class="keyword">new</span> <span class="keyword">int</span>[]&#123;<span class="number">12</span>, <span class="number">24</span>, <span class="number">36</span>&#125;;</span><br><span class="line"><span class="keyword">int</span> len = ages.leghth;             <span class="comment">//获取数组的最大索引</span></span><br></pre></td></tr></table></div></figure>
+
+
+        <h5 id="8-2-数组动态初始化">
+          <a href="#8-2-数组动态初始化" class="heading-link"><i class="fas fa-link"></i></a><a href="#8-2-数组动态初始化" class="headerlink" title="8.2 数组动态初始化"></a>8.2 数组动态初始化</h5>
+      <p>一开始不指定数组元素初始值的方法叫做数组的动态初始化。只指定数组的长度，不指定初始值，系统自动给数组元素赋值一个默认值。</p>
+<figure class="highlight java"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">double</span>[] scores = <span class="keyword">new</span> <span class="keyword">double</span>[<span class="number">3</span>];</span><br></pre></td></tr></table></div></figure>
+
+<p><img src="/2022/03/20/Javaday0/image-20220321150537876.png" alt="image-20220321150537876"></p>
+
+        <h4 id="9-Java内存分配">
+          <a href="#9-Java内存分配" class="heading-link"><i class="fas fa-link"></i></a><a href="#9-Java内存分配" class="headerlink" title="9 Java内存分配"></a>9 Java内存分配</h4>
+      <p>Java内存分配主要可以分为栈、堆、方法区、本地方法栈、寄存器五个区域。</p>
+<p><img src="/2022/03/20/Javaday0/image-20220321204240706.png" alt="image-20220321204240706"></p>
+<p><img src="/2022/03/20/Javaday0/image-20220321204659694.png" alt="image-20220321204659694"></p>
+<p>运行代码，首先将字节码和main方法加载进方法区，执行方法。</p>
+<p>在栈内存中创建变量a和数组对象arr，new部分在堆内存中开辟存储空间。</p>
+<p>执行下面三个修改数组值的操作，实际上是通过栈内存中找到堆内存中的数组起始地址，然后根据此地址对堆内存中的数值进行修改。</p>
+<p><strong>数组的变量名实际上存储的是数组的起始地址。</strong></p>
+<p>因此对数组进行赋值拷贝实际上是给另外一个数组名一个与原数组相同的地址。</p>
+<figure class="highlight java"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span>[] arr = &#123;<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>&#125;;</span><br><span class="line"><span class="keyword">int</span>[] arr1 = arr;     <span class="comment">//arr与arr1指向的是同一个数组，实际上是将Arr的地址赋值给a</span></span><br></pre></td></tr></table></div></figure>
+
+</div><footer class="post-footer"><div class="post-ending ending"><div class="ending__text">------ 本文结束，感谢您的阅读 ------</div></div><div class="post-copyright copyright"><div class="copyright-author"><span class="copyright-author__name">本文作者: </span><span class="copyright-author__value"><a href="https://striveizu.top">Strive</a></span></div><div class="copyright-link"><span class="copyright-link__name">本文链接: </span><span class="copyright-link__value"><a href="https://striveizu.top/2022/03/20/Javaday0/">https://striveizu.top/2022/03/20/Javaday0/</a></span></div><div class="copyright-notice"><span class="copyright-notice__name">版权声明: </span><span class="copyright-notice__value">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en" rel="external nofollow" target="_blank">BY-NC-SA</a> 许可协议。转载请注明出处！</span></div></div><div class="post-tags"><span class="post-tags-item"><span class="post-tags-item__icon"><i class="fas fa-tag"></i></span><a class="post-tags-item__link" href="https://striveizu.top/tags/Java/">Java</a></span></div><nav class="post-paginator paginator"><div class="paginator-prev"><a class="paginator-prev__link" href="/2022/03/21/Javaday1/"><span class="paginator-prev__icon"><i class="fas fa-angle-left"></i></span><span class="paginator-prev__text">Javaday1</span></a></div><div class="paginator-next"><a class="paginator-next__link" href="/2022/03/15/c-chapter6/"><span class="paginator-prev__text">c++chapter6</span><span class="paginator-next__icon"><i class="fas fa-angle-right"></i></span></a></div></nav></footer></div></div></div><div class="sidebar-wrap" id="sidebar-wrap"><aside class="sidebar" id="sidebar"><div class="sidebar-nav"><span class="sidebar-nav-toc current">文章目录</span><span class="sidebar-nav-ov">站点概览</span></div><section class="sidebar-toc"><ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#Java%E8%AF%AD%E6%B3%95%E9%80%9F%E9%80%9ADAY0"><span class="toc-number">1.</span> <span class="toc-text">
+          Java语法速通DAY0</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-IDEA%E7%9B%B8%E5%85%B3"><span class="toc-number">1.1.</span> <span class="toc-text">
+          1 IDEA相关</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#1-1-IDEA%E4%BB%A3%E7%A0%81%E7%BB%84%E7%BB%87%E6%9E%B6%E6%9E%84"><span class="toc-number">1.1.1.</span> <span class="toc-text">
+          1.1 IDEA代码组织架构</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#1-2-IDEA%E7%9B%B8%E5%85%B3%E5%BF%AB%E6%8D%B7%E9%94%AE"><span class="toc-number">1.1.2.</span> <span class="toc-text">
+          1.2 IDEA相关快捷键</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-Java%E4%B8%AD%E7%9A%84%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B"><span class="toc-number">1.2.</span> <span class="toc-text">
+          2 Java中的数据类型</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-Java%E4%B8%AD%E7%9A%84%E7%B1%BB%E5%9E%8B%E8%BD%AC%E6%8D%A2"><span class="toc-number">1.3.</span> <span class="toc-text">
+          3 Java中的类型转换</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#3-1-%E8%87%AA%E5%8A%A8%E7%B1%BB%E5%9E%8B%E8%BD%AC%E6%8D%A2"><span class="toc-number">1.3.1.</span> <span class="toc-text">
+          3.1 自动类型转换</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#3-2-%E5%BC%BA%E5%88%B6%E7%B1%BB%E5%9E%8B%E8%BD%AC%E6%8D%A2"><span class="toc-number">1.3.2.</span> <span class="toc-text">
+          3.2 强制类型转换</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-Java%E4%B8%AD%E7%9A%84%E5%9F%BA%E7%A1%80%E8%BF%90%E7%AE%97%E7%AC%A6"><span class="toc-number">1.4.</span> <span class="toc-text">
+          4 Java中的基础运算符</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#4-1-%E5%8F%B7"><span class="toc-number">1.4.1.</span> <span class="toc-text">
+          4.1 +号</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#4-2-%E9%80%BB%E8%BE%91%E8%BF%90%E7%AE%97%E7%AC%A6"><span class="toc-number">1.4.2.</span> <span class="toc-text">
+          4.2 逻辑运算符</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#4-3-%E4%B8%89%E5%85%83%E8%BF%90%E7%AE%97%E7%AC%A6"><span class="toc-number">1.4.3.</span> <span class="toc-text">
+          4.3 三元运算符</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#5-Java%E7%9A%84%E5%9F%BA%E6%9C%AC%E8%BE%93%E5%85%A5%E8%BE%93%E5%87%BA"><span class="toc-number">1.5.</span> <span class="toc-text">
+          5. Java的基本输入输出</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#6-Java%E4%B8%AD%E7%9A%84%E6%8E%A7%E5%88%B6%E8%AF%AD%E5%8F%A5"><span class="toc-number">1.6.</span> <span class="toc-text">
+          6. Java中的控制语句</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#6-1-if%E8%AF%AD%E5%8F%A5"><span class="toc-number">1.6.1.</span> <span class="toc-text">
+          6.1 if语句</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#6-2-switch-case"><span class="toc-number">1.6.2.</span> <span class="toc-text">
+          6.2 switch-case</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#6-3-for%E5%BE%AA%E7%8E%AF%E3%80%81while%E3%80%81do-while"><span class="toc-number">1.6.3.</span> <span class="toc-text">
+          6.3 for循环、while、do-while</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#7-Java%E7%94%9F%E6%88%90%E9%9A%8F%E6%9C%BA%E6%95%B0%E7%9A%84Random%E7%B1%BB"><span class="toc-number">1.7.</span> <span class="toc-text">
+          7 Java生成随机数的Random类</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#8-Java%E7%9A%84%E6%95%B0%E7%BB%84%E7%B1%BB%E5%9E%8B"><span class="toc-number">1.8.</span> <span class="toc-text">
+          8 Java的数组类型</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#8-1-%E6%95%B0%E7%BB%84%E9%9D%99%E6%80%81%E5%88%9D%E5%A7%8B%E5%8C%96"><span class="toc-number">1.8.1.</span> <span class="toc-text">
+          8.1 数组静态初始化</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#8-2-%E6%95%B0%E7%BB%84%E5%8A%A8%E6%80%81%E5%88%9D%E5%A7%8B%E5%8C%96"><span class="toc-number">1.8.2.</span> <span class="toc-text">
+          8.2 数组动态初始化</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#9-Java%E5%86%85%E5%AD%98%E5%88%86%E9%85%8D"><span class="toc-number">1.9.</span> <span class="toc-text">
+          9 Java内存分配</span></a></li></ol></li></ol></section><!-- ov = overview--><section class="sidebar-ov hide"><div class="sidebar-ov-author"><div class="sidebar-ov-author__avatar"><img class="sidebar-ov-author__avatar_img" src="/images/icons/photo.png" alt="avatar"></div><p class="sidebar-ov-author__text">To be a great person.</p></div><div class="sidebar-ov-cc"><a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en" target="_blank" rel="noopener" data-popover="知识共享许可协议" data-popover-pos="up"><img src="/images/cc-by-nc-sa.svg"></a></div></section><div class="sidebar-reading"><div class="sidebar-reading-info"><span class="sidebar-reading-info__text">你已阅读了 </span><span class="sidebar-reading-info__num">0</span><span class="sidebar-reading-info__perc">%</span></div><div class="sidebar-reading-line"></div></div></aside></div><div class="clearfix"></div></div></main><footer class="footer" id="footer"><div class="footer-inner"><div><span>Copyright © 2022</span><span class="footer__icon"><i class="fas fa-heart"></i></span><span>Strive</span></div><div><span>由 <a href="http://hexo.io/" title="Hexo" target="_blank" rel="noopener">Hexo</a> 强力驱动</span><span> v5.4.0</span><span class="footer__devider">|</span><span>主题 - <a href="https://github.com/liuyib/hexo-theme-stun/" title="Stun" target="_blank" rel="noopener">Stun</a></span><span> v2.6.2</span></div></div></footer><div class="loading-bar" id="loading-bar"><div class="loading-bar__progress"></div></div><div class="back2top" id="back2top"><span class="back2top__icon"><i class="fas fa-rocket"></i></span></div></div><script src="https://cdn.jsdelivr.net/npm/jquery@v3.4.1/dist/jquery.min.js"></script><script src="https://cdn.jsdelivr.net/npm/velocity-animate@1.5.2/velocity.min.js"></script><script src="https://cdn.jsdelivr.net/npm/velocity-animate@1.5.2/velocity.ui.min.js"></script><script src="/js/utils.js?v=2.6.2"></script><script src="/js/stun-boot.js?v=2.6.2"></script><script src="/js/scroll.js?v=2.6.2"></script><script src="/js/header.js?v=2.6.2"></script><script src="/js/sidebar.js?v=2.6.2"></script></body></html>

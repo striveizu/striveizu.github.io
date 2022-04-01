@@ -1,0 +1,170 @@
+<!DOCTYPE html><html lang="zh-CN"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="format-detection" content="telephone=no"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="black"><link rel="icon" href="/images/icons/favicon-16x16.png?v=2.6.2" type="image/png" sizes="16x16"><link rel="icon" href="/images/icons/favicon-32x32.png?v=2.6.2" type="image/png" sizes="32x32"><meta name="description" content="TPAMI 2021 ReID行人再识别综述 学习笔记                           1 INTRODUCTION       作者首先将现有的ReID方法分为两大趋势：Closed-world和Open-world。作者对这两者的描述具体如下图所示：  Closed-World ReID方法具体有以下特征： 1、原始数据一般都是单模态">
+<meta property="og:type" content="article">
+<meta property="og:title" content="TPAMI 2021 ReID-Survey">
+<meta property="og:url" content="https://striveizu.top/2022/03/23/TPAMI-2021-ReID-Survey/index.html">
+<meta property="og:site_name" content="Strive&#39;s Blog">
+<meta property="og:description" content="TPAMI 2021 ReID行人再识别综述 学习笔记                           1 INTRODUCTION       作者首先将现有的ReID方法分为两大趋势：Closed-world和Open-world。作者对这两者的描述具体如下图所示：  Closed-World ReID方法具体有以下特征： 1、原始数据一般都是单模态">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://striveizu.top/2022/03/23/TPAMI-2021-ReID-Survey/image-20220323150606035.png">
+<meta property="og:image" content="https://striveizu.top/2022/03/23/TPAMI-2021-ReID-Survey/image-20220324091747159.png">
+<meta property="og:image" content="https://striveizu.top/2022/03/23/TPAMI-2021-ReID-Survey/image-20220325134709734.png">
+<meta property="og:image" content="https://striveizu.top/2022/03/23/TPAMI-2021-ReID-Survey/image-20220325154528371.png">
+<meta property="og:image" content="https://striveizu.top/2022/03/23/TPAMI-2021-ReID-Survey/image-20220325160537705.png">
+<meta property="og:image" content="https://striveizu.top/2022/03/23/TPAMI-2021-ReID-Survey/image-20220325160608151.png">
+<meta property="og:image" content="https://striveizu.top/2022/03/23/TPAMI-2021-ReID-Survey/image-20220325161824808.png">
+<meta property="og:image" content="https://striveizu.top/2022/03/23/TPAMI-2021-ReID-Survey/image-20220325165017399.png">
+<meta property="og:image" content="https://striveizu.top/2022/03/23/TPAMI-2021-ReID-Survey/image-20220325164831256.png">
+<meta property="article:published_time" content="2022-03-23T01:56:49.000Z">
+<meta property="article:modified_time" content="2022-03-29T07:02:39.171Z">
+<meta property="article:author" content="Strive">
+<meta property="article:tag" content="-论文阅读">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://striveizu.top/2022/03/23/TPAMI-2021-ReID-Survey/image-20220323150606035.png"><title>TPAMI 2021 ReID-Survey | Strive's Blog</title><link ref="canonical" href="https://striveizu.top/2022/03/23/TPAMI-2021-ReID-Survey/"><link rel="dns-prefetch" href="https://cdn.jsdelivr.net"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.12.1/css/all.min.css" type="text/css"><link rel="stylesheet" href="/css/index.css?v=2.6.2"><script>var Stun = window.Stun || {};
+var CONFIG = {
+  root: '/',
+  algolia: undefined,
+  assistSearch: undefined,
+  fontIcon: {"prompt":{"success":"fas fa-check-circle","info":"fas fa-arrow-circle-right","warning":"fas fa-exclamation-circle","error":"fas fa-times-circle"},"copyBtn":"fas fa-copy"},
+  sidebar: {"offsetTop":"20px","tocMaxDepth":6},
+  header: {"enable":true,"showOnPost":true,"scrollDownIcon":true},
+  postWidget: {"endText":true},
+  nightMode: {"enable":true},
+  back2top: {"enable":true},
+  codeblock: {"style":"default","highlight":"light","wordWrap":false},
+  reward: false,
+  fancybox: false,
+  zoomImage: {"gapAside":"20px"},
+  galleryWaterfall: undefined,
+  lazyload: false,
+  pjax: undefined,
+  externalLink: {"icon":{"enable":true,"name":"fas fa-external-link-alt"}},
+  shortcuts: undefined,
+  prompt: {"copyButton":"复制","copySuccess":"复制成功","copyError":"复制失败"},
+  sourcePath: {"js":"js","css":"css","images":"images"},
+};
+
+window.CONFIG = CONFIG;</script><meta name="generator" content="Hexo 5.4.0"></head><body><div class="container" id="container"><header class="header" id="header"><div class="header-inner"><nav class="header-nav header-nav--fixed"><div class="header-nav-inner"><div class="header-nav-menubtn"><i class="fas fa-bars"></i></div><div class="header-nav-menu"><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/"><span class="header-nav-menu-item__icon"><i class="fas fa-home"></i></span><span class="header-nav-menu-item__text">首页</span></a></div><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/about/"><span class="header-nav-menu-item__icon"><i class="fas fa-address-card"></i></span><span class="header-nav-menu-item__text">关于</span></a></div><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="javascript:;" onclick="return false;"><span class="header-nav-menu-item__icon"><i class="fas fa-edit"></i></span><span class="header-nav-menu-item__text">文章</span></a><div class="header-nav-submenu"><div class="header-nav-submenu-item"><a class="header-nav-submenu-item__link" href="/archives/"><span class="header-nav-submenu-item__icon"><i class="fas fa-folder-open"></i></span><span class="header-nav-submenu-item__text">归档</span></a></div><div class="header-nav-submenu-item"><a class="header-nav-submenu-item__link" href="/categories/"><span class="header-nav-submenu-item__icon"><i class="fas fa-layer-group"></i></span><span class="header-nav-submenu-item__text">分类</span></a></div><div class="header-nav-submenu-item"><a class="header-nav-submenu-item__link" href="/tags/"><span class="header-nav-submenu-item__icon"><i class="fas fa-tags"></i></span><span class="header-nav-submenu-item__text">标签</span></a></div></div></div></div><div class="header-nav-mode"><div class="mode"><div class="mode-track"><span class="mode-track-moon"></span><span class="mode-track-sun"></span></div><div class="mode-thumb"></div></div></div></div></nav><div class="header-banner"><div class="header-banner-info"><div class="header-banner-info__title">Strive's Blog</div><div class="header-banner-info__subtitle">你我期许的绝非遥不可及</div></div><div class="header-banner-arrow"><div class="header-banner-arrow__icon"><i class="fas fa-angle-down"></i></div></div></div></div></header><main class="main" id="main"><div class="main-inner"><div class="content-wrap" id="content-wrap"><div class="content" id="content"><!-- Just used to judge whether it is an article page--><div id="is-post"></div><div class="post"><header class="post-header"><h1 class="post-title">TPAMI 2021 ReID-Survey</h1><div class="post-meta"><span class="post-meta-item post-meta-item--createtime"><span class="post-meta-item__icon"><i class="far fa-calendar-plus"></i></span><span class="post-meta-item__info">发表于</span><span class="post-meta-item__value">2022-03-23</span></span><span class="post-meta-item post-meta-item--updatetime"><span class="post-meta-item__icon"><i class="far fa-calendar-check"></i></span><span class="post-meta-item__info">更新于</span><span class="post-meta-item__value">2022-03-29</span></span></div></header><div class="post-body">
+        <h3 id="TPAMI-2021-ReID行人再识别综述-学习笔记">
+          <a href="#TPAMI-2021-ReID行人再识别综述-学习笔记" class="heading-link"><i class="fas fa-link"></i></a><a href="#TPAMI-2021-ReID行人再识别综述-学习笔记" class="headerlink" title="TPAMI 2021 ReID行人再识别综述 学习笔记"></a>TPAMI 2021 ReID行人再识别综述 学习笔记</h3>
+      
+        <h4 id="1-INTRODUCTION">
+          <a href="#1-INTRODUCTION" class="heading-link"><i class="fas fa-link"></i></a><a href="#1-INTRODUCTION" class="headerlink" title="1 INTRODUCTION"></a>1 INTRODUCTION</h4>
+      <p>作者首先将现有的ReID方法分为两大趋势：<strong>Closed-world和Open-world</strong>。作者对这两者的描述具体如下图所示：</p>
+<p><img src="/2022/03/23/TPAMI-2021-ReID-Survey/image-20220323150606035.png" alt="image-20220323150606035"></p>
+<p>Closed-World ReID方法具体有以下特征：</p>
+<p>1、原始数据一般都是单模态可见光相机捕获的图像/视频表示。</p>
+<p>2、训练和测试是使用基于原图像生成的bounding box来做的，bounding box主要包含行人的信息。</p>
+<p>3、<strong>具有充足的带标注数据。</strong>（无监督行人再识别并不具有）</p>
+<p>4、系统假设所有的标注信息都是正确的。</p>
+<p>5、所有的Query一定出现在图库集。</p>
+<p>Open-World ReID方法具有相对应的以下特征：</p>
+<p>1、在实际应用场景中，我们可能需要处理异构的图像数据，因此<strong>Open-World ReID方法的数据可能是多模态的</strong>，如红外图像、素描sketches、深度图像甚至是文本描述等等。</p>
+<p>2、开放世界ReID<strong>可能需要端到端的行人搜索。</strong>即输入的是原始图像，系统需要对原始图像做行人检测。</p>
+<p>3、开放世界场景中，我们可能<strong>没有足够的标注数据</strong>（即有限的标签），甚至没有任何标注信息。</p>
+<p>4、由于标注错误（即标签噪声）或不完美的检测/跟踪结果（即样本噪声、部分 Re-ID），<strong>标注噪声通常是不可避免的。</strong></p>
+<p>5、被查询的人可能不存在于图库集。</p>
+
+        <h4 id="2-Closed-World-Person-Re-Identification">
+          <a href="#2-Closed-World-Person-Re-Identification" class="heading-link"><i class="fas fa-link"></i></a><a href="#2-Closed-World-Person-Re-Identification" class="headerlink" title="2 Closed-World Person Re-Identification"></a>2 Closed-World Person Re-Identification</h4>
+      <p>一个标准的Closed-World Person ReID通常包含三个主要的组成部分：1）特征表示学习，专注于开发特征构建策略，2）度量学习，旨在设计具有不同损失函数的训练目标。3）排名优化，主要用于优化检索到的排名列表。</p>
+
+        <h5 id="2-1-特征表示学习">
+          <a href="#2-1-特征表示学习" class="heading-link"><i class="fas fa-link"></i></a><a href="#2-1-特征表示学习" class="headerlink" title="2.1 特征表示学习"></a>2.1 特征表示学习</h5>
+      <p>对于行人再识别问题，有4种主要的特征学习策略。如下图1所示，主要可以分为 a)全局特征表示，对每个行人图片学习一个全局特征向量。 b）局部特征，将行人图片按照一定的策略分为几个局部部分，对每个局部提取特征，最后将局部特征按照一定的策略进行特征聚合得到提取的特征向量。 c）辅助特征，使用辅助信息学习特征表示。 d)视频特征，使用多个图片帧和时间信息学习视频特征表示。</p>
+<p><img src="/2022/03/23/TPAMI-2021-ReID-Survey/image-20220324091747159.png" alt="image-20220324091747159"></p>
+<p>​                                                                               图1 常用的特征表示学习策略</p>
+
+        <h6 id="2-1-1-全局特征表示学习">
+          <a href="#2-1-1-全局特征表示学习" class="heading-link"><i class="fas fa-link"></i></a><a href="#2-1-1-全局特征表示学习" class="headerlink" title="2.1.1 全局特征表示学习"></a>2.1.1 全局特征表示学习</h6>
+      <p><strong>全局特征表示学习是为每个人的图像提取一个全局特征向量。</strong>常见的全局特征表示学习通常是通过将每个身份视为不同的类，将训练过程构建成多分类问题，使用深度神经网络提取全局的特征向量，并将该特征向量作为多分类问题处理。</p>
+<p><strong>注意力信息。</strong>注意力信息近年来越来越受到关注，<strong>合理利用注意力信息可以增强表示学习。</strong></p>
+<p>具体来说利用注意力机制可以分为单个人物图片内的注意力机制，和多个人物图像内的注意力机制。</p>
+<p>单张图片内的注意力机制典型的策略包括像素级注意力和通道特征相应重新加权、背景抑制和空间信息集成。目的主要在于增强对错位、不完美检测的鲁棒性。</p>
+<p>多张图片内的的行人检测的目的在于通过注意力机制挖掘多个图像之间的关系来增强和改进特征学习。主要的方法有：基于上下文感知的注意力特征学习方法，结合序列内和序列间的注意力，用于成对的特征对齐和细化。组相似性是另一种跨图像的注意力方法，它通过利用局部和全局相似性建模多个图像。</p>
+
+        <h6 id="2-1-2-局部特征表示学习">
+          <a href="#2-1-2-局部特征表示学习" class="heading-link"><i class="fas fa-link"></i></a><a href="#2-1-2-局部特征表示学习" class="headerlink" title="2.1.2 局部特征表示学习"></a>2.1.2 局部特征表示学习</h6>
+      <p>由于属于同一身份的图像在不同拍摄角度、不同相机，图像可能会有一定程度的扭曲和错位。此时可以通过局部特征表示学习图像的部分/区域特征以抵抗图像错位。</p>
+<p>对人体的局部部位划分主要可以通过两种形式来划分：</p>
+<p>1）通过人体姿态估计自动生成局部划分。</p>
+<p>2）通过大致水平划分。</p>
+<p>对于自动人体部位检测，比较流行的解决方案是结合全身表示特征和局部特征。改善局部特征表示的常用方法有<strong>多通道聚合、多尺度上下文感知卷积、多级特征分解和双线性池化。</strong>另一种解决方案<strong>是增强系统对背景杂波的鲁棒性</strong>，具体来说是通过<strong>人体姿势驱动匹配</strong>，<strong>姿势引导部分注意力模块</strong>、<strong>语义部分对齐</strong>。使用人体解析技术来获得语义上有意义的身体部位，这提供了很好的部分特征。然而，它们需要一个额外的姿态检测器，并且容易出现噪声姿态检测[77]。</p>
+<p>对于水平划分的区域特征采用均匀划分得到横条纹部分，比较灵活，但对重度遮挡和大背景杂波比较敏感。</p>
+
+        <h6 id="2-1-3-辅助特征学习">
+          <a href="#2-1-3-辅助特征学习" class="heading-link"><i class="fas fa-link"></i></a><a href="#2-1-3-辅助特征学习" class="headerlink" title="2.1.3  辅助特征学习"></a>2.1.3  辅助特征学习</h6>
+      <p>辅助特征表示学习通常需要额外的注释信息（例如语义属性[71]）或使用生成/增强的训练样本来加强特征表示。</p>
+<p><strong>语义属性信息</strong></p>
+<p>一些工作提出了一种深度属性学习网络，通过结合预测的语义属性信息，增强了半监督学习中特征表示的泛化性和鲁棒性。语义属性通常和注意力机制方案结合起来增强改进部分特征学习，语义属性还可以用作无监督学习中的辅助监督信息。</p>
+<p><img src="/2022/03/23/TPAMI-2021-ReID-Survey/image-20220325134709734.png" alt="image-20220325134709734"></p>
+<p><strong>视角信息 Viewpoint Information</strong> </p>
+<p>摄像头的视角信息也常常被用来增强特征表示学习。</p>
+<p> Multi-Level Factorisation Net (MLFN)尝试在多个语义级别上学习身份判别和视图不变的特征表示。关于视角信息还有角度正则化、视角感知特征学习（AAAI2020 Viewpoint-Aware Loss with Angular Regularization for Person Re-Identification）</p>
+<p><strong>领域信息</strong></p>
+<p><strong>数据增强</strong></p>
+<p>普遍使用的数据增强方法是随机调整图像的大小、裁剪和水平翻转。此外，有论文提出生成对抗性遮挡样本、随机擦除策略等向输入图像中添加随机噪声，这些方法通过增强样本，丰富了监督信息，提高了测试集的泛化性。batch DropBlock随机丢弃一个特征图中的区域块，有助于加强注意力特征学习。</p>
+
+        <h6 id="2-1-4-架构设计">
+          <a href="#2-1-4-架构设计" class="heading-link"><i class="fas fa-link"></i></a><a href="#2-1-4-架构设计" class="headerlink" title="2.1.4 架构设计"></a>2.1.4 架构设计</h6>
+      <p>行人ReID作为一个特定的行人检索问题，现有的大多数工作都是采用为图像分类设计的网络架构作为backbone。最广泛使用的主干架构是ResNet50。行人ReID架构设计为了实现更好的ReID性能，最常见的修改是将最后一个卷积层的Kernel的大小更改为1，在最后一个池化层中采用自适应平均池化层，以及在池化层后添加具有BatchNorm的瓶颈层。</p>
+<p> BraidNet提出了一个带有专门设计的 WConv 层和 Channel Scaling 层的网络结构。 WConv  层提取两个图像的差异信息以增强对未对齐的鲁棒性，通道缩放层优化每个输入通道的缩放因子。多级因子分解网络（MLFN）[112]包含多个堆叠块以在特定级别对各种潜在因子进行建模，并且动态选择因子以制定最终表示。开发了一种具有卷积相似度模块的高效全卷积连体网络[137]，以优化多级相似度测量。通过使用深度卷积可以有效地捕获和优化相似度。效率是  Re-ID 架构设计的另一个重要因素。一个高效的小规模网络，即 OmniScale  网络（OSNet）[138]，是通过结合点卷积和深度卷积来设计的。为了实现多尺度特征学习，引入了由多个卷积流组成的残差块。</p>
+
+        <h5 id="2-2-深度度量学习">
+          <a href="#2-2-深度度量学习" class="heading-link"><i class="fas fa-link"></i></a><a href="#2-2-深度度量学习" class="headerlink" title="2.2 深度度量学习"></a>2.2 深度度量学习</h5>
+      <p>如今，基于度量学习的作用已经被损失函数的设计所替代，以指导特征表示学习。</p>
+
+        <h6 id="2-2-1-损失函数设计">
+          <a href="#2-2-1-损失函数设计" class="heading-link"><i class="fas fa-link"></i></a><a href="#2-2-1-损失函数设计" class="headerlink" title="2.2.1 损失函数设计"></a>2.2.1 损失函数设计</h6>
+      <p><strong>Identity Loss</strong>身份损失函数</p>
+<p>身份损失函数将行人再识别的训练过程视为一个图像多分类问题。采用池化层或嵌入层的输出作为特征提取器。一般来说身份损失使用softmax编码的交叉熵损失，计算公式为：</p>
+<p><img src="/2022/03/23/TPAMI-2021-ReID-Survey/image-20220325154528371.png" alt="image-20220325154528371"></p>
+<p>其中n表示每个批次中的训练样本数，xi是输入图像，yi是给定的图像标签，p(yi|xi)是经过softmax函数编码得到的预测概率。</p>
+<p>即标签平滑是另外一种简单有效的策略，它通常集成到标准的 softmax 交叉熵损失实现中。其基本思想是避免模型拟合过度自信的注释标签，提高泛化性。</p>
+<p><strong>Verification Loss</strong></p>
+<p><img src="/2022/03/23/TPAMI-2021-ReID-Survey/image-20220325160537705.png" alt="image-20220325160537705"></p>
+<p>verification loss可以度量两个样本之间的关系,其结构图如上图所示。输入为一对(两张)图片，这两张图片可以为同一行人，也可以为不同行人。每一对训练图片都有一个标签(same/not)，其中表示两张图片属于同一个行人(正样本对)，反之表示它们属于不同行人(负样本对)。<br>先介绍对比损失（contrastive loss）：<br><img src="/2022/03/23/TPAMI-2021-ReID-Survey/image-20220325160608151.png" alt="image-20220325160608151"></p>
+<p>dij：表示两个输入样本xi和xj的嵌入特征之间的欧氏距离。<br>δij；s二进制标签指示器(当xi和xj属于同一标识时，δij=1，否则)。<br>ρ： 是边距参数，是一个超参。</p>
+<p>（如果两张图片属于同一身份，δij=1，L=dij²，此时最小化损失函数拉近这两张图片的欧氏距离，如果不属于同一身份，最小化L实际上是保证二者的欧氏距离大于一个边界参数ρ）</p>
+<p><strong>二进制验证损失 Binary verification</strong></p>
+<p>验证网络将差分特征分为正或负。一般情况下差分特征fij是通过差分方程计算得到，差分方程fij=(fi-fj)²，其中fi和fj是两个图像样本xi和xj的嵌入特征，我们使用p(δij | fij )表示输入对(xi和xj)被识别为δij（0或1)的概率。所以带有的cross-entropy 的verification loss表示如下：</p>
+<p><img src="/2022/03/23/TPAMI-2021-ReID-Survey/image-20220325161824808.png" alt="image-20220325161824808"></p>
+<p><strong>通常将Verification loss 与identity loss结合可以得到不错的效果。</strong></p>
+<p><strong>三元组损失</strong></p>
+<p>三元组损失通常将ReID模型训练过程视为一个检索排序的过程，最基本的思想是正样本对之间的距离应当比负样本对小于一个预定义的边界距离margin。</p>
+<p><img src="/2022/03/23/TPAMI-2021-ReID-Survey/image-20220325165017399.png" alt="image-20220325165017399"></p>
+<p>通常，一个三元组包含一个锚样本 xi、一个具有相同身份的正样本 xj 和一个来自不同身份的负样本 xk。带有边距参数的三元组损失由如下公式所示：</p>
+<p><img src="/2022/03/23/TPAMI-2021-ReID-Survey/image-20220325164831256.png" alt="image-20220325164831256"></p>
+<p>如果我们直接优化上述损失函数，那么大部分容易三元组将主导训练过程，导致可辨别性有限。因此实际操作中已经设计了各种信息丰富的三元组挖掘方法如（难批三元组），每个训练批次中最难的正负挖掘有利于模型的学习。</p>
+<p>为了进一步丰富三元组监督，有研究提出了四元组损失，每个四元组包括一个锚样本，一个正样本和两个挖掘的负样本。四联体是用基于边际的在线硬负挖掘来制定的。优化四元组关系会导致更小的类内变异和更大的类间变异。 </p>
+<p><strong>Triplet loss和identity  loss的结合是深度Re-ID模型学习最流行的解决方案之一、这两个组件对于判别特征表示学习是互惠互利的。</strong></p>
+<p><strong>OIM LOSS 在线实例匹配</strong></p>
+<p>传统的行人重识别的特征学习主要使用pair-wise或者triplet distance loss functions，但是这两种方法都不是很有效的，因为它们一次都只能用少量的数据做比较，对于N个输入数据，会存在N^2组合的可能性，这会导致计算量很大，特别是当N很大的时候，网络会学习得很慢，而目前有研究提出采用不同的采样数据的方法可以在一定程度上提高速度和效果，比如triplet loss就有很多种变种形式，但是<strong>当N不断增加时，采样难度也在提升</strong>；另一种常用的方法就是使用Softmax loss function去区分行人的身份identities，就把行人重识别问题当成是多分类问题去做，这样就解决了pair-wise或者triplet distance loss functions不能一次比较所有样本的缺陷，但是Softmax loss function也存在它的缺点，就是<strong>随着行人类型（不同身份的人）数量的增多，训练一个如此庞大的Softmax 分类器会变得及其的慢</strong>，甚至更糟糕的时候网络会无法收敛。<br>OIM的原理是：利用<strong>来自所有 labeled identities 特征组成一个 lookup table（查询表）</strong> ，与mini-batch样本之间进行距离比较；另外还有全景图中出现的许多 <strong>unlabeled identities 都可以被视为是天然的negatives（负样本）</strong>，因此也可以<strong>将它们的特征存储在circular queue（循环队列）中并进行比较。</strong>这也是行人重识别加上行人搜索后带来的一个天然优势，因为<strong>传统的行人重识别都是采用裁切好的行人图像，自然就不会存在那些没有label的人参与训练了。</strong>而且<strong>OIM损失函数是无参数的</strong>，在后面的实验结果可以看出，它是比 Softmax loss 收敛得更快和更好的。<br>OIM中的几个概念：<br>labeled identity：与目标行人相吻合的proposal。<br>unlabeled identities：包含行人但不是目标行人的proposal。<br>background clutter：包含非行人物体或者背景的proposal。<br>在OIM损失函数中只考虑前两者，即 labeled identity 和 unlabeled identities。</p>
+<p>lookup table（LUT）：把所有 labeled identities 的特征组成一个查询表lookup table，那么之后我只需要将需要查询的mini-batch的每个样本去跟这个查询表的已知标签的样本进行距离比较，就可以知道当前的这个人是什么身份了。</p>
+<p>circular queue：跟LUT同理，我们把 unlabeled identities 当作是负样本，也可以存在一个循环队列circular queue中，为什么这边不也一样叫LUT，这是因为这里的circular queue在每一轮迭代过后，会将新的特征向量压入队列中，并剔除那些过时的，呈现一个循环的过程。</p>
+
+        <h6 id="2-2-2-训练策略">
+          <a href="#2-2-2-训练策略" class="heading-link"><i class="fas fa-link"></i></a><a href="#2-2-2-训练策略" class="headerlink" title="2.2.2 训练策略"></a>2.2.2 训练策略</h6>
+      <p>批量采样策略在ReID模型学习中起着非常重要的作用。因为不同身份的标注训练图像数量之间的变化非常大，严重的不平衡的正负样本对增加了训练策略设计的额外难度。</p>
+<p><strong>处理样本不平衡问题最常用的训练策略是身份抽样</strong>，即对于每个训练batch，随机选择一定数量的身份，然后从每个选定的身份中抽取几张图像，这样的批量采样策略保证了信息丰富的正负挖掘。</p>
+<p>为了处理正负样本之间的不平衡问题，<strong>常用的方法是采用自适应采样以调整正负样本之间的贡献。</strong>为了自适应地组合多个损失函数，多重损失动态训练策略 [156]  自适应地重新加权身份损失和三元组损失，提取它们之间共享的适当分量。这种多损失训练策略可以带来一致的性能提升。</p>
+
+        <h4 id="2-3-排序优化">
+          <a href="#2-3-排序优化" class="heading-link"><i class="fas fa-link"></i></a><a href="#2-3-排序优化" class="headerlink" title="2.3 排序优化"></a>2.3 排序优化</h4>
+      <p>排序优化对于提高测试阶段的检索性能起着至关重要的作用。</p>
+
+        <h5 id="2-3-1-Re-ranking">
+          <a href="#2-3-1-Re-ranking" class="heading-link"><i class="fas fa-link"></i></a><a href="#2-3-1-Re-ranking" class="headerlink" title="2.3.1 Re-ranking"></a>2.3.1 Re-ranking</h5>
+      </div><footer class="post-footer"><div class="post-ending ending"><div class="ending__text">------ 本文结束，感谢您的阅读 ------</div></div><div class="post-copyright copyright"><div class="copyright-author"><span class="copyright-author__name">本文作者: </span><span class="copyright-author__value"><a href="https://striveizu.top">Strive</a></span></div><div class="copyright-link"><span class="copyright-link__name">本文链接: </span><span class="copyright-link__value"><a href="https://striveizu.top/2022/03/23/TPAMI-2021-ReID-Survey/">https://striveizu.top/2022/03/23/TPAMI-2021-ReID-Survey/</a></span></div><div class="copyright-notice"><span class="copyright-notice__name">版权声明: </span><span class="copyright-notice__value">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en" rel="external nofollow" target="_blank">BY-NC-SA</a> 许可协议。转载请注明出处！</span></div></div><div class="post-tags"><span class="post-tags-item"><span class="post-tags-item__icon"><i class="fas fa-tag"></i></span><a class="post-tags-item__link" href="https://striveizu.top/tags/%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB/">-论文阅读</a></span></div><nav class="post-paginator paginator"><div class="paginator-prev"><a class="paginator-prev__link" href="/2022/03/24/javaday2/"><span class="paginator-prev__icon"><i class="fas fa-angle-left"></i></span><span class="paginator-prev__text">javaday2</span></a></div><div class="paginator-next"><a class="paginator-next__link" href="/2022/03/21/Javaday1/"><span class="paginator-prev__text">Javaday1</span><span class="paginator-next__icon"><i class="fas fa-angle-right"></i></span></a></div></nav></footer></div></div></div><div class="sidebar-wrap" id="sidebar-wrap"><aside class="sidebar" id="sidebar"><div class="sidebar-nav"><span class="sidebar-nav-toc current">文章目录</span><span class="sidebar-nav-ov">站点概览</span></div><section class="sidebar-toc"><ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#TPAMI-2021-ReID%E8%A1%8C%E4%BA%BA%E5%86%8D%E8%AF%86%E5%88%AB%E7%BB%BC%E8%BF%B0-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0"><span class="toc-number">1.</span> <span class="toc-text">
+          TPAMI 2021 ReID行人再识别综述 学习笔记</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-INTRODUCTION"><span class="toc-number">1.1.</span> <span class="toc-text">
+          1 INTRODUCTION</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-Closed-World-Person-Re-Identification"><span class="toc-number">1.2.</span> <span class="toc-text">
+          2 Closed-World Person Re-Identification</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#2-1-%E7%89%B9%E5%BE%81%E8%A1%A8%E7%A4%BA%E5%AD%A6%E4%B9%A0"><span class="toc-number">1.2.1.</span> <span class="toc-text">
+          2.1 特征表示学习</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#2-1-1-%E5%85%A8%E5%B1%80%E7%89%B9%E5%BE%81%E8%A1%A8%E7%A4%BA%E5%AD%A6%E4%B9%A0"><span class="toc-number">1.2.1.1.</span> <span class="toc-text">
+          2.1.1 全局特征表示学习</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#2-1-2-%E5%B1%80%E9%83%A8%E7%89%B9%E5%BE%81%E8%A1%A8%E7%A4%BA%E5%AD%A6%E4%B9%A0"><span class="toc-number">1.2.1.2.</span> <span class="toc-text">
+          2.1.2 局部特征表示学习</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#2-1-3-%E8%BE%85%E5%8A%A9%E7%89%B9%E5%BE%81%E5%AD%A6%E4%B9%A0"><span class="toc-number">1.2.1.3.</span> <span class="toc-text">
+          2.1.3  辅助特征学习</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#2-1-4-%E6%9E%B6%E6%9E%84%E8%AE%BE%E8%AE%A1"><span class="toc-number">1.2.1.4.</span> <span class="toc-text">
+          2.1.4 架构设计</span></a></li></ol></li><li class="toc-item toc-level-5"><a class="toc-link" href="#2-2-%E6%B7%B1%E5%BA%A6%E5%BA%A6%E9%87%8F%E5%AD%A6%E4%B9%A0"><span class="toc-number">1.2.2.</span> <span class="toc-text">
+          2.2 深度度量学习</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#2-2-1-%E6%8D%9F%E5%A4%B1%E5%87%BD%E6%95%B0%E8%AE%BE%E8%AE%A1"><span class="toc-number">1.2.2.1.</span> <span class="toc-text">
+          2.2.1 损失函数设计</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#2-2-2-%E8%AE%AD%E7%BB%83%E7%AD%96%E7%95%A5"><span class="toc-number">1.2.2.2.</span> <span class="toc-text">
+          2.2.2 训练策略</span></a></li></ol></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-3-%E6%8E%92%E5%BA%8F%E4%BC%98%E5%8C%96"><span class="toc-number">1.3.</span> <span class="toc-text">
+          2.3 排序优化</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#2-3-1-Re-ranking"><span class="toc-number">1.3.1.</span> <span class="toc-text">
+          2.3.1 Re-ranking</span></a></li></ol></li></ol></li></ol></section><!-- ov = overview--><section class="sidebar-ov hide"><div class="sidebar-ov-author"><div class="sidebar-ov-author__avatar"><img class="sidebar-ov-author__avatar_img" src="/images/icons/photo.png" alt="avatar"></div><p class="sidebar-ov-author__text">To be a great person.</p></div><div class="sidebar-ov-cc"><a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en" target="_blank" rel="noopener" data-popover="知识共享许可协议" data-popover-pos="up"><img src="/images/cc-by-nc-sa.svg"></a></div></section><div class="sidebar-reading"><div class="sidebar-reading-info"><span class="sidebar-reading-info__text">你已阅读了 </span><span class="sidebar-reading-info__num">0</span><span class="sidebar-reading-info__perc">%</span></div><div class="sidebar-reading-line"></div></div></aside></div><div class="clearfix"></div></div></main><footer class="footer" id="footer"><div class="footer-inner"><div><span>Copyright © 2022</span><span class="footer__icon"><i class="fas fa-heart"></i></span><span>Strive</span></div><div><span>由 <a href="http://hexo.io/" title="Hexo" target="_blank" rel="noopener">Hexo</a> 强力驱动</span><span> v5.4.0</span><span class="footer__devider">|</span><span>主题 - <a href="https://github.com/liuyib/hexo-theme-stun/" title="Stun" target="_blank" rel="noopener">Stun</a></span><span> v2.6.2</span></div></div></footer><div class="loading-bar" id="loading-bar"><div class="loading-bar__progress"></div></div><div class="back2top" id="back2top"><span class="back2top__icon"><i class="fas fa-rocket"></i></span></div></div><script src="https://cdn.jsdelivr.net/npm/jquery@v3.4.1/dist/jquery.min.js"></script><script src="https://cdn.jsdelivr.net/npm/velocity-animate@1.5.2/velocity.min.js"></script><script src="https://cdn.jsdelivr.net/npm/velocity-animate@1.5.2/velocity.ui.min.js"></script><script src="/js/utils.js?v=2.6.2"></script><script src="/js/stun-boot.js?v=2.6.2"></script><script src="/js/scroll.js?v=2.6.2"></script><script src="/js/header.js?v=2.6.2"></script><script src="/js/sidebar.js?v=2.6.2"></script></body></html>
