@@ -1,0 +1,359 @@
+<!DOCTYPE html><html lang="zh-CN"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="format-detection" content="telephone=no"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="black"><link rel="icon" href="/images/icons/favicon-16x16.png?v=2.6.2" type="image/png" sizes="16x16"><link rel="icon" href="/images/icons/favicon-32x32.png?v=2.6.2" type="image/png" sizes="32x32"><meta name="description" content="Java语法速通day07–集合                               1 集合体系结构                             2 Collection                                2.1 Collection集合常用api                            2.2">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Javaday07">
+<meta property="og:url" content="https://striveizu.top/2022/04/18/Javaday07/index.html">
+<meta property="og:site_name" content="Strive&#39;s Blog">
+<meta property="og:description" content="Java语法速通day07–集合                               1 集合体系结构                             2 Collection                                2.1 Collection集合常用api                            2.2">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://striveizu.top/2022/04/18/Javaday07/image-20220418192315137.png">
+<meta property="og:image" content="https://striveizu.top/2022/04/18/Javaday07/image-20220418192423471.png">
+<meta property="og:image" content="https://striveizu.top/2022/04/18/Javaday07/image-20220418193836902.png">
+<meta property="og:image" content="https://striveizu.top/2022/04/18/Javaday07/image-20220418194619212.png">
+<meta property="og:image" content="https://striveizu.top/2022/04/18/Javaday07/image-20220418195037694.png">
+<meta property="og:image" content="https://striveizu.top/2022/04/18/Javaday07/image-20220418195102364.png">
+<meta property="og:image" content="https://striveizu.top/2022/04/18/Javaday07/image-20220418204955125.png">
+<meta property="og:image" content="https://striveizu.top/2022/04/18/Javaday07/image-20220418205252477.png">
+<meta property="og:image" content="https://striveizu.top/2022/04/18/Javaday07/image-20220418210237066.png">
+<meta property="og:image" content="https://striveizu.top/2022/04/18/Javaday07/image-20220418210738288.png">
+<meta property="og:image" content="https://striveizu.top/2022/04/18/Javaday07/image-20220418212201531.png">
+<meta property="og:image" content="https://striveizu.top/2022/04/18/Javaday07/image-20220419085818295.png">
+<meta property="og:image" content="https://striveizu.top/2022/04/18/Javaday07/image-20220419090005546.png">
+<meta property="og:image" content="https://striveizu.top/2022/04/18/Javaday07/image-20220419090505958.png">
+<meta property="og:image" content="https://striveizu.top/2022/04/18/Javaday07/image-20220419091233993.png">
+<meta property="og:image" content="https://striveizu.top/2022/04/18/Javaday07/image-20220419091551161.png">
+<meta property="og:image" content="https://striveizu.top/2022/04/18/Javaday07/image-20220419093645446.png">
+<meta property="og:image" content="https://striveizu.top/2022/04/18/Javaday07/image-20220419093937489.png">
+<meta property="og:image" content="https://striveizu.top/2022/04/18/Javaday07/image-20220419124850093.png">
+<meta property="og:image" content="https://striveizu.top/2022/04/18/Javaday07/image-20220419130648297.png">
+<meta property="og:image" content="https://striveizu.top/2022/04/18/Javaday07/image-20220419130755202.png">
+<meta property="og:image" content="https://striveizu.top/2022/04/18/Javaday07/image-20220419133153668.png">
+<meta property="og:image" content="https://striveizu.top/2022/04/18/Javaday07/image-20220419133414078.png">
+<meta property="og:image" content="https://striveizu.top/2022/04/18/Javaday07/image-20220419134827371.png">
+<meta property="og:image" content="https://striveizu.top/2022/04/18/Javaday07/image-20220419141907469.png">
+<meta property="og:image" content="https://striveizu.top/2022/04/18/Javaday07/image-20220419143002429.png">
+<meta property="og:image" content="https://striveizu.top/2022/04/18/Javaday07/image-20220419143544131.png">
+<meta property="og:image" content="https://striveizu.top/2022/04/18/Javaday07/image-20220419151838918.png">
+<meta property="og:image" content="https://striveizu.top/2022/04/18/Javaday07/image-20220419151904263.png">
+<meta property="og:image" content="https://striveizu.top/2022/04/18/Javaday07/image-20220419151920775.png">
+<meta property="og:image" content="https://striveizu.top/2022/04/18/Javaday07/image-20220419152538412.png">
+<meta property="og:image" content="https://striveizu.top/2022/04/18/Javaday07/image-20220419154640940.png">
+<meta property="og:image" content="https://striveizu.top/2022/04/18/Javaday07/image-20220419154731784.png">
+<meta property="og:image" content="https://striveizu.top/2022/04/18/Javaday07/image-20220419160402790.png">
+<meta property="og:image" content="https://striveizu.top/2022/04/18/Javaday07/image-20220419160554513.png">
+<meta property="og:image" content="https://striveizu.top/2022/04/18/Javaday07/image-20220419161008228.png">
+<meta property="og:image" content="https://striveizu.top/2022/04/18/Javaday07/image-20220419181438717.png">
+<meta property="og:image" content="https://striveizu.top/2022/04/18/Javaday07/image-20220419181535985.png">
+<meta property="og:image" content="https://striveizu.top/2022/04/18/Javaday07/image-20220419181625744.png">
+<meta property="og:image" content="https://striveizu.top/2022/04/18/Javaday07/image-20220419194250069.png">
+<meta property="og:image" content="https://striveizu.top/2022/04/18/Javaday07/image-20220419194443805.png">
+<meta property="og:image" content="https://striveizu.top/2022/04/18/Javaday07/image-20220419194632140.png">
+<meta property="og:image" content="https://striveizu.top/2022/04/18/Javaday07/image-20220419195226572.png">
+<meta property="og:image" content="https://striveizu.top/2022/04/18/Javaday07/image-20220419203148831.png">
+<meta property="og:image" content="https://striveizu.top/2022/04/18/Javaday07/image-20220419203417025.png">
+<meta property="og:image" content="https://striveizu.top/2022/04/18/Javaday07/image-20220419203636915.png">
+<meta property="og:image" content="https://striveizu.top/2022/04/18/Javaday07/image-20220419205512887.png">
+<meta property="og:image" content="https://striveizu.top/2022/04/18/Javaday07/image-20220419205527393.png">
+<meta property="og:image" content="https://striveizu.top/2022/04/18/Javaday07/image-20220423133600239.png">
+<meta property="og:image" content="https://striveizu.top/2022/04/18/Javaday07/image-20220423135934133.png">
+<meta property="og:image" content="https://striveizu.top/2022/04/18/Javaday07/image-20220423140116638.png">
+<meta property="og:image" content="https://striveizu.top/2022/04/18/Javaday07/image-20220423140823453.png">
+<meta property="og:image" content="https://striveizu.top/2022/04/18/Javaday07/image-20220423140909581.png">
+<meta property="og:image" content="https://striveizu.top/2022/04/18/Javaday07/image-20220423143124726.png">
+<meta property="og:image" content="https://striveizu.top/2022/04/18/Javaday07/image-20220423152822159.png">
+<meta property="og:image" content="https://striveizu.top/2022/04/18/Javaday07/image-20220423154246973.png">
+<meta property="og:image" content="https://striveizu.top/2022/04/18/Javaday07/image-20220423164821328.png">
+<meta property="og:image" content="https://striveizu.top/2022/04/18/Javaday07/image-20220423165124223.png">
+<meta property="og:image" content="https://striveizu.top/2022/04/18/Javaday07/image-20220423165301936.png">
+<meta property="og:image" content="https://striveizu.top/2022/04/18/Javaday07/image-20220423165449349.png">
+<meta property="og:image" content="https://striveizu.top/2022/04/18/Javaday07/image-20220423171235299.png">
+<meta property="article:published_time" content="2022-04-18T09:11:57.000Z">
+<meta property="article:modified_time" content="2022-04-24T01:11:06.703Z">
+<meta property="article:author" content="Strive">
+<meta property="article:tag" content="Java">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://striveizu.top/2022/04/18/Javaday07/image-20220418192315137.png"><title>Javaday07 | Strive's Blog</title><link ref="canonical" href="https://striveizu.top/2022/04/18/Javaday07/"><link rel="dns-prefetch" href="https://cdn.jsdelivr.net"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.12.1/css/all.min.css" type="text/css"><link rel="stylesheet" href="/css/index.css?v=2.6.2"><script>var Stun = window.Stun || {};
+var CONFIG = {
+  root: '/',
+  algolia: undefined,
+  assistSearch: undefined,
+  fontIcon: {"prompt":{"success":"fas fa-check-circle","info":"fas fa-arrow-circle-right","warning":"fas fa-exclamation-circle","error":"fas fa-times-circle"},"copyBtn":"fas fa-copy"},
+  sidebar: {"offsetTop":"20px","tocMaxDepth":6},
+  header: {"enable":true,"showOnPost":true,"scrollDownIcon":true},
+  postWidget: {"endText":true},
+  nightMode: {"enable":true},
+  back2top: {"enable":true},
+  codeblock: {"style":"default","highlight":"light","wordWrap":false},
+  reward: false,
+  fancybox: false,
+  zoomImage: {"gapAside":"20px"},
+  galleryWaterfall: undefined,
+  lazyload: false,
+  pjax: undefined,
+  externalLink: {"icon":{"enable":true,"name":"fas fa-external-link-alt"}},
+  shortcuts: undefined,
+  prompt: {"copyButton":"复制","copySuccess":"复制成功","copyError":"复制失败"},
+  sourcePath: {"js":"js","css":"css","images":"images"},
+};
+
+window.CONFIG = CONFIG;</script><meta name="generator" content="Hexo 5.4.0"></head><body><div class="container" id="container"><header class="header" id="header"><div class="header-inner"><nav class="header-nav header-nav--fixed"><div class="header-nav-inner"><div class="header-nav-menubtn"><i class="fas fa-bars"></i></div><div class="header-nav-menu"><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/"><span class="header-nav-menu-item__icon"><i class="fas fa-home"></i></span><span class="header-nav-menu-item__text">首页</span></a></div><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/about/"><span class="header-nav-menu-item__icon"><i class="fas fa-address-card"></i></span><span class="header-nav-menu-item__text">关于</span></a></div><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="javascript:;" onclick="return false;"><span class="header-nav-menu-item__icon"><i class="fas fa-edit"></i></span><span class="header-nav-menu-item__text">文章</span></a><div class="header-nav-submenu"><div class="header-nav-submenu-item"><a class="header-nav-submenu-item__link" href="/archives/"><span class="header-nav-submenu-item__icon"><i class="fas fa-folder-open"></i></span><span class="header-nav-submenu-item__text">归档</span></a></div><div class="header-nav-submenu-item"><a class="header-nav-submenu-item__link" href="/categories/"><span class="header-nav-submenu-item__icon"><i class="fas fa-layer-group"></i></span><span class="header-nav-submenu-item__text">分类</span></a></div><div class="header-nav-submenu-item"><a class="header-nav-submenu-item__link" href="/tags/"><span class="header-nav-submenu-item__icon"><i class="fas fa-tags"></i></span><span class="header-nav-submenu-item__text">标签</span></a></div></div></div></div><div class="header-nav-mode"><div class="mode"><div class="mode-track"><span class="mode-track-moon"></span><span class="mode-track-sun"></span></div><div class="mode-thumb"></div></div></div></div></nav><div class="header-banner"><div class="header-banner-info"><div class="header-banner-info__title">Strive's Blog</div><div class="header-banner-info__subtitle">你我期许的绝非遥不可及</div></div><div class="header-banner-arrow"><div class="header-banner-arrow__icon"><i class="fas fa-angle-down"></i></div></div></div></div></header><main class="main" id="main"><div class="main-inner"><div class="content-wrap" id="content-wrap"><div class="content" id="content"><!-- Just used to judge whether it is an article page--><div id="is-post"></div><div class="post"><header class="post-header"><h1 class="post-title">Javaday07</h1><div class="post-meta"><span class="post-meta-item post-meta-item--createtime"><span class="post-meta-item__icon"><i class="far fa-calendar-plus"></i></span><span class="post-meta-item__info">发表于</span><span class="post-meta-item__value">2022-04-18</span></span><span class="post-meta-item post-meta-item--updatetime"><span class="post-meta-item__icon"><i class="far fa-calendar-check"></i></span><span class="post-meta-item__info">更新于</span><span class="post-meta-item__value">2022-04-24</span></span></div></header><div class="post-body">
+        <h3 id="Java语法速通day07–集合">
+          <a href="#Java语法速通day07–集合" class="heading-link"><i class="fas fa-link"></i></a><a href="#Java语法速通day07–集合" class="headerlink" title="Java语法速通day07–集合"></a>Java语法速通day07–集合</h3>
+      <img src="/2022/04/18/Javaday07/image-20220418192315137.png" alt="image-20220418192315137" style="zoom:80%;">
+
+<img src="/2022/04/18/Javaday07/image-20220418192423471.png" alt="image-20220418192423471" style="zoom:80%;">
+
+
+        <h4 id="1-集合体系结构">
+          <a href="#1-集合体系结构" class="heading-link"><i class="fas fa-link"></i></a><a href="#1-集合体系结构" class="headerlink" title="1 集合体系结构"></a>1 集合体系结构</h4>
+      <img src="/2022/04/18/Javaday07/image-20220418193836902.png" alt="image-20220418193836902" style="zoom:80%;">
+
+
+        <h4 id="2-Collection">
+          <a href="#2-Collection" class="heading-link"><i class="fas fa-link"></i></a><a href="#2-Collection" class="headerlink" title="2 Collection"></a>2 Collection</h4>
+      <img src="/2022/04/18/Javaday07/image-20220418194619212.png" alt="image-20220418194619212" style="zoom:80%;">
+
+<img src="/2022/04/18/Javaday07/image-20220418195037694.png" alt="image-20220418195037694" style="zoom:80%;">
+
+<p><img src="/2022/04/18/Javaday07/image-20220418195102364.png" alt="image-20220418195102364"></p>
+
+        <h5 id="2-1-Collection集合常用api">
+          <a href="#2-1-Collection集合常用api" class="heading-link"><i class="fas fa-link"></i></a><a href="#2-1-Collection集合常用api" class="headerlink" title="2.1 Collection集合常用api"></a>2.1 Collection集合常用api</h5>
+      <p><img src="/2022/04/18/Javaday07/image-20220418204955125.png" alt="image-20220418204955125"></p>
+
+        <h5 id="2-2-集合的遍历">
+          <a href="#2-2-集合的遍历" class="heading-link"><i class="fas fa-link"></i></a><a href="#2-2-集合的遍历" class="headerlink" title="2.2 集合的遍历"></a>2.2 集合的遍历</h5>
+      
+        <h6 id="2-2-1-迭代器iterator">
+          <a href="#2-2-1-迭代器iterator" class="heading-link"><i class="fas fa-link"></i></a><a href="#2-2-1-迭代器iterator" class="headerlink" title="2.2.1 迭代器iterator"></a>2.2.1 迭代器iterator</h6>
+      <p><img src="/2022/04/18/Javaday07/image-20220418205252477.png" alt="image-20220418205252477"></p>
+<figure class="highlight java"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">Collection&lt;String&gt; list = <span class="keyword">new</span> ArrayList&lt;&gt;();</span><br><span class="line">list.add(<span class="string">&quot;黄昏&quot;</span>);</span><br><span class="line">list.add(<span class="string">&quot;aniya&quot;</span>);</span><br><span class="line">list.add(<span class="string">&quot;yore&quot;</span>);</span><br><span class="line">System.out.println(list);</span><br><span class="line"><span class="comment">//获取list的迭代器对象</span></span><br><span class="line">Iterator&lt;String&gt; it = list.iterator();</span><br><span class="line"><span class="comment">//it.hasNext()判断是否有元素</span></span><br><span class="line"><span class="keyword">while</span>(it.hasNext())&#123;</span><br><span class="line">    String ele = it.next();</span><br><span class="line">    System.out.println(ele);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></div></figure>
+
+
+        <h6 id="2-2-2-增强for循环-foreach">
+          <a href="#2-2-2-增强for循环-foreach" class="heading-link"><i class="fas fa-link"></i></a><a href="#2-2-2-增强for循环-foreach" class="headerlink" title="2.2.2 增强for循环/foreach"></a>2.2.2 增强for循环/foreach</h6>
+      <img src="/2022/04/18/Javaday07/image-20220418210237066.png" alt="image-20220418210237066" style="zoom:80%;">
+
+<p>注意：对增强for中的变量s进行修改，不会对集合或数组的内容进行改变。</p>
+<figure class="highlight java"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//实现与上例迭代器相同的效果</span></span><br><span class="line"><span class="keyword">for</span> (String s : list) &#123;</span><br><span class="line">    System.out.println(s);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></div></figure>
+
+
+        <h6 id="2-2-3-Lambda表达式对集合进行遍历">
+          <a href="#2-2-3-Lambda表达式对集合进行遍历" class="heading-link"><i class="fas fa-link"></i></a><a href="#2-2-3-Lambda表达式对集合进行遍历" class="headerlink" title="2.2.3 Lambda表达式对集合进行遍历"></a>2.2.3 Lambda表达式对集合进行遍历</h6>
+      <p><img src="/2022/04/18/Javaday07/image-20220418210738288.png" alt="image-20220418210738288"></p>
+<figure class="highlight java"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">list.forEach(s -&gt; &#123;</span><br><span class="line">    System.out.println(s);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></div></figure>
+
+<p><img src="/2022/04/18/Javaday07/image-20220418212201531.png" alt="image-20220418212201531"></p>
+<p>想要直接打印集合里的元素，需要重写元素类的toString方法。</p>
+
+        <h4 id="3-List集合">
+          <a href="#3-List集合" class="heading-link"><i class="fas fa-link"></i></a><a href="#3-List集合" class="headerlink" title="3 List集合"></a>3 List集合</h4>
+      <img src="/2022/04/18/Javaday07/image-20220419085818295.png" alt="image-20220419085818295" style="zoom:80%;">
+
+<img src="/2022/04/18/Javaday07/image-20220419090005546.png" alt="image-20220419090005546" style="zoom:80%;">
+
+
+        <h5 id="3-1-List集合的遍历">
+          <a href="#3-1-List集合的遍历" class="heading-link"><i class="fas fa-link"></i></a><a href="#3-1-List集合的遍历" class="headerlink" title="3.1 List集合的遍历"></a>3.1 List集合的遍历</h5>
+      <img src="/2022/04/18/Javaday07/image-20220419090505958.png" alt="image-20220419090505958" style="zoom:80%;">
+
+<figure class="highlight java"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">List&lt;String&gt; list = <span class="keyword">new</span> ArrayList&lt;&gt;();</span><br><span class="line">list.add(<span class="string">&quot;黄昏&quot;</span>);</span><br><span class="line">list.add(<span class="string">&quot;aniya&quot;</span>);</span><br><span class="line">list.add(<span class="string">&quot;yore&quot;</span>);</span><br><span class="line">System.out.println(list);</span><br><span class="line"><span class="comment">//for循环按下标遍历，得到元素需要使用get(i)</span></span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; list.size(); i++) &#123;</span><br><span class="line">    System.out.println(list.get(i));</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//获取list的迭代器对象,使用迭代器遍历</span></span><br><span class="line"><span class="comment">//idea快捷键 list.iterator再按ctrl+alt+v</span></span><br><span class="line">Iterator&lt;String&gt; it = list.iterator();</span><br><span class="line"><span class="keyword">while</span>(it.hasNext())&#123;</span><br><span class="line">    String ele = it.next();</span><br><span class="line">    System.out.println(ele);</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//foreach遍历</span></span><br><span class="line"><span class="keyword">for</span> (String s : list) &#123;</span><br><span class="line">    System.out.println(s);</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//lambda表达式遍历</span></span><br><span class="line">list.forEach(s -&gt; &#123;</span><br><span class="line">    System.out.println(s);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></div></figure>
+
+
+        <h5 id="3-2-ArrayList集合的底层原理">
+          <a href="#3-2-ArrayList集合的底层原理" class="heading-link"><i class="fas fa-link"></i></a><a href="#3-2-ArrayList集合的底层原理" class="headerlink" title="3.2 ArrayList集合的底层原理"></a>3.2 ArrayList集合的底层原理</h5>
+      <img src="/2022/04/18/Javaday07/image-20220419091233993.png" alt="image-20220419091233993" style="zoom:80%;">
+
+
+        <h5 id="3-3-LinkedList">
+          <a href="#3-3-LinkedList" class="heading-link"><i class="fas fa-link"></i></a><a href="#3-3-LinkedList" class="headerlink" title="3.3 LinkedList"></a>3.3 LinkedList</h5>
+      <p>LinkedList底层基于双链表，可以非常方便的做首尾操作，因此<strong>适合做栈、队列的底层实现。</strong></p>
+<img src="/2022/04/18/Javaday07/image-20220419091551161.png" alt="image-20220419091551161" style="zoom:80%;">
+
+<p>栈操作：</p>
+<figure class="highlight java"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">LinkedList&lt;String&gt; stack = <span class="keyword">new</span> LinkedList&lt;&gt;();</span><br><span class="line"><span class="comment">//对于栈，先进先出，因此压栈为addFirst，弹栈是removeFirst</span></span><br><span class="line">stack.addFirst(<span class="string">&quot;spy&quot;</span>);</span><br><span class="line">stack.addFirst(<span class="string">&quot;aniya&quot;</span>);</span><br><span class="line">stack.addFirst(<span class="string">&quot;yore&quot;</span>);</span><br><span class="line">System.out.println(stack);</span><br><span class="line">stack.removeFirst();</span><br><span class="line">System.out.println(stack);</span><br><span class="line"><span class="comment">//对于栈，可以将压栈写成push，弹栈写成pop</span></span><br><span class="line">stack.push(<span class="string">&quot;spy1&quot;</span>);</span><br><span class="line">System.out.println(stack);</span><br><span class="line"><span class="comment">//pop/removeFirst返回值是该栈顶元素</span></span><br><span class="line">System.out.println(stack.pop());</span><br></pre></td></tr></table></div></figure>
+
+<p><img src="/2022/04/18/Javaday07/image-20220419093645446.png" alt="image-20220419093645446"></p>
+<p>队列操作:</p>
+<figure class="highlight java"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">LinkedList queue = <span class="keyword">new</span> LinkedList&lt;&gt;();</span><br><span class="line"><span class="comment">//队列，先进先出，每次将元素加到队尾，出从队头出</span></span><br><span class="line">queue.addLast(<span class="string">&quot;spy&quot;</span>);</span><br><span class="line">queue.addLast(<span class="string">&quot;aniya&quot;</span>);</span><br><span class="line">queue.addLast(<span class="string">&quot;yore&quot;</span>);</span><br><span class="line">System.out.println(queue);</span><br><span class="line">queue.removeFirst();</span><br><span class="line">queue.removeFirst();</span><br><span class="line">System.out.println(queue);</span><br></pre></td></tr></table></div></figure>
+
+<p><img src="/2022/04/18/Javaday07/image-20220419093937489.png" alt="image-20220419093937489"></p>
+
+        <h5 id="3-4-集合的并发修改异常问题">
+          <a href="#3-4-集合的并发修改异常问题" class="heading-link"><i class="fas fa-link"></i></a><a href="#3-4-集合的并发修改异常问题" class="headerlink" title="3.4 集合的并发修改异常问题"></a>3.4 集合的并发修改异常问题</h5>
+      <img src="/2022/04/18/Javaday07/image-20220419124850093.png" alt="image-20220419124850093" style="zoom:80%;">
+
+<p><strong>使用迭代器遍历删除当前位置的元素，需要使用it.remove()，而不能使用list.remove()</strong></p>
+<p><strong>使用for循环遍历并删除，要么倒着删，即从集合尾向头部遍历，要么正着删，判断删除成功时将下标-1。</strong></p>
+<figure class="highlight java"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//迭代器遍历删除元素</span></span><br><span class="line">List&lt;String&gt; list = <span class="keyword">new</span> ArrayList&lt;&gt;();</span><br><span class="line">list.add(<span class="string">&quot;aniya&quot;</span>);</span><br><span class="line">list.add(<span class="string">&quot;黄昏&quot;</span>);</span><br><span class="line">list.add(<span class="string">&quot;aniya&quot;</span>);</span><br><span class="line">list.add(<span class="string">&quot;aniya&quot;</span>);</span><br><span class="line">list.add(<span class="string">&quot;yore&quot;</span>);</span><br><span class="line">list.add(<span class="string">&quot;aniya&quot;</span>);</span><br><span class="line">System.out.println(list);</span><br><span class="line">Iterator&lt;String&gt; iterator = list.iterator();</span><br><span class="line"><span class="keyword">while</span> (iterator.hasNext())&#123;</span><br><span class="line">    <span class="keyword">if</span>(iterator.next().equals(<span class="string">&quot;aniya&quot;</span>))&#123;</span><br><span class="line">        <span class="comment">//使用迭代器提供的remove方法删除</span></span><br><span class="line">        iterator.remove();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">System.out.println(list);</span><br></pre></td></tr></table></div></figure>
+
+<figure class="highlight java"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//使用正向for循环需要回退下标</span></span><br><span class="line"><span class="comment">//错误代码：</span></span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; list.size(); i++) &#123;</span><br><span class="line">    <span class="keyword">if</span>(list.get(i).equals(<span class="string">&quot;aniya&quot;</span>))&#123;</span><br><span class="line">        list.remove(i);</span><br><span class="line">        <span class="comment">//下标i由于被指向的元素被删除，如果下个元素跟需要删除的元素值相同会漏删</span></span><br><span class="line">        <span class="comment">//需要将下标回退1</span></span><br><span class="line">        <span class="comment">//i--;</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></div></figure>
+
+<p><img src="/2022/04/18/Javaday07/image-20220419130648297.png" alt="image-20220419130648297"></p>
+<p>如图，相邻相同元素会漏删</p>
+<figure class="highlight java"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//正向、下标回退</span></span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; list.size(); i++) &#123;</span><br><span class="line">    <span class="keyword">if</span>(list.get(i).equals(<span class="string">&quot;aniya&quot;</span>))&#123;</span><br><span class="line">        list.remove(i);</span><br><span class="line">        <span class="comment">//下标i由于被指向的元素被删除，如果下个元素跟需要删除的元素值相同会漏删</span></span><br><span class="line">        <span class="comment">//需要将下标回退1</span></span><br><span class="line">        i--;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></div></figure>
+
+<p><img src="/2022/04/18/Javaday07/image-20220419130755202.png" alt="image-20220419130755202"></p>
+<figure class="highlight java"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//倒着删，也是正确的</span></span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">int</span> i = list.size()-<span class="number">1</span>; i &gt;= <span class="number">0</span> ; i--) &#123;</span><br><span class="line">    <span class="keyword">if</span>(list.get(i).equals(<span class="string">&quot;aniya&quot;</span>))&#123;</span><br><span class="line">        list.remove(i);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></div></figure>
+
+
+        <h4 id="4-泛型">
+          <a href="#4-泛型" class="heading-link"><i class="fas fa-link"></i></a><a href="#4-泛型" class="headerlink" title="4 泛型"></a>4 泛型</h4>
+      <p> <img src="/2022/04/18/Javaday07/image-20220419133153668.png" alt="image-20220419133153668"></p>
+
+        <h5 id="4-1-泛型类">
+          <a href="#4-1-泛型类" class="heading-link"><i class="fas fa-link"></i></a><a href="#4-1-泛型类" class="headerlink" title="4.1 泛型类"></a>4.1 泛型类</h5>
+      <img src="/2022/04/18/Javaday07/image-20220419133414078.png" alt="image-20220419133414078" style="zoom:80%;">
+
+<img src="/2022/04/18/Javaday07/image-20220419134827371.png" alt="image-20220419134827371" style="zoom:80%;">
+
+
+        <h5 id="4-2-自定义泛型方法">
+          <a href="#4-2-自定义泛型方法" class="heading-link"><i class="fas fa-link"></i></a><a href="#4-2-自定义泛型方法" class="headerlink" title="4.2 自定义泛型方法"></a>4.2 自定义泛型方法</h5>
+      <img src="/2022/04/18/Javaday07/image-20220419141907469.png" alt="image-20220419141907469" style="zoom:80%;">
+
+
+        <h5 id="4-3-自定义泛型接口">
+          <a href="#4-3-自定义泛型接口" class="heading-link"><i class="fas fa-link"></i></a><a href="#4-3-自定义泛型接口" class="headerlink" title="4.3 自定义泛型接口"></a>4.3 自定义泛型接口</h5>
+      <img src="/2022/04/18/Javaday07/image-20220419143002429.png" alt="image-20220419143002429" style="zoom:80%;">
+
+<img src="/2022/04/18/Javaday07/image-20220419143544131.png" alt="image-20220419143544131" style="zoom:80%;">
+
+<img src="/2022/04/18/Javaday07/image-20220419151838918.png" alt="image-20220419151838918" style="zoom:80%;">
+
+<p><img src="/2022/04/18/Javaday07/image-20220419151904263.png" alt="image-20220419151904263"></p>
+<p><img src="/2022/04/18/Javaday07/image-20220419151920775.png" alt="image-20220419151920775"></p>
+
+        <h4 id="5-Set集合">
+          <a href="#5-Set集合" class="heading-link"><i class="fas fa-link"></i></a><a href="#5-Set集合" class="headerlink" title="5 Set集合"></a>5 Set集合</h4>
+      
+        <h5 id="5-1-Set集合的特点">
+          <a href="#5-1-Set集合的特点" class="heading-link"><i class="fas fa-link"></i></a><a href="#5-1-Set集合的特点" class="headerlink" title="5.1 Set集合的特点"></a>5.1 Set集合的特点</h5>
+      <img src="/2022/04/18/Javaday07/image-20220419152538412.png" alt="image-20220419152538412" style="zoom:80%;">
+
+
+        <h5 id="5-2-HashSet">
+          <a href="#5-2-HashSet" class="heading-link"><i class="fas fa-link"></i></a><a href="#5-2-HashSet" class="headerlink" title="5.2 HashSet"></a>5.2 HashSet</h5>
+      <img src="/2022/04/18/Javaday07/image-20220419154640940.png" alt="image-20220419154640940" style="zoom:80%;">
+
+<img src="/2022/04/18/Javaday07/image-20220419154731784.png" alt="image-20220419154731784" style="zoom:80%;">
+
+<img src="/2022/04/18/Javaday07/image-20220419160402790.png" alt="image-20220419160402790" style="zoom:80%;">
+
+<p><img src="/2022/04/18/Javaday07/image-20220419160554513.png" alt="image-20220419160554513"></p>
+<p><img src="/2022/04/18/Javaday07/image-20220419161008228.png" alt="image-20220419161008228"></p>
+
+        <h6 id="5-2-1-HashSet去重复">
+          <a href="#5-2-1-HashSet去重复" class="heading-link"><i class="fas fa-link"></i></a><a href="#5-2-1-HashSet去重复" class="headerlink" title="5.2.1 HashSet去重复"></a>5.2.1 HashSet去重复</h6>
+      <p>HashSet判断两个对象是否是一个对象，主要是看HashCode是否相同。</p>
+<p>如果想要让HashSet按照元素内容去重复，需要重写HashCode和equals方法。可以在元素类右键直接生成。</p>
+
+        <h5 id="5-3-LinkedHashSet">
+          <a href="#5-3-LinkedHashSet" class="heading-link"><i class="fas fa-link"></i></a><a href="#5-3-LinkedHashSet" class="headerlink" title="5.3 LinkedHashSet"></a>5.3 LinkedHashSet</h5>
+      <p><img src="/2022/04/18/Javaday07/image-20220419181438717.png" alt="image-20220419181438717"></p>
+
+        <h5 id="5-4-TreeSet集合概述">
+          <a href="#5-4-TreeSet集合概述" class="heading-link"><i class="fas fa-link"></i></a><a href="#5-4-TreeSet集合概述" class="headerlink" title="5.4 TreeSet集合概述"></a>5.4 TreeSet集合概述</h5>
+      <p><img src="/2022/04/18/Javaday07/image-20220419181535985.png" alt="image-20220419181535985"></p>
+<img src="/2022/04/18/Javaday07/image-20220419181625744.png" alt="image-20220419181625744" style="zoom:80%;">
+
+<p>排序的首字符编号是指ASCII码。</p>
+<p><img src="/2022/04/18/Javaday07/image-20220419194250069.png" alt="image-20220419194250069"></p>
+<p><img src="/2022/04/18/Javaday07/image-20220419194443805.png" alt="image-20220419194443805"></p>
+<p><img src="/2022/04/18/Javaday07/image-20220419194632140.png" alt="image-20220419194632140"></p>
+<p>让compareTo函数不返回0，就不会认为对象重复，因此可以利用三目运算符，使&gt;=0返回正整数1，反之返回-1；</p>
+<p><img src="/2022/04/18/Javaday07/image-20220419195226572.png" alt="image-20220419195226572"></p>
+
+        <h4 id="6-可变参数">
+          <a href="#6-可变参数" class="heading-link"><i class="fas fa-link"></i></a><a href="#6-可变参数" class="headerlink" title="6 可变参数"></a>6 可变参数</h4>
+      <p><img src="/2022/04/18/Javaday07/image-20220419203148831.png" alt="image-20220419203148831"></p>
+<p>可变参数在方法内部其实就是一个数组</p>
+<img src="/2022/04/18/Javaday07/image-20220419203417025.png" alt="image-20220419203417025" style="zoom:80%;">
+
+<p><img src="/2022/04/18/Javaday07/image-20220419203636915.png" alt="image-20220419203636915"></p>
+
+        <h4 id="7-Collection集合操作的工具类Collections">
+          <a href="#7-Collection集合操作的工具类Collections" class="heading-link"><i class="fas fa-link"></i></a><a href="#7-Collection集合操作的工具类Collections" class="headerlink" title="7 Collection集合操作的工具类Collections"></a>7 Collection集合操作的工具类Collections</h4>
+      <p><img src="/2022/04/18/Javaday07/image-20220419205512887.png" alt="image-20220419205512887"></p>
+<p><img src="/2022/04/18/Javaday07/image-20220419205527393.png" alt="image-20220419205527393"></p>
+
+        <h4 id="8-Map集合（键值对集合）">
+          <a href="#8-Map集合（键值对集合）" class="heading-link"><i class="fas fa-link"></i></a><a href="#8-Map集合（键值对集合）" class="headerlink" title="8 Map集合（键值对集合）"></a>8 Map集合（键值对集合）</h4>
+      <img src="/2022/04/18/Javaday07/image-20220423133600239.png" alt="image-20220423133600239" style="zoom:80%;">
+
+<p><img src="/2022/04/18/Javaday07/image-20220423135934133.png" alt="image-20220423135934133"></p>
+
+        <h5 id="8-1-Map集合的特点">
+          <a href="#8-1-Map集合的特点" class="heading-link"><i class="fas fa-link"></i></a><a href="#8-1-Map集合的特点" class="headerlink" title="8.1 Map集合的特点"></a>8.1 Map集合的特点</h5>
+      <p><img src="/2022/04/18/Javaday07/image-20220423140116638.png" alt="image-20220423140116638"></p>
+<p>使用最多的是HashMap</p>
+<p><strong>在Map集合中的键是无序、不重复、无索引的，值不做要求。</strong></p>
+
+        <h5 id="8-2-Map集合的使用">
+          <a href="#8-2-Map集合的使用" class="heading-link"><i class="fas fa-link"></i></a><a href="#8-2-Map集合的使用" class="headerlink" title="8.2 Map集合的使用"></a>8.2 Map集合的使用</h5>
+      <img src="/2022/04/18/Javaday07/image-20220423140823453.png" alt="image-20220423140823453" style="zoom:80%;">
+
+
+        <h5 id="8-3-Map集合常用API">
+          <a href="#8-3-Map集合常用API" class="heading-link"><i class="fas fa-link"></i></a><a href="#8-3-Map集合常用API" class="headerlink" title="8.3 Map集合常用API"></a>8.3 Map集合常用API</h5>
+      <p><img src="/2022/04/18/Javaday07/image-20220423140909581.png" alt="image-20220423140909581"></p>
+
+        <h5 id="8-4-Map集合的遍历">
+          <a href="#8-4-Map集合的遍历" class="heading-link"><i class="fas fa-link"></i></a><a href="#8-4-Map集合的遍历" class="headerlink" title="8.4 Map集合的遍历"></a>8.4 Map集合的遍历</h5>
+      <img src="/2022/04/18/Javaday07/image-20220423143124726.png" alt="image-20220423143124726" style="zoom:80%;">
+
+<p><img src="/2022/04/18/Javaday07/image-20220423152822159.png" alt="image-20220423152822159"></p>
+<img src="/2022/04/18/Javaday07/image-20220423154246973.png" alt="image-20220423154246973" style="zoom:80%;">
+
+
+        <h5 id="8-5-HashMap的底层原理">
+          <a href="#8-5-HashMap的底层原理" class="heading-link"><i class="fas fa-link"></i></a><a href="#8-5-HashMap的底层原理" class="headerlink" title="8.5  HashMap的底层原理"></a>8.5  HashMap的底层原理</h5>
+      <p><img src="/2022/04/18/Javaday07/image-20220423164821328.png" alt="image-20220423164821328"></p>
+<img src="/2022/04/18/Javaday07/image-20220423165124223.png" alt="image-20220423165124223" style="zoom:80%;">
+
+
+        <h5 id="8-6-LinkdeHashMap">
+          <a href="#8-6-LinkdeHashMap" class="heading-link"><i class="fas fa-link"></i></a><a href="#8-6-LinkdeHashMap" class="headerlink" title="8.6 LinkdeHashMap"></a>8.6 LinkdeHashMap</h5>
+      <p><img src="/2022/04/18/Javaday07/image-20220423165301936.png" alt="image-20220423165301936"></p>
+
+        <h5 id="8-7-TreeMap">
+          <a href="#8-7-TreeMap" class="heading-link"><i class="fas fa-link"></i></a><a href="#8-7-TreeMap" class="headerlink" title="8.7 TreeMap"></a>8.7 TreeMap</h5>
+      <p><img src="/2022/04/18/Javaday07/image-20220423165449349.png" alt="image-20220423165449349"></p>
+<p><img src="/2022/04/18/Javaday07/image-20220423171235299.png" alt="image-20220423171235299"></p>
+
+        <h4 id="9-集合嵌套">
+          <a href="#9-集合嵌套" class="heading-link"><i class="fas fa-link"></i></a><a href="#9-集合嵌套" class="headerlink" title="9 集合嵌套"></a>9 集合嵌套</h4>
+      </div><footer class="post-footer"><div class="post-ending ending"><div class="ending__text">------ 本文结束，感谢您的阅读 ------</div></div><div class="post-copyright copyright"><div class="copyright-author"><span class="copyright-author__name">本文作者: </span><span class="copyright-author__value"><a href="https://striveizu.top">Strive</a></span></div><div class="copyright-link"><span class="copyright-link__name">本文链接: </span><span class="copyright-link__value"><a href="https://striveizu.top/2022/04/18/Javaday07/">https://striveizu.top/2022/04/18/Javaday07/</a></span></div><div class="copyright-notice"><span class="copyright-notice__name">版权声明: </span><span class="copyright-notice__value">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en" rel="external nofollow" target="_blank">BY-NC-SA</a> 许可协议。转载请注明出处！</span></div></div><div class="post-tags"><span class="post-tags-item"><span class="post-tags-item__icon"><i class="fas fa-tag"></i></span><a class="post-tags-item__link" href="https://striveizu.top/tags/Java/">Java</a></span></div><nav class="post-paginator paginator"><div class="paginator-prev"><a class="paginator-prev__link" href="/2022/04/24/leetcodeday01/"><span class="paginator-prev__icon"><i class="fas fa-angle-left"></i></span><span class="paginator-prev__text">力扣刷题笔记day1--链表双指针、快慢指针</span></a></div><div class="paginator-next"><a class="paginator-next__link" href="/2022/04/18/Javaday06/"><span class="paginator-prev__text">Javaday06</span><span class="paginator-next__icon"><i class="fas fa-angle-right"></i></span></a></div></nav></footer></div></div></div><div class="sidebar-wrap" id="sidebar-wrap"><aside class="sidebar" id="sidebar"><div class="sidebar-nav"><span class="sidebar-nav-toc current">文章目录</span><span class="sidebar-nav-ov">站点概览</span></div><section class="sidebar-toc"><ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#Java%E8%AF%AD%E6%B3%95%E9%80%9F%E9%80%9Aday07%E2%80%93%E9%9B%86%E5%90%88"><span class="toc-number">1.</span> <span class="toc-text">
+          Java语法速通day07–集合</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-%E9%9B%86%E5%90%88%E4%BD%93%E7%B3%BB%E7%BB%93%E6%9E%84"><span class="toc-number">1.1.</span> <span class="toc-text">
+          1 集合体系结构</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-Collection"><span class="toc-number">1.2.</span> <span class="toc-text">
+          2 Collection</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#2-1-Collection%E9%9B%86%E5%90%88%E5%B8%B8%E7%94%A8api"><span class="toc-number">1.2.1.</span> <span class="toc-text">
+          2.1 Collection集合常用api</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#2-2-%E9%9B%86%E5%90%88%E7%9A%84%E9%81%8D%E5%8E%86"><span class="toc-number">1.2.2.</span> <span class="toc-text">
+          2.2 集合的遍历</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#2-2-1-%E8%BF%AD%E4%BB%A3%E5%99%A8iterator"><span class="toc-number">1.2.2.1.</span> <span class="toc-text">
+          2.2.1 迭代器iterator</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#2-2-2-%E5%A2%9E%E5%BC%BAfor%E5%BE%AA%E7%8E%AF-foreach"><span class="toc-number">1.2.2.2.</span> <span class="toc-text">
+          2.2.2 增强for循环&#x2F;foreach</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#2-2-3-Lambda%E8%A1%A8%E8%BE%BE%E5%BC%8F%E5%AF%B9%E9%9B%86%E5%90%88%E8%BF%9B%E8%A1%8C%E9%81%8D%E5%8E%86"><span class="toc-number">1.2.2.3.</span> <span class="toc-text">
+          2.2.3 Lambda表达式对集合进行遍历</span></a></li></ol></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-List%E9%9B%86%E5%90%88"><span class="toc-number">1.3.</span> <span class="toc-text">
+          3 List集合</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#3-1-List%E9%9B%86%E5%90%88%E7%9A%84%E9%81%8D%E5%8E%86"><span class="toc-number">1.3.1.</span> <span class="toc-text">
+          3.1 List集合的遍历</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#3-2-ArrayList%E9%9B%86%E5%90%88%E7%9A%84%E5%BA%95%E5%B1%82%E5%8E%9F%E7%90%86"><span class="toc-number">1.3.2.</span> <span class="toc-text">
+          3.2 ArrayList集合的底层原理</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#3-3-LinkedList"><span class="toc-number">1.3.3.</span> <span class="toc-text">
+          3.3 LinkedList</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#3-4-%E9%9B%86%E5%90%88%E7%9A%84%E5%B9%B6%E5%8F%91%E4%BF%AE%E6%94%B9%E5%BC%82%E5%B8%B8%E9%97%AE%E9%A2%98"><span class="toc-number">1.3.4.</span> <span class="toc-text">
+          3.4 集合的并发修改异常问题</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-%E6%B3%9B%E5%9E%8B"><span class="toc-number">1.4.</span> <span class="toc-text">
+          4 泛型</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#4-1-%E6%B3%9B%E5%9E%8B%E7%B1%BB"><span class="toc-number">1.4.1.</span> <span class="toc-text">
+          4.1 泛型类</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#4-2-%E8%87%AA%E5%AE%9A%E4%B9%89%E6%B3%9B%E5%9E%8B%E6%96%B9%E6%B3%95"><span class="toc-number">1.4.2.</span> <span class="toc-text">
+          4.2 自定义泛型方法</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#4-3-%E8%87%AA%E5%AE%9A%E4%B9%89%E6%B3%9B%E5%9E%8B%E6%8E%A5%E5%8F%A3"><span class="toc-number">1.4.3.</span> <span class="toc-text">
+          4.3 自定义泛型接口</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#5-Set%E9%9B%86%E5%90%88"><span class="toc-number">1.5.</span> <span class="toc-text">
+          5 Set集合</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#5-1-Set%E9%9B%86%E5%90%88%E7%9A%84%E7%89%B9%E7%82%B9"><span class="toc-number">1.5.1.</span> <span class="toc-text">
+          5.1 Set集合的特点</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#5-2-HashSet"><span class="toc-number">1.5.2.</span> <span class="toc-text">
+          5.2 HashSet</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#5-2-1-HashSet%E5%8E%BB%E9%87%8D%E5%A4%8D"><span class="toc-number">1.5.2.1.</span> <span class="toc-text">
+          5.2.1 HashSet去重复</span></a></li></ol></li><li class="toc-item toc-level-5"><a class="toc-link" href="#5-3-LinkedHashSet"><span class="toc-number">1.5.3.</span> <span class="toc-text">
+          5.3 LinkedHashSet</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#5-4-TreeSet%E9%9B%86%E5%90%88%E6%A6%82%E8%BF%B0"><span class="toc-number">1.5.4.</span> <span class="toc-text">
+          5.4 TreeSet集合概述</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#6-%E5%8F%AF%E5%8F%98%E5%8F%82%E6%95%B0"><span class="toc-number">1.6.</span> <span class="toc-text">
+          6 可变参数</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#7-Collection%E9%9B%86%E5%90%88%E6%93%8D%E4%BD%9C%E7%9A%84%E5%B7%A5%E5%85%B7%E7%B1%BBCollections"><span class="toc-number">1.7.</span> <span class="toc-text">
+          7 Collection集合操作的工具类Collections</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#8-Map%E9%9B%86%E5%90%88%EF%BC%88%E9%94%AE%E5%80%BC%E5%AF%B9%E9%9B%86%E5%90%88%EF%BC%89"><span class="toc-number">1.8.</span> <span class="toc-text">
+          8 Map集合（键值对集合）</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#8-1-Map%E9%9B%86%E5%90%88%E7%9A%84%E7%89%B9%E7%82%B9"><span class="toc-number">1.8.1.</span> <span class="toc-text">
+          8.1 Map集合的特点</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#8-2-Map%E9%9B%86%E5%90%88%E7%9A%84%E4%BD%BF%E7%94%A8"><span class="toc-number">1.8.2.</span> <span class="toc-text">
+          8.2 Map集合的使用</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#8-3-Map%E9%9B%86%E5%90%88%E5%B8%B8%E7%94%A8API"><span class="toc-number">1.8.3.</span> <span class="toc-text">
+          8.3 Map集合常用API</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#8-4-Map%E9%9B%86%E5%90%88%E7%9A%84%E9%81%8D%E5%8E%86"><span class="toc-number">1.8.4.</span> <span class="toc-text">
+          8.4 Map集合的遍历</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#8-5-HashMap%E7%9A%84%E5%BA%95%E5%B1%82%E5%8E%9F%E7%90%86"><span class="toc-number">1.8.5.</span> <span class="toc-text">
+          8.5  HashMap的底层原理</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#8-6-LinkdeHashMap"><span class="toc-number">1.8.6.</span> <span class="toc-text">
+          8.6 LinkdeHashMap</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#8-7-TreeMap"><span class="toc-number">1.8.7.</span> <span class="toc-text">
+          8.7 TreeMap</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#9-%E9%9B%86%E5%90%88%E5%B5%8C%E5%A5%97"><span class="toc-number">1.9.</span> <span class="toc-text">
+          9 集合嵌套</span></a></li></ol></li></ol></section><!-- ov = overview--><section class="sidebar-ov hide"><div class="sidebar-ov-author"><div class="sidebar-ov-author__avatar"><img class="sidebar-ov-author__avatar_img" src="/images/icons/photo.png" alt="avatar"></div><p class="sidebar-ov-author__text">To be a great person.</p></div><div class="sidebar-ov-cc"><a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en" target="_blank" rel="noopener" data-popover="知识共享许可协议" data-popover-pos="up"><img src="/images/cc-by-nc-sa.svg"></a></div></section><div class="sidebar-reading"><div class="sidebar-reading-info"><span class="sidebar-reading-info__text">你已阅读了 </span><span class="sidebar-reading-info__num">0</span><span class="sidebar-reading-info__perc">%</span></div><div class="sidebar-reading-line"></div></div></aside></div><div class="clearfix"></div></div></main><footer class="footer" id="footer"><div class="footer-inner"><div><span>Copyright © 2022</span><span class="footer__icon"><i class="fas fa-heart"></i></span><span>Strive</span></div><div><span>由 <a href="http://hexo.io/" title="Hexo" target="_blank" rel="noopener">Hexo</a> 强力驱动</span><span> v5.4.0</span><span class="footer__devider">|</span><span>主题 - <a href="https://github.com/liuyib/hexo-theme-stun/" title="Stun" target="_blank" rel="noopener">Stun</a></span><span> v2.6.2</span></div></div></footer><div class="loading-bar" id="loading-bar"><div class="loading-bar__progress"></div></div><div class="back2top" id="back2top"><span class="back2top__icon"><i class="fas fa-rocket"></i></span></div></div><script src="https://cdn.jsdelivr.net/npm/jquery@v3.4.1/dist/jquery.min.js"></script><script src="https://cdn.jsdelivr.net/npm/velocity-animate@1.5.2/velocity.min.js"></script><script src="https://cdn.jsdelivr.net/npm/velocity-animate@1.5.2/velocity.ui.min.js"></script><script src="/js/utils.js?v=2.6.2"></script><script src="/js/stun-boot.js?v=2.6.2"></script><script src="/js/scroll.js?v=2.6.2"></script><script src="/js/header.js?v=2.6.2"></script><script src="/js/sidebar.js?v=2.6.2"></script></body></html>
