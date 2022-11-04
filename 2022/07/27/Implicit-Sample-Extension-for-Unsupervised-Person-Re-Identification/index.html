@@ -1,0 +1,93 @@
+<!DOCTYPE html><html lang="zh-CN"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="format-detection" content="telephone=no"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="black"><link rel="icon" href="/images/icons/favicon-16x16.png?v=2.6.2" type="image/png" sizes="16x16"><link rel="icon" href="/images/icons/favicon-32x32.png?v=2.6.2" type="image/png" sizes="32x32"><meta name="description" content="CVPR2022 Implicit Sample Extension for Unsupervised Person Re-Identification       论文地址：https:&#x2F;&#x2F;arxiv.org&#x2F;pdf&#x2F;2204.06892 论文代码：https:&#x2F;&#x2F;github.com&#x2F;PaddlePaddle&#x2F;PaddleClas">
+<meta property="og:type" content="article">
+<meta property="og:title" content="文献阅读--Implicit Sample Extension for Unsupervised Person Re-Identification">
+<meta property="og:url" content="https://striveizu.top/2022/07/27/Implicit-Sample-Extension-for-Unsupervised-Person-Re-Identification/index.html">
+<meta property="og:site_name" content="Strive&#39;s Blog">
+<meta property="og:description" content="CVPR2022 Implicit Sample Extension for Unsupervised Person Re-Identification       论文地址：https:&#x2F;&#x2F;arxiv.org&#x2F;pdf&#x2F;2204.06892 论文代码：https:&#x2F;&#x2F;github.com&#x2F;PaddlePaddle&#x2F;PaddleClas">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://striveizu.top/2022/07/27/Implicit-Sample-Extension-for-Unsupervised-Person-Re-Identification/image-20220728094502995.png">
+<meta property="og:image" content="https://striveizu.top/2022/07/27/Implicit-Sample-Extension-for-Unsupervised-Person-Re-Identification/image-20220728143546801.png">
+<meta property="og:image" content="https://striveizu.top/2022/07/27/Implicit-Sample-Extension-for-Unsupervised-Person-Re-Identification/image-20220728145045595.png">
+<meta property="og:image" content="https://striveizu.top/2022/07/27/Implicit-Sample-Extension-for-Unsupervised-Person-Re-Identification/image-20220728143520632.png">
+<meta property="og:image" content="https://striveizu.top/2022/07/27/Implicit-Sample-Extension-for-Unsupervised-Person-Re-Identification/image-20220728150313704.png">
+<meta property="og:image" content="https://striveizu.top/2022/07/27/Implicit-Sample-Extension-for-Unsupervised-Person-Re-Identification/image-20220728150506950.png">
+<meta property="article:published_time" content="2022-07-27T12:12:02.000Z">
+<meta property="article:modified_time" content="2022-07-28T08:34:07.527Z">
+<meta property="article:author" content="Strive">
+<meta property="article:tag" content="-论文阅读">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://striveizu.top/2022/07/27/Implicit-Sample-Extension-for-Unsupervised-Person-Re-Identification/image-20220728094502995.png"><title>文献阅读--Implicit Sample Extension for Unsupervised Person Re-Identification | Strive's Blog</title><link ref="canonical" href="https://striveizu.top/2022/07/27/Implicit-Sample-Extension-for-Unsupervised-Person-Re-Identification/"><link rel="dns-prefetch" href="https://cdn.jsdelivr.net"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.12.1/css/all.min.css" type="text/css"><link rel="stylesheet" href="/css/index.css?v=2.6.2"><script>var Stun = window.Stun || {};
+var CONFIG = {
+  root: '/',
+  algolia: undefined,
+  assistSearch: undefined,
+  fontIcon: {"prompt":{"success":"fas fa-check-circle","info":"fas fa-arrow-circle-right","warning":"fas fa-exclamation-circle","error":"fas fa-times-circle"},"copyBtn":"fas fa-copy"},
+  sidebar: {"offsetTop":"20px","tocMaxDepth":6},
+  header: {"enable":true,"showOnPost":true,"scrollDownIcon":true},
+  postWidget: {"endText":true},
+  nightMode: {"enable":true},
+  back2top: {"enable":true},
+  codeblock: {"style":"default","highlight":"light","wordWrap":false},
+  reward: false,
+  fancybox: false,
+  zoomImage: {"gapAside":"20px"},
+  galleryWaterfall: undefined,
+  lazyload: false,
+  pjax: undefined,
+  externalLink: {"icon":{"enable":true,"name":"fas fa-external-link-alt"}},
+  shortcuts: undefined,
+  prompt: {"copyButton":"复制","copySuccess":"复制成功","copyError":"复制失败"},
+  sourcePath: {"js":"js","css":"css","images":"images"},
+};
+
+window.CONFIG = CONFIG;</script><meta name="generator" content="Hexo 5.4.0"></head><body><div class="container" id="container"><header class="header" id="header"><div class="header-inner"><nav class="header-nav header-nav--fixed"><div class="header-nav-inner"><div class="header-nav-menubtn"><i class="fas fa-bars"></i></div><div class="header-nav-menu"><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/"><span class="header-nav-menu-item__icon"><i class="fas fa-home"></i></span><span class="header-nav-menu-item__text">首页</span></a></div><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/about/"><span class="header-nav-menu-item__icon"><i class="fas fa-address-card"></i></span><span class="header-nav-menu-item__text">关于</span></a></div><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="javascript:;" onclick="return false;"><span class="header-nav-menu-item__icon"><i class="fas fa-edit"></i></span><span class="header-nav-menu-item__text">文章</span></a><div class="header-nav-submenu"><div class="header-nav-submenu-item"><a class="header-nav-submenu-item__link" href="/archives/"><span class="header-nav-submenu-item__icon"><i class="fas fa-folder-open"></i></span><span class="header-nav-submenu-item__text">归档</span></a></div><div class="header-nav-submenu-item"><a class="header-nav-submenu-item__link" href="/categories/"><span class="header-nav-submenu-item__icon"><i class="fas fa-layer-group"></i></span><span class="header-nav-submenu-item__text">分类</span></a></div><div class="header-nav-submenu-item"><a class="header-nav-submenu-item__link" href="/tags/"><span class="header-nav-submenu-item__icon"><i class="fas fa-tags"></i></span><span class="header-nav-submenu-item__text">标签</span></a></div></div></div></div><div class="header-nav-mode"><div class="mode"><div class="mode-track"><span class="mode-track-moon"></span><span class="mode-track-sun"></span></div><div class="mode-thumb"></div></div></div></div></nav><div class="header-banner"><div class="header-banner-info"><div class="header-banner-info__title">Strive's Blog</div><div class="header-banner-info__subtitle">你我期许的绝非遥不可及</div></div><div class="header-banner-arrow"><div class="header-banner-arrow__icon"><i class="fas fa-angle-down"></i></div></div></div></div></header><main class="main" id="main"><div class="main-inner"><div class="content-wrap" id="content-wrap"><div class="content" id="content"><!-- Just used to judge whether it is an article page--><div id="is-post"></div><div class="post"><header class="post-header"><h1 class="post-title">文献阅读--Implicit Sample Extension for Unsupervised Person Re-Identification</h1><div class="post-meta"><span class="post-meta-item post-meta-item--createtime"><span class="post-meta-item__icon"><i class="far fa-calendar-plus"></i></span><span class="post-meta-item__info">发表于</span><span class="post-meta-item__value">2022-07-27</span></span><span class="post-meta-item post-meta-item--updatetime"><span class="post-meta-item__icon"><i class="far fa-calendar-check"></i></span><span class="post-meta-item__info">更新于</span><span class="post-meta-item__value">2022-07-28</span></span></div></header><div class="post-body">
+        <h3 id="CVPR2022-Implicit-Sample-Extension-for-Unsupervised-Person-Re-Identification">
+          <a href="#CVPR2022-Implicit-Sample-Extension-for-Unsupervised-Person-Re-Identification" class="heading-link"><i class="fas fa-link"></i></a><a href="#CVPR2022-Implicit-Sample-Extension-for-Unsupervised-Person-Re-Identification" class="headerlink" title="CVPR2022 Implicit Sample Extension for Unsupervised Person Re-Identification"></a>CVPR2022 Implicit Sample Extension for Unsupervised Person Re-Identification</h3>
+      <p>论文地址：<span class="exturl"><a class="exturl__link" target="_blank" rel="noopener" href="https://arxiv.org/pdf/2204.06892">https://arxiv.org/pdf/2204.06892</a><span class="exturl__icon"><i class="fas fa-external-link-alt"></i></span></span></p>
+<p>论文代码：<span class="exturl"><a class="exturl__link" target="_blank" rel="noopener" href="https://github.com/PaddlePaddle/PaddleClas">https://github.com/PaddlePaddle/PaddleClas</a><span class="exturl__icon"><i class="fas fa-external-link-alt"></i></span></span></p>
+
+        <h4 id="1-概述">
+          <a href="#1-概述" class="heading-link"><i class="fas fa-link"></i></a><a href="#1-概述" class="headerlink" title="1 概述"></a>1 概述</h4>
+      <p>现阶段现有的无监督Reid问题基本上都是一种两阶段学习：1、首先通过聚类算法对图片进行聚类生成伪标签。2、将伪标签作为监督信息训练模型。因此聚类算法的聚类质量直接影响行人再识别模型的性能。</p>
+<p>但是由于现阶段聚类算法的局限性，<strong>聚类有时会将不同的真实身份混合在一起，或者将相同的身份拆分为两个或多个子集群。在这些嘈杂的集群上进行训练大大阻碍了 Re-ID 的准确性。</strong></p>
+<p><img src="/2022/07/27/Implicit-Sample-Extension-for-Unsupervised-Person-Re-Identification/image-20220728094502995.png" alt="image-20220728094502995"></p>
+<p>上图中相同形状表示同一真实类型，相同颜色表示相同身份伪标签。</p>
+<p>如上图a左侧所示，在聚类中容易将相同身份（圆形）拆分成多个子集群。b左侧则展示了将不同身份（圆形和方形）的图片混合在一起。</p>
+<p><strong>作者认为由于每个真实身份的样本是有限的，这些样本可能缺少一些对准确聚类有帮助的基础信息（判别性特征）。</strong></p>
+
+        <h4 id="2-方法">
+          <a href="#2-方法" class="heading-link"><i class="fas fa-link"></i></a><a href="#2-方法" class="headerlink" title="2 方法"></a>2 方法</h4>
+      <p><strong>作者认为由于每个真实身份的样本是有限的，一些潜在的、对准确聚类有帮助的基础信息（判别性特征）从现存的数据分布中丢失了。如果我们可以弥补现存样本中缺失的信息，我们就可以在下一步聚类中提升聚类的质量</strong>。如上图1所示，直接对原始有限的样本进行聚类，由于缺少在聚类边界的有帮助的基础信息，会出现聚类错误。作者<strong>假设</strong>：<strong>如果我们在两个具有相同身份的子聚类中加入一些中间样本，则这两个子聚类可以在下次训练中正确聚类为一个簇。</strong></p>
+<p>于是作者提出了一种<strong>隐式样本扩展方法（ISE）</strong>对样本集进行扩展，逐步合成补充样本以改善每个集群的上下文表示。</p>
+<p>1、作者提出了一种渐近线性插值策略（PLI）用于支持样本生成。</p>
+<p>2、提出了一种标签保留对比损失(LP)</p>
+
+        <h5 id="2-1-PLI渐近线性插值策略">
+          <a href="#2-1-PLI渐近线性插值策略" class="heading-link"><i class="fas fa-link"></i></a><a href="#2-1-PLI渐近线性插值策略" class="headerlink" title="2.1 PLI渐近线性插值策略"></a>2.1 PLI渐近线性插值策略</h5>
+      <p>给定模型从真实样本提取的样本特征为<img src="/2022/07/27/Implicit-Sample-Extension-for-Unsupervised-Person-Re-Identification/image-20220728143546801.png" alt="image-20220728143546801">通过线性插值生成该样本对应的支持样本<img src="/2022/07/27/Implicit-Sample-Extension-for-Unsupervised-Person-Re-Identification/image-20220728145045595.png" alt="image-20220728145045595">，其生成公式如下。</p>
+<p><img src="/2022/07/27/Implicit-Sample-Extension-for-Unsupervised-Person-Re-Identification/image-20220728143520632.png" alt="image-20220728143520632"></p>
+<p>其中，Δf控制方向，λ 控制远离样本的程度。</p>
+<p><strong>理想的支持样本有望在决策边界周围分布提供信息。因此需要控制支持样本向量的方向与程度</strong></p>
+
+        <h6 id="方向">
+          <a href="#方向" class="heading-link"><i class="fas fa-link"></i></a><a href="#方向" class="headerlink" title="方向"></a>方向</h6>
+      <p>相邻集群更有可能有错误分类的样本。因此，我们的目标是生成分布在两个相似集群中的支持样本。具体来说，我们首先根据余弦相似度为样本f 找到K-最近邻簇，余弦相似度是用f 和整个memory bank M ∈ Rd×C 计算的。其中memory bank保存的是聚类之后各个簇的质心向量。</p>
+<p>将支持样本的方向建立为从样本向量 f 的簇质心 c 到 K-最近邻簇的质心向量的向量方向。以K=1为例，计算公式为：</p>
+<p><img src="/2022/07/27/Implicit-Sample-Extension-for-Unsupervised-Person-Re-Identification/image-20220728150313704.png" alt="image-20220728150313704"></p>
+<p>通过这种方式，<strong>生成的支持样本具有来自其自身及其相邻集群的丰富上下文语义，这些信息作为补充提供了丰富的信息。因此，方向控制了哪些信息值得补偿。</strong></p>
+<p>对于 K &gt; 1，每个相邻簇质心决定一个方向因子。我们为每个方向生成一个各自的支持样本，f总共有K个支持样本。</p>
+
+        <h6 id="度数">
+          <a href="#度数" class="heading-link"><i class="fas fa-link"></i></a><a href="#度数" class="headerlink" title="度数"></a>度数</h6>
+      <p>此外，度数Degree在样本扩展中也是必不可少的。Degree决定了应该在支持样本中包含多少邻居簇的信息。太大的 λ 使支持样本远离其原始集群，误导模型训练。 λ 太小反而会产生几乎无用的支持样本，因为它们与原始样本相似。因此，我们对 λ 进行渐进式更新，以便随着训练的进行逐渐涉及更多的上下文信息。具体来说，我们将 λ 设置为训练迭代的变量，它在训练过程中以对数方式增加：</p>
+<p><img src="/2022/07/27/Implicit-Sample-Extension-for-Unsupervised-Person-Re-Identification/image-20220728150506950.png" alt="image-20220728150506950"></p>
+<p>t/T表示的是当前的迭代轮数与总epoch数。λ0 是基础度数</p>
+<p>在早期阶段，强制支持样本接近其原始样本，以避免在特征不够好时引入噪声。随着训练的进行，特征表示变得更加健壮。在那个时候，需要更多的支持样本，包括来自相邻集群的更丰富的上下文，以包含更硬的基础信息并增加数据分布。</p>
+<p><strong>经过支持样本生成后，将支持样本作为真实样本特征加入模型训练。</strong></p>
+</div><footer class="post-footer"><div class="post-ending ending"><div class="ending__text">------ 本文结束，感谢您的阅读 ------</div></div><div class="post-copyright copyright"><div class="copyright-author"><span class="copyright-author__name">本文作者: </span><span class="copyright-author__value"><a href="https://striveizu.top">Strive</a></span></div><div class="copyright-link"><span class="copyright-link__name">本文链接: </span><span class="copyright-link__value"><a href="https://striveizu.top/2022/07/27/Implicit-Sample-Extension-for-Unsupervised-Person-Re-Identification/">https://striveizu.top/2022/07/27/Implicit-Sample-Extension-for-Unsupervised-Person-Re-Identification/</a></span></div><div class="copyright-notice"><span class="copyright-notice__name">版权声明: </span><span class="copyright-notice__value">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en" rel="external nofollow" target="_blank">BY-NC-SA</a> 许可协议。转载请注明出处！</span></div></div><div class="post-tags"><span class="post-tags-item"><span class="post-tags-item__icon"><i class="fas fa-tag"></i></span><a class="post-tags-item__link" href="https://striveizu.top/tags/%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB/">-论文阅读</a></span></div><nav class="post-paginator paginator"><div class="paginator-prev"><a class="paginator-prev__link" href="/2022/10/30/SSM01/"><span class="paginator-prev__icon"><i class="fas fa-angle-left"></i></span><span class="paginator-prev__text">SSM01</span></a></div><div class="paginator-next"><a class="paginator-next__link" href="/2022/07/23/Javaday08/"><span class="paginator-prev__text">Javaday08</span><span class="paginator-next__icon"><i class="fas fa-angle-right"></i></span></a></div></nav></footer></div></div></div><div class="sidebar-wrap" id="sidebar-wrap"><aside class="sidebar" id="sidebar"><div class="sidebar-nav"><span class="sidebar-nav-toc current">文章目录</span><span class="sidebar-nav-ov">站点概览</span></div><section class="sidebar-toc"><ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#CVPR2022-Implicit-Sample-Extension-for-Unsupervised-Person-Re-Identification"><span class="toc-number">1.</span> <span class="toc-text">
+          CVPR2022 Implicit Sample Extension for Unsupervised Person Re-Identification</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-%E6%A6%82%E8%BF%B0"><span class="toc-number">1.1.</span> <span class="toc-text">
+          1 概述</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-%E6%96%B9%E6%B3%95"><span class="toc-number">1.2.</span> <span class="toc-text">
+          2 方法</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#2-1-PLI%E6%B8%90%E8%BF%91%E7%BA%BF%E6%80%A7%E6%8F%92%E5%80%BC%E7%AD%96%E7%95%A5"><span class="toc-number">1.2.1.</span> <span class="toc-text">
+          2.1 PLI渐近线性插值策略</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#%E6%96%B9%E5%90%91"><span class="toc-number">1.2.1.1.</span> <span class="toc-text">
+          方向</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#%E5%BA%A6%E6%95%B0"><span class="toc-number">1.2.1.2.</span> <span class="toc-text">
+          度数</span></a></li></ol></li></ol></li></ol></li></ol></section><!-- ov = overview--><section class="sidebar-ov hide"><div class="sidebar-ov-author"><div class="sidebar-ov-author__avatar"><img class="sidebar-ov-author__avatar_img" src="/images/icons/photo.png" alt="avatar"></div><p class="sidebar-ov-author__text">To be a great person.</p></div><div class="sidebar-ov-cc"><a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en" target="_blank" rel="noopener" data-popover="知识共享许可协议" data-popover-pos="up"><img src="/images/cc-by-nc-sa.svg"></a></div></section><div class="sidebar-reading"><div class="sidebar-reading-info"><span class="sidebar-reading-info__text">你已阅读了 </span><span class="sidebar-reading-info__num">0</span><span class="sidebar-reading-info__perc">%</span></div><div class="sidebar-reading-line"></div></div></aside></div><div class="clearfix"></div></div></main><footer class="footer" id="footer"><div class="footer-inner"><div><span>Copyright © 2022</span><span class="footer__icon"><i class="fas fa-heart"></i></span><span>Strive</span></div><div><span>由 <a href="http://hexo.io/" title="Hexo" target="_blank" rel="noopener">Hexo</a> 强力驱动</span><span> v5.4.0</span><span class="footer__devider">|</span><span>主题 - <a href="https://github.com/liuyib/hexo-theme-stun/" title="Stun" target="_blank" rel="noopener">Stun</a></span><span> v2.6.2</span></div></div></footer><div class="loading-bar" id="loading-bar"><div class="loading-bar__progress"></div></div><div class="back2top" id="back2top"><span class="back2top__icon"><i class="fas fa-rocket"></i></span></div></div><script src="https://cdn.jsdelivr.net/npm/jquery@v3.4.1/dist/jquery.min.js"></script><script src="https://cdn.jsdelivr.net/npm/velocity-animate@1.5.2/velocity.min.js"></script><script src="https://cdn.jsdelivr.net/npm/velocity-animate@1.5.2/velocity.ui.min.js"></script><script src="/js/utils.js?v=2.6.2"></script><script src="/js/stun-boot.js?v=2.6.2"></script><script src="/js/scroll.js?v=2.6.2"></script><script src="/js/header.js?v=2.6.2"></script><script src="/js/sidebar.js?v=2.6.2"></script></body></html>

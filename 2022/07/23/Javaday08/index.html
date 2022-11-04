@@ -1,0 +1,193 @@
+<!DOCTYPE html><html lang="zh-CN"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="format-detection" content="telephone=no"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="black"><link rel="icon" href="/images/icons/favicon-16x16.png?v=2.6.2" type="image/png" sizes="16x16"><link rel="icon" href="/images/icons/favicon-32x32.png?v=2.6.2" type="image/png" sizes="32x32"><meta name="description" content="JavaDay08–Stream流                           1 Stream流                             1.1 Stream流的获取        123456789101112131415161718192021&#x2F;**------------Collection集合获取流对象---*&#x2F;Collec">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Javaday08">
+<meta property="og:url" content="https://striveizu.top/2022/07/23/Javaday08/index.html">
+<meta property="og:site_name" content="Strive&#39;s Blog">
+<meta property="og:description" content="JavaDay08–Stream流                           1 Stream流                             1.1 Stream流的获取        123456789101112131415161718192021&#x2F;**------------Collection集合获取流对象---*&#x2F;Collec">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://striveizu.top/2022/07/23/Javaday08/image-20220723142018493.png">
+<meta property="og:image" content="https://striveizu.top/2022/07/23/Javaday08/image-20220723142110595.png">
+<meta property="og:image" content="https://striveizu.top/2022/07/23/Javaday08/image-20220723142202786.png">
+<meta property="og:image" content="https://striveizu.top/2022/07/23/Javaday08/image-20220723150349522.png">
+<meta property="og:image" content="https://striveizu.top/2022/07/23/Javaday08/image-20220723150504099.png">
+<meta property="og:image" content="https://striveizu.top/2022/07/23/Javaday08/image-20220723154025787.png">
+<meta property="og:image" content="https://striveizu.top/2022/07/23/Javaday08/image-20220723160545805.png">
+<meta property="og:image" content="https://striveizu.top/2022/07/23/Javaday08/image-20220725153125662.png">
+<meta property="og:image" content="https://striveizu.top/2022/07/23/Javaday08/image-20220725153552793.png">
+<meta property="og:image" content="https://striveizu.top/2022/07/23/Javaday08/image-20220725153615716.png">
+<meta property="og:image" content="https://striveizu.top/2022/07/23/Javaday08/image-20220725153843050.png">
+<meta property="og:image" content="https://striveizu.top/2022/07/23/Javaday08/image-20220725153716644.png">
+<meta property="og:image" content="https://striveizu.top/2022/07/23/Javaday08/image-20220725200218369.png">
+<meta property="og:image" content="https://striveizu.top/2022/07/23/Javaday08/image-20220725202242082.png">
+<meta property="og:image" content="https://striveizu.top/2022/07/23/Javaday08/image-20220725202651266.png">
+<meta property="og:image" content="https://striveizu.top/2022/07/23/Javaday08/image-20220725203026471.png">
+<meta property="og:image" content="https://striveizu.top/2022/07/23/Javaday08/image-20220725203643647.png">
+<meta property="og:image" content="https://striveizu.top/2022/07/23/Javaday08/image-20220725204529714.png">
+<meta property="og:image" content="https://striveizu.top/2022/07/23/Javaday08/image-20220725204635241.png">
+<meta property="og:image" content="https://striveizu.top/2022/07/23/Javaday08/image-20220725204738589.png">
+<meta property="og:image" content="https://striveizu.top/2022/07/23/Javaday08/image-20220726151018345.png">
+<meta property="og:image" content="https://striveizu.top/2022/07/23/Javaday08/image-20220726152213741.png">
+<meta property="og:image" content="https://striveizu.top/2022/07/23/Javaday08/image-20220726152629432.png">
+<meta property="og:image" content="https://striveizu.top/2022/07/23/Javaday08/image-20220726154758848.png">
+<meta property="article:published_time" content="2022-07-23T06:07:07.000Z">
+<meta property="article:modified_time" content="2022-07-26T13:15:13.074Z">
+<meta property="article:author" content="Strive">
+<meta property="article:tag" content="Java">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://striveizu.top/2022/07/23/Javaday08/image-20220723142018493.png"><title>Javaday08 | Strive's Blog</title><link ref="canonical" href="https://striveizu.top/2022/07/23/Javaday08/"><link rel="dns-prefetch" href="https://cdn.jsdelivr.net"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.12.1/css/all.min.css" type="text/css"><link rel="stylesheet" href="/css/index.css?v=2.6.2"><script>var Stun = window.Stun || {};
+var CONFIG = {
+  root: '/',
+  algolia: undefined,
+  assistSearch: undefined,
+  fontIcon: {"prompt":{"success":"fas fa-check-circle","info":"fas fa-arrow-circle-right","warning":"fas fa-exclamation-circle","error":"fas fa-times-circle"},"copyBtn":"fas fa-copy"},
+  sidebar: {"offsetTop":"20px","tocMaxDepth":6},
+  header: {"enable":true,"showOnPost":true,"scrollDownIcon":true},
+  postWidget: {"endText":true},
+  nightMode: {"enable":true},
+  back2top: {"enable":true},
+  codeblock: {"style":"default","highlight":"light","wordWrap":false},
+  reward: false,
+  fancybox: false,
+  zoomImage: {"gapAside":"20px"},
+  galleryWaterfall: undefined,
+  lazyload: false,
+  pjax: undefined,
+  externalLink: {"icon":{"enable":true,"name":"fas fa-external-link-alt"}},
+  shortcuts: undefined,
+  prompt: {"copyButton":"复制","copySuccess":"复制成功","copyError":"复制失败"},
+  sourcePath: {"js":"js","css":"css","images":"images"},
+};
+
+window.CONFIG = CONFIG;</script><meta name="generator" content="Hexo 5.4.0"></head><body><div class="container" id="container"><header class="header" id="header"><div class="header-inner"><nav class="header-nav header-nav--fixed"><div class="header-nav-inner"><div class="header-nav-menubtn"><i class="fas fa-bars"></i></div><div class="header-nav-menu"><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/"><span class="header-nav-menu-item__icon"><i class="fas fa-home"></i></span><span class="header-nav-menu-item__text">首页</span></a></div><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/about/"><span class="header-nav-menu-item__icon"><i class="fas fa-address-card"></i></span><span class="header-nav-menu-item__text">关于</span></a></div><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="javascript:;" onclick="return false;"><span class="header-nav-menu-item__icon"><i class="fas fa-edit"></i></span><span class="header-nav-menu-item__text">文章</span></a><div class="header-nav-submenu"><div class="header-nav-submenu-item"><a class="header-nav-submenu-item__link" href="/archives/"><span class="header-nav-submenu-item__icon"><i class="fas fa-folder-open"></i></span><span class="header-nav-submenu-item__text">归档</span></a></div><div class="header-nav-submenu-item"><a class="header-nav-submenu-item__link" href="/categories/"><span class="header-nav-submenu-item__icon"><i class="fas fa-layer-group"></i></span><span class="header-nav-submenu-item__text">分类</span></a></div><div class="header-nav-submenu-item"><a class="header-nav-submenu-item__link" href="/tags/"><span class="header-nav-submenu-item__icon"><i class="fas fa-tags"></i></span><span class="header-nav-submenu-item__text">标签</span></a></div></div></div></div><div class="header-nav-mode"><div class="mode"><div class="mode-track"><span class="mode-track-moon"></span><span class="mode-track-sun"></span></div><div class="mode-thumb"></div></div></div></div></nav><div class="header-banner"><div class="header-banner-info"><div class="header-banner-info__title">Strive's Blog</div><div class="header-banner-info__subtitle">你我期许的绝非遥不可及</div></div><div class="header-banner-arrow"><div class="header-banner-arrow__icon"><i class="fas fa-angle-down"></i></div></div></div></div></header><main class="main" id="main"><div class="main-inner"><div class="content-wrap" id="content-wrap"><div class="content" id="content"><!-- Just used to judge whether it is an article page--><div id="is-post"></div><div class="post"><header class="post-header"><h1 class="post-title">Javaday08</h1><div class="post-meta"><span class="post-meta-item post-meta-item--createtime"><span class="post-meta-item__icon"><i class="far fa-calendar-plus"></i></span><span class="post-meta-item__info">发表于</span><span class="post-meta-item__value">2022-07-23</span></span><span class="post-meta-item post-meta-item--updatetime"><span class="post-meta-item__icon"><i class="far fa-calendar-check"></i></span><span class="post-meta-item__info">更新于</span><span class="post-meta-item__value">2022-07-26</span></span></div></header><div class="post-body">
+        <h3 id="JavaDay08–Stream流">
+          <a href="#JavaDay08–Stream流" class="heading-link"><i class="fas fa-link"></i></a><a href="#JavaDay08–Stream流" class="headerlink" title="JavaDay08–Stream流"></a>JavaDay08–Stream流</h3>
+      
+        <h4 id="1-Stream流">
+          <a href="#1-Stream流" class="heading-link"><i class="fas fa-link"></i></a><a href="#1-Stream流" class="headerlink" title="1 Stream流"></a>1 Stream流</h4>
+      <p><img src="/2022/07/23/Javaday08/image-20220723142018493.png" alt="image-20220723142018493"></p>
+<p><img src="/2022/07/23/Javaday08/image-20220723142110595.png" alt="image-20220723142110595"></p>
+
+        <h5 id="1-1-Stream流的获取">
+          <a href="#1-1-Stream流的获取" class="heading-link"><i class="fas fa-link"></i></a><a href="#1-1-Stream流的获取" class="headerlink" title="1.1 Stream流的获取"></a>1.1 Stream流的获取</h5>
+      <p><img src="/2022/07/23/Javaday08/image-20220723142202786.png" alt="image-20220723142202786"></p>
+<figure class="highlight java"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**------------Collection集合获取流对象---*/</span></span><br><span class="line">Collection&lt;String&gt; list = <span class="keyword">new</span> ArrayList&lt;&gt;();</span><br><span class="line"><span class="comment">//获取Stream对象</span></span><br><span class="line">Stream&lt;String&gt; s = list.stream();</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">/**------------Map集合获取流对象---*/</span></span><br><span class="line">Map&lt;String, Integer&gt; map = <span class="keyword">new</span> HashMap&lt;&gt;();</span><br><span class="line"><span class="comment">//获取Stream对象</span></span><br><span class="line"><span class="comment">//键流， 获取map中键的数据到Stream中</span></span><br><span class="line">Stream&lt;String&gt; keyStream = map.keySet().stream();</span><br><span class="line"><span class="comment">//值流</span></span><br><span class="line">Stream&lt;Integer&gt; valueStream = map.values().stream();</span><br><span class="line"><span class="comment">//获取键值对实体流 map.entrySet() 获取键值对实体的集合</span></span><br><span class="line">Stream&lt;Map.Entry&lt;String, Integer&gt;&gt; keyAndValueStream = map.entrySet().stream();</span><br><span class="line"></span><br><span class="line"><span class="comment">/**------------数组获取流对象---*/</span></span><br><span class="line"><span class="comment">/**数组获取流的两种方式*/</span></span><br><span class="line">String[] names = &#123;<span class="string">&quot;LOL&quot;</span>, <span class="string">&quot;KOF&quot;</span>&#125;;</span><br><span class="line">Stream&lt;String&gt; nameStream =  Arrays.stream(names);</span><br><span class="line">Stream&lt;String&gt; nameStream2 = Stream.of(names);</span><br></pre></td></tr></table></div></figure>
+
+
+        <h5 id="1-2-中间方法">
+          <a href="#1-2-中间方法" class="heading-link"><i class="fas fa-link"></i></a><a href="#1-2-中间方法" class="headerlink" title="1.2 中间方法"></a>1.2 中间方法</h5>
+      <p>比较常用的就是 <strong>filter</strong>过滤方法，常见使用方式如下：</p>
+<figure class="highlight java"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">Collection&lt;String&gt; list = <span class="keyword">new</span> ArrayList&lt;&gt;();</span><br><span class="line"><span class="comment">//获取Stream对象</span></span><br><span class="line">Collections.addAll(list, <span class="string">&quot;LOL&quot;</span>, <span class="string">&quot;KOF&quot;</span>, <span class="string">&quot;Genshin&quot;</span>, <span class="string">&quot;Honkai Impact3&quot;</span>, <span class="string">&quot;Geforce&quot;</span>);</span><br><span class="line"><span class="comment">//filter方法起到的作用是过滤，支持链式编程</span></span><br><span class="line">System.out.println(list.stream().filter(s -&gt; s.startsWith(<span class="string">&quot;Ge&quot;</span>)).count());</span><br></pre></td></tr></table></div></figure>
+
+<p><img src="/2022/07/23/Javaday08/image-20220723150349522.png" alt="image-20220723150349522"></p>
+
+        <h5 id="1-3-终结方法">
+          <a href="#1-3-终结方法" class="heading-link"><i class="fas fa-link"></i></a><a href="#1-3-终结方法" class="headerlink" title="1.3 终结方法"></a>1.3 终结方法</h5>
+      <p><img src="/2022/07/23/Javaday08/image-20220723150504099.png" alt="image-20220723150504099"></p>
+
+        <h5 id="1-4-Stream流的收集">
+          <a href="#1-4-Stream流的收集" class="heading-link"><i class="fas fa-link"></i></a><a href="#1-4-Stream流的收集" class="headerlink" title="1.4 Stream流的收集"></a>1.4 Stream流的收集</h5>
+      <p>Stream流只是作为方便操作集合/数组的一种<strong>手段</strong>，因此<strong>流处理之后的结果应该通过收集操作恢复成集合/数组中。</strong></p>
+<p><strong>注意：收集操作完成之后，之前的流就释放了，因此流只能使用一次</strong></p>
+<p><img src="/2022/07/23/Javaday08/image-20220723154025787.png" alt="image-20220723154025787"></p>
+<figure class="highlight java"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">List&lt;String&gt; list = <span class="keyword">new</span> ArrayList&lt;&gt;();</span><br><span class="line">Collections.addAll(list, <span class="string">&quot;LOL&quot;</span>, <span class="string">&quot;KOF&quot;</span>, <span class="string">&quot;Genshin&quot;</span>, <span class="string">&quot;Honkai Impact3&quot;</span>, <span class="string">&quot;Geforce&quot;</span>, <span class="string">&quot;Generetion&quot;</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">//获取流</span></span><br><span class="line"><span class="comment">// Stream&lt;String&gt; s1 = list.stream().filter(s -&gt; s.startsWith(&quot;Ge&quot;));</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//收集到list中</span></span><br><span class="line">Stream&lt;String&gt; s1 = list.stream().filter(s -&gt; s.startsWith(<span class="string">&quot;Ge&quot;</span>));</span><br><span class="line">List&lt;String&gt; geList = s1.collect(Collectors.toList());</span><br><span class="line">System.out.println(geList);</span><br><span class="line">geList.add(<span class="string">&quot;test&quot;</span>);</span><br><span class="line">System.out.println(geList);</span><br></pre></td></tr></table></div></figure>
+
+<p>收集到Set集合中</p>
+<figure class="highlight java"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 收集到Set集合中</span></span><br><span class="line">Stream&lt;String&gt; s2 = list.stream().filter(s -&gt; s.startsWith(<span class="string">&quot;Ge&quot;</span>));</span><br><span class="line">Set&lt;String&gt; geSet = s2.collect(Collectors.toSet());</span><br><span class="line">System.out.println(geSet);</span><br></pre></td></tr></table></div></figure>
+
+<p>收集到数组中，使用toArray()方法</p>
+<figure class="highlight java"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 收集到数组中</span></span><br><span class="line">Stream&lt;String&gt; s3 = list.stream().filter(s -&gt; s.startsWith(<span class="string">&quot;Ge&quot;</span>));</span><br><span class="line"><span class="comment">// 方法1 直接调用toArray方法只能获取Object类型的数组</span></span><br><span class="line">Object[] arr = s3.toArray();</span><br><span class="line"><span class="comment">// 法2 指定获取String类型数组，需要在toArray()方法中传入新建的对应类型数组</span></span><br><span class="line"><span class="comment">// 简化写法String[]::new指的是调用String数组的new方法</span></span><br><span class="line"><span class="comment">// String[] arr = s3.toArray(String[]::new);</span></span><br><span class="line">System.out.println(<span class="string">&quot;数组内容&quot;</span> + Arrays.toString(arr));</span><br></pre></td></tr></table></div></figure>
+
+<p>运行结果：</p>
+<p><img src="/2022/07/23/Javaday08/image-20220723160545805.png" alt="image-20220723160545805"></p>
+
+        <h4 id="2-异常">
+          <a href="#2-异常" class="heading-link"><i class="fas fa-link"></i></a><a href="#2-异常" class="headerlink" title="2 异常"></a>2 异常</h4>
+      <p><img src="/2022/07/23/Javaday08/image-20220725153125662.png" alt="image-20220725153125662"></p>
+
+        <h5 id="2-1-异常的分类">
+          <a href="#2-1-异常的分类" class="heading-link"><i class="fas fa-link"></i></a><a href="#2-1-异常的分类" class="headerlink" title="2.1 异常的分类"></a>2.1 异常的分类</h5>
+      <p><img src="/2022/07/23/Javaday08/image-20220725153552793.png" alt="image-20220725153552793"></p>
+<p><img src="/2022/07/23/Javaday08/image-20220725153615716.png" alt="image-20220725153615716"></p>
+<p><img src="/2022/07/23/Javaday08/image-20220725153843050.png" alt="image-20220725153843050"></p>
+
+        <h5 id="2-2-异常处理阶段">
+          <a href="#2-2-异常处理阶段" class="heading-link"><i class="fas fa-link"></i></a><a href="#2-2-异常处理阶段" class="headerlink" title="2.2 异常处理阶段"></a>2.2 异常处理阶段</h5>
+      <p>编译时异常发生在.java翻译成字节码文件阶段。</p>
+<p><img src="/2022/07/23/Javaday08/image-20220725153716644.png" alt="image-20220725153716644"></p>
+
+        <h5 id="2-3-常见运行时异常">
+          <a href="#2-3-常见运行时异常" class="heading-link"><i class="fas fa-link"></i></a><a href="#2-3-常见运行时异常" class="headerlink" title="2.3 常见运行时异常"></a>2.3 常见运行时异常</h5>
+      <p><img src="/2022/07/23/Javaday08/image-20220725200218369.png" alt="image-20220725200218369"></p>
+
+        <h5 id="2-4-异常的默认处理机制">
+          <a href="#2-4-异常的默认处理机制" class="heading-link"><i class="fas fa-link"></i></a><a href="#2-4-异常的默认处理机制" class="headerlink" title="2.4 异常的默认处理机制"></a>2.4 异常的默认处理机制</h5>
+      <p><img src="/2022/07/23/Javaday08/image-20220725202242082.png" alt="image-20220725202242082"></p>
+<p><strong>抛出异常对象最终抛出给JVM虚拟机</strong></p>
+
+        <h5 id="2-5-编译时异常的处理措施">
+          <a href="#2-5-编译时异常的处理措施" class="heading-link"><i class="fas fa-link"></i></a><a href="#2-5-编译时异常的处理措施" class="headerlink" title="2.5 编译时异常的处理措施"></a>2.5 编译时异常的处理措施</h5>
+      <p><img src="/2022/07/23/Javaday08/image-20220725202651266.png" alt="image-20220725202651266"></p>
+
+        <h6 id="方式一：出现异常往上抛出给调用者处理，调用者如果不作处理最终会层层上抛给JVM虚拟机处理。">
+          <a href="#方式一：出现异常往上抛出给调用者处理，调用者如果不作处理最终会层层上抛给JVM虚拟机处理。" class="heading-link"><i class="fas fa-link"></i></a><a href="#方式一：出现异常往上抛出给调用者处理，调用者如果不作处理最终会层层上抛给JVM虚拟机处理。" class="headerlink" title="方式一：出现异常往上抛出给调用者处理，调用者如果不作处理最终会层层上抛给JVM虚拟机处理。"></a>方式一：出现异常往上抛出给调用者处理，调用者如果不作处理最终会层层上抛给JVM虚拟机处理。</h6>
+      <p><img src="/2022/07/23/Javaday08/image-20220725203026471.png" alt="image-20220725203026471"></p>
+
+        <h6 id="方式二：">
+          <a href="#方式二：" class="heading-link"><i class="fas fa-link"></i></a><a href="#方式二：" class="headerlink" title="方式二："></a>方式二：</h6>
+      <p><img src="/2022/07/23/Javaday08/image-20220725203643647.png" alt="image-20220725203643647"></p>
+<p><strong>IDEA快捷键：ctrl+alt+T 快捷编写try-catch</strong></p>
+<p><strong>方式二存在的问题在于：出现异常的方法自行就把异常处理掉了，不会影响程序执行，上层调用者并不清楚异常与异常处理过程。</strong></p>
+
+        <h6 id="方式三：底层直接抛出异常，在调用者处编写try-catch处理异常，由调用者处理。">
+          <a href="#方式三：底层直接抛出异常，在调用者处编写try-catch处理异常，由调用者处理。" class="heading-link"><i class="fas fa-link"></i></a><a href="#方式三：底层直接抛出异常，在调用者处编写try-catch处理异常，由调用者处理。" class="headerlink" title="方式三：底层直接抛出异常，在调用者处编写try-catch处理异常，由调用者处理。"></a>方式三：底层直接抛出异常，在调用者处编写try-catch处理异常，由调用者处理。</h6>
+      <p><img src="/2022/07/23/Javaday08/image-20220725204529714.png" alt="image-20220725204529714"></p>
+<p><strong>这种方式比较规范</strong></p>
+<p><img src="/2022/07/23/Javaday08/image-20220725204635241.png" alt="image-20220725204635241"></p>
+
+        <h5 id="2-6-运行时异常的处理形式">
+          <a href="#2-6-运行时异常的处理形式" class="heading-link"><i class="fas fa-link"></i></a><a href="#2-6-运行时异常的处理形式" class="headerlink" title="2.6 运行时异常的处理形式"></a>2.6 运行时异常的处理形式</h5>
+      <p><img src="/2022/07/23/Javaday08/image-20220725204738589.png" alt="image-20220725204738589"></p>
+
+        <h5 id="2-7-自定义异常">
+          <a href="#2-7-自定义异常" class="heading-link"><i class="fas fa-link"></i></a><a href="#2-7-自定义异常" class="headerlink" title="2.7 自定义异常"></a>2.7 自定义异常</h5>
+      <p>可以通过异常的形式处理自己的某个业务问题：</p>
+<p><img src="/2022/07/23/Javaday08/image-20220726151018345.png" alt="image-20220726151018345"></p>
+
+        <h6 id="2-7-1-自定义编译时异常">
+          <a href="#2-7-1-自定义编译时异常" class="heading-link"><i class="fas fa-link"></i></a><a href="#2-7-1-自定义编译时异常" class="headerlink" title="2.7.1 自定义编译时异常"></a>2.7.1 自定义编译时异常</h6>
+      <p><img src="/2022/07/23/Javaday08/image-20220726152213741.png" alt="image-20220726152213741"></p>
+<figure class="highlight java"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 自定义编译式异常，需要编写异常类继承Exception类，并重写构造器</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">AgeIlleagalException</span> <span class="keyword">extends</span> <span class="title">Exception</span></span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">AgeIlleagalException</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">AgeIlleagalException</span><span class="params">(String message)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">super</span>(message);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></div></figure>
+
+<p>自定义编译式异常的使用：</p>
+<figure class="highlight java"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ExceptionDemo</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">try</span> &#123;</span><br><span class="line">            checkAge(-<span class="number">34</span>);</span><br><span class="line">        &#125; <span class="keyword">catch</span> (Exception e) &#123;</span><br><span class="line">            e.printStackTrace();</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">checkAge</span><span class="params">(<span class="keyword">int</span> age)</span> <span class="keyword">throws</span> AgeIlleagalException</span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(age &lt; <span class="number">0</span> || age &gt; <span class="number">200</span>)&#123;</span><br><span class="line">            <span class="comment">// 抛出一个异常对象给调用者</span></span><br><span class="line">            <span class="comment">// 注意：在方法内部直接创建一个异常对象，并在此点抛出，关键字是throw</span></span><br><span class="line"></span><br><span class="line">            <span class="comment">// 在方法申明上的，抛出方法内部异常，用throws</span></span><br><span class="line">            <span class="keyword">throw</span> <span class="keyword">new</span> AgeIlleagalException(age + <span class="string">&quot;is illeagal!&quot;</span>);</span><br><span class="line">        &#125;<span class="keyword">else</span> &#123;</span><br><span class="line">            System.out.println(<span class="string">&quot;合法&quot;</span>);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></div></figure>
+
+
+        <h6 id="2-7-2-自定义运行时异常">
+          <a href="#2-7-2-自定义运行时异常" class="heading-link"><i class="fas fa-link"></i></a><a href="#2-7-2-自定义运行时异常" class="headerlink" title="2.7.2 自定义运行时异常"></a>2.7.2 自定义运行时异常</h6>
+      <p><img src="/2022/07/23/Javaday08/image-20220726152629432.png" alt="image-20220726152629432"></p>
+<p>基本跟上面代码差不多 ，只不过继承的类是RuntimeException</p>
+
+        <h4 id="3-日志">
+          <a href="#3-日志" class="heading-link"><i class="fas fa-link"></i></a><a href="#3-日志" class="headerlink" title="3 日志"></a>3 日志</h4>
+      <p><img src="/2022/07/23/Javaday08/image-20220726154758848.png" alt="image-20220726154758848"></p>
+</div><footer class="post-footer"><div class="post-ending ending"><div class="ending__text">------ 本文结束，感谢您的阅读 ------</div></div><div class="post-copyright copyright"><div class="copyright-author"><span class="copyright-author__name">本文作者: </span><span class="copyright-author__value"><a href="https://striveizu.top">Strive</a></span></div><div class="copyright-link"><span class="copyright-link__name">本文链接: </span><span class="copyright-link__value"><a href="https://striveizu.top/2022/07/23/Javaday08/">https://striveizu.top/2022/07/23/Javaday08/</a></span></div><div class="copyright-notice"><span class="copyright-notice__name">版权声明: </span><span class="copyright-notice__value">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en" rel="external nofollow" target="_blank">BY-NC-SA</a> 许可协议。转载请注明出处！</span></div></div><div class="post-tags"><span class="post-tags-item"><span class="post-tags-item__icon"><i class="fas fa-tag"></i></span><a class="post-tags-item__link" href="https://striveizu.top/tags/Java/">Java</a></span></div><nav class="post-paginator paginator"><div class="paginator-prev"><a class="paginator-prev__link" href="/2022/07/27/Implicit-Sample-Extension-for-Unsupervised-Person-Re-Identification/"><span class="paginator-prev__icon"><i class="fas fa-angle-left"></i></span><span class="paginator-prev__text">文献阅读--Implicit Sample Extension for Unsupervised Person Re-Identification</span></a></div><div class="paginator-next"><a class="paginator-next__link" href="/2022/05/15/camp-05/"><span class="paginator-prev__text">camp-05</span><span class="paginator-next__icon"><i class="fas fa-angle-right"></i></span></a></div></nav></footer></div></div></div><div class="sidebar-wrap" id="sidebar-wrap"><aside class="sidebar" id="sidebar"><div class="sidebar-nav"><span class="sidebar-nav-toc current">文章目录</span><span class="sidebar-nav-ov">站点概览</span></div><section class="sidebar-toc"><ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#JavaDay08%E2%80%93Stream%E6%B5%81"><span class="toc-number">1.</span> <span class="toc-text">
+          JavaDay08–Stream流</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-Stream%E6%B5%81"><span class="toc-number">1.1.</span> <span class="toc-text">
+          1 Stream流</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#1-1-Stream%E6%B5%81%E7%9A%84%E8%8E%B7%E5%8F%96"><span class="toc-number">1.1.1.</span> <span class="toc-text">
+          1.1 Stream流的获取</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#1-2-%E4%B8%AD%E9%97%B4%E6%96%B9%E6%B3%95"><span class="toc-number">1.1.2.</span> <span class="toc-text">
+          1.2 中间方法</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#1-3-%E7%BB%88%E7%BB%93%E6%96%B9%E6%B3%95"><span class="toc-number">1.1.3.</span> <span class="toc-text">
+          1.3 终结方法</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#1-4-Stream%E6%B5%81%E7%9A%84%E6%94%B6%E9%9B%86"><span class="toc-number">1.1.4.</span> <span class="toc-text">
+          1.4 Stream流的收集</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-%E5%BC%82%E5%B8%B8"><span class="toc-number">1.2.</span> <span class="toc-text">
+          2 异常</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#2-1-%E5%BC%82%E5%B8%B8%E7%9A%84%E5%88%86%E7%B1%BB"><span class="toc-number">1.2.1.</span> <span class="toc-text">
+          2.1 异常的分类</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#2-2-%E5%BC%82%E5%B8%B8%E5%A4%84%E7%90%86%E9%98%B6%E6%AE%B5"><span class="toc-number">1.2.2.</span> <span class="toc-text">
+          2.2 异常处理阶段</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#2-3-%E5%B8%B8%E8%A7%81%E8%BF%90%E8%A1%8C%E6%97%B6%E5%BC%82%E5%B8%B8"><span class="toc-number">1.2.3.</span> <span class="toc-text">
+          2.3 常见运行时异常</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#2-4-%E5%BC%82%E5%B8%B8%E7%9A%84%E9%BB%98%E8%AE%A4%E5%A4%84%E7%90%86%E6%9C%BA%E5%88%B6"><span class="toc-number">1.2.4.</span> <span class="toc-text">
+          2.4 异常的默认处理机制</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#2-5-%E7%BC%96%E8%AF%91%E6%97%B6%E5%BC%82%E5%B8%B8%E7%9A%84%E5%A4%84%E7%90%86%E6%8E%AA%E6%96%BD"><span class="toc-number">1.2.5.</span> <span class="toc-text">
+          2.5 编译时异常的处理措施</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#%E6%96%B9%E5%BC%8F%E4%B8%80%EF%BC%9A%E5%87%BA%E7%8E%B0%E5%BC%82%E5%B8%B8%E5%BE%80%E4%B8%8A%E6%8A%9B%E5%87%BA%E7%BB%99%E8%B0%83%E7%94%A8%E8%80%85%E5%A4%84%E7%90%86%EF%BC%8C%E8%B0%83%E7%94%A8%E8%80%85%E5%A6%82%E6%9E%9C%E4%B8%8D%E4%BD%9C%E5%A4%84%E7%90%86%E6%9C%80%E7%BB%88%E4%BC%9A%E5%B1%82%E5%B1%82%E4%B8%8A%E6%8A%9B%E7%BB%99JVM%E8%99%9A%E6%8B%9F%E6%9C%BA%E5%A4%84%E7%90%86%E3%80%82"><span class="toc-number">1.2.5.1.</span> <span class="toc-text">
+          方式一：出现异常往上抛出给调用者处理，调用者如果不作处理最终会层层上抛给JVM虚拟机处理。</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#%E6%96%B9%E5%BC%8F%E4%BA%8C%EF%BC%9A"><span class="toc-number">1.2.5.2.</span> <span class="toc-text">
+          方式二：</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#%E6%96%B9%E5%BC%8F%E4%B8%89%EF%BC%9A%E5%BA%95%E5%B1%82%E7%9B%B4%E6%8E%A5%E6%8A%9B%E5%87%BA%E5%BC%82%E5%B8%B8%EF%BC%8C%E5%9C%A8%E8%B0%83%E7%94%A8%E8%80%85%E5%A4%84%E7%BC%96%E5%86%99try-catch%E5%A4%84%E7%90%86%E5%BC%82%E5%B8%B8%EF%BC%8C%E7%94%B1%E8%B0%83%E7%94%A8%E8%80%85%E5%A4%84%E7%90%86%E3%80%82"><span class="toc-number">1.2.5.3.</span> <span class="toc-text">
+          方式三：底层直接抛出异常，在调用者处编写try-catch处理异常，由调用者处理。</span></a></li></ol></li><li class="toc-item toc-level-5"><a class="toc-link" href="#2-6-%E8%BF%90%E8%A1%8C%E6%97%B6%E5%BC%82%E5%B8%B8%E7%9A%84%E5%A4%84%E7%90%86%E5%BD%A2%E5%BC%8F"><span class="toc-number">1.2.6.</span> <span class="toc-text">
+          2.6 运行时异常的处理形式</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#2-7-%E8%87%AA%E5%AE%9A%E4%B9%89%E5%BC%82%E5%B8%B8"><span class="toc-number">1.2.7.</span> <span class="toc-text">
+          2.7 自定义异常</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#2-7-1-%E8%87%AA%E5%AE%9A%E4%B9%89%E7%BC%96%E8%AF%91%E6%97%B6%E5%BC%82%E5%B8%B8"><span class="toc-number">1.2.7.1.</span> <span class="toc-text">
+          2.7.1 自定义编译时异常</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#2-7-2-%E8%87%AA%E5%AE%9A%E4%B9%89%E8%BF%90%E8%A1%8C%E6%97%B6%E5%BC%82%E5%B8%B8"><span class="toc-number">1.2.7.2.</span> <span class="toc-text">
+          2.7.2 自定义运行时异常</span></a></li></ol></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-%E6%97%A5%E5%BF%97"><span class="toc-number">1.3.</span> <span class="toc-text">
+          3 日志</span></a></li></ol></li></ol></section><!-- ov = overview--><section class="sidebar-ov hide"><div class="sidebar-ov-author"><div class="sidebar-ov-author__avatar"><img class="sidebar-ov-author__avatar_img" src="/images/icons/photo.png" alt="avatar"></div><p class="sidebar-ov-author__text">To be a great person.</p></div><div class="sidebar-ov-cc"><a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en" target="_blank" rel="noopener" data-popover="知识共享许可协议" data-popover-pos="up"><img src="/images/cc-by-nc-sa.svg"></a></div></section><div class="sidebar-reading"><div class="sidebar-reading-info"><span class="sidebar-reading-info__text">你已阅读了 </span><span class="sidebar-reading-info__num">0</span><span class="sidebar-reading-info__perc">%</span></div><div class="sidebar-reading-line"></div></div></aside></div><div class="clearfix"></div></div></main><footer class="footer" id="footer"><div class="footer-inner"><div><span>Copyright © 2022</span><span class="footer__icon"><i class="fas fa-heart"></i></span><span>Strive</span></div><div><span>由 <a href="http://hexo.io/" title="Hexo" target="_blank" rel="noopener">Hexo</a> 强力驱动</span><span> v5.4.0</span><span class="footer__devider">|</span><span>主题 - <a href="https://github.com/liuyib/hexo-theme-stun/" title="Stun" target="_blank" rel="noopener">Stun</a></span><span> v2.6.2</span></div></div></footer><div class="loading-bar" id="loading-bar"><div class="loading-bar__progress"></div></div><div class="back2top" id="back2top"><span class="back2top__icon"><i class="fas fa-rocket"></i></span></div></div><script src="https://cdn.jsdelivr.net/npm/jquery@v3.4.1/dist/jquery.min.js"></script><script src="https://cdn.jsdelivr.net/npm/velocity-animate@1.5.2/velocity.min.js"></script><script src="https://cdn.jsdelivr.net/npm/velocity-animate@1.5.2/velocity.ui.min.js"></script><script src="/js/utils.js?v=2.6.2"></script><script src="/js/stun-boot.js?v=2.6.2"></script><script src="/js/scroll.js?v=2.6.2"></script><script src="/js/header.js?v=2.6.2"></script><script src="/js/sidebar.js?v=2.6.2"></script></body></html>

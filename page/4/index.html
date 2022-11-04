@@ -28,741 +28,582 @@ var CONFIG = {
   sourcePath: {"js":"js","css":"css","images":"images"},
 };
 
-window.CONFIG = CONFIG;</script><meta name="generator" content="Hexo 5.4.0"></head><body><div class="container" id="container"><header class="header" id="header"><div class="header-inner"><nav class="header-nav header-nav--fixed"><div class="header-nav-inner"><div class="header-nav-menubtn"><i class="fas fa-bars"></i></div><div class="header-nav-menu"><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/"><span class="header-nav-menu-item__icon"><i class="fas fa-home"></i></span><span class="header-nav-menu-item__text">首页</span></a></div><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/about/"><span class="header-nav-menu-item__icon"><i class="fas fa-address-card"></i></span><span class="header-nav-menu-item__text">关于</span></a></div><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="javascript:;" onclick="return false;"><span class="header-nav-menu-item__icon"><i class="fas fa-edit"></i></span><span class="header-nav-menu-item__text">文章</span></a><div class="header-nav-submenu"><div class="header-nav-submenu-item"><a class="header-nav-submenu-item__link" href="/archives/"><span class="header-nav-submenu-item__icon"><i class="fas fa-folder-open"></i></span><span class="header-nav-submenu-item__text">归档</span></a></div><div class="header-nav-submenu-item"><a class="header-nav-submenu-item__link" href="/categories/"><span class="header-nav-submenu-item__icon"><i class="fas fa-layer-group"></i></span><span class="header-nav-submenu-item__text">分类</span></a></div><div class="header-nav-submenu-item"><a class="header-nav-submenu-item__link" href="/tags/"><span class="header-nav-submenu-item__icon"><i class="fas fa-tags"></i></span><span class="header-nav-submenu-item__text">标签</span></a></div></div></div></div><div class="header-nav-mode"><div class="mode"><div class="mode-track"><span class="mode-track-moon"></span><span class="mode-track-sun"></span></div><div class="mode-thumb"></div></div></div></div></nav><div class="header-banner"><div class="header-banner-info"><div class="header-banner-info__title">Strive's Blog</div><div class="header-banner-info__subtitle">你我期许的绝非遥不可及</div></div><div class="header-banner-arrow"><div class="header-banner-arrow__icon"><i class="fas fa-angle-down"></i></div></div></div></div></header><main class="main" id="main"><div class="main-inner"><div class="content-wrap" id="content-wrap"><div class="content content-home" id="content"><section class="postlist"><article class="postlist-item post"><header class="post-header"><h1 class="post-title"><a class="post-title__link" href="/2021/10/24/dalunwen/">《**基于深度学习跨模态行人再识别系统的研究与实现**》阅读</a></h1><div class="post-meta"><span class="post-meta-item post-meta-item--createtime"><span class="post-meta-item__icon"><i class="far fa-calendar-plus"></i></span><span class="post-meta-item__info">发表于</span><span class="post-meta-item__value">2021-10-24</span></span><span class="post-meta-item post-meta-item--updatetime"><span class="post-meta-item__icon"><i class="far fa-calendar-check"></i></span><span class="post-meta-item__info">更新于</span><span class="post-meta-item__value">2021-10-28</span></span></div></header><div class="post-body"><div class="post-excerpt">
-        <h3 id="师兄大论文《基于深度学习跨模态行人再识别系统的研究与实现》阅读">
-          <a href="#师兄大论文《基于深度学习跨模态行人再识别系统的研究与实现》阅读" class="heading-link"><i class="fas fa-link"></i></a><a href="#师兄大论文《基于深度学习跨模态行人再识别系统的研究与实现》阅读" class="headerlink" title="师兄大论文《基于深度学习跨模态行人再识别系统的研究与实现》阅读"></a>师兄大论文《<strong>基于深度学习跨模态行人再识别系统的研究与实现</strong>》阅读</h3>
+window.CONFIG = CONFIG;</script><meta name="generator" content="Hexo 5.4.0"></head><body><div class="container" id="container"><header class="header" id="header"><div class="header-inner"><nav class="header-nav header-nav--fixed"><div class="header-nav-inner"><div class="header-nav-menubtn"><i class="fas fa-bars"></i></div><div class="header-nav-menu"><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/"><span class="header-nav-menu-item__icon"><i class="fas fa-home"></i></span><span class="header-nav-menu-item__text">首页</span></a></div><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/about/"><span class="header-nav-menu-item__icon"><i class="fas fa-address-card"></i></span><span class="header-nav-menu-item__text">关于</span></a></div><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="javascript:;" onclick="return false;"><span class="header-nav-menu-item__icon"><i class="fas fa-edit"></i></span><span class="header-nav-menu-item__text">文章</span></a><div class="header-nav-submenu"><div class="header-nav-submenu-item"><a class="header-nav-submenu-item__link" href="/archives/"><span class="header-nav-submenu-item__icon"><i class="fas fa-folder-open"></i></span><span class="header-nav-submenu-item__text">归档</span></a></div><div class="header-nav-submenu-item"><a class="header-nav-submenu-item__link" href="/categories/"><span class="header-nav-submenu-item__icon"><i class="fas fa-layer-group"></i></span><span class="header-nav-submenu-item__text">分类</span></a></div><div class="header-nav-submenu-item"><a class="header-nav-submenu-item__link" href="/tags/"><span class="header-nav-submenu-item__icon"><i class="fas fa-tags"></i></span><span class="header-nav-submenu-item__text">标签</span></a></div></div></div></div><div class="header-nav-mode"><div class="mode"><div class="mode-track"><span class="mode-track-moon"></span><span class="mode-track-sun"></span></div><div class="mode-thumb"></div></div></div></div></nav><div class="header-banner"><div class="header-banner-info"><div class="header-banner-info__title">Strive's Blog</div><div class="header-banner-info__subtitle">你我期许的绝非遥不可及</div></div><div class="header-banner-arrow"><div class="header-banner-arrow__icon"><i class="fas fa-angle-down"></i></div></div></div></div></header><main class="main" id="main"><div class="main-inner"><div class="content-wrap" id="content-wrap"><div class="content content-home" id="content"><section class="postlist"><article class="postlist-item post"><header class="post-header"><h1 class="post-title"><a class="post-title__link" href="/2022/02/21/object-detect-EVALUATION-METRICS/">目标检测常用的评估指标</a></h1><div class="post-meta"><span class="post-meta-item post-meta-item--createtime"><span class="post-meta-item__icon"><i class="far fa-calendar-plus"></i></span><span class="post-meta-item__info">发表于</span><span class="post-meta-item__value">2022-02-21</span></span><span class="post-meta-item post-meta-item--updatetime"><span class="post-meta-item__icon"><i class="far fa-calendar-check"></i></span><span class="post-meta-item__info">更新于</span><span class="post-meta-item__value">2022-03-06</span></span></div></header><div class="post-body"><div class="post-excerpt"><p>目标检测常用的评估指标</p>
+
+        <h5 id="混淆矩阵">
+          <a href="#混淆矩阵" class="heading-link"><i class="fas fa-link"></i></a><a href="#混淆矩阵" class="headerlink" title="混淆矩阵"></a>混淆矩阵</h5>
+      <p><img src="/2022/02/21/object-detect-EVALUATION-METRICS/image-20220221163303518.png" alt="image-20220221163303518"></p>
+<p>混淆矩阵定义如上所示，对于二分类问题来说，根据预测值结果可以将预测结果分为<strong>真正例（Ture Positive，TP）</strong>、<strong>真负例（True Negative，TN）</strong>、<strong>假正例（False Positive，FP）、假负例（False Negative，FN）</strong>。其中，<strong>TP表示预测为正样本且实际为正样本的样本数</strong>，<strong>TN表示预测为负样本但实际为正样本的样本数，FP为预测为正样本实际为负样本的样本数，FN表示预测为负样本实际为负样本的样本数。</strong></p>
+
+        <h5 id="AP-AR">
+          <a href="#AP-AR" class="heading-link"><i class="fas fa-link"></i></a><a href="#AP-AR" class="headerlink" title="AP AR"></a>AP AR</h5>
+      <p><strong>准确率Precision又称为查准率</strong>，表示<strong>模型预测为正例的样本占实际为正例的样本的比例</strong>。<strong>召回率Recall又称为查全率</strong>，表示测试集<strong>中所有正样本被正确识别的比例。</strong>计算方法为：</p>
+<img src="/2022/02/21/object-detect-EVALUATION-METRICS/image-20220221164603650.png" alt="image-20220221164603650" style="zoom:200%;">
+
+<p>目标检测中判断是正样本还是负样本与两个指标有关，分别为<strong>交并比（IOU）阈值</strong>和<strong>置信度（Confidence）阈值</strong>。置信度即认为算法预测目标框中存在目标的确信度，对于每个预测目标框，都会使用置信度阈值进行过滤，滤除一些低质量的预测框，置信度阈值一般设为0.35。<strong>当预测目标框的置信度大于阈值时，才认为该预测框中存在目标，即该预测框为正样本，否则则认为该预测框中为背景，即该预测框为负样本。</strong>其次我们介绍交并比的定义，交并比是用来衡量真实目标框和算法预测目标框的重合程度，如图3.1所示，IOU的值就等于图3.1中黄色重合部分的面积与红色框和绿色框的面积之和的比值。<strong>当预测框和真实框重合达到一定阈值时，我们就认为预测框预测正确，即真正例True Positive，否则为假正例False Positive，一般该阈值我们称为IOU阈值，常设为0.5左右。</strong></p>
+<img src="/2022/02/21/object-detect-EVALUATION-METRICS/image-20220221164742376.png" alt="image-20220221164742376" style="zoom:150%;">
+
+<p><strong>平均准确率AP为表示不同查全率下的查准率的加权平均。</strong></p>
+<p><img src="/2022/02/21/object-detect-EVALUATION-METRICS/image-20220221170540931.png" alt="image-20220221170540931"></p>
+<p>而均值平均准确率为确定置信度阈值的前提下调整不同IOU阈值得到的平均准确率的和的均值。而IOU阈值一般取0.5,0.55,0.6,…,0.95等10个值，其公式如下所示：</p>
+<img src="/2022/02/21/object-detect-EVALUATION-METRICS/image-20220221170654735.png" alt="image-20220221170654735" style="zoom:200%;">
+</div></div></article><article class="postlist-item post"><header class="post-header"><h1 class="post-title"><a class="post-title__link" href="/2022/02/01/Attention/">Attention</a></h1><div class="post-meta"><span class="post-meta-item post-meta-item--createtime"><span class="post-meta-item__icon"><i class="far fa-calendar-plus"></i></span><span class="post-meta-item__info">发表于</span><span class="post-meta-item__value">2022-02-01</span></span><span class="post-meta-item post-meta-item--updatetime"><span class="post-meta-item__icon"><i class="far fa-calendar-check"></i></span><span class="post-meta-item__info">更新于</span><span class="post-meta-item__value">2022-03-06</span></span></div></header><div class="post-body"><div class="post-excerpt"><p>深度学习中的注意力机制</p>
+
+        <h4 id="简介">
+          <a href="#简介" class="heading-link"><i class="fas fa-link"></i></a><a href="#简介" class="headerlink" title="简介"></a>简介</h4>
+      <p>注意力机制，顾名思义是向人类的注意力学习的结果。人类视野开阔，但是视野只能聚焦在一个小范围，或一个点，这种就叫做注意力。</p>
+<p>视觉注意力机制是人类视觉所特有的大脑信号处理机制。人类视觉通过快速扫描全局图像，获得需要重点关注的目标区域，也就是一般所说的注意力焦点，而后对这一区域投入更多注意力资源，以获取更多所需要关注目标的细节信息，而抑制其他无用信息。</p>
+</div></div></article><article class="postlist-item post"><header class="post-header"><h1 class="post-title"><a class="post-title__link" href="/2022/01/28/DLA/">DLA模型</a></h1><div class="post-meta"><span class="post-meta-item post-meta-item--createtime"><span class="post-meta-item__icon"><i class="far fa-calendar-plus"></i></span><span class="post-meta-item__info">发表于</span><span class="post-meta-item__value">2022-01-28</span></span><span class="post-meta-item post-meta-item--updatetime"><span class="post-meta-item__icon"><i class="far fa-calendar-check"></i></span><span class="post-meta-item__info">更新于</span><span class="post-meta-item__value">2022-03-06</span></span></div></header><div class="post-body"><div class="post-excerpt"><p>DLA网络模型：一种深度网络特征融合方法</p>
+
+        <h4 id="DLA简介">
+          <a href="#DLA简介" class="heading-link"><i class="fas fa-link"></i></a><a href="#DLA简介" class="headerlink" title="DLA简介"></a>DLA简介</h4>
+      <p>DLA网络模型出自CVPR 2018 的论文 Deep Layer Aggregation，中文翻译为深层聚合。CNN为多种计算机视觉任务提供了很好的解决方案。随着视觉任务对高性能算法更严格的追求，Backbone的设计成为了一个很重要的主题。作者在摘要中指出计算机视觉识别任务需要从低到高的层次提取不同层次的信息。因此当前的网络设计方向是如何加宽加深网络层次以提取更多的特征。如ResNet，通过引入跳跃连接使得网络有能力到达很深的层次。设计更深或更宽的网络架构虽然确实可以更好的提取特征，但也带来了更多的参数数量和难优化问题。更深的层提取更多语义和更全局的特征，但这些并不能证明最后一层是任何任务的最终表示。事实上，skip connections已经被证明对于分类和回归以及更结构化的任务是有效的。如何更好的聚合不同层次提取的特征，就像深度和宽度一样，是网络架构的一个关键维度。因此作者认为：设计更深更宽的网络结构固然重要，<strong>但如何更好的聚合层和块更值得研究。</strong></p>
+<p>经过复杂的分析，<strong>更深的网络层能提取到更多语义和全局的特征，但是这并不能表明最后一层就是任务需要的表示。</strong>实际上“跳跃连接”已经证明了对于分类、回归以及其他结构化问题的有效性。因此，如何聚合，尤其是深度与宽度上的聚合，对于网络结构的优化是一个非常重要的技术。</p>
+<p>作者认为，在计算机视觉任务中，仅是加深网络层次，但层和层之间相互孤立是不行的。<strong>混合和聚合不同层提取的特征表示，可以改进对图像是什么和在哪里的推断。</strong>尽管ResNet加入了skip connections的设计，已经组合了不同层次的特征表示，但这些连接本质上是浅层的连接，仅仅通过相加操作来融合不同层次的特征。</p>
+<p>作者通过更深层次的聚合来增强标准体系结构，以便更好地跨层融合信息。我们的深层聚合结构迭代和分层地合并特征层次，使网络具有更高的精度和更少的参数。跨架构和任务的实验表明，与现有的分支和合并方案相比，深层聚合方案提高了识别和分辨率。</p>
+
+        <h4 id="第一章-DLA的基本组成模块–IDA和HDA">
+          <a href="#第一章-DLA的基本组成模块–IDA和HDA" class="heading-link"><i class="fas fa-link"></i></a><a href="#第一章-DLA的基本组成模块–IDA和HDA" class="headerlink" title="第一章 DLA的基本组成模块–IDA和HDA"></a>第一章 DLA的基本组成模块–IDA和HDA</h4>
+      <p>DLA，即深度聚合。在论文中，作者将聚合<em>Aggregation</em>定义为网络架构中不同层次特征表示的组合。多个layer组合为一个block，多个block再根据分辨率组合为一个stage，<strong>DLA则主要探讨block和stage的组合</strong>（stage间网络保持一致分辨率，那么空间融合发生在stage间，语义融合发生在stage内）。如果一组<em>Aggregation</em>是复合的、非线性的，并且较早的聚合层的输出输入到后面的多个聚合层。作者介绍了两种深层聚合结构：IDA(iterative deep aggregation迭代式深度聚合)和HDA(hierarchical deep aggregation层级深度聚合)。IDA专注于跨分辨率和尺度的融合，而HDA专注于融合所有提取自不同模块和通道的特征。下图1的c和f分别展示了IDA和HDA的结构。</p>
+<p><img src="/2022/01/28/DLA/image-20220202095121590.png" alt="image-20220202095121590"></p>
+<p>​                                                                              图 1 HDA IDA 基本结构</p>
+
+        <h5 id="1-1-IDA-Iterative-Deep-Aggregation-迭代深度聚合结构">
+          <a href="#1-1-IDA-Iterative-Deep-Aggregation-迭代深度聚合结构" class="heading-link"><i class="fas fa-link"></i></a><a href="#1-1-IDA-Iterative-Deep-Aggregation-迭代深度聚合结构" class="headerlink" title="1.1 IDA Iterative Deep Aggregation 迭代深度聚合结构"></a>1.1 IDA Iterative Deep Aggregation 迭代深度聚合结构</h5>
+      <p>如上文所说，多个layer组合为一个block，多个block再根据分辨率组合为一个stage。更深层次的阶段语义更加丰富，但空间信息更加粗糙。从浅层到深层的skip connection可以融合尺度和分辨率。在IDA结构中，作者建议逐渐的增加和加深IDA结构的特征表示。不同层的聚合从最浅的层次和最小的尺度开始并逐步增加深度和尺度。作者指出不断地聚合不同阶段提取的特征，可以细化浅层的特征。</p>
+<p><img src="/2022/01/28/DLA/image-20220203092920174.png" alt="image-20220203092920174"></p>
+<p>上图中绿色的方块称作“Aggregation Node”，Aggregation Node在特征由浅到深传播的同时聚集特征。从上图中也可以看出，IDA以stage为基本单位，IDA结构在多个stage外部增加连接和Aggregation Node。</p>
+<p><img src="/2022/01/28/DLA/image-20220203093447689.png" alt="image-20220203093447689"></p>
+<p>在上面的公式中， <em><strong>I</strong></em>表示整个IDA模块， <em><strong>N</strong></em>表示Aggregation Node。例如***N(x1, x2)***表示一个输入为x1和x2的Aggregation Node，即图中最左侧的绿色方块。</p>
+
+        <h4 id="1-2-HDA-Hierarchical-Deep-Aggregation-层次深度聚合结构">
+          <a href="#1-2-HDA-Hierarchical-Deep-Aggregation-层次深度聚合结构" class="heading-link"><i class="fas fa-link"></i></a><a href="#1-2-HDA-Hierarchical-Deep-Aggregation-层次深度聚合结构" class="headerlink" title="1.2 HDA (Hierarchical Deep Aggregation)层次深度聚合结构"></a>1.2 HDA (Hierarchical Deep Aggregation)层次深度聚合结构</h4>
+      <p>虽然IDA有效地融合了多个stage的特征，但是没有对stage内部多个block的特征进行融合。作者提出了HDA（Hierarchical Deep Aggregation）结构增强stage内部多个block的融合，如下图所示：</p>
+<p><img src="/2022/01/28/DLA/image-20220203101438312.png" alt="image-20220203101438312"></p>
+<p>在树的中间聚合中，我们将聚合节点的输出返回到主干，作为下一个子树的输入，如图所示。这将传播前面所有块的聚合，而不是单独传播前面的块，以更好地保留特性。  </p>
+
+        <h4 id="第三章-代码实现">
+          <a href="#第三章-代码实现" class="heading-link"><i class="fas fa-link"></i></a><a href="#第三章-代码实现" class="headerlink" title="第三章 代码实现"></a>第三章 代码实现</h4>
       
-        <h4 id="一、论文提出问题与名词解释">
-          <a href="#一、论文提出问题与名词解释" class="heading-link"><i class="fas fa-link"></i></a><a href="#一、论文提出问题与名词解释" class="headerlink" title="一、论文提出问题与名词解释"></a>一、论文提出问题与名词解释</h4>
-      
-        <h5 id="1-1-行人再识别-Re-ID">
-          <a href="#1-1-行人再识别-Re-ID" class="heading-link"><i class="fas fa-link"></i></a><a href="#1-1-行人再识别-Re-ID" class="headerlink" title="1.1 行人再识别 Re-ID"></a>1.1 行人再识别 Re-ID</h5>
-      <p>行人再识别的背景主要是判利用计算机视觉技术判断图像或者视频序列中是否存在特定的行人。其主要应当包括两个方面：行人检测与行人识别。</p>
-<p>行人检测方面主要完成利用计算机视觉相关技术判断图像或视频序列中是否包含行人，如果包含行人则对每个行人标注独立的行人框，并将这些行人框裁剪提供给行人再识别系统进行身份识别。</p>
-<p>行人再识别系统完成的功能是根据裁剪后输入的多个行人图片判断是否为同一行人。</p>
-
-        <h5 id="1-2-跨模态行人再识别-IV-ReID">
-          <a href="#1-2-跨模态行人再识别-IV-ReID" class="heading-link"><i class="fas fa-link"></i></a><a href="#1-2-跨模态行人再识别-IV-ReID" class="headerlink" title="1.2 跨模态行人再识别 IV-ReID"></a>1.2 跨模态行人再识别 IV-ReID</h5>
-      <p>当照明条件不佳的时候，RGB摄像头往往表现不佳，但是红外摄像头则可以良好工作。如果给定一个特定的人的可见（或红外图像），系统跨模态的从其他光谱相机中捕获的图库中搜索相应的红外（或可见光）图像可以实现更好的效果。这种交叉模态图像匹配任务称为跨模态行人再识别(IV-REID)</p>
-
-        <h4 id="二、行人检测部分">
-          <a href="#二、行人检测部分" class="heading-link"><i class="fas fa-link"></i></a><a href="#二、行人检测部分" class="headerlink" title="二、行人检测部分"></a>二、行人检测部分</h4>
-      <p>对于行人检测部分，应当归类为目标检测问题。师兄采用的行人检测网络是anchor free检测网络中的CenterNet网络。</p>
-
-        <h5 id="2-1-Anchor-free网络模型">
-          <a href="#2-1-Anchor-free网络模型" class="heading-link"><i class="fas fa-link"></i></a><a href="#2-1-Anchor-free网络模型" class="headerlink" title="2.1 Anchor free网络模型"></a>2.1 Anchor free网络模型</h5>
-      
-        <h6 id="2-1-1-什么是Anchor">
-          <a href="#2-1-1-什么是Anchor" class="heading-link"><i class="fas fa-link"></i></a><a href="#2-1-1-什么是Anchor" class="headerlink" title="2.1.1 什么是Anchor"></a>2.1.1 什么是Anchor</h6>
-      <p>Anchor是在图像上预设好的不同大小，不同长宽比的参照框。借助神经网络强大的拟合能力，不需要再计算Haar/Hog等特征。网络直接输出每个anchor包含（或者说与物体有较大重叠，也就是IoU较大的）物体的概率，以及被检测物体相对于本Anchor的中心点偏移以及长宽比例。如下图</p>
-<p><img src="/images/dalunwen/image-20211012094040232.png" alt="image-20211012094040232"></p>
-<p>因为anchor的位置都是固定的，所以就可以很容易的换算出来实际物体的位置。以图中的小猫为例，红色的anchor就以99%的概率认为它是一只猫，并同时给出了猫的实际位置相对于该anchor的偏移量，这样，我们将输出解码后就得到了实际猫的位置，如果它能通过NMS（非最大抑制）筛选，它就能顺利的输出来。但是，绿色的anchor就认为它是猫的概率就很小，紫色的anchor虽然与猫有重叠，但是概率只有26%。在训练的时候，也就是给每张图片的物体的Bounding Box，相对于anchor进行编码，如果物体的Bounding Box与某个anchor的IoU较大，例如大于0.5就认为是正样本，否则是负样本（当然，也有算法将大于0.7的设为正样本，小于0.3的算负样本，中间的不计算损失）。</p>
-
-        <h6 id="2-1-2-什么是IoU（Intersection-over-Union）">
-          <a href="#2-1-2-什么是IoU（Intersection-over-Union）" class="heading-link"><i class="fas fa-link"></i></a><a href="#2-1-2-什么是IoU（Intersection-over-Union）" class="headerlink" title="2.1.2 什么是IoU（Intersection over Union）"></a>2.1.2 什么是IoU（Intersection over Union）</h6>
-      <p>IoU是一种测量在特定数据集中检测相应物体准确度的一个标准。IoU是一个简单的测量标准，只要是在输出中得出一个预测范围(bounding boxex)的任务都可以用IoU来进行测量。为了可以使IoU用于测量任意大小形状的物体检测，我们需要：</p>
-<ul>
-<li><p>ground-truth bounding boxes（人为在训练集图像中标出要检测物体的大概范围）</p>
-</li>
-<li><p>我们的算法得出的结果范围。</p>
-</li>
-</ul>
-<p><strong>这个标准用于测量真实和预测之间的相关度，相关度越高该值越高。</strong>其<strong>计算方法是两个区域重叠的部分除以两个区域的集合部分得出的结果</strong>，通过设定的IoU阈值，与IoU计算结果进行比较。如图2所示：</p>
-<img src="/images/dalunwen/image-20211012202618543.png" alt="image-20211012202618543" style="zoom:50%;">
-
-<p>​                                                                                                                        图2 IoU的计算公式</p>
-<img src="/images/dalunwen/image-20211012202816848.png" alt="image-20211012202816848" style="zoom:75%;">
-
-
-        <h6 id="2-1-3-CenterNet">
-          <a href="#2-1-3-CenterNet" class="heading-link"><i class="fas fa-link"></i></a><a href="#2-1-3-CenterNet" class="headerlink" title="2.1.3 CenterNet"></a>2.1.3 CenterNet</h6>
-      <p>CenterNet正是Anchor Free的网络模型。CenterNet 首次提出了运用关键点检测算法确定目标中心点。<strong>CenterNet的基本思想是在确定目标中心点的前提下预测目标的宽高。</strong>CenterNet采用了关键点检测的方法，对特征的每个区域取8邻域最大值作为极值点，然后保留100个极值点，作为目标框的中心点，并且通过设置一定的阈值滤除低质量的目标中心点。CenterNet的网络框架如图所示：</p>
-<p><img src="/images/dalunwen/image-20211014212357048.png" alt="image-20211014212357048"></p>
-
-        <h5 id="2-2-本论文对CenterNet的改进">
-          <a href="#2-2-本论文对CenterNet的改进" class="heading-link"><i class="fas fa-link"></i></a><a href="#2-2-本论文对CenterNet的改进" class="headerlink" title="2.2 本论文对CenterNet的改进"></a>2.2 本论文对CenterNet的改进</h5>
-      <p>论文提出了两个对CenterNet的改进方向。由于CenterNet的基本思路是先利用预测中心点算法预测目标中心点，再在中心点的基础上预测宽高。出现检测不准的情况可能是1、网络未预测正确的目标中心点，后面宽高预测分支即使十分精准也会出现误检框，2、目标中心点预测精准但是而宽高预测分支未输出正确的宽高，那么也会造成误检框。并为此改进了网络的结构与损失函数。</p>
-
-        <h6 id="2-2-1-网络结构的改进">
-          <a href="#2-2-1-网络结构的改进" class="heading-link"><i class="fas fa-link"></i></a><a href="#2-2-1-网络结构的改进" class="headerlink" title="2.2.1 网络结构的改进"></a>2.2.1 网络结构的改进</h6>
-      <p>对于中心预测分支主要采取的方法是提取特征图8-临域内最大值作为目标的中心点。由于有时会出现极值点并不是目标的中心点的情况，师兄在上图的原有CenterNet的结构中加入了注意力网络中的全局上下文模块（Global Context Block）。</p>
-<p>注意力网络可以使局部区域加权后特征值变大，我们利用此特性进行训练并约束网络，使训练图片的目标中心点分配较高的权重，非目标中心点分配较低的权重，使特征图的极值点均为目标中心点，避免产生中心点误检的情况。</p>
-
-        <h6 id="2-2-2-损失函数改进">
-          <a href="#2-2-2-损失函数改进" class="heading-link"><i class="fas fa-link"></i></a><a href="#2-2-2-损失函数改进" class="headerlink" title="2.2.2 损失函数改进"></a>2.2.2 损失函数改进</h6>
-      <p>CenterNet的预测分支的损失函数是Smooth L1 loss，原理是对检测框进行宽高的回归优化，但是没有将检测框视作一个整体进行优化，导致检测网络的精度较低。</p>
-<p>CIOU loss，此损失函数兼顾了预测框与真实框的相交程度、欧式距离、长宽比等多个因素，且较为容易收敛，旨在使预测框更加符合真实框,其公式为：<img src="/images/dalunwen/image-20211024143007780.png" alt="image-20211024143007780">。</p>
-<p>其中，<img src="/images/dalunwen/image-20211024143042745.png" alt="image-20211024143042745" style="zoom:65%;">表示预测框与真实框中心点的欧式距离，c表示预测框和真实框的最小外接矩形的对角线距离。<img src="/images/dalunwen/image-20211024143117350.png" alt="image-20211024143117350" style="zoom:67%;">表示真实框与目标框长宽比的距离。</p>
-
-        <h4 id="三、跨模态行人再识别部分">
-          <a href="#三、跨模态行人再识别部分" class="heading-link"><i class="fas fa-link"></i></a><a href="#三、跨模态行人再识别部分" class="headerlink" title="三、跨模态行人再识别部分"></a>三、跨模态行人再识别部分</h4>
-      
-        <h5 id="3-1-评估指标">
-          <a href="#3-1-评估指标" class="heading-link"><i class="fas fa-link"></i></a><a href="#3-1-评估指标" class="headerlink" title="3.1 评估指标"></a>3.1 评估指标</h5>
-      
-        <h6 id="3-1-1-CMC曲线">
-          <a href="#3-1-1-CMC曲线" class="heading-link"><i class="fas fa-link"></i></a><a href="#3-1-1-CMC曲线" class="headerlink" title="3.1.1 CMC曲线"></a>3.1.1 CMC曲线</h6>
-      <p>CMC曲线全称为累计匹配曲线，是图像检索领域的重要检测指标。在行人再识别测试时，分别输入查询目标库的图片（query）和候选库图片（gallery），计算查询库中每一个行人与候选库中的每一个行人的相似度，并根据相似度进行排序，相似度列表由一个二维矩阵表示。相似度列表的横坐标为n，表示相似度排名，纵坐标为Rank_n，表示排序靠前的行人与目标行人具有相同ID的概率，例如，某个模型进行测试，取排序前十的图片进行分析，前十中共有5张正确图片被召回，这5张正确图片的排序下标为1，2，5，7，8，那么该模型的rank_1为100%，rank_5为60%，rank_10为50%。因此，可以根据此指标来判断模型的分类能力。</p>
-
-        <h6 id="3-1-2-mAP-平均检索精度">
-          <a href="#3-1-2-mAP-平均检索精度" class="heading-link"><i class="fas fa-link"></i></a><a href="#3-1-2-mAP-平均检索精度" class="headerlink" title="3.1.2 mAP 平均检索精度"></a>3.1.2 mAP 平均检索精度</h6>
-      <p>当gallery图库中出现大量的同一个行人的图片时，被召回率会大大提高，在rank机制下，误判的图片几乎不起作用，此时Rank就不能很好地判断模型的好坏，于是研究人员提出使用平均检索精度（mAP）来评估算法的优劣。mAP为查询目标库中所有图片的检索精度的平均值，即query中所有图片查准率的平均值。例如，有两个模型验证性能的好坏，我们进行测试，第一个模型有4个正确图片被召回，第二个模型也有4个正确图片被召回，第一个模型被召回的正确图片排序下标为1，2，3，5，第二个模型被召回的正确图片排序下标为1，3，5，6。那么第一个模型的平均准确率为（1/1+2/2+3/3+4/5）/4=0.95，第二个模型的平均准确率为（1/1+2/3+3/5+4/6）/4=0.75，从上述计算可以看出第一个模型效果更好，因此，此指标有力的弥补了Rank指标的缺陷。</p>
-
-        <h5 id="3-2-跨模态行人再识别算法的思路">
-          <a href="#3-2-跨模态行人再识别算法的思路" class="heading-link"><i class="fas fa-link"></i></a><a href="#3-2-跨模态行人再识别算法的思路" class="headerlink" title="3.2 跨模态行人再识别算法的思路"></a>3.2 跨模态行人再识别算法的思路</h5>
-      <p>跨模态行人再识别主要是使用RGB图片与红外图片做跨模态学习。RGB图片通常具有较高的空间分辨率和可观的细节和明暗对比，因此，它们适合于人类的视觉感知。然而，这些图像很容易受到恶劣条件的影响，如光照差、雾和恶劣天气。但是，描述物体热辐射的红外图像具有一定抗干扰的能力，但其通常分辨率较低，纹理较差。因此，红外图片与RGB图片所具有的共性集中在纹理、轮廓、图案等外观信息，比如同一个行人穿有一件带有logo图案的衣服，那么不管是他的红外图片还是他的RGB图片都会有显眼的logo图案，且图案纹理轮廓相似度极大。</p>
-<p>神经网络的较浅层提取的特征主要关注图像的纹理颜色等外观细节，而提取的深层特征则包含语义信息。我们认为红外图片和可见光图片的低层次的外观特征具有更高相似性，所以学习低层次特征能够得到更具有可辨性的共性特征。</p>
-
-        <h5 id="3-3-具体算法框架">
-          <a href="#3-3-具体算法框架" class="heading-link"><i class="fas fa-link"></i></a><a href="#3-3-具体算法框架" class="headerlink" title="3.3 具体算法框架"></a>3.3 具体算法框架</h5>
-      <p><img src="/images/dalunwen/image-20211024190307293.png" alt="image-20211024190307293"></p>
-<p>网络架构是采用常用的跨模态网络结构——双流网络，模型的骨干网络是ResNet-50，以前的方法只采用最深层的特征来编码图片，例如来自ResNet-50最后一个卷积层的输出。最后一个卷积层输出的是深层特征，即有关于图片的语义信息。尽管高级特征对于形成抽象概念用于物体识别确实有用，但它们可能会丢弃颜色和纹理等低级信号，这些信息是人物识别的重要线索。此外，卷积神经网络深层特征的分辨率较小，可能无法看到细节，如衣服上的图案，面部特征，细微的姿势差异等。这表明提取多层次特征，并且利用多层次特征的信息优势互补有利于行人重识别任务。</p>
-
-        <h6 id="3-3-1-特征提取">
-          <a href="#3-3-1-特征提取" class="heading-link"><i class="fas fa-link"></i></a><a href="#3-3-1-特征提取" class="headerlink" title="3.3.1 特征提取"></a>3.3.1 特征提取</h6>
-      <p>如上文所述，师兄认为深层特征会忽略图片的一些纹理细节，而这些细节对于身份识别是有帮助的。因此师兄分别提取RGB图像、红外图像在ResNet-50的block_2、block_3、block_4层的输出作为浅层特征、中层特征、深层特征，分别用X1、X2、X3、X4、X5、X6表示。然后分别对两种图片的浅层、中层、深层特征表示做向量拼接作为特征融合。融合后的特征分别用B1、B2、B3表示。公式如下。</p>
-<p><img src="/images/dalunwen/image-20211024204302667.png" alt="image-20211024204302667"></p>
-<p>concatenate表示向量拼接，相比特征直接相加，其主要优势是特征融合前后特征维度不变，保证信息不会丢失，X1、X4表示RGB图片和红外图片的浅层特征，X2、X5表示RGB图片和红外图片的中层特征，X3、X6表示RGB图片和红外图片的深层特征，0表示在batch维度上进行拼接，即RGB特征和红外特征进行融合，消除模态差异。</p>
-
-        <h6 id="3-3-2-特征分割">
-          <a href="#3-3-2-特征分割" class="heading-link"><i class="fas fa-link"></i></a><a href="#3-3-2-特征分割" class="headerlink" title="3.3.2 特征分割"></a>3.3.2 特征分割</h6>
-      <p><strong>将图像特征分割成不同的局部特征能够显著提高行人再识别的准确性。其次，全局特征能够捕捉最显著的外观特征，而局部特征可以捕捉图像的细节</strong>，将图像特征分成局部特征和全局特征已经得到广泛的应用。由于<strong>低层特征分辨率更高，包含更多位置、细节信息，但是由于经过的卷积更少，其语义性更低，噪声更多，而高层特征具有更强的语义信息，但是分辨率很低，对细节的感知能力较差，中层特征介于两者之间。</strong>因此对高层层和中层特征X3,X2做特征分割。对于X1不分割，对于X2分割为两个局部特征，对于X3分割为三个局部特征，这样分割更加符合人体结构构造，例如上半身，下半身（或头、上半身、下半身）。且通过实验结果表明，这种分割的方法达到的效果最好。其公式如下，</p>
-<p><img src="/images/dalunwen/image-20211024211727622.png" alt="image-20211024211727622"></p>
-<p>P1、P2为中层特征的局部特征，P3、P4、P5为深层特征的局部特征。同时将低层次特征、中层次特征和高层次特征的全局特征保留，其公式如下，</p>
-<p><img src="/images/dalunwen/image-20211024211859494.png" alt="image-20211024211859494"></p>
-<p>正如之前写的卷积神经网络那篇博文，池化操作的<strong>首要作用是降采样汇合结果中的一个元素对应于原输入数据的一个子区域（sub-region），因此汇合相当于在空间范围内做了维度约减（spatially dimension reduction），从而使模型可以抽取更广范围的特征。同时减小了下一层输入大小，进而减小计算量和参数个数。</strong>其次池化操作还具有<strong>降维、去除冗余信息、对特征进行压缩、简化网络复杂度、减小计算量、减小内存消耗等等。</strong>因此对B1,B2,B3做池化操作提取出三个层次的全局特征G1,G2,G3。</p>
-<p>同时，对分割出的局部特征P1-P5作降维操作得到局部特征。旨在减少运算量并滤除冗余信息，其公式如下，</p>
-<p><img src="/images/dalunwen/image-20211024212619478.png" alt="image-20211024212619478"></p>
-<p>其中，R1、R2、R3、R4、R5表示三个层次的局部特征，即分割后的特征在通道维度上降维为256得到局部特征。</p>
-
-        <h6 id="3-3-3-对于全局特征的损失函数">
-          <a href="#3-3-3-对于全局特征的损失函数" class="heading-link"><i class="fas fa-link"></i></a><a href="#3-3-3-对于全局特征的损失函数" class="headerlink" title="3.3.3 对于全局特征的损失函数"></a>3.3.3 对于全局特征的损失函数</h6>
-      <p>对于全局特征求两个损失函数，分别是用于度量学习的三元组损失（Triplet loss）和用于分类的交叉熵损失（Softmax loss）。对于全局特征B1、B2、B3采用交叉熵损失函数和三元组损失函数联合优化，其公式如下，</p>
-<p><img src="/images/dalunwen/image-20211024212738320.png" alt="image-20211024212738320"></p>
-<p>其中，L1、L3、L7表示三个层次的全局特征的三元组损失，L2、L4、L8表示三个层次的全局特征的交叉熵损失。</p>
-
-        <h6 id="3-3-4-对于局部特征的损失函数">
-          <a href="#3-3-4-对于局部特征的损失函数" class="heading-link"><i class="fas fa-link"></i></a><a href="#3-3-4-对于局部特征的损失函数" class="headerlink" title="3.3.4 对于局部特征的损失函数"></a>3.3.4 对于局部特征的损失函数</h6>
-      <p>对于局部特征仅仅采用交叉熵损失函数进行优化，原因是<strong>局部特征可能会出现特征未对齐问题，导致局部特征可能存在巨大变化，因此，三元组损失在训练期间可能会破坏模型优化。</strong>其公式如下，</p>
-<p><img src="/images/dalunwen/image-20211024212909969.png" alt="image-20211024212909969"></p>
-<p>其中，L5、L6表示中层局部特征的交叉熵损失，L9、L10、L11表示深层局部特征的交叉熵损失。</p>
-
-        <h6 id="3-3-5-总损失函数">
-          <a href="#3-3-5-总损失函数" class="heading-link"><i class="fas fa-link"></i></a><a href="#3-3-5-总损失函数" class="headerlink" title="3.3.5 总损失函数"></a>3.3.5 总损失函数</h6>
-      <p>由于学习低层次特征可以获得更多的跨模态共性特征，所以我们提取了网络中的多层次特征。然而，我们发现<strong>不同任务损失的尺度差异非常大，如果采取简单相加的方式，整体损失函数将不会是最佳的，导致网络模型得不到充分的优化</strong>。</p>
-<p>因此，我们采用多任务学习的方法，结合多个损失函数，利用同<strong>方差不确定性</strong>同时学习多个目标。我们将同方差不确定性解释为依赖于任务的加权。我们<strong>设置了三个可学习的超参数，分别集成到每个任务的损失中，三个噪声参数分别作为低层特征、中层特征和高层特征损失的权重因子。然后，将所有经过适当加权的损失相加，得到最优的总损失，从而达到对不同层次特征进行优化的目的</strong>。因此，我们最终的总损失函数为:</p>
-<p><img src="/images/dalunwen/image-20211024213329932.png" alt="image-20211024213329932"></p>
-
-        <h4 id="四-结论">
-          <a href="#四-结论" class="heading-link"><i class="fas fa-link"></i></a><a href="#四-结论" class="headerlink" title="四 结论"></a>四 结论</h4>
-      <p>师兄分别在行人再识别的两个部分进行改进，在行人检测部分对网络结构进行改进，在CenterNet的基础上加入了注意力模块，提升了预测目标中心点的精度。在损失函数部分将CenterNet的损失函数改进为CIOU，将检测框视作一个整体进行优化。</p>
-<p>在行人识别部分使用了跨模态的学习方法。采用了以ResNet-50为主干网络的双流网络去分别提取RGB图像与红外图像的低、中、高层特征。并采取向量拼接作为特征融合消除模态间差异。并采取特征分割将特征分为全局特征与局部特征。全局特征的提取方法是分别对特征融合后的低中高层特征作最大值池化操作。为了更好的提取细节特征，对中层与高层特征作特征分割之后将分割后的深层特征降维处理滤除冗余信息得到局部特征。并分别对局部特征与全局特征提出了对应的损失函数。最终取得了较好的效果</p>
-</div></div></article><article class="postlist-item post"><header class="post-header"><h1 class="post-title"><a class="post-title__link" href="/2021/10/20/LeNet/">传统网络实现之LeNet</a></h1><div class="post-meta"><span class="post-meta-item post-meta-item--createtime"><span class="post-meta-item__icon"><i class="far fa-calendar-plus"></i></span><span class="post-meta-item__info">发表于</span><span class="post-meta-item__value">2021-10-20</span></span><span class="post-meta-item post-meta-item--updatetime"><span class="post-meta-item__icon"><i class="far fa-calendar-check"></i></span><span class="post-meta-item__info">更新于</span><span class="post-meta-item__value">2021-10-22</span></span></div></header><div class="post-body"><div class="post-excerpt">
-        <h3 id="传统网络实现之LeNet">
-          <a href="#传统网络实现之LeNet" class="heading-link"><i class="fas fa-link"></i></a><a href="#传统网络实现之LeNet" class="headerlink" title="传统网络实现之LeNet"></a>传统网络实现之LeNet</h3>
-      
-        <h4 id="LeNet简介">
-          <a href="#LeNet简介" class="heading-link"><i class="fas fa-link"></i></a><a href="#LeNet简介" class="headerlink" title="LeNet简介"></a>LeNet简介</h4>
-      <p>LeNet，它是最早发布的卷积神经网络之一，因其在计算机视觉任务中的高效性能而受到广泛关注。 这个模型是由 AT&amp;T 贝尔实验室的研究员 Yann LeCun 在1989年提出的（并以其命名），目的是识别图像中的手写数字。 当时，Yann LeCun 发表了第一篇通过反向传播成功训练卷积神经网络的研究，这项工作代表了十多年来神经网络研究开发的成果。</p>
-
-        <h4 id="1-网络结构">
-          <a href="#1-网络结构" class="heading-link"><i class="fas fa-link"></i></a><a href="#1-网络结构" class="headerlink" title="1 网络结构"></a>1 网络结构</h4>
-      <p>LeNet-5的网络结构如下图所示，由结构图可知LeNet是一个较为简单的神经网络，它包含了深度学习的基本模块如卷积层、池化层、全连接层等等。</p>
-<img src="/images/LeNet/image-20211020191956320.png" alt="image-20211020191956320" style="zoom:50%;">
-
-<p>​                                图1 LeNet-5的简化版示意图</p>
-<p>LeNet的每个卷积块的基本单元是一个卷积层、一个sigmod激活函数和一个平均池化层。每个卷积层使用5×5的卷积核和一个sigmoid激活函数。</p>
-<p>本次实验使用的数据集仍然是Fashion-mnist数据集，输入大小为28×28的图片。</p>
-
-        <h4 id="2-代码实现">
-          <a href="#2-代码实现" class="heading-link"><i class="fas fa-link"></i></a><a href="#2-代码实现" class="headerlink" title="2 代码实现"></a>2 代码实现</h4>
-      
-        <h5 id="2-1-使用到的库">
-          <a href="#2-1-使用到的库" class="heading-link"><i class="fas fa-link"></i></a><a href="#2-1-使用到的库" class="headerlink" title="2.1 使用到的库"></a>2.1 使用到的库</h5>
-      <p>`</p>
-<figure class="highlight python"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> torch</span><br><span class="line"><span class="keyword">import</span> torchvision</span><br><span class="line"><span class="keyword">from</span> torch <span class="keyword">import</span> nn</span><br><span class="line"><span class="keyword">from</span> torch.utils <span class="keyword">import</span> data</span><br><span class="line"><span class="keyword">from</span> torchvision <span class="keyword">import</span> transforms</span><br></pre></td></tr></table></div></figure>
-
-<p>`</p>
-
-        <h5 id="2-2-定义网络结构">
-          <a href="#2-2-定义网络结构" class="heading-link"><i class="fas fa-link"></i></a><a href="#2-2-定义网络结构" class="headerlink" title="2.2 定义网络结构"></a>2.2 定义网络结构</h5>
-      <p>为了避免错误输入尺寸不是28×28的图片，因此定义的输入层应当具有将数据resize成28×28的格式的功能。</p>
-<p>`</p>
-<figure class="highlight python"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 定义reshape层，实现的功能为继承Module类，将输入reshape成单通道28*28的黑白图片，第一维是数据的批量大小</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Reshape</span>(<span class="params">nn.Module</span>):</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">forward</span>(<span class="params">self, x</span>):</span></span><br><span class="line">        <span class="keyword">return</span> x.view(-<span class="number">1</span>, <span class="number">1</span>, <span class="number">28</span>, <span class="number">28</span>)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># LeNet</span></span><br><span class="line">net = nn.Sequential(</span><br><span class="line">    Reshape(),</span><br><span class="line">    nn.Conv2d(<span class="number">1</span>, <span class="number">6</span>, kernel_size=<span class="number">5</span>, padding=<span class="number">2</span>), nn.Sigmoid(), <span class="comment"># &quot;(28+4-5+1)=28&quot; 公式中的ph实际上是2倍的padding值</span></span><br><span class="line">    <span class="comment"># 因为torch分别在上下左右都加上padding值</span></span><br><span class="line">    nn.AvgPool2d(kernel_size=<span class="number">2</span>, stride=<span class="number">2</span>),  <span class="comment"># (28+2-2)/2=14</span></span><br><span class="line">    nn.Conv2d(<span class="number">6</span>, <span class="number">16</span>, kernel_size=<span class="number">5</span>), nn.Sigmoid(),  <span class="comment"># (14-5+1)=10</span></span><br><span class="line">    nn.AvgPool2d(kernel_size=<span class="number">2</span>, stride=<span class="number">2</span>),  <span class="comment"># (10+2-2)/2=5</span></span><br><span class="line">    nn.Flatten(),</span><br><span class="line">    nn.Linear(<span class="number">16</span> * <span class="number">5</span> * <span class="number">5</span>, <span class="number">120</span>), nn.Sigmoid(),</span><br><span class="line">    nn.Linear(<span class="number">120</span>, <span class="number">84</span>), nn.Sigmoid(),</span><br><span class="line">    nn.Linear(<span class="number">84</span>, <span class="number">10</span>)</span><br><span class="line">)</span><br></pre></td></tr></table></div></figure>
-
-<p>`</p>
-
-        <h5 id="2-3-工具函数类">
-          <a href="#2-3-工具函数类" class="heading-link"><i class="fas fa-link"></i></a><a href="#2-3-工具函数类" class="headerlink" title="2.3 工具函数类"></a>2.3 工具函数类</h5>
-      <p>定义在SoftMax那章的工具函数类，实现的功能是创建一个Accumulator类，Accumulator类创建的对象有着data属性，它是一个长度为n的列表，可以调用add（）函数实现data列表对应下标累加。在本代码中作用为创建一个Accumulator(3)对象，该列表的两个下标分别保存训练集总损失、训练集预测正确的总数与全部标签的数量，这样就可以利用前两个除以第三个来计算平均loss与预测正确率。</p>
-<p>`</p>
-<figure class="highlight python"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Accumulator</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span>(<span class="params">self, n</span>):</span></span><br><span class="line">        self.data = [<span class="number">0.0</span>] * n</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">add</span>(<span class="params">self, *args</span>):</span></span><br><span class="line">        self.data = [a + <span class="built_in">float</span>(b) <span class="keyword">for</span> a, b <span class="keyword">in</span> <span class="built_in">zip</span>(self.data, args)]</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">reset</span>(<span class="params">self</span>):</span></span><br><span class="line">        self.data = [<span class="number">0.0</span>] * <span class="built_in">len</span>(self.data)</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__getitem__</span>(<span class="params">self, idx</span>):</span></span><br><span class="line">        <span class="keyword">return</span> self.data[idx]</span><br></pre></td></tr></table></div></figure>
-
-<p>`</p>
-<p>定义两个计算准确率的函数</p>
-<p><code>accuracy(y_hat, y)</code>函数实现的功能是统计一批输出的预测的数量。实现的功能是对一个batch_size个数据做预测，输出的y_hat是batch_size个10分类one_hot编码，对它做行方向上的argmax可以得到类别，如[0,0,1,0,0,0,0,0,0,0]作argmax得到预测的类别是第2类。y是标签数据，标注编号描述0T-shirt/top（T恤）1Trouser（裤子）2Pullover（套衫）3Dress（裙子）4Coat（外套）5Sandal（凉鞋）6Shirt（汗衫）7Sneaker（运动鞋）8Bag（包）9Ankle boot（踝靴）。cmp是一个保存y和y_hat相等结果布尔值的tensor，对这个tensor做sum（）可以得到预测正确的数量。</p>
-<p>`</p>
-<figure class="highlight python"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">accuracy</span>(<span class="params">y_hat, y</span>):</span></span><br><span class="line">    <span class="string">&quot;&quot;&quot;y_hat为一批预测的张量，为batch_size个长度为10的one_hot编码&quot;&quot;&quot;</span></span><br><span class="line">    <span class="string">&quot;&quot;&quot;对one_hot编码在行（axis0为这批预测的数量）上做argmax得出预测的类别，y为batch_size个实数标签&quot;&quot;&quot;</span></span><br><span class="line">    y_hat = y_hat.argmax(axis=<span class="number">1</span>)</span><br><span class="line">    cmp = y_hat.<span class="built_in">type</span>(y.dtype) == y <span class="comment"># argmax之后的y_hat是一个0-9的实数，与y作比较，相同的</span></span><br><span class="line">    <span class="keyword">return</span> <span class="built_in">float</span>(cmp.<span class="built_in">type</span>(y.dtype).<span class="built_in">sum</span>())</span><br></pre></td></tr></table></div></figure>
-
-<p>`</p>
-<p><code>evaluate_accuracy(net, data_iter)</code>函数实现的功能是评估网络在测试集上的准确率。创建一个长度为2的Accumulator()对象，它的data第一个元素保存预测正确的数量，第二个利用y.numel()得到预测的总数并累加到第二个元素，最后利用第一个元素÷第二个元素的到正确率。</p>
-<p>`</p>
-<figure class="highlight python"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">evaluate_accuracy</span>(<span class="params">net, data_iter</span>):</span></span><br><span class="line">    <span class="keyword">if</span> <span class="built_in">isinstance</span>(net, nn.Module):</span><br><span class="line">        net.<span class="built_in">eval</span>()</span><br><span class="line">    metric = Accumulator(<span class="number">2</span>)</span><br><span class="line">    <span class="keyword">for</span> X, y <span class="keyword">in</span> data_iter:</span><br><span class="line">        metric.add(accuracy(net(X), y), y.numel())</span><br><span class="line">    <span class="keyword">return</span> metric[<span class="number">0</span>]/metric[<span class="number">1</span>]</span><br></pre></td></tr></table></div></figure>
-
-<p>`</p>
-
-        <h5 id="2-4-初始化网络参数与优化器">
-          <a href="#2-4-初始化网络参数与优化器" class="heading-link"><i class="fas fa-link"></i></a><a href="#2-4-初始化网络参数与优化器" class="headerlink" title="2.4 初始化网络参数与优化器"></a>2.4 初始化网络参数与优化器</h5>
-      <p>对线性层和卷积层的参数做Xavier初始化，采用随机梯度下降SGD算法作为优化器，并采用交叉熵损失作为损失函数。</p>
-<p>`</p>
-<figure class="highlight python"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 初始化网络参数</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">init_weights</span>(<span class="params">m</span>):</span></span><br><span class="line">    <span class="keyword">if</span> <span class="built_in">type</span>(m) == nn.Linear <span class="keyword">or</span> <span class="built_in">type</span>(m) == nn.Conv2d:</span><br><span class="line">        nn.init.xavier_uniform_(m.weight)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">lr, num_epochs = <span class="number">0.1</span>, <span class="number">10</span></span><br><span class="line">net.apply(init_weights)</span><br><span class="line">optimizer = torch.optim.SGD(net.parameters(), lr=lr)</span><br><span class="line">loss = nn.CrossEntropyLoss()</span><br></pre></td></tr></table></div></figure>
-
-<p>`</p>
-
-        <h5 id="2-5-训练函数">
-          <a href="#2-5-训练函数" class="heading-link"><i class="fas fa-link"></i></a><a href="#2-5-训练函数" class="headerlink" title="2.5 训练函数"></a>2.5 训练函数</h5>
-      <figure class="highlight python"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">train_eopch</span>(<span class="params">net, train_iter, loss, updater</span>):</span></span><br><span class="line">    <span class="keyword">if</span> <span class="built_in">isinstance</span>(net, nn.Module):</span><br><span class="line">        net.train()</span><br><span class="line">    metric = Accumulator(<span class="number">3</span>)</span><br><span class="line">    <span class="keyword">for</span> X, y <span class="keyword">in</span> train_iter:</span><br><span class="line">        y_hat = net(X)</span><br><span class="line">        l = loss(y_hat, y)</span><br><span class="line">        updater.zero_grad()</span><br><span class="line">        l.backward()</span><br><span class="line">        updater.step()</span><br><span class="line">        metric.add(l, accuracy(y_hat, y), y.numel())</span><br><span class="line">    <span class="keyword">return</span> metric[<span class="number">0</span>] / metric[<span class="number">2</span>], metric[<span class="number">1</span>] / metric[<span class="number">2</span>]</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">train</span>(<span class="params">net, updater, loss, train_iter, test_iter, num_epoch</span>):</span></span><br><span class="line">    <span class="keyword">if</span> __name__ == <span class="string">&#x27;__main__&#x27;</span>:</span><br><span class="line">        <span class="keyword">for</span> epoch <span class="keyword">in</span> <span class="built_in">range</span>(num_epoch):</span><br><span class="line">            train_metrics = train_eopch(net, train_iter, loss, updater)</span><br><span class="line">            test_acc = evaluate_accuracy(net, test_iter)</span><br><span class="line">            <span class="built_in">print</span>(<span class="string">f&#x27;epoch:<span class="subst">&#123;epoch + <span class="number">1</span>&#125;</span>,训练集损失:<span class="subst">&#123;train_metrics[<span class="number">0</span>]&#125;</span>,训练集准确率:<span class="subst">&#123;train_metrics[<span class="number">1</span>]&#125;</span>,测试集准确率:<span class="subst">&#123;test_acc&#125;</span>&#x27;</span>)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">num_epochs = <span class="number">20</span></span><br><span class="line">train(net, optimizer, loss, train_iter, test_iter, num_epochs)</span><br></pre></td></tr></table></div></figure>
-
-
-
-
-        <h4 id="3-结果展示">
-          <a href="#3-结果展示" class="heading-link"><i class="fas fa-link"></i></a><a href="#3-结果展示" class="headerlink" title="3 结果展示"></a>3 结果展示</h4>
-      
-        <h5 id="原网络的数据比较">
-          <a href="#原网络的数据比较" class="heading-link"><i class="fas fa-link"></i></a><a href="#原网络的数据比较" class="headerlink" title="原网络的数据比较"></a>原网络的数据比较</h5>
-      <p>原网络使用了Sigmoid激活函数与平均值池化，20轮epoch，学习率采用0.9，可以见到最终的测试集准确率来到了0.845左右，相较于softmax似乎提升不大</p>
-<p><img src="/images/LeNet/image-20211020192838633.png" alt="image-20211020192838633"></p>
-
-        <h5 id="将平均池化改成最大值池化，其他不变，上涨了一点">
-          <a href="#将平均池化改成最大值池化，其他不变，上涨了一点" class="heading-link"><i class="fas fa-link"></i></a><a href="#将平均池化改成最大值池化，其他不变，上涨了一点" class="headerlink" title="将平均池化改成最大值池化，其他不变，上涨了一点"></a>将平均池化改成最大值池化，其他不变，上涨了一点</h5>
-      <p><img src="/images/LeNet/image-20211020195102120.png" alt="image-20211020195102120"></p>
-
-        <h5 id="保持学习率0-9不变，采取最大值池化-ReLU激活函数，出现了损失很大完全不降低，测试集准确率一直很低的情况">
-          <a href="#保持学习率0-9不变，采取最大值池化-ReLU激活函数，出现了损失很大完全不降低，测试集准确率一直很低的情况" class="heading-link"><i class="fas fa-link"></i></a><a href="#保持学习率0-9不变，采取最大值池化-ReLU激活函数，出现了损失很大完全不降低，测试集准确率一直很低的情况" class="headerlink" title="保持学习率0.9不变，采取最大值池化+ReLU激活函数，出现了损失很大完全不降低，测试集准确率一直很低的情况"></a>保持学习率0.9不变，采取最大值池化+ReLU激活函数，出现了损失很大完全不降低，测试集准确率一直很低的情况</h5>
-      <p><img src="/images/LeNet/image-20211022205227138.png" alt="image-20211022205227138"></p>
-<p>百度了相关资料，推测可能是学习率过大且ReLU函数对学习率敏感，较大的学习率可能出现较大的梯度，较大梯度冲击导致神经元死亡。</p>
-
-        <h5 id="尝试降低学习率至0-3">
-          <a href="#尝试降低学习率至0-3" class="heading-link"><i class="fas fa-link"></i></a><a href="#尝试降低学习率至0-3" class="headerlink" title="尝试降低学习率至0.3"></a>尝试降低学习率至0.3</h5>
-      <p><img src="/images/LeNet/image-20211022210608129.png" alt="image-20211022210608129"></p>
-<p>达到了最好成绩约0.89</p>
-
-        <h4 id="4-总结">
-          <a href="#4-总结" class="heading-link"><i class="fas fa-link"></i></a><a href="#4-总结" class="headerlink" title="4 总结"></a>4 总结</h4>
-      <p>LeNet作为较早的卷积神经网络模型，比起只采用一层softmax的方法有了一定的提升。接下来可以尝试采取更深层的网络模型进一步提升精度。</p>
-</div></div></article><article class="postlist-item post"><header class="post-header"><h1 class="post-title"><a class="post-title__link" href="/2021/10/17/week-summary002/">每周计划与总结002</a></h1><div class="post-meta"><span class="post-meta-item post-meta-item--createtime"><span class="post-meta-item__icon"><i class="far fa-calendar-plus"></i></span><span class="post-meta-item__info">发表于</span><span class="post-meta-item__value">2021-10-17</span></span><span class="post-meta-item post-meta-item--updatetime"><span class="post-meta-item__icon"><i class="far fa-calendar-check"></i></span><span class="post-meta-item__info">更新于</span><span class="post-meta-item__value">2021-10-17</span></span></div></header><div class="post-body"><div class="post-excerpt">
-        <h4 id="上周总结">
-          <a href="#上周总结" class="heading-link"><i class="fas fa-link"></i></a><a href="#上周总结" class="headerlink" title="上周总结"></a>上周总结</h4>
-      <p>十月直接摆烂，现在时间是2021年10月17日晚上8点59分，傻逼RNG直接跟我一起摆烂。。。。。。</p>
-<p><img src="/images/week%20summary001/image-20211009160317243.png" alt="image-20211009160317243"></p>
-<p>除了基本上看完了动手学深度学习的第六章，其他的啥也没干。理由找是肯定能找，但其实并不是什么借口，<del>下周一定不摆烂，少打原神少看TMD RNG</del>。</p>
-
-        <h4 id="下周（10-18-10-24）计划">
-          <a href="#下周（10-18-10-24）计划" class="heading-link"><i class="fas fa-link"></i></a><a href="#下周（10-18-10-24）计划" class="headerlink" title="下周（10.18-10.24）计划"></a>下周（10.18-10.24）计划</h4>
-      <ul>
-<li><p>《动手学深度学习》第七章实现到VGG（需要学习checkpoints的使用和尝试使用Colab），看沐神的精读论文第一和第二个视频，读AlexNet那篇论文（中特课）</p>
-</li>
-<li><p>至少把师兄的大论文读完，并把读论文笔记写完</p>
-</li>
-<li><p>六级试卷*1（还有tm不到两个月能不能别裸考）</p>
-</li>
-<li><p>《算法导论》1-3章（周一上午读两章）</p>
-</li>
-<li><p>《c++ Primer》3-4章</p>
-</li>
-<li><p>矩阵论、数理统计复习</p>
-</li>
-</ul>
-<p>下周再摆烂直接tm抽自己。</p>
-<p><img src="/images/week%20summary001/image-20211009160233635.png" alt="image-20211009160233635"></p>
-</div></div></article><article class="postlist-item post"><header class="post-header"><h1 class="post-title"><a class="post-title__link" href="/2021/10/17/zip/">Python中的zip()函数</a></h1><div class="post-meta"><span class="post-meta-item post-meta-item--createtime"><span class="post-meta-item__icon"><i class="far fa-calendar-plus"></i></span><span class="post-meta-item__info">发表于</span><span class="post-meta-item__value">2021-10-17</span></span><span class="post-meta-item post-meta-item--updatetime"><span class="post-meta-item__icon"><i class="far fa-calendar-check"></i></span><span class="post-meta-item__info">更新于</span><span class="post-meta-item__value">2022-03-06</span></span></div></header><div class="post-body"><div class="post-excerpt">
-        <h4 id="Zip-函数">
-          <a href="#Zip-函数" class="heading-link"><i class="fas fa-link"></i></a><a href="#Zip-函数" class="headerlink" title="Zip()函数"></a>Zip()函数</h4>
-      <p><strong>zip()</strong> 函数用于将可迭代的对象作为参数，将对象中对应的元素打包成一个个元组，然后返回由这些元组组成的列表。</p>
-<p>如果各个迭代器的元素个数不一致，则返回列表长度与最短的对象相同，利用 * 号操作符，可以将元组解压为列表。</p>
-<p><img src="/images/zip/image-20211017104901386.png" alt="image-20211017104901386"></p>
-</div></div></article><article class="postlist-item post"><header class="post-header"><h1 class="post-title"><a class="post-title__link" href="/2021/10/11/Convolutional-Neural-Networks/">卷积神经网络</a></h1><div class="post-meta"><span class="post-meta-item post-meta-item--createtime"><span class="post-meta-item__icon"><i class="far fa-calendar-plus"></i></span><span class="post-meta-item__info">发表于</span><span class="post-meta-item__value">2021-10-11</span></span><span class="post-meta-item post-meta-item--updatetime"><span class="post-meta-item__icon"><i class="far fa-calendar-check"></i></span><span class="post-meta-item__info">更新于</span><span class="post-meta-item__value">2021-10-29</span></span></div></header><div class="post-body"><div class="post-excerpt">
-        <h3 id="第六章-卷积神经网络">
-          <a href="#第六章-卷积神经网络" class="heading-link"><i class="fas fa-link"></i></a><a href="#第六章-卷积神经网络" class="headerlink" title="第六章 卷积神经网络"></a>第六章 卷积神经网络</h3>
-      
-        <h4 id="一、适合计算机视觉的模型应有特性">
-          <a href="#一、适合计算机视觉的模型应有特性" class="heading-link"><i class="fas fa-link"></i></a><a href="#一、适合计算机视觉的模型应有特性" class="headerlink" title="一、适合计算机视觉的模型应有特性"></a>一、适合计算机视觉的模型应有特性</h4>
-      <p>不变性是对于处理图像来说非常好的特性。不变性是指目标的外观发生了某种变化，即图像中目标无论是被平移，被旋转，还是被缩放，甚至是不同的光照条件、视角，训练的模型仍然应该将其正确识别。</p>
-<p>具体来说，不变性包括：</p>
-<ul>
-<li>平移不变性：Translation Invariance</li>
-<li>旋转/视角不变性：Ratation/Viewpoint Invariance</li>
-<li>尺度不变性：Size Invariance</li>
-<li>光照不变性：Illumination Invariance</li>
-</ul>
-
-        <h5 id="1-1-平移不变性">
-          <a href="#1-1-平移不变性" class="heading-link"><i class="fas fa-link"></i></a><a href="#1-1-平移不变性" class="headerlink" title="1.1 平移不变性"></a>1.1 平移不变性</h5>
-      <p>在欧几里得几何中，平移是一种几何变换，表示把一幅图像或一个空间中的每一个点在相同方向移动相同距离。比如对图像分类任务来说，图像中的目标不管被移动到图片的哪个位置，得到的结果（标签）应该是相同的，这就是卷积神经网络中的平移不变性。平移不变性意味着系统产生完全相同的响应（输出），不管它的输入是如何平移的 。</p>
-
-        <h5 id="1-2-旋转不变性">
-          <a href="#1-2-旋转不变性" class="heading-link"><i class="fas fa-link"></i></a><a href="#1-2-旋转不变性" class="headerlink" title="1.2 旋转不变性"></a>1.2 旋转不变性</h5>
-      <p>旋转不变性：只要对特征定义了方向，然后在同一个方向上进行特征描述就可以实现旋转不变性。</p>
-
-        <h5 id="1-3-尺度不变性">
-          <a href="#1-3-尺度不变性" class="heading-link"><i class="fas fa-link"></i></a><a href="#1-3-尺度不变性" class="headerlink" title="1.3 尺度不变性"></a>1.3 尺度不变性</h5>
-      <p>为了实现尺度不变性，需要给特征加上尺度因子。在进行特征描述的时候，将尺度统一就可以实现尺度不变性了。</p>
-
-        <h5 id="对于旋转不变性和尺度不变性的理解">
-          <a href="#对于旋转不变性和尺度不变性的理解" class="heading-link"><i class="fas fa-link"></i></a><a href="#对于旋转不变性和尺度不变性的理解" class="headerlink" title="对于旋转不变性和尺度不变性的理解"></a>对于旋转不变性和尺度不变性的理解</h5>
-      <p>参考链接：<span class="exturl"><a class="exturl__link" target="_blank" rel="noopener" href="https://blog.csdn.net/julialove102123/article/details/80822076">特征提取（Detect）、特征描述（Descriptor）、特征匹配（Match）的通俗解释_女王の专属领地-CSDN博客</a><span class="exturl__icon"><i class="fas fa-external-link-alt"></i></span></span></p>
-<p>简而言之为了使图像在旋转、放缩后，模型仍然能做出正确的判断(即不会影响模型对此图像的特征提取)，需要给特征指定一个方向与尺度。对于旋转来说，旋转之后特征方向也跟着转，所以相对来说图像的特征方向没有发生变化，如图1所示。指定尺度之后也实现了放缩不影响，如图2。</p>
-<p><img src="/images/Convolutional%20Neural%20Networks/image-20211011095359772.png" alt="image-20211011095359772"></p>
-<p>​                                                                                                            图1 旋转不变性，指定了特征方向</p>
-<p><img src="/images/Convolutional%20Neural%20Networks/image-20211011095224160.png" alt="image-20211011095224160"></p>
-<p>​                                                                                                                图2 尺度不变性 </p>
-
-        <h4 id="二、卷积操作">
-          <a href="#二、卷积操作" class="heading-link"><i class="fas fa-link"></i></a><a href="#二、卷积操作" class="headerlink" title="二、卷积操作"></a>二、卷积操作</h4>
-      
-        <h5 id="2-1-卷积运算">
-          <a href="#2-1-卷积运算" class="heading-link"><i class="fas fa-link"></i></a><a href="#2-1-卷积运算" class="headerlink" title="2.1 卷积运算"></a>2.1 卷积运算</h5>
-      <p>卷积运算的定义非常简单，将卷积核从输入张量的左上角进行从上到下、从左到右的滑动。每滑动到一个新位置，卷积核与输入张量的对应位置上的元素依次相乘再累加，当卷积核滑动过整个输入张量的时候也就得到了卷积运算的结果。计算结果如图所示：</p>
-<p><img src="/images/Convolutional%20Neural%20Networks/image-20211015175532717.png" alt="image-20211015175532717"></p>
-<p>​                                                                                                                图3 卷积操作的运算过程</p>
-<p>如上图所示，计算卷积操作的第一个结果19 = 0×0 + 1×1 +3×2 + 4×3，依次在这个3*3的输入张量上滑动卷积核得到2×2的卷积输出。</p>
-
-        <h5 id="2-2-输出尺寸的计算">
-          <a href="#2-2-输出尺寸的计算" class="heading-link"><i class="fas fa-link"></i></a><a href="#2-2-输出尺寸的计算" class="headerlink" title="2.2 输出尺寸的计算"></a>2.2 输出尺寸的计算</h5>
-      <p>如上图3所示，经过卷积操作之后，输出的尺寸会比原本的输入尺寸有所缩小。输出的尺寸计算公式为</p>
-<p><img src="/images/Convolutional%20Neural%20Networks/image-20211015200610183.png" alt="image-20211015200610183"></p>
-<p>如上图，3×3的输入张量，2×2的卷积核，（3-2+1）×（3-2+1）=2×2。</p>
-
-        <h5 id="2-3-特征映射（特征图Feature-Map-与感受野">
-          <a href="#2-3-特征映射（特征图Feature-Map-与感受野" class="heading-link"><i class="fas fa-link"></i></a><a href="#2-3-特征映射（特征图Feature-Map-与感受野" class="headerlink" title="2.3 特征映射（特征图Feature Map)与感受野"></a>2.3 特征映射（特征图Feature Map)与感受野</h5>
-      <p>卷积层的输出有时也被称为<strong>特征映射Feature Map</strong>。因为卷积层可以视为一个输入映射到下一层的空间维度的转换器。</p>
-<p>对于每一层的元素<em><strong>x</strong></em>,其感受野（Receptive Field）是指前向传播期间可能影响x计算的来自所有先前层的所有元素。如上图3所示的卷积操作为例，元素19的感受野来自前置的0，1，3，4四个元素。如果在输出后面再加一层卷积层，卷积核为不变的2×2卷积核，可以得到一个单个元素的输出z，则这个单个元素的感受野为上层的4个元素，上层的4个元素又来自输入的全部9个元素，故感受野包括全部的13个元素。因此，当一个特征图中的任意元素需要检测更广区域的输入特征时，我们可以构建一个更深的网络。</p>
-
-        <h5 id="2-4-卷积的作用到底是什么">
-          <a href="#2-4-卷积的作用到底是什么" class="heading-link"><i class="fas fa-link"></i></a><a href="#2-4-卷积的作用到底是什么" class="headerlink" title="2.4 卷积的作用到底是什么"></a>2.4 卷积的作用到底是什么</h5>
-      <p>回忆下全连接层在做什么：<strong>全连接的核心在于矩阵向量乘积</strong>，公式为<strong>y = Wx + b</strong>。以图片分类举例，采用全连接层首先要把二维的图片<strong>28×28拉成1×784的向量x</strong>，W为预置的参数向量，而<strong>y</strong>是对图片预测的分类label。全连接层完成的功能是提供一组参数w，将图片(向量x)映射到label(y)。</p>
-<p><strong>如果将全连接层用于较大的图片分类会出现什么问题？</strong></p>
-<ul>
-<li><strong>一张28×28的图片，需要的参数数量是784个。即图片的每一个像素都需要一个参数，图片较大的时候参数的数量非常巨大，难以进行训练。很容易出现过拟合等问题</strong></li>
-<li><strong>直接使用全连接层需要将图片拉平，在这个操作中像素之间的位置发生了变化，空间信息被破坏。</strong></li>
-</ul>
-<p>而卷积在做什么？</p>
-<p>卷积核是一个在图片上滑动的小块，<strong>在卷积核的每个位置也是一个参数</strong>。卷积核在滑动的时候每次与图片的一个小区域进行计算，在这个过程中图片像素的位置没有发生变化，因此，<strong>在卷积操作中像素之间的空间位置信息得到了很好的保留。</strong></p>
-<p>其次，卷积核每次与图片的每个小区域进行相乘再相加操作，计算完成之后得到一个特征映射Feature Map，这个Feature Map可以理解成本层卷积层提取出的特征，<strong>经过多层运算之后也将图片(向量x)映射到label(y)。</strong>所以卷积与全连接的最终都是完成了将图片的特征提取出来经过运算映射到label的功能。</p>
-<p>但是在卷积过程中，很多个像素共同使用一个卷积核，即使用同一组参数。实现了<strong>权值共享</strong>，降低了参数的数量。</p>
-<p><strong>卷积层可以看作是计算量和准确度的一种妥协。</strong></p>
-
-        <h4 id="三、控制输出尺寸的手段–填充和步幅">
-          <a href="#三、控制输出尺寸的手段–填充和步幅" class="heading-link"><i class="fas fa-link"></i></a><a href="#三、控制输出尺寸的手段–填充和步幅" class="headerlink" title="三、控制输出尺寸的手段–填充和步幅"></a>三、控制输出尺寸的手段–填充和步幅</h4>
-      <p>由第二章可知，进行卷积操作会改变输入的尺寸。并且输入张量的边界上的特征并没有经过充分的提取，原始图像的边界丢失了很多有用的信息。<strong>填充</strong>（padding）是解决这一问题的有效方法。经过填充操作可以将输出的尺寸控制的与输入尺寸相同。但有时我们我们发现原始的输入分辨率十分冗余。 <em><strong>步幅</strong></em>（stride）则可以在这类情况下提供帮助。</p>
-
-        <h5 id="3-1-填充操作">
-          <a href="#3-1-填充操作" class="heading-link"><i class="fas fa-link"></i></a><a href="#3-1-填充操作" class="headerlink" title="3.1 填充操作"></a>3.1 填充操作</h5>
-      <p>在应用多层卷积时，我们常常丢失边缘像素。 由于我们通常使用小卷积核，因此对于任何单个卷积，我们可能只会丢失几个像素。 但随着我们应用许多连续卷积层，累积丢失的像素数就多了。 解决这个问题的简单方法即为<em>填充</em>（padding）：在输入图像的边界填充元素（通常填充元素是 0 ）。 如下图所示，对输入图像做填充操作后，输出的尺寸从2×2增加到了4×4。对于边缘的元素来说，以第一个0元素为例，在进行不填充的卷积操作之后（如图3），输入图片的第一个元素0只能映射到输出的第一个元素19上，经过多次卷积操作之后元素0所含的信息可能会丢失。而进行填充操作之后（如下图4），可见第一个0元素分别映射到了输出的0，3，9，19四个元素上。可见边缘信息得到了很好的提取与保留。</p>
-<p><img src="/images/Convolutional%20Neural%20Networks/image-20211017084611169.png" alt="image-20211017084611169"></p>
-<p>​                                                                                    图4 填充之后的卷积操作，填充在原始图像上做了一行和一列的扩充</p>
-<p>填充后的尺寸计算公式为：</p>
-<p><img src="/images/Convolutional%20Neural%20Networks/image-20211017085013039.png" alt="image-20211017085013039"></p>
-<p>其中输入的尺寸为nh×nw，卷积核的尺寸为kh×kw，添加 ph 行填充（大约一半在顶部，一半在底部）和 pw列填充（左侧大约一半，右侧一半）。</p>
-
-        <h5 id="3-2-Pytorch的卷积操作的一些参数小细节">
-          <a href="#3-2-Pytorch的卷积操作的一些参数小细节" class="heading-link"><i class="fas fa-link"></i></a><a href="#3-2-Pytorch的卷积操作的一些参数小细节" class="headerlink" title="3.2 Pytorch的卷积操作的一些参数小细节"></a>3.2 Pytorch的卷积操作的一些参数小细节</h5>
-      <p>Pytorch的卷积操作Conv2d的参数如图所示：</p>
-<p><img src="/images/Convolutional%20Neural%20Networks/image-20211017090938756.png" alt="image-20211017090938756"></p>
-<p><img src="/images/Convolutional%20Neural%20Networks/image-20211017091005294.png" alt="image-20211017091005294"></p>
-<p><img src="/images/Convolutional%20Neural%20Networks/image-20211017091018257.png" alt="image-20211017091018257"></p>
-<p>其实需要特别注意的只有第三张图片，kernel_size,stride,padding的值可以设置为单个int也可以设置成tuple形式。当设置成单个int的形式的时候，如设置kernel_size=3，实际上是将kernel_size设置成3×3，设置成单个int的时候实际上是把该参数的height和width维度设置成相同的int值。当设置成tuple的时候就是按照该tuple来设置高度和宽度。</p>
-<p>对于填充padding操作，一个小细节是当padding设置成单个int的时候，实际上是对上下左右四条边上分别填充了int行和int列。如设置padding=1时就是如下图的效果，在使用上述的计算公式的时候要注意，此时的ph应当=2而不是1。因为添加ph行填充一半在顶部一半在底部。padding=1分别对顶部和底部以及左右分别添加了1行或1列。因此ph应该=2。当输入为一个8×8的Tensor的时候，输出的size应该为（8-3+2+1）×（8-3+2+1）=8×8。</p>
-<p><img src="/images/Convolutional%20Neural%20Networks/image-20211017091845369.png" alt="image-20211017091845369"></p>
-
-        <h5 id="3-3-Tips">
-          <a href="#3-3-Tips" class="heading-link"><i class="fas fa-link"></i></a><a href="#3-3-Tips" class="headerlink" title="3.3 Tips"></a>3.3 Tips</h5>
-      <p><strong>卷积神经网络中卷积核的高度和宽度通常为奇数，例如 1、3、5 或 7。</strong> 选择奇数的好处是，保持空间维度的同时，我们可以在顶部和底部填充相同数量的行，在左侧和右侧填充相同数量的列。</p>
-<p>此外，使用奇数核和填充也提供了书写上的便利。对于任何二维张量 <code>X</code>，当满足： 1. 内核的大小是奇数； 2. 所有边的填充行数和列数相同； 3. 输出与输入具有相同高度和宽度 则可以得出：输出 <code>Y[i, j]</code> 是通过以输入 <code>X[i, j]</code> 为中心，与卷积核进行互相关计算得到的。</p>
-
-        <h5 id="3-4-步幅stride">
-          <a href="#3-4-步幅stride" class="heading-link"><i class="fas fa-link"></i></a><a href="#3-4-步幅stride" class="headerlink" title="3.4 步幅stride"></a>3.4 步幅stride</h5>
-      <p>在卷积计算中，卷积核从输入张量左上角开始，向下和向右滑动。 在前面的例子中，我们默认每次滑动一个元素。 但是，有时候为了高效计算或是缩减采样次数，卷积窗口可以跳过中间位置，每次滑动多个元素。我们将每次滑动元素的数量称为 <em>步幅</em> （stride）。</p>
-<p>可以看到，为了计算输出中第一列的第二个元素和第一行的第二个元素，卷积窗口分别向下滑动三行和向右滑动两列。但是，当卷积窗口继续向右滑动两列时，没有输出，因为输入元素无法填充窗口（除非我们添加另一列填充）。</p>
-<p><img src="/images/Convolutional%20Neural%20Networks/image-20211017093508072.png" alt="image-20211017093508072"></p>
-<p>通常，当垂直步幅为 sh 、水平步幅为 sw 时，输出形状为</p>
-<p><img src="/images/Convolutional%20Neural%20Networks/image-20211017093554956.png" alt="image-20211017093554956"></p>
-
-        <h4 id="四、通道">
-          <a href="#四、通道" class="heading-link"><i class="fas fa-link"></i></a><a href="#四、通道" class="headerlink" title="四、通道"></a>四、通道</h4>
-      <p>标准的彩色图像一般都具有RGB三个通道来分别指示红绿蓝。因此一个标准的RGB图像的张量表示应当是一个三维的张量，size为3×h×w。我们将第一个维度称为通道channel。</p>
-
-        <h5 id="4-1-多输入通道上的卷积操作">
-          <a href="#4-1-多输入通道上的卷积操作" class="heading-link"><i class="fas fa-link"></i></a><a href="#4-1-多输入通道上的卷积操作" class="headerlink" title="4.1 多输入通道上的卷积操作"></a>4.1 多输入通道上的卷积操作</h5>
-      <p>一句话概括就是在多输入通道上的卷积操作其实是分别对每个通道上的二维张量对该通道上的卷积核做卷积运算。如下图，以两通道为例：</p>
-<p><img src="/images/Convolutional%20Neural%20Networks/image-20211017153347989.png" alt="image-20211017153347989"></p>
-
-        <h5 id="4-2-控制输出通道数量的手段–1-1卷积层">
-          <a href="#4-2-控制输出通道数量的手段–1-1卷积层" class="heading-link"><i class="fas fa-link"></i></a><a href="#4-2-控制输出通道数量的手段–1-1卷积层" class="headerlink" title="4.2 控制输出通道数量的手段–1*1卷积层"></a>4.2 控制输出通道数量的手段–1*1卷积层</h5>
-      <p>由卷积操作的定义可知，卷积操作的本质是提取相邻像素之间的相关特征，因此如果仅对单通道图像采用1×1卷积核做卷积运算似乎并没有什么意义。但是引入多通道之后，1×1的卷积在不同通道上有了累加运算。</p>
-<p>1×1卷积的运算规则与普通卷积并没有什么区别。但是当卷积层包含多组1×1卷积核的时候，可以实现控制调整输出的通道数量，即<strong>数据的depth</strong>。如下图所示，输入为3通道的3×3的Tensor，卷积层包括两组3通道的1×1卷积核，最终输入Tensor分别对两组卷积核分别做1×1卷积计算，最终输出的通道数，即depth为2。</p>
-<p><img src="/images/Convolutional%20Neural%20Networks/image-20211017164411266.png" alt="image-20211017164411266"></p>
-<p>卷积的输出输入是长方体，所以1x1卷积实际上是对每个像素点，在不同的channels上进行线性组合（信息整合），且保留了图片的原有平面结构，调控depth，从而完成升维或降维的功能。 如上图所示，如果选择2个filters的1x1卷积层，那么数据就从原本的depth 3 降到了2。若用4个filters，则起到了升维的作用。</p>
-
-        <h4 id="五、池化层">
-          <a href="#五、池化层" class="heading-link"><i class="fas fa-link"></i></a><a href="#五、池化层" class="headerlink" title="五、池化层"></a>五、池化层</h4>
-      
-        <h5 id="5-1-池化操作">
-          <a href="#5-1-池化操作" class="heading-link"><i class="fas fa-link"></i></a><a href="#5-1-池化操作" class="headerlink" title="5.1 池化操作"></a>5.1 池化操作</h5>
-      <p>与卷积层相似，池化层同样有一个固定大小的窗口<strong>称为（池化窗口）</strong>，并根据步幅大小在输入的所有区域上滑动。通常来说池化运算是池化窗口在输入区域上滑动，求输入张量在池化窗口内的最大值或平均值。<strong>求最大值的称为最大值池化MaxPooling，求平均值的称为平均值池化average pooling</strong>。</p>
-<p>在这两种情况下，与卷积操作一样，池化窗口从输入张量的左上角开始，从左到右、从上到下的在输入张量内滑动。在池化窗口到达的每个位置，它计算该窗口中输入子张量的最大值或平均值，具体取决于是使用了最大池化层还是平均池化层。</p>
-<p><img src="/images/Convolutional%20Neural%20Networks/image-20211017172202113.png" alt="image-20211017172202113"></p>
-
-        <h5 id="5-2-池化的意义">
-          <a href="#5-2-池化的意义" class="heading-link"><i class="fas fa-link"></i></a><a href="#5-2-池化的意义" class="headerlink" title="5.2 池化的意义"></a>5.2 池化的意义</h5>
-      <p>通常当我们处理图像时，我们希望逐渐降低隐藏表示的空间分辨率，聚集信息，这样随着我们在神经网络中层叠的上升，每个神经元对其敏感的感受野（输入）就越大。池化层有以下的一些作用：</p>
-<p>（1）首要作用，下采样（downsamping），由于汇合操作的降采样作用，汇合结果中的一个元素对应于原输入数据的一个子区域（sub-region），因此汇合相当于在空间范围内做了维度约减（spatially dimension reduction），从而使模型可以抽取更广范围的特征。同时减小了下一层输入大小，进而减小计算量和参数个数。</p>
-<p>（2）降维、去除冗余信息、对特征进行压缩、简化网络复杂度、减小计算量、减小内存消耗等等。各种说辞吧，总的理解就是减少参数量。</p>
-<p>（3）实现非线性（这个可以想一下，relu函数，是不是有点类似的感觉？）。</p>
-<p>（4）可以扩大感知野。</p>
-<p>（5）可以实现不变性，其中不变形性包括，平移不变性、旋转不变性和尺度不变性。汇合操作使模型更关注是否存在某些特征而不是特征具体的位置<br>，可看作是一种很强的先验，使特征学习包含某种程度自由度，能容忍一些特征微小的位移。</p>
-</div></div></article><article class="postlist-item post"><header class="post-header"><h1 class="post-title"><a class="post-title__link" href="/2021/10/09/week-summary001/">每周计划与总结001</a></h1><div class="post-meta"><span class="post-meta-item post-meta-item--createtime"><span class="post-meta-item__icon"><i class="far fa-calendar-plus"></i></span><span class="post-meta-item__info">发表于</span><span class="post-meta-item__value">2021-10-09</span></span><span class="post-meta-item post-meta-item--updatetime"><span class="post-meta-item__icon"><i class="far fa-calendar-check"></i></span><span class="post-meta-item__info">更新于</span><span class="post-meta-item__value">2021-10-09</span></span></div></header><div class="post-body"><div class="post-excerpt">
-        <h4 id="前言">
-          <a href="#前言" class="heading-link"><i class="fas fa-link"></i></a><a href="#前言" class="headerlink" title="前言"></a>前言</h4>
-      <p>不知不觉就混吃等死混到了十月第一周都结束了。<del>本来打算十月开始就做一个，结果假期一拖就拖到了现在</del>。立个小目标每周不断更好吧TVT。</p>
-
-        <h4 id="上周总结">
-          <a href="#上周总结" class="heading-link"><i class="fas fa-link"></i></a><a href="#上周总结" class="headerlink" title="上周总结"></a>上周总结</h4>
-      <p><del>上周为祖国母亲庆生所以摸了。</del>除了稍微过了下数理统计与矩阵论的课本与课件，和结束了长达半个月的《动手学深度学习》第五章。</p>
-<p><img src="/images/week%20summary001/image-20211009160317243.png" alt="image-20211009160317243"></p>
-
-        <h4 id="下周（10-11-10-17）计划">
-          <a href="#下周（10-11-10-17）计划" class="heading-link"><i class="fas fa-link"></i></a><a href="#下周（10-11-10-17）计划" class="headerlink" title="下周（10.11-10.17）计划"></a>下周（10.11-10.17）计划</h4>
-      <ul>
-<li><p>《动手学深度学习》第六章结束</p>
-</li>
-<li><p>六级试卷*2</p>
-</li>
-<li><p>《算法导论》1-3章</p>
-</li>
-<li><p>《c++ Primer》3-4章</p>
-</li>
-<li><p>矩阵论、数理统计复习</p>
-</li>
-<li><p>睡前半小时《平凡的世界》<del>半年读了7章。。。从这周开始一定好好读书</del></p>
-</li>
-</ul>
-<p>十月绝不摆烂！！！！</p>
-<p><img src="/images/week%20summary001/image-20211009160233635.png" alt="image-20211009160233635"></p>
-</div></div></article><article class="postlist-item post"><header class="post-header"><h1 class="post-title"><a class="post-title__link" href="/2021/10/08/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E8%AE%A1%E7%AE%97/">深度学习计算</a></h1><div class="post-meta"><span class="post-meta-item post-meta-item--createtime"><span class="post-meta-item__icon"><i class="far fa-calendar-plus"></i></span><span class="post-meta-item__info">发表于</span><span class="post-meta-item__value">2021-10-08</span></span><span class="post-meta-item post-meta-item--updatetime"><span class="post-meta-item__icon"><i class="far fa-calendar-check"></i></span><span class="post-meta-item__info">更新于</span><span class="post-meta-item__value">2021-10-09</span></span></div></header><div class="post-body"><div class="post-excerpt">
-        <h3 id="第五章-深度学习计算">
-          <a href="#第五章-深度学习计算" class="heading-link"><i class="fas fa-link"></i></a><a href="#第五章-深度学习计算" class="headerlink" title="第五章 深度学习计算"></a>第五章 深度学习计算</h3>
-      
-        <h4 id="一、层和块">
-          <a href="#一、层和块" class="heading-link"><i class="fas fa-link"></i></a><a href="#一、层和块" class="headerlink" title="一、层和块"></a>一、层和块</h4>
-      
-        <h5 id="1-1-块的概念">
-          <a href="#1-1-块的概念" class="heading-link"><i class="fas fa-link"></i></a><a href="#1-1-块的概念" class="headerlink" title="1.1 块的概念"></a>1.1 块的概念</h5>
-      <p>为了实现更加复杂的网络，引入神经网络块的概念。块可以描述单个层、由多个层组成的组件或整个模型本身。使用块进行抽象的一个好处是可以将一些块组合成更大的组件，这一过程通常是递归的。</p>
-
-        <h5 id="1-2-Pytorch中块的简洁实现">
-          <a href="#1-2-Pytorch中块的简洁实现" class="heading-link"><i class="fas fa-link"></i></a><a href="#1-2-Pytorch中块的简洁实现" class="headerlink" title="1.2 Pytorch中块的简洁实现"></a>1.2 Pytorch中块的简洁实现</h5>
-      <p>之前学习的章节中一直在使用的nn.Sequential方法实际上就是定义了一个块。通过实例化<code>nn.Sequential</code>来构建我们的模型，层的执行顺序是作为参数传递的。简而言之，<code>nn.Sequential</code>定义了一种特殊的<code>Module</code>，即在PyTorch中表示一个块的类。它维护了一个由<code>Module</code>组成的有序列表，注意，两个全连接层都是<code>Linear</code>类的实例，<code>Linear</code>类本身就是<code>Module</code>的子类。正向传播（<code>forward</code>）函数也非常简单：它将列表中的每个块连接在一起，将每个块的输出作为下一个块的输入。</p>
-<p>如：<code>net = nn.Sequential(nn.Linear(20, 256), nn.ReLU(), nn.Linear(256, 10))</code></p>
-<p>实际上就定义了一个块，块中包含了两个线性层和一个ReLU层。</p>
-
-        <h5 id="1-3-自定义块">
-          <a href="#1-3-自定义块" class="heading-link"><i class="fas fa-link"></i></a><a href="#1-3-自定义块" class="headerlink" title="1.3 自定义块"></a>1.3 自定义块</h5>
-      <p><code>Sequential</code>类使模型构造变得简单，允许我们组合新的结构，而不必定义自己的类。然而，并不是所有的架构都是简单的顺序结构。当需要更大的灵活性时，我们需要定义自己的块。例如，我们可能希望在正向传播函数中执行Python的控制流。此外，我们可能希望执行任意的数学运算，而不是简单地依赖预定义的神经网络层。</p>
-<p>自定义块必须提供的基本功能：</p>
-<ol>
-<li>将输入数据作为其正向传播函数的参数。</li>
-<li>通过正向传播函数来生成输出。请注意，输出的形状可能与输入的形状不同。例如，我们上面模型中的第一个全连接的层接收任意维的输入，但是返回一个维度256的输出。</li>
-<li>计算其输出关于输入的梯度，可通过其反向传播函数进行访问。通常这是自动发生的。</li>
-<li>存储和访问正向传播计算所需的参数。</li>
-<li>根据需要初始化模型参数。</li>
-</ol>
-
-        <h4 id="二、参数管理">
-          <a href="#二、参数管理" class="heading-link"><i class="fas fa-link"></i></a><a href="#二、参数管理" class="headerlink" title="二、参数管理"></a>二、参数管理</h4>
-      <p>假设模型是一个具有单隐藏层的多层感知机。</p>
-<p>``</p>
-<figure class="highlight python"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> torch</span><br><span class="line"><span class="keyword">from</span> torch <span class="keyword">import</span> nn</span><br><span class="line"></span><br><span class="line">net = nn.Sequential(nn.Linear(<span class="number">4</span>, <span class="number">8</span>), nn.ReLU(), nn.Linear(<span class="number">8</span>, <span class="number">1</span>))</span><br><span class="line">X = torch.rand(size=(<span class="number">2</span>, <span class="number">4</span>))</span><br><span class="line">net(X)</span><br></pre></td></tr></table></div></figure>
-
-
-        <h5 id="2-1-参数访问">
-          <a href="#2-1-参数访问" class="heading-link"><i class="fas fa-link"></i></a><a href="#2-1-参数访问" class="headerlink" title="2.1 参数访问"></a>2.1 参数访问</h5>
-      <p>当通过Sequential类定义模型时，由于Sequential类似于一个Module的列表，可以通过索引来访问模型的任意层。可以通过以下方法检查第二个全连接层的参数</p>
-<p><code>print(net[2].state_dict())</code></p>
-<p>输出为</p>
-<p>OrderedDict([(‘weight’, tensor([[-0.0578,  0.2847,  0.0501, -0.1246,  0.2490, -0.0303,  0.1356,  0.2373]])), (‘bias’, tensor([0.1629]))])</p>
-<p>显然第二个全连接层有两个参数，weight和bias，可以通过  <code>net[2].bias</code> 访问参数，通过  <code>net[2].bias.data</code> 得到bias的实际的数值，也可以通过.grad来访问具体参数的梯度值。</p>
-
-        <h5 id="2-2-一次性访问所有参数">
-          <a href="#2-2-一次性访问所有参数" class="heading-link"><i class="fas fa-link"></i></a><a href="#2-2-一次性访问所有参数" class="headerlink" title="2.2 一次性访问所有参数"></a>2.2 一次性访问所有参数</h5>
-      <p>可以通过Module.named_parameters()方法一次性访问查看一个层或者一个网络的所有参数</p>
-<p>例：查看第一层的所有参数的数据大小</p>
-<p><code>print(*[(name, parameter.shape) for name, parameter in net[0].named_parameters()])</code></p>
-<p>查看整个网络的全部参数</p>
-<p><code>print(*[(name, parameter) for name, parameter in net.named_parameters()])</code></p>
-<p>自定义的网络层亦可以使用相同方式查看参数</p>
-
-        <h5 id="2-3-参数初始化">
-          <a href="#2-3-参数初始化" class="heading-link"><i class="fas fa-link"></i></a><a href="#2-3-参数初始化" class="headerlink" title="2.3 参数初始化"></a>2.3 参数初始化</h5>
-      <p>参数初始化的常用方法是编写一个函数调用内置初始化器，然后使用module.apply()函数应用初始化方法。</p>
-<p>例：将参数以正态分布初始化</p>
-<p>`</p>
-<figure class="highlight python"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">init_normal</span>(<span class="params">m</span>):</span></span><br><span class="line">    <span class="keyword">if</span> <span class="built_in">type</span>(m) == nn.Linear:</span><br><span class="line">        nn.init.normal_(m.weight, mean=<span class="number">0</span>, std=<span class="number">0.01</span>)</span><br><span class="line">        nn.init.zeros_(m.bias)</span><br><span class="line">net.apply(init_normal)</span><br></pre></td></tr></table></div></figure>
-
-<p>`</p>
-<p>可以定义多个初始化方法，分别应用与不同的层</p>
-<p>`</p>
-<figure class="highlight python"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">xavier</span>(<span class="params">m</span>):</span></span><br><span class="line">    <span class="keyword">if</span> <span class="built_in">type</span>(m) == nn.Linear:</span><br><span class="line">        nn.init.xavier_uniform_(m.weight)</span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">init_42</span>(<span class="params">m</span>):</span></span><br><span class="line">    <span class="keyword">if</span> <span class="built_in">type</span>(m) == nn.Linear:</span><br><span class="line">        nn.init.constant_(m.weight, <span class="number">42</span>)</span><br><span class="line"></span><br><span class="line">net[<span class="number">0</span>].apply(xavier)</span><br><span class="line">net[<span class="number">2</span>].apply(init_42)</span><br></pre></td></tr></table></div></figure>
-
-<p>`</p>
-
-        <h4 id="三、自定义层">
-          <a href="#三、自定义层" class="heading-link"><i class="fas fa-link"></i></a><a href="#三、自定义层" class="headerlink" title="三、自定义层"></a>三、自定义层</h4>
-      <p>有时需要完成一些深度学习框架内未提供的功能，需要通过自定义层来实现。只需要继承基础层类(nn.Module)实现正向传播即可。</p>
-
-        <h4 id="3-1-不带参数的层">
-          <a href="#3-1-不带参数的层" class="heading-link"><i class="fas fa-link"></i></a><a href="#3-1-不带参数的层" class="headerlink" title="3.1 不带参数的层"></a>3.1 不带参数的层</h4>
-      <p>例：定义一个层次实现从输入中减去均值。</p>
-<p>`</p>
-<figure class="highlight python"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> torch</span><br><span class="line"><span class="keyword">import</span> torch.nn.functional <span class="keyword">as</span> F</span><br><span class="line"><span class="keyword">from</span> torch <span class="keyword">import</span> nn</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">CenteredLayer</span>(<span class="params">nn.Module</span>):</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span>(<span class="params">self</span>):</span></span><br><span class="line">        <span class="built_in">super</span>().__init__()</span><br><span class="line">     </span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">forward</span>(<span class="params">self, X</span>):</span></span><br><span class="line">        <span class="keyword">return</span> X - X.mean()</span><br><span class="line">    </span><br><span class="line">    </span><br><span class="line">layer = CenteredLayer()</span><br><span class="line">layer(torch.FloatTensor([<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>]))</span><br></pre></td></tr></table></div></figure>
-
-<p>`</p>
-<p>输出为：</p>
-<p><code>tensor([-2., -1.,  0.,  1.,  2.])</code></p>
-
-        <h4 id="3-2-带参数的层">
-          <a href="#3-2-带参数的层" class="heading-link"><i class="fas fa-link"></i></a><a href="#3-2-带参数的层" class="headerlink" title="3.2 带参数的层"></a>3.2 带参数的层</h4>
-      <p>我们也可以定义带参数的层，这些参数可以通过训练进行调整。我们可以使用内置函数来创建参数，这些函数提供一些基本的管理功能。比如管理访问、初始化、共享、保存和加载模型参数。</p>
-<p>例：定义实现一个全连接层，并使用ReLU激活函数处理输出。</p>
-<p>`</p>
-<figure class="highlight python"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">MyLinear</span>(<span class="params">nn.Module</span>):</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span>(<span class="params">self, in_units, units</span>):</span></span><br><span class="line">        <span class="built_in">super</span>().__init__()</span><br><span class="line">        self.weight = nn.Parameter(torch.randn(in_units, units))</span><br><span class="line">        self.bias = nn.Parameter(torch.randn(units,))</span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">forward</span>(<span class="params">self, X</span>):</span></span><br><span class="line">        linear = torch.matmul(X, self.weight.data) + self.bias.data</span><br><span class="line">        <span class="keyword">return</span> F.relu(linear)</span><br></pre></td></tr></table></div></figure>
-
-<p>`</p>
-
-        <h4 id="四、读取与保存参数和模型">
-          <a href="#四、读取与保存参数和模型" class="heading-link"><i class="fas fa-link"></i></a><a href="#四、读取与保存参数和模型" class="headerlink" title="四、读取与保存参数和模型"></a>四、读取与保存参数和模型</h4>
-      <p>当我们对所训练出的模型足够满意，可以使用Pytorch提供的一些方法保存训练好的模型与参数以用来直接推理。此外，当运行一个耗时较长的训练过程时，最佳的做法是定期保存中间结果（检查点），以确保在服务器电源被不小心断掉时不会损失几天的计算结果。</p>
-
-        <h4 id="4-1-state-dict">
-          <a href="#4-1-state-dict" class="heading-link"><i class="fas fa-link"></i></a><a href="#4-1-state-dict" class="headerlink" title="4.1 state_dict"></a>4.1 state_dict</h4>
-      <p>state_dict是一个Python字典，它保存所有层与它的parameter tensor的映射。但是只有具有可学习参数的(torch.nn.Module)层和Registered buffers (batchnorm’s running_mean)才会在state_dict中有条目。同时优化器对象也有一个<em>state_dict</em>，其中包含有关优化器状态的信息，以及使用的超参数。</p>
-<p>例：</p>
-<p>`</p>
-<figure class="highlight python"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Define model</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">TheModelClass</span>(<span class="params">nn.Module</span>):</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span>(<span class="params">self</span>):</span></span><br><span class="line">        <span class="built_in">super</span>(TheModelClass, self).__init__()</span><br><span class="line">        <span class="comment">#自定义参数层</span></span><br><span class="line">        self.conv1 = nn.Conv2d(<span class="number">3</span>, <span class="number">6</span>, <span class="number">5</span>)</span><br><span class="line">        self.pool = nn.MaxPool2d(<span class="number">2</span>, <span class="number">2</span>)</span><br><span class="line">        self.conv2 = nn.Conv2d(<span class="number">6</span>, <span class="number">16</span>, <span class="number">5</span>)</span><br><span class="line">        self.fc1 = nn.Linear(<span class="number">16</span> * <span class="number">5</span> * <span class="number">5</span>, <span class="number">120</span>)</span><br><span class="line">        self.fc2 = nn.Linear(<span class="number">120</span>, <span class="number">84</span>)</span><br><span class="line">        self.fc3 = nn.Linear(<span class="number">84</span>, <span class="number">10</span>)</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">forward</span>(<span class="params">self, x</span>):</span></span><br><span class="line">        x = self.pool(F.relu(self.conv1(x)))</span><br><span class="line">        x = self.pool(F.relu(self.conv2(x)))</span><br><span class="line">        x = x.view(-<span class="number">1</span>, <span class="number">16</span> * <span class="number">5</span> * <span class="number">5</span>)</span><br><span class="line">        x = F.relu(self.fc1(x))</span><br><span class="line">        x = F.relu(self.fc2(x))</span><br><span class="line">        x = self.fc3(x)</span><br><span class="line">        <span class="keyword">return</span> x</span><br><span class="line"></span><br><span class="line"><span class="comment"># Initialize model</span></span><br><span class="line">model = TheModelClass()</span><br><span class="line"></span><br><span class="line"><span class="comment"># Initialize optimizer</span></span><br><span class="line">optimizer = optim.SGD(model.parameters(), lr=<span class="number">0.001</span>, momentum=<span class="number">0.9</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># Print model&#x27;s state_dict</span></span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;Model&#x27;s state_dict:&quot;</span>)</span><br><span class="line"><span class="keyword">for</span> param_tensor <span class="keyword">in</span> model.state_dict():</span><br><span class="line">    <span class="built_in">print</span>(param_tensor, <span class="string">&quot;\t&quot;</span>, model.state_dict()[param_tensor].size())</span><br><span class="line"></span><br><span class="line"><span class="comment"># Print optimizer&#x27;s state_dict</span></span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;Optimizer&#x27;s state_dict:&quot;</span>)</span><br><span class="line"><span class="keyword">for</span> var_name <span class="keyword">in</span> optimizer.state_dict():</span><br><span class="line">    <span class="built_in">print</span>(var_name, <span class="string">&quot;\t&quot;</span>, optimizer.state_dict()[var_name])</span><br></pre></td></tr></table></div></figure>
-
-<p>`</p>
-<p>输出：</p>
-<p>`</p>
-<figure class="highlight python"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">Model<span class="string">&#x27;s state_dict:</span></span><br><span class="line"><span class="string">conv1.weight     torch.Size([6, 3, 5, 5])</span></span><br><span class="line"><span class="string">conv1.bias   torch.Size([6])</span></span><br><span class="line"><span class="string">conv2.weight     torch.Size([16, 6, 5, 5])</span></span><br><span class="line"><span class="string">conv2.bias   torch.Size([16])</span></span><br><span class="line"><span class="string">fc1.weight   torch.Size([120, 400])</span></span><br><span class="line"><span class="string">fc1.bias     torch.Size([120])</span></span><br><span class="line"><span class="string">fc2.weight   torch.Size([84, 120])</span></span><br><span class="line"><span class="string">fc2.bias     torch.Size([84])</span></span><br><span class="line"><span class="string">fc3.weight   torch.Size([10, 84])</span></span><br><span class="line"><span class="string">fc3.bias     torch.Size([10])</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">Optimizer&#x27;</span>s state_dict:</span><br><span class="line">state    &#123;&#125;</span><br><span class="line">param_groups     [&#123;<span class="string">&#x27;lr&#x27;</span>: <span class="number">0.001</span>, <span class="string">&#x27;momentum&#x27;</span>: <span class="number">0.9</span>, <span class="string">&#x27;dampening&#x27;</span>: <span class="number">0</span>, <span class="string">&#x27;weight_decay&#x27;</span>: <span class="number">0</span>, <span class="string">&#x27;nesterov&#x27;</span>: <span class="literal">False</span>, <span class="string">&#x27;params&#x27;</span>: [<span class="number">4675713712</span>, <span class="number">4675713784</span>, <span class="number">4675714000</span>, <span class="number">4675714072</span>, <span class="number">4675714216</span>, <span class="number">4675714288</span>, <span class="number">4675714432</span>, <span class="number">4675714504</span>, <span class="number">4675714648</span>, <span class="number">4675714720</span>]&#125;]</span><br></pre></td></tr></table></div></figure>
-
-<p>`</p>
-
-        <h4 id="4-2-保存和加载模型">
-          <a href="#4-2-保存和加载模型" class="heading-link"><i class="fas fa-link"></i></a><a href="#4-2-保存和加载模型" class="headerlink" title="4.2 保存和加载模型"></a>4.2 保存和加载模型</h4>
-      
-        <h5 id="4-2-1-推荐方式：保存-加载state-dict">
-          <a href="#4-2-1-推荐方式：保存-加载state-dict" class="heading-link"><i class="fas fa-link"></i></a><a href="#4-2-1-推荐方式：保存-加载state-dict" class="headerlink" title="4.2.1 推荐方式：保存/加载state_dict"></a>4.2.1 推荐方式：保存/加载state_dict</h5>
-      <p>保存模型进行推理时，只需要保存训练好的模型的学习参数即可。使用该函数保存模型的<em>state_dict</em><code>torch.save()</code>将为以后恢复模型提供最大的灵活性，这就是为什么它是保存模型的推荐方法。</p>
-<p>一个常见的 PyTorch 约定是使用<code>.pt</code>或 <code>.pth</code>文件扩展名保存模型。</p>
-<p>请记住，在运行推理之前，必须调用<code>model.eval()</code>将 dropout 和批处理规范化层设置为评估模式。不这样做会产生不一致的推理结果。</p>
-<p>保存：</p>
-<p><code>torch.save(model.state_dict(), PATH)</code></p>
-<p>加载：</p>
-<p>`</p>
-<figure class="highlight plaintext"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">model = TheModelClass(*args, **kwargs)</span><br><span class="line">model.load_state_dict(torch.load(PATH))</span><br><span class="line">model.eval()</span><br></pre></td></tr></table></div></figure>
-
-<p>`</p>
-<p>对上述定义的model进行保存和加载state_dict验证：</p>
-<p>`</p>
-<figure class="highlight python"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 实例化module类，生成一个模型，使用torch.save保存state_dict</span></span><br><span class="line">model = TheModelClass()</span><br><span class="line">torch.save(model.state_dict(), <span class="string">&#x27;load_module1.params&#x27;</span>)</span><br><span class="line">optimizer = torch.optim.SGD(model.parameters(), lr=<span class="number">0.001</span>, momentum=<span class="number">0.9</span>)</span><br><span class="line"><span class="comment"># 加载模型参数，需要实例化一个相同的网络模型，调用load_state_dict(torch.load(PATH))加载保存的参数state_dict</span></span><br><span class="line">clone = TheModelClass()</span><br><span class="line">clone.load_state_dict(torch.load(<span class="string">&#x27;load_module1.params&#x27;</span>))</span><br><span class="line">clone.<span class="built_in">eval</span>()</span><br><span class="line"><span class="comment"># 验证参数是否相同</span></span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;Model&#x27;s state_dict&quot;</span>)</span><br><span class="line"><span class="keyword">for</span> param_tensor <span class="keyword">in</span> model.state_dict():</span><br><span class="line">    <span class="built_in">print</span>(param_tensor, <span class="string">&quot;\t&quot;</span>, model.state_dict()[param_tensor] == clone.state_dict()[param_tensor])</span><br></pre></td></tr></table></div></figure>
-
-<p>`</p>
-<p><img src="/images/deepcompute/deepcompute.png" alt="image-20211008162402538"></p>
-
-        <h5 id="4-2-2-保存整个模型">
-          <a href="#4-2-2-保存整个模型" class="heading-link"><i class="fas fa-link"></i></a><a href="#4-2-2-保存整个模型" class="headerlink" title="4.2.2 保存整个模型"></a>4.2.2 保存整个模型</h5>
-      <p>保存整个模型，在加载的时候就可以不用再实例化，直接<code>model = torch.load(PATH))</code>即可</p>
-<p>保存：</p>
-<p><code>torch.save(model, PATH)</code></p>
-<p>加载：</p>
-<p>`</p>
-<figure class="highlight python"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 前提条件是这个模型类已经在某处定义</span></span><br><span class="line">model = torch.load(PATH))</span><br><span class="line">model.<span class="built_in">eval</span>()</span><br></pre></td></tr></table></div></figure>
-
-<p>`</p>
-
-        <h5 id="4-2-3-检查点方式（checkpoints）">
-          <a href="#4-2-3-检查点方式（checkpoints）" class="heading-link"><i class="fas fa-link"></i></a><a href="#4-2-3-检查点方式（checkpoints）" class="headerlink" title="4.2.3 检查点方式（checkpoints）"></a>4.2.3 检查点方式（checkpoints）</h5>
-      <p><del>暂未遇见，以后填坑</del></p>
-</div></div></article><article class="postlist-item post"><header class="post-header"><h1 class="post-title"><a class="post-title__link" href="/2021/09/08/Softmax/">Softmax的Pytorch实现分类任务</a></h1><div class="post-meta"><span class="post-meta-item post-meta-item--createtime"><span class="post-meta-item__icon"><i class="far fa-calendar-plus"></i></span><span class="post-meta-item__info">发表于</span><span class="post-meta-item__value">2021-09-08</span></span><span class="post-meta-item post-meta-item--updatetime"><span class="post-meta-item__icon"><i class="far fa-calendar-check"></i></span><span class="post-meta-item__info">更新于</span><span class="post-meta-item__value">2021-09-15</span></span></div></header><div class="post-body"><div class="post-excerpt">
-        <h4 id="一、Softmax回归的相关原理">
-          <a href="#一、Softmax回归的相关原理" class="heading-link"><i class="fas fa-link"></i></a><a href="#一、Softmax回归的相关原理" class="headerlink" title="一、Softmax回归的相关原理"></a>一、Softmax回归的相关原理</h4>
-      
-        <h4 id="1、Softmax的引入">
-          <a href="#1、Softmax的引入" class="heading-link"><i class="fas fa-link"></i></a><a href="#1、Softmax的引入" class="headerlink" title="1、Softmax的引入"></a>1、Softmax的引入</h4>
-      <p>在机器学习和深度学习中，分类和回归是常见的两个问题。其中回归模型往往是通过输入一系列的特征，经过一定的处理输出一个预测值，如通过输入房屋的面积、房间数量等特征通过回归模型可以预测得到这间房屋的价格。而分类问题往往希望通过输入一些特征得到一个分类。如输入一张图像输入这张图像的类别(如是猫还是狗)。在实际的操作中，我们对硬性类别感兴趣，即属于何种类别。但我们往往得到的是软性类别，即得到属于每个类别的概率，概率最大的类别即为类别的预测值。得到这种概率的结果往往并不困难，只需要在简单的线性模型的输出层前套一层softmax函数即可实现。</p>
-
-        <h4 id="2、Softmax函数">
-          <a href="#2、Softmax函数" class="heading-link"><i class="fas fa-link"></i></a><a href="#2、Softmax函数" class="headerlink" title="2、Softmax函数"></a>2、Softmax函数</h4>
-      <p>由上所述，分类问题的重点是如何将模型的输出映射成概率。SoftMax函数的功能就是将多个神经元的输出映射到（0，1）的区间内，从而将这种输出看作概率。下图非常清晰的显示了Softmax的计算过程。</p>
-<p><img src="/images/softmax-1.png" alt="upload successful"><br>假设有一个数组V，Vi表示数组中第i个元素，则该元素的Softmax值为</p>
-<p><img src="/images/softmax-2.png" alt="upload successful"><br>softmax直白来说就是将原来神经元的输出3,1,-3套上softmax函数映射成为取值范围为(0,1)的值，而这些值的累和为1（满足概率的性质），那么我们就可以将它理解成概率，在最后选取输出结点的时候，我们就可以选取概率最大（也就是值对应最大的）结点，作为我们的预测结果进行输出。</p>
-
-        <h4 id="3、交叉熵损失函数">
-          <a href="#3、交叉熵损失函数" class="heading-link"><i class="fas fa-link"></i></a><a href="#3、交叉熵损失函数" class="headerlink" title="3、交叉熵损失函数"></a>3、交叉熵损失函数</h4>
-      <p>在分类问题中，尤其是在神经网络中，交叉熵函数非常常见。因为经常涉及到分类问题，需要计算各类别的概率，所以交叉熵损失函数又都是与sigmoid函数或者softmax函数成对出现。</p>
-<p>比如用神经网络最后一层作为概率输出，一般最后一层神经网络的计算方式如下：<br>1.网络的最后一层得到每个类别的scores。<br>2.score与sigmoid函数或者softmax函数进行计算得到概率输出。<br>3.第二步得到的类别概率与真实类别标签的one-hot形式进行交叉熵计算。<br>熵，熵的本质是香农信息量的期望。<br>熵在信息论中代表随机变量不确定度的度量。一个离散型随机变量X的熵 H(X)定义为：</p>
-<p><img src="/images/softmax-3.png" alt="upload successful"><br>交叉熵刻画的是实际输出概率和期望输出概率的距离，交叉熵的值越小，则两个概率分布越接近，即实际与期望差距越小。假设概率分布p(xi)为期望输出，概率分布为q(xi)为实际输出，H(X)为交叉熵。则交叉熵的计算表达式为:</p>
-<p><img src="/images/softmax-4.png" alt="upload successful"></p>
-
-        <h3 id="二、Fashion-MNIST数据集">
-          <a href="#二、Fashion-MNIST数据集" class="heading-link"><i class="fas fa-link"></i></a><a href="#二、Fashion-MNIST数据集" class="headerlink" title="二、Fashion-MNIST数据集"></a>二、Fashion-MNIST数据集</h3>
-      
-        <h4 id="1、简介">
-          <a href="#1、简介" class="heading-link"><i class="fas fa-link"></i></a><a href="#1、简介" class="headerlink" title="1、简介"></a>1、简介</h4>
-      <p>Fashion-MNIST 是一个替代 MNIST 手写数字集 的图像数据集。 它是由 Zalando（一家德国的时尚科技公司）旗下的研究部门提供。其涵盖了来自 10 种类别的共 7 万个不同商品的正面图片。<br>Fashion-MNIST 的大小、格式和训练集/测试集划分与原始的 MNIST 完全一致。60000/10000 的训练测试数据划分，28x28 的灰度图片。你可以直接用它来测试你的机器学习和深度学习算法性能，且不需要改动任何的代码。</p>
-
-        <h4 id="2、数据集的内容">
-          <a href="#2、数据集的内容" class="heading-link"><i class="fas fa-link"></i></a><a href="#2、数据集的内容" class="headerlink" title="2、数据集的内容"></a>2、数据集的内容</h4>
-      <p>训练集和测试集数据的格式相同，通过获取迭代器的第一个元素可以得知，数据格式是一个具有两个元素的列表。第一个列表表示28*28图像的Tensor表示，第二个元素是一个1个元素的Tensor，它的取值为0-9，分别代表10类图像。</p>
-<p><img src="/images/softmax1.png" alt="upload successful"></p>
-<p><img src="/images/softmax.png" alt="upload successful"></p>
-
-        <h3 id="三、具体代码实现">
-          <a href="#三、具体代码实现" class="heading-link"><i class="fas fa-link"></i></a><a href="#三、具体代码实现" class="headerlink" title="三、具体代码实现"></a>三、具体代码实现</h3>
-      
-        <h4 id="1、使用到的包">
-          <a href="#1、使用到的包" class="heading-link"><i class="fas fa-link"></i></a><a href="#1、使用到的包" class="headerlink" title="1、使用到的包"></a>1、使用到的包</h4>
-      <p>``</p>
-<figure class="highlight python"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> torch</span><br><span class="line"><span class="keyword">import</span> torchvision</span><br><span class="line"><span class="keyword">from</span> torch <span class="keyword">import</span> nn</span><br><span class="line"><span class="keyword">from</span> torch.utils <span class="keyword">import</span> data</span><br><span class="line"><span class="keyword">from</span> torchvision <span class="keyword">import</span> transforms</span><br><span class="line"><span class="keyword">import</span> warnings</span><br><span class="line">warnings.filterwarnings(<span class="string">&quot;ignore&quot;</span>)</span><br></pre></td></tr></table></div></figure>
-
-
-        <h4 id="2、加载数据集">
-          <a href="#2、加载数据集" class="heading-link"><i class="fas fa-link"></i></a><a href="#2、加载数据集" class="headerlink" title="2、加载数据集"></a>2、加载数据集</h4>
-      <p>通过Pytorch中的<code>torchvision.datasets</code>提供的函数进行数据集的加载</p>
-<p>``</p>
-<figure class="highlight python"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">load_data_fashion_mnist</span>(<span class="params">batch_size, resize=<span class="literal">None</span></span>):</span></span><br><span class="line">    <span class="string">&quot;&quot;&quot;获得数据集，并加载成iterable类型&quot;&quot;&quot;</span></span><br><span class="line">    <span class="comment">#定义转换函数trans，使用transforms.ToTensor()将图像转化成Tensor形式</span></span><br><span class="line">    <span class="comment">#class torchvision.transforms.ToTensor</span></span><br><span class="line">    <span class="comment">#把一个取值范围是[0,255]的PIL.Image或者shape为(H,W,C)的numpy.ndarray，转换成形状为[C,H,W]，取值范围是[0,1.0]的torch.FloadTensor</span></span><br><span class="line">    trans = [transforms.ToTensor()]</span><br><span class="line">    <span class="keyword">if</span> resize:</span><br><span class="line">        trans.insert(<span class="number">0</span>, transforms.Resize(resize))</span><br><span class="line">    trans = transforms.Compose(trans)</span><br><span class="line">    mnist_train = torchvision.datasets.FashionMNIST(root=<span class="string">&quot;../data&quot;</span>, train=<span class="literal">True</span>, transform=trans, download=<span class="literal">True</span>)</span><br><span class="line">    mnist_test = torchvision.datasets.FashionMNIST(root=<span class="string">&quot;../data&quot;</span>, train=<span class="literal">False</span>, transform=trans, download=<span class="literal">True</span>)</span><br><span class="line">    <span class="keyword">return</span> (data.DataLoader(mnist_train, batch_size=batch_size, shuffle=<span class="literal">True</span>, num_workers=<span class="number">4</span>),</span><br><span class="line">            data.DataLoader(mnist_test, batch_size=batch_size, shuffle=<span class="literal">True</span>, num_workers=<span class="number">4</span>))</span><br></pre></td></tr></table></div></figure>
-
-<p>其中，使用<code>ToTensor()</code>方法实际上是一种对图像的归一化处理。假设原图像是8位灰度图像，那么读入的像素矩阵最大值为256，最小值为1，定义矩阵为I，J＝I／256，就是归一化的图像矩阵，就是说归一化之后所有的像素值都在［0，1］区间内。</p>
-<p>归一化处理的好处在于：<br>(1)归一化能够防止净输入绝对值过大引起的神经元输出饱和现象。<br>(2)归一化可以加快训练网络的收敛性.<del>（实际上不知道为什么要归一化，待进一步学习回来填坑）</del></p>
-<p><code>transforms.Compose()</code>可以将多个转换函数组合在一起，参数是一个由转换函数组成的列表，如trans表示的那样。</p>
-<p><code>torchvision.datasets.FashionMNIST(root=&quot;../data&quot;, train=True, transform=trans, download=True)</code><br>函数功能：使用<code>torchvision.datasets</code>提供的数据集加载方法下载并加载MNIST数据集<br>参数的解析：<code>root</code>：存放数据集的目录，<code>train</code>：True表示训练集，False表示测试集。 <code>download</code> : <code>True</code> = 从互联网上下载数据集, <code>transform</code>：转换函数，对数据集图像进行一些处理。</p>
-<p><code>data.DataLoader(mnist_train, batch_size=batch_size, shuffle=True, num_workers=4)</code><br>函数功能：</p>
-<p><img src="/images/softmax3.png" alt="upload successful"></p>
-
-        <h4 id="3、计算精确度">
-          <a href="#3、计算精确度" class="heading-link"><i class="fas fa-link"></i></a><a href="#3、计算精确度" class="headerlink" title="3、计算精确度"></a>3、计算精确度</h4>
-      <p>``</p>
-<figure class="highlight python"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">accuracy</span>(<span class="params">y_hat, y</span>):</span></span><br><span class="line">    <span class="string">&quot;&quot;&quot;函数功能：统计预测正确的数量&quot;&quot;&quot;</span></span><br><span class="line">    <span class="string">&quot;&quot;&quot;网络中输入batch_size*784,网络线性层784*10，结果为batch_size*10的矩阵，第二个维度为预测结果，最大的索引即为预测类别&quot;&quot;&quot;</span></span><br><span class="line">    <span class="string">&quot;&quot;&quot;numpy 返回最大的元素索引，def argmax(a, axis=None, out=None)</span></span><br><span class="line"><span class="string">    a—-输入array</span></span><br><span class="line"><span class="string">    axis—-为0代表列方向，为1代表行方向</span></span><br><span class="line"><span class="string">    out—-结果写到这个array里面&quot;&quot;&quot;</span></span><br><span class="line">    <span class="string">&quot;&quot;&quot;y.type:[序号]&quot;&quot;&quot;</span></span><br><span class="line">    y_hat = y_hat.argmax(axis=<span class="number">1</span>)</span><br><span class="line">    cmp = y_hat.<span class="built_in">type</span>(y.dtype) == y</span><br><span class="line">    <span class="keyword">return</span> <span class="built_in">float</span>(cmp.<span class="built_in">type</span>(y.dtype).<span class="built_in">sum</span>())</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Accumulator</span>:</span></span><br><span class="line">    <span class="string">&quot;&quot;&quot;在n个变量上累加。&quot;&quot;&quot;</span></span><br><span class="line">    <span class="comment">#新建一个长度为n的列表，列表中每个元素都是一个待累加的变量</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span>(<span class="params">self, n</span>):</span></span><br><span class="line">        self.data = [<span class="number">0.0</span>] * n</span><br><span class="line">    <span class="comment">#add方法实现将data的值与add方法参数传入的值进行加和，zip方法实现将iterable对象打包成元组的列表</span></span><br><span class="line">    <span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="string">    &gt;&gt;&gt;a = [1,2,3]</span></span><br><span class="line"><span class="string">    &gt;&gt;&gt; b = [4,5,6]</span></span><br><span class="line"><span class="string">    &gt;&gt;&gt; c = [4,5,6,7,8]</span></span><br><span class="line"><span class="string">    &gt;&gt;&gt; zipped = zip(a,b)     # 打包为元组的列表</span></span><br><span class="line"><span class="string">    [(1, 4), (2, 5), (3, 6)]</span></span><br><span class="line"><span class="string">    &quot;&quot;&quot;</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">add</span>(<span class="params">self, *args</span>):</span></span><br><span class="line">        self.data = [a + <span class="built_in">float</span>(b) <span class="keyword">for</span> a, b <span class="keyword">in</span> <span class="built_in">zip</span>(self.data, args)]</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">reset</span>(<span class="params">self</span>):</span></span><br><span class="line">        self.data = [<span class="number">0.0</span>] * <span class="built_in">len</span>(self.data)</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__getitem__</span>(<span class="params">self, idx</span>):</span></span><br><span class="line">        <span class="keyword">return</span> self.data[idx]</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">evaluate_accuracy</span>(<span class="params">net, data_iter</span>):</span></span><br><span class="line">    <span class="string">&quot;&quot;&quot;计算在指定数据集上模型的精度&quot;&quot;&quot;</span></span><br><span class="line">    <span class="keyword">if</span> <span class="built_in">isinstance</span>(net, torch.nn.Module):</span><br><span class="line">        net.<span class="built_in">eval</span>()<span class="comment">#将模型置于评估模式，不计算梯度</span></span><br><span class="line">    metric = Accumulator(<span class="number">2</span>)</span><br><span class="line">    <span class="keyword">for</span> X, y <span class="keyword">in</span> data_iter:</span><br><span class="line">        metric.add(accuracy(net(X), y), y.numel())<span class="comment">#numel()返回数组中元素个数</span></span><br><span class="line">    <span class="comment">#此时metric[0]存放的是网络中预测准确的个数，metric[1]存放数据集中的标签的总数</span></span><br><span class="line">    <span class="keyword">return</span> metric[<span class="number">0</span>] / metric[<span class="number">1</span>]</span><br></pre></td></tr></table></div></figure>
-
-
-        <h4 id="4、定义网络结构">
-          <a href="#4、定义网络结构" class="heading-link"><i class="fas fa-link"></i></a><a href="#4、定义网络结构" class="headerlink" title="4、定义网络结构"></a>4、定义网络结构</h4>
-      <p>使用torch提供的<code>nn.Sequential</code>方法创建一个顺序容器，<code>Modules</code> 会以他们传入的顺序被添加到容器中。并使用使用torch提供的<code>nn.init</code>方法对线性层的权值<code>weight</code>初始化为均值为0，标准差为0.01的正态分布。</p>
-<figure class="highlight python"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#Flatten层用来将输入“压平”，即把多维的输入一维化，常用在从卷积层到全连接层的过渡。Flatten不影响batch的大小。实际完成的功能为将28*28的图像矩阵转换成1*784的一维向量。</span></span><br><span class="line"><span class="comment">#FashionMnist数据集为28*28=784的灰度图像，共有10个分类，因此为784*10的线性层</span></span><br><span class="line"><span class="comment">#class torch.nn.Linear(in_features, out_features, bias=True)</span></span><br><span class="line"><span class="comment">#Linear的两个参数：weight和bias</span></span><br><span class="line"><span class="comment">#定义网络结构</span></span><br><span class="line">net = nn.Sequential(</span><br><span class="line">    nn.Flatten(),</span><br><span class="line">    nn.Linear(<span class="number">784</span>, <span class="number">10</span>)</span><br><span class="line">)</span><br><span class="line"></span><br><span class="line"><span class="comment">#网络权值初始化</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">init_weights</span>(<span class="params">m</span>):</span></span><br><span class="line">    <span class="keyword">if</span> <span class="built_in">type</span>(m) == nn.Linear:</span><br><span class="line">        nn.init.normal_(m.weight, <span class="number">0</span>, <span class="number">0.01</span>)</span><br><span class="line">net.apply(init_weights)</span><br></pre></td></tr></table></div></figure>
-<p>通过阅读代码可以发现在顺序容器nn.Sequential里面并没有定义和Softmax相关的层次，实际上Pytorch实现中将交叉熵损失和softmax结合在了一起，网络采用具有10个输出的线性模型即可。</p>
-
-        <h4 id="五、定义优化器与损失函数">
-          <a href="#五、定义优化器与损失函数" class="heading-link"><i class="fas fa-link"></i></a><a href="#五、定义优化器与损失函数" class="headerlink" title="五、定义优化器与损失函数"></a>五、定义优化器与损失函数</h4>
-      <p>使用交叉熵损失函数度量预测概率的准确性。并使用随机梯度下降作为模型的优化器。</p>
-<figure class="highlight python"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#定义损失函数</span></span><br><span class="line">loss = torch.nn.CrossEntropyLoss()</span><br><span class="line"><span class="comment">#定义优化器</span></span><br><span class="line">trainer = torch.optim.SGD(net.parameters(), lr=<span class="number">0.1</span>)</span><br></pre></td></tr></table></div></figure>
-
-
-        <h4 id="六、定义训练器与训练函数">
-          <a href="#六、定义训练器与训练函数" class="heading-link"><i class="fas fa-link"></i></a><a href="#六、定义训练器与训练函数" class="headerlink" title="六、定义训练器与训练函数"></a>六、定义训练器与训练函数</h4>
-      <figure class="highlight python"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">train_epoch_ch3</span>(<span class="params">net, train_iter, loss, updater</span>):</span></span><br><span class="line">    <span class="keyword">if</span> <span class="built_in">isinstance</span>(net, torch.nn.Module):</span><br><span class="line">        net.train()</span><br><span class="line">    <span class="comment">#统计每一个epoch,损失函数总和、预测正确的数量、样本总数</span></span><br><span class="line">    metric = Accumulator(<span class="number">3</span>)</span><br><span class="line">    <span class="keyword">for</span> X, y <span class="keyword">in</span> train_iter:</span><br><span class="line">        y_hat = net(X)<span class="comment">#预测值</span></span><br><span class="line">        l = loss(y_hat, y)<span class="comment">#计算交叉熵损失</span></span><br><span class="line">        updater.zero_grad()<span class="comment">#</span></span><br><span class="line">        l.backward()</span><br><span class="line">        updater.step()</span><br><span class="line">        metric.add(l, accuracy(y_hat, y), y.numel())</span><br><span class="line">    <span class="comment">#返回训练损失和训练准确率</span></span><br><span class="line">    <span class="keyword">return</span> metric[<span class="number">0</span>] / metric[<span class="number">2</span>], metric[<span class="number">1</span>] / metric[<span class="number">2</span>]</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">train_ch3</span>(<span class="params">net, train_iter, test_iter, loss, num_epochs, updater</span>):</span></span><br><span class="line">    <span class="keyword">if</span> __name__ == <span class="string">&#x27;__main__&#x27;</span>:</span><br><span class="line">        <span class="keyword">for</span> epoch <span class="keyword">in</span> <span class="built_in">range</span>(num_epochs):</span><br><span class="line">            train_metrics = train_epoch_ch3(net, train_iter, loss, updater)</span><br><span class="line">            test_acc = evaluate_accuracy(net, test_iter)</span><br><span class="line">            <span class="built_in">print</span>(<span class="string">f&#x27;epoch:<span class="subst">&#123;epoch + <span class="number">1</span>&#125;</span>,训练集损失:<span class="subst">&#123;train_metrics[<span class="number">0</span>]&#125;</span>,训练集准确率:<span class="subst">&#123;train_metrics[<span class="number">1</span>]&#125;</span>,测试集准确率:<span class="subst">&#123;test_acc&#125;</span>&#x27;</span>)</span><br></pre></td></tr></table></div></figure>
-
-
-        <h4 id="七、数据加载与调用训练器进行训练">
-          <a href="#七、数据加载与调用训练器进行训练" class="heading-link"><i class="fas fa-link"></i></a><a href="#七、数据加载与调用训练器进行训练" class="headerlink" title="七、数据加载与调用训练器进行训练"></a>七、数据加载与调用训练器进行训练</h4>
-      <figure class="highlight python"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#加载数据</span></span><br><span class="line">batch_size = <span class="number">256</span></span><br><span class="line">train_iter, test_iter = load_data_fashion_mnist(batch_size)</span><br><span class="line">num_epochs = <span class="number">100</span></span><br><span class="line"><span class="comment">#开始训练</span></span><br><span class="line">train_ch3(net, train_iter, test_iter, loss, num_epochs, trainer)</span><br></pre></td></tr></table></div></figure>
-
-        <h4 id="八、结果展示">
-          <a href="#八、结果展示" class="heading-link"><i class="fas fa-link"></i></a><a href="#八、结果展示" class="headerlink" title="八、结果展示"></a>八、结果展示</h4>
-      <p><img src="/images/softmax-result.png" alt="upload successful"></p>
-
-        <h4 id="九、总结">
-          <a href="#九、总结" class="heading-link"><i class="fas fa-link"></i></a><a href="#九、总结" class="headerlink" title="九、总结"></a>九、总结</h4>
-      <p>如结果图展示，仅仅在线性模型的基础上加上一层Softmax并采用交叉熵损失即可实现分类任务。但是准确率较低只有0.85左右。以后可以尝试更多的Epoch和更深的网络层次查看是否可以达到更强的效果。</p>
-</div></div></article><article class="postlist-item post"><header class="post-header"><h1 class="post-title"><a class="post-title__link" href="/2021/09/02/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E7%8E%AF%E5%A2%83%E7%9A%84%E6%90%AD%E5%BB%BA-1/">深度学习环境的搭建</a></h1><div class="post-meta"><span class="post-meta-item post-meta-item--createtime"><span class="post-meta-item__icon"><i class="far fa-calendar-plus"></i></span><span class="post-meta-item__info">发表于</span><span class="post-meta-item__value">2021-09-02</span></span><span class="post-meta-item post-meta-item--updatetime"><span class="post-meta-item__icon"><i class="far fa-calendar-check"></i></span><span class="post-meta-item__info">更新于</span><span class="post-meta-item__value">2021-09-03</span></span></div></header><div class="post-body"><div class="post-excerpt">
-        <h4 id="前言">
-          <a href="#前言" class="heading-link"><i class="fas fa-link"></i></a><a href="#前言" class="headerlink" title="前言"></a>前言</h4>
-      <p>总算是研究生开学了，之前在家混吃等死混了整整9个月也没学到什么有用的东西，<del>停止摸鱼永远从明天开始。</del>进入实验室的第一个小任务就是搭建深度学习的相关环境，由于之前毕设有过相关的经验所以完成起来困难不是很大。问了下师兄师姐的环境是  </p>
-<blockquote>
-<ul>
-<li>Python版本：3.6.0  </li>
-<li>Tensorflow版本：1.14  </li>
-</ul>
-</blockquote>
-
-        <h4 id="1-Python的安装">
-          <a href="#1-Python的安装" class="heading-link"><i class="fas fa-link"></i></a><a href="#1-Python的安装" class="headerlink" title="1 Python的安装"></a>1 Python的安装</h4>
-      
-        <h5 id="1-1-Anaconda的安装与使用">
-          <a href="#1-1-Anaconda的安装与使用" class="heading-link"><i class="fas fa-link"></i></a><a href="#1-1-Anaconda的安装与使用" class="headerlink" title="1.1 Anaconda的安装与使用"></a>1.1 Anaconda的安装与使用</h5>
-      <p>个人理解Anaconda是一个软件包管理工具，可以根据实际需要建立多个不同版本、不同软件包的虚拟环境。在代码编辑器如Pycharm中可以方便的切换环境。<br>在官网下载最新的版本。Anaconda下载地址：<span class="exturl"><a class="exturl__link" target="_blank" rel="noopener" href="https://www.anaconda.com/download/">https://www.anaconda.com/download/</a><span class="exturl__icon"><i class="fas fa-external-link-alt"></i></span></span>，建议安装路径不要有中文，目录不要放得太深。最好更改pip源和conda源为国内服务器用以加速后期库的下载。</p>
-
-        <h5 id="1-2-修改pip和conda的镜像源">
-          <a href="#1-2-修改pip和conda的镜像源" class="heading-link"><i class="fas fa-link"></i></a><a href="#1-2-修改pip和conda的镜像源" class="headerlink" title="1.2 修改pip和conda的镜像源"></a>1.2 修改pip和conda的镜像源</h5>
-      <p>由于一些<del>不可抗力</del>，直接从pip和conda下载一些库可能会有点慢，因此有必要将pip和conda修改为国内镜像源以加速下载。  </p>
-
-        <h6 id="1-2-1-修改pip镜像源">
-          <a href="#1-2-1-修改pip镜像源" class="heading-link"><i class="fas fa-link"></i></a><a href="#1-2-1-修改pip镜像源" class="headerlink" title="1.2.1 修改pip镜像源"></a>1.2.1 修改pip镜像源</h6>
-      <p>在 user 目录中创建一个 pip 目录，如： C:\Users\xx\pip，xx是用户名，新建文件pip.ini（建议先新建成 .txt 文件，之后将后缀名改回），内容如下：  </p>
-<figure class="highlight plaintext"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">[global]</span><br><span class="line">timeout = 6000</span><br><span class="line">index-url = https://pypi.tuna.tsinghua.edu.cn/simple</span><br><span class="line">trusted-host = https://pypi.tuna.tsinghua.edu.cn</span><br></pre></td></tr></table></div></figure>
-
-<p><img src="/images/%E6%A1%86%E6%9E%B6%E6%90%AD%E5%BB%BA1.png" alt="upload successful">  </p>
-
-        <h6 id="1-2-2-修改conda镜像源">
-          <a href="#1-2-2-修改conda镜像源" class="heading-link"><i class="fas fa-link"></i></a><a href="#1-2-2-修改conda镜像源" class="headerlink" title="1.2.2 修改conda镜像源"></a>1.2.2 修改conda镜像源</h6>
-      <p>进入conda的命令行终端，输入以下命令（逐条执行）:<br><img src="/images/%E6%A1%86%E6%9E%B6%E6%90%AD%E5%BB%BA2.png" alt="upload successful">  </p>
-<figure class="highlight plaintext"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">conda config --add channels https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/free/</span><br><span class="line">conda config --set show_channel_urls yes</span><br></pre></td></tr></table></div></figure>
-
-
-<p>打开c:\users\系统用户名 目录，找到.condarc文件。.condarc 内容如下，表示成功：</p>
-<p><img src="/images/%E6%A1%86%E6%9E%B6%E6%90%AD%E5%BB%BA3.png" alt="upload successful">  </p>
-
-        <h5 id="1-3-建立Python环境">
-          <a href="#1-3-建立Python环境" class="heading-link"><i class="fas fa-link"></i></a><a href="#1-3-建立Python环境" class="headerlink" title="1.3 建立Python环境"></a>1.3 建立Python环境</h5>
-      <p>镜像源设置完毕之后就可以进行Python环境的设置了，在Anaconda软件中选择environments，点击create建立，并选择Python版本为所需版本（本次选择的版本是3.6，在帮同学搭建的时候出现了下载最新版Anaconda里面只有python3.8版本的问题，实测可以先选择3.8版本然后再降级）。  </p>
-<p><img src="/images/%E6%A1%86%E6%9E%B6%E6%90%AD%E5%BB%BA4.png" alt="upload successful">    </p>
-<p>建立完成之后我们就可以打开终端用命令行的方法进行相关库的安装。  </p>
-
-        <h5 id="1-4-Python降级与安装相关库">
-          <a href="#1-4-Python降级与安装相关库" class="heading-link"><i class="fas fa-link"></i></a><a href="#1-4-Python降级与安装相关库" class="headerlink" title="1.4 Python降级与安装相关库"></a>1.4 Python降级与安装相关库</h5>
-      
-        <h6 id="1-4-1-Python降级">
-          <a href="#1-4-1-Python降级" class="heading-link"><i class="fas fa-link"></i></a><a href="#1-4-1-Python降级" class="headerlink" title="1.4.1 Python降级"></a>1.4.1 Python降级</h6>
-      <p>如上文所言，由于官网下载的最新版Anaconda只带了3.8版本的Python，而导师建议我们环境和师兄师姐们保持一致，需要降级到3.6版本。<br>还是进入到conda命令行工具，通过命令进入到已经搭建好的虚拟环境  </p>
-<figure class="highlight plaintext"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">conda activate 之前建立的环境名  </span><br></pre></td></tr></table></div></figure>
-
-<p><img src="/images/%E6%A1%86%E6%9E%B6%E6%90%AD%E5%BB%BA5.png" alt="upload successful"><br>输入以下命令，Python版本可以改成需要的版本号，如需要3.7可以直接将3.6改成3.7  </p>
-<figure class="highlight plaintext"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">conda install python==3.6</span><br></pre></td></tr></table></div></figure>
-
-<p>回车执行之后可以看到版本号已经降级成功  </p>
-<p><img src="/images/%E6%A1%86%E6%9E%B6%E6%90%AD%E5%BB%BA6.png" alt="upload successful">  </p>
-
-        <h6 id="1-4-2-安装Tensorflow">
-          <a href="#1-4-2-安装Tensorflow" class="heading-link"><i class="fas fa-link"></i></a><a href="#1-4-2-安装Tensorflow" class="headerlink" title="1.4.2 安装Tensorflow"></a>1.4.2 安装Tensorflow</h6>
-      <pre><code>pip install tensorflow==1.14(版本号可改成需要的版本)
-</code></pre>
-<p>输入pip list查看已经安装的包列表，已经有了tensorflow1.14至此安装结束</p>
-<p><img src="/images/%E6%A1%86%E6%9E%B6%E6%90%AD%E5%BB%BA7.png" alt="upload successful"><br>PS：看网上有问题说numpy版本需要和tensorflow版本匹配，高版本的numpy可能会出现问题，由于我还没尝试使用因此暂且搁置，有问题再填坑  </p>
-
-        <h4 id="2-编译器Pycharm的使用">
-          <a href="#2-编译器Pycharm的使用" class="heading-link"><i class="fas fa-link"></i></a><a href="#2-编译器Pycharm的使用" class="headerlink" title="2 编译器Pycharm的使用"></a>2 编译器Pycharm的使用</h4>
-      
-        <h6 id="1-2-1-安装Pycharm">
-          <a href="#1-2-1-安装Pycharm" class="heading-link"><i class="fas fa-link"></i></a><a href="#1-2-1-安装Pycharm" class="headerlink" title="1.2.1 安装Pycharm"></a>1.2.1 安装Pycharm</h6>
-      <p>没什么，安装community社区版本即可  </p>
-
-        <h6 id="1-2-2-在Pycharm中设置解释器为conda虚拟环境">
-          <a href="#1-2-2-在Pycharm中设置解释器为conda虚拟环境" class="heading-link"><i class="fas fa-link"></i></a><a href="#1-2-2-在Pycharm中设置解释器为conda虚拟环境" class="headerlink" title="1.2.2 在Pycharm中设置解释器为conda虚拟环境"></a>1.2.2 在Pycharm中设置解释器为conda虚拟环境</h6>
-      <p>File-&gt;Settings-&gt;Project:code-&gt;Project Interpreter点击add  </p>
-<p><img src="/images/%E6%A1%86%E6%9E%B6%E6%90%AD%E5%BB%BA8.png" alt="upload successful"><br>选择conda environments,在existing enviroments中找到所创建环境名文件夹下面的Python.exe再点击ok和apply即可。</p>
-<p><img src="/images/%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA8.png" alt="upload successful">  </p>
+        <h5 id="3-1-聚合节点-Aggregation-Nodes">
+          <a href="#3-1-聚合节点-Aggregation-Nodes" class="heading-link"><i class="fas fa-link"></i></a><a href="#3-1-聚合节点-Aggregation-Nodes" class="headerlink" title="3.1 聚合节点 Aggregation Nodes"></a>3.1 聚合节点 Aggregation Nodes</h5>
+      <p>聚合节点的的主要功能是组合和压缩它们的输入。节点学习选择和投射重要的信息，并在它们的输出作为输入时保持相同的维度。可以使用任意网络结构构造Aggregation Node，为减少计算量，作者使用单个“卷积-BN-激活函数”结构来构造Aggregation Node，一般情况下使用1x1卷积。</p>
+
+        <h4 id="第四章-实验设计">
+          <a href="#第四章-实验设计" class="heading-link"><i class="fas fa-link"></i></a><a href="#第四章-实验设计" class="headerlink" title="第四章 实验设计"></a>第四章 实验设计</h4>
+      <p>用CIFAR-10分类数据集测试DLA模型的效果。论文中分类任务实验使用SGD作为优化器执行120个epoch，动量为0.9，权重衰减10−4，批处理大小为256并以0.1的学习速率开始训练，每30个epoch减少10个学习速率。并Resize成256，并随机裁剪成224×224。根据我可怜的单卡12G的显存取舍，最终采用下面的训练方式。训练集预处理：随机裁剪224×224，随机中心翻转，并作均值化处理。测试集预处理：Resize成256×256，中心裁剪224×224，并均值化处理。batch_size选择64，训练50个epoch，初始学习率采取0.1，动量为0.9，权重衰减10−4，每训练20个epoch，学习率×0.1。</p>
+
+        <h4 id="第五章-结果展示">
+          <a href="#第五章-结果展示" class="heading-link"><i class="fas fa-link"></i></a><a href="#第五章-结果展示" class="headerlink" title="第五章 结果展示"></a>第五章 结果展示</h4>
+      <p>在CIFAR-10分类任务中达到了93.530%的准确率，比之前尝试过的的ResNet、AlexNet网络模型效果都要出色。有力的证明了DLA网络模型具有优秀的提取图像特征能力。</p>
+<p><img src="/2022/01/28/DLA/image-20220129212334052.png" alt="image-20220129212334052"></p>
+<p><img src="/2022/01/28/DLA/image-20220129212846106.png" alt="image-20220129212846106"></p>
+<p>后又尝试120epoch,batch_size为60，起始学习率0.1，动量0.9，权重衰减0.0001，每30个epoch学习率×0.1，最终达到94.9%准确率。</p>
+<p><img src="/2022/01/28/DLA/image-20220203161128542.png" alt="image-20220203161128542"></p>
+<p>没有引入预训练模型，充分证明了DLA优秀的提取特征能力。</p>
 
         <h4 id="结语">
           <a href="#结语" class="heading-link"><i class="fas fa-link"></i></a><a href="#结语" class="headerlink" title="结语"></a>结语</h4>
-      <p>至此整个环境应该就已经搭建完毕，<del>出现什么问题以后会来填坑罢。希望以后也能保持博客的高强度更新。</del></p>
-</div></div></article></section><nav class="paginator"><div class="paginator-inner"><a class="extend prev" rel="prev" href="/page/3/"><i class="fas fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/3/">3</a><span class="page-number current">4</span></div></nav></div></div><div class="sidebar-wrap" id="sidebar-wrap"><aside class="sidebar" id="sidebar"><section class="sidebar-toc hide"></section><!-- ov = overview--><section class="sidebar-ov"><div class="sidebar-ov-author"><div class="sidebar-ov-author__avatar"><img class="sidebar-ov-author__avatar_img" src="/images/icons/photo.png" alt="avatar"></div><p class="sidebar-ov-author__text">To be a great person.</p></div><div class="sidebar-ov-cc"><a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en" target="_blank" rel="noopener" data-popover="知识共享许可协议" data-popover-pos="up"><img src="/images/cc-by-nc-sa.svg"></a></div></section></aside></div><div class="clearfix"></div></div></main><footer class="footer" id="footer"><div class="footer-inner"><div><span>Copyright © 2022</span><span class="footer__icon"><i class="fas fa-heart"></i></span><span>Strive</span></div><div><span>由 <a href="http://hexo.io/" title="Hexo" target="_blank" rel="noopener">Hexo</a> 强力驱动</span><span> v5.4.0</span><span class="footer__devider">|</span><span>主题 - <a href="https://github.com/liuyib/hexo-theme-stun/" title="Stun" target="_blank" rel="noopener">Stun</a></span><span> v2.6.2</span></div></div></footer><div class="loading-bar" id="loading-bar"><div class="loading-bar__progress"></div></div><div class="back2top" id="back2top"><span class="back2top__icon"><i class="fas fa-rocket"></i></span></div></div><script src="https://cdn.jsdelivr.net/npm/jquery@v3.4.1/dist/jquery.min.js"></script><script src="https://cdn.jsdelivr.net/npm/velocity-animate@1.5.2/velocity.min.js"></script><script src="https://cdn.jsdelivr.net/npm/velocity-animate@1.5.2/velocity.ui.min.js"></script><script src="/js/utils.js?v=2.6.2"></script><script src="/js/stun-boot.js?v=2.6.2"></script><script src="/js/scroll.js?v=2.6.2"></script><script src="/js/header.js?v=2.6.2"></script><script src="/js/sidebar.js?v=2.6.2"></script></body></html>
+      <p>DLA的代码还没有来得及认真学习，暂时搁置，后面有时间再来研究。</p>
+</div></div></article><article class="postlist-item post"><header class="post-header"><h1 class="post-title"><a class="post-title__link" href="/2022/01/28/caikeng001/">深度学习踩坑记录001——训练集loss正常下降，测试集一动不动</a></h1><div class="post-meta"><span class="post-meta-item post-meta-item--createtime"><span class="post-meta-item__icon"><i class="far fa-calendar-plus"></i></span><span class="post-meta-item__info">发表于</span><span class="post-meta-item__value">2022-01-28</span></span><span class="post-meta-item post-meta-item--updatetime"><span class="post-meta-item__icon"><i class="far fa-calendar-check"></i></span><span class="post-meta-item__info">更新于</span><span class="post-meta-item__value">2022-03-06</span></span></div></header><div class="post-body"><div class="post-excerpt">
+        <h3 id="踩坑记录001">
+          <a href="#踩坑记录001" class="heading-link"><i class="fas fa-link"></i></a><a href="#踩坑记录001" class="headerlink" title="踩坑记录001"></a>踩坑记录001</h3>
+      <p>回家混了好几天才开始干点正事，开摆！</p>
+<p>新年的第一篇博客本来想写一下Ubuntu系统的安装、Nvidia驱动的安装和CenterNet运行环境的配置。可是在学校的时候一直在混，Liunx上写博客还没有找到很方便的方式，踩过的坑很多都忘记了。</p>
+<p><strong>以后踩坑一定要及时记录</strong>！</p>
+<p>由于一两个月没有搞代码了，刚回家就碰见了个非常脑残小儿科的问题却一直没有解决。</p>
+
+        <h4 id="问题描述">
+          <a href="#问题描述" class="heading-link"><i class="fas fa-link"></i></a><a href="#问题描述" class="headerlink" title="问题描述"></a>问题描述</h4>
+      <p>回家做一个ResNet50的CIFAR10分类找找之前遗忘的知识，出现了训练集的loss正常下降、准确率正常上升。而测试集的loss却几乎不下降甚至还有反增，准确率保持非常低的水平不变。如下图所示：</p>
+<p><img src="/2022/01/28/caikeng001/image-20220128123827445.png" alt="image-20220128123827445"></p>
+<p>可见训练集准确度已经到了很高的程度，但是测试集的loss和准确率几乎没有什么变化。仔细检查代码（指查了三天）发现在数据的预处理部分，训练集做了Resize、随机翻转和均值化操作，但是测试集没有作任何处理。</p>
+<figure class="highlight python"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">myTransforms = transforms.Compose([</span><br><span class="line">    transforms.Resize((<span class="number">32</span>, <span class="number">32</span>)),</span><br><span class="line">    transforms.RandomHorizontalFlip(p=<span class="number">0.5</span>),</span><br><span class="line">    transforms.ToTensor(),</span><br><span class="line">    transforms.Normalize((<span class="number">0.485</span>, <span class="number">0.456</span>, <span class="number">0.406</span>), (<span class="number">0.229</span>, <span class="number">0.224</span>, <span class="number">0.225</span>))</span><br><span class="line">])</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># 数据加载部分</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">load_dataset</span>(<span class="params">batch_size</span>):</span></span><br><span class="line">    train_set = torchvision.datasets.CIFAR10(</span><br><span class="line">        root=<span class="string">&#x27;../data/cifar&#x27;</span>, train=<span class="literal">True</span>, download=<span class="literal">True</span>, transform=myTransforms)</span><br><span class="line">    test_set = torchvision.datasets.CIFAR10(</span><br><span class="line">        root=<span class="string">&#x27;../data/cifar&#x27;</span>, train=<span class="literal">False</span>, download=<span class="literal">True</span>, transform=transforms.ToTensor())</span><br><span class="line">    train_iter = data.DataLoader(train_set, batch_size=batch_size, shuffle=<span class="literal">True</span>, num_workers=<span class="number">2</span>)</span><br><span class="line">    test_iter = data.DataLoader(test_set, batch_size=batch_size, shuffle=<span class="literal">True</span>, num_workers=<span class="number">2</span>)</span><br><span class="line">    <span class="keyword">return</span> train_iter, test_iter</span><br></pre></td></tr></table></div></figure>
+
+<p>即问题出在训练集和测试集没有作相同的预处理。引用知乎一个很恰当的比喻是：<strong>你复习了一整晚的高数课本，可是第二天考线性代数，虽然二者都属于数学范畴，但是你拿高数知识解线代怎么能做的好呢？</strong>对数据集作预处理，如均值化操作，实际上对数据的分布作了改变。训练集训练的是一个数据分布，直接拿训练的网络对另外一个数据分布的测试集作测试，效果肯定不好。</p>
+
+        <h4 id="问题解决方法">
+          <a href="#问题解决方法" class="heading-link"><i class="fas fa-link"></i></a><a href="#问题解决方法" class="headerlink" title="问题解决方法"></a>问题解决方法</h4>
+      <p>将数据加载的预处理统一，训练集和测试集使用相同的预处理方式。</p>
+<figure class="highlight python"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 数据加载部分</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">load_dataset</span>(<span class="params">batch_size</span>):</span></span><br><span class="line">    train_set = torchvision.datasets.CIFAR10(</span><br><span class="line">        root=<span class="string">&#x27;../data/cifar&#x27;</span>, train=<span class="literal">True</span>, download=<span class="literal">True</span>, transform=myTransforms)</span><br><span class="line">    test_set = torchvision.datasets.CIFAR10(</span><br><span class="line">        root=<span class="string">&#x27;../data/cifar&#x27;</span>, train=<span class="literal">False</span>, download=<span class="literal">True</span>, transform=myTransforms)</span><br><span class="line">    train_iter = data.DataLoader(train_set, batch_size=batch_size, shuffle=<span class="literal">True</span>, num_workers=<span class="number">2</span>)</span><br><span class="line">    test_iter = data.DataLoader(test_set, batch_size=batch_size, shuffle=<span class="literal">True</span>, num_workers=<span class="number">2</span>)</span><br><span class="line">    <span class="keyword">return</span> train_iter, test_iter</span><br></pre></td></tr></table></div></figure>
+
+<p><img src="/2022/01/28/caikeng001/image-20220128115856272.png" alt="image-20220128115856272"></p>
+<p>测试集准确率就正常上升了。</p>
+
+        <h4 id="学习与反思">
+          <a href="#学习与反思" class="heading-link"><i class="fas fa-link"></i></a><a href="#学习与反思" class="headerlink" title="学习与反思"></a>学习与反思</h4>
+      <p>借用知乎回答“深度学习中为什么要对测试集进行与训练集一样的数据预处理？”</p>
+<p>作者：深海<br>链接：<span class="exturl"><a class="exturl__link" target="_blank" rel="noopener" href="https://www.zhihu.com/question/479694291/answer/2061254022">https://www.zhihu.com/question/479694291/answer/2061254022</a><span class="exturl__icon"><i class="fas fa-external-link-alt"></i></span></span></p>
+<p>我们拿标准化举例，标准化也是数据预处理的过程，我们假设将要标准化的某个特征服从高斯分布。</p>
+<p>在神经网络中也可以看作是使网络收敛更加稳定的trick（因为标准化后大部分数值落在一定区间内）。</p>
+<p>我们只能通过训练集获得到数据中该特征的所有可能的情况，我们假设我们拿到的训练集是足够有代表性的，能够从训练集中尽可能逼近数据本身服从的概率分布（这也就是为什么扩充数据能够提升模型泛化能力，我们拿到的数据越多，越能接近数据本身的分布，如果我们拿到全量数据，那么本身的分布就确定下来了，假设数据的某个特征服从高斯分布，那么它的均值和方差也确定了，如果我们能拿到全量数据，那也就没必要做机器学习了）。</p>
+<p>所以我们是拿训练集中数据的某个特征代表了全部数据的这个特征，用它的均值和方差代表了全部数据的均值和方差。这就很容易理解了，测试集要使用训练集的均值和方差进行标准化，不就是在用我们假设的数据特征服从的均值和方差进行标准化吗？</p>
+<p>所以不只是深度学习，传统机器学习算法的预处理也需要这么做。深度学习做了标准化后能够对网络的训练有一些益处罢了，这也是为什么做bn，ln的原因，以及网络中用到的各种归一化的trick，对深度学习中网络优化过程中数值的稳定性有一定的帮助。</p>
+<p>寒假回家第6天了，今天才刚开始做了点东西（虽然没有什么卵用）。除夕之前一定要把DLA跑通。。。。。</p>
+<p><img src="/2022/01/28/caikeng001/image-20220128140116390.png" alt="image-20220128140116390"></p>
+</div></div></article><article class="postlist-item post"><header class="post-header"><h1 class="post-title"><a class="post-title__link" href="/2022/01/17/CenterNet/">CenterNet学习笔记</a></h1><div class="post-meta"><span class="post-meta-item post-meta-item--createtime"><span class="post-meta-item__icon"><i class="far fa-calendar-plus"></i></span><span class="post-meta-item__info">发表于</span><span class="post-meta-item__value">2022-01-17</span></span><span class="post-meta-item post-meta-item--updatetime"><span class="post-meta-item__icon"><i class="far fa-calendar-check"></i></span><span class="post-meta-item__info">更新于</span><span class="post-meta-item__value">2022-03-06</span></span></div></header><div class="post-body"><div class="post-excerpt">
+        <h3 id="CenterNet">
+          <a href="#CenterNet" class="heading-link"><i class="fas fa-link"></i></a><a href="#CenterNet" class="headerlink" title="CenterNet"></a>CenterNet</h3>
+      
+        <h4 id="一、AnchorFree方法">
+          <a href="#一、AnchorFree方法" class="heading-link"><i class="fas fa-link"></i></a><a href="#一、AnchorFree方法" class="headerlink" title="一、AnchorFree方法"></a>一、AnchorFree方法</h4>
+      <p>根据之前行人再识别相关理论的学习，可以知道一般行人检测网络可分为Anchor Based和Anchor Free两类方法。其中Anchor Based方法是通过在图像上暴力枚举一系列的锚框，然后再通过IOU等计算预测物体在锚框内的概率。而Anchor Free类方法往往不直接枚举锚框，而是通过预测一系列的点，比如物体的中心点、对角点等的位置，然后再通过预测这些点对应的宽高等来获得锚框。常见的Anchor Free方法有：CornerNet、ExtremeNet、CenterNet。</p>
+<p>CornerNet是通过预测物体的左上角和右下角从而确定一个物体，左上角和右下角是两个Key Points。</p>
+<p><img src="/images/CenterNet/image-20220117134913361.png" alt="image-20220117134913361"></p>
+<p>Extreme Net方法与CornerNet类似，只不过预测的点更多，需要预测五个点来确定一个物体。</p>
+<p><img src="/images/CenterNet/image-20220117135258162.png" alt="image-20220117135258162"></p>
+<p>Extreme Net方法与CornerNet在预测完点之后还需要做一个Group的操作，用于确定哪些预测的点属于同一个物体。而CenterNet并不需要Group的操作。它是直接预测物体的中心点，通过中心点来预测物体的宽高从而确定物体的位置。</p>
+<p><img src="/images/CenterNet/image-20220117135353161.png" alt="image-20220117135353161"></p>
+
+        <h4 id="二、CenterNet网络流程">
+          <a href="#二、CenterNet网络流程" class="heading-link"><i class="fas fa-link"></i></a><a href="#二、CenterNet网络流程" class="headerlink" title="二、CenterNet网络流程"></a>二、CenterNet网络流程</h4>
+      </div></div></article><article class="postlist-item post"><header class="post-header"><h1 class="post-title"><a class="post-title__link" href="/2021/12/29/summary2021/">2021年终总结</a></h1><div class="post-meta"><span class="post-meta-item post-meta-item--createtime"><span class="post-meta-item__icon"><i class="far fa-calendar-plus"></i></span><span class="post-meta-item__info">发表于</span><span class="post-meta-item__value">2021-12-29</span></span><span class="post-meta-item post-meta-item--updatetime"><span class="post-meta-item__icon"><i class="far fa-calendar-check"></i></span><span class="post-meta-item__info">更新于</span><span class="post-meta-item__value">2022-01-12</span></span></div></header><div class="post-body"><div class="post-excerpt">
+        <h3 id="2021年终总结">
+          <a href="#2021年终总结" class="heading-link"><i class="fas fa-link"></i></a><a href="#2021年终总结" class="headerlink" title="2021年终总结"></a>2021年终总结</h3>
+      <p>​    说实话，以前我是没有写年终总结的习惯的。但是最近博客写多了也总想写点和专业无关的小东西，一转眼2021年就要结束了，还是稍微写写吧。</p>
+<p>​    虽然称之为2021的年终总结，但思来想去还是想把近三年串在一起来总结。因为这三年都是围绕着一件事来进行的–考研。没有2019的棋差一招的心怀不甘，就没有2020的最后一搏不留遗憾，也就更无从谈起2021的得偿所愿。从结果导向来看，通过考研这场考验我确实收获了果实。但回顾整个备考的过程来看，通过考研我所收获的经历和经验是比结果还要更加有意义的。</p>
+<p>​    第一个经验就是“取乎其上，得乎其中；取乎其中，得乎其下；取乎其下，则无所得矣。”一开始就奔着很低的标准去做，最后可能一无所获。第一年由于冲科软心里没底，加上传言科软310复试不刷人，使得自己从一开始就奔着310去想着过线就行，结果自己确实过了310，但复试线却成了320，即为”取乎其下，则无所得矣。”第二年虽然觉得自己离科软差的不远，但也还是少了勇气冲击更高的目标，最后确定工大顺利上岸，即“取乎其上，得乎其中。“</p>
+<p>​    第二个经验好像就是非常老道的“千里之行始于足下” 。不管多么难以完成的任务，只要行动起来慢慢摸索并坚持下来总能总结出技巧。在考研中，对我来说最困难的就是数学了。作为一个从小学就没学明白数学，直到现在一百以内加减乘除还偶有算错的数学傻子，考研数学那就是一道天堑。在整个学生生涯中我在数学上栽了无数的跟头，中考数学评级C，高考数学73，第一年考研也不出意料的考了76。想快速把数学补上来无疑是不可能的，唯一能做到的是持之以恒的学习。虽然第一年考的很差，但是总体来说勤勤恳恳的复习还是打下了相对牢靠的数学基础。第二年继续每天做数学，笔记题目写两遍，复习全书写两遍，真题写两遍，虽然最后数学还是没有考到我的期望，但不可否认的是数学确实需要天分。天分决定上限，但是持之以恒的学习可以保证下限。101的分数说高肯定算不上，但是可以肯定的是我实打实写出的题目全都对了。这点经验也在专业上的学习得到了验证。还记得当时做毕业设计接触深度学习感觉需要的前置知识太多而无从下手，但是坚持学习不会就查做好学习笔记。时间一长慢慢看一些代码就能够理解了。这就是考研带来的第二个经验：别想这么多，做下去就对了。</p>
+<p>​    考研政治的老师徐涛曾有次在课程中闲聊的时候说为什么一定要考上研。考上研给人带来的精神动力是巨大的，考上研的那一刻的自豪感是无与伦比的，这会使你敢于去做以后的任何事，一事成百事成。我一向是一个较为自卑的人，但现在我逐渐感到我敢于去做一些事情了，希望这种势头可以保持。</p>
+<p>​    关于考研的事情也就说到这里，下面就正式开始总结2021吧。</p>
+<p>​    有关2021的收获：</p>
+<p>​    ①那肯定是一份录取通知书</p>
+<p>​    ②一次算贯穿中国东西的旅行</p>
+<p>​    ③从208瘦到了182了（虽然最近感冒没有锻炼可能有所反弹）</p>
+<p>​    ④通过半年学习，专业方面的相关理论和python代码能力有所提高</p>
+<p>​    2021做的不够的地方：</p>
+<p>​    ①在家的大半年浪费了太多时间</p>
+<p>​    ②学习方面还是有所惰性，经常出现学习动力不足的问题，究其原因可能还在学习的阶段性目标设置的不够清晰，学习存在随心所欲想到哪学到哪。</p>
+<p>​    ③人前说话还是有点没底，有些机会还是不太敢争取，希望明年能有所改进。</p>
+<p>​    下面是对2022年的计划与期待：</p>
+<p>​    ①不挂科。。。。虽然算法还一点都没复习</p>
+<p>​    ②重新开始刷刷单词吧，争取6月刷个6级</p>
+<p>​    ③寒假期间要把C++的类部分学完，寒假要做刷力扣的准备。</p>
+<p>​    ④科研方面的期待就是希望明年把科研方向的基础学懂之后争取有个idea为之努力。</p>
+<p>​    ⑤不知道有没有机会出去实习，有的话一定要出去实习。</p>
+<p>​    ⑥瘦到170</p>
+<p>​    暂时就先这些吧，毕竟路都是一步一步走的，只要一直向前就好了。</p>
+<p>​    前几天室友问我，如何评价自己的2021。我当时也没有考虑太多，像是早已打了腹稿似的脱口而出：“2021没有辜负我，我也不算辜负了2021。”2021年对我来说确实是一个非常难忘的一年。以前一直觉得自己是一个一事无成的废物，但前些日子想了一想，好像自己也在慢慢的实现一些以前的梦想。从很小的时候就很想学计算机，大学虽然被录取到了化工专业，但是经过自己的坚持和家人的帮助还真读到了计算机。对自己二本心有不甘决定考研，虽然有二战的挫折也还是读上了一个自己觉得还行的学校和喜欢的专业。以及一些以前梦想想拥有的小物件慢慢的也都有了。总结下来就是：①要有主见，对未来要有自己的想法并不择手段的为之努力。②要坚持，虽然路途不会总是一帆风顺，但只要不停下来持之以恒的向前，总会离想要的东西不远。2021还有不到七个小时就要结束了，希望在2022年写年度总结的时候可以说没有辜负2022。</p>
+<p>​                                                                                                                                                                    2021/12/31 17：25于双子科教楼A505</p>
+<p><img src="/images/summary2021/image-20211231172501016.png" alt="image-20211231172501016"></p>
+</div></div></article><article class="postlist-item post"><header class="post-header"><h1 class="post-title"><a class="post-title__link" href="/2021/12/28/ReID-features/">行人重识别常用的局部特征</a></h1><div class="post-meta"><span class="post-meta-item post-meta-item--createtime"><span class="post-meta-item__icon"><i class="far fa-calendar-plus"></i></span><span class="post-meta-item__info">发表于</span><span class="post-meta-item__value">2021-12-28</span></span><span class="post-meta-item post-meta-item--updatetime"><span class="post-meta-item__icon"><i class="far fa-calendar-check"></i></span><span class="post-meta-item__info">更新于</span><span class="post-meta-item__value">2021-12-28</span></span></div></header><div class="post-body"><div class="post-excerpt">
+        <h3 id="行人重识别常用的局部特征">
+          <a href="#行人重识别常用的局部特征" class="heading-link"><i class="fas fa-link"></i></a><a href="#行人重识别常用的局部特征" class="headerlink" title="行人重识别常用的局部特征"></a>行人重识别常用的局部特征</h3>
+      
+        <h4 id="一、全局特征">
+          <a href="#一、全局特征" class="heading-link"><i class="fas fa-link"></i></a><a href="#一、全局特征" class="headerlink" title="一、全局特征"></a>一、全局特征</h4>
+      <p>指每一张行人图片的全局信息进行一个特征抽取，这个全局特征没有任何的空间信息。</p>
+<p><img src="/images/ReID-features/image-20211228091524988.png" alt="image-20211228091524988"></p>
+<p>两张图片姿态不对齐在全局特征上有着信息不对称，直接使用全局特征衡量两张图片的相似度效果很差。</p>
+
+        <h4 id="二、局部特征">
+          <a href="#二、局部特征" class="heading-link"><i class="fas fa-link"></i></a><a href="#二、局部特征" class="headerlink" title="二、局部特征"></a>二、局部特征</h4>
+      <p>局部特征是指对图像中的某一个区域进行特征提取，最终将多个局部特征融合起来作为最终特征。常用的局部特征有切片、姿态、分割、网格。</p>
+<p><img src="/images/ReID-features/image-20211228132708584.png" alt="image-20211228132708584"></p>
+<p>姿态：</p>
+<p><img src="/images/ReID-features/image-20211228132855294.png" alt="image-20211228132855294"></p>
+<p><img src="/images/ReID-features/image-20211228133305844.png" alt="image-20211228133305844"></p>
+<p>Part有点像锚框一样，是通过一定的规则预设的一组矩形框区域。</p>
+<p>Attention应该是利用注意力机制去判断行人区域</p>
+<p><img src="/images/ReID-features/image-20211228133551941.png" alt="image-20211228133551941"></p>
+<p>将feature map 按预设的区域方向水平切片，切成与切片数量相同的featuremap 对每个切块的feature map做global average pooling</p>
+<p><img src="/images/ReID-features/image-20211228133835557.png" alt="image-20211228133835557"></p>
+
+        <h5 id="2-1-局部特征–水平切块常用算法">
+          <a href="#2-1-局部特征–水平切块常用算法" class="heading-link"><i class="fas fa-link"></i></a><a href="#2-1-局部特征–水平切块常用算法" class="headerlink" title="2.1 局部特征–水平切块常用算法"></a>2.1 局部特征–水平切块常用算法</h5>
+      </div></div></article><article class="postlist-item post"><header class="post-header"><h1 class="post-title"><a class="post-title__link" href="/2021/12/27/ReID-base/">行人重识别需要的一些基础</a></h1><div class="post-meta"><span class="post-meta-item post-meta-item--createtime"><span class="post-meta-item__icon"><i class="far fa-calendar-plus"></i></span><span class="post-meta-item__info">发表于</span><span class="post-meta-item__value">2021-12-27</span></span><span class="post-meta-item post-meta-item--updatetime"><span class="post-meta-item__icon"><i class="far fa-calendar-check"></i></span><span class="post-meta-item__info">更新于</span><span class="post-meta-item__value">2021-12-27</span></span></div></header><div class="post-body"><div class="post-excerpt">
+        <h3 id="行人重识别需要的一些基础">
+          <a href="#行人重识别需要的一些基础" class="heading-link"><i class="fas fa-link"></i></a><a href="#行人重识别需要的一些基础" class="headerlink" title="行人重识别需要的一些基础"></a>行人重识别需要的一些基础</h3>
+      
+        <h4 id="一、回顾神经网络的一些基础">
+          <a href="#一、回顾神经网络的一些基础" class="heading-link"><i class="fas fa-link"></i></a><a href="#一、回顾神经网络的一些基础" class="headerlink" title="一、回顾神经网络的一些基础"></a>一、回顾神经网络的一些基础</h4>
+      
+        <h4 id="1-1-卷积回顾">
+          <a href="#1-1-卷积回顾" class="heading-link"><i class="fas fa-link"></i></a><a href="#1-1-卷积回顾" class="headerlink" title="1.1 卷积回顾"></a>1.1 卷积回顾</h4>
+      
+        <h5 id="1-1-1-普通卷积">
+          <a href="#1-1-1-普通卷积" class="heading-link"><i class="fas fa-link"></i></a><a href="#1-1-1-普通卷积" class="headerlink" title="1.1.1 普通卷积"></a>1.1.1 普通卷积</h5>
+      <p>卷积的功能是特征提取。步长不等于0的时候起到下采样的作用。卷积层的参数量的计算公式如下：</p>
+<p><img src="/images/ReID-base/image-20211224100331547.png" alt="image-20211224100331547"></p>
+<p>一个小Tips：填充padding和kernel_size往往需要配套使用，主要设计是让<strong>2*padding+1=k</strong>。从而使输出size只与stride和输入的尺寸有关。举例如kernel_size选择为3*3，一般选择padding=1，k=5选择padding=2。输出特征图的size计算公式如下</p>
+<p><img src="/images/ReID-base/image-20211224100452800.png" alt="image-20211224100452800"></p>
+
+        <h5 id="1-1-2-1-1卷积">
+          <a href="#1-1-2-1-1卷积" class="heading-link"><i class="fas fa-link"></i></a><a href="#1-1-2-1-1卷积" class="headerlink" title="1.1.2 1*1卷积"></a>1.1.2 1*1卷积</h5>
+      <p><img src="/images/ReID-base/image-20211224102629624.png" alt="image-20211224102629624"></p>
+<p>一般不独立使用。主要是作为降维操作使用，如ResNet的BottleNeck层的快速连接中为了考虑训练时间成本对特征图先用1*1卷积层降维再升维。</p>
+
+        <h5 id="1-1-3-分组卷积">
+          <a href="#1-1-3-分组卷积" class="heading-link"><i class="fas fa-link"></i></a><a href="#1-1-3-分组卷积" class="headerlink" title="1.1.3 分组卷积"></a>1.1.3 分组卷积</h5>
+      <p>完成的功能：对输入特征图在通道层面平均分成几组，每组在对应的卷积层做卷积之后再在通道维度上做拼接得到输出。</p>
+<p><img src="/images/ReID-base/image-20211224103125148.png" alt="image-20211224103125148"></p>
+<p>代码实现：修改Conv2d的group参数值</p>
+<p><img src="/images/ReID-base/image-20211224103153758.png" alt="image-20211224103153758"></p>
+<p>常用的情形：</p>
+<p>由于分组卷积需要的参数量较少，常用于模型特别大作为模型压缩的一种手段。常作为对显存不够的一种妥协。</p>
+<p>缺点：</p>
+<p>由于分组卷积并不是整个feature map参与卷积特征提取，而是每一部分的输出只与一部分的特征图有关系，特征图之间的局部信息没有完全打通。两部分的输出之间可能存在的信息被忽略。</p>
+
+        <h5 id="1-1-4-Channel-wise-Depthwise-Convolution">
+          <a href="#1-1-4-Channel-wise-Depthwise-Convolution" class="heading-link"><i class="fas fa-link"></i></a><a href="#1-1-4-Channel-wise-Depthwise-Convolution" class="headerlink" title="1.1.4 Channel-wise/Depthwise Convolution"></a>1.1.4 Channel-wise/Depthwise Convolution</h5>
+      <p><img src="/images/ReID-base/image-20211224103739036.png" alt="image-20211224103739036"></p>
+
+        <h5 id="1-1-5-空洞卷积（Dilated-Convolution">
+          <a href="#1-1-5-空洞卷积（Dilated-Convolution" class="heading-link"><i class="fas fa-link"></i></a><a href="#1-1-5-空洞卷积（Dilated-Convolution" class="headerlink" title="1.1.5 空洞卷积（Dilated Convolution)"></a>1.1.5 空洞卷积（Dilated Convolution)</h5>
+      <p>空洞卷积引入了一个称为 “**扩张率(dilation rate)**”的超参数(hyper-parameter)，该参数定义了卷积核处理数据时各值的间距。扩张率中文也叫空洞数(Hole Size)。空洞卷积完成的操作如下图所示：</p>
+<p><img src="/images/ReID-base/image-20211224142608718.png" alt="image-20211224142608718"></p>
+<p><img src="/images/ReID-base/dilation.gif" alt="image-20211224142608718"></p>
+<p>上图中，黑色的圆点表示3×3卷积核，灰色地带表示卷积之后的感受野。a，b，c为：</p>
+<ul>
+<li>a是普通的卷积过程**(dilation rate = 1)**,卷积后的感受野为3，正常的卷积过程dilation默认值为1</li>
+<li>b是dilation rate = 2的空洞卷积,卷积后的感受野为5</li>
+<li>c是dilation rate = 3的空洞卷积,卷积后的感受野为7</li>
+</ul>
+<p>使用空洞卷积的优点在于：不改变输出特征图的尺寸的情况下，增大了感受野。神经元感受野的值越大表示其能接触到的原始图像范围就越大，也意味着它可能蕴含更为全局，语义层次更高的特征；相反，值越小则表示其所包含的特征越趋向局部和细节。因此感受野的值可以用来大致判断每一层的抽象层次。</p>
+<p>当每层的卷积核大小设为3×3不变，每一层设置不同的dilation rate，那么每层的感受野也就不同。每层得到的输出特征图中也就获得了多尺度的信息，而且特征图的尺寸并没有发生变化。如果采用较大的卷积核实现扩大感受野，后续还需要加入池化层等下采样从而丢失信息。空洞卷积就避免了这一信息损失。</p>
+<p>感受野计算过程如下：</p>
+<p><img src="/images/ReID-base/image-20211224150656786.png" alt="image-20211224150656786"></p>
+
+        <h4 id="1-2-模型压缩与加速">
+          <a href="#1-2-模型压缩与加速" class="heading-link"><i class="fas fa-link"></i></a><a href="#1-2-模型压缩与加速" class="headerlink" title="1.2 模型压缩与加速"></a>1.2 模型压缩与加速</h4>
+      
+        <h5 id="1-2-1-理论基础">
+          <a href="#1-2-1-理论基础" class="heading-link"><i class="fas fa-link"></i></a><a href="#1-2-1-理论基础" class="headerlink" title="1.2.1 理论基础"></a>1.2.1 理论基础</h5>
+      <p>必要性<br> 在许多网络结构中，如VGG-16网络，参数数量1亿3千多万，占用500MB空间，需要进行309亿次浮点运算才能完成一次图像识别任务。</p>
+<p>可行性<br> 论文<Predicting parameters in deep learning>提出，其实在很多深度的神经网络中存在着显著的冗余。仅仅使用很少一部分（5%）权值就足以预测剩余的权值。该论文还提出这些剩下的权值甚至可以直接不用被学习。也就是说，仅仅训练一小部分原来的权值参数就有可能达到和原来网络相近甚至超过原来网络的性能（可以看作一种正则化）。</Predicting></p>
+<p>最终目的<br> 最大程度的减小模型复杂度，减少模型存储需要的空间，也致力于加速模型的训练和推测</p>
+
+        <h5 id="1-2-2-方法分类">
+          <a href="#1-2-2-方法分类" class="heading-link"><i class="fas fa-link"></i></a><a href="#1-2-2-方法分类" class="headerlink" title="1.2.2 方法分类"></a>1.2.2 方法分类</h5>
+      <p><img src="/images/ReID-base/image-20211224163346434.png" alt="image-20211224163346434"></p>
+
+        <h5 id="1-2-3-前端压缩：">
+          <a href="#1-2-3-前端压缩：" class="heading-link"><i class="fas fa-link"></i></a><a href="#1-2-3-前端压缩：" class="headerlink" title="1.2.3 前端压缩："></a>1.2.3 前端压缩：</h5>
+      <p>①、知识蒸馏</p>
+<p>采取的方法是迁移学习，通过预训练好的教师模型(Teacher Model)的输出作为监督信号取训练另外一个轻量化的网络(Student Model)</p>
+<p><img src="/images/ReID-base/image-20211225090519930.png" alt="image-20211225090519930"></p>
+<p><img src="/images/ReID-base/image-20211225090645290.png" alt="image-20211225090645290"></p>
+<p>学生和老师都对图片分别预测，目的是让学生和老师预测结果的概率分布尽可能像。老师和学生的预测结果p1,p2。对p1和p2计算KL散度作为一种loss加入到学生网络的loss Lc2中共同优化。</p>
+
+        <h4 id="二-行人重识别-度量学习与表征学习">
+          <a href="#二-行人重识别-度量学习与表征学习" class="heading-link"><i class="fas fa-link"></i></a><a href="#二-行人重识别-度量学习与表征学习" class="headerlink" title="二 行人重识别   度量学习与表征学习"></a>二 行人重识别   度量学习与表征学习</h4>
+      <p><img src="/images/ReID-base/image-20211225092537689.png" alt="image-20211225092537689"></p>
+
+        <h5 id="2-1-系统构成">
+          <a href="#2-1-系统构成" class="heading-link"><i class="fas fa-link"></i></a><a href="#2-1-系统构成" class="headerlink" title="2.1 系统构成"></a>2.1 系统构成</h5>
+      <p><img src="/images/ReID-base/image-20211225092830122.png" alt="image-20211225092830122"></p>
+<p>原始视频帧进行行人检测模块生成Gallery集，待检索图片集称之为Probe。虽然系统分为两个模块但是学术研究大多只集中在行人重识别的特征提取部分。</p>
+<p><img src="/images/ReID-base/image-20211225100413384.png" alt="image-20211225100413384"></p>
+
+        <h5 id="2-2-评价指标">
+          <a href="#2-2-评价指标" class="heading-link"><i class="fas fa-link"></i></a><a href="#2-2-评价指标" class="headerlink" title="2.2 评价指标"></a>2.2 评价指标</h5>
+      <p>①rank-k/top-k</p>
+<p><img src="/images/ReID-base/image-20211225101543620.png" alt="image-20211225101543620"></p>
+<p>rank-k计算的是整个探针集Probe中的所有图片的命中概率。</p>
+<p>对Probe1，和Probe3，Rank1击中，那么整个探针集的rank1就是2/5=0.4</p>
+<p>Probe2 Rank-4击中，与Probe1和Probe3加起来就是3/5=0.6的Rank-5</p>
+<p>② CMC曲线</p>
+<p>其实就是Rank-k的曲线</p>
+<p><img src="/images/ReID-base/image-20211225102201277.png" alt="image-20211225102201277"></p>
+<p>③ mAP(mean average precision)</p>
+<p>反映检索的人在数据库中所有正确图片排在排序列表前面的成都，更加全面的衡量ReID算法的性能。</p>
+<p>以下图Probe1为例，排序列表里面有3张正确的身份图片。分别是Top1、Top4、Top9</p>
+<p>ap的计算如下图所示，mAP是对Query集里全部的AP取平均。</p>
+<p><img src="/images/ReID-base/image-20211225102415691.png" alt="image-20211225102415691"></p>
+<p>④ 评价模式</p>
+<p><img src="/images/ReID-base/image-20211225103052466.png" alt="image-20211225103052466"></p>
+
+        <h5 id="2-3-表征学习常用的损失Loss">
+          <a href="#2-3-表征学习常用的损失Loss" class="heading-link"><i class="fas fa-link"></i></a><a href="#2-3-表征学习常用的损失Loss" class="headerlink" title="2.3 表征学习常用的损失Loss"></a>2.3 表征学习常用的损失Loss</h5>
+      
+        <h6 id="2-3-1-损失的分类">
+          <a href="#2-3-1-损失的分类" class="heading-link"><i class="fas fa-link"></i></a><a href="#2-3-1-损失的分类" class="headerlink" title="2.3.1 损失的分类"></a>2.3.1 损失的分类</h6>
+      <p><img src="/images/ReID-base/image-20211225143228526.png" alt="image-20211225143228526"></p>
+<p><img src="/images/ReID-base/image-20211225143426922.png" alt="image-20211225143426922"></p>
+
+        <h6 id="2-3-2-分类损失">
+          <a href="#2-3-2-分类损失" class="heading-link"><i class="fas fa-link"></i></a><a href="#2-3-2-分类损失" class="headerlink" title="2.3.2 分类损失"></a>2.3.2 分类损失</h6>
+      <p><img src="/images/ReID-base/image-20211225143943301.png" alt="image-20211225143943301"></p>
+<p>为什么在测试阶段需要丢弃分类FC层？因为在训练集和测试集中的行人ID并不相同，直接用训练集的FC输出分类ID毫无意义。因此在测试阶段直接使用训练的特征提取层提取的Probe的特征向量与Gallery比对检索。</p>
+
+        <h6 id="2-3-3-属性损失">
+          <a href="#2-3-3-属性损失" class="heading-link"><i class="fas fa-link"></i></a><a href="#2-3-3-属性损失" class="headerlink" title="2.3.3 属性损失"></a>2.3.3 属性损失</h6>
+      <p><img src="/images/ReID-base/image-20211225144337836.png" alt="image-20211225144337836"></p>
+<p>由于行人具有一系列的属性，比如头发的颜色，上衣的颜色，裤子颜色，鞋子的种类以及颜色等等。这些每一个属性都可以和ID一样作为一个分类来输出分类结果。因此每个属性都可以通过softmax计算交叉熵损失与ID损失一起组成总的loss进行优化。</p>
+<p>当然属性损失作为分类损失的类似，在测试阶段由于ID、属性等等与训练集不同，在测试阶段还是将所有的分类FC全部丢弃掉，指使用特征提取层。</p>
+
+        <h6 id="2-3-4-验证损失">
+          <a href="#2-3-4-验证损失" class="heading-link"><i class="fas fa-link"></i></a><a href="#2-3-4-验证损失" class="headerlink" title="2.3.4 验证损失"></a>2.3.4 验证损失</h6>
+      <p><img src="/images/ReID-base/image-20211225145235952.png" alt="image-20211225145235952"></p>
+<p>验证损失一般是训练一个特征提取网络，同时输入两张图片提取特征之后将两个特征进行特征融合(比如直接相减计算特征向量的差异)，融合后的特征输入到后续网络通过特征提取计算作为一个二分类问题输出是/否属于一个ID。用于二分类的损失成为验证损失(如上图右上角的Verification Subnet)。</p>
+<p>验证损失往往和ID损失一起使用，共同优化整个网络。如右下角的(Classification Subnet)，两张图片可以分别计算ID Loss。</p>
+
+        <h6 id="2-3-5-表征学习的总结">
+          <a href="#2-3-5-表征学习的总结" class="heading-link"><i class="fas fa-link"></i></a><a href="#2-3-5-表征学习的总结" class="headerlink" title="2.3.5 表征学习的总结"></a>2.3.5 表征学习的总结</h6>
+      <p><img src="/images/ReID-base/image-20211225145942198.png" alt="image-20211225145942198"></p>
+
+        <h5 id="2-4-度量学习">
+          <a href="#2-4-度量学习" class="heading-link"><i class="fas fa-link"></i></a><a href="#2-4-度量学习" class="headerlink" title="2.4 度量学习"></a>2.4 度量学习</h5>
+      <p><img src="/images/ReID-base/image-20211225150221293.png" alt="image-20211225150221293"></p>
+<p>使用简单化的描述语言来说就是，度量学习ReID任务主要需要做以下工作</p>
+<p>①、训练出一个特征提取网络，对图片提取出特征向量。</p>
+<p>②、定义一个距离度量损失函数，计算两张图片特征向量之间的度量距离。</p>
+<p>③、计算度量损失函数，最优化度量损失函数使相同行人的图片对之间的距离尽可能小，不同行人的图片对之间的距离尽可能大。通过最优化度量损失函数去优化特征提取网络。</p>
+<p><em><strong>深度学习解决ReID问题的目标在于提取更优的特征，更加具有度量属性的特征。</strong></em></p>
+
+        <h6 id="2-4-1-度量学习的流程">
+          <a href="#2-4-1-度量学习的流程" class="heading-link"><i class="fas fa-link"></i></a><a href="#2-4-1-度量学习的流程" class="headerlink" title="2.4.1 度量学习的流程"></a>2.4.1 度量学习的流程</h6>
+      <p>基本也是行人检测–特征提取–训练的流程。</p>
+<p><img src="/images/ReID-base/image-20211225151200154.png" alt="image-20211225151200154"></p>
+
+        <h5 id="2-5-度量学习的损失函数">
+          <a href="#2-5-度量学习的损失函数" class="heading-link"><i class="fas fa-link"></i></a><a href="#2-5-度量学习的损失函数" class="headerlink" title="2.5 度量学习的损失函数"></a>2.5 度量学习的损失函数</h5>
+      
+        <h6 id="2-5-1-对比损失Contrastive-loss">
+          <a href="#2-5-1-对比损失Contrastive-loss" class="heading-link"><i class="fas fa-link"></i></a><a href="#2-5-1-对比损失Contrastive-loss" class="headerlink" title="2.5.1 对比损失Contrastive loss"></a>2.5.1 对比损失Contrastive loss</h6>
+      <p><img src="/images/ReID-base/image-20211227094927928.png" alt="image-20211227094927928"></p>
+<p>对比损失的损失函数如上图<em>Lc</em>所示。</p>
+<p>当输入的一对图片是正样本对a,b时，因为正样本y=1，<em>Lc</em>的后半部分为0，优化目标就是<em>Lc</em>的前半部分，也就是a和b特征向量的距离。通过优化器最小化损失函数使正样本对间的距离趋于0。</p>
+<p>当输入的一对图片是负样本对a,b时，因为负样本y=0，<em>Lc</em>的前半部分为0，优化目标就是<em>Lc</em>的后半部分。由于<img src="/images/ReID-base/image-20211227102409369.png" alt="image-20211227102409369" style="zoom:40%;"></p>
+<p>z = α-距离。当二者之间的距离大于α时, z小于0，max(z, 0) = 0，无需优化。当二者之间的距离越小于α时, z大于0， <em>Lc</em>越大，优化器将优化 <em>Lc</em>使其向0的方向优化，即使二者之间的距离向大于α的方向优化。也就实现了推开负样本的期望功能。其中α是自己设置的一个超参数，作为负样本分开的阈值。</p>
+
+        <h6 id="2-5-2-三元组损失Triplet-loss">
+          <a href="#2-5-2-三元组损失Triplet-loss" class="heading-link"><i class="fas fa-link"></i></a><a href="#2-5-2-三元组损失Triplet-loss" class="headerlink" title="2.5.2 三元组损失Triplet loss"></a>2.5.2 三元组损失Triplet loss</h6>
+      <p><img src="/images/ReID-base/image-20211227104924310.png" alt="image-20211227104924310"></p>
+<p>三元组损失主要将样本分为Anchor、Positive、Negative。一个三元组的构成方式是从训练集中随机选取一个样本，该样本称为Anchor，记为x_a， 然后再随机抽取一个与Anchor属于同一类的样本x_p和一个与Anchor属于不同类的样本x_n。由此构成一个(Anchor、Positive、Negative)三元组。Triplet Loss的目的在于通过学习，让x_a和x_p特征表达之间的距离尽可能小，而x_a和x_n之间的距离尽可能大。并且要让_a和x_n之间的距离和x_a和x_p之间的距离之间存在一个最小间隔α。即目标函数的优化方向为：</p>
+<p><img src="/images/ReID-base/image-20211227105706609.png" alt="image-20211227105706609"></p>
+<p>因此损失函数的形式为</p>
+<p><img src="/images/ReID-base/image-20211227110756868.png" alt="image-20211227110756868"></p>
+<p><img src="/images/ReID-base/image-20211227111029204.png" alt="image-20211227111029204"></p>
+
+        <h6 id="2-5-3-改进的三元组损失">
+          <a href="#2-5-3-改进的三元组损失" class="heading-link"><i class="fas fa-link"></i></a><a href="#2-5-3-改进的三元组损失" class="headerlink" title="2.5.3 改进的三元组损失"></a>2.5.3 改进的三元组损失</h6>
+      <p><img src="/images/ReID-base/image-20211227111131013.png" alt="image-20211227111131013"></p>
+<p>其实就在原三元组损失的基础上加上了一项x_a和x_p之间的距离。使得在满足三元组损失优化目标的同时使x_a和x_p之间的距离尽可能的小。</p>
+
+        <h6 id="2-5-4-四元组损失-Quadruplet-loss">
+          <a href="#2-5-4-四元组损失-Quadruplet-loss" class="heading-link"><i class="fas fa-link"></i></a><a href="#2-5-4-四元组损失-Quadruplet-loss" class="headerlink" title="2.5.4 四元组损失 Quadruplet loss"></a>2.5.4 四元组损失 Quadruplet loss</h6>
+      <p><img src="/images/ReID-base/image-20211227111507714.png" alt="image-20211227111507714"></p>
+<p>四元组损失也是基于三元组损失的基础上，但是需要四张图片组成一个四元组。一个四元组的构成为从训练集中随机选取一个样本，该样本称为Anchor，记为x_a， 然后再随机抽取一个与Anchor属于同一类的样本x_p和<strong>两个</strong>与Anchor属于不同类的样本x_n1和x_n2。并且这两个负样本n1和n2<strong>分别属于两个不同的ID</strong>。</p>
+<p>四元组损失的公式如上图所示。第一项使正常的三元组损失。而第二项分别计算Anchor和正样本的距离da,p和两个负样本的距离dn1,n2。使得正样本之间的距离不仅小于正、负样本对的距离，也小于两张来自不同类负样本之间的距离。</p>
+<p>功能：</p>
+<p>进一步缩小正样本之间的距离，在推开正负样本对的距离的同时推开不同类的负样本对之间的距离。</p>
+
+        <h6 id="2-5-5-TriHard-Loss-Batch-Hard-Loss-批难三元组损失">
+          <a href="#2-5-5-TriHard-Loss-Batch-Hard-Loss-批难三元组损失" class="heading-link"><i class="fas fa-link"></i></a><a href="#2-5-5-TriHard-Loss-Batch-Hard-Loss-批难三元组损失" class="headerlink" title="2.5.5 TriHard Loss/Batch-Hard Loss 批难三元组损失"></a>2.5.5 TriHard Loss/Batch-Hard Loss 批难三元组损失</h6>
+      <p><img src="/images/ReID-base/image-20211227112344030.png" alt="image-20211227112344030"></p>
+<p><img src="/images/ReID-base/image-20211227134125333.png" alt="image-20211227134125333"></p>
+<p><img src="/images/ReID-base/image-20211227142426071.png" alt="image-20211227142426071"></p>
+<p>如图所示，TriHard Loss实现的方式是构建这样一个距离矩阵。如上图，每个batch选取N个ID的行人，每个ID选取3张图片。将这个batch内的全部图片两两计算距离填入上方的矩阵。对角线上表示同一张图片自己到自己的距离，因此为0。红色矩阵块表示同一个ID的三张图片之间的距离，绿色矩阵块表示不同ID的图片之间的距离。衡量是否Hrad然是通过距离来衡量。<strong>对于红色矩阵，也就是正样本对来说，红色矩阵的每一行的最大值，以第一行为例，这一行代表行人1-1这张图片与三个正样本的距离，对于正样本来说，正样本之间的距离越大，说明越Hard。</strong>因此将红色矩阵组合起来求每一行的最大值组成一列，这一列就代表了这个batch里面的每一张图片与其对应的最Hard样本的距离。</p>
+<p><strong>同理，对正负样本对来说，距离越小越Hard</strong>。将绿色矩阵拼在一起组成方阵，求每一行的最小值。每一行的最小值组成的一列Tensor就是正负样本对的最难距离。</p>
+<p><img src="/images/ReID-base/image-20211227145701227.png" alt="image-20211227145701227"></p>
+<p>根据上述公式，累加之后除以批量大小就得到了TriHard loss。</p>
+
+        <h6 id="2-5-6-Triplet-loss-with-adaptive-weights-自适应权重三元组">
+          <a href="#2-5-6-Triplet-loss-with-adaptive-weights-自适应权重三元组" class="heading-link"><i class="fas fa-link"></i></a><a href="#2-5-6-Triplet-loss-with-adaptive-weights-自适应权重三元组" class="headerlink" title="2.5.6 Triplet loss with adaptive weights 自适应权重三元组"></a>2.5.6 Triplet loss with adaptive weights 自适应权重三元组</h6>
+      <p>批难三元组由于只考虑了极端样本的信息，有些信息没有考虑到。</p>
+<p>有文章指出批难三元组损失在某些极端情况下，比如数据集有一定数量的标注错误可能会因为训练时梯度特别大而导致网络崩溃。当网络使用批难三元组难以收敛的情况下可以考虑自适应权重三元组。</p>
+<p><img src="/images/ReID-base/image-20211227150111074.png" alt="image-20211227150111074"></p>
+
+        <h6 id="2-5-7-度量学习的总结">
+          <a href="#2-5-7-度量学习的总结" class="heading-link"><i class="fas fa-link"></i></a><a href="#2-5-7-度量学习的总结" class="headerlink" title="2.5.7 度量学习的总结"></a>2.5.7 度量学习的总结</h6>
+      <p><img src="/images/ReID-base/image-20211227150524190.png" alt="image-20211227150524190"></p>
+<p>度量学习和表征学习往往可以用来共同训练一个模型，将多个损失组合在一起共同优化一个模型。这种做法也是业界精确度比较高的一种做法。</p>
+<p><img src="/images/ReID-base/image-20211227151111989.png" alt="image-20211227151111989"></p>
+</div></div></article><article class="postlist-item post"><header class="post-header"><h1 class="post-title"><a class="post-title__link" href="/2021/12/24/C-Chapter2/">C++Primer 第二章学习笔记</a></h1><div class="post-meta"><span class="post-meta-item post-meta-item--createtime"><span class="post-meta-item__icon"><i class="far fa-calendar-plus"></i></span><span class="post-meta-item__info">发表于</span><span class="post-meta-item__value">2021-12-24</span></span><span class="post-meta-item post-meta-item--updatetime"><span class="post-meta-item__icon"><i class="far fa-calendar-check"></i></span><span class="post-meta-item__info">更新于</span><span class="post-meta-item__value">2021-12-30</span></span></div></header><div class="post-body"><div class="post-excerpt">
+        <h3 id="C-Primer第二章–变量和基本类型">
+          <a href="#C-Primer第二章–变量和基本类型" class="heading-link"><i class="fas fa-link"></i></a><a href="#C-Primer第二章–变量和基本类型" class="headerlink" title="C++ Primer第二章–变量和基本类型"></a>C++ Primer第二章–变量和基本类型</h3>
+      <p><em><strong>数据类型是程序的基础，它告诉了我们数据的意义以及我们能在数据上执行的操作。</strong></em></p>
+
+        <h4 id="一、基本内置类型">
+          <a href="#一、基本内置类型" class="heading-link"><i class="fas fa-link"></i></a><a href="#一、基本内置类型" class="headerlink" title="一、基本内置类型"></a>一、基本内置类型</h4>
+      <p>基本内置类型主要包括<strong>算术类型</strong>和<strong>空类型</strong></p>
+
+        <h5 id="1-1-算术类型">
+          <a href="#1-1-算术类型" class="heading-link"><i class="fas fa-link"></i></a><a href="#1-1-算术类型" class="headerlink" title="1.1 算术类型"></a>1.1 算术类型</h5>
+      <p>算术类型主要分为<strong>整型</strong>（integral type），和<strong>浮点型</strong>。其中<strong>字符类型</strong>与<strong>布尔类型</strong>均包括在整型之内。</p>
+<p><img src="/images/C++Chapter2/image-20211224201207827.png" alt="image-20211224201207827"></p>
+<p><strong>注：由于float类型精度有限，实际应用中常用的是double，并且二者在计算代价上相差无几。</strong></p>
+
+        <h5 id="1-2-带符号类型与不带符号类型">
+          <a href="#1-2-带符号类型与不带符号类型" class="heading-link"><i class="fas fa-link"></i></a><a href="#1-2-带符号类型与不带符号类型" class="headerlink" title="1.2 带符号类型与不带符号类型"></a>1.2 带符号类型与不带符号类型</h5>
+      <p>除去bool和扩展的字符类型之外，其它的整型可以划分为带符号和无符号的。带符号的可以表示正数、负数和0，无符号类型只能表示大于等于0的值。</p>
+<p>C++中需要无符号的值的时候，在前面加上<strong>unsinged</strong>即可，如int-&gt;unsigned int。</p>
+
+        <h5 id="1-3-字面值常量">
+          <a href="#1-3-字面值常量" class="heading-link"><i class="fas fa-link"></i></a><a href="#1-3-字面值常量" class="headerlink" title="1.3 字面值常量"></a>1.3 字面值常量</h5>
+      <p>字面值常量(literal)是指一类仅从字面上理解就能看出值的常量。每个字面值都对应一种数据类型。具体来说，字面值常量分为<strong>整型</strong>和<strong>浮点型</strong>字面值。</p>
+<p><strong>整型字面值常量</strong></p>
+<p>整型字面值可以写成十进制、八进制或者十六进制。以<strong>0开头的数表示八进制数，以0x开头的代表16进制数。</strong></p>
+<p>如：</p>
+<p><img src="/images/C++Chapter2/image-20211225195058728.png" alt="image-20211225195058728"></p>
+<p><strong>浮点型字面值</strong></p>
+<p>表现为一个小鼠或科学计数法表示的指数，指数部分用E或者e标识，但该指数实际上以10为底</p>
+<p><img src="/images/C++Chapter2/image-20211225200452808.png" alt="image-20211225200452808"></p>
+<p><strong>字符型字面值</strong></p>
+<p>表现为单引号括起来的字符或者双引号括起来的字符串。</p>
+<p>一个细节是字符串字面值实际上是由常量字符构成的数组，编译器在每个字符串的结尾处会添加一个空字符（’\0’），因此字符串的字面值的实际长度会比字符串的实际内容多1。</p>
+<p>如：</p>
+<p>‘A’ 表示一个字符型字面值，长度为1</p>
+<p>“A”表示一个字符串型字面值，长度为2</p>
+<p>可以通过添加前缀和后缀来改变字面值的默认类型</p>
+<p><img src="/images/C++Chapter2/image-20211225204253158.png" alt="image-20211225204253158"></p>
+<p><img src="/images/C++Chapter2/image-20211225204325836.png" alt="image-20211225204325836"></p>
+
+        <h4 id="二、变量">
+          <a href="#二、变量" class="heading-link"><i class="fas fa-link"></i></a><a href="#二、变量" class="headerlink" title="二、变量"></a>二、变量</h4>
+      <p><em><strong>变量实际上提供一个具名的、可供程序操作的存储空间。</strong></em>数据类型决定变量所占据的空间的大小和布局方式、以及该空间能存储的值的范围、变量能参与的运算。</p>
+<p><strong>对象是指一块能存储数据并且具有某种类型的内存空间。</strong></p>
+
+        <h5 id="2-1-变量的初始化">
+          <a href="#2-1-变量的初始化" class="heading-link"><i class="fas fa-link"></i></a><a href="#2-1-变量的初始化" class="headerlink" title="2.1 变量的初始化"></a>2.1 变量的初始化</h5>
+      
+        <h6 id="2-1-1-初始值">
+          <a href="#2-1-1-初始值" class="heading-link"><i class="fas fa-link"></i></a><a href="#2-1-1-初始值" class="headerlink" title="2.1.1 初始值"></a>2.1.1 初始值</h6>
+      <p>变量在创建的时候获得了一个特定的值，我们说这个对象被初始化了。</p>
+<p><strong>初始化不是赋值，初始化是在创建变量的时候赋予变量一个初始值。而赋值的定义是把对象的当前值擦除掉，用一个新的值替代。</strong></p>
+
+        <h6 id="2-1-2-列表初始化">
+          <a href="#2-1-2-列表初始化" class="heading-link"><i class="fas fa-link"></i></a><a href="#2-1-2-列表初始化" class="headerlink" title="2.1.2 列表初始化"></a>2.1.2 列表初始化</h6>
+      <p>使用一个大括号{}来对变量进行初始化的方式叫做列表初始化。主要有以下第二、第三种方式：</p>
+<p><img src="/images/C++Chapter2/image-20211225205300870.png" alt="image-20211225205300870"></p>
+<p>这种初始化的好处在于：<strong>如果我们使用列表初始化且初始值存在丢失信息的风险，编译器会报错且不予执行。在一定程度上避免了变量的类型与初始值类型不匹配类型强转导致的数值丢失</strong></p>
+<p><img src="/images/C++Chapter2/image-20211225205559552.png" alt="image-20211225205559552"></p>
+<p><img src="/images/C++Chapter2/image-20211225205729977.png" alt="image-20211225205729977"></p>
+
+        <h5 id="2-2-变量声明和定义">
+          <a href="#2-2-变量声明和定义" class="heading-link"><i class="fas fa-link"></i></a><a href="#2-2-变量声明和定义" class="headerlink" title="2.2 变量声明和定义"></a>2.2 变量声明和定义</h5>
+      <p>C++支持分离式编译，程序可以拆分成多个文件，一个文件可以使用其它文件中定义的函数和变量。但是使用其他文件中的变量需要在程序中声明。声明和定义是不同的。定义不仅会规定变量的类型与名字，而且会额外申请存储空间。而声明则不需要申请存储空间。声明需要在变量名前添加<strong>关键字extern</strong>，而且<strong>不能对声明的变量做显式初始化。</strong></p>
+<p><strong>extern语句如果包含了初始值就不再是声明，而是定义了。</strong></p>
+<p><img src="/images/C++Chapter2/image-20211225215525019.png" alt="image-20211225215525019"></p>
+<p><strong>一个变量只能定义一次，但可以多次声明。</strong></p>
+
+        <h5 id="2-3-标识符">
+          <a href="#2-3-标识符" class="heading-link"><i class="fas fa-link"></i></a><a href="#2-3-标识符" class="headerlink" title="2.3 标识符"></a>2.3 标识符</h5>
+      <p>C++中的标识符必须以字母或者下划线开头。定义在函数体外的标识符不能以下划线开头。</p>
+<p><img src="/images/C++Chapter2/image-20211225215816509.png" alt="image-20211225215816509"></p>
+
+        <h4 id="三、复合类型">
+          <a href="#三、复合类型" class="heading-link"><i class="fas fa-link"></i></a><a href="#三、复合类型" class="headerlink" title="三、复合类型"></a>三、复合类型</h4>
+      
+        <h5 id="3-1-引用">
+          <a href="#3-1-引用" class="heading-link"><i class="fas fa-link"></i></a><a href="#3-1-引用" class="headerlink" title="3.1 引用"></a>3.1 引用</h5>
+      <p>引用类型通过将声明符号写成&amp;d的形式来定义，d是被引用的变量名。但是引用并非创建了一个新对象，它实际上是一个已经定义的对象的<strong>别名</strong>。</p>
+<p><img src="/images/C++Chapter2/image-20211225220329035.png" alt="image-20211225220329035"></p>
+<p>程序是将引用与它的初始值<strong>绑定</strong>在一起，而不是直接把初始值拷贝过去。因此<strong>引用必须初始化。</strong>并且一旦初始化完成，无法令引用重新绑定到另外一个对象。</p>
+<p>定义了引用后，对引用对象所做的所有操作都是在被绑定的原对象上直接进行操作的。</p>
+<p>引用只能使用对象对其初始化，而且定义引用的类型要与被绑定的对象的类型完全一致。</p>
+<p><img src="/images/C++Chapter2/image-20211225220759531.png" alt="image-20211225220759531"></p>
+
+        <h5 id="3-2-指针">
+          <a href="#3-2-指针" class="heading-link"><i class="fas fa-link"></i></a><a href="#3-2-指针" class="headerlink" title="3.2 指针"></a>3.2 指针</h5>
+      <p>指针也是”指向”另外一种类型的对象的复合类型。它和引用都可以实现对其它对象的间接访问。但是它和指针有很多不同点，具体如下：</p>
+<p><strong>①、指针本身就是一个对象，而引用只是一个”别名”，并非创建了一个新对象。</strong></p>
+<p><strong>②、指针允许赋值和拷贝，而对引用实际上只是给被引用的对象赋值。</strong></p>
+<p><strong>③、指针在生命周期之内可以先后指向不同的对象，而引用只能绑定在一个对象上，不允许改变。</strong></p>
+<p><strong>④、指针不需要在定义的时候赋初值</strong></p>
+<p><strong>定义方法</strong></p>
+<p><img src="/images/C++Chapter2/image-20211225222534490.png" alt="image-20211225222534490"></p>
+<p><strong>指针对象实际上存放的是某个对象的地址，想要获取这个地址需要使用取地址符&amp;</strong></p>
+<p><img src="/images/C++Chapter2/image-20211225222656042.png" alt="image-20211225222656042"></p>
+<p>p是一个指针变量，指向变量ival，并且p实际上存放的是变量ival的地址。</p>
+<p><img src="/images/C++Chapter2/image-20211225222930490.png" alt="image-20211225222930490"></p>
+<p><img src="/images/C++Chapter2/image-20211225222957674.png" alt="image-20211225222957674"></p>
+<p><strong>利用指针访问对象</strong></p>
+<p>如果指针指向了一个对象，允许使用解引用符(操作符*)来访问该对象。对指针解引用会得到所指的对象。</p>
+<p><img src="/images/C++Chapter2/image-20211226133703807.png" alt="image-20211226133703807"></p>
+<p><strong>空指针</strong></p>
+<p>当暂时不知道指针应该指向何处的时候，应当先对指针初始化为空，空指针的初始化操作是：int *p = <strong>nullptr</strong>;。nullptr是一种特殊的字面值，它可以转化成任意的指针类型。</p>
+<p><strong>指向指针的指针</strong></p>
+<p>*的个数可以区分指针的级别，因此**表示指向指针对象的指针。</p>
+<p><img src="/images/C++Chapter2/image-20211226135121453.png" alt="image-20211226135121453"></p>
+<p>此时要通过ppi来访问原对象，需要两次解引用，即**ppi</p>
+
+        <h5 id="3-3-const限定符">
+          <a href="#3-3-const限定符" class="heading-link"><i class="fas fa-link"></i></a><a href="#3-3-const限定符" class="headerlink" title="3.3 const限定符"></a>3.3 const限定符</h5>
+      <p>使用const限定符修饰的变量是一种不可改变值的变量，也可称为const常量。任何对const常量赋值的操作都将报错。因为const常量一经定义就不可改变，因此const对象必须初始化。</p>
+<p>如：<code>const int bufSize = 512;</code></p>
+<p>默认状态下，const限定符仅对文件内生效，如果需要跨文件使用，需要对const常量的定义前加上extern</p>
+<p><code>extern const int bufSize = 512;</code></p>
+<p>当在当在其他文件中需要使用该变量的时候，也需要在文件中使用extern进行声明。</p>
+<p><code>extern const int bufSize;</code></p>
+
+        <h6 id="3-3-1-const的引用">
+          <a href="#3-3-1-const的引用" class="heading-link"><i class="fas fa-link"></i></a><a href="#3-3-1-const的引用" class="headerlink" title="3.3.1 const的引用"></a>3.3.1 const的引用</h6>
+      <p>和普通对象一样，我们也可以把引用绑定到const对象上，称之为<strong>对常量的引用</strong>。但是由于被绑定的对象是一个常量，因此<strong>不可以改变被引用对象的值。</strong></p>
+<p><code>const int c1 = 1024; </code></p>
+<p><code>const int &amp;r1 = c1;</code></p>
+<p>与一般的引用不同的是，常量引用的类型并不一定需要与其所引用的对象的类型完全一致。允许常量引用绑定一个非常量对象、字面值、甚至是一个表达式。<strong>因为编译器会自动创建一个与常量引用类型相同的临时常量，这个并将常量引用绑定的非常量对象、字面值、甚至是一个表达式的值拷贝给这个临时常量。最后将这个常量引用绑定到这个临时常量。</strong></p>
+<p><img src="/images/C++Chapter2/image-20211226152752659.png" alt="image-20211226152752659"></p>
+<p>常量引用仅仅对引用的操作做出了限定，但是对被引用绑定的对象是否是常量并未作规定。即不能通过常量引用这个别名来改变这个被绑定对象的值，常量引用也不能改变绑定的对象。但是因为被绑定对象并不是一个常量，可以通过其他方式改变这个值。</p>
+
+        <h6 id="3-3-2-指向常量的指针">
+          <a href="#3-3-2-指向常量的指针" class="heading-link"><i class="fas fa-link"></i></a><a href="#3-3-2-指向常量的指针" class="headerlink" title="3.3.2 指向常量的指针"></a>3.3.2 指向常量的指针</h6>
+      <p>const与指针结合可以结合成常量指针(const pointer)与指向常量的指针(pointer to const)。</p>
+<p><strong>指向常量的指针</strong>，<strong>不能用于改变其所指对象的值。</strong>因为其指向的对象是一个常量。由之前指针的描述，指针是一个对象，用于存放所指对象的地址。指向常量的指针就存放的是常量的地址。</p>
+<p>定义方式：</p>
+<figure class="highlight c++"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> 指针的数据类型 *指针名 = &amp;指向的对象地址;</span><br></pre></td></tr></table></div></figure>
+
+<p><img src="/images/C++Chapter2/image-20211227163615973.png" alt="image-20211227163615973"></p>
+<p><strong>指向常量的指针却允许指向一个非常量。</strong></p>
+<p><img src="/images/C++Chapter2/image-20211227163822295.png" alt="image-20211227163822295"></p>
+<p><strong>不管是常量的引用还是指向常量的指针，都只是禁止了通过这个引用或者指针去修改被指向的对象。</strong>当它们指向一个非常量时，并不禁止通过其它手段去修改这个非常量的值。</p>
+
+        <h6 id="3-3-3-const指针-常量指针">
+          <a href="#3-3-3-const指针-常量指针" class="heading-link"><i class="fas fa-link"></i></a><a href="#3-3-3-const指针-常量指针" class="headerlink" title="3.3.3 const指针/常量指针"></a>3.3.3 const指针/常量指针</h6>
+      <p>引用并不是一个对象，而指针是一个对象，因此指针本身允许被定义成一个常量。既然<strong>常量指针本身是一个常量</strong>，因此<strong>它就必须被初始化。而且它本身的值(即被常量指针指向的对象的地址)不允许改变。</strong></p>
+<p>定义方式：</p>
+<p>注意 const指针对象本身的类型是const，因此定义const指针应当把*号写在const前。</p>
+<figure class="highlight c++"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">被指向对象的类型 *<span class="keyword">const</span> 指针名 = &amp;被指向对象名;</span><br></pre></td></tr></table></div></figure>
+
+<p><img src="/images/C++Chapter2/image-20211227165429436.png" alt="image-20211227165429436"></p>
+<p>注意：</p>
+<p><strong>常量指针指的是指针本身是一个常量。也就是说这个指针保存的地址，也就是指向哪个对象是不允许改变的，但是这个地址指向的对象的值是可以改变的。</strong>可以通过常量指针修改被指向对象的值。</p>
+<p><img src="/images/C++Chapter2/image-20211227165809504.png" alt="image-20211227165809504"></p>
+
+        <h6 id="3-3-4-constexpr-变量">
+          <a href="#3-3-4-constexpr-变量" class="heading-link"><i class="fas fa-link"></i></a><a href="#3-3-4-constexpr-变量" class="headerlink" title="3.3.4 constexpr 变量"></a>3.3.4 constexpr 变量</h6>
+      <p>常量表达式是是一种特殊的表达式，它的计算过程发生在编译阶段，并且它的计算结果不会改变。因此对于一些确定不会改变的计算结果，与其将它的参数声明成一个普通const常量再计算。不如将该表达式声明成constexpr 类型，将计算阶段放在编译。加速代码执行。</p>
+<p>一个对象是否是一个常量表达式，由它的数据类型和参与计算结果的初始值共同决定。要求：计算结果的数据类型应当是常量类型，并且参与运算的都是字面值，也就是不需要计算阶段就可以得出的值</p>
+<figure class="highlight c++"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> max_files = <span class="number">20</span>;   <span class="comment">//max_files是一个常量表达式</span></span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> limit = max_files + <span class="number">1</span>; <span class="comment">//计算结果的数据类型是const，并且参与运算的max_files是一个确定的常量，故limit是常量表达式</span></span><br><span class="line"><span class="keyword">int</span> staff_size = <span class="number">27</span>;   <span class="comment">//数据类型不是常量，不是常量表达式</span></span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> sz = <span class="built_in">get_size</span>();  <span class="comment">//虽然数据类型声明成const，但是它的值需要在执行阶段计算，故不是常量表达式</span></span><br><span class="line">   </span><br></pre></td></tr></table></div></figure>
+
+<p>当都使用const来声明常量表达式，编译器很难确定变量的值是否是一个常量表达式。也就无法将计算阶段放在编译，加速代码执行。因此C++11引入了constexpr类型</p>
+<p><img src="/2021/12/24/C-Chapter2/images/C++Chapter2/image-20211230211752515.png" alt="image-20211230211752515"></p>
+<p>需要指出的是，如果constexpr声明中定义了一个指针，限定符constexpr仅对指针生效。也就是说仅仅指针被声明成了常量类型，其保存的地址不变，与它所指向的对象的值无关。</p>
+
+        <h4 id="四、处理类型">
+          <a href="#四、处理类型" class="heading-link"><i class="fas fa-link"></i></a><a href="#四、处理类型" class="headerlink" title="四、处理类型"></a>四、处理类型</h4>
+      
+        <h5 id="4-1-类型别名">
+          <a href="#4-1-类型别名" class="heading-link"><i class="fas fa-link"></i></a><a href="#4-1-类型别名" class="headerlink" title="4.1 类型别名"></a>4.1 类型别名</h5>
+      <p>类型别名就是给某种数据类型起一个同义词。它可以使复杂的类型名变得简单明了，便于理解和使用。</p>
+<p>两种方式：</p>
+<figure class="highlight c++"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">typedef</span> <span class="keyword">double</span> wages; <span class="comment">//wages是double的同义词</span></span><br><span class="line"><span class="keyword">typedef</span> wages base, *p;  <span class="comment">//等价于double base;和double *p</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> SI = Sales_item;</span><br><span class="line">SI item;  <span class="comment">//等价于Sales_item item;</span></span><br></pre></td></tr></table></div></figure>
+
+</div></div></article><article class="postlist-item post"><header class="post-header"><h1 class="post-title"><a class="post-title__link" href="/2021/12/23/object-detect/">物体识别</a></h1><div class="post-meta"><span class="post-meta-item post-meta-item--createtime"><span class="post-meta-item__icon"><i class="far fa-calendar-plus"></i></span><span class="post-meta-item__info">发表于</span><span class="post-meta-item__value">2021-12-23</span></span><span class="post-meta-item post-meta-item--updatetime"><span class="post-meta-item__icon"><i class="far fa-calendar-check"></i></span><span class="post-meta-item__info">更新于</span><span class="post-meta-item__value">2021-12-24</span></span></div></header><div class="post-body"><div class="post-excerpt">
+        <h3 id="一、物体识别相关术语解释">
+          <a href="#一、物体识别相关术语解释" class="heading-link"><i class="fas fa-link"></i></a><a href="#一、物体识别相关术语解释" class="headerlink" title="一、物体识别相关术语解释"></a>一、物体识别相关术语解释</h3>
+      
+        <h4 id="1-1-锚框、边缘框">
+          <a href="#1-1-锚框、边缘框" class="heading-link"><i class="fas fa-link"></i></a><a href="#1-1-锚框、边缘框" class="headerlink" title="1.1 锚框、边缘框"></a>1.1 锚框、边缘框</h4>
+      <p><em>边界框</em>（bounding box）来描述对象的空间位置，一般描述的是物体的真实所在位置。 边界框是矩形的，由矩形左上角的以及右下角的x和y坐标决定。目标检测算法通常会在输入图像中采样大量的区域，然后判断这些区域中是否包含我们感兴趣的目标，并调整区域边界从而更准确地预测目标的<em>真实边界框</em>（ground-truth bounding box）。锚框（anchor box）一般是预测算法预先提出的一组框，它是以每个像素为中心，生成多个缩放比和宽高比（aspect ratio）不同的边界框。算法检测预设置的锚框内是否有关注的物体，如果有，预测锚框到真实边缘框的偏移，从而对锚框进行调整。</p>
+
+        <h5 id="1-1-1-锚框标注">
+          <a href="#1-1-1-锚框标注" class="heading-link"><i class="fas fa-link"></i></a><a href="#1-1-1-锚框标注" class="headerlink" title="1.1.1 锚框标注"></a>1.1.1 锚框标注</h5>
+      <p>对于一张图片来进行目标检测，我们可能会生成大量的锚框。对每个锚框来说都是一个训练样本。我们需要将每个锚框要么标注成背景，要么关联上一个真实的边缘框。因此我们需要对锚框进行标注，常用的做法是计算每个锚框与每个边缘框的IoU，分别取最大值将锚框标注成边缘框相同的标注。</p>
+
+        <h5 id="1-2-NMS非极大值抑制输出">
+          <a href="#1-2-NMS非极大值抑制输出" class="heading-link"><i class="fas fa-link"></i></a><a href="#1-2-NMS非极大值抑制输出" class="headerlink" title="1.2 NMS非极大值抑制输出"></a>1.2 NMS非极大值抑制输出</h5>
+      <p>因为每个锚框都预测一个边缘框，因此可能出现很多锚框预测一个相同的边缘框，如图所示</p>
+<p><img src="/2021/12/23/object-detect/images/object-detect/image-20211223100019550.png" alt="image-20211223100019550"></p>
+<p>这些框之间的区别仅仅在于覆盖的范围不同。使用NMS可以合并相似的预测，主要的流程是先选中非背景类的最大预测值，然后去掉所有其它和这个最大预测锚框的IoU值大于Theta值(一个自己设置的阈值)的预测，重复以上流程。</p>
+
+        <h4 id="1-2-比较锚框与真实框的相似度指标–IOU">
+          <a href="#1-2-比较锚框与真实框的相似度指标–IOU" class="heading-link"><i class="fas fa-link"></i></a><a href="#1-2-比较锚框与真实框的相似度指标–IOU" class="headerlink" title="1.2 比较锚框与真实框的相似度指标–IOU"></a>1.2 比较锚框与真实框的相似度指标–IOU</h4>
+      <p>IoU往往用来计算两个框之间的相似度，计算公式是给定两个集合A和B，用它的交集闭上并集。</p>
+<p><img src="/2021/12/23/object-detect/images/object-detect/image-20211223094115028.png" alt="image-20211223094115028"></p>
+<p><img src="/2021/12/23/object-detect/images/object-detect/image-20211223094125414.png" alt="image-20211223094125414"></p>
+
+        <h3 id="二、基于锚框的检测算法的流程">
+          <a href="#二、基于锚框的检测算法的流程" class="heading-link"><i class="fas fa-link"></i></a><a href="#二、基于锚框的检测算法的流程" class="headerlink" title="二、基于锚框的检测算法的流程"></a>二、基于锚框的检测算法的流程</h3>
+      <h4 id><a href="#" class="headerlink" title></a><img src="/2021/12/23/object-detect/images/object-detect/image-20211223100414222.png" alt="image-20211223100414222"></h4></div></div></article></section><nav class="paginator"><div class="paginator-inner"><a class="extend prev" rel="prev" href="/page/3/"><i class="fas fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/3/">3</a><span class="page-number current">4</span><a class="page-number" href="/page/5/">5</a><a class="page-number" href="/page/6/">6</a><a class="extend next" rel="next" href="/page/5/"><i class="fas fa-angle-right"></i></a></div></nav></div></div><div class="sidebar-wrap" id="sidebar-wrap"><aside class="sidebar" id="sidebar"><section class="sidebar-toc hide"></section><!-- ov = overview--><section class="sidebar-ov"><div class="sidebar-ov-author"><div class="sidebar-ov-author__avatar"><img class="sidebar-ov-author__avatar_img" src="/images/icons/photo.png" alt="avatar"></div><p class="sidebar-ov-author__text">To be a great person.</p></div><div class="sidebar-ov-cc"><a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en" target="_blank" rel="noopener" data-popover="知识共享许可协议" data-popover-pos="up"><img src="/images/cc-by-nc-sa.svg"></a></div></section></aside></div><div class="clearfix"></div></div></main><footer class="footer" id="footer"><div class="footer-inner"><div><span>Copyright © 2022</span><span class="footer__icon"><i class="fas fa-heart"></i></span><span>Strive</span></div><div><span>由 <a href="http://hexo.io/" title="Hexo" target="_blank" rel="noopener">Hexo</a> 强力驱动</span><span> v5.4.0</span><span class="footer__devider">|</span><span>主题 - <a href="https://github.com/liuyib/hexo-theme-stun/" title="Stun" target="_blank" rel="noopener">Stun</a></span><span> v2.6.2</span></div></div></footer><div class="loading-bar" id="loading-bar"><div class="loading-bar__progress"></div></div><div class="back2top" id="back2top"><span class="back2top__icon"><i class="fas fa-rocket"></i></span></div></div><script src="https://cdn.jsdelivr.net/npm/jquery@v3.4.1/dist/jquery.min.js"></script><script src="https://cdn.jsdelivr.net/npm/velocity-animate@1.5.2/velocity.min.js"></script><script src="https://cdn.jsdelivr.net/npm/velocity-animate@1.5.2/velocity.ui.min.js"></script><script src="/js/utils.js?v=2.6.2"></script><script src="/js/stun-boot.js?v=2.6.2"></script><script src="/js/scroll.js?v=2.6.2"></script><script src="/js/header.js?v=2.6.2"></script><script src="/js/sidebar.js?v=2.6.2"></script></body></html>

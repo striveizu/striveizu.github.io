@@ -1,0 +1,270 @@
+<!DOCTYPE html><html lang="zh-CN"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="format-detection" content="telephone=no"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="black"><link rel="icon" href="/images/icons/favicon-16x16.png?v=2.6.2" type="image/png" sizes="16x16"><link rel="icon" href="/images/icons/favicon-32x32.png?v=2.6.2" type="image/png" sizes="32x32"><meta name="description" content="JavaWeb基础知识回顾之SQL与MySQL                           一、基础知识        MySql其实是DBMS DBA通过DBMS操作管理DB  MySQL登录： 管理员身份运行CMD 12mysql -u 你的用户名 -p# 下面输入密码                       二、SQL回顾">
+<meta property="og:type" content="article">
+<meta property="og:title" content="JavaWeb-SQL">
+<meta property="og:url" content="https://striveizu.top/2022/10/30/JavaWeb-SQL/index.html">
+<meta property="og:site_name" content="Strive&#39;s Blog">
+<meta property="og:description" content="JavaWeb基础知识回顾之SQL与MySQL                           一、基础知识        MySql其实是DBMS DBA通过DBMS操作管理DB  MySQL登录： 管理员身份运行CMD 12mysql -u 你的用户名 -p# 下面输入密码                       二、SQL回顾">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://striveizu.top/2022/10/30/JavaWeb-SQL/image-20221030105639678.png">
+<meta property="og:image" content="https://striveizu.top/2022/10/30/JavaWeb-SQL/image-20221030133257871.png">
+<meta property="og:image" content="https://striveizu.top/2022/10/30/JavaWeb-SQL/image-20221030134928169.png">
+<meta property="og:image" content="https://striveizu.top/2022/10/30/JavaWeb-SQL/image-20221030133501990.png">
+<meta property="og:image" content="https://striveizu.top/2022/10/30/JavaWeb-SQL/image-20221030135634645.png">
+<meta property="og:image" content="https://striveizu.top/2022/10/30/JavaWeb-SQL/image-20221030133626400.png">
+<meta property="og:image" content="https://striveizu.top/2022/10/30/JavaWeb-SQL/image-20221030135224988.png">
+<meta property="og:image" content="https://striveizu.top/2022/10/30/JavaWeb-SQL/image-20221030135311844.png">
+<meta property="og:image" content="https://striveizu.top/2022/10/30/JavaWeb-SQL/image-20221030135921097.png">
+<meta property="og:image" content="https://striveizu.top/2022/10/30/JavaWeb-SQL/image-20221030140945244.png">
+<meta property="og:image" content="https://striveizu.top/2022/10/30/JavaWeb-SQL/image-20221030142011804.png">
+<meta property="og:image" content="https://striveizu.top/2022/10/30/JavaWeb-SQL/image-20221030143841502.png">
+<meta property="og:image" content="https://striveizu.top/2022/10/30/JavaWeb-SQL/image-20221030150030568.png">
+<meta property="og:image" content="https://striveizu.top/2022/10/30/JavaWeb-SQL/image-20221030150219167.png">
+<meta property="og:image" content="https://striveizu.top/2022/10/30/JavaWeb-SQL/image-20221030150412877.png">
+<meta property="og:image" content="https://striveizu.top/2022/10/30/JavaWeb-SQL/image-20221030150951189.png">
+<meta property="og:image" content="https://striveizu.top/2022/10/30/JavaWeb-SQL/image-20221030151217704.png">
+<meta property="og:image" content="https://striveizu.top/2022/10/30/JavaWeb-SQL/image-20221030151621399.png">
+<meta property="og:image" content="https://striveizu.top/2022/10/30/JavaWeb-SQL/image-20221030151905711.png">
+<meta property="og:image" content="https://striveizu.top/2022/10/30/JavaWeb-SQL/image-20221030162257475.png">
+<meta property="og:image" content="https://striveizu.top/2022/10/30/JavaWeb-SQL/image-20221030164929991.png">
+<meta property="og:image" content="https://striveizu.top/2022/10/30/JavaWeb-SQL/image-20221030165348052.png">
+<meta property="og:image" content="https://striveizu.top/2022/10/30/JavaWeb-SQL/image-20221030170420907.png">
+<meta property="og:image" content="https://striveizu.top/2022/10/30/JavaWeb-SQL/image-20221030170604178.png">
+<meta property="og:image" content="https://striveizu.top/2022/10/30/JavaWeb-SQL/image-20221030183159903.png">
+<meta property="og:image" content="https://striveizu.top/2022/10/30/JavaWeb-SQL/image-20221030183342000.png">
+<meta property="og:image" content="https://striveizu.top/2022/10/30/JavaWeb-SQL/image-20221030183725029.png">
+<meta property="og:image" content="https://striveizu.top/2022/10/30/JavaWeb-SQL/image-20221030192436571.png">
+<meta property="og:image" content="https://striveizu.top/2022/10/30/JavaWeb-SQL/image-20221030193236494.png">
+<meta property="og:image" content="https://striveizu.top/2022/10/30/JavaWeb-SQL/image-20221030193325273.png">
+<meta property="og:image" content="https://striveizu.top/2022/10/30/JavaWeb-SQL/image-20221030193340472.png">
+<meta property="og:image" content="https://striveizu.top/2022/10/30/JavaWeb-SQL/image-20221030194359535.png">
+<meta property="og:image" content="https://striveizu.top/2022/10/30/JavaWeb-SQL/image-20221030201000304.png">
+<meta property="og:image" content="https://striveizu.top/2022/10/30/JavaWeb-SQL/image-20221030201433429.png">
+<meta property="og:image" content="https://striveizu.top/2022/10/30/JavaWeb-SQL/image-20221030201500380.png">
+<meta property="article:published_time" content="2022-10-30T02:54:14.000Z">
+<meta property="article:modified_time" content="2022-10-30T12:30:15.209Z">
+<meta property="article:author" content="Strive">
+<meta property="article:tag" content="Java">
+<meta property="article:tag" content="JavaWeb基础知识">
+<meta property="article:tag" content="SQL">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://striveizu.top/2022/10/30/JavaWeb-SQL/image-20221030105639678.png"><title>JavaWeb-SQL | Strive's Blog</title><link ref="canonical" href="https://striveizu.top/2022/10/30/JavaWeb-SQL/"><link rel="dns-prefetch" href="https://cdn.jsdelivr.net"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.12.1/css/all.min.css" type="text/css"><link rel="stylesheet" href="/css/index.css?v=2.6.2"><script>var Stun = window.Stun || {};
+var CONFIG = {
+  root: '/',
+  algolia: undefined,
+  assistSearch: undefined,
+  fontIcon: {"prompt":{"success":"fas fa-check-circle","info":"fas fa-arrow-circle-right","warning":"fas fa-exclamation-circle","error":"fas fa-times-circle"},"copyBtn":"fas fa-copy"},
+  sidebar: {"offsetTop":"20px","tocMaxDepth":6},
+  header: {"enable":true,"showOnPost":true,"scrollDownIcon":true},
+  postWidget: {"endText":true},
+  nightMode: {"enable":true},
+  back2top: {"enable":true},
+  codeblock: {"style":"default","highlight":"light","wordWrap":false},
+  reward: false,
+  fancybox: false,
+  zoomImage: {"gapAside":"20px"},
+  galleryWaterfall: undefined,
+  lazyload: false,
+  pjax: undefined,
+  externalLink: {"icon":{"enable":true,"name":"fas fa-external-link-alt"}},
+  shortcuts: undefined,
+  prompt: {"copyButton":"复制","copySuccess":"复制成功","copyError":"复制失败"},
+  sourcePath: {"js":"js","css":"css","images":"images"},
+};
+
+window.CONFIG = CONFIG;</script><meta name="generator" content="Hexo 5.4.0"></head><body><div class="container" id="container"><header class="header" id="header"><div class="header-inner"><nav class="header-nav header-nav--fixed"><div class="header-nav-inner"><div class="header-nav-menubtn"><i class="fas fa-bars"></i></div><div class="header-nav-menu"><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/"><span class="header-nav-menu-item__icon"><i class="fas fa-home"></i></span><span class="header-nav-menu-item__text">首页</span></a></div><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/about/"><span class="header-nav-menu-item__icon"><i class="fas fa-address-card"></i></span><span class="header-nav-menu-item__text">关于</span></a></div><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="javascript:;" onclick="return false;"><span class="header-nav-menu-item__icon"><i class="fas fa-edit"></i></span><span class="header-nav-menu-item__text">文章</span></a><div class="header-nav-submenu"><div class="header-nav-submenu-item"><a class="header-nav-submenu-item__link" href="/archives/"><span class="header-nav-submenu-item__icon"><i class="fas fa-folder-open"></i></span><span class="header-nav-submenu-item__text">归档</span></a></div><div class="header-nav-submenu-item"><a class="header-nav-submenu-item__link" href="/categories/"><span class="header-nav-submenu-item__icon"><i class="fas fa-layer-group"></i></span><span class="header-nav-submenu-item__text">分类</span></a></div><div class="header-nav-submenu-item"><a class="header-nav-submenu-item__link" href="/tags/"><span class="header-nav-submenu-item__icon"><i class="fas fa-tags"></i></span><span class="header-nav-submenu-item__text">标签</span></a></div></div></div></div><div class="header-nav-mode"><div class="mode"><div class="mode-track"><span class="mode-track-moon"></span><span class="mode-track-sun"></span></div><div class="mode-thumb"></div></div></div></div></nav><div class="header-banner"><div class="header-banner-info"><div class="header-banner-info__title">Strive's Blog</div><div class="header-banner-info__subtitle">你我期许的绝非遥不可及</div></div><div class="header-banner-arrow"><div class="header-banner-arrow__icon"><i class="fas fa-angle-down"></i></div></div></div></div></header><main class="main" id="main"><div class="main-inner"><div class="content-wrap" id="content-wrap"><div class="content" id="content"><!-- Just used to judge whether it is an article page--><div id="is-post"></div><div class="post"><header class="post-header"><h1 class="post-title">JavaWeb-SQL</h1><div class="post-meta"><span class="post-meta-item post-meta-item--createtime"><span class="post-meta-item__icon"><i class="far fa-calendar-plus"></i></span><span class="post-meta-item__info">发表于</span><span class="post-meta-item__value">2022-10-30</span></span><span class="post-meta-item post-meta-item--updatetime"><span class="post-meta-item__icon"><i class="far fa-calendar-check"></i></span><span class="post-meta-item__info">更新于</span><span class="post-meta-item__value">2022-10-30</span></span></div></header><div class="post-body">
+        <h3 id="JavaWeb基础知识回顾之SQL与MySQL">
+          <a href="#JavaWeb基础知识回顾之SQL与MySQL" class="heading-link"><i class="fas fa-link"></i></a><a href="#JavaWeb基础知识回顾之SQL与MySQL" class="headerlink" title="JavaWeb基础知识回顾之SQL与MySQL"></a>JavaWeb基础知识回顾之SQL与MySQL</h3>
+      
+        <h4 id="一、基础知识">
+          <a href="#一、基础知识" class="heading-link"><i class="fas fa-link"></i></a><a href="#一、基础知识" class="headerlink" title="一、基础知识"></a>一、基础知识</h4>
+      <p><img src="/2022/10/30/JavaWeb-SQL/image-20221030105639678.png" alt="image-20221030105639678"></p>
+<p><strong>MySql其实是DBMS</strong></p>
+<p>DBA通过DBMS操作管理DB</p>
+<p><img src="/2022/10/30/JavaWeb-SQL/image-20221030133257871.png" alt="image-20221030133257871"></p>
+<p>MySQL登录：</p>
+<p>管理员身份运行CMD</p>
+<figure class="highlight plaintext"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">mysql -u 你的用户名 -p</span><br><span class="line"># 下面输入密码</span><br></pre></td></tr></table></div></figure>
+
+<p><img src="/2022/10/30/JavaWeb-SQL/image-20221030134928169.png" alt="image-20221030134928169"></p>
+
+        <h4 id="二、SQL回顾">
+          <a href="#二、SQL回顾" class="heading-link"><i class="fas fa-link"></i></a><a href="#二、SQL回顾" class="headerlink" title="二、SQL回顾"></a>二、SQL回顾</h4>
+      <p><img src="/2022/10/30/JavaWeb-SQL/image-20221030133501990.png" alt="image-20221030133501990"></p>
+
+        <h4 id="2-0-数据库中的数据类型">
+          <a href="#2-0-数据库中的数据类型" class="heading-link"><i class="fas fa-link"></i></a><a href="#2-0-数据库中的数据类型" class="headerlink" title="2.0 数据库中的数据类型"></a>2.0 数据库中的数据类型</h4>
+      <p><img src="/2022/10/30/JavaWeb-SQL/image-20221030135634645.png" alt="image-20221030135634645"></p>
+<p>注意：double类型的第一个参数是整个数据的总长度，如分数0-100， 保留两位小数 则需要声明成：</p>
+<p>score double(5, 2);</p>
+
+        <h4 id="2-1-SQL语句的分类">
+          <a href="#2-1-SQL语句的分类" class="heading-link"><i class="fas fa-link"></i></a><a href="#2-1-SQL语句的分类" class="headerlink" title="2.1 SQL语句的分类"></a>2.1 SQL语句的分类</h4>
+      <p><img src="/2022/10/30/JavaWeb-SQL/image-20221030133626400.png" alt="image-20221030133626400"></p>
+<p>DDL:操作数据库、表等等</p>
+<p>DML：对表中的数据进行增删改查操作</p>
+<p>DQL：对表中数据进行查询</p>
+<p>DCL:对数据库进行权限控制</p>
+
+        <h5 id="2-1-1-DDL-操作">
+          <a href="#2-1-1-DDL-操作" class="heading-link"><i class="fas fa-link"></i></a><a href="#2-1-1-DDL-操作" class="headerlink" title="2.1.1 DDL 操作"></a>2.1.1 DDL 操作</h5>
+      <p>1、查询数据库</p>
+<p><code>SHOW DATABASES;</code></p>
+<p>2、创建数据库</p>
+<figure class="highlight sql"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">CREATE</span> DATABASE 名称;</span><br><span class="line"><span class="keyword">CREATE</span> DATABASE IF <span class="keyword">NOT</span> <span class="keyword">EXISTS</span> 名称; # 如果不存在则创建</span><br></pre></td></tr></table></div></figure>
+
+<p>3、删除数据库</p>
+<figure class="highlight plaintext"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">DROP DATABASE 数据库名称;</span><br><span class="line">DROP DATABASE IF EXISTS 名称;</span><br></pre></td></tr></table></div></figure>
+
+<p>4、选择与使用数据库</p>
+<figure class="highlight sql"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> DATABASE(); # 查看当前数据库名称</span><br><span class="line">USE 数据库名称;</span><br></pre></td></tr></table></div></figure>
+
+<p>5、对表的操作CRUD</p>
+<p>C-Create创建</p>
+<p>R-Retrieve查询</p>
+<p>U-Update修改</p>
+<p>D-Delete删除</p>
+
+        <h6 id="查询表">
+          <a href="#查询表" class="heading-link"><i class="fas fa-link"></i></a><a href="#查询表" class="headerlink" title="查询表"></a>查询表</h6>
+      <figure class="highlight sql"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SHOW</span> TABLES; # 查询当前数据库下所有表的名称</span><br><span class="line"><span class="keyword">DESC</span> 表名称; # 查询选中表的结构：字段名、字段类型等</span><br></pre></td></tr></table></div></figure>
+
+<p><img src="/2022/10/30/JavaWeb-SQL/image-20221030135224988.png" alt="image-20221030135224988"></p>
+
+        <h6 id="创建表">
+          <a href="#创建表" class="heading-link"><i class="fas fa-link"></i></a><a href="#创建表" class="headerlink" title="创建表"></a>创建表</h6>
+      <p><img src="/2022/10/30/JavaWeb-SQL/image-20221030135311844.png" alt="image-20221030135311844"></p>
+
+        <h6 id="删除表">
+          <a href="#删除表" class="heading-link"><i class="fas fa-link"></i></a><a href="#删除表" class="headerlink" title="删除表"></a>删除表</h6>
+      <p><img src="/2022/10/30/JavaWeb-SQL/image-20221030135921097.png" alt="image-20221030135921097"></p>
+
+        <h6 id="修改表">
+          <a href="#修改表" class="heading-link"><i class="fas fa-link"></i></a><a href="#修改表" class="headerlink" title="修改表"></a>修改表</h6>
+      <figure class="highlight sql"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"># <span class="number">1</span>、修改表名</span><br><span class="line"><span class="keyword">ALTER</span> <span class="keyword">TABLE</span> 表名 RENAME <span class="keyword">TO</span> 新表名;</span><br><span class="line"># <span class="number">2</span>、添加一列</span><br><span class="line"><span class="keyword">ALTER</span> <span class="keyword">TABLE</span> 表名 <span class="keyword">ADD</span> 列名 数据类型;</span><br><span class="line"># <span class="number">3</span>、修改数据类型</span><br><span class="line"><span class="keyword">ALTER</span> <span class="keyword">TABLE</span> 表名 MODEFY 列名 新数据类型;</span><br><span class="line"># <span class="number">4</span>、修改列名和数据类型</span><br><span class="line"><span class="keyword">ALTER</span> <span class="keyword">TABLE</span> 表名 CHANGE 列名 新列名 新数据类型;</span><br><span class="line"># <span class="number">5</span>、删除一列</span><br><span class="line"><span class="keyword">ALTER</span> <span class="keyword">TABLE</span> 表名 <span class="keyword">DROP</span> 列名;</span><br></pre></td></tr></table></div></figure>
+
+
+        <h5 id="2-1-2-DML对表中数据操作">
+          <a href="#2-1-2-DML对表中数据操作" class="heading-link"><i class="fas fa-link"></i></a><a href="#2-1-2-DML对表中数据操作" class="headerlink" title="2.1.2 DML对表中数据操作"></a>2.1.2 DML对表中数据操作</h5>
+      <p><img src="/2022/10/30/JavaWeb-SQL/image-20221030140945244.png" alt="image-20221030140945244"></p>
+<p><img src="/2022/10/30/JavaWeb-SQL/image-20221030142011804.png" alt="image-20221030142011804"></p>
+<p><strong>查询去重：DISTINCT</strong></p>
+<figure class="highlight sql"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> <span class="keyword">DISTINCT</span> ADDRESS <span class="keyword">FROM</span> STU;</span><br></pre></td></tr></table></div></figure>
+
+<p>查询时给列名起别名</p>
+<figure class="highlight sql"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> name, math <span class="keyword">as</span> 数学成绩， english <span class="keyword">as</span> 英语成绩 <span class="keyword">from</span> stu;</span><br></pre></td></tr></table></div></figure>
+
+<p><img src="/2022/10/30/JavaWeb-SQL/image-20221030143841502.png" alt="image-20221030143841502"></p>
+<p><img src="/2022/10/30/JavaWeb-SQL/image-20221030150030568.png" alt="image-20221030150030568"></p>
+<p><img src="/2022/10/30/JavaWeb-SQL/image-20221030150219167.png" alt="image-20221030150219167"></p>
+
+        <h6 id="聚合函数">
+          <a href="#聚合函数" class="heading-link"><i class="fas fa-link"></i></a><a href="#聚合函数" class="headerlink" title="聚合函数"></a>聚合函数</h6>
+      <p>聚合函数是将一列数据作为一个整体进行纵向的计算最大值、最小值等等。</p>
+<p><img src="/2022/10/30/JavaWeb-SQL/image-20221030150412877.png" alt="image-20221030150412877"></p>
+<p><strong>使用方式：</strong></p>
+<figure class="highlight sql"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> 聚合函数名（列名） <span class="keyword">FROM</span> 表;</span><br><span class="line"># 求数学平均分</span><br><span class="line"><span class="keyword">SELECT</span> <span class="built_in">avg</span>(math) <span class="keyword">from</span> stu;</span><br><span class="line"># 求学生人数</span><br><span class="line"><span class="keyword">SELECT</span> <span class="built_in">count</span>(id) <span class="keyword">from</span> stu;</span><br></pre></td></tr></table></div></figure>
+
+
+        <h6 id="分组查询">
+          <a href="#分组查询" class="heading-link"><i class="fas fa-link"></i></a><a href="#分组查询" class="headerlink" title="分组查询"></a>分组查询</h6>
+      <figure class="highlight plaintext"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">SELECT 字段列表 FROM 表名 [where 分组前条件限定] GROUP BY 分组字段名 [HAVING 分组后的条件过滤];</span><br></pre></td></tr></table></div></figure>
+
+<p><img src="/2022/10/30/JavaWeb-SQL/image-20221030150951189.png" alt="image-20221030150951189"></p>
+<figure class="highlight sql"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"># 例子<span class="number">1</span>：查询女同学和男同学的数学平均分</span><br><span class="line"><span class="keyword">SELECT</span> sex, <span class="built_in">avg</span>(math) <span class="keyword">from</span> stu <span class="keyword">group</span> <span class="keyword">by</span> SEX;</span><br></pre></td></tr></table></div></figure>
+
+<p><img src="/2022/10/30/JavaWeb-SQL/image-20221030151217704.png" alt="image-20221030151217704"></p>
+<figure class="highlight sql"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"># 例子<span class="number">2</span>：查询男同学和女同学各自的数学平均分以及各自的人数，要求：分数低于<span class="number">70</span>分的不参与分组</span><br><span class="line"><span class="keyword">SELECT</span> sex, <span class="built_in">count</span>(<span class="operator">*</span>), <span class="built_in">avg</span>(math) <span class="keyword">from</span> stu <span class="keyword">where</span> math <span class="operator">&gt;</span> <span class="number">70</span> <span class="keyword">group</span> <span class="keyword">by</span> sex;</span><br></pre></td></tr></table></div></figure>
+
+<p><img src="/2022/10/30/JavaWeb-SQL/image-20221030151621399.png" alt="image-20221030151621399"></p>
+<figure class="highlight sql"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"># 例子<span class="number">2</span>：查询男同学和女同学各自的数学平均分以及各自的人数，要求：分数低于<span class="number">70</span>分的不参与分组, 分组后的人数需大于<span class="number">2</span>才展示</span><br><span class="line"># <span class="keyword">having</span> 对分组之后的结果进行过滤</span><br><span class="line"><span class="keyword">SELECT</span> sex, <span class="built_in">count</span>(<span class="operator">*</span>), <span class="built_in">avg</span>(math) <span class="keyword">from</span> stu <span class="keyword">where</span> math <span class="operator">&gt;</span> <span class="number">70</span> <span class="keyword">group</span> <span class="keyword">by</span> sex <span class="keyword">having</span> <span class="built_in">count</span>(<span class="operator">*</span>) <span class="operator">&gt;</span> <span class="number">2</span>;</span><br></pre></td></tr></table></div></figure>
+
+
+        <h6 id="分页查询">
+          <a href="#分页查询" class="heading-link"><i class="fas fa-link"></i></a><a href="#分页查询" class="headerlink" title="分页查询"></a>分页查询</h6>
+      <p><img src="/2022/10/30/JavaWeb-SQL/image-20221030151905711.png" alt="image-20221030151905711"></p>
+
+        <h4 id="2-2-约束">
+          <a href="#2-2-约束" class="heading-link"><i class="fas fa-link"></i></a><a href="#2-2-约束" class="headerlink" title="2.2 约束"></a>2.2 约束</h4>
+      
+        <h5 id="2-2-1-概念与分类">
+          <a href="#2-2-1-概念与分类" class="heading-link"><i class="fas fa-link"></i></a><a href="#2-2-1-概念与分类" class="headerlink" title="2.2.1 概念与分类"></a>2.2.1 概念与分类</h5>
+      <p>约束时作用在表中列上的规则，用于限制加入表的数据</p>
+<p>约束保证了数据库中数据的正确性、有效性以及完整性</p>
+<p><img src="/2022/10/30/JavaWeb-SQL/image-20221030162257475.png" alt="image-20221030162257475"></p>
+<p>MySql不支持check检查约束。</p>
+<p>auto_increament：当列是数字类型并且唯一的时候可以设置成自动自增</p>
+<figure class="highlight sql"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/* 例子：员工信息表，包含ID(主键且自增长)，姓名（非空）， 性别（非空）， 入职日期（非空），工资（非空），奖金（默认为0）*/</span></span><br><span class="line"><span class="keyword">create</span> <span class="keyword">table</span> employer(</span><br><span class="line">    id <span class="type">INT</span> <span class="keyword">PRIMARY</span> KEY auto_increment,</span><br><span class="line">    name <span class="type">VARCHAR</span>(<span class="number">50</span>) <span class="keyword">NOT</span> <span class="keyword">NULL</span>,</span><br><span class="line">    joindate <span class="type">DATE</span> <span class="keyword">NOT</span> <span class="keyword">NULL</span>,</span><br><span class="line">    salary <span class="keyword">DOUBLE</span>(<span class="number">7</span>, <span class="number">2</span>) <span class="keyword">NOT</span> <span class="keyword">NULL</span>,</span><br><span class="line">    bonus <span class="keyword">DOUBLE</span>(<span class="number">7</span>, <span class="number">2</span>) <span class="keyword">DEFAULT</span> <span class="number">0</span></span><br><span class="line">)</span><br></pre></td></tr></table></div></figure>
+
+
+        <h5 id="2-2-2-外键约束">
+          <a href="#2-2-2-外键约束" class="heading-link"><i class="fas fa-link"></i></a><a href="#2-2-2-外键约束" class="headerlink" title="2.2.2 外键约束"></a>2.2.2 外键约束</h5>
+      <p>外键的作用是让两个表数据之间建立连接以保证数据的一致性与完整性；</p>
+<p><img src="/2022/10/30/JavaWeb-SQL/image-20221030164929991.png" alt="image-20221030164929991"></p>
+<p><img src="/2022/10/30/JavaWeb-SQL/image-20221030165348052.png" alt="image-20221030165348052"></p>
+
+        <h4 id="三、数据库设计">
+          <a href="#三、数据库设计" class="heading-link"><i class="fas fa-link"></i></a><a href="#三、数据库设计" class="headerlink" title="三、数据库设计"></a>三、数据库设计</h4>
+      
+        <h5 id="3-1-数据库设计相关概念与步骤">
+          <a href="#3-1-数据库设计相关概念与步骤" class="heading-link"><i class="fas fa-link"></i></a><a href="#3-1-数据库设计相关概念与步骤" class="headerlink" title="3.1 数据库设计相关概念与步骤"></a>3.1 数据库设计相关概念与步骤</h5>
+      <p><img src="/2022/10/30/JavaWeb-SQL/image-20221030170420907.png" alt="image-20221030170420907"></p>
+
+        <h5 id="3-2-表关系">
+          <a href="#3-2-表关系" class="heading-link"><i class="fas fa-link"></i></a><a href="#3-2-表关系" class="headerlink" title="3.2 表关系"></a>3.2 表关系</h5>
+      <p><img src="/2022/10/30/JavaWeb-SQL/image-20221030170604178.png" alt="image-20221030170604178"></p>
+<p><img src="/2022/10/30/JavaWeb-SQL/image-20221030183159903.png" alt="image-20221030183159903"></p>
+<p><img src="/2022/10/30/JavaWeb-SQL/image-20221030183342000.png" alt="image-20221030183342000"></p>
+<p><strong>多对多关系需要通过建立第三张表来实现，中间表包含两个外键，分别关联两方主键</strong></p>
+<p><img src="/2022/10/30/JavaWeb-SQL/image-20221030183725029.png" alt="image-20221030183725029"></p>
+
+        <h5 id="3-3-多表查询">
+          <a href="#3-3-多表查询" class="heading-link"><i class="fas fa-link"></i></a><a href="#3-3-多表查询" class="headerlink" title="3.3 多表查询"></a>3.3 多表查询</h5>
+      <p><img src="/2022/10/30/JavaWeb-SQL/image-20221030192436571.png" alt="image-20221030192436571"></p>
+<figure class="highlight sql"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/* 例子：查询emp和dept的姓名、性别， emp.dep_id = dept.did*/</span></span><br><span class="line"># 隐式内连接</span><br><span class="line"><span class="keyword">SELECT</span> emp.name, emp.gender, dept.dname <span class="keyword">FROM</span> EMP, DEPT <span class="keyword">WHERE</span> EMP.dep_id <span class="operator">=</span> dept.did;</span><br><span class="line"># 显式内连接</span><br><span class="line"><span class="keyword">SELECT</span> emp.name, emp.gender, dept.dname <span class="keyword">FROM</span> EMP <span class="keyword">JOIN</span> DEPT <span class="keyword">ON</span> EMP.dep_id <span class="operator">=</span> dept.did;</span><br></pre></td></tr></table></div></figure>
+
+<p><img src="/2022/10/30/JavaWeb-SQL/image-20221030193236494.png" alt="image-20221030193236494"></p>
+<p><img src="/2022/10/30/JavaWeb-SQL/image-20221030193325273.png" alt="image-20221030193325273"></p>
+<p><img src="/2022/10/30/JavaWeb-SQL/image-20221030193340472.png" alt="image-20221030193340472"></p>
+<p><img src="/2022/10/30/JavaWeb-SQL/image-20221030194359535.png" alt="image-20221030194359535"></p>
+<p><img src="/2022/10/30/JavaWeb-SQL/image-20221030201000304.png" alt="image-20221030201000304"></p>
+
+        <h4 id="四、事务">
+          <a href="#四、事务" class="heading-link"><i class="fas fa-link"></i></a><a href="#四、事务" class="headerlink" title="四、事务"></a>四、事务</h4>
+      <p>数据库的<strong>事务</strong>是一种机制、一个操作序列，包含了一组数据库操作命令</p>
+<p>事务<strong>把所有的命令作为一个整体一起向系统提交或撤销操作请求</strong>，这组数据库命令要么同时成功，要么同时失败</p>
+<p><strong>事务是一个不可分割的工作逻辑单元</strong></p>
+<p><img src="/2022/10/30/JavaWeb-SQL/image-20221030201433429.png" alt="image-20221030201433429"></p>
+<p><img src="/2022/10/30/JavaWeb-SQL/image-20221030201500380.png" alt="image-20221030201500380"></p>
+<figure class="highlight sql"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"># 示例：转账</span><br><span class="line"># 开启事务</span><br><span class="line"><span class="keyword">BEGIN</span>;</span><br><span class="line"><span class="keyword">SELECT</span> MONEY <span class="keyword">FROM</span> account <span class="keyword">where</span> name <span class="operator">=</span> <span class="string">&#x27;李四&#x27;</span>;</span><br><span class="line">upadte account <span class="keyword">set</span> money <span class="operator">=</span> money <span class="operator">-</span> <span class="number">500</span> <span class="keyword">where</span> name <span class="operator">=</span> <span class="string">&#x27;李四&#x27;</span>;</span><br><span class="line">update account <span class="keyword">set</span> money <span class="operator">=</span> money <span class="operator">+</span> <span class="number">500</span> <span class="keyword">where</span> name <span class="operator">=</span> <span class="string">&#x27;李四&#x27;</span>;</span><br><span class="line"># 提交事务</span><br><span class="line"><span class="keyword">commit</span>;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"># 如果事务未完成，可以先执行回滚，解决问题后再提交</span><br><span class="line"><span class="keyword">rollback</span>;</span><br></pre></td></tr></table></div></figure>
+
+
+        <h5 id="事务的四大特征ACID">
+          <a href="#事务的四大特征ACID" class="heading-link"><i class="fas fa-link"></i></a><a href="#事务的四大特征ACID" class="headerlink" title="事务的四大特征ACID"></a>事务的四大特征ACID</h5>
+      <p>原子性（Atomicity）:事务是不可分割的最小操作单位，要么同时成功，要么同时失败</p>
+<p>一致性(Consistency):事务必须是使数据库从一个一致性状态变到另一个一致性状态（几个并行执行的事务，其执行结果必须与按某一顺序串行执行的结果相一致。）</p>
+<p>隔离性(Isolation)：事务的执行不受其他事务的干扰，<strong>事务执行的中间结果</strong>对其他事务必须是透明的。（MySQL默认当事务完成之后数据对其它操作才可见）</p>
+<p>持久性(Durability):事务一旦提交或回滚，它对数据库中的数据改变就是永久性的</p>
+</div><footer class="post-footer"><div class="post-ending ending"><div class="ending__text">------ 本文结束，感谢您的阅读 ------</div></div><div class="post-copyright copyright"><div class="copyright-author"><span class="copyright-author__name">本文作者: </span><span class="copyright-author__value"><a href="https://striveizu.top">Strive</a></span></div><div class="copyright-link"><span class="copyright-link__name">本文链接: </span><span class="copyright-link__value"><a href="https://striveizu.top/2022/10/30/JavaWeb-SQL/">https://striveizu.top/2022/10/30/JavaWeb-SQL/</a></span></div><div class="copyright-notice"><span class="copyright-notice__name">版权声明: </span><span class="copyright-notice__value">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en" rel="external nofollow" target="_blank">BY-NC-SA</a> 许可协议。转载请注明出处！</span></div></div><div class="post-tags"><span class="post-tags-item"><span class="post-tags-item__icon"><i class="fas fa-tag"></i></span><a class="post-tags-item__link" href="https://striveizu.top/tags/Java/">Java</a></span><span class="post-tags-item"><span class="post-tags-item__icon"><i class="fas fa-tag"></i></span><a class="post-tags-item__link" href="https://striveizu.top/tags/JavaWeb%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/">JavaWeb基础知识</a></span><span class="post-tags-item"><span class="post-tags-item__icon"><i class="fas fa-tag"></i></span><a class="post-tags-item__link" href="https://striveizu.top/tags/SQL/">SQL</a></span></div><nav class="post-paginator paginator"><div class="paginator-prev"><a class="paginator-prev__link" href="/2022/10/31/JavaWeb-JDBC/"><span class="paginator-prev__icon"><i class="fas fa-angle-left"></i></span><span class="paginator-prev__text">JavaWeb-JDBC</span></a></div><div class="paginator-next"><a class="paginator-next__link" href="/2022/10/30/SSM01/"><span class="paginator-prev__text">SSM01</span><span class="paginator-next__icon"><i class="fas fa-angle-right"></i></span></a></div></nav></footer></div></div></div><div class="sidebar-wrap" id="sidebar-wrap"><aside class="sidebar" id="sidebar"><div class="sidebar-nav"><span class="sidebar-nav-toc current">文章目录</span><span class="sidebar-nav-ov">站点概览</span></div><section class="sidebar-toc"><ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#JavaWeb%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86%E5%9B%9E%E9%A1%BE%E4%B9%8BSQL%E4%B8%8EMySQL"><span class="toc-number">1.</span> <span class="toc-text">
+          JavaWeb基础知识回顾之SQL与MySQL</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%B8%80%E3%80%81%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86"><span class="toc-number">1.1.</span> <span class="toc-text">
+          一、基础知识</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BA%8C%E3%80%81SQL%E5%9B%9E%E9%A1%BE"><span class="toc-number">1.2.</span> <span class="toc-text">
+          二、SQL回顾</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-0-%E6%95%B0%E6%8D%AE%E5%BA%93%E4%B8%AD%E7%9A%84%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B"><span class="toc-number">1.3.</span> <span class="toc-text">
+          2.0 数据库中的数据类型</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-1-SQL%E8%AF%AD%E5%8F%A5%E7%9A%84%E5%88%86%E7%B1%BB"><span class="toc-number">1.4.</span> <span class="toc-text">
+          2.1 SQL语句的分类</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#2-1-1-DDL-%E6%93%8D%E4%BD%9C"><span class="toc-number">1.4.1.</span> <span class="toc-text">
+          2.1.1 DDL 操作</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#%E6%9F%A5%E8%AF%A2%E8%A1%A8"><span class="toc-number">1.4.1.1.</span> <span class="toc-text">
+          查询表</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#%E5%88%9B%E5%BB%BA%E8%A1%A8"><span class="toc-number">1.4.1.2.</span> <span class="toc-text">
+          创建表</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#%E5%88%A0%E9%99%A4%E8%A1%A8"><span class="toc-number">1.4.1.3.</span> <span class="toc-text">
+          删除表</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#%E4%BF%AE%E6%94%B9%E8%A1%A8"><span class="toc-number">1.4.1.4.</span> <span class="toc-text">
+          修改表</span></a></li></ol></li><li class="toc-item toc-level-5"><a class="toc-link" href="#2-1-2-DML%E5%AF%B9%E8%A1%A8%E4%B8%AD%E6%95%B0%E6%8D%AE%E6%93%8D%E4%BD%9C"><span class="toc-number">1.4.2.</span> <span class="toc-text">
+          2.1.2 DML对表中数据操作</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#%E8%81%9A%E5%90%88%E5%87%BD%E6%95%B0"><span class="toc-number">1.4.2.1.</span> <span class="toc-text">
+          聚合函数</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#%E5%88%86%E7%BB%84%E6%9F%A5%E8%AF%A2"><span class="toc-number">1.4.2.2.</span> <span class="toc-text">
+          分组查询</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#%E5%88%86%E9%A1%B5%E6%9F%A5%E8%AF%A2"><span class="toc-number">1.4.2.3.</span> <span class="toc-text">
+          分页查询</span></a></li></ol></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-2-%E7%BA%A6%E6%9D%9F"><span class="toc-number">1.5.</span> <span class="toc-text">
+          2.2 约束</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#2-2-1-%E6%A6%82%E5%BF%B5%E4%B8%8E%E5%88%86%E7%B1%BB"><span class="toc-number">1.5.1.</span> <span class="toc-text">
+          2.2.1 概念与分类</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#2-2-2-%E5%A4%96%E9%94%AE%E7%BA%A6%E6%9D%9F"><span class="toc-number">1.5.2.</span> <span class="toc-text">
+          2.2.2 外键约束</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%B8%89%E3%80%81%E6%95%B0%E6%8D%AE%E5%BA%93%E8%AE%BE%E8%AE%A1"><span class="toc-number">1.6.</span> <span class="toc-text">
+          三、数据库设计</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#3-1-%E6%95%B0%E6%8D%AE%E5%BA%93%E8%AE%BE%E8%AE%A1%E7%9B%B8%E5%85%B3%E6%A6%82%E5%BF%B5%E4%B8%8E%E6%AD%A5%E9%AA%A4"><span class="toc-number">1.6.1.</span> <span class="toc-text">
+          3.1 数据库设计相关概念与步骤</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#3-2-%E8%A1%A8%E5%85%B3%E7%B3%BB"><span class="toc-number">1.6.2.</span> <span class="toc-text">
+          3.2 表关系</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#3-3-%E5%A4%9A%E8%A1%A8%E6%9F%A5%E8%AF%A2"><span class="toc-number">1.6.3.</span> <span class="toc-text">
+          3.3 多表查询</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%9B%9B%E3%80%81%E4%BA%8B%E5%8A%A1"><span class="toc-number">1.7.</span> <span class="toc-text">
+          四、事务</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E4%BA%8B%E5%8A%A1%E7%9A%84%E5%9B%9B%E5%A4%A7%E7%89%B9%E5%BE%81ACID"><span class="toc-number">1.7.1.</span> <span class="toc-text">
+          事务的四大特征ACID</span></a></li></ol></li></ol></li></ol></section><!-- ov = overview--><section class="sidebar-ov hide"><div class="sidebar-ov-author"><div class="sidebar-ov-author__avatar"><img class="sidebar-ov-author__avatar_img" src="/images/icons/photo.png" alt="avatar"></div><p class="sidebar-ov-author__text">To be a great person.</p></div><div class="sidebar-ov-cc"><a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en" target="_blank" rel="noopener" data-popover="知识共享许可协议" data-popover-pos="up"><img src="/images/cc-by-nc-sa.svg"></a></div></section><div class="sidebar-reading"><div class="sidebar-reading-info"><span class="sidebar-reading-info__text">你已阅读了 </span><span class="sidebar-reading-info__num">0</span><span class="sidebar-reading-info__perc">%</span></div><div class="sidebar-reading-line"></div></div></aside></div><div class="clearfix"></div></div></main><footer class="footer" id="footer"><div class="footer-inner"><div><span>Copyright © 2022</span><span class="footer__icon"><i class="fas fa-heart"></i></span><span>Strive</span></div><div><span>由 <a href="http://hexo.io/" title="Hexo" target="_blank" rel="noopener">Hexo</a> 强力驱动</span><span> v5.4.0</span><span class="footer__devider">|</span><span>主题 - <a href="https://github.com/liuyib/hexo-theme-stun/" title="Stun" target="_blank" rel="noopener">Stun</a></span><span> v2.6.2</span></div></div></footer><div class="loading-bar" id="loading-bar"><div class="loading-bar__progress"></div></div><div class="back2top" id="back2top"><span class="back2top__icon"><i class="fas fa-rocket"></i></span></div></div><script src="https://cdn.jsdelivr.net/npm/jquery@v3.4.1/dist/jquery.min.js"></script><script src="https://cdn.jsdelivr.net/npm/velocity-animate@1.5.2/velocity.min.js"></script><script src="https://cdn.jsdelivr.net/npm/velocity-animate@1.5.2/velocity.ui.min.js"></script><script src="/js/utils.js?v=2.6.2"></script><script src="/js/stun-boot.js?v=2.6.2"></script><script src="/js/scroll.js?v=2.6.2"></script><script src="/js/header.js?v=2.6.2"></script><script src="/js/sidebar.js?v=2.6.2"></script></body></html>

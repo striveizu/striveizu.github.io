@@ -1,0 +1,261 @@
+<!DOCTYPE html><html lang="zh-CN"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="format-detection" content="telephone=no"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="black"><link rel="icon" href="/images/icons/favicon-16x16.png?v=2.6.2" type="image/png" sizes="16x16"><link rel="icon" href="/images/icons/favicon-32x32.png?v=2.6.2" type="image/png" sizes="32x32"><meta name="description" content="一、 Go语言进阶                           1.1 高并发                           1.1.1 多线程        并发指的是多线程程序通过时间片切换在一个核上运行来实现同时运行的装听。 并行指的是多线程程序直接在多个核上多个运行。 Go语言实现了一个高效的多线程调度模型，它可以充分利用多核计算机的优">
+<meta property="og:type" content="article">
+<meta property="og:title" content="字节跳动青训营day2">
+<meta property="og:url" content="https://striveizu.top/2022/05/11/bytedance-campday2/index.html">
+<meta property="og:site_name" content="Strive&#39;s Blog">
+<meta property="og:description" content="一、 Go语言进阶                           1.1 高并发                           1.1.1 多线程        并发指的是多线程程序通过时间片切换在一个核上运行来实现同时运行的装听。 并行指的是多线程程序直接在多个核上多个运行。 Go语言实现了一个高效的多线程调度模型，它可以充分利用多核计算机的优">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://striveizu.top/2022/05/11/bytedance-campday2/image-20220511064530186.png">
+<meta property="og:image" content="https://striveizu.top/2022/05/11/bytedance-campday2/image-20220511064932109.png">
+<meta property="og:image" content="https://striveizu.top/2022/05/11/bytedance-campday2/image-20220511064938912.png">
+<meta property="og:image" content="https://striveizu.top/2022/05/11/bytedance-campday2/image-20220511065248207.png">
+<meta property="og:image" content="https://striveizu.top/2022/05/11/bytedance-campday2/image-20220511065821163.png">
+<meta property="og:image" content="https://striveizu.top/2022/05/11/bytedance-campday2/image-20220511070544717.png">
+<meta property="og:image" content="https://striveizu.top/2022/05/11/bytedance-campday2/image-20220511070618102.png">
+<meta property="og:image" content="https://striveizu.top/2022/05/11/bytedance-campday2/image-20220511071027075.png">
+<meta property="og:image" content="https://striveizu.top/2022/05/11/bytedance-campday2/image-20220511071141658.png">
+<meta property="og:image" content="https://striveizu.top/2022/05/11/bytedance-campday2/image-20220511071150132.png">
+<meta property="og:image" content="https://striveizu.top/2022/05/11/bytedance-campday2/image-20220511071412051.png">
+<meta property="og:image" content="https://striveizu.top/2022/05/11/bytedance-campday2/image-20220511071609769.png">
+<meta property="og:image" content="https://striveizu.top/2022/05/11/bytedance-campday2/image-20220511071710433.png">
+<meta property="og:image" content="https://striveizu.top/2022/05/11/bytedance-campday2/image-20220511073558343.png">
+<meta property="og:image" content="https://striveizu.top/2022/05/11/bytedance-campday2/image-20220511073630578.png">
+<meta property="og:image" content="https://striveizu.top/2022/05/11/bytedance-campday2/image-20220511073733738.png">
+<meta property="og:image" content="https://striveizu.top/2022/05/11/bytedance-campday2/image-20220511073755288.png">
+<meta property="og:image" content="https://striveizu.top/2022/05/11/bytedance-campday2/image-20220511073853719.png">
+<meta property="og:image" content="https://striveizu.top/2022/05/11/bytedance-campday2/image-20220511073911089.png">
+<meta property="og:image" content="https://striveizu.top/2022/05/11/bytedance-campday2/image-20220511073941390.png">
+<meta property="og:image" content="https://striveizu.top/2022/05/11/bytedance-campday2/image-20220511074035870.png">
+<meta property="og:image" content="https://striveizu.top/2022/05/11/bytedance-campday2/image-20220511074219023.png">
+<meta property="og:image" content="https://striveizu.top/2022/05/11/bytedance-campday2/image-20220511074441110.png">
+<meta property="og:image" content="https://striveizu.top/2022/05/11/bytedance-campday2/image-20220511074555656.png">
+<meta property="og:image" content="https://striveizu.top/2022/05/11/bytedance-campday2/image-20220511074757676.png">
+<meta property="og:image" content="https://striveizu.top/2022/05/11/bytedance-campday2/image-20220511074925300.png">
+<meta property="og:image" content="https://striveizu.top/2022/05/11/bytedance-campday2/image-20220511074941742.png">
+<meta property="og:image" content="https://striveizu.top/2022/05/11/bytedance-campday2/image-20220511075104701.png">
+<meta property="og:image" content="https://striveizu.top/2022/05/11/bytedance-campday2/image-20220511075222169.png">
+<meta property="og:image" content="https://striveizu.top/2022/05/11/bytedance-campday2/image-20220511075251292.png">
+<meta property="og:image" content="https://striveizu.top/2022/05/11/bytedance-campday2/image-20220511075317042.png">
+<meta property="og:image" content="https://striveizu.top/2022/05/11/bytedance-campday2/image-20220511080155675.png">
+<meta property="og:image" content="https://striveizu.top/2022/05/11/bytedance-campday2/image-20220511080321969.png">
+<meta property="og:image" content="https://striveizu.top/2022/05/11/bytedance-campday2/image-20220511080347776.png">
+<meta property="og:image" content="https://striveizu.top/2022/05/11/bytedance-campday2/image-20220511080537774.png">
+<meta property="og:image" content="https://striveizu.top/2022/05/11/bytedance-campday2/image-20220511080720742.png">
+<meta property="og:image" content="https://striveizu.top/2022/05/11/bytedance-campday2/image-20220511080736264.png">
+<meta property="og:image" content="https://striveizu.top/2022/05/11/bytedance-campday2/image-20220511081107099.png">
+<meta property="og:image" content="https://striveizu.top/2022/05/11/bytedance-campday2/image-20220511081124769.png">
+<meta property="og:image" content="https://striveizu.top/2022/05/11/bytedance-campday2/image-20220511081325835.png">
+<meta property="og:image" content="https://striveizu.top/2022/05/11/bytedance-campday2/image-20220511082139629.png">
+<meta property="og:image" content="https://striveizu.top/2022/05/11/bytedance-campday2/image-20220511082505595.png">
+<meta property="og:image" content="https://striveizu.top/2022/05/11/bytedance-campday2/image-20220511082600519.png">
+<meta property="article:published_time" content="2022-05-10T22:42:39.000Z">
+<meta property="article:modified_time" content="2022-05-11T23:52:29.841Z">
+<meta property="article:author" content="Strive">
+<meta property="article:tag" content="Go">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://striveizu.top/2022/05/11/bytedance-campday2/image-20220511064530186.png"><title>字节跳动青训营day2 | Strive's Blog</title><link ref="canonical" href="https://striveizu.top/2022/05/11/bytedance-campday2/"><link rel="dns-prefetch" href="https://cdn.jsdelivr.net"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.12.1/css/all.min.css" type="text/css"><link rel="stylesheet" href="/css/index.css?v=2.6.2"><script>var Stun = window.Stun || {};
+var CONFIG = {
+  root: '/',
+  algolia: undefined,
+  assistSearch: undefined,
+  fontIcon: {"prompt":{"success":"fas fa-check-circle","info":"fas fa-arrow-circle-right","warning":"fas fa-exclamation-circle","error":"fas fa-times-circle"},"copyBtn":"fas fa-copy"},
+  sidebar: {"offsetTop":"20px","tocMaxDepth":6},
+  header: {"enable":true,"showOnPost":true,"scrollDownIcon":true},
+  postWidget: {"endText":true},
+  nightMode: {"enable":true},
+  back2top: {"enable":true},
+  codeblock: {"style":"default","highlight":"light","wordWrap":false},
+  reward: false,
+  fancybox: false,
+  zoomImage: {"gapAside":"20px"},
+  galleryWaterfall: undefined,
+  lazyload: false,
+  pjax: undefined,
+  externalLink: {"icon":{"enable":true,"name":"fas fa-external-link-alt"}},
+  shortcuts: undefined,
+  prompt: {"copyButton":"复制","copySuccess":"复制成功","copyError":"复制失败"},
+  sourcePath: {"js":"js","css":"css","images":"images"},
+};
+
+window.CONFIG = CONFIG;</script><meta name="generator" content="Hexo 5.4.0"></head><body><div class="container" id="container"><header class="header" id="header"><div class="header-inner"><nav class="header-nav header-nav--fixed"><div class="header-nav-inner"><div class="header-nav-menubtn"><i class="fas fa-bars"></i></div><div class="header-nav-menu"><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/"><span class="header-nav-menu-item__icon"><i class="fas fa-home"></i></span><span class="header-nav-menu-item__text">首页</span></a></div><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/about/"><span class="header-nav-menu-item__icon"><i class="fas fa-address-card"></i></span><span class="header-nav-menu-item__text">关于</span></a></div><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="javascript:;" onclick="return false;"><span class="header-nav-menu-item__icon"><i class="fas fa-edit"></i></span><span class="header-nav-menu-item__text">文章</span></a><div class="header-nav-submenu"><div class="header-nav-submenu-item"><a class="header-nav-submenu-item__link" href="/archives/"><span class="header-nav-submenu-item__icon"><i class="fas fa-folder-open"></i></span><span class="header-nav-submenu-item__text">归档</span></a></div><div class="header-nav-submenu-item"><a class="header-nav-submenu-item__link" href="/categories/"><span class="header-nav-submenu-item__icon"><i class="fas fa-layer-group"></i></span><span class="header-nav-submenu-item__text">分类</span></a></div><div class="header-nav-submenu-item"><a class="header-nav-submenu-item__link" href="/tags/"><span class="header-nav-submenu-item__icon"><i class="fas fa-tags"></i></span><span class="header-nav-submenu-item__text">标签</span></a></div></div></div></div><div class="header-nav-mode"><div class="mode"><div class="mode-track"><span class="mode-track-moon"></span><span class="mode-track-sun"></span></div><div class="mode-thumb"></div></div></div></div></nav><div class="header-banner"><div class="header-banner-info"><div class="header-banner-info__title">Strive's Blog</div><div class="header-banner-info__subtitle">你我期许的绝非遥不可及</div></div><div class="header-banner-arrow"><div class="header-banner-arrow__icon"><i class="fas fa-angle-down"></i></div></div></div></div></header><main class="main" id="main"><div class="main-inner"><div class="content-wrap" id="content-wrap"><div class="content" id="content"><!-- Just used to judge whether it is an article page--><div id="is-post"></div><div class="post"><header class="post-header"><h1 class="post-title">字节跳动青训营day2</h1><div class="post-meta"><span class="post-meta-item post-meta-item--createtime"><span class="post-meta-item__icon"><i class="far fa-calendar-plus"></i></span><span class="post-meta-item__info">发表于</span><span class="post-meta-item__value">2022-05-11</span></span><span class="post-meta-item post-meta-item--updatetime"><span class="post-meta-item__icon"><i class="far fa-calendar-check"></i></span><span class="post-meta-item__info">更新于</span><span class="post-meta-item__value">2022-05-12</span></span></div></header><div class="post-body">
+        <h3 id="一、-Go语言进阶">
+          <a href="#一、-Go语言进阶" class="heading-link"><i class="fas fa-link"></i></a><a href="#一、-Go语言进阶" class="headerlink" title="一、 Go语言进阶"></a>一、 Go语言进阶</h3>
+      
+        <h4 id="1-1-高并发">
+          <a href="#1-1-高并发" class="heading-link"><i class="fas fa-link"></i></a><a href="#1-1-高并发" class="headerlink" title="1.1 高并发"></a>1.1 高并发</h4>
+      
+        <h5 id="1-1-1-多线程">
+          <a href="#1-1-1-多线程" class="heading-link"><i class="fas fa-link"></i></a><a href="#1-1-1-多线程" class="headerlink" title="1.1.1 多线程"></a>1.1.1 多线程</h5>
+      <p><img src="/2022/05/11/bytedance-campday2/image-20220511064530186.png" alt="image-20220511064530186"></p>
+<p>并发指的是多线程程序通过时间片切换在一个核上运行来实现同时运行的装听。</p>
+<p>并行指的是多线程程序直接在多个核上多个运行。</p>
+<p>Go语言实现了一个高效的多线程调度模型，它可以充分利用多核计算机的优势，充分利用计算资源。</p>
+
+        <h5 id="1-1-2-线程与协程">
+          <a href="#1-1-2-线程与协程" class="heading-link"><i class="fas fa-link"></i></a><a href="#1-1-2-线程与协程" class="headerlink" title="1.1.2 线程与协程"></a>1.1.2 线程与协程</h5>
+      <p><img src="/2022/05/11/bytedance-campday2/image-20220511064932109.png" alt="image-20220511064932109"></p>
+<p><img src="/2022/05/11/bytedance-campday2/image-20220511064938912.png" alt="image-20220511064938912"></p>
+
+        <h4 id="1-2-协程">
+          <a href="#1-2-协程" class="heading-link"><i class="fas fa-link"></i></a><a href="#1-2-协程" class="headerlink" title="1.2 协程"></a>1.2 协程</h4>
+      
+        <h5 id="1-2-1-协程的创建：">
+          <a href="#1-2-1-协程的创建：" class="heading-link"><i class="fas fa-link"></i></a><a href="#1-2-1-协程的创建：" class="headerlink" title="1.2.1 协程的创建："></a>1.2.1 协程的创建：</h5>
+      
+        <h5 id="1-2-2-携程的通信CSP-Communicating-Sequential-Processes">
+          <a href="#1-2-2-携程的通信CSP-Communicating-Sequential-Processes" class="heading-link"><i class="fas fa-link"></i></a><a href="#1-2-2-携程的通信CSP-Communicating-Sequential-Processes" class="headerlink" title="1.2.2 携程的通信CSP Communicating Sequential Processes"></a>1.2.2 携程的通信CSP Communicating Sequential Processes</h5>
+      <p><img src="/2022/05/11/bytedance-campday2/image-20220511065248207.png" alt="image-20220511065248207"></p>
+<p>通过共享内存通信需要互斥量对临界区加锁解锁，因此<strong>会影响性能。</strong></p>
+
+        <h5 id="1-2-3-Channel">
+          <a href="#1-2-3-Channel" class="heading-link"><i class="fas fa-link"></i></a><a href="#1-2-3-Channel" class="headerlink" title="1.2.3 Channel"></a>1.2.3 Channel</h5>
+      <p>Go内建channel实现了<strong>go协程之间数据的读写相关操作。</strong></p>
+<p>并发在Go当中不仅仅是语法。它是一种设计模式。该模式提供了在处理常见并发问题的解决方案。因为并发需要同步 。Go并发是源自CSP模型，<strong>通过channel来实现协程的同步。</strong>Go并发哲学是：<strong>不通过共享内存来通信，而是通过通信来共享内存。</strong></p>
+<p>创建方式：</p>
+<p>通过make关键字来创建一个通道，通道可以细分为无缓冲和有缓冲通道。</p>
+<img src="/2022/05/11/bytedance-campday2/image-20220511065821163.png" alt="image-20220511065821163" style="zoom:75%;">
+
+<p>无缓冲通道又称为同步通道，使用无缓冲通道发送的goroutine和接收的goroutine同步化。</p>
+<p>有缓冲通道是一个经典的生产者消费者模型，发送方发送的数据会先通过缓冲区，当缓冲区满时Gotoutine1会停止发送。</p>
+<p>在实际开发中可能会出现生产协程的消费协程执行效率不同的问题，使用同步通道可能会使消费协程来不及接受，因此需要有缓冲通道来实现并发安全。</p>
+<img src="/2022/05/11/bytedance-campday2/image-20220511070544717.png" alt="image-20220511070544717" style="zoom:67%;">
+
+
+        <h5 id="1-2-4-通过共享内存来实现通信">
+          <a href="#1-2-4-通过共享内存来实现通信" class="heading-link"><i class="fas fa-link"></i></a><a href="#1-2-4-通过共享内存来实现通信" class="headerlink" title="1.2.4 通过共享内存来实现通信"></a>1.2.4 通过共享内存来实现通信</h5>
+      <img src="/2022/05/11/bytedance-campday2/image-20220511070618102.png" alt="image-20220511070618102" style="zoom:67%;">
+
+
+        <h5 id="1-2-5-WaitGroup实现协程的同步">
+          <a href="#1-2-5-WaitGroup实现协程的同步" class="heading-link"><i class="fas fa-link"></i></a><a href="#1-2-5-WaitGroup实现协程的同步" class="headerlink" title="1.2.5 WaitGroup实现协程的同步"></a>1.2.5 WaitGroup实现协程的同步</h5>
+      <p><img src="/2022/05/11/bytedance-campday2/image-20220511071027075.png" alt="image-20220511071027075"></p>
+<p>使用WaitGroup对上个栗子的优化</p>
+<p><img src="/2022/05/11/bytedance-campday2/image-20220511071141658.png" alt="image-20220511071141658"></p>
+<p>需要开启5个协程，因此是add(5)</p>
+<p><img src="/2022/05/11/bytedance-campday2/image-20220511071150132.png" alt="image-20220511071150132"></p>
+
+        <h3 id="二、依赖管理">
+          <a href="#二、依赖管理" class="heading-link"><i class="fas fa-link"></i></a><a href="#二、依赖管理" class="headerlink" title="二、依赖管理"></a>二、依赖管理</h3>
+      <p>依赖指的是各类封装好的开发包。</p>
+<img src="/2022/05/11/bytedance-campday2/image-20220511071412051.png" alt="image-20220511071412051" style="zoom:67%;">
+
+<p>可以通过sdk的方式引入依赖。</p>
+<p>依赖管理的演进如下，目前流行的是Go Module</p>
+<p><img src="/2022/05/11/bytedance-campday2/image-20220511071609769.png" alt="image-20220511071609769"></p>
+<p>依赖管理的主要任务是实现以下两条</p>
+<p><img src="/2022/05/11/bytedance-campday2/image-20220511071710433.png" alt="image-20220511071710433"></p>
+
+        <h4 id="2-1-GOPATH">
+          <a href="#2-1-GOPATH" class="heading-link"><i class="fas fa-link"></i></a><a href="#2-1-GOPATH" class="headerlink" title="2.1 GOPATH"></a>2.1 GOPATH</h4>
+      <img src="/2022/05/11/bytedance-campday2/image-20220511073558343.png" alt="image-20220511073558343" style="zoom:80%;">
+
+<img src="/2022/05/11/bytedance-campday2/image-20220511073630578.png" alt="image-20220511073630578" style="zoom:80%;">
+
+
+        <h4 id="2-2-Go-Vendor">
+          <a href="#2-2-Go-Vendor" class="heading-link"><i class="fas fa-link"></i></a><a href="#2-2-Go-Vendor" class="headerlink" title="2.2 Go Vendor"></a>2.2 Go Vendor</h4>
+      <p><img src="/2022/05/11/bytedance-campday2/image-20220511073733738.png" alt="image-20220511073733738"></p>
+<p><img src="/2022/05/11/bytedance-campday2/image-20220511073755288.png" alt="image-20220511073755288"></p>
+
+        <h4 id="2-3-Go-Module">
+          <a href="#2-3-Go-Module" class="heading-link"><i class="fas fa-link"></i></a><a href="#2-3-Go-Module" class="headerlink" title="2.3 Go Module"></a>2.3 Go Module</h4>
+      <p><img src="/2022/05/11/bytedance-campday2/image-20220511073853719.png" alt="image-20220511073853719"></p>
+<p><img src="/2022/05/11/bytedance-campday2/image-20220511073911089.png" alt="image-20220511073911089"></p>
+
+        <h5 id="2-3-1-依赖管理三要素">
+          <a href="#2-3-1-依赖管理三要素" class="heading-link"><i class="fas fa-link"></i></a><a href="#2-3-1-依赖管理三要素" class="headerlink" title="2.3.1 依赖管理三要素"></a>2.3.1 依赖管理三要素</h5>
+      <p><img src="/2022/05/11/bytedance-campday2/image-20220511073941390.png" alt="image-20220511073941390"></p>
+
+        <h5 id="2-3-2-依赖配置">
+          <a href="#2-3-2-依赖配置" class="heading-link"><i class="fas fa-link"></i></a><a href="#2-3-2-依赖配置" class="headerlink" title="2.3.2 依赖配置"></a>2.3.2 依赖配置</h5>
+      <p>需要在go.mod文件中对依赖进行配置</p>
+<img src="/2022/05/11/bytedance-campday2/image-20220511074035870.png" alt="image-20220511074035870" style="zoom:50%;">
+
+<p><strong>版本控制有以下的命名规则</strong></p>
+<img src="/2022/05/11/bytedance-campday2/image-20220511074219023.png" alt="image-20220511074219023" style="zoom:67%;">
+
+<p>不同的major间是可以不兼容的，可以理解成不同major中代码隔离</p>
+<p>相同的major不同minor之间需要做到前后兼容</p>
+<p>patch主要用于bug修复</p>
+<p><strong>indirect关键字</strong></p>
+<img src="/2022/05/11/bytedance-campday2/image-20220511074441110.png" alt="image-20220511074441110" style="zoom:50%;">
+
+<img src="/2022/05/11/bytedance-campday2/image-20220511074555656.png" alt="image-20220511074555656" style="zoom:80%;">
+
+<p><img src="/2022/05/11/bytedance-campday2/image-20220511074757676.png" alt="image-20220511074757676"></p>
+
+        <h5 id="2-3-3-依赖分发">
+          <a href="#2-3-3-依赖分发" class="heading-link"><i class="fas fa-link"></i></a><a href="#2-3-3-依赖分发" class="headerlink" title="2.3.3 依赖分发"></a>2.3.3 依赖分发</h5>
+      <img src="/2022/05/11/bytedance-campday2/image-20220511074925300.png" alt="image-20220511074925300" style="zoom:67%;">
+
+<img src="/2022/05/11/bytedance-campday2/image-20220511074941742.png" alt="image-20220511074941742" style="zoom:80%;">
+
+<p>Go Proxy会缓存依赖软件版本，从而保证依赖可用性。</p>
+
+        <h6 id="GOPROXY变量">
+          <a href="#GOPROXY变量" class="heading-link"><i class="fas fa-link"></i></a><a href="#GOPROXY变量" class="headerlink" title="GOPROXY变量"></a>GOPROXY变量</h6>
+      <p><img src="/2022/05/11/bytedance-campday2/image-20220511075104701.png" alt="image-20220511075104701"></p>
+
+        <h6 id="go-get工具">
+          <a href="#go-get工具" class="heading-link"><i class="fas fa-link"></i></a><a href="#go-get工具" class="headerlink" title="go get工具"></a>go get工具</h6>
+      <img src="/2022/05/11/bytedance-campday2/image-20220511075222169.png" alt="image-20220511075222169" style="zoom:67%;">
+
+
+        <h6 id="go-mod工具">
+          <a href="#go-mod工具" class="heading-link"><i class="fas fa-link"></i></a><a href="#go-mod工具" class="headerlink" title="go mod工具"></a>go mod工具</h6>
+      <img src="/2022/05/11/bytedance-campday2/image-20220511075251292.png" alt="image-20220511075251292" style="zoom:67%;">
+
+<img src="/2022/05/11/bytedance-campday2/image-20220511075317042.png" alt="image-20220511075317042" style="zoom:80%;">
+
+
+        <h3 id="三、测试">
+          <a href="#三、测试" class="heading-link"><i class="fas fa-link"></i></a><a href="#三、测试" class="headerlink" title="三、测试"></a>三、测试</h3>
+      <img src="/2022/05/11/bytedance-campday2/image-20220511080155675.png" alt="image-20220511080155675" style="zoom:80%;">
+
+<p>单元测试在一定程度上决定项目质量</p>
+
+        <h5 id="3-1-单元测试">
+          <a href="#3-1-单元测试" class="heading-link"><i class="fas fa-link"></i></a><a href="#3-1-单元测试" class="headerlink" title="3.1 单元测试"></a>3.1 单元测试</h5>
+      <p><img src="/2022/05/11/bytedance-campday2/image-20220511080321969.png" alt="image-20220511080321969"></p>
+<p>单元测试的规则：</p>
+<img src="/2022/05/11/bytedance-campday2/image-20220511080347776.png" alt="image-20220511080347776" style="zoom:80%;">
+
+<p><img src="/2022/05/11/bytedance-campday2/image-20220511080537774.png" alt="image-20220511080537774"></p>
+<p><img src="/2022/05/11/bytedance-campday2/image-20220511080720742.png" alt="image-20220511080720742"></p>
+<p>单元测试的实践：</p>
+<p><img src="/2022/05/11/bytedance-campday2/image-20220511080736264.png" alt="image-20220511080736264"></p>
+<p>输入的score是70，70&gt;60，因此func JudgePassLine函数的前两行是验证过的，return false没有经过验证，验证率2/3=66.7</p>
+<p><img src="/2022/05/11/bytedance-campday2/image-20220511081107099.png" alt="image-20220511081107099"></p>
+<p><img src="/2022/05/11/bytedance-campday2/image-20220511081124769.png" alt="image-20220511081124769"></p>
+<p><img src="/2022/05/11/bytedance-campday2/image-20220511081325835.png" alt="image-20220511081325835"></p>
+
+        <h4 id="四、项目">
+          <a href="#四、项目" class="heading-link"><i class="fas fa-link"></i></a><a href="#四、项目" class="headerlink" title="四、项目"></a>四、项目</h4>
+      <p><img src="/2022/05/11/bytedance-campday2/image-20220511082139629.png" alt="image-20220511082139629"></p>
+<img src="/2022/05/11/bytedance-campday2/image-20220511082505595.png" alt="image-20220511082505595" style="zoom:80%;">
+
+<p><img src="/2022/05/11/bytedance-campday2/image-20220511082600519.png" alt="image-20220511082600519"></p>
+</div><footer class="post-footer"><div class="post-ending ending"><div class="ending__text">------ 本文结束，感谢您的阅读 ------</div></div><div class="post-copyright copyright"><div class="copyright-author"><span class="copyright-author__name">本文作者: </span><span class="copyright-author__value"><a href="https://striveizu.top">Strive</a></span></div><div class="copyright-link"><span class="copyright-link__name">本文链接: </span><span class="copyright-link__value"><a href="https://striveizu.top/2022/05/11/bytedance-campday2/">https://striveizu.top/2022/05/11/bytedance-campday2/</a></span></div><div class="copyright-notice"><span class="copyright-notice__name">版权声明: </span><span class="copyright-notice__value">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en" rel="external nofollow" target="_blank">BY-NC-SA</a> 许可协议。转载请注明出处！</span></div></div><div class="post-tags"><span class="post-tags-item"><span class="post-tags-item__icon"><i class="fas fa-tag"></i></span><a class="post-tags-item__link" href="https://striveizu.top/tags/Go/">Go</a></span></div><nav class="post-paginator paginator"><div class="paginator-prev"><a class="paginator-prev__link" href="/2022/05/12/camp-03/"><span class="paginator-prev__icon"><i class="fas fa-angle-left"></i></span><span class="paginator-prev__text">camp-03</span></a></div><div class="paginator-next"><a class="paginator-next__link" href="/2022/05/07/bytedance-campday1/"><span class="paginator-prev__text">青训营day01-Go语言快速上手</span><span class="paginator-next__icon"><i class="fas fa-angle-right"></i></span></a></div></nav></footer></div></div></div><div class="sidebar-wrap" id="sidebar-wrap"><aside class="sidebar" id="sidebar"><div class="sidebar-nav"><span class="sidebar-nav-toc current">文章目录</span><span class="sidebar-nav-ov">站点概览</span></div><section class="sidebar-toc"><ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%80%E3%80%81-Go%E8%AF%AD%E8%A8%80%E8%BF%9B%E9%98%B6"><span class="toc-number">1.</span> <span class="toc-text">
+          一、 Go语言进阶</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-1-%E9%AB%98%E5%B9%B6%E5%8F%91"><span class="toc-number">1.1.</span> <span class="toc-text">
+          1.1 高并发</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#1-1-1-%E5%A4%9A%E7%BA%BF%E7%A8%8B"><span class="toc-number">1.1.1.</span> <span class="toc-text">
+          1.1.1 多线程</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#1-1-2-%E7%BA%BF%E7%A8%8B%E4%B8%8E%E5%8D%8F%E7%A8%8B"><span class="toc-number">1.1.2.</span> <span class="toc-text">
+          1.1.2 线程与协程</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#1-2-%E5%8D%8F%E7%A8%8B"><span class="toc-number">1.2.</span> <span class="toc-text">
+          1.2 协程</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#1-2-1-%E5%8D%8F%E7%A8%8B%E7%9A%84%E5%88%9B%E5%BB%BA%EF%BC%9A"><span class="toc-number">1.2.1.</span> <span class="toc-text">
+          1.2.1 协程的创建：</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#1-2-2-%E6%90%BA%E7%A8%8B%E7%9A%84%E9%80%9A%E4%BF%A1CSP-Communicating-Sequential-Processes"><span class="toc-number">1.2.2.</span> <span class="toc-text">
+          1.2.2 携程的通信CSP Communicating Sequential Processes</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#1-2-3-Channel"><span class="toc-number">1.2.3.</span> <span class="toc-text">
+          1.2.3 Channel</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#1-2-4-%E9%80%9A%E8%BF%87%E5%85%B1%E4%BA%AB%E5%86%85%E5%AD%98%E6%9D%A5%E5%AE%9E%E7%8E%B0%E9%80%9A%E4%BF%A1"><span class="toc-number">1.2.4.</span> <span class="toc-text">
+          1.2.4 通过共享内存来实现通信</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#1-2-5-WaitGroup%E5%AE%9E%E7%8E%B0%E5%8D%8F%E7%A8%8B%E7%9A%84%E5%90%8C%E6%AD%A5"><span class="toc-number">1.2.5.</span> <span class="toc-text">
+          1.2.5 WaitGroup实现协程的同步</span></a></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BA%8C%E3%80%81%E4%BE%9D%E8%B5%96%E7%AE%A1%E7%90%86"><span class="toc-number">2.</span> <span class="toc-text">
+          二、依赖管理</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#2-1-GOPATH"><span class="toc-number">2.1.</span> <span class="toc-text">
+          2.1 GOPATH</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-2-Go-Vendor"><span class="toc-number">2.2.</span> <span class="toc-text">
+          2.2 Go Vendor</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-3-Go-Module"><span class="toc-number">2.3.</span> <span class="toc-text">
+          2.3 Go Module</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#2-3-1-%E4%BE%9D%E8%B5%96%E7%AE%A1%E7%90%86%E4%B8%89%E8%A6%81%E7%B4%A0"><span class="toc-number">2.3.1.</span> <span class="toc-text">
+          2.3.1 依赖管理三要素</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#2-3-2-%E4%BE%9D%E8%B5%96%E9%85%8D%E7%BD%AE"><span class="toc-number">2.3.2.</span> <span class="toc-text">
+          2.3.2 依赖配置</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#2-3-3-%E4%BE%9D%E8%B5%96%E5%88%86%E5%8F%91"><span class="toc-number">2.3.3.</span> <span class="toc-text">
+          2.3.3 依赖分发</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#GOPROXY%E5%8F%98%E9%87%8F"><span class="toc-number">2.3.3.1.</span> <span class="toc-text">
+          GOPROXY变量</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#go-get%E5%B7%A5%E5%85%B7"><span class="toc-number">2.3.3.2.</span> <span class="toc-text">
+          go get工具</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#go-mod%E5%B7%A5%E5%85%B7"><span class="toc-number">2.3.3.3.</span> <span class="toc-text">
+          go mod工具</span></a></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%89%E3%80%81%E6%B5%8B%E8%AF%95"><span class="toc-number">3.</span> <span class="toc-text">
+          三、测试</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#3-1-%E5%8D%95%E5%85%83%E6%B5%8B%E8%AF%95"><span class="toc-number">3.0.1.</span> <span class="toc-text">
+          3.1 单元测试</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%9B%9B%E3%80%81%E9%A1%B9%E7%9B%AE"><span class="toc-number">3.1.</span> <span class="toc-text">
+          四、项目</span></a></li></ol></li></ol></section><!-- ov = overview--><section class="sidebar-ov hide"><div class="sidebar-ov-author"><div class="sidebar-ov-author__avatar"><img class="sidebar-ov-author__avatar_img" src="/images/icons/photo.png" alt="avatar"></div><p class="sidebar-ov-author__text">To be a great person.</p></div><div class="sidebar-ov-cc"><a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en" target="_blank" rel="noopener" data-popover="知识共享许可协议" data-popover-pos="up"><img src="/images/cc-by-nc-sa.svg"></a></div></section><div class="sidebar-reading"><div class="sidebar-reading-info"><span class="sidebar-reading-info__text">你已阅读了 </span><span class="sidebar-reading-info__num">0</span><span class="sidebar-reading-info__perc">%</span></div><div class="sidebar-reading-line"></div></div></aside></div><div class="clearfix"></div></div></main><footer class="footer" id="footer"><div class="footer-inner"><div><span>Copyright © 2022</span><span class="footer__icon"><i class="fas fa-heart"></i></span><span>Strive</span></div><div><span>由 <a href="http://hexo.io/" title="Hexo" target="_blank" rel="noopener">Hexo</a> 强力驱动</span><span> v5.4.0</span><span class="footer__devider">|</span><span>主题 - <a href="https://github.com/liuyib/hexo-theme-stun/" title="Stun" target="_blank" rel="noopener">Stun</a></span><span> v2.6.2</span></div></div></footer><div class="loading-bar" id="loading-bar"><div class="loading-bar__progress"></div></div><div class="back2top" id="back2top"><span class="back2top__icon"><i class="fas fa-rocket"></i></span></div></div><script src="https://cdn.jsdelivr.net/npm/jquery@v3.4.1/dist/jquery.min.js"></script><script src="https://cdn.jsdelivr.net/npm/velocity-animate@1.5.2/velocity.min.js"></script><script src="https://cdn.jsdelivr.net/npm/velocity-animate@1.5.2/velocity.ui.min.js"></script><script src="/js/utils.js?v=2.6.2"></script><script src="/js/stun-boot.js?v=2.6.2"></script><script src="/js/scroll.js?v=2.6.2"></script><script src="/js/header.js?v=2.6.2"></script><script src="/js/sidebar.js?v=2.6.2"></script></body></html>
