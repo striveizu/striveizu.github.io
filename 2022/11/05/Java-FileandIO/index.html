@@ -1,0 +1,88 @@
+<!DOCTYPE html><html lang="zh-CN"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="format-detection" content="telephone=no"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="black"><link rel="icon" href="/images/icons/favicon-16x16.png?v=2.6.2" type="image/png" sizes="16x16"><link rel="icon" href="/images/icons/favicon-32x32.png?v=2.6.2" type="image/png" sizes="32x32"><meta name="description" content="Java-File类                           一、File类概述                            1.1 File类常用API           12345678910111213141516public static void main(String[] args) &amp;#123;        File">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Java文件类">
+<meta property="og:url" content="https://striveizu.top/2022/11/05/Java-FileandIO/index.html">
+<meta property="og:site_name" content="Strive&#39;s Blog">
+<meta property="og:description" content="Java-File类                           一、File类概述                            1.1 File类常用API           12345678910111213141516public static void main(String[] args) &amp;#123;        File">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://striveizu.top/2022/11/05/Java-FileandIO/image-20221105194646258.png">
+<meta property="og:image" content="https://striveizu.top/2022/11/05/Java-FileandIO/image-20221106100455972.png">
+<meta property="og:image" content="https://striveizu.top/2022/11/05/Java-FileandIO/image-20221106101154697.png">
+<meta property="og:image" content="https://striveizu.top/2022/11/05/Java-FileandIO/image-20221106102523573.png">
+<meta property="og:image" content="https://striveizu.top/2022/11/05/Java-FileandIO/image-20221106103222083.png">
+<meta property="og:image" content="https://striveizu.top/2022/11/05/Java-FileandIO/image-20221106103528047.png">
+<meta property="og:image" content="https://striveizu.top/2022/11/05/Java-FileandIO/image-20221106144619899.png">
+<meta property="og:image" content="https://striveizu.top/2022/11/05/Java-FileandIO/image-20221106144727281.png">
+<meta property="og:image" content="https://striveizu.top/2022/11/05/Java-FileandIO/image-20221106145001951.png">
+<meta property="og:image" content="https://striveizu.top/2022/11/05/Java-FileandIO/image-20221106145110917.png">
+<meta property="og:image" content="https://striveizu.top/2022/11/05/Java-FileandIO/image-20221106150031065.png">
+<meta property="og:image" content="https://striveizu.top/2022/11/05/Java-FileandIO/image-20221106151254855.png">
+<meta property="article:published_time" content="2022-11-05T11:44:07.000Z">
+<meta property="article:modified_time" content="2022-11-13T12:16:40.555Z">
+<meta property="article:author" content="Strive">
+<meta property="article:tag" content="Java">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://striveizu.top/2022/11/05/Java-FileandIO/image-20221105194646258.png"><title>Java文件类 | Strive's Blog</title><link ref="canonical" href="https://striveizu.top/2022/11/05/Java-FileandIO/"><link rel="dns-prefetch" href="https://cdn.jsdelivr.net"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.12.1/css/all.min.css" type="text/css"><link rel="stylesheet" href="/css/index.css?v=2.6.2"><script>var Stun = window.Stun || {};
+var CONFIG = {
+  root: '/',
+  algolia: undefined,
+  assistSearch: undefined,
+  fontIcon: {"prompt":{"success":"fas fa-check-circle","info":"fas fa-arrow-circle-right","warning":"fas fa-exclamation-circle","error":"fas fa-times-circle"},"copyBtn":"fas fa-copy"},
+  sidebar: {"offsetTop":"20px","tocMaxDepth":6},
+  header: {"enable":true,"showOnPost":true,"scrollDownIcon":true},
+  postWidget: {"endText":true},
+  nightMode: {"enable":true},
+  back2top: {"enable":true},
+  codeblock: {"style":"default","highlight":"light","wordWrap":false},
+  reward: false,
+  fancybox: false,
+  zoomImage: {"gapAside":"20px"},
+  galleryWaterfall: undefined,
+  lazyload: false,
+  pjax: undefined,
+  externalLink: {"icon":{"enable":true,"name":"fas fa-external-link-alt"}},
+  shortcuts: undefined,
+  prompt: {"copyButton":"复制","copySuccess":"复制成功","copyError":"复制失败"},
+  sourcePath: {"js":"js","css":"css","images":"images"},
+};
+
+window.CONFIG = CONFIG;</script><meta name="generator" content="Hexo 5.4.0"></head><body><div class="container" id="container"><header class="header" id="header"><div class="header-inner"><nav class="header-nav header-nav--fixed"><div class="header-nav-inner"><div class="header-nav-menubtn"><i class="fas fa-bars"></i></div><div class="header-nav-menu"><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/"><span class="header-nav-menu-item__icon"><i class="fas fa-home"></i></span><span class="header-nav-menu-item__text">首页</span></a></div><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/about/"><span class="header-nav-menu-item__icon"><i class="fas fa-address-card"></i></span><span class="header-nav-menu-item__text">关于</span></a></div><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="javascript:;" onclick="return false;"><span class="header-nav-menu-item__icon"><i class="fas fa-edit"></i></span><span class="header-nav-menu-item__text">文章</span></a><div class="header-nav-submenu"><div class="header-nav-submenu-item"><a class="header-nav-submenu-item__link" href="/archives/"><span class="header-nav-submenu-item__icon"><i class="fas fa-folder-open"></i></span><span class="header-nav-submenu-item__text">归档</span></a></div><div class="header-nav-submenu-item"><a class="header-nav-submenu-item__link" href="/categories/"><span class="header-nav-submenu-item__icon"><i class="fas fa-layer-group"></i></span><span class="header-nav-submenu-item__text">分类</span></a></div><div class="header-nav-submenu-item"><a class="header-nav-submenu-item__link" href="/tags/"><span class="header-nav-submenu-item__icon"><i class="fas fa-tags"></i></span><span class="header-nav-submenu-item__text">标签</span></a></div></div></div></div><div class="header-nav-mode"><div class="mode"><div class="mode-track"><span class="mode-track-moon"></span><span class="mode-track-sun"></span></div><div class="mode-thumb"></div></div></div></div></nav><div class="header-banner"><div class="header-banner-info"><div class="header-banner-info__title">Strive's Blog</div><div class="header-banner-info__subtitle">你我期许的绝非遥不可及</div></div><div class="header-banner-arrow"><div class="header-banner-arrow__icon"><i class="fas fa-angle-down"></i></div></div></div></div></header><main class="main" id="main"><div class="main-inner"><div class="content-wrap" id="content-wrap"><div class="content" id="content"><!-- Just used to judge whether it is an article page--><div id="is-post"></div><div class="post"><header class="post-header"><h1 class="post-title">Java文件类</h1><div class="post-meta"><span class="post-meta-item post-meta-item--createtime"><span class="post-meta-item__icon"><i class="far fa-calendar-plus"></i></span><span class="post-meta-item__info">发表于</span><span class="post-meta-item__value">2022-11-05</span></span><span class="post-meta-item post-meta-item--updatetime"><span class="post-meta-item__icon"><i class="far fa-calendar-check"></i></span><span class="post-meta-item__info">更新于</span><span class="post-meta-item__value">2022-11-13</span></span></div></header><div class="post-body">
+        <h3 id="Java-File类">
+          <a href="#Java-File类" class="heading-link"><i class="fas fa-link"></i></a><a href="#Java-File类" class="headerlink" title="Java-File类"></a>Java-File类</h3>
+      
+        <h4 id="一、File类概述">
+          <a href="#一、File类概述" class="heading-link"><i class="fas fa-link"></i></a><a href="#一、File类概述" class="headerlink" title="一、File类概述"></a>一、File类概述</h4>
+      <p><img src="/2022/11/05/Java-FileandIO/image-20221105194646258.png" alt="image-20221105194646258"></p>
+
+        <h5 id="1-1-File类常用API">
+          <a href="#1-1-File类常用API" class="heading-link"><i class="fas fa-link"></i></a><a href="#1-1-File类常用API" class="headerlink" title="1.1 File类常用API"></a>1.1 File类常用API</h5>
+      <p><img src="/2022/11/05/Java-FileandIO/image-20221106100455972.png" alt="image-20221106100455972"></p>
+<p><img src="/2022/11/05/Java-FileandIO/image-20221106101154697.png" alt="image-20221106101154697"></p>
+<p><img src="/2022/11/05/Java-FileandIO/image-20221106102523573.png" alt="image-20221106102523573"></p>
+<p><img src="/2022/11/05/Java-FileandIO/image-20221106103222083.png" alt="image-20221106103222083"></p>
+<figure class="highlight java"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        File f1 = <span class="keyword">new</span> File(<span class="string">&quot;G:/助教作业/1101&quot;</span>);</span><br><span class="line">        <span class="comment">//list()方法获取文件夹下的一级文件名称到字符串数组</span></span><br><span class="line">        String[] names = f1.list();</span><br><span class="line">        <span class="keyword">for</span>(String s:names)&#123;</span><br><span class="line">            System.out.println(s);</span><br><span class="line">        &#125;</span><br><span class="line">        System.out.println(<span class="string">&quot;~~~~~~~~~~&quot;</span>);</span><br><span class="line">        File f2 = <span class="keyword">new</span> File(<span class="string">&quot;G:/助教作业/1101&quot;</span>);</span><br><span class="line">        <span class="comment">//listFiles()获取文件夹下的一级文件对象到文件数组</span></span><br><span class="line">        File[] files = f2.listFiles();</span><br><span class="line">        <span class="keyword">for</span> (File file: files) &#123;</span><br><span class="line">            System.out.println(file.getName());</span><br><span class="line"></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></div></figure>
+
+<p><img src="/2022/11/05/Java-FileandIO/image-20221106103528047.png" alt="image-20221106103528047"></p>
+
+        <h4 id="二、IO流">
+          <a href="#二、IO流" class="heading-link"><i class="fas fa-link"></i></a><a href="#二、IO流" class="headerlink" title="二、IO流"></a>二、IO流</h4>
+      <p>IO流的作用是读写文件数据。</p>
+<p><img src="/2022/11/05/Java-FileandIO/image-20221106144619899.png" alt="image-20221106144619899"></p>
+<p><img src="/2022/11/05/Java-FileandIO/image-20221106144727281.png" alt="image-20221106144727281"></p>
+<p><img src="/2022/11/05/Java-FileandIO/image-20221106145001951.png" alt="image-20221106145001951"></p>
+
+        <h5 id="2-1-字节输入流：FileInputStream">
+          <a href="#2-1-字节输入流：FileInputStream" class="heading-link"><i class="fas fa-link"></i></a><a href="#2-1-字节输入流：FileInputStream" class="headerlink" title="2.1 字节输入流：FileInputStream"></a>2.1 字节输入流：FileInputStream</h5>
+      <p><img src="/2022/11/05/Java-FileandIO/image-20221106145110917.png" alt="image-20221106145110917"></p>
+<p><img src="/2022/11/05/Java-FileandIO/image-20221106150031065.png" alt="image-20221106150031065"></p>
+<p><img src="/2022/11/05/Java-FileandIO/image-20221106151254855.png" alt="image-20221106151254855"></p>
+
+        <h5 id="2-2-文件字符输入流">
+          <a href="#2-2-文件字符输入流" class="heading-link"><i class="fas fa-link"></i></a><a href="#2-2-文件字符输入流" class="headerlink" title="2.2 文件字符输入流"></a>2.2 文件字符输入流</h5>
+      </div><footer class="post-footer"><div class="post-ending ending"><div class="ending__text">------ 本文结束，感谢您的阅读 ------</div></div><div class="post-copyright copyright"><div class="copyright-author"><span class="copyright-author__name">本文作者: </span><span class="copyright-author__value"><a href="https://striveizu.top">Strive</a></span></div><div class="copyright-link"><span class="copyright-link__name">本文链接: </span><span class="copyright-link__value"><a href="https://striveizu.top/2022/11/05/Java-FileandIO/">https://striveizu.top/2022/11/05/Java-FileandIO/</a></span></div><div class="copyright-notice"><span class="copyright-notice__name">版权声明: </span><span class="copyright-notice__value">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en" rel="external nofollow" target="_blank">BY-NC-SA</a> 许可协议。转载请注明出处！</span></div></div><div class="post-tags"><span class="post-tags-item"><span class="post-tags-item__icon"><i class="fas fa-tag"></i></span><a class="post-tags-item__link" href="https://striveizu.top/tags/Java/">Java</a></span></div><nav class="post-paginator paginator"><div class="paginator-prev"><a class="paginator-prev__link" href="/2022/11/06/Java-multiThread/"><span class="paginator-prev__icon"><i class="fas fa-angle-left"></i></span><span class="paginator-prev__text">Java多线程</span></a></div><div class="paginator-next"><a class="paginator-next__link" href="/2022/10/31/JavaWeb-JDBC/"><span class="paginator-prev__text">JavaWeb-JDBC</span><span class="paginator-next__icon"><i class="fas fa-angle-right"></i></span></a></div></nav></footer></div></div></div><div class="sidebar-wrap" id="sidebar-wrap"><aside class="sidebar" id="sidebar"><div class="sidebar-nav"><span class="sidebar-nav-toc current">文章目录</span><span class="sidebar-nav-ov">站点概览</span></div><section class="sidebar-toc"><ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#Java-File%E7%B1%BB"><span class="toc-number">1.</span> <span class="toc-text">
+          Java-File类</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%B8%80%E3%80%81File%E7%B1%BB%E6%A6%82%E8%BF%B0"><span class="toc-number">1.1.</span> <span class="toc-text">
+          一、File类概述</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#1-1-File%E7%B1%BB%E5%B8%B8%E7%94%A8API"><span class="toc-number">1.1.1.</span> <span class="toc-text">
+          1.1 File类常用API</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BA%8C%E3%80%81IO%E6%B5%81"><span class="toc-number">1.2.</span> <span class="toc-text">
+          二、IO流</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#2-1-%E5%AD%97%E8%8A%82%E8%BE%93%E5%85%A5%E6%B5%81%EF%BC%9AFileInputStream"><span class="toc-number">1.2.1.</span> <span class="toc-text">
+          2.1 字节输入流：FileInputStream</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#2-2-%E6%96%87%E4%BB%B6%E5%AD%97%E7%AC%A6%E8%BE%93%E5%85%A5%E6%B5%81"><span class="toc-number">1.2.2.</span> <span class="toc-text">
+          2.2 文件字符输入流</span></a></li></ol></li></ol></li></ol></section><!-- ov = overview--><section class="sidebar-ov hide"><div class="sidebar-ov-author"><div class="sidebar-ov-author__avatar"><img class="sidebar-ov-author__avatar_img" src="/images/icons/photo.png" alt="avatar"></div><p class="sidebar-ov-author__text">To be a great person.</p></div><div class="sidebar-ov-cc"><a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en" target="_blank" rel="noopener" data-popover="知识共享许可协议" data-popover-pos="up"><img src="/images/cc-by-nc-sa.svg"></a></div></section><div class="sidebar-reading"><div class="sidebar-reading-info"><span class="sidebar-reading-info__text">你已阅读了 </span><span class="sidebar-reading-info__num">0</span><span class="sidebar-reading-info__perc">%</span></div><div class="sidebar-reading-line"></div></div></aside></div><div class="clearfix"></div></div></main><footer class="footer" id="footer"><div class="footer-inner"><div><span>Copyright © 2022</span><span class="footer__icon"><i class="fas fa-heart"></i></span><span>Strive</span></div><div><span>由 <a href="http://hexo.io/" title="Hexo" target="_blank" rel="noopener">Hexo</a> 强力驱动</span><span> v5.4.0</span><span class="footer__devider">|</span><span>主题 - <a href="https://github.com/liuyib/hexo-theme-stun/" title="Stun" target="_blank" rel="noopener">Stun</a></span><span> v2.6.2</span></div></div></footer><div class="loading-bar" id="loading-bar"><div class="loading-bar__progress"></div></div><div class="back2top" id="back2top"><span class="back2top__icon"><i class="fas fa-rocket"></i></span></div></div><script src="https://cdn.jsdelivr.net/npm/jquery@v3.4.1/dist/jquery.min.js"></script><script src="https://cdn.jsdelivr.net/npm/velocity-animate@1.5.2/velocity.min.js"></script><script src="https://cdn.jsdelivr.net/npm/velocity-animate@1.5.2/velocity.ui.min.js"></script><script src="/js/utils.js?v=2.6.2"></script><script src="/js/stun-boot.js?v=2.6.2"></script><script src="/js/scroll.js?v=2.6.2"></script><script src="/js/header.js?v=2.6.2"></script><script src="/js/sidebar.js?v=2.6.2"></script></body></html>

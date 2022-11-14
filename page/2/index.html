@@ -28,7 +28,216 @@ var CONFIG = {
   sourcePath: {"js":"js","css":"css","images":"images"},
 };
 
-window.CONFIG = CONFIG;</script><meta name="generator" content="Hexo 5.4.0"></head><body><div class="container" id="container"><header class="header" id="header"><div class="header-inner"><nav class="header-nav header-nav--fixed"><div class="header-nav-inner"><div class="header-nav-menubtn"><i class="fas fa-bars"></i></div><div class="header-nav-menu"><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/"><span class="header-nav-menu-item__icon"><i class="fas fa-home"></i></span><span class="header-nav-menu-item__text">首页</span></a></div><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/about/"><span class="header-nav-menu-item__icon"><i class="fas fa-address-card"></i></span><span class="header-nav-menu-item__text">关于</span></a></div><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="javascript:;" onclick="return false;"><span class="header-nav-menu-item__icon"><i class="fas fa-edit"></i></span><span class="header-nav-menu-item__text">文章</span></a><div class="header-nav-submenu"><div class="header-nav-submenu-item"><a class="header-nav-submenu-item__link" href="/archives/"><span class="header-nav-submenu-item__icon"><i class="fas fa-folder-open"></i></span><span class="header-nav-submenu-item__text">归档</span></a></div><div class="header-nav-submenu-item"><a class="header-nav-submenu-item__link" href="/categories/"><span class="header-nav-submenu-item__icon"><i class="fas fa-layer-group"></i></span><span class="header-nav-submenu-item__text">分类</span></a></div><div class="header-nav-submenu-item"><a class="header-nav-submenu-item__link" href="/tags/"><span class="header-nav-submenu-item__icon"><i class="fas fa-tags"></i></span><span class="header-nav-submenu-item__text">标签</span></a></div></div></div></div><div class="header-nav-mode"><div class="mode"><div class="mode-track"><span class="mode-track-moon"></span><span class="mode-track-sun"></span></div><div class="mode-thumb"></div></div></div></div></nav><div class="header-banner"><div class="header-banner-info"><div class="header-banner-info__title">Strive's Blog</div><div class="header-banner-info__subtitle">你我期许的绝非遥不可及</div></div><div class="header-banner-arrow"><div class="header-banner-arrow__icon"><i class="fas fa-angle-down"></i></div></div></div></div></header><main class="main" id="main"><div class="main-inner"><div class="content-wrap" id="content-wrap"><div class="content content-home" id="content"><section class="postlist"><article class="postlist-item post"><header class="post-header"><h1 class="post-title"><a class="post-title__link" href="/2022/05/03/goday01/">Go语言语法速通day1</a></h1><div class="post-meta"><span class="post-meta-item post-meta-item--createtime"><span class="post-meta-item__icon"><i class="far fa-calendar-plus"></i></span><span class="post-meta-item__info">发表于</span><span class="post-meta-item__value">2022-05-03</span></span><span class="post-meta-item post-meta-item--updatetime"><span class="post-meta-item__icon"><i class="far fa-calendar-check"></i></span><span class="post-meta-item__info">更新于</span><span class="post-meta-item__value">2022-05-15</span></span></div></header><div class="post-body"><div class="post-excerpt">
+window.CONFIG = CONFIG;</script><meta name="generator" content="Hexo 5.4.0"></head><body><div class="container" id="container"><header class="header" id="header"><div class="header-inner"><nav class="header-nav header-nav--fixed"><div class="header-nav-inner"><div class="header-nav-menubtn"><i class="fas fa-bars"></i></div><div class="header-nav-menu"><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/"><span class="header-nav-menu-item__icon"><i class="fas fa-home"></i></span><span class="header-nav-menu-item__text">首页</span></a></div><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/about/"><span class="header-nav-menu-item__icon"><i class="fas fa-address-card"></i></span><span class="header-nav-menu-item__text">关于</span></a></div><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="javascript:;" onclick="return false;"><span class="header-nav-menu-item__icon"><i class="fas fa-edit"></i></span><span class="header-nav-menu-item__text">文章</span></a><div class="header-nav-submenu"><div class="header-nav-submenu-item"><a class="header-nav-submenu-item__link" href="/archives/"><span class="header-nav-submenu-item__icon"><i class="fas fa-folder-open"></i></span><span class="header-nav-submenu-item__text">归档</span></a></div><div class="header-nav-submenu-item"><a class="header-nav-submenu-item__link" href="/categories/"><span class="header-nav-submenu-item__icon"><i class="fas fa-layer-group"></i></span><span class="header-nav-submenu-item__text">分类</span></a></div><div class="header-nav-submenu-item"><a class="header-nav-submenu-item__link" href="/tags/"><span class="header-nav-submenu-item__icon"><i class="fas fa-tags"></i></span><span class="header-nav-submenu-item__text">标签</span></a></div></div></div></div><div class="header-nav-mode"><div class="mode"><div class="mode-track"><span class="mode-track-moon"></span><span class="mode-track-sun"></span></div><div class="mode-thumb"></div></div></div></div></nav><div class="header-banner"><div class="header-banner-info"><div class="header-banner-info__title">Strive's Blog</div><div class="header-banner-info__subtitle">你我期许的绝非遥不可及</div></div><div class="header-banner-arrow"><div class="header-banner-arrow__icon"><i class="fas fa-angle-down"></i></div></div></div></div></header><main class="main" id="main"><div class="main-inner"><div class="content-wrap" id="content-wrap"><div class="content content-home" id="content"><section class="postlist"><article class="postlist-item post"><header class="post-header"><h1 class="post-title"><a class="post-title__link" href="/2022/05/14/camp04/">camp04</a></h1><div class="post-meta"><span class="post-meta-item post-meta-item--createtime"><span class="post-meta-item__icon"><i class="far fa-calendar-plus"></i></span><span class="post-meta-item__info">发表于</span><span class="post-meta-item__value">2022-05-14</span></span><span class="post-meta-item post-meta-item--updatetime"><span class="post-meta-item__icon"><i class="far fa-calendar-check"></i></span><span class="post-meta-item__info">更新于</span><span class="post-meta-item__value">2022-05-14</span></span></div></header><div class="post-body"><div class="post-excerpt">
+        <h3 id="1、自动内存管理">
+          <a href="#1、自动内存管理" class="heading-link"><i class="fas fa-link"></i></a><a href="#1、自动内存管理" class="headerlink" title="1、自动内存管理"></a>1、自动内存管理</h3>
+      
+        <h4 id="1-1-相关概念">
+          <a href="#1-1-相关概念" class="heading-link"><i class="fas fa-link"></i></a><a href="#1-1-相关概念" class="headerlink" title="1.1 相关概念"></a>1.1 相关概念</h4>
+      <img src="/2022/05/14/camp04/image-20220514140517526.png" alt="image-20220514140517526" style="zoom:50%;">
+
+<img src="/2022/05/14/camp04/image-20220514140728630.png" alt="image-20220514140728630" style="zoom:50%;">
+
+
+        <h4 id="1-2-追踪垃圾回收">
+          <a href="#1-2-追踪垃圾回收" class="heading-link"><i class="fas fa-link"></i></a><a href="#1-2-追踪垃圾回收" class="headerlink" title="1.2 追踪垃圾回收"></a>1.2 追踪垃圾回收</h4>
+      <p><img src="/2022/05/14/camp04/image-20220514140933688.png" alt="image-20220514140933688"></p>
+<p><img src="/2022/05/14/camp04/image-20220514141000458.png" alt="image-20220514141000458"></p>
+<p><img src="/2022/05/14/camp04/image-20220514141031164.png" alt="image-20220514141031164"></p>
+<p><img src="/2022/05/14/camp04/image-20220514141016013.png" alt="image-20220514141016013"></p>
+<p><img src="/2022/05/14/camp04/image-20220514141105240.png" alt="image-20220514141105240"></p>
+
+        <h5 id="分代GC">
+          <a href="#分代GC" class="heading-link"><i class="fas fa-link"></i></a><a href="#分代GC" class="headerlink" title="分代GC"></a>分代GC</h5>
+      <p><img src="/2022/05/14/camp04/image-20220514141158581.png" alt="image-20220514141158581"></p>
+<p><img src="/2022/05/14/camp04/image-20220514141213228.png" alt="image-20220514141213228"></p>
+
+        <h4 id="1-3-引用计数">
+          <a href="#1-3-引用计数" class="heading-link"><i class="fas fa-link"></i></a><a href="#1-3-引用计数" class="headerlink" title="1.3 引用计数"></a>1.3 引用计数</h4>
+      <p><img src="/2022/05/14/camp04/image-20220514141358308.png" alt="image-20220514141358308"></p>
+<p><img src="/2022/05/14/camp04/image-20220514141446879.png" alt="image-20220514141446879"></p>
+</div></div></article><article class="postlist-item post"><header class="post-header"><h1 class="post-title"><a class="post-title__link" href="/2022/05/12/camp-03/">camp-03</a></h1><div class="post-meta"><span class="post-meta-item post-meta-item--createtime"><span class="post-meta-item__icon"><i class="far fa-calendar-plus"></i></span><span class="post-meta-item__info">发表于</span><span class="post-meta-item__value">2022-05-12</span></span><span class="post-meta-item post-meta-item--updatetime"><span class="post-meta-item__icon"><i class="far fa-calendar-check"></i></span><span class="post-meta-item__info">更新于</span><span class="post-meta-item__value">2022-05-12</span></span></div></header><div class="post-body"><div class="post-excerpt">
+        <h4 id="1-高质量编程">
+          <a href="#1-高质量编程" class="heading-link"><i class="fas fa-link"></i></a><a href="#1-高质量编程" class="headerlink" title="1 高质量编程"></a>1 高质量编程</h4>
+      <img src="/2022/05/12/camp-03/image-20220512075312677.png" alt="image-20220512075312677" style="zoom:67%;">
+
+<img src="/2022/05/12/camp-03/image-20220512075432293.png" alt="image-20220512075432293" style="zoom:67%;">
+
+
+        <h5 id="1-1-编码规范">
+          <a href="#1-1-编码规范" class="heading-link"><i class="fas fa-link"></i></a><a href="#1-1-编码规范" class="headerlink" title="1.1 编码规范"></a>1.1 编码规范</h5>
+      <p><img src="/2022/05/12/camp-03/image-20220512075654725.png" alt="image-20220512075654725"></p>
+
+        <h5 id="1-2-注释">
+          <a href="#1-2-注释" class="heading-link"><i class="fas fa-link"></i></a><a href="#1-2-注释" class="headerlink" title="1.2 注释"></a>1.2 注释</h5>
+      <p><img src="/2022/05/12/camp-03/image-20220512075752145.png" alt="image-20220512075752145"></p>
+<p>第二条的注释不好</p>
+<p><img src="/2022/05/12/camp-03/image-20220512075857574.png" alt="image-20220512075857574"></p>
+<p><img src="/2022/05/12/camp-03/image-20220512075931711.png" alt="image-20220512075931711"></p>
+<p><img src="/2022/05/12/camp-03/image-20220512080016194.png" alt="image-20220512080016194"></p>
+</div></div></article><article class="postlist-item post"><header class="post-header"><h1 class="post-title"><a class="post-title__link" href="/2022/05/11/bytedance-campday2/">字节跳动青训营day2</a></h1><div class="post-meta"><span class="post-meta-item post-meta-item--createtime"><span class="post-meta-item__icon"><i class="far fa-calendar-plus"></i></span><span class="post-meta-item__info">发表于</span><span class="post-meta-item__value">2022-05-11</span></span><span class="post-meta-item post-meta-item--updatetime"><span class="post-meta-item__icon"><i class="far fa-calendar-check"></i></span><span class="post-meta-item__info">更新于</span><span class="post-meta-item__value">2022-05-12</span></span></div></header><div class="post-body"><div class="post-excerpt">
+        <h3 id="一、-Go语言进阶">
+          <a href="#一、-Go语言进阶" class="heading-link"><i class="fas fa-link"></i></a><a href="#一、-Go语言进阶" class="headerlink" title="一、 Go语言进阶"></a>一、 Go语言进阶</h3>
+      
+        <h4 id="1-1-高并发">
+          <a href="#1-1-高并发" class="heading-link"><i class="fas fa-link"></i></a><a href="#1-1-高并发" class="headerlink" title="1.1 高并发"></a>1.1 高并发</h4>
+      
+        <h5 id="1-1-1-多线程">
+          <a href="#1-1-1-多线程" class="heading-link"><i class="fas fa-link"></i></a><a href="#1-1-1-多线程" class="headerlink" title="1.1.1 多线程"></a>1.1.1 多线程</h5>
+      <p><img src="/2022/05/11/bytedance-campday2/image-20220511064530186.png" alt="image-20220511064530186"></p>
+<p>并发指的是多线程程序通过时间片切换在一个核上运行来实现同时运行的装听。</p>
+<p>并行指的是多线程程序直接在多个核上多个运行。</p>
+<p>Go语言实现了一个高效的多线程调度模型，它可以充分利用多核计算机的优势，充分利用计算资源。</p>
+
+        <h5 id="1-1-2-线程与协程">
+          <a href="#1-1-2-线程与协程" class="heading-link"><i class="fas fa-link"></i></a><a href="#1-1-2-线程与协程" class="headerlink" title="1.1.2 线程与协程"></a>1.1.2 线程与协程</h5>
+      <p><img src="/2022/05/11/bytedance-campday2/image-20220511064932109.png" alt="image-20220511064932109"></p>
+<p><img src="/2022/05/11/bytedance-campday2/image-20220511064938912.png" alt="image-20220511064938912"></p>
+
+        <h4 id="1-2-协程">
+          <a href="#1-2-协程" class="heading-link"><i class="fas fa-link"></i></a><a href="#1-2-协程" class="headerlink" title="1.2 协程"></a>1.2 协程</h4>
+      
+        <h5 id="1-2-1-协程的创建：">
+          <a href="#1-2-1-协程的创建：" class="heading-link"><i class="fas fa-link"></i></a><a href="#1-2-1-协程的创建：" class="headerlink" title="1.2.1 协程的创建："></a>1.2.1 协程的创建：</h5>
+      
+        <h5 id="1-2-2-携程的通信CSP-Communicating-Sequential-Processes">
+          <a href="#1-2-2-携程的通信CSP-Communicating-Sequential-Processes" class="heading-link"><i class="fas fa-link"></i></a><a href="#1-2-2-携程的通信CSP-Communicating-Sequential-Processes" class="headerlink" title="1.2.2 携程的通信CSP Communicating Sequential Processes"></a>1.2.2 携程的通信CSP Communicating Sequential Processes</h5>
+      <p><img src="/2022/05/11/bytedance-campday2/image-20220511065248207.png" alt="image-20220511065248207"></p>
+<p>通过共享内存通信需要互斥量对临界区加锁解锁，因此<strong>会影响性能。</strong></p>
+
+        <h5 id="1-2-3-Channel">
+          <a href="#1-2-3-Channel" class="heading-link"><i class="fas fa-link"></i></a><a href="#1-2-3-Channel" class="headerlink" title="1.2.3 Channel"></a>1.2.3 Channel</h5>
+      <p>Go内建channel实现了<strong>go协程之间数据的读写相关操作。</strong></p>
+<p>并发在Go当中不仅仅是语法。它是一种设计模式。该模式提供了在处理常见并发问题的解决方案。因为并发需要同步 。Go并发是源自CSP模型，<strong>通过channel来实现协程的同步。</strong>Go并发哲学是：<strong>不通过共享内存来通信，而是通过通信来共享内存。</strong></p>
+<p>创建方式：</p>
+<p>通过make关键字来创建一个通道，通道可以细分为无缓冲和有缓冲通道。</p>
+<img src="/2022/05/11/bytedance-campday2/image-20220511065821163.png" alt="image-20220511065821163" style="zoom:75%;">
+
+<p>无缓冲通道又称为同步通道，使用无缓冲通道发送的goroutine和接收的goroutine同步化。</p>
+<p>有缓冲通道是一个经典的生产者消费者模型，发送方发送的数据会先通过缓冲区，当缓冲区满时Gotoutine1会停止发送。</p>
+<p>在实际开发中可能会出现生产协程的消费协程执行效率不同的问题，使用同步通道可能会使消费协程来不及接受，因此需要有缓冲通道来实现并发安全。</p>
+<img src="/2022/05/11/bytedance-campday2/image-20220511070544717.png" alt="image-20220511070544717" style="zoom:67%;">
+
+
+        <h5 id="1-2-4-通过共享内存来实现通信">
+          <a href="#1-2-4-通过共享内存来实现通信" class="heading-link"><i class="fas fa-link"></i></a><a href="#1-2-4-通过共享内存来实现通信" class="headerlink" title="1.2.4 通过共享内存来实现通信"></a>1.2.4 通过共享内存来实现通信</h5>
+      <img src="/2022/05/11/bytedance-campday2/image-20220511070618102.png" alt="image-20220511070618102" style="zoom:67%;">
+
+
+        <h5 id="1-2-5-WaitGroup实现协程的同步">
+          <a href="#1-2-5-WaitGroup实现协程的同步" class="heading-link"><i class="fas fa-link"></i></a><a href="#1-2-5-WaitGroup实现协程的同步" class="headerlink" title="1.2.5 WaitGroup实现协程的同步"></a>1.2.5 WaitGroup实现协程的同步</h5>
+      <p><img src="/2022/05/11/bytedance-campday2/image-20220511071027075.png" alt="image-20220511071027075"></p>
+<p>使用WaitGroup对上个栗子的优化</p>
+<p><img src="/2022/05/11/bytedance-campday2/image-20220511071141658.png" alt="image-20220511071141658"></p>
+<p>需要开启5个协程，因此是add(5)</p>
+<p><img src="/2022/05/11/bytedance-campday2/image-20220511071150132.png" alt="image-20220511071150132"></p>
+
+        <h3 id="二、依赖管理">
+          <a href="#二、依赖管理" class="heading-link"><i class="fas fa-link"></i></a><a href="#二、依赖管理" class="headerlink" title="二、依赖管理"></a>二、依赖管理</h3>
+      <p>依赖指的是各类封装好的开发包。</p>
+<img src="/2022/05/11/bytedance-campday2/image-20220511071412051.png" alt="image-20220511071412051" style="zoom:67%;">
+
+<p>可以通过sdk的方式引入依赖。</p>
+<p>依赖管理的演进如下，目前流行的是Go Module</p>
+<p><img src="/2022/05/11/bytedance-campday2/image-20220511071609769.png" alt="image-20220511071609769"></p>
+<p>依赖管理的主要任务是实现以下两条</p>
+<p><img src="/2022/05/11/bytedance-campday2/image-20220511071710433.png" alt="image-20220511071710433"></p>
+
+        <h4 id="2-1-GOPATH">
+          <a href="#2-1-GOPATH" class="heading-link"><i class="fas fa-link"></i></a><a href="#2-1-GOPATH" class="headerlink" title="2.1 GOPATH"></a>2.1 GOPATH</h4>
+      <img src="/2022/05/11/bytedance-campday2/image-20220511073558343.png" alt="image-20220511073558343" style="zoom:80%;">
+
+<img src="/2022/05/11/bytedance-campday2/image-20220511073630578.png" alt="image-20220511073630578" style="zoom:80%;">
+
+
+        <h4 id="2-2-Go-Vendor">
+          <a href="#2-2-Go-Vendor" class="heading-link"><i class="fas fa-link"></i></a><a href="#2-2-Go-Vendor" class="headerlink" title="2.2 Go Vendor"></a>2.2 Go Vendor</h4>
+      <p><img src="/2022/05/11/bytedance-campday2/image-20220511073733738.png" alt="image-20220511073733738"></p>
+<p><img src="/2022/05/11/bytedance-campday2/image-20220511073755288.png" alt="image-20220511073755288"></p>
+
+        <h4 id="2-3-Go-Module">
+          <a href="#2-3-Go-Module" class="heading-link"><i class="fas fa-link"></i></a><a href="#2-3-Go-Module" class="headerlink" title="2.3 Go Module"></a>2.3 Go Module</h4>
+      <p><img src="/2022/05/11/bytedance-campday2/image-20220511073853719.png" alt="image-20220511073853719"></p>
+<p><img src="/2022/05/11/bytedance-campday2/image-20220511073911089.png" alt="image-20220511073911089"></p>
+
+        <h5 id="2-3-1-依赖管理三要素">
+          <a href="#2-3-1-依赖管理三要素" class="heading-link"><i class="fas fa-link"></i></a><a href="#2-3-1-依赖管理三要素" class="headerlink" title="2.3.1 依赖管理三要素"></a>2.3.1 依赖管理三要素</h5>
+      <p><img src="/2022/05/11/bytedance-campday2/image-20220511073941390.png" alt="image-20220511073941390"></p>
+
+        <h5 id="2-3-2-依赖配置">
+          <a href="#2-3-2-依赖配置" class="heading-link"><i class="fas fa-link"></i></a><a href="#2-3-2-依赖配置" class="headerlink" title="2.3.2 依赖配置"></a>2.3.2 依赖配置</h5>
+      <p>需要在go.mod文件中对依赖进行配置</p>
+<img src="/2022/05/11/bytedance-campday2/image-20220511074035870.png" alt="image-20220511074035870" style="zoom:50%;">
+
+<p><strong>版本控制有以下的命名规则</strong></p>
+<img src="/2022/05/11/bytedance-campday2/image-20220511074219023.png" alt="image-20220511074219023" style="zoom:67%;">
+
+<p>不同的major间是可以不兼容的，可以理解成不同major中代码隔离</p>
+<p>相同的major不同minor之间需要做到前后兼容</p>
+<p>patch主要用于bug修复</p>
+<p><strong>indirect关键字</strong></p>
+<img src="/2022/05/11/bytedance-campday2/image-20220511074441110.png" alt="image-20220511074441110" style="zoom:50%;">
+
+<img src="/2022/05/11/bytedance-campday2/image-20220511074555656.png" alt="image-20220511074555656" style="zoom:80%;">
+
+<p><img src="/2022/05/11/bytedance-campday2/image-20220511074757676.png" alt="image-20220511074757676"></p>
+
+        <h5 id="2-3-3-依赖分发">
+          <a href="#2-3-3-依赖分发" class="heading-link"><i class="fas fa-link"></i></a><a href="#2-3-3-依赖分发" class="headerlink" title="2.3.3 依赖分发"></a>2.3.3 依赖分发</h5>
+      <img src="/2022/05/11/bytedance-campday2/image-20220511074925300.png" alt="image-20220511074925300" style="zoom:67%;">
+
+<img src="/2022/05/11/bytedance-campday2/image-20220511074941742.png" alt="image-20220511074941742" style="zoom:80%;">
+
+<p>Go Proxy会缓存依赖软件版本，从而保证依赖可用性。</p>
+
+        <h6 id="GOPROXY变量">
+          <a href="#GOPROXY变量" class="heading-link"><i class="fas fa-link"></i></a><a href="#GOPROXY变量" class="headerlink" title="GOPROXY变量"></a>GOPROXY变量</h6>
+      <p><img src="/2022/05/11/bytedance-campday2/image-20220511075104701.png" alt="image-20220511075104701"></p>
+
+        <h6 id="go-get工具">
+          <a href="#go-get工具" class="heading-link"><i class="fas fa-link"></i></a><a href="#go-get工具" class="headerlink" title="go get工具"></a>go get工具</h6>
+      <img src="/2022/05/11/bytedance-campday2/image-20220511075222169.png" alt="image-20220511075222169" style="zoom:67%;">
+
+
+        <h6 id="go-mod工具">
+          <a href="#go-mod工具" class="heading-link"><i class="fas fa-link"></i></a><a href="#go-mod工具" class="headerlink" title="go mod工具"></a>go mod工具</h6>
+      <img src="/2022/05/11/bytedance-campday2/image-20220511075251292.png" alt="image-20220511075251292" style="zoom:67%;">
+
+<img src="/2022/05/11/bytedance-campday2/image-20220511075317042.png" alt="image-20220511075317042" style="zoom:80%;">
+
+
+        <h3 id="三、测试">
+          <a href="#三、测试" class="heading-link"><i class="fas fa-link"></i></a><a href="#三、测试" class="headerlink" title="三、测试"></a>三、测试</h3>
+      <img src="/2022/05/11/bytedance-campday2/image-20220511080155675.png" alt="image-20220511080155675" style="zoom:80%;">
+
+<p>单元测试在一定程度上决定项目质量</p>
+
+        <h5 id="3-1-单元测试">
+          <a href="#3-1-单元测试" class="heading-link"><i class="fas fa-link"></i></a><a href="#3-1-单元测试" class="headerlink" title="3.1 单元测试"></a>3.1 单元测试</h5>
+      <p><img src="/2022/05/11/bytedance-campday2/image-20220511080321969.png" alt="image-20220511080321969"></p>
+<p>单元测试的规则：</p>
+<img src="/2022/05/11/bytedance-campday2/image-20220511080347776.png" alt="image-20220511080347776" style="zoom:80%;">
+
+<p><img src="/2022/05/11/bytedance-campday2/image-20220511080537774.png" alt="image-20220511080537774"></p>
+<p><img src="/2022/05/11/bytedance-campday2/image-20220511080720742.png" alt="image-20220511080720742"></p>
+<p>单元测试的实践：</p>
+<p><img src="/2022/05/11/bytedance-campday2/image-20220511080736264.png" alt="image-20220511080736264"></p>
+<p>输入的score是70，70&gt;60，因此func JudgePassLine函数的前两行是验证过的，return false没有经过验证，验证率2/3=66.7</p>
+<p><img src="/2022/05/11/bytedance-campday2/image-20220511081107099.png" alt="image-20220511081107099"></p>
+<p><img src="/2022/05/11/bytedance-campday2/image-20220511081124769.png" alt="image-20220511081124769"></p>
+<p><img src="/2022/05/11/bytedance-campday2/image-20220511081325835.png" alt="image-20220511081325835"></p>
+
+        <h4 id="四、项目">
+          <a href="#四、项目" class="heading-link"><i class="fas fa-link"></i></a><a href="#四、项目" class="headerlink" title="四、项目"></a>四、项目</h4>
+      <p><img src="/2022/05/11/bytedance-campday2/image-20220511082139629.png" alt="image-20220511082139629"></p>
+<img src="/2022/05/11/bytedance-campday2/image-20220511082505595.png" alt="image-20220511082505595" style="zoom:80%;">
+
+<p><img src="/2022/05/11/bytedance-campday2/image-20220511082600519.png" alt="image-20220511082600519"></p>
+</div></div></article><article class="postlist-item post"><header class="post-header"><h1 class="post-title"><a class="post-title__link" href="/2022/05/07/bytedance-campday1/">青训营day01-Go语言快速上手</a></h1><div class="post-meta"><span class="post-meta-item post-meta-item--createtime"><span class="post-meta-item__icon"><i class="far fa-calendar-plus"></i></span><span class="post-meta-item__info">发表于</span><span class="post-meta-item__value">2022-05-07</span></span><span class="post-meta-item post-meta-item--updatetime"><span class="post-meta-item__icon"><i class="far fa-calendar-check"></i></span><span class="post-meta-item__info">更新于</span><span class="post-meta-item__value">2022-05-09</span></span></div></header><div class="post-body"><div class="post-excerpt">
+        <h3 id="1-Go语言简介">
+          <a href="#1-Go语言简介" class="heading-link"><i class="fas fa-link"></i></a><a href="#1-Go语言简介" class="headerlink" title="1 Go语言简介"></a>1 Go语言简介</h3>
+      <p><img src="/2022/05/07/bytedance-campday1/image-20220507143926746.png" alt="image-20220507143926746"></p>
+</div></div></article><article class="postlist-item post"><header class="post-header"><h1 class="post-title"><a class="post-title__link" href="/2022/05/03/goday01/">Go语言语法速通day1</a></h1><div class="post-meta"><span class="post-meta-item post-meta-item--createtime"><span class="post-meta-item__icon"><i class="far fa-calendar-plus"></i></span><span class="post-meta-item__info">发表于</span><span class="post-meta-item__value">2022-05-03</span></span><span class="post-meta-item post-meta-item--updatetime"><span class="post-meta-item__icon"><i class="far fa-calendar-check"></i></span><span class="post-meta-item__info">更新于</span><span class="post-meta-item__value">2022-05-15</span></span></div></header><div class="post-body"><div class="post-excerpt">
         <h3 id="序言">
           <a href="#序言" class="heading-link"><i class="fas fa-link"></i></a><a href="#序言" class="headerlink" title="序言"></a>序言</h3>
       <p>因为报了字节的青训营，需要用Go语言进行项目开发，因此计划在开营之前把基本的Go语法过一遍。</p>
@@ -614,483 +823,4 @@ window.CONFIG = CONFIG;</script><meta name="generator" content="Hexo 5.4.0"></he
 <p><img src="/2022/04/18/Javaday06/image-20220418165533836.png" alt="image-20220418165533836"></p>
 <figure class="highlight java"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">Student st1 = <span class="keyword">new</span> Student(<span class="string">&quot;阿尼亚&quot;</span>, <span class="number">6</span>, <span class="number">110.2</span>);</span><br><span class="line">Student st2 = <span class="keyword">new</span> Student(<span class="string">&quot;黄昏&quot;</span>, <span class="number">22</span>, <span class="number">180.9</span>);</span><br><span class="line">Student st3 = <span class="keyword">new</span> Student(<span class="string">&quot;约尔&quot;</span>, <span class="number">21</span>, <span class="number">175.3</span>);</span><br><span class="line">Student[] stArray = &#123;st1, st2, st3&#125;;</span><br><span class="line">Arrays.sort(stArray,(Student o1, Student o2)-&gt; &#123;</span><br><span class="line"><span class="keyword">return</span> Double.compare(o2.getHeight(), o1.getHeight());</span><br><span class="line">&#125;);</span><br><span class="line"><span class="comment">//参数类型可以省略不写</span></span><br><span class="line"><span class="comment">//如果函数体只有一行代码，大括号和分号可以一起省略不写</span></span><br><span class="line"><span class="comment">//如果只有一行代码还是return,return可以省略不写，大括号、分号一起省略不写</span></span><br><span class="line"><span class="comment">//上述代码简化后如下</span></span><br><span class="line">Arrays.sort(stArray,(o1, o2)-&gt; Double.compare(o2.getHeight(), o1.getHeight()));</span><br><span class="line">System.out.println(Arrays.toString(stArray));</span><br></pre></td></tr></table></div></figure>
 
-</div></div></article><article class="postlist-item post"><header class="post-header"><h1 class="post-title"><a class="post-title__link" href="/2022/04/06/Javaday05/">Javaday05</a></h1><div class="post-meta"><span class="post-meta-item post-meta-item--createtime"><span class="post-meta-item__icon"><i class="far fa-calendar-plus"></i></span><span class="post-meta-item__info">发表于</span><span class="post-meta-item__value">2022-04-06</span></span><span class="post-meta-item post-meta-item--updatetime"><span class="post-meta-item__icon"><i class="far fa-calendar-check"></i></span><span class="post-meta-item__info">更新于</span><span class="post-meta-item__value">2022-04-18</span></span></div></header><div class="post-body"><div class="post-excerpt"><p>Java语法速通day05</p>
-
-        <h3 id="1-常用API">
-          <a href="#1-常用API" class="heading-link"><i class="fas fa-link"></i></a><a href="#1-常用API" class="headerlink" title="1 常用API"></a>1 常用API</h3>
-      
-        <h4 id="1-1-Object类">
-          <a href="#1-1-Object类" class="heading-link"><i class="fas fa-link"></i></a><a href="#1-1-Object类" class="headerlink" title="1.1 Object类"></a>1.1 Object类</h4>
-      <p><img src="/2022/04/06/Javaday05/image-20220406205803923.png" alt="image-20220406205803923"></p>
-
-        <h5 id="1-1-1-toString">
-          <a href="#1-1-1-toString" class="heading-link"><i class="fas fa-link"></i></a><a href="#1-1-1-toString" class="headerlink" title="1.1.1 toString()"></a>1.1.1 toString()</h5>
-      <p>返回一个String类型的值，这个值是对象类的全包名@地址，使用方法是对象.toString()。但是toString的作用往往是供子类重写以输出对象的信息。</p>
-<p><img src="/2022/04/06/Javaday05/image-20220406210335820.png" alt="image-20220406210335820"></p>
-<p><strong>IDEA中可以通过Alt+ins快捷找到Generate来选择自动重写toString，也可以直接打toString回车</strong></p>
-
-        <h5 id="1-1-2-equals">
-          <a href="#1-1-2-equals" class="heading-link"><i class="fas fa-link"></i></a><a href="#1-1-2-equals" class="headerlink" title="1.1.2 equals"></a>1.1.2 equals</h5>
-      <p>equals()用于比较两个对象的地址是否相同，返回一个boolean值。</p>
-<p>同toString()一样，常常用于子类重写用于比较两个对象的内容是否相同。</p>
-<figure class="highlight java"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Override</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">equals</span><span class="params">(Object o)</span></span>&#123;</span><br><span class="line">    <span class="comment">//由于参数接的是所有对象Object，需要比较参数对象是否与本类对象相同</span></span><br><span class="line">    <span class="keyword">if</span>(o <span class="keyword">instanceof</span> Student)&#123;</span><br><span class="line">       <span class="comment">//虽然现在已知o是学生对象，但是仍然属于Object类，需要通过类型强转成子类对象才能使用子类的内部方法和属性</span></span><br><span class="line">       Student s2 = (Student) o;</span><br><span class="line">       <span class="keyword">return</span> <span class="keyword">this</span>.name.equals(s2.name) &amp;&amp; <span class="keyword">this</span>.age.equals(s2.age) &amp;&amp; <span class="keyword">this</span>.sex.equals(s2.sex);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">else</span></span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></div></figure>
-
-<p><strong>IDEA中同样提供了自动生成的重写equals方法，也是通过右键Generate来生成。</strong></p>
-
-        <h5 id="1-1-3-Objects类">
-          <a href="#1-1-3-Objects类" class="heading-link"><i class="fas fa-link"></i></a><a href="#1-1-3-Objects类" class="headerlink" title="1.1.3 Objects类"></a>1.1.3 Objects类</h5>
-      <p><img src="/2022/04/06/Javaday05/image-20220406212357160.png" alt="image-20220406212357160"></p>
-<p>使用方法：Objects.equals(对象1， 对象2)；</p>
-<p><strong>避免了直接使用Object类的equals方法，如果主调对象为null会出现空指针异常。</strong></p>
-<p><img src="/2022/04/06/Javaday05/image-20220406212924275.png" alt="image-20220406212924275"></p>
-
-        <h4 id="1-2-StringBuilder类">
-          <a href="#1-2-StringBuilder类" class="heading-link"><i class="fas fa-link"></i></a><a href="#1-2-StringBuilder类" class="headerlink" title="1.2 StringBuilder类"></a>1.2 StringBuilder类</h4>
-      <p><img src="/2022/04/06/Javaday05/image-20220406214340553.png" alt="image-20220406214340553"></p>
-<p><img src="/2022/04/06/Javaday05/image-20220406214429845.png" alt="image-20220406214429845"></p>
-
-        <h5 id="1-2-1-StringBuilder对象">
-          <a href="#1-2-1-StringBuilder对象" class="heading-link"><i class="fas fa-link"></i></a><a href="#1-2-1-StringBuilder对象" class="headerlink" title="1.2.1 StringBuilder对象"></a>1.2.1 StringBuilder对象</h5>
-      
-        <h6 id="性质1-支持链式编程">
-          <a href="#性质1-支持链式编程" class="heading-link"><i class="fas fa-link"></i></a><a href="#性质1-支持链式编程" class="headerlink" title="性质1  支持链式编程"></a>性质1  支持链式编程</h6>
-      <p>由于StringBuilder类的方法最后都是通过返回this来返回本对象，因此StringBuilder对象支持链式编程。</p>
-
-        <h6 id="append-方法">
-          <a href="#append-方法" class="heading-link"><i class="fas fa-link"></i></a><a href="#append-方法" class="headerlink" title="append()方法"></a>append()方法</h6>
-      <p>append方法实现字符串的拼接，是在StringBuilder对象之后再拼接内容。</p>
-<figure class="highlight java"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">StringBuilder sb = <span class="keyword">new</span> StringBuilder();</span><br><span class="line"><span class="comment">//链式编程 输出abc我爱你中国123</span></span><br><span class="line">sb.append(<span class="string">&quot;abc&quot;</span>).append(<span class="string">&quot;我爱你中国&quot;</span>).append(<span class="number">123</span>);</span><br><span class="line"><span class="comment">//先将sb反转再拼接456</span></span><br><span class="line"><span class="comment">//321国中你爱我cba456</span></span><br><span class="line">sb.reverse().append(<span class="number">456</span>);</span><br><span class="line"><span class="comment">//StringBuilder类真正的使用方法是实现高效字符串拼接，最终仍需要将sb对象通过toString()方法转变成String类型</span></span><br><span class="line">String s = sb.toString();</span><br><span class="line">System.out.println(s);</span><br></pre></td></tr></table></div></figure>
-
-
-        <h5 id="1-2-2-StringBuilder做拼接性能好的原因">
-          <a href="#1-2-2-StringBuilder做拼接性能好的原因" class="heading-link"><i class="fas fa-link"></i></a><a href="#1-2-2-StringBuilder做拼接性能好的原因" class="headerlink" title="1.2.2 StringBuilder做拼接性能好的原因"></a>1.2.2 StringBuilder做拼接性能好的原因</h5>
-      <p>String类型使用+号拼接实际上也是通过StringBuilder对象实现的，一次+号拼接堆内存需要创建一个StringBuilder对象，再新建一个String对象来接受StringBuilder的值。</p>
-<p><img src="/2022/04/06/Javaday05/image-20220411214023827.png" alt="image-20220411214023827"></p>
-<p>直接使用StringBuilder，堆内存只需要建立一个StringBuilder对象即可，无需重复创建sb对象，性能更好。</p>
-<p><img src="/2022/04/06/Javaday05/image-20220411214357021.png" alt="image-20220411214357021"></p>
-
-        <h5 id="1-2-3-实战：将一个数组的元素输出成-1-2-3-样式">
-          <a href="#1-2-3-实战：将一个数组的元素输出成-1-2-3-样式" class="heading-link"><i class="fas fa-link"></i></a><a href="#1-2-3-实战：将一个数组的元素输出成-1-2-3-样式" class="headerlink" title="1.2.3 实战：将一个数组的元素输出成[1, 2, 3]样式"></a>1.2.3 实战：将一个数组的元素输出成[1, 2, 3]样式</h5>
-      <figure class="highlight java"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> String <span class="title">toString</span><span class="params">(<span class="keyword">int</span> arr[])</span></span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(arr != <span class="keyword">null</span>)&#123;</span><br><span class="line">            StringBuilder sb = <span class="keyword">new</span> StringBuilder(<span class="string">&quot;[&quot;</span>);</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; arr.length; i++) &#123;</span><br><span class="line">                <span class="comment">//三目运算符的使用，判断i是否是最后一个元素，若是返回&quot;]&quot;,否则返回空</span></span><br><span class="line">                sb.append(arr[i]).append(i == arr.length-<span class="number">1</span> ? <span class="string">&quot;&quot;</span> : <span class="string">&quot;,&quot;</span>);</span><br><span class="line">            &#125;</span><br><span class="line">            sb.append(<span class="string">&quot;]&quot;</span>);</span><br><span class="line">            <span class="keyword">return</span> sb.toString();</span><br><span class="line"></span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span>&#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">null</span>;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">   &#125;</span><br></pre></td></tr></table></div></figure>
-
-
-        <h4 id="1-3-System类">
-          <a href="#1-3-System类" class="heading-link"><i class="fas fa-link"></i></a><a href="#1-3-System类" class="headerlink" title="1.3 System类"></a>1.3 System类</h4>
-      <p><img src="/2022/04/06/Javaday05/image-20220417143956806.png" alt="image-20220417143956806"></p>
-
-        <h4 id="1-4-BigDecimal类">
-          <a href="#1-4-BigDecimal类" class="heading-link"><i class="fas fa-link"></i></a><a href="#1-4-BigDecimal类" class="headerlink" title="1.4 BigDecimal类"></a>1.4 BigDecimal类</h4>
-      <p>BigDecimal类主要解决的是Java中浮点型基本运算失真的问题。</p>
-<p><img src="/2022/04/06/Javaday05/image-20220417145058722.png" alt="image-20220417145058722"></p>
-<p><img src="/2022/04/06/Javaday05/image-20220417145117573.png" alt="image-20220417145117573"></p>
-<p><img src="/2022/04/06/Javaday05/image-20220417144929677.png" alt="image-20220417144929677"></p>
-
-        <h4 id="1-5-时间日期有关">
-          <a href="#1-5-时间日期有关" class="heading-link"><i class="fas fa-link"></i></a><a href="#1-5-时间日期有关" class="headerlink" title="1.5 时间日期有关"></a>1.5 时间日期有关</h4>
-      
-        <h5 id="1-5-1-Date类">
-          <a href="#1-5-1-Date类" class="heading-link"><i class="fas fa-link"></i></a><a href="#1-5-1-Date类" class="headerlink" title="1.5.1 Date类"></a>1.5.1 Date类</h5>
-      <p><img src="/2022/04/06/Javaday05/image-20220417152615889.png" alt="image-20220417152615889"></p>
-<img src="/2022/04/06/Javaday05/image-20220417152626646.png" alt="image-20220417152626646" style="zoom:80%;">
-
-<p><img src="/2022/04/06/Javaday05/image-20220417152733613.png" alt="image-20220417152733613"></p>
-
-        <h5 id="1-5-2-SimpleDateFormat">
-          <a href="#1-5-2-SimpleDateFormat" class="heading-link"><i class="fas fa-link"></i></a><a href="#1-5-2-SimpleDateFormat" class="headerlink" title="1.5.2 SimpleDateFormat"></a>1.5.2 SimpleDateFormat</h5>
-      <p>主要功能实现将时间对象格式化成字符串类型，或者把字符串类型的时间解析成日期对象。</p>
-<p><img src="/2022/04/06/Javaday05/image-20220417153741850.png" alt="image-20220417153741850"></p>
-<p><img src="/2022/04/06/Javaday05/image-20220417153903592.png" alt="image-20220417153903592"></p>
-<p><img src="/2022/04/06/Javaday05/image-20220417154208053.png" alt="image-20220417154208053"></p>
-<p>EEE:周几   a:上午/下午</p>
-<p><img src="/2022/04/06/Javaday05/image-20220417154719330.png" alt="image-20220417154719330"></p>
-<p><img src="/2022/04/06/Javaday05/image-20220417155217925.png" alt="image-20220417155217925"></p>
-
-        <h5 id="1-5-3-Calendar类">
-          <a href="#1-5-3-Calendar类" class="heading-link"><i class="fas fa-link"></i></a><a href="#1-5-3-Calendar类" class="headerlink" title="1.5.3 Calendar类"></a>1.5.3 Calendar类</h5>
-      <p>获取此刻日历对象：</p>
-<figure class="highlight java"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Calendar cal = Calendar.getInstance();</span><br></pre></td></tr></table></div></figure>
-
-<p><img src="/2022/04/06/Javaday05/image-20220417161530944.png" alt="image-20220417161530944"></p>
-
-        <h3 id="2-包装类">
-          <a href="#2-包装类" class="heading-link"><i class="fas fa-link"></i></a><a href="#2-包装类" class="headerlink" title="2 包装类"></a>2 包装类</h3>
-      <img src="/2022/04/06/Javaday05/image-20220417162339501.png" alt="image-20220417162339501" style="zoom:80%;">
-
-<img src="/2022/04/06/Javaday05/image-20220418095821978.png" alt="image-20220418095821978" style="zoom:80%;">
-
-<p>对于字符串转换成真实数据类型，用包装类.valueOf(String)来做更方便</p>
-<p><img src="/2022/04/06/Javaday05/image-20220418100600365.png" alt="image-20220418100600365"></p>
-<h4 id><a href="#" class="headerlink" title></a></h4></div></div></article><article class="postlist-item post"><header class="post-header"><h1 class="post-title"><a class="post-title__link" href="/2022/03/30/Javaday04/">Javaday04</a></h1><div class="post-meta"><span class="post-meta-item post-meta-item--createtime"><span class="post-meta-item__icon"><i class="far fa-calendar-plus"></i></span><span class="post-meta-item__info">发表于</span><span class="post-meta-item__value">2022-03-30</span></span><span class="post-meta-item post-meta-item--updatetime"><span class="post-meta-item__icon"><i class="far fa-calendar-check"></i></span><span class="post-meta-item__info">更新于</span><span class="post-meta-item__value">2022-04-06</span></span></div></header><div class="post-body"><div class="post-excerpt">
-        <h2 id="Javaday04–继承">
-          <a href="#Javaday04–继承" class="heading-link"><i class="fas fa-link"></i></a><a href="#Javaday04–继承" class="headerlink" title="Javaday04–继承"></a>Javaday04–继承</h2>
-      
-        <h3 id="1-继承">
-          <a href="#1-继承" class="heading-link"><i class="fas fa-link"></i></a><a href="#1-继承" class="headerlink" title="1 继承"></a>1 继承</h3>
-      <p><img src="/2022/03/30/Javaday04/image-20220330201425736.png" alt="image-20220330201425736"></p>
-<img src="/2022/03/30/Javaday04/image-20220330202317460.png" alt="image-20220330202317460" style="zoom:80%;">
-
-
-        <h4 id="1-1-继承设计规范">
-          <a href="#1-1-继承设计规范" class="heading-link"><i class="fas fa-link"></i></a><a href="#1-1-继承设计规范" class="headerlink" title="1.1 继承设计规范"></a>1.1 继承设计规范</h4>
-      <p>子类们的相同的特征（共性属性、共性方法）放在父类中定义，子类独有的属性和方法放在自己的类里。</p>
-
-        <h4 id="1-2-继承的内存分配">
-          <a href="#1-2-继承的内存分配" class="heading-link"><i class="fas fa-link"></i></a><a href="#1-2-继承的内存分配" class="headerlink" title="1.2 继承的内存分配"></a>1.2 继承的内存分配</h4>
-      <p>新建一个子类对象的时候，会在堆内存中开辟一块空间，但在这个子类空间中会分成两块空间：父类空间和子类空间。</p>
-<p>父类空间包含父类的属性和方法。</p>
-<p><img src="/2022/03/30/Javaday04/image-20220330204144813.png" alt="image-20220330204144813"></p>
-
-        <h4 id="1-3-继承的特点">
-          <a href="#1-3-继承的特点" class="heading-link"><i class="fas fa-link"></i></a><a href="#1-3-继承的特点" class="headerlink" title="1.3 继承的特点"></a>1.3 继承的特点</h4>
-      <p><img src="/2022/03/30/Javaday04/image-20220330204609974.png" alt="image-20220330204609974"></p>
-<p>1、子类不能继承父类的构造器</p>
-<p>2、子类<strong>可以继承父类的私有成员，但是不能直接访问。</strong></p>
-<p><img src="/2022/03/30/Javaday04/image-20220330204901816.png" alt="image-20220330204901816"></p>
-<p>3、子类是否可以继承父类的静态成员</p>
-<p>子类可以<strong>共享访问</strong>父类的静态成员，但是由于静态成员在内存中仅保存一份，因此严格来说子类可以访问父类的静态成员，但是不是继承了父类的静态成员。</p>
-<p>4、Java中不支持多继承</p>
-<p>5、Java中支持多层继承，即子类A继承父类B，父类B可以继承父类C</p>
-<p><img src="/2022/03/30/Javaday04/image-20220330205513163.png" alt="image-20220330205513163"></p>
-<p><img src="/2022/03/30/Javaday04/image-20220330210115742.png" alt="image-20220330210115742"></p>
-
-        <h4 id="1-4-方法重写">
-          <a href="#1-4-方法重写" class="heading-link"><i class="fas fa-link"></i></a><a href="#1-4-方法重写" class="headerlink" title="1.4 方法重写"></a>1.4 方法重写</h4>
-      <p>方法重写的原则：<strong>声明不变</strong>，<strong>重新实现</strong></p>
-<p><img src="/2022/03/30/Javaday04/image-20220330210417765.png" alt="image-20220330210417765"></p>
-<p>@Override重写方法注解，在重写方法上面加上这个@Override重写方法注解，1可以提示别人这是个重写方法，2可以对重写方法进行校验。</p>
-<p><img src="/2022/03/30/Javaday04/image-20220330211315630.png" alt="image-20220330211315630"></p>
-<figure class="highlight java"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Override</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">call</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="keyword">super</span>.call();    <span class="comment">//实现父类被重写方法的功能；</span></span><br><span class="line">    <span class="comment">//视频通话  子类需要的父类方法未实现的的功能</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></div></figure>
-
-
-        <h4 id="1-5-子类构造器">
-          <a href="#1-5-子类构造器" class="heading-link"><i class="fas fa-link"></i></a><a href="#1-5-子类构造器" class="headerlink" title="1.5 子类构造器"></a>1.5 子类构造器</h4>
-      <p><img src="/2022/03/30/Javaday04/image-20220331190626860.png" alt="image-20220331190626860"></p>
-<p><img src="/2022/03/30/Javaday04/image-20220331190937717.png" alt="image-20220331190937717"></p>
-<p>子类想要生成一个有参构造器，若操作的属性是继承自父类，可以在父类中定义有参构造器，在子类中写一个有参构造器，在有参构造器中调用super（）从而对继承自父类的属性初始化。</p>
-<p><img src="/2022/03/30/Javaday04/image-20220331193006642.png" alt="image-20220331193006642"></p>
-<p><img src="/2022/03/30/Javaday04/image-20220331193332182.png" alt="image-20220331193332182"></p>
-<p><img src="/2022/03/30/Javaday04/image-20220331193808954.png" alt="image-20220331193808954"></p>
-<p>super()；、this()；一定要放在构造器的第一行。</p>
-
-        <h3 id="2-包、类、修饰符">
-          <a href="#2-包、类、修饰符" class="heading-link"><i class="fas fa-link"></i></a><a href="#2-包、类、修饰符" class="headerlink" title="2 包、类、修饰符"></a>2 包、类、修饰符</h3>
-      
-        <h4 id="2-1-包">
-          <a href="#2-1-包" class="heading-link"><i class="fas fa-link"></i></a><a href="#2-1-包" class="headerlink" title="2.1 包"></a>2.1 包</h4>
-      <p><img src="/2022/03/30/Javaday04/image-20220331194326550.png" alt="image-20220331194326550"></p>
-<p>如果这个类中使用不同包下的相同类名，此时默认只能导入一个类的包，另一个类要使用全名访问。</p>
-<figure class="highlight java"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//已知it1和it2两个包都含有student类</span></span><br><span class="line"><span class="keyword">import</span> com.strive.<span class="keyword">package</span>.it1.Student;</span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Test</span></span>&#123;</span><br><span class="line">    Student s = <span class="keyword">new</span> Student();     <span class="comment">//默认使用的是导入的it1包里的Student类</span></span><br><span class="line">    <span class="comment">//使用不同包下的相同类名，另一个类要使用全名访问</span></span><br><span class="line">    <span class="comment">//全名指的是 包名.类名</span></span><br><span class="line">    com.strive.<span class="keyword">package</span>.it2.Student s2 = <span class="keyword">new</span> com.strive.<span class="keyword">package</span>.it2.Student();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></div></figure>
-
-
-        <h4 id="2-2-权限修饰符">
-          <a href="#2-2-权限修饰符" class="heading-link"><i class="fas fa-link"></i></a><a href="#2-2-权限修饰符" class="headerlink" title="2.2 权限修饰符"></a>2.2 权限修饰符</h4>
-      <p><img src="/2022/03/30/Javaday04/image-20220331201839088.png" alt="image-20220331201839088"></p>
-<p><img src="/2022/03/30/Javaday04/image-20220331201851415.png" alt="image-20220331201851415"></p>
-<p>注意：在子类中使用父类对象，不能访问protected的属性和方法。</p>
-<p>权限修饰符的一般要求：</p>
-<p>1、成员变量一般私有</p>
-<p>2、成员方法一般设为公开</p>
-<p>3、如果该成员只希望本类访问，使用private修饰</p>
-<p>4、如果只希望本类、同一个包下的其他类和子类访问，使用protected修饰</p>
-<p><strong>注意：</strong></p>
-<p>虽然在父类中声明为private的私有成员变量，<strong>子类继承父类的时候还是会继承到对应的私有成员变量</strong>，但是<strong>不能直接访问</strong>，<strong>可以通过父类中public的getter\setter方法来访问。</strong></p>
-
-        <h4 id="2-3-final关键字">
-          <a href="#2-3-final关键字" class="heading-link"><i class="fas fa-link"></i></a><a href="#2-3-final关键字" class="headerlink" title="2.3 final关键字"></a>2.3 final关键字</h4>
-      <p><img src="/2022/03/30/Javaday04/image-20220331203411405.png" alt="image-20220331203411405"></p>
-<p><img src="/2022/03/30/Javaday04/image-20220331210937667.png" alt="image-20220331210937667"></p>
-
-        <h4 id="2-4-常量">
-          <a href="#2-4-常量" class="heading-link"><i class="fas fa-link"></i></a><a href="#2-4-常量" class="headerlink" title="2.4 常量"></a>2.4 常量</h4>
-      <p>常量是使用了public static final修饰的成员变量，必须有初始化值，在程序执行过程中不能被改变。</p>
-<p><strong>常量</strong>的命名规范：<strong>英文单词全部大写，单词之间使用下划线连接</strong>。</p>
-<p> <img src="/2022/03/30/Javaday04/image-20220401201220826.png" alt="image-20220401201220826"></p>
-<p>常量可以作为信息的标志和分类，使程序可读性好，实现软编码形式。</p>
-
-        <h3 id="3、枚举">
-          <a href="#3、枚举" class="heading-link"><i class="fas fa-link"></i></a><a href="#3、枚举" class="headerlink" title="3、枚举"></a>3、枚举</h3>
-      <img src="/2022/03/30/Javaday04/image-20220401202029813.png" alt="image-20220401202029813" style="zoom:80%;">
-
-<p><img src="/2022/03/30/Javaday04/image-20220401202441434.png" alt="image-20220401202441434"></p>
-<p><img src="/2022/03/30/Javaday04/image-20220401204813709.png" alt="image-20220401204813709"></p>
-<p><img src="/2022/03/30/Javaday04/image-20220401210527624.png" alt="image-20220401210527624"></p>
-<p>枚举一般用来表示信息标志、信息分类，但是一般不用来表示具体值，如果需要表示具体的值，比如字符串，还是需要常量来表示。</p>
-
-        <h3 id="4-抽象类和抽象方法">
-          <a href="#4-抽象类和抽象方法" class="heading-link"><i class="fas fa-link"></i></a><a href="#4-抽象类和抽象方法" class="headerlink" title="4 抽象类和抽象方法"></a>4 抽象类和抽象方法</h3>
-      <p><img src="/2022/03/30/Javaday04/image-20220401211302877.png" alt="image-20220401211302877"></p>
-<img src="/2022/03/30/Javaday04/image-20220401213528952.png" alt="image-20220401213528952" style="zoom:80%;">
-
-<p><img src="/2022/03/30/Javaday04/image-20220401220341315.png" alt="image-20220401220341315"></p>
-<p>抽象类不能被实例化！</p>
-
-        <h4 id="4-1-模板方法模式">
-          <a href="#4-1-模板方法模式" class="heading-link"><i class="fas fa-link"></i></a><a href="#4-1-模板方法模式" class="headerlink" title="4.1 模板方法模式"></a>4.1 模板方法模式</h4>
-      <p>当系统中出现<strong>同一个功能多处在开发</strong>，但<strong>该功能大部分代码是一样的</strong>。该功能大部分代码是一样的，只有部分代码不一样。</p>
-<p><img src="/2022/03/30/Javaday04/image-20220404145838431.png" alt="image-20220404145838431"></p>
-<p>模板方法定义的流程：</p>
-<p>由于需要实现的功能大部分一样，<strong>只有少部分不同</strong>，可以声明一个抽象类作为父类，声明一个模板方法（一般用final修饰从而避免子类将方法重写）。将根据各自子类所需的不同功能声明成一个抽象方法，在各自子类中实现即可。</p>
-<p>如：中学生和小学生都需要写作文，作文的第一段和最后一段相同，各自写各自的正文。可以将学生声明成一个抽象类，声明一个模板方法，方法中写上第一段和最后一段，然后将写正文声明成一个抽象方法，让各自子类重写。</p>
-<figure class="highlight java"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">abstract</span> <span class="class"><span class="keyword">class</span> <span class="title">Student</span> </span>&#123;</span><br><span class="line">    <span class="keyword">private</span> String name;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">int</span> age;</span><br><span class="line">    <span class="keyword">private</span> String grade;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">getName</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> name;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setName</span><span class="params">(String name)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.name = name;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">getAge</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> age;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setAge</span><span class="params">(<span class="keyword">int</span> age)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.age = age;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">getGrade</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> grade;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setGrade</span><span class="params">(String grade)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.grade = grade;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="comment">//创建模板方法，相同内容声明成一个抽象方法，供各个子类重写</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">final</span> <span class="keyword">void</span> <span class="title">write</span><span class="params">()</span></span>&#123;</span><br><span class="line">        System.out.println(<span class="string">&quot;相同的第一段&quot;</span>);</span><br><span class="line">        System.out.println(writeMain());</span><br><span class="line">        System.out.println(<span class="string">&quot;相同的最后一段&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">Student</span><span class="params">(String name, <span class="keyword">int</span> age, String grade)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.name = name;</span><br><span class="line">        <span class="keyword">this</span>.age = age;</span><br><span class="line">        <span class="keyword">this</span>.grade = grade;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">//抽象方法</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">abstract</span> String <span class="title">writeMain</span><span class="params">()</span></span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//子类声明，不需要重写模板方法</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">primaryStudent</span> <span class="keyword">extends</span> <span class="title">Student</span></span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">primaryStudent</span><span class="params">(String name, <span class="keyword">int</span> age, String grade)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">super</span>(name, age, grade);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">//重写抽象中间方法即可</span></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">writeMain</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        String s = <span class="string">&quot;我是小学生&quot;</span>;</span><br><span class="line">        <span class="keyword">return</span> (s + getName());</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">highStudent</span> <span class="keyword">extends</span> <span class="title">Student</span></span>&#123;</span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">writeMain</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        String s = <span class="string">&quot;我是高中生&quot;</span>;</span><br><span class="line">        <span class="keyword">return</span> (getName() + s);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">highStudent</span><span class="params">(String name, <span class="keyword">int</span> age, String grade)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">super</span>(name, age, grade);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">test</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        highStudent h = <span class="keyword">new</span> highStudent(<span class="string">&quot;小明&quot;</span>, <span class="number">18</span>, <span class="string">&quot;高三&quot;</span>);</span><br><span class="line">        primaryStudent p = <span class="keyword">new</span> primaryStudent(<span class="string">&quot;小红&quot;</span>, <span class="number">8</span>, <span class="string">&quot;三年级&quot;</span>);</span><br><span class="line">        h.write();</span><br><span class="line">        p.write();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></div></figure>
-
-
-        <h3 id="5-接口">
-          <a href="#5-接口" class="heading-link"><i class="fas fa-link"></i></a><a href="#5-接口" class="headerlink" title="5 接口"></a>5 接口</h3>
-      <p>接口是一种规范，接口用来约束使用接口的子类必须按照里面的常量和抽象方法来进行功能设计。</p>
-<p><img src="/2022/03/30/Javaday04/image-20220405094449364.png" alt="image-20220405094449364"></p>
-<p>由于接口<strong>默认都是公开的</strong>，因此接口中常量和抽象方法<strong>可以省略public static final/public abstract</strong>。</p>
-<p>由于<strong>Java中的类不允许多继承</strong>，但是<strong>可以多实现</strong>。</p>
-<p><img src="/2022/03/30/Javaday04/image-20220405095517759.png" alt="image-20220405095517759"></p>
-<p><img src="/2022/03/30/Javaday04/image-20220405095909055.png" alt="image-20220405095909055"></p>
-<p>接口和接口之间是允许多继承的。因为一个类如果要实现多个接口，需要在implements后写很长一串，这样<strong>可以在一个接口中声明继承多个接口</strong>，这样只需要实现这一个接口就可以实现全部接口的实现。</p>
-<p><img src="/2022/03/30/Javaday04/image-20220405111119375.png" alt="image-20220405111119375"></p>
-
-        <h3 id="6-多态">
-          <a href="#6-多态" class="heading-link"><i class="fas fa-link"></i></a><a href="#6-多态" class="headerlink" title="6 多态"></a>6 多态</h3>
-      <p><img src="/2022/03/30/Javaday04/image-20220405173450636.png" alt="image-20220405173450636"></p>
-<p>多态指的就是不同的子类继承同一父类，在声明对象的时候都声明成父类对象，初始化则使用各自子类的构造器进行。这样的父类对象在<strong>调用方法时调用的是各自子类的重写方法</strong>，<strong>调用变量时则调用的是父类的变量。</strong></p>
-<p><img src="/2022/03/30/Javaday04/image-20220405180635403.png" alt="image-20220405180635403"></p>
-<p>多态的主要优势就在于代码解耦合，使用父类对象用子类构造器初始化来实现父类功能，有助于实现代码解耦合，这样以后可以通过重写一个新的子类来实现功能更新，在代码中<strong>直接将使用的子类构造器整体替换</strong>即可。</p>
-<p><img src="/2022/03/30/Javaday04/image-20220405181655171.png" alt="image-20220405181655171"></p>
-<p><img src="/2022/03/30/Javaday04/image-20220405181829617.png" alt="image-20220405181829617"></p>
-
-        <h3 id="7-内部类">
-          <a href="#7-内部类" class="heading-link"><i class="fas fa-link"></i></a><a href="#7-内部类" class="headerlink" title="7 内部类"></a>7 内部类</h3>
-      <p><img src="/2022/03/30/Javaday04/image-20220405194445690.png" alt="image-20220405194445690"></p>
-<p><img src="/2022/03/30/Javaday04/image-20220405201436427.png" alt="image-20220405201436427"></p>
-<p><img src="/2022/03/30/Javaday04/image-20220405204329665.png" alt="image-20220405204329665"></p>
-
-        <h4 id="7-1-重点！匿名内部类">
-          <a href="#7-1-重点！匿名内部类" class="heading-link"><i class="fas fa-link"></i></a><a href="#7-1-重点！匿名内部类" class="headerlink" title="7.1 重点！匿名内部类"></a>7.1 重点！匿名内部类</h4>
-      <p>如下部Employee是一个接口，不能直接创建对象，因此需要通过创建匿名内部类来间接创建对象。</p>
-<p><img src="/2022/03/30/Javaday04/image-20220406191825143.png" alt="image-20220406191825143"></p>
-<p><img src="/2022/03/30/Javaday04/image-20220406205357782.png" alt="image-20220406205357782"></p>
-</div></div></article><article class="postlist-item post"><header class="post-header"><h1 class="post-title"><a class="post-title__link" href="/2022/03/30/AGW%E4%BB%A3%E7%A0%81%E5%AD%A6%E4%B9%A001-SYSU%E6%95%B0%E6%8D%AE%E9%9B%86%E9%A2%84%E5%A4%84%E7%90%86/">AGW代码学习01-SYSU数据集预处理</a></h1><div class="post-meta"><span class="post-meta-item post-meta-item--createtime"><span class="post-meta-item__icon"><i class="far fa-calendar-plus"></i></span><span class="post-meta-item__info">发表于</span><span class="post-meta-item__value">2022-03-30</span></span><span class="post-meta-item post-meta-item--updatetime"><span class="post-meta-item__icon"><i class="far fa-calendar-check"></i></span><span class="post-meta-item__info">更新于</span><span class="post-meta-item__value">2022-04-25</span></span></div></header><div class="post-body"><div class="post-excerpt">
-        <h3 id="AGW代码学习">
-          <a href="#AGW代码学习" class="heading-link"><i class="fas fa-link"></i></a><a href="#AGW代码学习" class="headerlink" title="AGW代码学习"></a>AGW代码学习</h3>
-      
-        <h4 id="1-SYSU数据集介绍">
-          <a href="#1-SYSU数据集介绍" class="heading-link"><i class="fas fa-link"></i></a><a href="#1-SYSU数据集介绍" class="headerlink" title="1 SYSU数据集介绍"></a>1 SYSU数据集介绍</h4>
-      <p>SYSU-MM01数据集是常用的跨模态行人再识别数据集之一。SYSU-MM01包含由6台相机拍摄的图像，包括2个红外相机和4个RGB相机。详见下列表格，每一列：相机的索引号，拍摄地点，室内还是室外，白天还是黑夜，ID数目，每个ID有多少不同的连续RGB帧，每个ID有多少不同的连续IR帧。</p>
-<p><img src="/2022/03/30/AGW%E4%BB%A3%E7%A0%81%E5%AD%A6%E4%B9%A001-SYSU%E6%95%B0%E6%8D%AE%E9%9B%86%E9%A2%84%E5%A4%84%E7%90%86/image-20220330094237480.png" alt="image-20220330094237480"></p>
-<p><strong>文件描述</strong></p>
-<p>在下载的文件中，包含: 6个camera文件夹，1个exp标签文件夹。 “ cam1”到“ cam6”：每个目录的名称是ID。值得注意，并非所有人都出现在所有6台摄像机中。其中 <strong>cam3 cam6 是红外场景IR，cam1 cam2 cam4 cam5 是真实场景RGB。</strong></p>
-<p>exp：用于训练和测试的一个固定的分割。 为了获得训练，验证和测试ID，可以使用“ txt”或“ mat”文件。 available_id包含的491个有效ID（至少在2个摄像机中出现）。 train_id，val_id和test_id是非重叠的，它们的并集是available_id。</p>
-<p><img src="/2022/03/30/AGW%E4%BB%A3%E7%A0%81%E5%AD%A6%E4%B9%A001-SYSU%E6%95%B0%E6%8D%AE%E9%9B%86%E9%A2%84%E5%A4%84%E7%90%86/image-20220330094417641.png" alt="image-20220330094417641"><img src="/2022/03/30/AGW%E4%BB%A3%E7%A0%81%E5%AD%A6%E4%B9%A001-SYSU%E6%95%B0%E6%8D%AE%E9%9B%86%E9%A2%84%E5%A4%84%E7%90%86/image-20220330094439450.png" alt="image-20220330094439450"></p>
-<p><strong>数据集提供的评估协议</strong></p>
-<p>在SYSU-MM01数据集中有<strong>491个有效的ID</strong>。我们有一个固定的分割，<strong>使用296个身份用于训练</strong>，<strong>99个用于验证</strong>，<strong>96个用于测试</strong>。在训练期间，训练集中在所有的照相机中的296人的所有图像都可以应用。</p>
-<p><strong>在测试阶段，用IR搜索RGB。</strong>RGB相机的样本用于gallery，红外相机的样品用于probe。我们设计了<strong>全搜索模式和室内搜索模式</strong>两种模式。<strong>对于所有搜索模式，RGB相机1、2、4和5用于gallery集，红外相机3和6用于probe集</strong>。对于<strong>室内搜索模式，使用RGB摄像头1和2（不包括室外摄像机4和5）用于gallery集，红外摄像机3和6用于probe。</strong></p>
-<p>对于这两种模式，我们都采用了<strong>单镜头和多镜头的设置</strong>。对于每个RGB相机下的单个身份，选择一个身份图像来形成gallery集，称为单镜头（<strong>一个ID在一个cam中只随机选择一个图像作为gallery</strong>）；<strong>选择10个图像形成gallery集，称为多镜头</strong>。对于probe集，将使用所有图像。当给定一个probe图像，通过计算probe图像和gallery图像之间的相似性来进行匹配。注意，<strong>要在不同位置的摄像机之间进行匹配。</strong>相机2和相机3在相同的位置，所以相机3的probe图像要跳过相机2的gallery图像。在计算了相似性后，我们可以根据相似性的降序得到一个排名列表。</p>
-<p>这个数据集具有挑战性，因为一些人的图像是在室内环境中拍摄的，而有些是在室外环境中。它有491人，每个人至少被两个不同的照相机捕捉。<strong>单镜头全搜索模式评估协议是最具挑战性的情况。</strong></p>
-
-        <h4 id="2-数据集预处理部分代码-pre-process-sysu-py">
-          <a href="#2-数据集预处理部分代码-pre-process-sysu-py" class="heading-link"><i class="fas fa-link"></i></a><a href="#2-数据集预处理部分代码-pre-process-sysu-py" class="headerlink" title="2 数据集预处理部分代码 pre_process_sysu.py"></a>2 数据集预处理部分代码 pre_process_sysu.py</h4>
-      <p>AGW使用**.npy**格式来存储与加载数据集和标签。</p>
-
-        <h5 id="2-1-数据集加载部分">
-          <a href="#2-1-数据集加载部分" class="heading-link"><i class="fas fa-link"></i></a><a href="#2-1-数据集加载部分" class="headerlink" title="2.1 数据集加载部分"></a>2.1 数据集加载部分</h5>
-      <figure class="highlight python"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 加载模块与引入数据集路径</span></span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"><span class="keyword">from</span> PIL <span class="keyword">import</span> Image</span><br><span class="line"><span class="keyword">import</span> pdb</span><br><span class="line"><span class="keyword">import</span> os</span><br><span class="line"></span><br><span class="line"><span class="comment"># 数据集路径</span></span><br><span class="line">data_path = <span class="string">&#x27;/home/datasets/prml/computervision/re-id/sysu-mm01/ori_data&#x27;</span></span><br><span class="line"><span class="comment"># 标注出rgb相机和红外相机</span></span><br><span class="line">rgb_cameras = [<span class="string">&#x27;cam1&#x27;</span>,<span class="string">&#x27;cam2&#x27;</span>,<span class="string">&#x27;cam4&#x27;</span>,<span class="string">&#x27;cam5&#x27;</span>]</span><br><span class="line">ir_cameras = [<span class="string">&#x27;cam3&#x27;</span>,<span class="string">&#x27;cam6&#x27;</span>]</span><br></pre></td></tr></table></div></figure>
-
-
-        <h5 id="2-2-从划分协议中提取图像ID">
-          <a href="#2-2-从划分协议中提取图像ID" class="heading-link"><i class="fas fa-link"></i></a><a href="#2-2-从划分协议中提取图像ID" class="headerlink" title="2.2 从划分协议中提取图像ID"></a>2.2 从划分协议中提取图像ID</h5>
-      <p>根据SYSU数据集提供的划分协议，使用296个身份作为训练集，99个身份用于验证。训练集和测试集的行人ID都保存在exp文件夹下的train_id.txt和val_id.txt下。</p>
-<img src="/2022/03/30/AGW%E4%BB%A3%E7%A0%81%E5%AD%A6%E4%B9%A001-SYSU%E6%95%B0%E6%8D%AE%E9%9B%86%E9%A2%84%E5%A4%84%E7%90%86/image-20220330110926297.png" alt="image-20220330110926297" style="zoom:80%;">
-
-<p>打开train_id.txt可见训练集中的ID以数字形式出现，以逗号为分割排成一行。</p>
-<p><img src="/2022/03/30/AGW%E4%BB%A3%E7%A0%81%E5%AD%A6%E4%B9%A001-SYSU%E6%95%B0%E6%8D%AE%E9%9B%86%E9%A2%84%E5%A4%84%E7%90%86/image-20220330111038854.png" alt="image-20220330111038854"></p>
-<figure class="highlight python"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 3.找到训练集和验证集的ID，并预处理</span></span><br><span class="line"><span class="comment"># 找到划分协议文件</span></span><br><span class="line">file_path_train = os.path.join(data_path,<span class="string">&#x27;exp/train_id.txt&#x27;</span>)</span><br><span class="line">file_path_val   = os.path.join(data_path,<span class="string">&#x27;exp/val_id.txt&#x27;</span>)</span><br><span class="line"><span class="keyword">with</span> <span class="built_in">open</span>(file_path_train, <span class="string">&#x27;r&#x27;</span>) <span class="keyword">as</span> file:</span><br><span class="line">    ids = file.read().splitlines()             <span class="comment"># splitlines按照行(&#x27;\r&#x27;, &#x27;\r\n&#x27;, \n&#x27;)分隔，返回一个包含各行作为元素的列表</span></span><br><span class="line">    ids = [<span class="built_in">int</span>(y) <span class="keyword">for</span> y <span class="keyword">in</span> ids[<span class="number">0</span>].split(<span class="string">&#x27;,&#x27;</span>)]  <span class="comment"># ids[0]表示提取出的第一行去掉引号，然后按逗号分隔，形成整数型列表</span></span><br><span class="line">    id_train = [<span class="string">&quot;%04d&quot;</span> % x <span class="keyword">for</span> x <span class="keyword">in</span> ids]       <span class="comment"># 将从划分协议中提取的ID转变成4位整数，与数据集文件夹的ID形式对应</span></span><br><span class="line">    <span class="comment"># print(id_train)                           # [&#x27;0001&#x27;, &#x27;0002&#x27;, &#x27;0004&#x27;, &#x27;0005&#x27;, &#x27;0007&#x27;...&#x27;0533&#x27;]</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">with</span> <span class="built_in">open</span>(file_path_val, <span class="string">&#x27;r&#x27;</span>) <span class="keyword">as</span> file:</span><br><span class="line">    ids = file.read().splitlines()</span><br><span class="line">    ids = [<span class="built_in">int</span>(y) <span class="keyword">for</span> y <span class="keyword">in</span> ids[<span class="number">0</span>].split(<span class="string">&#x27;,&#x27;</span>)]</span><br><span class="line">    id_val = [<span class="string">&quot;%04d&quot;</span> % x <span class="keyword">for</span> x <span class="keyword">in</span> ids]</span><br><span class="line">    <span class="comment"># print(id_val)                             # [&#x27;0334&#x27;, &#x27;0335&#x27;, &#x27;0336&#x27;, &#x27;0337&#x27;, &#x27;0338&#x27;...]</span></span><br><span class="line">    </span><br><span class="line"><span class="comment"># 合并训练和测试ID</span></span><br><span class="line">id_train.extend(id_val)</span><br></pre></td></tr></table></div></figure>
-
-
-        <h5 id="2-3-依据提取到的行人ID找到对应的图片数据">
-          <a href="#2-3-依据提取到的行人ID找到对应的图片数据" class="heading-link"><i class="fas fa-link"></i></a><a href="#2-3-依据提取到的行人ID找到对应的图片数据" class="headerlink" title="2.3 依据提取到的行人ID找到对应的图片数据"></a>2.3 依据提取到的行人ID找到对应的图片数据</h5>
-      <p>SYSU数据集的格式是相机ID\行人身份ID\图片编号.jpg</p>
-<p><img src="/2022/03/30/AGW%E4%BB%A3%E7%A0%81%E5%AD%A6%E4%B9%A001-SYSU%E6%95%B0%E6%8D%AE%E9%9B%86%E9%A2%84%E5%A4%84%E7%90%86/image-20220330111448414.png" alt="image-20220330111448414"></p>
-<p>由于每个行人身份不一定在每个相机中都被拍摄到，因此需要遍历相机ID来查询根据上述代码提取到的行人ID来找到对应的图像。</p>
-<figure class="highlight python"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 4.找到训练集ID对应的所有RGB和IR图像</span></span><br><span class="line">files_rgb = []    <span class="comment"># 保存RGB图像路径的列表</span></span><br><span class="line">files_ir = []     <span class="comment"># 保存IR图像路径的列表</span></span><br><span class="line"><span class="keyword">for</span> <span class="built_in">id</span> <span class="keyword">in</span> <span class="built_in">sorted</span>(id_train):   <span class="comment"># 按着ID从小到大的顺序(sorted)</span></span><br><span class="line">    <span class="keyword">for</span> cam <span class="keyword">in</span> rgb_cameras:   <span class="comment"># 遍历RGB相机</span></span><br><span class="line">        img_dir = os.path.join(data_path, cam, <span class="built_in">id</span>)  <span class="comment"># 该相机下该行人ID的文件夹</span></span><br><span class="line">        <span class="keyword">if</span> os.path.isdir(img_dir):</span><br><span class="line">            new_files = <span class="built_in">sorted</span>([img_dir+<span class="string">&#x27;/&#x27;</span>+i <span class="keyword">for</span> i <span class="keyword">in</span> os.listdir(img_dir)])  <span class="comment"># os.listdir 返回包含的文件名字的列表</span></span><br><span class="line">            files_rgb.extend(new_files)   <span class="comment"># 添加到训练集中RGB图像路径的列表</span></span><br><span class="line">            </span><br><span class="line">    <span class="keyword">for</span> cam <span class="keyword">in</span> ir_cameras:</span><br><span class="line">        img_dir = os.path.join(data_path, cam, <span class="built_in">id</span>)</span><br><span class="line">        <span class="keyword">if</span> os.path.isdir(img_dir):</span><br><span class="line">            new_files = <span class="built_in">sorted</span>([img_dir+<span class="string">&#x27;/&#x27;</span>+i <span class="keyword">for</span> i <span class="keyword">in</span> os.listdir(img_dir)])</span><br><span class="line">            files_ir.extend(new_files)</span><br></pre></td></tr></table></div></figure>
-
-
-        <h5 id="2-4-对行人ID重新打标签">
-          <a href="#2-4-对行人ID重新打标签" class="heading-link"><i class="fas fa-link"></i></a><a href="#2-4-对行人ID重新打标签" class="headerlink" title="2.4 对行人ID重新打标签"></a>2.4 对行人ID重新打标签</h5>
-      <p>由于在训练阶段，ReID任务可以看作是一个多分类问题，<strong>提取的训练和验证集是从总的行人ID中随机抽出的，行人ID并不连续，直接使用行人ID作为训练label并不是一个好的选择</strong>，因此需要对行人身份重新打标签，让标签连续。</p>
-<p>实现的方法其实就是<strong>利用Python中的set()集合元素不重复的特性</strong>，将行人ID放入集合，<strong>集合的索引index是一个从0开始的连续值</strong>，<strong>将索引和值对调就可以实现对行人ID进行relabel的功能。</strong></p>
-<figure class="highlight python"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 5.重新打标签(将混乱的标签一一对应变为0-394的新标签)</span></span><br><span class="line"><span class="comment"># 训练集296个身份，验证集99个身份，296+99=395</span></span><br><span class="line">pid_container = <span class="built_in">set</span>()    <span class="comment"># 集合可以保证里面的元素不重复，直接将索引和值倒置，就可以获得0-394的新label</span></span><br><span class="line"><span class="comment"># 根据实际的图片路径来提取实际用到的行人身份ID</span></span><br><span class="line"><span class="keyword">for</span> img_path <span class="keyword">in</span> files_ir:</span><br><span class="line">    <span class="comment"># 从图像路径中提取倒数第13位到倒数第9位(不包括第9位)的行人ID，文件路径****(行人ID)/****(图片编号).jpg</span></span><br><span class="line">    pid = <span class="built_in">int</span>(img_path[-<span class="number">13</span>:-<span class="number">9</span>])   </span><br><span class="line">    pid_container.add(pid)</span><br><span class="line">pid2label = &#123;pid:label <span class="keyword">for</span> label, pid <span class="keyword">in</span> <span class="built_in">enumerate</span>(pid_container)&#125;  <span class="comment"># 直接将索引和值倒置，就可以获得0-394的新label</span></span><br><span class="line"><span class="comment"># pid2label&#123;(key)行人ID:(value)set的index&#125;</span></span><br></pre></td></tr></table></div></figure>
-
-
-        <h5 id="2-5-读取图像、label">
-          <a href="#2-5-读取图像、label" class="heading-link"><i class="fas fa-link"></i></a><a href="#2-5-读取图像、label" class="headerlink" title="2.5 读取图像、label"></a>2.5 读取图像、label</h5>
-      <figure class="highlight python"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line">fix_image_width = <span class="number">144</span></span><br><span class="line">fix_image_height = <span class="number">288</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">read_imgs</span>(<span class="params">train_image</span>):</span></span><br><span class="line">    train_img = []</span><br><span class="line">    train_label = []</span><br><span class="line">    <span class="keyword">for</span> img_path <span class="keyword">in</span> train_image:</span><br><span class="line">        <span class="comment"># img</span></span><br><span class="line">        img = Image.<span class="built_in">open</span>(img_path)</span><br><span class="line">        img = img.resize((fix_image_width, fix_image_height), Image.ANTIALIAS) <span class="comment"># Image.ANTIALIAS高质量、抗锯齿</span></span><br><span class="line">        pix_array = np.array(img)</span><br><span class="line"></span><br><span class="line">        train_img.append(pix_array) </span><br><span class="line">        </span><br><span class="line">        <span class="comment"># label</span></span><br><span class="line">        pid = <span class="built_in">int</span>(img_path[-<span class="number">13</span>:-<span class="number">9</span>])  <span class="comment"># 从图片路径中提取行人ID</span></span><br><span class="line">        pid = pid2label[pid]         <span class="comment"># 将行人ID转换成label</span></span><br><span class="line">        train_label.append(pid)</span><br><span class="line">    <span class="keyword">return</span> np.array(train_img), np.array(train_label)</span><br><span class="line"></span><br><span class="line"><span class="comment"># rgb imges</span></span><br><span class="line">train_img, train_label = read_imgs(files_rgb)</span><br><span class="line">np.save(data_path + <span class="string">&#x27;train_rgb_resized_img.npy&#x27;</span>, train_img)</span><br><span class="line">np.save(data_path + <span class="string">&#x27;train_rgb_resized_label.npy&#x27;</span>, train_label)</span><br><span class="line"></span><br><span class="line"><span class="comment"># ir imges</span></span><br><span class="line">train_img, train_label = read_imgs(files_ir)</span><br><span class="line">np.save(data_path + <span class="string">&#x27;train_ir_resized_img.npy&#x27;</span>, train_img)</span><br><span class="line">np.save(data_path + <span class="string">&#x27;train_ir_resized_label.npy&#x27;</span>, train_label)</span><br></pre></td></tr></table></div></figure>
-
-
-        <h4 id="3-损失函数部分代码loss-py">
-          <a href="#3-损失函数部分代码loss-py" class="heading-link"><i class="fas fa-link"></i></a><a href="#3-损失函数部分代码loss-py" class="headerlink" title="3 损失函数部分代码loss.py"></a>3 损失函数部分代码loss.py</h4>
-      <p>三元组损失是行人再识别常用的损失函数，三元组损失函数的输入为三张输入图片，分别为固定图片a (Anchor)、正样本图片p (Positive)和负样本图片n (Negative)，a与p组成正样本对，a与n组成负样本对，则三元组损失表示为：</p>
-<p><img src="/2022/03/30/AGW%E4%BB%A3%E7%A0%81%E5%AD%A6%E4%B9%A001-SYSU%E6%95%B0%E6%8D%AE%E9%9B%86%E9%A2%84%E5%A4%84%E7%90%86/image-20220401153544661.png" alt="image-20220401153544661"></p>
-<p>其中，(z)+代表max(z,0)，α是根据实际需要设定的阈值参数。如图所示，<strong>三元组损失函数拉近了正样本对，推开负样本对，使得相同标签图像特征能够在特征空间上聚集</strong>，从而训练网络。</p>
-<p>但是如果在数据集中随机采样选择的图片作为正负样本对很多都是简单易区分的，不利于网络的训练，所以对于每个固定图片a在一个训练批次内选择距离最远的正样本图片p和距离最近的负样本图片n来训练网络，增强网络的泛化能力，从而使网络学习到更好的表征。</p>
-<p><img src="/2022/03/30/AGW%E4%BB%A3%E7%A0%81%E5%AD%A6%E4%B9%A001-SYSU%E6%95%B0%E6%8D%AE%E9%9B%86%E9%A2%84%E5%A4%84%E7%90%86/image-20220401154750251.png" alt="image-20220401154750251"></p>
-<p>其中，α是根据实际需要设定的阈值参数。<br>在实际进行计算损失函数过程中，由于难样本三元组损失特殊的计算方式，所以需要自己定义采样器，实现每个batchsize的N张图片是包括<code>P（图片分类数）×K（每个分类数的样本数）</code>，当某个类数量不足K张时，允许重复抽取。</p>
-
-        <h5 id="3-1-难样本挖掘三元组损失OriTripletLoss">
-          <a href="#3-1-难样本挖掘三元组损失OriTripletLoss" class="heading-link"><i class="fas fa-link"></i></a><a href="#3-1-难样本挖掘三元组损失OriTripletLoss" class="headerlink" title="3.1 难样本挖掘三元组损失OriTripletLoss"></a>3.1 难样本挖掘三元组损失OriTripletLoss</h5>
-      
-        <h5 id="3-1-1-OriTripletLoss类的初始化函数">
-          <a href="#3-1-1-OriTripletLoss类的初始化函数" class="heading-link"><i class="fas fa-link"></i></a><a href="#3-1-1-OriTripletLoss类的初始化函数" class="headerlink" title="3.1.1 OriTripletLoss类的初始化函数"></a>3.1.1 OriTripletLoss类的初始化函数</h5>
-      <p>主要定义一下计算普通三元组损失的损失函数和需要的阈值参数margin。nn.MarginRankingLoss(margin=margin)实现的计算公式就是上文的三元组损失计算。</p>
-<figure class="highlight python"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">__init__</span>(<span class="params">self, batch_size, margin=<span class="number">0.3</span></span>):</span></span><br><span class="line">    <span class="built_in">super</span>(OriTripletLoss, self).__init__()</span><br><span class="line">    self.margin = margin</span><br><span class="line">    <span class="comment"># nn.MarginRankingLoss(margin=margin)是一个简单的三元组损失函数</span></span><br><span class="line">    <span class="comment"># 功能： 计算两个向量之间的相似度，当两个向量之间的距离大于margin，则loss为正，小于margin，loss为0。</span></span><br><span class="line">    self.ranking_loss = nn.MarginRankingLoss(margin=margin)</span><br></pre></td></tr></table></div></figure>
-
-
-        <h5 id="3-1-2-forward部分">
-          <a href="#3-1-2-forward部分" class="heading-link"><i class="fas fa-link"></i></a><a href="#3-1-2-forward部分" class="headerlink" title="3.1.2 forward部分"></a>3.1.2 forward部分</h5>
-      <p>代码如下：</p>
-<figure class="highlight python"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">forward</span>(<span class="params">self, inputs, targets</span>):</span></span><br><span class="line">    <span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="string">    Args:</span></span><br><span class="line"><span class="string">    - inputs: feature matrix with shape (batch_size, feat_dim)</span></span><br><span class="line"><span class="string">    - targets: ground truth labels with shape (num_classes)</span></span><br><span class="line"><span class="string">    &quot;&quot;&quot;</span></span><br><span class="line">    n = inputs.size(<span class="number">0</span>)   <span class="comment"># n为batchsize</span></span><br><span class="line">    </span><br><span class="line">    <span class="comment"># 计算欧式距离部分</span></span><br><span class="line">    <span class="comment"># 欧氏距离：特征向量a和b的欧氏距离为（a-b）的平方再开放</span></span><br><span class="line">    dist = torch.<span class="built_in">pow</span>(inputs, <span class="number">2</span>).<span class="built_in">sum</span>(dim=<span class="number">1</span>, keepdim=<span class="literal">True</span>).expand(n, n)</span><br><span class="line">    dist = dist + dist.t()</span><br><span class="line">    <span class="comment"># dist.addmm_(a1, a2, inputs, inputs.t())  即dist = a1 * dist + a2 * inputs * inputs.t()</span></span><br><span class="line">    <span class="comment"># dist = dist - 2 * (inputs@inputs.t())</span></span><br><span class="line">    dist.addmm_(<span class="number">1</span>, -<span class="number">2</span>, inputs, inputs.t())</span><br><span class="line">    <span class="comment"># 为了数值稳定性，将低于min的值统一赋予min，便于反向传播和数值稳定性</span></span><br><span class="line">    dist = dist.clamp(<span class="built_in">min</span>=<span class="number">1e-12</span>).sqrt()  <span class="comment"># for numerical stability</span></span><br><span class="line">    </span><br><span class="line">    <span class="comment"># 寻找难样本部分</span></span><br><span class="line">    mask = targets.expand(n, n).eq(targets.expand(n, n).t())</span><br><span class="line">    dist_ap, dist_an = [], []</span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(n):</span><br><span class="line">        <span class="comment"># unsqueeze(0)，在在第0维度增加一个维度</span></span><br><span class="line">        dist_ap.append(dist[i][mask[i]].<span class="built_in">max</span>().unsqueeze(<span class="number">0</span>))</span><br><span class="line">        dist_an.append(dist[i][mask[i] == <span class="number">0</span>].<span class="built_in">min</span>().unsqueeze(<span class="number">0</span>))</span><br><span class="line">    dist_ap = torch.cat(dist_ap)</span><br><span class="line">    dist_an = torch.cat(dist_an)</span><br><span class="line">    </span><br><span class="line">    <span class="comment"># 计算损失部分</span></span><br><span class="line">    y = torch.ones_like(dist_an)</span><br><span class="line">    loss = self.ranking_loss(dist_an, dist_ap, y)</span><br><span class="line">    </span><br><span class="line">    <span class="comment"># compute accuracy</span></span><br><span class="line">    correct = torch.ge(dist_an, dist_ap).<span class="built_in">sum</span>().item()</span><br><span class="line">    <span class="keyword">return</span> loss, correct</span><br></pre></td></tr></table></div></figure>
-
-<p>接下来分部分来解释代码</p>
-<p>首先明确函数的输入。</p>
-<p>输入：<strong>batch_size张图片的特征向量</strong>，所以inputs的形状为<code>batch_size * featuer_dimension</code></p>
-<p><code>targets</code>为batch_size张图片的分类标签，形状为batch_size维向量。</p>
-
-        <h6 id="计算欧式距离部分">
-          <a href="#计算欧式距离部分" class="heading-link"><i class="fas fa-link"></i></a><a href="#计算欧式距离部分" class="headerlink" title="计算欧式距离部分"></a>计算欧式距离部分</h6>
-      <p>为了寻找难样本，需要计算整个batch中的所有图片两两之间的欧式距离，组成欧式距离矩阵。</p>
-<p>为了减小运算复杂度，采用完全平方公式来计算（a-b）²，即a²+b²-2ab</p>
-<p>首先通过对特征向量每个元素求平方，然后按行累加得到一个n×1×1的向量，n是batchsize，每个元素平方加和得到向量的平方和，再将其扩展成一个n×n的矩阵。</p>
-<img src="/2022/03/30/AGW%E4%BB%A3%E7%A0%81%E5%AD%A6%E4%B9%A001-SYSU%E6%95%B0%E6%8D%AE%E9%9B%86%E9%A2%84%E5%A4%84%E7%90%86/image-20220401175829360.png" alt="image-20220401175829360" style="zoom:80%;">
-
-<img src="/2022/03/30/AGW%E4%BB%A3%E7%A0%81%E5%AD%A6%E4%B9%A001-SYSU%E6%95%B0%E6%8D%AE%E9%9B%86%E9%A2%84%E5%A4%84%E7%90%86/image-20220401175859820.png" alt="image-20220401175859820" style="zoom:80%;">
-
-<figure class="highlight python"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">n = inputs.size(<span class="number">0</span>)   <span class="comment"># n为batchsize</span></span><br><span class="line"><span class="comment"># 计算欧式距离部分</span></span><br><span class="line"><span class="comment"># 欧氏距离：特征向量a和b的欧氏距离为（a-b）的平方再开方</span></span><br><span class="line">dist = torch.<span class="built_in">pow</span>(inputs, <span class="number">2</span>).<span class="built_in">sum</span>(dim=<span class="number">1</span>, keepdim=<span class="literal">True</span>).expand(n, n)</span><br><span class="line">dist = dist + dist.t()</span><br><span class="line"><span class="comment"># dist.addmm_(a1, a2, inputs, inputs.t())  即dist = a1 * dist + a2 * inputs * inputs.t()</span></span><br><span class="line"><span class="comment"># dist = dist - 2 * (inputs@inputs.t())</span></span><br><span class="line">dist.addmm_(<span class="number">1</span>, -<span class="number">2</span>, inputs, inputs.t())</span><br><span class="line"><span class="comment"># 为了数值稳定性，将低于min的值统一赋予min，便于反向传播和数值稳定性</span></span><br><span class="line">dist = dist.clamp(<span class="built_in">min</span>=<span class="number">1e-12</span>).sqrt()  <span class="comment"># for numerical stability</span></span><br></pre></td></tr></table></div></figure>
-
-
-        <h6 id="寻找难样本部分">
-          <a href="#寻找难样本部分" class="heading-link"><i class="fas fa-link"></i></a><a href="#寻找难样本部分" class="headerlink" title="寻找难样本部分"></a>寻找难样本部分</h6>
-      <p><strong>利用mask来搜索正负样本</strong><br>假设targets= [1,1,2,2,3,3,4,4]<br>由于batchsize = P*K，所以代码中所得到的的mask形状如下图。<br><strong>第i行第j列代表第i张和第j张是否为相同类别。</strong></p>
-<figure class="highlight python"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">tensor([[ <span class="literal">True</span>,  <span class="literal">True</span>, <span class="literal">False</span>, <span class="literal">False</span>, <span class="literal">False</span>, <span class="literal">False</span>, <span class="literal">False</span>, <span class="literal">False</span>],</span><br><span class="line">        [ <span class="literal">True</span>,  <span class="literal">True</span>, <span class="literal">False</span>, <span class="literal">False</span>, <span class="literal">False</span>, <span class="literal">False</span>, <span class="literal">False</span>, <span class="literal">False</span>],</span><br><span class="line">        [<span class="literal">False</span>, <span class="literal">False</span>,  <span class="literal">True</span>,  <span class="literal">True</span>, <span class="literal">False</span>, <span class="literal">False</span>, <span class="literal">False</span>, <span class="literal">False</span>],</span><br><span class="line">        [<span class="literal">False</span>, <span class="literal">False</span>,  <span class="literal">True</span>,  <span class="literal">True</span>, <span class="literal">False</span>, <span class="literal">False</span>, <span class="literal">False</span>, <span class="literal">False</span>],</span><br><span class="line">        [<span class="literal">False</span>, <span class="literal">False</span>, <span class="literal">False</span>, <span class="literal">False</span>,  <span class="literal">True</span>,  <span class="literal">True</span>, <span class="literal">False</span>, <span class="literal">False</span>],</span><br><span class="line">        [<span class="literal">False</span>, <span class="literal">False</span>, <span class="literal">False</span>, <span class="literal">False</span>,  <span class="literal">True</span>,  <span class="literal">True</span>, <span class="literal">False</span>, <span class="literal">False</span>],</span><br><span class="line">        [<span class="literal">False</span>, <span class="literal">False</span>, <span class="literal">False</span>, <span class="literal">False</span>, <span class="literal">False</span>, <span class="literal">False</span>,  <span class="literal">True</span>,  <span class="literal">True</span>],</span><br><span class="line">        [<span class="literal">False</span>, <span class="literal">False</span>, <span class="literal">False</span>, <span class="literal">False</span>, <span class="literal">False</span>, <span class="literal">False</span>,  <span class="literal">True</span>,  <span class="literal">True</span>]])</span><br></pre></td></tr></table></div></figure>
-
-
-
-<figure class="highlight python"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">mask = targets.expand(n, n).eq(targets.expand(n, n).t())</span><br><span class="line">dist_ap, dist_an = [], []</span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(n):</span><br><span class="line">    <span class="comment"># unsqueeze(0)，在在第0维度增加一个维度</span></span><br><span class="line">    dist_ap.append(dist[i][mask[i]].<span class="built_in">max</span>().unsqueeze(<span class="number">0</span>))</span><br><span class="line">    dist_an.append(dist[i][mask[i] == <span class="number">0</span>].<span class="built_in">min</span>().unsqueeze(<span class="number">0</span>))</span><br><span class="line">dist_ap = torch.cat(dist_ap)</span><br><span class="line">dist_an = torch.cat(dist_an)</span><br></pre></td></tr></table></div></figure>
-
-</div></div></article><article class="postlist-item post"><header class="post-header"><h1 class="post-title"><a class="post-title__link" href="/2022/03/26/javaday3/">javaday3</a></h1><div class="post-meta"><span class="post-meta-item post-meta-item--createtime"><span class="post-meta-item__icon"><i class="far fa-calendar-plus"></i></span><span class="post-meta-item__info">发表于</span><span class="post-meta-item__value">2022-03-26</span></span><span class="post-meta-item post-meta-item--updatetime"><span class="post-meta-item__icon"><i class="far fa-calendar-check"></i></span><span class="post-meta-item__info">更新于</span><span class="post-meta-item__value">2022-03-29</span></span></div></header><div class="post-body"><div class="post-excerpt">
-        <h3 id="Java语法速通day3–常用API和面向对象进阶">
-          <a href="#Java语法速通day3–常用API和面向对象进阶" class="heading-link"><i class="fas fa-link"></i></a><a href="#Java语法速通day3–常用API和面向对象进阶" class="headerlink" title="Java语法速通day3–常用API和面向对象进阶"></a>Java语法速通day3–常用API和面向对象进阶</h3>
-      
-        <h4 id="1-String类">
-          <a href="#1-String类" class="heading-link"><i class="fas fa-link"></i></a><a href="#1-String类" class="headerlink" title="1 String类"></a>1 String类</h4>
-      <p>java.lang.String类代表字符串类，String类定义的变量可以用于指向字符串对象，然后操作该字符串。</p>
-<p>String对象常被称为<strong>不可变字符串类型</strong>，它的<strong>对象在创建之后不可修改。</strong></p>
-<p><img src="/2022/03/26/javaday3/image-20220326104026758.png" alt="image-20220326104026758"></p>
-<p>原来创建的在字符串常量池中的对象并没有发生变化，只是两个字符串常量做运算之后的值存放在堆内存中，将运算后的对象地址赋值给变量名。</p>
-<p><img src="/2022/03/26/javaday3/image-20220326114029403.png" alt="image-20220326114029403"></p>
-<p> <strong>以双引号””方式给出的字符串对象，在字符串常量池中存储，且相同的内容在字符串常量池中只存储一份。</strong></p>
-<p><strong>通过构造器new对象，每new一次都会产生一个新对象，放在堆内存中。</strong></p>
-<p><img src="/2022/03/26/javaday3/image-20220326140311854.png" alt="image-20220326140311854"></p>
-<p><img src="/2022/03/26/javaday3/image-20220326140403960.png" alt="image-20220326140403960"></p>
-<p><img src="/2022/03/26/javaday3/image-20220326142123017.png" alt="image-20220326142123017"></p>
-<p><img src="/2022/03/26/javaday3/image-20220326142513873.png" alt="image-20220326142513873"></p>
-
-        <h5 id="1-1-字符串比较">
-          <a href="#1-1-字符串比较" class="heading-link"><i class="fas fa-link"></i></a><a href="#1-1-字符串比较" class="headerlink" title="1.1 字符串比较"></a>1.1 字符串比较</h5>
-      <p>Java中直接使用==来比较两个字符串是否相等是不合适的，常常会有出乎意料的情况出现。</p>
-<p>因此Java提供了字符串比较API equals</p>
-<p><img src="/2022/03/26/javaday3/image-20220326143135045.png" alt="image-20220326143135045"></p>
-<p><strong>忽略大小写比较内容的API常用于验证码等业务逻辑。</strong></p>
-<p><img src="/2022/03/26/javaday3/image-20220326151421263.png" alt="image-20220326151421263"></p>
-
-        <h4 id="2-ArrayList">
-          <a href="#2-ArrayList" class="heading-link"><i class="fas fa-link"></i></a><a href="#2-ArrayList" class="headerlink" title="2 ArrayList"></a>2 ArrayList</h4>
-      <p>数组一旦定义，其长度无法修改，存储的对象类型也是确定的，也就不能对数组进行增删。</p>
-<p>因此数组不适用于个数不确定，需要增删的业务场景。</p>
-<p>因此需要一个新的大小可变容器类型：集合，类似于C++中的Vector，但是C++中的Vector类型仍然固定。</p>
-<p><img src="/2022/03/26/javaday3/image-20220326154756814.png" alt="image-20220326154756814"></p>
-<p><img src="/2022/03/26/javaday3/image-20220326160454790.png" alt="image-20220326160454790"></p>
-
-        <h5 id="2-1-泛型概述">
-          <a href="#2-1-泛型概述" class="heading-link"><i class="fas fa-link"></i></a><a href="#2-1-泛型概述" class="headerlink" title="2.1 泛型概述"></a>2.1 泛型概述</h5>
-      <p>由于ArrayList集合并不限制存储元素的类型，可以在里面任意存放不同类型的数据。</p>
-<p>由于实际业务场景可能需要对存储元素的类型进行限制，因此需要<strong>使用泛型来约束ArrayList集合操作的数据类型。</strong></p>
-<p><img src="/2022/03/26/javaday3/image-20220326162219763.png" alt="image-20220326162219763"></p>
-
-        <h4 id="3-成员变量">
-          <a href="#3-成员变量" class="heading-link"><i class="fas fa-link"></i></a><a href="#3-成员变量" class="headerlink" title="3 成员变量"></a>3 成员变量</h4>
-      
-        <h5 id="3-1-成员变量的类型：">
-          <a href="#3-1-成员变量的类型：" class="heading-link"><i class="fas fa-link"></i></a><a href="#3-1-成员变量的类型：" class="headerlink" title="3.1 成员变量的类型："></a>3.1 成员变量的类型：</h5>
-      <p>成员变量分为两种：<strong>静态成员变量</strong>和<strong>实例成员变量。</strong></p>
-<p><strong>使用static修饰的成员变量称为静态成员变量。</strong></p>
-<p><img src="/2022/03/26/javaday3/image-20220328211547878.png" alt="image-20220328211547878"></p>
-<p><strong>static</strong>称为静态修饰符，它修饰的成员变量<strong>在内存中只存储一份</strong>，<strong>可以被整个类的所有对象所共享</strong>。</p>
-<p>使用静态成员变量推荐使用<strong>类名.静态成员变量</strong>来访问，当然用对象来访问也是可以的，在声明静态成员变量的类中，访问静态成员变量可以忽略类名。</p>
-<p><img src="/2022/03/26/javaday3/image-20220328212543744.png" alt="image-20220328212543744"></p>
-
-        <h5 id="3-2-static成员变量的内存机制">
-          <a href="#3-2-static成员变量的内存机制" class="heading-link"><i class="fas fa-link"></i></a><a href="#3-2-static成员变量的内存机制" class="headerlink" title="3.2 static成员变量的内存机制"></a>3.2 static成员变量的内存机制</h5>
-      <p><img src="/2022/03/26/javaday3/image-20220328213240917.png" alt="image-20220328213240917"></p>
-<p>在加载类的同时在堆内存中加载User类的静态成员变量，且只加载一次。</p>
-
-        <h4 id="4-成员方法">
-          <a href="#4-成员方法" class="heading-link"><i class="fas fa-link"></i></a><a href="#4-成员方法" class="headerlink" title="4 成员方法"></a>4 成员方法</h4>
-      <p>成员方法和成员变量一样，也分为实例成员方法和静态成员方法</p>
-<p><img src="/2022/03/26/javaday3/image-20220328213511472.png" alt="image-20220328213511472"></p>
-<p>静态方法也是为了便于共享，归属于类，可以直接使用类名访问。</p>
-<p> <img src="/2022/03/26/javaday3/image-20220328214209900.png" alt="image-20220328214209900"></p>
-<p><img src="/2022/03/26/javaday3/image-20220329172529133.png" alt="image-20220329172529133"></p>
-<p> <strong>实例方法是属于当前对象的，静态方法是属于类的。</strong></p>
-<p>静态方法是属于整个类所共享的，因此任何成员都可以访问静态方法，可以随便调用。</p>
-
-        <h4 id="5-工具类">
-          <a href="#5-工具类" class="heading-link"><i class="fas fa-link"></i></a><a href="#5-工具类" class="headerlink" title="5 工具类"></a>5 工具类</h4>
-      <p>工具类中<strong>含有一些静态方法</strong>，每个方法都是完成一个共用的功能为目的，用于给系统开发人员共同使用。</p>
-<p>静态方法的调用：<strong>类名.静态方法</strong></p>
-<p>举个例子：登录功能需要验证码，检查功能可能也需要使用验证码。</p>
-<p><strong>那么验证码生成的功能可以写成一个静态方法，放在工具类中。</strong></p>
-<p><img src="/2022/03/26/javaday3/image-20220329200037647.png" alt="image-20220329200037647"></p>
-<p><img src="/2022/03/26/javaday3/image-20220329200244551.png" alt="image-20220329200244551"></p>
-<p>由于工具类无需创建对象，可以<strong>将工具类的构造器进行私有化</strong>，将工具类隐藏可以避免创建工具类对象。</p>
-<figure class="highlight java"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//私有化构造器</span></span><br><span class="line"><span class="function"><span class="keyword">private</span> <span class="title">utils</span><span class="params">()</span></span>&#123;&#125;</span><br></pre></td></tr></table></div></figure>
-
-
-        <h4 id="6-代码块">
-          <a href="#6-代码块" class="heading-link"><i class="fas fa-link"></i></a><a href="#6-代码块" class="headerlink" title="6 代码块"></a>6 代码块</h4>
-      <p>代码块是类的五大成分之一（成员变量、构造器、方法、代码块、内部类），代码块定义在类中的方法之外。</p>
-<p><img src="/2022/03/26/javaday3/image-20220329204453012.png" alt="image-20220329204453012"></p>
-<p>静态代码块优先加载，随类一起加载。由于main等方法都是等类加载完才提取到方法区，因此静态代码块执行的优先级高于main等。</p>
-<p>构造代码块可以说是实例代码块，它是属于对象的，每次调用构造器创建对象之前会执行构造代码块，并且<strong>执行顺序优于构造器</strong>。</p>
-<p>举例：斗地主游戏</p>
-<p><img src="/2022/03/26/javaday3/image-20220329210527846.png" alt="image-20220329210527846"></p>
-<p>比如静态集合的初始化可以放在静态方法块里面。因为静态集合只需要初始化一次，因此可以在静态方法块里专门实现。</p>
-<p>如果将静态资源的初始化写在main方法里，由于main方法可能需要执行多次，因此也可能会对静态资源做多次初始化。</p>
-<p>而将静态资源的初始化写在静态代码块里，就可以随着类的加载而加载并且只执行一次，避免重复初始化。</p>
-
-        <h4 id="7-单例设计模式">
-          <a href="#7-单例设计模式" class="heading-link"><i class="fas fa-link"></i></a><a href="#7-单例设计模式" class="headerlink" title="7 单例设计模式"></a>7 单例设计模式</h4>
-      <p><strong>单例模式</strong>指的是该设计模式可以保证系统中，应用该模式的这个类永远只有一个实例，即<strong>这个类永远只能创建一个对象</strong>。</p>
-<p>如为了节省系统内存，任务管理器这个对象只需要一个就够了。</p>
-<p><img src="/2022/03/26/javaday3/image-20220329213047377.png" alt="image-20220329213047377"></p>
-
-        <h5 id="7-1-饿汉单例设计模式">
-          <a href="#7-1-饿汉单例设计模式" class="heading-link"><i class="fas fa-link"></i></a><a href="#7-1-饿汉单例设计模式" class="headerlink" title="7.1 饿汉单例设计模式"></a>7.1 饿汉单例设计模式</h5>
-      <p>饿汉单例的设计模式是在用类获取对象的时候，<strong>对象已经提前为你创建好了。</strong></p>
-<p><img src="/2022/03/26/javaday3/image-20220329213235506.png" alt="image-20220329213235506"></p>
-<p>单例的第一步是<strong>一定要把构造器私有化</strong>。</p>
-<p>由于静态变量只加载一次，并且静态对象优先级较高，随类一起加载。<strong>使用静态变量在类中存储一个实例</strong>，在<strong>类加载的时候该实例已经创建完成了。</strong></p>
-<figure class="highlight java"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//饿汉单例实现</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">SingleInstance1</span> </span>&#123;</span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 饿汉单例设计模式</span></span><br><span class="line"><span class="comment">     * 设计方式：</span></span><br><span class="line"><span class="comment">     * 1、将构造器设为私有，避免外部调用构造器生成对象</span></span><br><span class="line"><span class="comment">     * 2、声明一个静态变量，静态变量用来存储单例类的对象，这样就可以保证只该类只有一个对象</span></span><br><span class="line"><span class="comment">     *</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> SingleInstance1 instance = <span class="keyword">new</span> SingleInstance1();</span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="title">SingleInstance1</span><span class="params">()</span></span>&#123;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></div></figure>
-
-
-
-
-        <h5 id="7-2-懒汉单例">
-          <a href="#7-2-懒汉单例" class="heading-link"><i class="fas fa-link"></i></a><a href="#7-2-懒汉单例" class="headerlink" title="7.2 懒汉单例"></a>7.2 懒汉单例</h5>
-      <p>懒汉单例类指的是只有在真正需要该对象的时候，才去创建一个对象（延迟加载对象）</p>
-<img src="/2022/03/26/javaday3/image-20220329214654283.png" alt="image-20220329214654283" style="zoom:50%;">
-
-<figure class="highlight java"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//懒汉单例实现</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">SingleInstance2</span> </span>&#123;</span><br><span class="line">    <span class="comment">/*</span></span><br><span class="line"><span class="comment">    懒汉单例设计模式：</span></span><br><span class="line"><span class="comment">    1、将构造器设置为私有</span></span><br><span class="line"><span class="comment">    2、定义一个静态变量存储单例对象</span></span><br><span class="line"><span class="comment">    3、需要提供一个方法来返回单例对象，但同样只需要一个对象，只创建一次。</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="comment">//1、将构造器设置为私有</span></span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="title">SingleInstance2</span><span class="params">()</span></span>&#123;&#125;</span><br><span class="line">    <span class="comment">//2、定义一个静态变量存储单例对象</span></span><br><span class="line">    <span class="comment">//由于懒汉单例需要在真正使用该对象的时候才创建，如果将静态对象声明成public，可能会造成外部使用类名误调用未初始化的单例对象</span></span><br><span class="line">    <span class="comment">//因此保险起见，可以将静态变量声明成private，避免调用到未初始化的对象</span></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> SingleInstance2 instance;</span><br><span class="line">    <span class="comment">//3、需要提供一个方法来返回单例对象，但同样只需要一个对象，只创建一次。</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> SingleInstance2 <span class="title">getInstance</span><span class="params">()</span></span>&#123;</span><br><span class="line">        <span class="comment">//只创建一次，因此只在instance为空的时候才调用构造器</span></span><br><span class="line">        <span class="keyword">if</span>(instance == <span class="keyword">null</span>)&#123;</span><br><span class="line">            instance = <span class="keyword">new</span> SingleInstance2();</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> instance;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//测试代码</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">test</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        <span class="comment">//使用饿汉单例获得对象</span></span><br><span class="line">        SingleInstance1 s2 = SingleInstance1.instance;</span><br><span class="line">        <span class="comment">//使用懒汉单例获得对象</span></span><br><span class="line">        SingleInstance2 s3 = SingleInstance2.getInstance();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></div></figure>
-
-
-        <h5 id="7-3-二者的比较">
-          <a href="#7-3-二者的比较" class="heading-link"><i class="fas fa-link"></i></a><a href="#7-3-二者的比较" class="headerlink" title="7.3 二者的比较"></a>7.3 二者的比较</h5>
-      <p>饿汉单例：</p>
-<p>由于使用静态变量存储并直接调用构造器生成一个单例对象，<strong>随类一起加载并生成，速度较快</strong>，但是当可能不会使用到此单例的时候会无端浪费内存，</p>
-<p>懒汉单例：</p>
-<p>直到需要单例对象的时候才使用写好的返回单例对象的方法来获得单例对象，<strong>速度可能没有饿汉快，但是节省内存。</strong></p>
 </div></div></article></section><nav class="paginator"><div class="paginator-inner"><a class="extend prev" rel="prev" href="/"><i class="fas fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/page/6/">6</a><a class="extend next" rel="next" href="/page/3/"><i class="fas fa-angle-right"></i></a></div></nav></div></div><div class="sidebar-wrap" id="sidebar-wrap"><aside class="sidebar" id="sidebar"><section class="sidebar-toc hide"></section><!-- ov = overview--><section class="sidebar-ov"><div class="sidebar-ov-author"><div class="sidebar-ov-author__avatar"><img class="sidebar-ov-author__avatar_img" src="/images/icons/photo.png" alt="avatar"></div><p class="sidebar-ov-author__text">To be a great person.</p></div><div class="sidebar-ov-cc"><a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en" target="_blank" rel="noopener" data-popover="知识共享许可协议" data-popover-pos="up"><img src="/images/cc-by-nc-sa.svg"></a></div></section></aside></div><div class="clearfix"></div></div></main><footer class="footer" id="footer"><div class="footer-inner"><div><span>Copyright © 2022</span><span class="footer__icon"><i class="fas fa-heart"></i></span><span>Strive</span></div><div><span>由 <a href="http://hexo.io/" title="Hexo" target="_blank" rel="noopener">Hexo</a> 强力驱动</span><span> v5.4.0</span><span class="footer__devider">|</span><span>主题 - <a href="https://github.com/liuyib/hexo-theme-stun/" title="Stun" target="_blank" rel="noopener">Stun</a></span><span> v2.6.2</span></div></div></footer><div class="loading-bar" id="loading-bar"><div class="loading-bar__progress"></div></div><div class="back2top" id="back2top"><span class="back2top__icon"><i class="fas fa-rocket"></i></span></div></div><script src="https://cdn.jsdelivr.net/npm/jquery@v3.4.1/dist/jquery.min.js"></script><script src="https://cdn.jsdelivr.net/npm/velocity-animate@1.5.2/velocity.min.js"></script><script src="https://cdn.jsdelivr.net/npm/velocity-animate@1.5.2/velocity.ui.min.js"></script><script src="/js/utils.js?v=2.6.2"></script><script src="/js/stun-boot.js?v=2.6.2"></script><script src="/js/scroll.js?v=2.6.2"></script><script src="/js/header.js?v=2.6.2"></script><script src="/js/sidebar.js?v=2.6.2"></script></body></html>
