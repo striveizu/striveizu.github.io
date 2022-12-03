@@ -28,7 +28,139 @@ var CONFIG = {
   sourcePath: {"js":"js","css":"css","images":"images"},
 };
 
-window.CONFIG = CONFIG;</script><meta name="generator" content="Hexo 5.4.0"></head><body><div class="container" id="container"><header class="header" id="header"><div class="header-inner"><nav class="header-nav header-nav--fixed"><div class="header-nav-inner"><div class="header-nav-menubtn"><i class="fas fa-bars"></i></div><div class="header-nav-menu"><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/"><span class="header-nav-menu-item__icon"><i class="fas fa-home"></i></span><span class="header-nav-menu-item__text">首页</span></a></div><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/about/"><span class="header-nav-menu-item__icon"><i class="fas fa-address-card"></i></span><span class="header-nav-menu-item__text">关于</span></a></div><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="javascript:;" onclick="return false;"><span class="header-nav-menu-item__icon"><i class="fas fa-edit"></i></span><span class="header-nav-menu-item__text">文章</span></a><div class="header-nav-submenu"><div class="header-nav-submenu-item"><a class="header-nav-submenu-item__link" href="/archives/"><span class="header-nav-submenu-item__icon"><i class="fas fa-folder-open"></i></span><span class="header-nav-submenu-item__text">归档</span></a></div><div class="header-nav-submenu-item"><a class="header-nav-submenu-item__link" href="/categories/"><span class="header-nav-submenu-item__icon"><i class="fas fa-layer-group"></i></span><span class="header-nav-submenu-item__text">分类</span></a></div><div class="header-nav-submenu-item"><a class="header-nav-submenu-item__link" href="/tags/"><span class="header-nav-submenu-item__icon"><i class="fas fa-tags"></i></span><span class="header-nav-submenu-item__text">标签</span></a></div></div></div></div><div class="header-nav-mode"><div class="mode"><div class="mode-track"><span class="mode-track-moon"></span><span class="mode-track-sun"></span></div><div class="mode-thumb"></div></div></div></div></nav><div class="header-banner"><div class="header-banner-info"><div class="header-banner-info__title">Strive's Blog</div><div class="header-banner-info__subtitle">你我期许的绝非遥不可及</div></div><div class="header-banner-arrow"><div class="header-banner-arrow__icon"><i class="fas fa-angle-down"></i></div></div></div></div></header><main class="main" id="main"><div class="main-inner"><div class="content-wrap" id="content-wrap"><div class="content content-home" id="content"><section class="postlist"><article class="postlist-item post"><header class="post-header"><h1 class="post-title"><a class="post-title__link" href="/2022/03/15/Intra-Inter-Camera-Similarity-for-Unsupervised-Person-Re-Identification/">Intra-Inter Camera Similarity for Unsupervised Person Re-Identification</a></h1><div class="post-meta"><span class="post-meta-item post-meta-item--createtime"><span class="post-meta-item__icon"><i class="far fa-calendar-plus"></i></span><span class="post-meta-item__info">发表于</span><span class="post-meta-item__value">2022-03-15</span></span><span class="post-meta-item post-meta-item--updatetime"><span class="post-meta-item__icon"><i class="far fa-calendar-check"></i></span><span class="post-meta-item__info">更新于</span><span class="post-meta-item__value">2022-03-18</span></span></div></header><div class="post-body"><div class="post-excerpt">
+window.CONFIG = CONFIG;</script><meta name="generator" content="Hexo 5.4.0"></head><body><div class="container" id="container"><header class="header" id="header"><div class="header-inner"><nav class="header-nav header-nav--fixed"><div class="header-nav-inner"><div class="header-nav-menubtn"><i class="fas fa-bars"></i></div><div class="header-nav-menu"><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/"><span class="header-nav-menu-item__icon"><i class="fas fa-home"></i></span><span class="header-nav-menu-item__text">首页</span></a></div><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/about/"><span class="header-nav-menu-item__icon"><i class="fas fa-address-card"></i></span><span class="header-nav-menu-item__text">关于</span></a></div><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="javascript:;" onclick="return false;"><span class="header-nav-menu-item__icon"><i class="fas fa-edit"></i></span><span class="header-nav-menu-item__text">文章</span></a><div class="header-nav-submenu"><div class="header-nav-submenu-item"><a class="header-nav-submenu-item__link" href="/archives/"><span class="header-nav-submenu-item__icon"><i class="fas fa-folder-open"></i></span><span class="header-nav-submenu-item__text">归档</span></a></div><div class="header-nav-submenu-item"><a class="header-nav-submenu-item__link" href="/categories/"><span class="header-nav-submenu-item__icon"><i class="fas fa-layer-group"></i></span><span class="header-nav-submenu-item__text">分类</span></a></div><div class="header-nav-submenu-item"><a class="header-nav-submenu-item__link" href="/tags/"><span class="header-nav-submenu-item__icon"><i class="fas fa-tags"></i></span><span class="header-nav-submenu-item__text">标签</span></a></div></div></div></div><div class="header-nav-mode"><div class="mode"><div class="mode-track"><span class="mode-track-moon"></span><span class="mode-track-sun"></span></div><div class="mode-thumb"></div></div></div></div></nav><div class="header-banner"><div class="header-banner-info"><div class="header-banner-info__title">Strive's Blog</div><div class="header-banner-info__subtitle">你我期许的绝非遥不可及</div></div><div class="header-banner-arrow"><div class="header-banner-arrow__icon"><i class="fas fa-angle-down"></i></div></div></div></div></header><main class="main" id="main"><div class="main-inner"><div class="content-wrap" id="content-wrap"><div class="content content-home" id="content"><section class="postlist"><article class="postlist-item post"><header class="post-header"><h1 class="post-title"><a class="post-title__link" href="/2022/03/15/c-chapter6/">c++chapter6</a></h1><div class="post-meta"><span class="post-meta-item post-meta-item--createtime"><span class="post-meta-item__icon"><i class="far fa-calendar-plus"></i></span><span class="post-meta-item__info">发表于</span><span class="post-meta-item__value">2022-03-15</span></span><span class="post-meta-item post-meta-item--updatetime"><span class="post-meta-item__icon"><i class="far fa-calendar-check"></i></span><span class="post-meta-item__info">更新于</span><span class="post-meta-item__value">2022-03-20</span></span></div></header><div class="post-body"><div class="post-excerpt">
+        <h4 id="第六章-函数">
+          <a href="#第六章-函数" class="heading-link"><i class="fas fa-link"></i></a><a href="#第六章-函数" class="headerlink" title="第六章 函数"></a>第六章 函数</h4>
+      
+        <h4 id="6-1-局部对象">
+          <a href="#6-1-局部对象" class="heading-link"><i class="fas fa-link"></i></a><a href="#6-1-局部对象" class="headerlink" title="6.1 局部对象"></a>6.1 局部对象</h4>
+      <p>在C++中，名字有作用域，对象有生命周期。</p>
+<p><strong>名字的作用域指的是程序文本的一部分，名字在其中可见。</strong></p>
+<p><strong>对象的生命周期是程序执行过程中该对象存在的一段时间。</strong></p>
+<p>对于函数来说，函数体是一个语句块，语句块构成一个新的<strong>作用域</strong>。我们可以在作用域中定义变量，在<strong>作用域中定义的变量统称为局部变量。仅在函数的作用域内可见</strong></p>
+
+        <h5 id="6-1-1-普通局部对象">
+          <a href="#6-1-1-普通局部对象" class="heading-link"><i class="fas fa-link"></i></a><a href="#6-1-1-普通局部对象" class="headerlink" title="6.1.1 普通局部对象"></a>6.1.1 普通局部对象</h5>
+      <p>普通局部变量对应的对象只有当函数的控制路径经过变量定义语句时创建该对象，到达变量定义所在的块的末尾时将其销毁。</p>
+
+        <h5 id="6-1-2-局部静态对象">
+          <a href="#6-1-2-局部静态对象" class="heading-link"><i class="fas fa-link"></i></a><a href="#6-1-2-局部静态对象" class="headerlink" title="6.1.2 局部静态对象"></a>6.1.2 局部静态对象</h5>
+      <p>由于普通局部变量的对象的生命周期在执行到变量定义所在块的末尾即结束，有时又需要让局部变量的生命周期贯穿函数调用及之后的时间，可以把局部变量定义成<strong>static类型</strong>。定义成static的对象在程序执行路径第一次经过对象定义语句时被初始化，<strong>直到程序终止才被销毁。</strong></p>
+
+        <h4 id="6-2-函数声明-又称函数原型">
+          <a href="#6-2-函数声明-又称函数原型" class="heading-link"><i class="fas fa-link"></i></a><a href="#6-2-函数声明-又称函数原型" class="headerlink" title="6.2 函数声明 又称函数原型"></a>6.2 函数声明 又称函数原型</h4>
+      <p>函数的名字必须在使用之前声明，<strong>函数只能定义一次，但是可以声明多次。</strong></p>
+<p>如果一个函数永不被使用，可以只有声明没有定义。</p>
+<p><strong>函数的声明和函数的定义非常类似，但是函数的声明无需写函数体，只需要在函数名和参数列表后加；即可。</strong></p>
+<p>函数的声明<strong>一般在头文件中使用，</strong>可以确保所有文件同一函数声明保持一致，并且方便修改函数的接口。</p>
+
+        <h5 id="为什么要使用函数声明！！！">
+          <a href="#为什么要使用函数声明！！！" class="heading-link"><i class="fas fa-link"></i></a><a href="#为什么要使用函数声明！！！" class="headerlink" title="为什么要使用函数声明！！！"></a>为什么要使用函数声明！！！</h5>
+      <p><strong>对于单个源文件的程序，通常是将函数定义放到 main() 的后面</strong>，将函数声明放到 main() 的前面，这样就使得代码结构清晰明了，主次分明。</p>
+<p>使用者往往只关心函数的功能和函数的调用形式，很少关心函数的实现细节，<strong>将函数定义放在最后，就是尽量屏蔽不重要的信息</strong>，凸显关键的信息。将函数声明放到 main() 的前面，在定义函数时也不用关注它们的调用顺序了，哪个函数先定义，哪个函数后定义，都无所谓了。</p>
+<p>然而在实际开发中，往往都是几千行、上万行、百万行的代码，将这些代码都放在一个源文件中简直是灾难，不但检索麻烦，而且打开文件也很慢，所以必须将这些代码分散到多个文件中。<strong>对于多个文件的程序，通常是将函数定义放到源文件（<code>.c</code>文件）中，将函数的声明放到头文件（<code>.h</code>文件）中</strong>，使用函数时引入对应的头文件就可以，编译器会在链接阶段找到函数体。</p>
+<p>前面我们在使用 printf()、puts()、scanf() 等函数时引入了 stdio.h 头文件，很多初学者认为 stdio.h 中包含了函数定义（也就是函数体），只要有了头文件就能运行，其实不然，<strong>头文件中包含的都是函数声明，而不是函数定义，函数定义都放在了其它的源文件中，这些源文件已经提前编译好了，并以动态链接库或者静态链接库的形式存在</strong>，只有头文件没有系统库的话，在链接阶段就会报错，程序根本不能运行。</p>
+<p>除了函数，变量也有定义和声明之分。实际开发过程中，变量定义需要放在源文件（<code>.c</code>文件）中，变量声明需要放在头文件（<code>.h</code>文件）中，在链接程序时会将它们对应起来</p>
+
+        <h4 id="6-3-参数传递">
+          <a href="#6-3-参数传递" class="heading-link"><i class="fas fa-link"></i></a><a href="#6-3-参数传递" class="headerlink" title="6.3 参数传递"></a>6.3 参数传递</h4>
+      
+        <h5 id="6-3-1-形参实参">
+          <a href="#6-3-1-形参实参" class="heading-link"><i class="fas fa-link"></i></a><a href="#6-3-1-形参实参" class="headerlink" title="6.3.1 形参实参"></a>6.3.1 形参实参</h5>
+      <p>形参是函数声明时，括号里参数列表的参数。<strong>函数执行的第一步是定义并初始化它的形参</strong>。<strong>实参是形参的初始值，每次调用函数时都会重新创建它的形参，并用传入的实参对形参进行初始化。</strong></p>
+<p>如果<strong>形参是引用类型，那么形参会作为实参的别名与实参绑定</strong>，否则将实参的值拷贝后赋值给形参。</p>
+<p>当形参是引用类型时，我们说<strong>它对应的实参被引用传递</strong>，或者函数被传引用调用。由于形参是实参的引用，所以<strong>函数对形参的修改都会直接作用在实参上</strong>。因此<strong>想要对外部的对象使用函数修改，需要将形参声明为引用类型。</strong></p>
+<p>如果形参不是引用类型，形参和实参是两个独立对象。形参只是使用实参的值拷贝赋值<strong>。函数对形参的修改不会作用在实参上。</strong>这种形式的实参被值传递，或者参数被传值调用。</p>
+
+        <h5 id="6-3-2-传值参数">
+          <a href="#6-3-2-传值参数" class="heading-link"><i class="fas fa-link"></i></a><a href="#6-3-2-传值参数" class="headerlink" title="6.3.2 传值参数"></a>6.3.2 传值参数</h5>
+      <p>当初始化一个非引用类型的变量时，初始值被拷贝给变量，此时对变量的改动不会影响初始值。 </p>
+<p>当形参是一个指针类型时<strong>，初始化该指针类型变量时，与非引用类型相同执行拷贝赋值。</strong>由于形参被赋予的值是实参的值，实参也是指针类型的值，也就是一个<strong>地址。</strong>因此<strong>形参实参虽然是两个变量，但是都指向同一个地址。</strong>此时在函数中就可以使用指针来修改函数外部的对象。</p>
+<p><img src="/2022/03/15/c-chapter6/image-20220317201112834.png" alt="image-20220317201112834"></p>
+
+        <h5 id="6-3-3-传引用参数">
+          <a href="#6-3-3-传引用参数" class="heading-link"><i class="fas fa-link"></i></a><a href="#6-3-3-传引用参数" class="headerlink" title="6.3.3 传引用参数"></a>6.3.3 传引用参数</h5>
+      <p>由于形参不是引用类型时，会对形参进行拷贝初始化。但是<strong>拷贝大的类型或者容器对象比较低效，甚至有的类类型往往不支持拷贝操作。因此，函数的形参往往可以声明成引用类型</strong></p>
+<p>如果不需要对原实参进行修改，可<strong>以将形参声明成对常量的引用</strong>从而避免改变被引对象。</p>
+<p><img src="/2022/03/15/c-chapter6/image-20220317201750020.png" alt="image-20220317201750020"></p>
+
+        <h4 id="6-4-返回类型和return语句">
+          <a href="#6-4-返回类型和return语句" class="heading-link"><i class="fas fa-link"></i></a><a href="#6-4-返回类型和return语句" class="headerlink" title="6.4 返回类型和return语句"></a>6.4 返回类型和return语句</h4>
+      <p>return语句终止当前正在执行的函数并将控制权返回到调用该函数的地方。</p>
+<p>return语句返回一个值的方式和初始化一个变量或者形参的方式完全一致，<strong>返回的值用于拷贝初始化调用点的一个临时量</strong>，这个临时量就是函数调用的结果。</p>
+
+        <h5 id="6-4-1-返回引用类型的函数">
+          <a href="#6-4-1-返回引用类型的函数" class="heading-link"><i class="fas fa-link"></i></a><a href="#6-4-1-返回引用类型的函数" class="headerlink" title="6.4.1 返回引用类型的函数"></a>6.4.1 返回引用类型的函数</h5>
+      <p>与一般的引用类型一样，返回引用类型的函数，返回值是被引对象的一个别名。<strong>指的是该函数的返回值是被引对象的一个引用，直接绑定与该被引对象。</strong></p>
+<figure class="highlight c++"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">const</span> string &amp;<span class="title">shorterString</span><span class="params">(<span class="keyword">const</span> string &amp;s1, <span class="keyword">const</span> string &amp;s2)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">return</span> s1.<span class="built_in">size</span>() &lt;= s2.<span class="built_in">size</span>() ? s1 : s2;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></div></figure>
+
+<p>该函数完成的功能是比较两个string类型的形参的长短，挑出较短的那个并返回其引用。 函数的返回值是绑定在s1和s2较短那个的引用。</p>
+<p><strong>注意：返回引用的函数，返回值必须是绑定在函数外部定义的已经存在的对象。不能尝试返回局部变量的引用，因为函数结束时局部变量占用的空间会随之释放。</strong></p>
+<p><img src="/2022/03/15/c-chapter6/image-20220319160729616.png" alt="image-20220319160729616"></p>
+<p><img src="/2022/03/15/c-chapter6/image-20220319170332106.png" alt="image-20220319170332106"></p>
+
+        <h5 id="6-4-2-列表初始化返回值">
+          <a href="#6-4-2-列表初始化返回值" class="heading-link"><i class="fas fa-link"></i></a><a href="#6-4-2-列表初始化返回值" class="headerlink" title="6.4.2 列表初始化返回值"></a>6.4.2 列表初始化返回值</h5>
+      <p>函数可以返回花括号包围的值的列表，<strong>此处的列表用于对函数返回的临时变量进行初始化</strong>，如果列表为空，返回的值由函数的返回类型决定。</p>
+<p><img src="/2022/03/15/c-chapter6/image-20220319171514163.png" alt="image-20220319171514163"></p>
+<p>如果函数返回的是内置类型，用于列表初始化的列表最多包含一个值，如果返回的是类类型，由类本身定义初始值应该如何使用。</p>
+
+        <h5 id="6-4-3-返回数组指针">
+          <a href="#6-4-3-返回数组指针" class="heading-link"><i class="fas fa-link"></i></a><a href="#6-4-3-返回数组指针" class="headerlink" title="6.4.3 返回数组指针"></a>6.4.3 返回数组指针</h5>
+      <p><strong>因为数组不能被拷贝，所以函数不能返回数组。</strong></p>
+<p>但是函数可以返回数组的指针或者引用来间接返回数组类型。</p>
+<p>想要定义一个返回数组的指针或引用</p>
+<p><strong>方法1：使用类型别名</strong></p>
+<figure class="highlight c++"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">using</span> arrT = <span class="keyword">int</span>[<span class="number">10</span>];        <span class="comment">//arrT是一个类型别名，它表示的类型是含有10个元素的整数数组</span></span><br><span class="line"><span class="function">arrT* <span class="title">fun</span><span class="params">(<span class="keyword">int</span> i)</span></span>;            <span class="comment">//函数声明，返回类型是含有10个元素的整数数组的指针</span></span><br></pre></td></tr></table></div></figure>
+
+<p><strong>方法2：直接返回一个数组指针的函数</strong></p>
+<figure class="highlight c++"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> arr[<span class="number">10</span>];                 <span class="comment">//arr是一个含有10个元素的整数数组</span></span><br><span class="line"><span class="keyword">int</span> *p1[<span class="number">10</span>];                <span class="comment">//p1是一个含有10个指针的数组，指针指向的元素是int</span></span><br><span class="line"><span class="built_in"><span class="keyword">int</span></span> (*p2)[<span class="number">10</span>] = &amp;arr;       <span class="comment">//p2是一个指针 指向的是含有10个元素的整数数组</span></span><br><span class="line"><span class="comment">//因此指向数组的指针声明应当是（*指针名）[数组大小]</span></span><br><span class="line"><span class="comment">//所以返回类型是数组指针的函数声明应当是：</span></span><br><span class="line"><span class="built_in">Type</span> (*<span class="built_in">function</span>(parameter_list))[dimension];</span><br><span class="line"><span class="comment">//声明一个函数func，返回类型是指向s</span></span><br><span class="line"><span class="built_in"><span class="keyword">int</span></span> (*<span class="built_in">func</span>(<span class="keyword">int</span> i))[<span class="number">10</span>];</span><br></pre></td></tr></table></div></figure>
+
+
+        <h5 id="方法3：尾置返回类型">
+          <a href="#方法3：尾置返回类型" class="heading-link"><i class="fas fa-link"></i></a><a href="#方法3：尾置返回类型" class="headerlink" title="方法3：尾置返回类型"></a>方法3：尾置返回类型</h5>
+      <p>尾置返回类型跟在形参列表后面并以一个-&gt;符号开头，表示函数真正的返回类型跟在形参列表之后，在本该出现返回类型的地方放置一个auto</p>
+<figure class="highlight c++"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//func接受一个int类型的实参，返回一个指针，该指针指向含有10个整数的数组</span></span><br><span class="line"><span class="function"><span class="keyword">auto</span> <span class="title">func</span><span class="params">(<span class="keyword">int</span> i)</span> -&gt;<span class="title">int</span><span class="params">(*)</span>[10]</span>;</span><br></pre></td></tr></table></div></figure>
+
+
+        <h4 id="6-5-函数重载">
+          <a href="#6-5-函数重载" class="heading-link"><i class="fas fa-link"></i></a><a href="#6-5-函数重载" class="headerlink" title="6.5 函数重载"></a>6.5 函数重载</h4>
+      <p>函数重载指的是在同一作用域中，几个函数名字相同但形参列表不同。这些函数接受的形参列表不一样，但是执行的操作非常类似。调用这些函数时，编译器会根据传递的实参类型推断想要的是哪个函数。</p>
+<p><strong>注意：形参的名字只起到记忆作用，实际上判断两个重载函数的形参列表是否一致，只判断对应的形参的类型。</strong></p>
+
+        <h4 id="6-6-默认实参">
+          <a href="#6-6-默认实参" class="heading-link"><i class="fas fa-link"></i></a><a href="#6-6-默认实参" class="headerlink" title="6.6 默认实参"></a>6.6 默认实参</h4>
+      <p>在函数定义的时候，可以为形参制定一些默认值作为默认实参。和Python相似，使用默认实参的时候只需要在调用函数的时候忽略该实参就可以了。因此设计含有默认实参的函数，需要合理调整参数顺序，将经常使用默认值的形参出现在后面，方便直接忽略。</p>
+<figure class="highlight c++"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">typedef</span> string::size_type sz;</span><br><span class="line"><span class="function">string <span class="title">screen</span><span class="params">(sz ht = <span class="number">24</span>, sz wid = <span class="number">80</span>, <span class="keyword">char</span> back =<span class="string">&#x27; &#x27;</span>)</span></span>;</span><br><span class="line"></span><br><span class="line">string window;</span><br><span class="line">window = <span class="built_in">screen</span>();      <span class="comment">//等价于screen(24, 80, &#x27; &#x27;);</span></span><br></pre></td></tr></table></div></figure>
+
+<p><strong>通常应当在函数声明中指定默认实参，并将该声明放在合适的头文件中。</strong></p>
+<p>局部变量不能作为默认实参，除此之外，只要表达式的类型能够转换成形参所需的类型，该表达式就可以作为默认实参。</p>
+
+        <h4 id="6-7-调试帮助">
+          <a href="#6-7-调试帮助" class="heading-link"><i class="fas fa-link"></i></a><a href="#6-7-调试帮助" class="headerlink" title="6.7 调试帮助"></a>6.7 调试帮助</h4>
+      
+        <h5 id="6-7-1-assert预处理宏">
+          <a href="#6-7-1-assert预处理宏" class="heading-link"><i class="fas fa-link"></i></a><a href="#6-7-1-assert预处理宏" class="headerlink" title="6.7.1 assert预处理宏"></a>6.7.1 assert预处理宏</h5>
+      <p>assert宏使用一个表达式作为它的条件，如果表达式为假，assert输出信息并终止程序运行，如果为真，则assert什么也不做。</p>
+<p><strong>assert常用于检查不能发生的条件。</strong></p>
+<figure class="highlight c++"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">assert</span>(word.<span class="built_in">size</span>() &gt; threshold);</span><br></pre></td></tr></table></div></figure>
+
+
+        <h4 id="6-8-函数指针">
+          <a href="#6-8-函数指针" class="heading-link"><i class="fas fa-link"></i></a><a href="#6-8-函数指针" class="headerlink" title="6.8 函数指针"></a>6.8 函数指针</h4>
+      <p>函数指针指向的是函数而非对象。</p>
+<p>对于一个函数，想要声明一个可以指向该函数的指针，只需要将函数名用指针名代替即可。</p>
+<figure class="highlight c++"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">bool</span> <span class="title">lengthCompare</span><span class="params">(<span class="keyword">const</span> string &amp;, <span class="keyword">const</span> string &amp;)</span></span>;</span><br><span class="line"><span class="comment">//使用指针名代替函数名即可，括号缺一不可，去掉指针名的括号会定义成返回类型为指针的函数</span></span><br><span class="line"><span class="comment">//只是声明了一个指向形参列表为(const string &amp;, const string &amp;)函数的指针，并未对指针初始化</span></span><br><span class="line"><span class="built_in"><span class="keyword">bool</span></span> (*pf)(<span class="keyword">const</span> string &amp;, <span class="keyword">const</span> string &amp;);     </span><br></pre></td></tr></table></div></figure>
+
+
+        <h5 id="6-8-1-函数指针的使用">
+          <a href="#6-8-1-函数指针的使用" class="heading-link"><i class="fas fa-link"></i></a><a href="#6-8-1-函数指针的使用" class="headerlink" title="6.8.1 函数指针的使用"></a>6.8.1 函数指针的使用</h5>
+      <p><strong>将函数名作为一个值使用的时候，该函数会自动转换成指针。我们可以使用指向函数的指针调用函数，无需解引用。</strong></p>
+<figure class="highlight c++"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">bool</span> <span class="title">lengthCompare</span><span class="params">(<span class="keyword">const</span> string &amp;, <span class="keyword">const</span> string &amp;)</span></span>;</span><br><span class="line"><span class="comment">//使用指针名代替函数名即可，括号缺一不可，去掉指针名的括号会定义成返回类型为指针的函数</span></span><br><span class="line"><span class="comment">//只是声明了一个指向形参列表为(const string &amp;, const string &amp;)函数的指针，并未对指针初始化</span></span><br><span class="line"><span class="built_in"><span class="keyword">bool</span></span> (*pf)(<span class="keyword">const</span> string &amp;, <span class="keyword">const</span> string &amp;);   </span><br><span class="line">pf = lengthCompare;       <span class="comment">//声明了一个指向函数lengthCompare的指针pf</span></span><br><span class="line">pf = &amp;lengthCompare;      <span class="comment">//与上句等价，取地址符是可选的</span></span><br><span class="line"><span class="keyword">bool</span> b2 = <span class="built_in">pf</span>(<span class="string">&quot;hello&quot;</span>, <span class="string">&quot;goodbye&quot;</span>);          <span class="comment">//调用函数</span></span><br><span class="line"><span class="keyword">bool</span> b3 = (*pf)(<span class="string">&quot;hello&quot;</span>, <span class="string">&quot;goodbye&quot;</span>);       <span class="comment">//对指针进行解引用，调用函数，与上句等价</span></span><br><span class="line"><span class="keyword">bool</span> b4 = <span class="built_in">lengthCompare</span>(<span class="string">&quot;hello&quot;</span>, <span class="string">&quot;goodbye&quot;</span>);          <span class="comment">//调用函数</span></span><br></pre></td></tr></table></div></figure>
+
+<p><strong>函数指针形参</strong></p>
+<p>（基础还没学完已经准备跑路Java了（逃））</p>
+</div></div></article><article class="postlist-item post"><header class="post-header"><h1 class="post-title"><a class="post-title__link" href="/2022/03/15/Intra-Inter-Camera-Similarity-for-Unsupervised-Person-Re-Identification/">Intra-Inter Camera Similarity for Unsupervised Person Re-Identification</a></h1><div class="post-meta"><span class="post-meta-item post-meta-item--createtime"><span class="post-meta-item__icon"><i class="far fa-calendar-plus"></i></span><span class="post-meta-item__info">发表于</span><span class="post-meta-item__value">2022-03-15</span></span><span class="post-meta-item post-meta-item--updatetime"><span class="post-meta-item__icon"><i class="far fa-calendar-check"></i></span><span class="post-meta-item__info">更新于</span><span class="post-meta-item__value">2022-03-18</span></span></div></header><div class="post-body"><div class="post-excerpt">
         <h3 id="CVPR2021-Intra-Inter-Camera-Similarity-for-Unsupervised-Person-Re-Identification-学习笔记">
           <a href="#CVPR2021-Intra-Inter-Camera-Similarity-for-Unsupervised-Person-Re-Identification-学习笔记" class="heading-link"><i class="fas fa-link"></i></a><a href="#CVPR2021-Intra-Inter-Camera-Similarity-for-Unsupervised-Person-Re-Identification-学习笔记" class="headerlink" title="CVPR2021 Intra-Inter Camera Similarity for Unsupervised Person Re-Identification 学习笔记"></a>CVPR2021 Intra-Inter Camera Similarity for Unsupervised Person Re-Identification 学习笔记</h3>
       
@@ -581,20 +713,4 @@ window.CONFIG = CONFIG;</script><meta name="generator" content="Hexo 5.4.0"></he
 <p>所以不只是深度学习，传统机器学习算法的预处理也需要这么做。深度学习做了标准化后能够对网络的训练有一些益处罢了，这也是为什么做bn，ln的原因，以及网络中用到的各种归一化的trick，对深度学习中网络优化过程中数值的稳定性有一定的帮助。</p>
 <p>寒假回家第6天了，今天才刚开始做了点东西（虽然没有什么卵用）。除夕之前一定要把DLA跑通。。。。。</p>
 <p><img src="/2022/01/28/caikeng001/image-20220128140116390.png" alt="image-20220128140116390"></p>
-</div></div></article><article class="postlist-item post"><header class="post-header"><h1 class="post-title"><a class="post-title__link" href="/2022/01/17/CenterNet/">CenterNet学习笔记</a></h1><div class="post-meta"><span class="post-meta-item post-meta-item--createtime"><span class="post-meta-item__icon"><i class="far fa-calendar-plus"></i></span><span class="post-meta-item__info">发表于</span><span class="post-meta-item__value">2022-01-17</span></span><span class="post-meta-item post-meta-item--updatetime"><span class="post-meta-item__icon"><i class="far fa-calendar-check"></i></span><span class="post-meta-item__info">更新于</span><span class="post-meta-item__value">2022-03-06</span></span></div></header><div class="post-body"><div class="post-excerpt">
-        <h3 id="CenterNet">
-          <a href="#CenterNet" class="heading-link"><i class="fas fa-link"></i></a><a href="#CenterNet" class="headerlink" title="CenterNet"></a>CenterNet</h3>
-      
-        <h4 id="一、AnchorFree方法">
-          <a href="#一、AnchorFree方法" class="heading-link"><i class="fas fa-link"></i></a><a href="#一、AnchorFree方法" class="headerlink" title="一、AnchorFree方法"></a>一、AnchorFree方法</h4>
-      <p>根据之前行人再识别相关理论的学习，可以知道一般行人检测网络可分为Anchor Based和Anchor Free两类方法。其中Anchor Based方法是通过在图像上暴力枚举一系列的锚框，然后再通过IOU等计算预测物体在锚框内的概率。而Anchor Free类方法往往不直接枚举锚框，而是通过预测一系列的点，比如物体的中心点、对角点等的位置，然后再通过预测这些点对应的宽高等来获得锚框。常见的Anchor Free方法有：CornerNet、ExtremeNet、CenterNet。</p>
-<p>CornerNet是通过预测物体的左上角和右下角从而确定一个物体，左上角和右下角是两个Key Points。</p>
-<p><img src="/images/CenterNet/image-20220117134913361.png" alt="image-20220117134913361"></p>
-<p>Extreme Net方法与CornerNet类似，只不过预测的点更多，需要预测五个点来确定一个物体。</p>
-<p><img src="/images/CenterNet/image-20220117135258162.png" alt="image-20220117135258162"></p>
-<p>Extreme Net方法与CornerNet在预测完点之后还需要做一个Group的操作，用于确定哪些预测的点属于同一个物体。而CenterNet并不需要Group的操作。它是直接预测物体的中心点，通过中心点来预测物体的宽高从而确定物体的位置。</p>
-<p><img src="/images/CenterNet/image-20220117135353161.png" alt="image-20220117135353161"></p>
-
-        <h4 id="二、CenterNet网络流程">
-          <a href="#二、CenterNet网络流程" class="heading-link"><i class="fas fa-link"></i></a><a href="#二、CenterNet网络流程" class="headerlink" title="二、CenterNet网络流程"></a>二、CenterNet网络流程</h4>
-      </div></div></article></section><nav class="paginator"><div class="paginator-inner"><a class="extend prev" rel="prev" href="/page/3/"><i class="fas fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/3/">3</a><span class="page-number current">4</span><a class="page-number" href="/page/5/">5</a><a class="page-number" href="/page/6/">6</a><a class="extend next" rel="next" href="/page/5/"><i class="fas fa-angle-right"></i></a></div></nav></div></div><div class="sidebar-wrap" id="sidebar-wrap"><aside class="sidebar" id="sidebar"><section class="sidebar-toc hide"></section><!-- ov = overview--><section class="sidebar-ov"><div class="sidebar-ov-author"><div class="sidebar-ov-author__avatar"><img class="sidebar-ov-author__avatar_img" src="/images/icons/photo.png" alt="avatar"></div><p class="sidebar-ov-author__text">To be a great person.</p></div><div class="sidebar-ov-cc"><a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en" target="_blank" rel="noopener" data-popover="知识共享许可协议" data-popover-pos="up"><img src="/images/cc-by-nc-sa.svg"></a></div></section></aside></div><div class="clearfix"></div></div></main><footer class="footer" id="footer"><div class="footer-inner"><div><span>Copyright © 2022</span><span class="footer__icon"><i class="fas fa-heart"></i></span><span>Strive</span></div><div><span>由 <a href="http://hexo.io/" title="Hexo" target="_blank" rel="noopener">Hexo</a> 强力驱动</span><span> v5.4.0</span><span class="footer__devider">|</span><span>主题 - <a href="https://github.com/liuyib/hexo-theme-stun/" title="Stun" target="_blank" rel="noopener">Stun</a></span><span> v2.6.2</span></div></div></footer><div class="loading-bar" id="loading-bar"><div class="loading-bar__progress"></div></div><div class="back2top" id="back2top"><span class="back2top__icon"><i class="fas fa-rocket"></i></span></div></div><script src="https://cdn.jsdelivr.net/npm/jquery@v3.4.1/dist/jquery.min.js"></script><script src="https://cdn.jsdelivr.net/npm/velocity-animate@1.5.2/velocity.min.js"></script><script src="https://cdn.jsdelivr.net/npm/velocity-animate@1.5.2/velocity.ui.min.js"></script><script src="/js/utils.js?v=2.6.2"></script><script src="/js/stun-boot.js?v=2.6.2"></script><script src="/js/scroll.js?v=2.6.2"></script><script src="/js/header.js?v=2.6.2"></script><script src="/js/sidebar.js?v=2.6.2"></script></body></html>
+</div></div></article></section><nav class="paginator"><div class="paginator-inner"><a class="extend prev" rel="prev" href="/page/3/"><i class="fas fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/3/">3</a><span class="page-number current">4</span><a class="page-number" href="/page/5/">5</a><a class="page-number" href="/page/6/">6</a><a class="extend next" rel="next" href="/page/5/"><i class="fas fa-angle-right"></i></a></div></nav></div></div><div class="sidebar-wrap" id="sidebar-wrap"><aside class="sidebar" id="sidebar"><section class="sidebar-toc hide"></section><!-- ov = overview--><section class="sidebar-ov"><div class="sidebar-ov-author"><div class="sidebar-ov-author__avatar"><img class="sidebar-ov-author__avatar_img" src="/images/icons/photo.png" alt="avatar"></div><p class="sidebar-ov-author__text">To be a great person.</p></div><div class="sidebar-ov-cc"><a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en" target="_blank" rel="noopener" data-popover="知识共享许可协议" data-popover-pos="up"><img src="/images/cc-by-nc-sa.svg"></a></div></section></aside></div><div class="clearfix"></div></div></main><footer class="footer" id="footer"><div class="footer-inner"><div><span>Copyright © 2022</span><span class="footer__icon"><i class="fas fa-heart"></i></span><span>Strive</span></div><div><span>由 <a href="http://hexo.io/" title="Hexo" target="_blank" rel="noopener">Hexo</a> 强力驱动</span><span> v5.4.0</span><span class="footer__devider">|</span><span>主题 - <a href="https://github.com/liuyib/hexo-theme-stun/" title="Stun" target="_blank" rel="noopener">Stun</a></span><span> v2.6.2</span></div></div></footer><div class="loading-bar" id="loading-bar"><div class="loading-bar__progress"></div></div><div class="back2top" id="back2top"><span class="back2top__icon"><i class="fas fa-rocket"></i></span></div></div><script src="https://cdn.jsdelivr.net/npm/jquery@v3.4.1/dist/jquery.min.js"></script><script src="https://cdn.jsdelivr.net/npm/velocity-animate@1.5.2/velocity.min.js"></script><script src="https://cdn.jsdelivr.net/npm/velocity-animate@1.5.2/velocity.ui.min.js"></script><script src="/js/utils.js?v=2.6.2"></script><script src="/js/stun-boot.js?v=2.6.2"></script><script src="/js/scroll.js?v=2.6.2"></script><script src="/js/header.js?v=2.6.2"></script><script src="/js/sidebar.js?v=2.6.2"></script></body></html>
