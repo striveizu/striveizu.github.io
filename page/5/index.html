@@ -28,7 +28,120 @@ var CONFIG = {
   sourcePath: {"js":"js","css":"css","images":"images"},
 };
 
-window.CONFIG = CONFIG;</script><meta name="generator" content="Hexo 5.4.0"></head><body><div class="container" id="container"><header class="header" id="header"><div class="header-inner"><nav class="header-nav header-nav--fixed"><div class="header-nav-inner"><div class="header-nav-menubtn"><i class="fas fa-bars"></i></div><div class="header-nav-menu"><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/"><span class="header-nav-menu-item__icon"><i class="fas fa-home"></i></span><span class="header-nav-menu-item__text">首页</span></a></div><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/about/"><span class="header-nav-menu-item__icon"><i class="fas fa-address-card"></i></span><span class="header-nav-menu-item__text">关于</span></a></div><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="javascript:;" onclick="return false;"><span class="header-nav-menu-item__icon"><i class="fas fa-edit"></i></span><span class="header-nav-menu-item__text">文章</span></a><div class="header-nav-submenu"><div class="header-nav-submenu-item"><a class="header-nav-submenu-item__link" href="/archives/"><span class="header-nav-submenu-item__icon"><i class="fas fa-folder-open"></i></span><span class="header-nav-submenu-item__text">归档</span></a></div><div class="header-nav-submenu-item"><a class="header-nav-submenu-item__link" href="/categories/"><span class="header-nav-submenu-item__icon"><i class="fas fa-layer-group"></i></span><span class="header-nav-submenu-item__text">分类</span></a></div><div class="header-nav-submenu-item"><a class="header-nav-submenu-item__link" href="/tags/"><span class="header-nav-submenu-item__icon"><i class="fas fa-tags"></i></span><span class="header-nav-submenu-item__text">标签</span></a></div></div></div></div><div class="header-nav-mode"><div class="mode"><div class="mode-track"><span class="mode-track-moon"></span><span class="mode-track-sun"></span></div><div class="mode-thumb"></div></div></div></div></nav><div class="header-banner"><div class="header-banner-info"><div class="header-banner-info__title">Strive's Blog</div><div class="header-banner-info__subtitle">你我期许的绝非遥不可及</div></div><div class="header-banner-arrow"><div class="header-banner-arrow__icon"><i class="fas fa-angle-down"></i></div></div></div></div></header><main class="main" id="main"><div class="main-inner"><div class="content-wrap" id="content-wrap"><div class="content content-home" id="content"><section class="postlist"><article class="postlist-item post"><header class="post-header"><h1 class="post-title"><a class="post-title__link" href="/2022/01/17/CenterNet/">CenterNet学习笔记</a></h1><div class="post-meta"><span class="post-meta-item post-meta-item--createtime"><span class="post-meta-item__icon"><i class="far fa-calendar-plus"></i></span><span class="post-meta-item__info">发表于</span><span class="post-meta-item__value">2022-01-17</span></span><span class="post-meta-item post-meta-item--updatetime"><span class="post-meta-item__icon"><i class="far fa-calendar-check"></i></span><span class="post-meta-item__info">更新于</span><span class="post-meta-item__value">2022-03-06</span></span></div></header><div class="post-body"><div class="post-excerpt">
+window.CONFIG = CONFIG;</script><meta name="generator" content="Hexo 5.4.0"></head><body><div class="container" id="container"><header class="header" id="header"><div class="header-inner"><nav class="header-nav header-nav--fixed"><div class="header-nav-inner"><div class="header-nav-menubtn"><i class="fas fa-bars"></i></div><div class="header-nav-menu"><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/"><span class="header-nav-menu-item__icon"><i class="fas fa-home"></i></span><span class="header-nav-menu-item__text">首页</span></a></div><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/about/"><span class="header-nav-menu-item__icon"><i class="fas fa-address-card"></i></span><span class="header-nav-menu-item__text">关于</span></a></div><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="javascript:;" onclick="return false;"><span class="header-nav-menu-item__icon"><i class="fas fa-edit"></i></span><span class="header-nav-menu-item__text">文章</span></a><div class="header-nav-submenu"><div class="header-nav-submenu-item"><a class="header-nav-submenu-item__link" href="/archives/"><span class="header-nav-submenu-item__icon"><i class="fas fa-folder-open"></i></span><span class="header-nav-submenu-item__text">归档</span></a></div><div class="header-nav-submenu-item"><a class="header-nav-submenu-item__link" href="/categories/"><span class="header-nav-submenu-item__icon"><i class="fas fa-layer-group"></i></span><span class="header-nav-submenu-item__text">分类</span></a></div><div class="header-nav-submenu-item"><a class="header-nav-submenu-item__link" href="/tags/"><span class="header-nav-submenu-item__icon"><i class="fas fa-tags"></i></span><span class="header-nav-submenu-item__text">标签</span></a></div></div></div></div><div class="header-nav-mode"><div class="mode"><div class="mode-track"><span class="mode-track-moon"></span><span class="mode-track-sun"></span></div><div class="mode-thumb"></div></div></div></div></nav><div class="header-banner"><div class="header-banner-info"><div class="header-banner-info__title">Strive's Blog</div><div class="header-banner-info__subtitle">你我期许的绝非遥不可及</div></div><div class="header-banner-arrow"><div class="header-banner-arrow__icon"><i class="fas fa-angle-down"></i></div></div></div></div></header><main class="main" id="main"><div class="main-inner"><div class="content-wrap" id="content-wrap"><div class="content content-home" id="content"><section class="postlist"><article class="postlist-item post"><header class="post-header"><h1 class="post-title"><a class="post-title__link" href="/2022/02/21/object-detect-EVALUATION-METRICS/">目标检测常用的评估指标</a></h1><div class="post-meta"><span class="post-meta-item post-meta-item--createtime"><span class="post-meta-item__icon"><i class="far fa-calendar-plus"></i></span><span class="post-meta-item__info">发表于</span><span class="post-meta-item__value">2022-02-21</span></span><span class="post-meta-item post-meta-item--updatetime"><span class="post-meta-item__icon"><i class="far fa-calendar-check"></i></span><span class="post-meta-item__info">更新于</span><span class="post-meta-item__value">2022-03-06</span></span></div></header><div class="post-body"><div class="post-excerpt"><p>目标检测常用的评估指标</p>
+
+        <h5 id="混淆矩阵">
+          <a href="#混淆矩阵" class="heading-link"><i class="fas fa-link"></i></a><a href="#混淆矩阵" class="headerlink" title="混淆矩阵"></a>混淆矩阵</h5>
+      <p><img src="/2022/02/21/object-detect-EVALUATION-METRICS/image-20220221163303518.png" alt="image-20220221163303518"></p>
+<p>混淆矩阵定义如上所示，对于二分类问题来说，根据预测值结果可以将预测结果分为<strong>真正例（Ture Positive，TP）</strong>、<strong>真负例（True Negative，TN）</strong>、<strong>假正例（False Positive，FP）、假负例（False Negative，FN）</strong>。其中，<strong>TP表示预测为正样本且实际为正样本的样本数</strong>，<strong>TN表示预测为负样本但实际为正样本的样本数，FP为预测为正样本实际为负样本的样本数，FN表示预测为负样本实际为负样本的样本数。</strong></p>
+
+        <h5 id="AP-AR">
+          <a href="#AP-AR" class="heading-link"><i class="fas fa-link"></i></a><a href="#AP-AR" class="headerlink" title="AP AR"></a>AP AR</h5>
+      <p><strong>准确率Precision又称为查准率</strong>，表示<strong>模型预测为正例的样本占实际为正例的样本的比例</strong>。<strong>召回率Recall又称为查全率</strong>，表示测试集<strong>中所有正样本被正确识别的比例。</strong>计算方法为：</p>
+<img src="/2022/02/21/object-detect-EVALUATION-METRICS/image-20220221164603650.png" alt="image-20220221164603650" style="zoom:200%;">
+
+<p>目标检测中判断是正样本还是负样本与两个指标有关，分别为<strong>交并比（IOU）阈值</strong>和<strong>置信度（Confidence）阈值</strong>。置信度即认为算法预测目标框中存在目标的确信度，对于每个预测目标框，都会使用置信度阈值进行过滤，滤除一些低质量的预测框，置信度阈值一般设为0.35。<strong>当预测目标框的置信度大于阈值时，才认为该预测框中存在目标，即该预测框为正样本，否则则认为该预测框中为背景，即该预测框为负样本。</strong>其次我们介绍交并比的定义，交并比是用来衡量真实目标框和算法预测目标框的重合程度，如图3.1所示，IOU的值就等于图3.1中黄色重合部分的面积与红色框和绿色框的面积之和的比值。<strong>当预测框和真实框重合达到一定阈值时，我们就认为预测框预测正确，即真正例True Positive，否则为假正例False Positive，一般该阈值我们称为IOU阈值，常设为0.5左右。</strong></p>
+<img src="/2022/02/21/object-detect-EVALUATION-METRICS/image-20220221164742376.png" alt="image-20220221164742376" style="zoom:150%;">
+
+<p><strong>平均准确率AP为表示不同查全率下的查准率的加权平均。</strong></p>
+<p><img src="/2022/02/21/object-detect-EVALUATION-METRICS/image-20220221170540931.png" alt="image-20220221170540931"></p>
+<p>而均值平均准确率为确定置信度阈值的前提下调整不同IOU阈值得到的平均准确率的和的均值。而IOU阈值一般取0.5,0.55,0.6,…,0.95等10个值，其公式如下所示：</p>
+<img src="/2022/02/21/object-detect-EVALUATION-METRICS/image-20220221170654735.png" alt="image-20220221170654735" style="zoom:200%;">
+</div></div></article><article class="postlist-item post"><header class="post-header"><h1 class="post-title"><a class="post-title__link" href="/2022/02/01/Attention/">Attention</a></h1><div class="post-meta"><span class="post-meta-item post-meta-item--createtime"><span class="post-meta-item__icon"><i class="far fa-calendar-plus"></i></span><span class="post-meta-item__info">发表于</span><span class="post-meta-item__value">2022-02-01</span></span><span class="post-meta-item post-meta-item--updatetime"><span class="post-meta-item__icon"><i class="far fa-calendar-check"></i></span><span class="post-meta-item__info">更新于</span><span class="post-meta-item__value">2022-03-06</span></span></div></header><div class="post-body"><div class="post-excerpt"><p>深度学习中的注意力机制</p>
+
+        <h4 id="简介">
+          <a href="#简介" class="heading-link"><i class="fas fa-link"></i></a><a href="#简介" class="headerlink" title="简介"></a>简介</h4>
+      <p>注意力机制，顾名思义是向人类的注意力学习的结果。人类视野开阔，但是视野只能聚焦在一个小范围，或一个点，这种就叫做注意力。</p>
+<p>视觉注意力机制是人类视觉所特有的大脑信号处理机制。人类视觉通过快速扫描全局图像，获得需要重点关注的目标区域，也就是一般所说的注意力焦点，而后对这一区域投入更多注意力资源，以获取更多所需要关注目标的细节信息，而抑制其他无用信息。</p>
+</div></div></article><article class="postlist-item post"><header class="post-header"><h1 class="post-title"><a class="post-title__link" href="/2022/01/28/DLA/">DLA模型</a></h1><div class="post-meta"><span class="post-meta-item post-meta-item--createtime"><span class="post-meta-item__icon"><i class="far fa-calendar-plus"></i></span><span class="post-meta-item__info">发表于</span><span class="post-meta-item__value">2022-01-28</span></span><span class="post-meta-item post-meta-item--updatetime"><span class="post-meta-item__icon"><i class="far fa-calendar-check"></i></span><span class="post-meta-item__info">更新于</span><span class="post-meta-item__value">2022-03-06</span></span></div></header><div class="post-body"><div class="post-excerpt"><p>DLA网络模型：一种深度网络特征融合方法</p>
+
+        <h4 id="DLA简介">
+          <a href="#DLA简介" class="heading-link"><i class="fas fa-link"></i></a><a href="#DLA简介" class="headerlink" title="DLA简介"></a>DLA简介</h4>
+      <p>DLA网络模型出自CVPR 2018 的论文 Deep Layer Aggregation，中文翻译为深层聚合。CNN为多种计算机视觉任务提供了很好的解决方案。随着视觉任务对高性能算法更严格的追求，Backbone的设计成为了一个很重要的主题。作者在摘要中指出计算机视觉识别任务需要从低到高的层次提取不同层次的信息。因此当前的网络设计方向是如何加宽加深网络层次以提取更多的特征。如ResNet，通过引入跳跃连接使得网络有能力到达很深的层次。设计更深或更宽的网络架构虽然确实可以更好的提取特征，但也带来了更多的参数数量和难优化问题。更深的层提取更多语义和更全局的特征，但这些并不能证明最后一层是任何任务的最终表示。事实上，skip connections已经被证明对于分类和回归以及更结构化的任务是有效的。如何更好的聚合不同层次提取的特征，就像深度和宽度一样，是网络架构的一个关键维度。因此作者认为：设计更深更宽的网络结构固然重要，<strong>但如何更好的聚合层和块更值得研究。</strong></p>
+<p>经过复杂的分析，<strong>更深的网络层能提取到更多语义和全局的特征，但是这并不能表明最后一层就是任务需要的表示。</strong>实际上“跳跃连接”已经证明了对于分类、回归以及其他结构化问题的有效性。因此，如何聚合，尤其是深度与宽度上的聚合，对于网络结构的优化是一个非常重要的技术。</p>
+<p>作者认为，在计算机视觉任务中，仅是加深网络层次，但层和层之间相互孤立是不行的。<strong>混合和聚合不同层提取的特征表示，可以改进对图像是什么和在哪里的推断。</strong>尽管ResNet加入了skip connections的设计，已经组合了不同层次的特征表示，但这些连接本质上是浅层的连接，仅仅通过相加操作来融合不同层次的特征。</p>
+<p>作者通过更深层次的聚合来增强标准体系结构，以便更好地跨层融合信息。我们的深层聚合结构迭代和分层地合并特征层次，使网络具有更高的精度和更少的参数。跨架构和任务的实验表明，与现有的分支和合并方案相比，深层聚合方案提高了识别和分辨率。</p>
+
+        <h4 id="第一章-DLA的基本组成模块–IDA和HDA">
+          <a href="#第一章-DLA的基本组成模块–IDA和HDA" class="heading-link"><i class="fas fa-link"></i></a><a href="#第一章-DLA的基本组成模块–IDA和HDA" class="headerlink" title="第一章 DLA的基本组成模块–IDA和HDA"></a>第一章 DLA的基本组成模块–IDA和HDA</h4>
+      <p>DLA，即深度聚合。在论文中，作者将聚合<em>Aggregation</em>定义为网络架构中不同层次特征表示的组合。多个layer组合为一个block，多个block再根据分辨率组合为一个stage，<strong>DLA则主要探讨block和stage的组合</strong>（stage间网络保持一致分辨率，那么空间融合发生在stage间，语义融合发生在stage内）。如果一组<em>Aggregation</em>是复合的、非线性的，并且较早的聚合层的输出输入到后面的多个聚合层。作者介绍了两种深层聚合结构：IDA(iterative deep aggregation迭代式深度聚合)和HDA(hierarchical deep aggregation层级深度聚合)。IDA专注于跨分辨率和尺度的融合，而HDA专注于融合所有提取自不同模块和通道的特征。下图1的c和f分别展示了IDA和HDA的结构。</p>
+<p><img src="/2022/01/28/DLA/image-20220202095121590.png" alt="image-20220202095121590"></p>
+<p>​                                                                              图 1 HDA IDA 基本结构</p>
+
+        <h5 id="1-1-IDA-Iterative-Deep-Aggregation-迭代深度聚合结构">
+          <a href="#1-1-IDA-Iterative-Deep-Aggregation-迭代深度聚合结构" class="heading-link"><i class="fas fa-link"></i></a><a href="#1-1-IDA-Iterative-Deep-Aggregation-迭代深度聚合结构" class="headerlink" title="1.1 IDA Iterative Deep Aggregation 迭代深度聚合结构"></a>1.1 IDA Iterative Deep Aggregation 迭代深度聚合结构</h5>
+      <p>如上文所说，多个layer组合为一个block，多个block再根据分辨率组合为一个stage。更深层次的阶段语义更加丰富，但空间信息更加粗糙。从浅层到深层的skip connection可以融合尺度和分辨率。在IDA结构中，作者建议逐渐的增加和加深IDA结构的特征表示。不同层的聚合从最浅的层次和最小的尺度开始并逐步增加深度和尺度。作者指出不断地聚合不同阶段提取的特征，可以细化浅层的特征。</p>
+<p><img src="/2022/01/28/DLA/image-20220203092920174.png" alt="image-20220203092920174"></p>
+<p>上图中绿色的方块称作“Aggregation Node”，Aggregation Node在特征由浅到深传播的同时聚集特征。从上图中也可以看出，IDA以stage为基本单位，IDA结构在多个stage外部增加连接和Aggregation Node。</p>
+<p><img src="/2022/01/28/DLA/image-20220203093447689.png" alt="image-20220203093447689"></p>
+<p>在上面的公式中， <em><strong>I</strong></em>表示整个IDA模块， <em><strong>N</strong></em>表示Aggregation Node。例如***N(x1, x2)***表示一个输入为x1和x2的Aggregation Node，即图中最左侧的绿色方块。</p>
+
+        <h4 id="1-2-HDA-Hierarchical-Deep-Aggregation-层次深度聚合结构">
+          <a href="#1-2-HDA-Hierarchical-Deep-Aggregation-层次深度聚合结构" class="heading-link"><i class="fas fa-link"></i></a><a href="#1-2-HDA-Hierarchical-Deep-Aggregation-层次深度聚合结构" class="headerlink" title="1.2 HDA (Hierarchical Deep Aggregation)层次深度聚合结构"></a>1.2 HDA (Hierarchical Deep Aggregation)层次深度聚合结构</h4>
+      <p>虽然IDA有效地融合了多个stage的特征，但是没有对stage内部多个block的特征进行融合。作者提出了HDA（Hierarchical Deep Aggregation）结构增强stage内部多个block的融合，如下图所示：</p>
+<p><img src="/2022/01/28/DLA/image-20220203101438312.png" alt="image-20220203101438312"></p>
+<p>在树的中间聚合中，我们将聚合节点的输出返回到主干，作为下一个子树的输入，如图所示。这将传播前面所有块的聚合，而不是单独传播前面的块，以更好地保留特性。  </p>
+
+        <h4 id="第三章-代码实现">
+          <a href="#第三章-代码实现" class="heading-link"><i class="fas fa-link"></i></a><a href="#第三章-代码实现" class="headerlink" title="第三章 代码实现"></a>第三章 代码实现</h4>
+      
+        <h5 id="3-1-聚合节点-Aggregation-Nodes">
+          <a href="#3-1-聚合节点-Aggregation-Nodes" class="heading-link"><i class="fas fa-link"></i></a><a href="#3-1-聚合节点-Aggregation-Nodes" class="headerlink" title="3.1 聚合节点 Aggregation Nodes"></a>3.1 聚合节点 Aggregation Nodes</h5>
+      <p>聚合节点的的主要功能是组合和压缩它们的输入。节点学习选择和投射重要的信息，并在它们的输出作为输入时保持相同的维度。可以使用任意网络结构构造Aggregation Node，为减少计算量，作者使用单个“卷积-BN-激活函数”结构来构造Aggregation Node，一般情况下使用1x1卷积。</p>
+
+        <h4 id="第四章-实验设计">
+          <a href="#第四章-实验设计" class="heading-link"><i class="fas fa-link"></i></a><a href="#第四章-实验设计" class="headerlink" title="第四章 实验设计"></a>第四章 实验设计</h4>
+      <p>用CIFAR-10分类数据集测试DLA模型的效果。论文中分类任务实验使用SGD作为优化器执行120个epoch，动量为0.9，权重衰减10−4，批处理大小为256并以0.1的学习速率开始训练，每30个epoch减少10个学习速率。并Resize成256，并随机裁剪成224×224。根据我可怜的单卡12G的显存取舍，最终采用下面的训练方式。训练集预处理：随机裁剪224×224，随机中心翻转，并作均值化处理。测试集预处理：Resize成256×256，中心裁剪224×224，并均值化处理。batch_size选择64，训练50个epoch，初始学习率采取0.1，动量为0.9，权重衰减10−4，每训练20个epoch，学习率×0.1。</p>
+
+        <h4 id="第五章-结果展示">
+          <a href="#第五章-结果展示" class="heading-link"><i class="fas fa-link"></i></a><a href="#第五章-结果展示" class="headerlink" title="第五章 结果展示"></a>第五章 结果展示</h4>
+      <p>在CIFAR-10分类任务中达到了93.530%的准确率，比之前尝试过的的ResNet、AlexNet网络模型效果都要出色。有力的证明了DLA网络模型具有优秀的提取图像特征能力。</p>
+<p><img src="/2022/01/28/DLA/image-20220129212334052.png" alt="image-20220129212334052"></p>
+<p><img src="/2022/01/28/DLA/image-20220129212846106.png" alt="image-20220129212846106"></p>
+<p>后又尝试120epoch,batch_size为60，起始学习率0.1，动量0.9，权重衰减0.0001，每30个epoch学习率×0.1，最终达到94.9%准确率。</p>
+<p><img src="/2022/01/28/DLA/image-20220203161128542.png" alt="image-20220203161128542"></p>
+<p>没有引入预训练模型，充分证明了DLA优秀的提取特征能力。</p>
+
+        <h4 id="结语">
+          <a href="#结语" class="heading-link"><i class="fas fa-link"></i></a><a href="#结语" class="headerlink" title="结语"></a>结语</h4>
+      <p>DLA的代码还没有来得及认真学习，暂时搁置，后面有时间再来研究。</p>
+</div></div></article><article class="postlist-item post"><header class="post-header"><h1 class="post-title"><a class="post-title__link" href="/2022/01/28/caikeng001/">深度学习踩坑记录001——训练集loss正常下降，测试集一动不动</a></h1><div class="post-meta"><span class="post-meta-item post-meta-item--createtime"><span class="post-meta-item__icon"><i class="far fa-calendar-plus"></i></span><span class="post-meta-item__info">发表于</span><span class="post-meta-item__value">2022-01-28</span></span><span class="post-meta-item post-meta-item--updatetime"><span class="post-meta-item__icon"><i class="far fa-calendar-check"></i></span><span class="post-meta-item__info">更新于</span><span class="post-meta-item__value">2022-03-06</span></span></div></header><div class="post-body"><div class="post-excerpt">
+        <h3 id="踩坑记录001">
+          <a href="#踩坑记录001" class="heading-link"><i class="fas fa-link"></i></a><a href="#踩坑记录001" class="headerlink" title="踩坑记录001"></a>踩坑记录001</h3>
+      <p>回家混了好几天才开始干点正事，开摆！</p>
+<p>新年的第一篇博客本来想写一下Ubuntu系统的安装、Nvidia驱动的安装和CenterNet运行环境的配置。可是在学校的时候一直在混，Liunx上写博客还没有找到很方便的方式，踩过的坑很多都忘记了。</p>
+<p><strong>以后踩坑一定要及时记录</strong>！</p>
+<p>由于一两个月没有搞代码了，刚回家就碰见了个非常脑残小儿科的问题却一直没有解决。</p>
+
+        <h4 id="问题描述">
+          <a href="#问题描述" class="heading-link"><i class="fas fa-link"></i></a><a href="#问题描述" class="headerlink" title="问题描述"></a>问题描述</h4>
+      <p>回家做一个ResNet50的CIFAR10分类找找之前遗忘的知识，出现了训练集的loss正常下降、准确率正常上升。而测试集的loss却几乎不下降甚至还有反增，准确率保持非常低的水平不变。如下图所示：</p>
+<p><img src="/2022/01/28/caikeng001/image-20220128123827445.png" alt="image-20220128123827445"></p>
+<p>可见训练集准确度已经到了很高的程度，但是测试集的loss和准确率几乎没有什么变化。仔细检查代码（指查了三天）发现在数据的预处理部分，训练集做了Resize、随机翻转和均值化操作，但是测试集没有作任何处理。</p>
+<figure class="highlight python"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">myTransforms = transforms.Compose([</span><br><span class="line">    transforms.Resize((<span class="number">32</span>, <span class="number">32</span>)),</span><br><span class="line">    transforms.RandomHorizontalFlip(p=<span class="number">0.5</span>),</span><br><span class="line">    transforms.ToTensor(),</span><br><span class="line">    transforms.Normalize((<span class="number">0.485</span>, <span class="number">0.456</span>, <span class="number">0.406</span>), (<span class="number">0.229</span>, <span class="number">0.224</span>, <span class="number">0.225</span>))</span><br><span class="line">])</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># 数据加载部分</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">load_dataset</span>(<span class="params">batch_size</span>):</span></span><br><span class="line">    train_set = torchvision.datasets.CIFAR10(</span><br><span class="line">        root=<span class="string">&#x27;../data/cifar&#x27;</span>, train=<span class="literal">True</span>, download=<span class="literal">True</span>, transform=myTransforms)</span><br><span class="line">    test_set = torchvision.datasets.CIFAR10(</span><br><span class="line">        root=<span class="string">&#x27;../data/cifar&#x27;</span>, train=<span class="literal">False</span>, download=<span class="literal">True</span>, transform=transforms.ToTensor())</span><br><span class="line">    train_iter = data.DataLoader(train_set, batch_size=batch_size, shuffle=<span class="literal">True</span>, num_workers=<span class="number">2</span>)</span><br><span class="line">    test_iter = data.DataLoader(test_set, batch_size=batch_size, shuffle=<span class="literal">True</span>, num_workers=<span class="number">2</span>)</span><br><span class="line">    <span class="keyword">return</span> train_iter, test_iter</span><br></pre></td></tr></table></div></figure>
+
+<p>即问题出在训练集和测试集没有作相同的预处理。引用知乎一个很恰当的比喻是：<strong>你复习了一整晚的高数课本，可是第二天考线性代数，虽然二者都属于数学范畴，但是你拿高数知识解线代怎么能做的好呢？</strong>对数据集作预处理，如均值化操作，实际上对数据的分布作了改变。训练集训练的是一个数据分布，直接拿训练的网络对另外一个数据分布的测试集作测试，效果肯定不好。</p>
+
+        <h4 id="问题解决方法">
+          <a href="#问题解决方法" class="heading-link"><i class="fas fa-link"></i></a><a href="#问题解决方法" class="headerlink" title="问题解决方法"></a>问题解决方法</h4>
+      <p>将数据加载的预处理统一，训练集和测试集使用相同的预处理方式。</p>
+<figure class="highlight python"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 数据加载部分</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">load_dataset</span>(<span class="params">batch_size</span>):</span></span><br><span class="line">    train_set = torchvision.datasets.CIFAR10(</span><br><span class="line">        root=<span class="string">&#x27;../data/cifar&#x27;</span>, train=<span class="literal">True</span>, download=<span class="literal">True</span>, transform=myTransforms)</span><br><span class="line">    test_set = torchvision.datasets.CIFAR10(</span><br><span class="line">        root=<span class="string">&#x27;../data/cifar&#x27;</span>, train=<span class="literal">False</span>, download=<span class="literal">True</span>, transform=myTransforms)</span><br><span class="line">    train_iter = data.DataLoader(train_set, batch_size=batch_size, shuffle=<span class="literal">True</span>, num_workers=<span class="number">2</span>)</span><br><span class="line">    test_iter = data.DataLoader(test_set, batch_size=batch_size, shuffle=<span class="literal">True</span>, num_workers=<span class="number">2</span>)</span><br><span class="line">    <span class="keyword">return</span> train_iter, test_iter</span><br></pre></td></tr></table></div></figure>
+
+<p><img src="/2022/01/28/caikeng001/image-20220128115856272.png" alt="image-20220128115856272"></p>
+<p>测试集准确率就正常上升了。</p>
+
+        <h4 id="学习与反思">
+          <a href="#学习与反思" class="heading-link"><i class="fas fa-link"></i></a><a href="#学习与反思" class="headerlink" title="学习与反思"></a>学习与反思</h4>
+      <p>借用知乎回答“深度学习中为什么要对测试集进行与训练集一样的数据预处理？”</p>
+<p>作者：深海<br>链接：<span class="exturl"><a class="exturl__link" target="_blank" rel="noopener" href="https://www.zhihu.com/question/479694291/answer/2061254022">https://www.zhihu.com/question/479694291/answer/2061254022</a><span class="exturl__icon"><i class="fas fa-external-link-alt"></i></span></span></p>
+<p>我们拿标准化举例，标准化也是数据预处理的过程，我们假设将要标准化的某个特征服从高斯分布。</p>
+<p>在神经网络中也可以看作是使网络收敛更加稳定的trick（因为标准化后大部分数值落在一定区间内）。</p>
+<p>我们只能通过训练集获得到数据中该特征的所有可能的情况，我们假设我们拿到的训练集是足够有代表性的，能够从训练集中尽可能逼近数据本身服从的概率分布（这也就是为什么扩充数据能够提升模型泛化能力，我们拿到的数据越多，越能接近数据本身的分布，如果我们拿到全量数据，那么本身的分布就确定下来了，假设数据的某个特征服从高斯分布，那么它的均值和方差也确定了，如果我们能拿到全量数据，那也就没必要做机器学习了）。</p>
+<p>所以我们是拿训练集中数据的某个特征代表了全部数据的这个特征，用它的均值和方差代表了全部数据的均值和方差。这就很容易理解了，测试集要使用训练集的均值和方差进行标准化，不就是在用我们假设的数据特征服从的均值和方差进行标准化吗？</p>
+<p>所以不只是深度学习，传统机器学习算法的预处理也需要这么做。深度学习做了标准化后能够对网络的训练有一些益处罢了，这也是为什么做bn，ln的原因，以及网络中用到的各种归一化的trick，对深度学习中网络优化过程中数值的稳定性有一定的帮助。</p>
+<p>寒假回家第6天了，今天才刚开始做了点东西（虽然没有什么卵用）。除夕之前一定要把DLA跑通。。。。。</p>
+<p><img src="/2022/01/28/caikeng001/image-20220128140116390.png" alt="image-20220128140116390"></p>
+</div></div></article><article class="postlist-item post"><header class="post-header"><h1 class="post-title"><a class="post-title__link" href="/2022/01/17/CenterNet/">CenterNet学习笔记</a></h1><div class="post-meta"><span class="post-meta-item post-meta-item--createtime"><span class="post-meta-item__icon"><i class="far fa-calendar-plus"></i></span><span class="post-meta-item__info">发表于</span><span class="post-meta-item__value">2022-01-17</span></span><span class="post-meta-item post-meta-item--updatetime"><span class="post-meta-item__icon"><i class="far fa-calendar-check"></i></span><span class="post-meta-item__info">更新于</span><span class="post-meta-item__value">2022-03-06</span></span></div></header><div class="post-body"><div class="post-excerpt">
         <h3 id="CenterNet">
           <a href="#CenterNet" class="heading-link"><i class="fas fa-link"></i></a><a href="#CenterNet" class="headerlink" title="CenterNet"></a>CenterNet</h3>
       
@@ -493,469 +606,4 @@ window.CONFIG = CONFIG;</script><meta name="generator" content="Hexo 5.4.0"></he
 
         <h3 id="二、基于锚框的检测算法的流程">
           <a href="#二、基于锚框的检测算法的流程" class="heading-link"><i class="fas fa-link"></i></a><a href="#二、基于锚框的检测算法的流程" class="headerlink" title="二、基于锚框的检测算法的流程"></a>二、基于锚框的检测算法的流程</h3>
-      <h4 id><a href="#" class="headerlink" title></a><img src="/2021/12/23/object-detect/images/object-detect/image-20211223100414222.png" alt="image-20211223100414222"></h4></div></div></article><article class="postlist-item post"><header class="post-header"><h1 class="post-title"><a class="post-title__link" href="/2021/12/17/ResNet/">传统网络实现之ResNet</a></h1><div class="post-meta"><span class="post-meta-item post-meta-item--createtime"><span class="post-meta-item__icon"><i class="far fa-calendar-plus"></i></span><span class="post-meta-item__info">发表于</span><span class="post-meta-item__value">2021-12-17</span></span><span class="post-meta-item post-meta-item--updatetime"><span class="post-meta-item__icon"><i class="far fa-calendar-check"></i></span><span class="post-meta-item__info">更新于</span><span class="post-meta-item__value">2021-12-17</span></span></div></header><div class="post-body"><div class="post-excerpt">
-        <h3 id="经典网络架构实现之ResNet">
-          <a href="#经典网络架构实现之ResNet" class="heading-link"><i class="fas fa-link"></i></a><a href="#经典网络架构实现之ResNet" class="headerlink" title="经典网络架构实现之ResNet"></a>经典网络架构实现之ResNet</h3>
-      
-        <h4 id="ResNet简介">
-          <a href="#ResNet简介" class="heading-link"><i class="fas fa-link"></i></a><a href="#ResNet简介" class="headerlink" title="ResNet简介"></a>ResNet简介</h4>
-      <p>从AlexNet再到VGG，现代卷积神经网络发展的一个重点就是深度<em><strong>Depth</strong></em>。正如AlexNet的论文<em><strong>Imagenet-Classification-with-Deep-Convolutional-Neural-Networks</strong></em>的discussion部分所述：<em>So the depth really is important for achieving our results。</em>从常规的思路上来想，更深的网络不应该比较浅的网络有着更差的性能表现。神经网络模型可以视作一个函数F，假设一个已经训练好的较浅层的模型为f(x)，在这个较浅层的网络模型的基础上再加上一些层数，只要优化器将网络将后续的层数的参数设成0或者接近0，即将此层训练成一个恒等映射，直接输出上层的结果，即实现一个嵌套式的网络，那么深层网络所达到的效果起码不会比原浅层模型差，只会更加接近最优。</p>
-<p><img src="/images/ResNet/tu1.png" alt="image-20211217151707369"></p>
-<p>​                                                                                            图1 嵌套网络与普通的深层网络的区别</p>
-<p>随着网络深度的不断增加，一系列的问题随之而来。其中影响深度难以继续叠加的一个非常重要的问题就是网络的层数越深，训练的难度也更大。具体则表现在梯度消失等问题。ResNet提出的Residual块在一定程度上缓解了这个问题。具体见下文。</p>
-
-        <h4 id="一、ResNet的基本架构–Residual块">
-          <a href="#一、ResNet的基本架构–Residual块" class="heading-link"><i class="fas fa-link"></i></a><a href="#一、ResNet的基本架构–Residual块" class="headerlink" title="一、ResNet的基本架构–Residual块"></a>一、ResNet的基本架构–Residual块</h4>
-      
-        <h5 id="1-1残差块的结构">
-          <a href="#1-1残差块的结构" class="heading-link"><i class="fas fa-link"></i></a><a href="#1-1残差块的结构" class="headerlink" title="1.1残差块的结构"></a>1.1残差块的结构</h5>
-      <p>上文说到，训练出一个嵌套式的网络，那么深层的模型要比浅层的模型理论上应该有着更好的表现。将新添加的层训练出一个恒等映射（identity mapping），使f(x)=x，新模型和原模型将同样有效。根据这种思路，ResNet提出了残差块（Residual block）的架构。残差块是ResNet的基本组成单位，它的具体结构如下图。</p>
-<p><img src="/images/ResNet/tu2.png" alt="image-20211217154218707"></p>
-<p>​                                                                图2 一个普通的卷积神经网络块（左）和残差块（右）</p>
-<p>假设原神经网络块的函数表示为<strong>f(x)<strong>，即待优化的函数为</strong>f(x)<strong>。而残差块的函数表示为</strong>h(x)=f(x)-x</strong>，二者向下层传递的计算结果都是f(x)，但残差块引入了“shortcut connections”，将网络块的输入通过这个连接直接传输到网络的输出处，与函数块的输出h(x)在通道维度做加和之后作为残差块的总输出。即神经网络需要学习并优化的是函数<strong>h(x)=f(x)-x</strong>。这样的结构设计往往带来优化上的便利。假设之前提到的恒等映射作为我们希望学出的理想映射f(x)，我们只需将上图中右图虚线框内上方的加权运算（如仿射）的权重和偏置参数设成0，那么f(x)即为恒等映射。 实际中，当理想映射f(x)极接近于恒等映射时，残差映射也易于捕捉恒等映射的细微波动。在残差块中，输入可通过跨层数据线路更快地向前传播。</p>
-
-        <h5 id="1-2-残差连接好优化的一种数学上的解释">
-          <a href="#1-2-残差连接好优化的一种数学上的解释" class="heading-link"><i class="fas fa-link"></i></a><a href="#1-2-残差连接好优化的一种数学上的解释" class="headerlink" title="1.2 残差连接好优化的一种数学上的解释"></a>1.2 残差连接好优化的一种数学上的解释</h5>
-      <p>下面给出一种残差块优化便利的数学解释。众所周知层次很深的网络容易出现梯度消失的问题。由上文所述神经网络的每一个块都可以看成一个函数f(x)，假设一个两块的网络可以表示成f(g(x))。在反向传播算法里面，f(g(x))对x计算梯度时由链式法则可知需要计算每一层的导数再累乘如图3所示。如果某几层梯度特别小，累乘之下梯度很快就成为一个很小的接近0的数，也就出现了梯度消失问题。梯度消失问题是深层次网络难以训练与优化的一个原因。</p>
-<p><img src="/images/ResNet/tu3.png" alt="image-20211217162043566"></p>
-<p>​                                                                                图3 普通深层网络计算梯度</p>
-<p>让我们来看下假如把深层网络的基本架构换成残差块会出现什么。由残差块的基本架构可以知道残差块需要优化的函数是h(x)，传递给下层的输出为h(x)+x。还是按照同样的假设来对残差块进行表示，不妨设第一块的输出为g(x)，则第二层的输出为f(g(x))+g(x)，对其求导如图4所示</p>
-<p><img src="/images/ResNet/tu4.png" alt="image-20211217185939784"></p>
-<p>​                                                                                                图4 残差网络计算梯度</p>
-<p>可见当一个很深的深度残差网络，方框内的累乘部分可能因为累乘变得很小，但后面的加法部分可以有力的避免总的梯度变成很小的数从而导致网络难以训练优化。</p>
-
-        <h4 id="二、残差网络的结构">
-          <a href="#二、残差网络的结构" class="heading-link"><i class="fas fa-link"></i></a><a href="#二、残差网络的结构" class="headerlink" title="二、残差网络的结构"></a>二、残差网络的结构</h4>
-      <p>残差网络根据其网络层数不同有许多的变体，其中论文中给出了五种结构，层数分别为18、34、50、101、152，网络结构大致如下图5所示。</p>
-<p><img src="/images/ResNet/tu5.png" alt="image-20211217195609739"></p>
-<p>​                                                                                        图5 不同版本的ResNet的网络架构</p>
-<p>通过图示可见18和34层的ResNet和较深层次的ResNet-50，ResNet-101，ResNet-152采用了不同的Residual Block设计，分别介绍这两种不同结构的Residual Block。</p>
-
-        <h5 id="2-1-ResNet-18与-ResNet-34的Residual-Block">
-          <a href="#2-1-ResNet-18与-ResNet-34的Residual-Block" class="heading-link"><i class="fas fa-link"></i></a><a href="#2-1-ResNet-18与-ResNet-34的Residual-Block" class="headerlink" title="2.1 ResNet-18与 ResNet-34的Residual Block"></a>2.1 ResNet-18与 ResNet-34的Residual Block</h5>
-      <p>ResNet-18与ResNet-34的Residual Block结构采用图6所示的结构。 残差块里首先有2个有相同输出通道数的3×3卷积层。 每个卷积层后接一个批量规范化层和ReLU激活函数。 然后我们通过跨层数据通路，跳过这2个卷积运算，将输入直接加在最后的ReLU激活函数前。 这样的设计要求2个卷积层的输出与输入形状一样，从而使它们可以相加。 如果想改变通道数，就需要引入一个额外的1×1卷积层来将输入变换成需要的形状后再做相加运算。 因此残差连接里的1×1卷积层完成的实际功能就是改变输出通道数。</p>
-<p><img src="/images/ResNet/tu6.png" alt="image-20211217200339365"></p>
-<p>​                                                        图 6 包含以及不包含1×1卷积层的残差块</p>
-
-        <h5 id="2-2-ResNet-50及以上版本的Residual-Block结构设计">
-          <a href="#2-2-ResNet-50及以上版本的Residual-Block结构设计" class="heading-link"><i class="fas fa-link"></i></a><a href="#2-2-ResNet-50及以上版本的Residual-Block结构设计" class="headerlink" title="2.2 ResNet-50及以上版本的Residual Block结构设计"></a>2.2 ResNet-50及以上版本的Residual Block结构设计</h5>
-      <p>在论文中，较深的ResNet的块架构改成了一种叫<em>Bottleneck Architectures</em>的设计。如下图7所示。对于每个块来说将原有的两个3*3卷积层替换成两个1*1卷积层加3×3卷积的架构。其中第一层1×1卷积完成的功能是将输入数据降维到64个通道，后一层的1×1卷积做的是升维操作。对特征先做降维再使用3×3卷积提取特征的好处在于减少了3×3卷积层所需的参数数量并且减少了训练的时间。并且可以减少参数数量同时减少中间特征图的通道数，这样可以使单个Block消耗的显存更少，有利于构建层数更多的网络。正如论文原文所述：考虑到训练时间的限制，因此采用了BottleNeck的结构。</p>
-<p><img src="/images/ResNet/tu7.png" alt="image-20211217201953034"></p>
-<p>​            图 7 左为ResNet-18，34的设计，右为ResNet-50，101，152的”Bottleneck Architectures“设计</p>
-
-        <h5 id="2-3-Resnet-18与ResNet-50的网络架构设计图示">
-          <a href="#2-3-Resnet-18与ResNet-50的网络架构设计图示" class="heading-link"><i class="fas fa-link"></i></a><a href="#2-3-Resnet-18与ResNet-50的网络架构设计图示" class="headerlink" title="2.3 Resnet-18与ResNet-50的网络架构设计图示"></a>2.3 Resnet-18与ResNet-50的网络架构设计图示</h5>
-      <p><img src="/images/ResNet/tu8.jpg" alt="img"></p>
-
-        <h4 id="三、Pytorch的ResNet-50实现FashionMNIST分类">
-          <a href="#三、Pytorch的ResNet-50实现FashionMNIST分类" class="heading-link"><i class="fas fa-link"></i></a><a href="#三、Pytorch的ResNet-50实现FashionMNIST分类" class="headerlink" title="三、Pytorch的ResNet-50实现FashionMNIST分类"></a>三、Pytorch的ResNet-50实现FashionMNIST分类</h4>
-      
-        <h5 id="3-1相关包的导入">
-          <a href="#3-1相关包的导入" class="heading-link"><i class="fas fa-link"></i></a><a href="#3-1相关包的导入" class="headerlink" title="3.1相关包的导入"></a>3.1相关包的导入</h5>
-      <p>`</p>
-<figure class="highlight python"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> torch</span><br><span class="line"><span class="keyword">from</span> torch <span class="keyword">import</span> nn</span><br><span class="line"><span class="keyword">from</span> torch.nn <span class="keyword">import</span> functional <span class="keyword">as</span> F</span><br><span class="line"><span class="keyword">from</span> torch.utils <span class="keyword">import</span> data</span><br><span class="line"><span class="keyword">import</span> time</span><br><span class="line"><span class="keyword">import</span> torchvision</span><br><span class="line"><span class="keyword">import</span> torchvision.transforms <span class="keyword">as</span> transforms</span><br><span class="line"><span class="keyword">import</span> matplotlib.pyplot <span class="keyword">as</span> plt</span><br></pre></td></tr></table></div></figure>
-
-<p>`</p>
-
-        <h5 id="3-2-ResNet-Block的设计">
-          <a href="#3-2-ResNet-Block的设计" class="heading-link"><i class="fas fa-link"></i></a><a href="#3-2-ResNet-Block的设计" class="headerlink" title="3.2 ResNet Block的设计"></a>3.2 ResNet Block的设计</h5>
-      <p>`</p>
-<figure class="highlight python"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Residual</span>(<span class="params">nn.Module</span>):</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span>(<span class="params">self, input_channels, filters, use_1x1conv=<span class="literal">False</span>, strides=<span class="number">1</span></span>):</span></span><br><span class="line">        <span class="built_in">super</span>().__init__()</span><br><span class="line">        <span class="comment"># 用一个Tuple储存BottleNeck层的三个卷积层分别的输出通道数，并用filter1, filter2, filter3取出</span></span><br><span class="line">        <span class="comment"># 每个卷积层后面都跟有一个BN层，再作ReLU, 对于shortcut， 1*1卷积做完之后只需要做BN，与Y累加之后再做ReLU</span></span><br><span class="line">        <span class="comment"># 非残差连接的1*1卷积层（指conv1,conv3）均采用stride=1,padding=0的设计</span></span><br><span class="line">        <span class="comment"># 对于用于改变输出通道数的快速连接上的1*1conv，即conv4，stride使用参数决定，第一个stage为1,后3个stage为2</span></span><br><span class="line">        filter1, filter2, filter3 = filters</span><br><span class="line">        self.conv1 = nn.Conv2d(input_channels, filter1, kernel_size=<span class="number">1</span>, stride=<span class="number">1</span>)</span><br><span class="line">        self.conv2 = nn.Conv2d(filter1, filter2, kernel_size=<span class="number">3</span>, stride=strides, padding=<span class="number">1</span>)</span><br><span class="line">        self.conv3 = nn.Conv2d(filter2, filter3, kernel_size=<span class="number">1</span>, stride=<span class="number">1</span>)</span><br><span class="line">        <span class="keyword">if</span> use_1x1conv:</span><br><span class="line">            self.conv4 = nn.Conv2d(input_channels, filter3, kernel_size=<span class="number">1</span>, stride=strides)</span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            self.conv4 = <span class="literal">None</span></span><br><span class="line">        self.bn1 = nn.BatchNorm2d(filter1)</span><br><span class="line">        self.bn2 = nn.BatchNorm2d(filter2)</span><br><span class="line">        self.bn3 = nn.BatchNorm2d(filter3)</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">forward</span>(<span class="params">self, X</span>):</span></span><br><span class="line">        Y = F.relu(self.bn1(self.conv1(X)))</span><br><span class="line">        Y = F.relu(self.bn2(self.conv2(Y)))</span><br><span class="line">        Y = self.bn3(self.conv3(Y))</span><br><span class="line">        <span class="keyword">if</span> self.conv4:</span><br><span class="line">            X = self.bn3(self.conv4(X))</span><br><span class="line">        Y += X</span><br><span class="line">        <span class="keyword">return</span> F.relu(Y)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">residual_block</span>(<span class="params">input_channels, filters, num_residuals, first_block=<span class="literal">False</span></span>):</span></span><br><span class="line">    <span class="comment"># 用于实现stage1,2,3,4</span></span><br><span class="line">    <span class="comment"># 每个stage的第一个block均使用1×1conv的快速连接，因此对第一个block需要特殊处理</span></span><br><span class="line">    <span class="comment"># 第一个stage的第一个block使用的1×1conv快速连接的stride为1，其他的stage为2</span></span><br><span class="line">    blk = []</span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(num_residuals):</span><br><span class="line">        <span class="keyword">if</span> first_block:</span><br><span class="line">            <span class="keyword">if</span> i == <span class="number">0</span>:</span><br><span class="line">                blk.append(Residual(input_channels, filters, use_1x1conv=<span class="literal">True</span>, strides=<span class="number">1</span>))</span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">                blk.append(Residual(filters[<span class="number">2</span>], filters, use_1x1conv=<span class="literal">False</span>, strides=<span class="number">1</span>))</span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            <span class="keyword">if</span> i == <span class="number">0</span>:</span><br><span class="line">                blk.append(Residual(input_channels, filters, use_1x1conv=<span class="literal">True</span>, strides=<span class="number">2</span>))</span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">                blk.append(Residual(filters[<span class="number">2</span>], filters, use_1x1conv=<span class="literal">False</span>, strides=<span class="number">1</span>))</span><br><span class="line">    <span class="keyword">return</span> blk</span><br></pre></td></tr></table></div></figure>
-
-<p>`</p>
-
-        <h5 id="3-3-网络结构的设计">
-          <a href="#3-3-网络结构的设计" class="heading-link"><i class="fas fa-link"></i></a><a href="#3-3-网络结构的设计" class="headerlink" title="3.3 网络结构的设计"></a>3.3 网络结构的设计</h5>
-      <p>`</p>
-<figure class="highlight python"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">stage1 = nn.Sequential(</span><br><span class="line">    nn.Conv2d(<span class="number">1</span>, <span class="number">64</span>, kernel_size=<span class="number">7</span>, stride=<span class="number">2</span>, padding=<span class="number">3</span>),</span><br><span class="line">    nn.BatchNorm2d(<span class="number">64</span>),</span><br><span class="line">    nn.ReLU(),</span><br><span class="line">    nn.MaxPool2d(kernel_size=<span class="number">3</span>, stride=<span class="number">2</span>, padding=<span class="number">1</span>)</span><br><span class="line">)</span><br><span class="line">stage2 = nn.Sequential(*residual_block(<span class="number">64</span>, (<span class="number">64</span>, <span class="number">64</span>, <span class="number">256</span>), <span class="number">3</span>, first_block=<span class="literal">True</span>))</span><br><span class="line">stage3 = nn.Sequential(*residual_block(<span class="number">256</span>, (<span class="number">128</span>, <span class="number">128</span>, <span class="number">512</span>), <span class="number">4</span>))</span><br><span class="line">stage4 = nn.Sequential(*residual_block(<span class="number">512</span>, (<span class="number">256</span>, <span class="number">256</span>, <span class="number">1024</span>), <span class="number">6</span>))</span><br><span class="line">stage5 = nn.Sequential(*residual_block(<span class="number">1024</span>, (<span class="number">512</span>, <span class="number">512</span>, <span class="number">2048</span>), <span class="number">3</span>))</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">net = nn.Sequential(</span><br><span class="line">    stage1, stage2, stage3, stage4, stage5,</span><br><span class="line">    nn.AdaptiveAvgPool2d((<span class="number">1</span>, <span class="number">1</span>)),</span><br><span class="line">    nn.Flatten(),</span><br><span class="line">    nn.Linear(<span class="number">2048</span>, <span class="number">10</span>)</span><br><span class="line">)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 初始化网络参数</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">init_weights</span>(<span class="params">m</span>):</span></span><br><span class="line">    <span class="keyword">if</span> <span class="built_in">type</span>(m) == nn.Linear <span class="keyword">or</span> <span class="built_in">type</span>(m) == nn.Conv2d:</span><br><span class="line">        nn.init.xavier_uniform_(m.weight)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">net.apply(init_weights)</span><br></pre></td></tr></table></div></figure>
-
-<p>`</p>
-
-        <h5 id="3-4-数据加载以及训练的相关代码">
-          <a href="#3-4-数据加载以及训练的相关代码" class="heading-link"><i class="fas fa-link"></i></a><a href="#3-4-数据加载以及训练的相关代码" class="headerlink" title="3.4 数据加载以及训练的相关代码"></a>3.4 数据加载以及训练的相关代码</h5>
-      <p>`</p>
-<figure class="highlight python"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 数据加载部分</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">load_dataset</span>(<span class="params">batch_size</span>):</span></span><br><span class="line">    train_set = torchvision.datasets.FashionMNIST(</span><br><span class="line">        root=<span class="string">&#x27;../data&#x27;</span>, train=<span class="literal">True</span>, download=<span class="literal">True</span>, transform=transforms.ToTensor())</span><br><span class="line">    test_set = torchvision.datasets.FashionMNIST(</span><br><span class="line">        root=<span class="string">&#x27;../data&#x27;</span>, train=<span class="literal">False</span>, download=<span class="literal">True</span>, transform=transforms.ToTensor())</span><br><span class="line">    train_iter = data.DataLoader(train_set, batch_size=batch_size, shuffle=<span class="literal">True</span>, num_workers=<span class="number">4</span>)</span><br><span class="line">    test_iter = data.DataLoader(test_set, batch_size=batch_size, shuffle=<span class="literal">True</span>, num_workers=<span class="number">4</span>)</span><br><span class="line">    <span class="keyword">return</span> train_iter, test_iter</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># 获取当前学习率</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">get_cur_lr</span>(<span class="params">optimizer</span>):</span></span><br><span class="line">    <span class="keyword">for</span> param_group <span class="keyword">in</span> optimizer.param_groups:</span><br><span class="line">        <span class="keyword">return</span> param_group[<span class="string">&#x27;lr&#x27;</span>]</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># 衡量在测试集上的准确率</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">test</span>(<span class="params">net, test_iter, loss, device</span>):</span></span><br><span class="line">    total, correct = <span class="number">0</span>, <span class="number">0</span></span><br><span class="line">    net.<span class="built_in">eval</span>()</span><br><span class="line"></span><br><span class="line">    <span class="keyword">with</span> torch.no_grad():</span><br><span class="line">        <span class="keyword">for</span> X, y <span class="keyword">in</span> test_iter:</span><br><span class="line">            X, y = X.to(device), y.to(device)</span><br><span class="line">            l = loss(net(X), y)</span><br><span class="line">            total += y.size(<span class="number">0</span>)</span><br><span class="line">            correct += (net(X).argmax(dim=<span class="number">1</span>) == y).<span class="built_in">sum</span>().item()</span><br><span class="line"></span><br><span class="line">    test_acc = <span class="number">100.0</span> * correct / total</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;****test*****&quot;</span>)</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;test_loss:&#123;:.3f&#125; | test_acc:&#123;:6.3f&#125;%&quot;</span>.<span class="built_in">format</span>(l.item(), test_acc))</span><br><span class="line">    net.train()</span><br><span class="line">    <span class="keyword">return</span> test_acc</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">train</span>(<span class="params">net, train_iter, loss, optimizer, num_epochs, device, num_print, lr_scheduler=<span class="literal">None</span>, test_iter=<span class="literal">None</span></span>):</span></span><br><span class="line">    net.train()</span><br><span class="line">    record_train = <span class="built_in">list</span>()</span><br><span class="line">    record_test = <span class="built_in">list</span>()</span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span> epoch <span class="keyword">in</span> <span class="built_in">range</span>(num_epochs):</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">&quot;epoch:[&#123;&#125;/&#123;&#125;]&quot;</span>.<span class="built_in">format</span>(epoch+<span class="number">1</span>, num_epochs))</span><br><span class="line">        total, correct, train_loss = <span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span></span><br><span class="line">        start = time.time() <span class="comment"># 返回当前时间戳</span></span><br><span class="line">        <span class="comment"># i是train_iter的index，用于计数，计算已经抽取了多少个（x, y）</span></span><br><span class="line">        <span class="keyword">for</span> i, (X, y) <span class="keyword">in</span> <span class="built_in">enumerate</span>(train_iter):</span><br><span class="line">            <span class="comment"># 将x, y拷贝到显存进行运算,X,y都是一个batch的数据</span></span><br><span class="line">            X, y = X.to(device), y.to(device)</span><br><span class="line">            y_hat = net(X)</span><br><span class="line">            <span class="comment"># x, y都是tensor,l也是tensor</span></span><br><span class="line">            l = loss(y_hat, y)</span><br><span class="line">            optimizer.zero_grad()</span><br><span class="line">            l.backward()</span><br><span class="line">            optimizer.step()</span><br><span class="line">            <span class="comment"># 从tensor中取出相应的数值</span></span><br><span class="line">            train_loss += l.item()</span><br><span class="line">            total += y.size(<span class="number">0</span>)</span><br><span class="line">            correct += (net(X).argmax(dim=<span class="number">1</span>) == y).<span class="built_in">sum</span>().item()</span><br><span class="line">            train_acc = (correct / total) * <span class="number">100.0</span></span><br><span class="line">            <span class="comment"># 每num_print次打印一次loss和train_acc</span></span><br><span class="line">            <span class="keyword">if</span> (i + <span class="number">1</span>) % num_print == <span class="number">0</span>:</span><br><span class="line">                <span class="built_in">print</span>(<span class="string">&quot;step:[&#123;&#125;/&#123;&#125;], train_loss:&#123;:.3f&#125; | train_acc:&#123;:6.3f&#125; | lr:&#123;:.6f&#125;&quot;</span></span><br><span class="line">                      .<span class="built_in">format</span>(i+<span class="number">1</span>, <span class="built_in">len</span>(train_iter), train_loss / (i + <span class="number">1</span>), train_acc, get_cur_lr(optimizer)))</span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span> lr_scheduler <span class="keyword">is</span> <span class="keyword">not</span> <span class="literal">None</span>:</span><br><span class="line">            lr_scheduler.step()</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">&quot;--cost time:&#123;:.4f&#125;s--&quot;</span>.<span class="built_in">format</span>(time.time() - start))</span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span> test_iter <span class="keyword">is</span> <span class="keyword">not</span> <span class="literal">None</span>:</span><br><span class="line">            record_test.append(test(net, test_iter, loss, device))</span><br><span class="line">        record_train.append(train_acc)</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> record_train, record_test</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># 绘制学习曲线</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">learning_curve</span>(<span class="params">record_train, record_test=<span class="literal">None</span></span>):</span></span><br><span class="line">    plt.style.use(<span class="string">&quot;ggplot&quot;</span>)</span><br><span class="line"></span><br><span class="line">    plt.plot(<span class="built_in">range</span>(<span class="number">1</span>, <span class="built_in">len</span>(record_train)+<span class="number">1</span>), record_train, label=<span class="string">&quot;train_acc&quot;</span>)</span><br><span class="line">    <span class="keyword">if</span> record_test <span class="keyword">is</span> <span class="keyword">not</span> <span class="literal">None</span>:</span><br><span class="line">        plt.plot(<span class="built_in">range</span>(<span class="number">1</span>, <span class="built_in">len</span>(record_test) + <span class="number">1</span>), record_test, label=<span class="string">&quot;test_acc&quot;</span>)</span><br><span class="line"></span><br><span class="line">    plt.legend(loc=<span class="number">4</span>)</span><br><span class="line">    plt.title(<span class="string">&quot;learning_curve&quot;</span>)</span><br><span class="line">    plt.xticks(<span class="built_in">range</span>(<span class="number">0</span>, <span class="built_in">len</span>(record_train) + <span class="number">1</span>, <span class="number">5</span>))</span><br><span class="line">    plt.xticks(<span class="built_in">range</span>(<span class="number">0</span>, <span class="number">101</span>, <span class="number">5</span>))</span><br><span class="line">    plt.xlabel(<span class="string">&quot;epoch&quot;</span>)</span><br><span class="line">    plt.ylabel(<span class="string">&quot;accuracy&quot;</span>)</span><br><span class="line"></span><br><span class="line">    plt.show()</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># 训练函数</span></span><br><span class="line">batch_size = <span class="number">128</span></span><br><span class="line">num_epochs = <span class="number">100</span></span><br><span class="line">learning_rate = <span class="number">1.0</span></span><br><span class="line">momentum = <span class="number">0.9</span></span><br><span class="line">weight_decay = <span class="number">0.0001</span></span><br><span class="line">num_print = <span class="number">100</span></span><br><span class="line">device = <span class="string">&quot;cuda&quot;</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">train_on_device</span>(<span class="params">net, batch_size, num_epochs, learning_rate, momentum, weight_decay, device</span>):</span></span><br><span class="line">    net = net.to(device)</span><br><span class="line">    train_iter, test_iter = load_dataset(batch_size)</span><br><span class="line">    loss = nn.CrossEntropyLoss()</span><br><span class="line">    optimizer = torch.optim.SGD(</span><br><span class="line">        net.parameters(),</span><br><span class="line">        lr=learning_rate,</span><br><span class="line">        momentum=momentum,</span><br><span class="line">        weight_decay=weight_decay,</span><br><span class="line">        nesterov=<span class="literal">True</span></span><br><span class="line">    )</span><br><span class="line">    lr_scheduler = torch.optim.lr_scheduler.StepLR(optimizer, step_size=<span class="number">25</span>, gamma=<span class="number">0.1</span>)</span><br><span class="line"></span><br><span class="line">    record_train, record_test = train(net, train_iter, loss, optimizer, num_epochs</span><br><span class="line">                                      , device, num_print, lr_scheduler, test_iter)</span><br><span class="line">    learning_curve(record_train, record_test)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">&#x27;__main__&#x27;</span>:</span><br><span class="line">    train_on_device(net, batch_size, num_epochs, learning_rate, momentum, weight_decay, device)</span><br></pre></td></tr></table></div></figure>
-
-<p>`</p>
-<p>代码中使用了全局池化nn.AdaptiveAvgPool2d以及动态改变学习率torch.optim.lr_scheduler.StepLR(optimizer, step_size=25, gamma=0.1)，基本的功能已经了解但是具体的细节没有完全搞清楚，后面会继续了解。</p>
-
-        <h5 id="3-5-实验结果展示">
-          <a href="#3-5-实验结果展示" class="heading-link"><i class="fas fa-link"></i></a><a href="#3-5-实验结果展示" class="headerlink" title="3.5 实验结果展示"></a>3.5 实验结果展示</h5>
-      <p><img src="/images/ResNet/image-20211217211206565.png" alt="image-20211217211206565"></p>
-<p><img src="/images/ResNet/image-20211217211249813.png" alt="image-20211217211249813"></p>
-<p>最终达到的测试集准确率为88.13%，对于这个结果我还是不太满意的。根据学习曲线可以看出后期模型出现了过拟合的现象。综合分析个人认为应该还可以达到更好的成绩，对于学习率、权重衰减等相关超参数的设置还是没有什么经验，另外今天逛论坛中看到一篇帖子做的是cifar-10的分类问题，仅仅将图片进行了一些剪裁、均值化等处理就将成绩从88%提升到了95%。而且在ResNet的论文中也提到了对图像进行预处理，感觉问题可能出现在这两个方面，后面有时间的话还会继续做实验探索。</p>
-
-        <h4 id="后记">
-          <a href="#后记" class="heading-link"><i class="fas fa-link"></i></a><a href="#后记" class="headerlink" title="后记"></a>后记</h4>
-      <p>讲个笑话，10月绝不摆烂。</p>
-<p><img src="/images/ResNet/image-20211217211811571.png" alt="image-20211217211811571"></p>
-<p><img src="/images/ResNet/image-20211217211842242.png" alt="image-20211217211842242"></p>
-<p>摆烂王是谁？哦，是我，那没事了。</p>
-<p><img src="/images/ResNet/image-20211217211953650.png" alt="image-20211217211953650"></p>
-</div></div></article><article class="postlist-item post"><header class="post-header"><h1 class="post-title"><a class="post-title__link" href="/2021/11/02/labsever/">实验室服务器探索</a></h1><div class="post-meta"><span class="post-meta-item post-meta-item--createtime"><span class="post-meta-item__icon"><i class="far fa-calendar-plus"></i></span><span class="post-meta-item__info">发表于</span><span class="post-meta-item__value">2021-11-02</span></span><span class="post-meta-item post-meta-item--updatetime"><span class="post-meta-item__icon"><i class="far fa-calendar-check"></i></span><span class="post-meta-item__info">更新于</span><span class="post-meta-item__value">2021-12-11</span></span></div></header><div class="post-body"><div class="post-excerpt">
-        <h3 id="前置准备：">
-          <a href="#前置准备：" class="heading-link"><i class="fas fa-link"></i></a><a href="#前置准备：" class="headerlink" title="前置准备："></a>前置准备：</h3>
-      <p>由于没找到便捷的传文件到服务器的方法，有时需要从自己电脑中粘贴代码到服务器的编译器上运行，可以在登录服务器之前点击显示选项在本地资源上点击剪贴板，这样自己电脑的代码就能复制粘贴到服务器编译器上了。</p>
-<p><img src="/images/labsever/image-20211102104735926-16387743342881.png" alt="image-20211102104735926"></p>
-<p><img src="/images/labsever/image-20211102104817924.png" alt="image-20211102104817924"></p>
-<p>修改终端偏好设置</p>
-<p><img src="/images/labsever/image-20211206150245183.png" alt="image-20211206150245183"></p>
-<p><img src="/images/labsever/image-20211206150302798.png" alt="image-20211206150302798"></p>
-
-        <h3 id="一、安装Anaconda">
-          <a href="#一、安装Anaconda" class="heading-link"><i class="fas fa-link"></i></a><a href="#一、安装Anaconda" class="headerlink" title="一、安装Anaconda"></a>一、安装Anaconda</h3>
-      <p>首先进入到具有Anaconda安装包的目录下，记得指令中的dxs是自己的用户名</p>
-<p><code>cd /home/dxs/anaconda</code></p>
-<p><img src="/images/labsever/image-20211101202849128.png" alt="image-20211101202849128"></p>
-<p>输入命令： <code>bash Anaconda3-5.2.0-Linux-x86_64.sh</code></p>
-<p>回车开始执行安装程序</p>
-<p>出现许可协议后一直按回车到出现是否接受(yes/no)</p>
-<p>其中会弹出一个是否添加到环境变量，一定要选yes否则可能会很麻烦。</p>
-<p>一直输入yes直到出现最后一步有一个询问你是否安装vscode，emm如果你没有需要就输入no。</p>
-
-        <h3 id="二、安装pycharm">
-          <a href="#二、安装pycharm" class="heading-link"><i class="fas fa-link"></i></a><a href="#二、安装pycharm" class="headerlink" title="二、安装pycharm"></a>二、安装pycharm</h3>
-      <p>首先进入到具有Anaconda安装包的目录下</p>
-<p><code>cd /home/dxs/anaconda</code>, 回车</p>
-<p>输入ls查看pycharm文件夹的文件夹名<img src="/images/labsever/image-20211101205032654.png" alt="image-20211101205032654"></p>
-<p>linux下的复制快捷键是<strong>ctrl+alt+c</strong></p>
-<p>粘贴是<strong>ctrl+alt+v</strong></p>
-<p>使用复制快捷键复制这个长文件夹名，输入cd 粘贴文件夹名/bin</p>
-<p><code>cd pycharm-community-2020.2.2/bin</code></p>
-<p>回车，如上图所示红线下面的命令</p>
-<p>然后输入 <code>./pycharm.sh</code> 回车开始安装</p>
-<p>然后会弹出对话框</p>
-<p><img src="/images/labsever/image-20211101205511516.png" alt="image-20211101205511516"></p>
-<p><img src="/images/labsever/image-20211101205539700.png" alt="image-20211101205539700"></p>
-<p>选择界面风格</p>
-<p><img src="/images/labsever/image-20211101205632388.png" alt="image-20211101205632388"></p>
-<p>选一个好看的点击next</p>
-<p>下一个界面不要选择创建直接下一步就完成了安装</p>
-
-        <h4 id="下次怎么进入pycharm">
-          <a href="#下次怎么进入pycharm" class="heading-link"><i class="fas fa-link"></i></a><a href="#下次怎么进入pycharm" class="headerlink" title="下次怎么进入pycharm"></a>下次怎么进入pycharm</h4>
-      <p>先给它创建一个快捷方式，在桌面上右键选择create launcher</p>
-<p><img src="/images/labsever/image-20211101211141456.png" alt="image-20211101211141456"></p>
-<p>输入名字，点击command旁边的小文件夹，找到pycharm的bin文件夹找到pycharm.sh选中点击open</p>
-<p><img src="/images/labsever/image-20211101211401520.png" alt="image-20211101211401520"></p>
-<p>点击icon给它选择一个图标，search icon中选择image files，在弹出的选择目录中还在这个bin目录里面可以找到这个图标，选择点击ok就好啦</p>
-<p><img src="/images/labsever/image-20211101211556431.png" alt="image-20211101211556431"></p>
-<p><img src="/images/labsever/image-20211101211710022.png" alt="image-20211101211710022"></p>
-<p><img src="/images/labsever/image-20211101211747217.png" alt="image-20211101211747217"></p>
-<p>打上第一个勾点击create，桌面上就有pycharm了，双击打开点击launch anyway就打开了</p>
-<p><img src="/images/labsever/image-20211101211825065.png" alt="image-20211101211825065"></p>
-<p><img src="/images/labsever/image-20211101211905407.png" alt="image-20211101211905407"></p>
-
-        <h3 id="三、pytorch环境搭建">
-          <a href="#三、pytorch环境搭建" class="heading-link"><i class="fas fa-link"></i></a><a href="#三、pytorch环境搭建" class="headerlink" title="三、pytorch环境搭建"></a>三、pytorch环境搭建</h3>
-      <p>右击桌面找到Applications-&gt;system-&gt;Xfce Terminal点击打开终端</p>
-<p><img src="/images/labsever/image-20211102102926834.png" alt="image-20211102102926834"></p>
-<p>1、创建虚拟环境, -n后面的是想要的环境名</p>
-<p><code>conda create -n torchgpu python=3.8（torchgpu是想要的环境名，叫什么都可以，2.7、3.6等）</code></p>
-<p>2、进入conda环境，在终端中输入下面指令进入到创建好的torchgpu虚拟环境</p>
-<figure class="highlight plaintext"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">source activate torchgpu</span><br></pre></td></tr></table></div></figure>
-
-<p>3、安装pytorch</p>
-<p><img src="/images/labsever/image-20211101221521349.png" alt="image-20211101221521349"></p>
-<p><code>conda install pytorch torchvision torchaudio cudatoolkit=10.2 -c pytorch</code> 复制这行代码，回车开始安装</p>
-<p>出现yes/no全部yes即可</p>
-<p>4、安装李沐的d2l包，里面附带有jupyter，推荐安装</p>
-<p><code>pip install d2l</code></p>
-<p>至此pytorch需要的一些包和环境安装完毕</p>
-
-        <h3 id="四、尝试使用jupyter编写代码">
-          <a href="#四、尝试使用jupyter编写代码" class="heading-link"><i class="fas fa-link"></i></a><a href="#四、尝试使用jupyter编写代码" class="headerlink" title="四、尝试使用jupyter编写代码"></a>四、尝试使用jupyter编写代码</h3>
-      <p>按照上面的方法打开终端并进入到torchgpu环境下，输入 <code>jupyter notebook</code>回车会弹出浏览器,即可使用jupyter编写代码</p>
-<p><img src="/images/labsever/image-20211102104101453.png" alt="image-20211102104101453"></p>
-<p><img src="/images/labsever/image-20211102104150415.png" alt="image-20211102104150415"></p>
-
-        <h3 id="五、尝试使用pycharm编写代码">
-          <a href="#五、尝试使用pycharm编写代码" class="heading-link"><i class="fas fa-link"></i></a><a href="#五、尝试使用pycharm编写代码" class="headerlink" title="五、尝试使用pycharm编写代码"></a>五、尝试使用pycharm编写代码</h3>
-      <p>pycharm还是跟windows上一样设置环境为创建的conda虚拟环境torchgpu</p>
-<p>点击file-&gt;settings-&gt;Project Interpreter-&gt;小齿轮按钮</p>
-<p><img src="/images/labsever/image-20211102110238056.png" alt="image-20211102110238056"></p>
-<p>conda environments-&gt;existing enviornment点击小文件夹按钮</p>
-<p>依次找到路径 /home/dxs(自己的用户名)/anaconda3/envs/torchgpu/bin/python</p>
-<p>点击ok apply</p>
-<p>返回之后右下角出现（torchgpu）说明环境已经切换完毕</p>
-<p><img src="/images/labsever/image-20211102110856616.png" alt="image-20211102110856616"></p>
-
-        <h3 id="六、使用gpu之前的一些注意事项">
-          <a href="#六、使用gpu之前的一些注意事项" class="heading-link"><i class="fas fa-link"></i></a><a href="#六、使用gpu之前的一些注意事项" class="headerlink" title="六、使用gpu之前的一些注意事项"></a>六、使用gpu之前的一些注意事项</h3>
-      <p>使用gpu之前先打开终端输入 <code>nvidia-smi</code>查看显卡的使用状态</p>
-<p><img src="/images/labsever/image-20211102111112560.png" alt="image-20211102111112560"></p>
-<p>可以看到第一块显卡（GPU0）的显存使用很大，我们尽量选择较为空闲的显卡比如GPU7，以避免与师兄师姐争用显存，从GPU7显存使用2MiB可见较为空闲，因此在训练的代码中注意将训练设备设置成CUDA:7 即GPU7</p>
-<p>原代码：</p>
-<p><img src="/images/labsever/image-20211102111531575.png" alt="image-20211102111531575"></p>
-<p>只使用GPU7的改正的代码：</p>
-<p><img src="/images/labsever/image-20211102111612414.png" alt="image-20211102111612414"></p>
-
-        <h3 id="七、利用XFTP7从本地Windows传文件到服务器">
-          <a href="#七、利用XFTP7从本地Windows传文件到服务器" class="heading-link"><i class="fas fa-link"></i></a><a href="#七、利用XFTP7从本地Windows传文件到服务器" class="headerlink" title="七、利用XFTP7从本地Windows传文件到服务器"></a>七、利用XFTP7从本地Windows传文件到服务器</h3>
-      <p>Xftp7安装：</p>
-<p><span class="exturl"><a class="exturl__link" target="_blank" rel="noopener" href="https://www.netsarang.com/zh/free-for-home-school/">家庭/学校免费 - NetSarang Website</a><span class="exturl__icon"><i class="fas fa-external-link-alt"></i></span></span></p>
-<p><img src="/images/labsever/image-20211211102014039.png" alt="image-20211211102014039"></p>
-<p>勾选只需Xftp即可，会向所留邮箱发送下载链接</p>
-<p>正常安装一直下一步即可</p>
-<p>打开软件，在弹出的会话窗口点击新建</p>
-<p><img src="/images/labsever/image-20211211102501213.png" alt="image-20211211102501213"></p>
-<p><img src="/images/labsever/image-20211211102842186.png" alt="image-20211211102842186"></p>
-<p>点击确定后连接，在左上角点击文件-&gt;新建本地选项卡后出现以下界面</p>
-<p><img src="/images/labsever/image-20211211103242759.png" alt="image-20211211103242759"></p>
-<p>此时左边就是windows，右边是Linux服务器文件系统，两边可以互相直接拖曳文件以及文件夹实现文件互传</p>
-<p>到此，实验室服务器探索暂时告一段落，以后有需要会接着尝试。</p>
-</div></div></article><article class="postlist-item post"><header class="post-header"><h1 class="post-title"><a class="post-title__link" href="/2021/10/24/ReID-summary/">《无监督领域自适应行人重识别研究进展》阅读</a></h1><div class="post-meta"><span class="post-meta-item post-meta-item--createtime"><span class="post-meta-item__icon"><i class="far fa-calendar-plus"></i></span><span class="post-meta-item__info">发表于</span><span class="post-meta-item__value">2021-10-24</span></span><span class="post-meta-item post-meta-item--updatetime"><span class="post-meta-item__icon"><i class="far fa-calendar-check"></i></span><span class="post-meta-item__info">更新于</span><span class="post-meta-item__value">2021-12-07</span></span></div></header><div class="post-body"><div class="post-excerpt">
-        <h3 id="《无监督领域自适应行人重识别研究进展》阅读">
-          <a href="#《无监督领域自适应行人重识别研究进展》阅读" class="heading-link"><i class="fas fa-link"></i></a><a href="#《无监督领域自适应行人重识别研究进展》阅读" class="headerlink" title="《无监督领域自适应行人重识别研究进展》阅读"></a>《<strong>无监督领域自适应行人重识别研究进展</strong>》阅读</h3>
-      
-        <h4 id="一、无监督领域自适应行人重识别（Unsupervised-Domain-Adaptation-Person-Re">
-          <a href="#一、无监督领域自适应行人重识别（Unsupervised-Domain-Adaptation-Person-Re" class="heading-link"><i class="fas fa-link"></i></a><a href="#一、无监督领域自适应行人重识别（Unsupervised-Domain-Adaptation-Person-Re" class="headerlink" title="一、无监督领域自适应行人重识别（Unsupervised  Domain  Adaptation Person  Re-"></a>一、无监督领域自适应行人重识别（Unsupervised  Domain  Adaptation Person  Re-</h4>
-      <p>identification, UDA Re-ID）</p>
-
-        <h5 id="1-1-领域自适应-Domain-Adaption">
-          <a href="#1-1-领域自适应-Domain-Adaption" class="heading-link"><i class="fas fa-link"></i></a><a href="#1-1-领域自适应-Domain-Adaption" class="headerlink" title="1.1 领域自适应 Domain Adaption"></a>1.1 领域自适应 Domain Adaption</h5>
-      <p><em>Domain Adaption</em>是<em>transfer leanring</em>（迁移学习）中很重要的一项内容。主要目的是将具有不同分布的（<em>data distribution</em>）的具有标签（<em>label</em>）的源域（<em>source domain</em>）和不带标签的目标域（<em>target domain</em>） 映射（<em>map</em>）到同一个特征空间（<em>embedding mainfold</em>）。即使训练好的模型能够很好的泛化到其他领域中。</p>
-<p><em><strong>Domain</strong></em>可以看作是一个服从相同分布的一类数据，而训练集由一个或多个<em>Domain</em>组成。</p>
-<p>DA的一个基础理论如下图所示</p>
-<p><img src="/images/ReID-summary/image-20211206143021042.png" alt="image-20211206143021042"></p>
-<p>其中<em>Target risk</em>的上界由<em>Source risk，Complexity of H</em>,与<em>Source-target distribution divergence</em>组成，其中<em>Source risk</em>直接由源域给出，<em>Complexity of H</em>指的是模型的复杂程度，一般来说是一个常量，因此一般来说方便优化或者下降的点就是<em>Source-target distribution divergence</em>，即想办法减小源域与目标域分布的差距，所以在训练的过程中<em>DA</em>需要直接访问目标域的数据。</p>
-
-        <h5 id="1-2-无监督">
-          <a href="#1-2-无监督" class="heading-link"><i class="fas fa-link"></i></a><a href="#1-2-无监督" class="headerlink" title="1.2 无监督"></a>1.2 无监督</h5>
-      <p>要求其它领域中的数据样本没有与任务有关的标签信息,  无法参与对模型的微调。由于不同领域存在不同的数据分布,  一般将数据的分布差异认为是无监督领域自适应行人重识别的关键问题,  因此研究的重点是让模型可以适应不同领域之间的差异(<em>Domain Gap</em>),减少域差对模型性能的影响。</p>
-<p>无监督领域自适应一般包含两个领域（数据集），即训练集是带标签的（有监督的）源域（<em>source domain</em>），和无监督的目标域（<em>Target Domain</em>）。任务目标是能够在无重叠视阈的目标域中能够检索出同一行人.</p>
-
-        <h4 id="二、无监督领域自适应行人重识别的算法">
-          <a href="#二、无监督领域自适应行人重识别的算法" class="heading-link"><i class="fas fa-link"></i></a><a href="#二、无监督领域自适应行人重识别的算法" class="headerlink" title="二、无监督领域自适应行人重识别的算法"></a>二、无监督领域自适应行人重识别的算法</h4>
-      <p>无监督领域自适应行人重识别的研究方向大致可以分为以下三类：</p>
-<p>1）生成满足其它领域数据分布的伪样本,在数据增广的同时,  能够缩小不同领域之间的领域差异；常见的方法是基于图像的风格迁移，即通过图像的风格迁移模型将有标签的源域目标通过图像的风格迁移生成与目标域相近的风格图片作为满足目标领域数据分布的伪样本投入模型的训练。</p>
-<p>2）训练后的模型具有提取高鲁棒领域不变性特征的能力,  缓解领域间的差异；常见的方法是基于表示学习的无监<br>督领域自适应行人重识别。</p>
-<p>3）提高目标域中样本特征伪标签生成的准确度,  用于目标域中模型有监督的微调.常见的方法是基于伪标签生成的无监督领域自适应行人重识别。</p>
-<p><img src="/images/ReID-summary/image-20211206095839729.png" alt="image-20211206095839729"></p>
-<p>​                                                 图1 无监督领域自适应行人重识别的三类研究方向</p>
-
-        <h5 id="2-1-基于图像风格迁移的方法">
-          <a href="#2-1-基于图像风格迁移的方法" class="heading-link"><i class="fas fa-link"></i></a><a href="#2-1-基于图像风格迁移的方法" class="headerlink" title="2.1 基于图像风格迁移的方法"></a>2.1 基于图像风格迁移的方法</h5>
-      
-        <h6 id="2-1-1-问题的提出">
-          <a href="#2-1-1-问题的提出" class="heading-link"><i class="fas fa-link"></i></a><a href="#2-1-1-问题的提出" class="headerlink" title="2.1.1 问题的提出"></a>2.1.1 问题的提出</h6>
-      <p>一直以来,  在基于无监督的领域自适应行人重识别中,  不同领域内的光照、行人背景、相机角度、行人姿势、分辨率以及行人衣着风格等差异造成的领域差异被专家学者认为是造成重识别性能低的首要原因。因此如何缩小领域差异成为基于无监督的领域自适应行人重识别研究的一项关键科学问题。</p>
-
-        <h6 id="2-1-2-主要方法">
-          <a href="#2-1-2-主要方法" class="heading-link"><i class="fas fa-link"></i></a><a href="#2-1-2-主要方法" class="headerlink" title="2.1.2 主要方法"></a>2.1.2 主要方法</h6>
-      <p>基于图像风格迁移的主要思路是将有监督的源域图像通过神经网络生成具有目标域图像风格的源域图像投入训练，实现减小源域与目标域分布的差距。主要的思路大致有：</p>
-<p><strong>1、基于领域差异的风格迁移</strong></p>
-<p>生成较高质量的有着目标域图像风格的源域图像,  方便特征提取网络可以有监督的进行训练。</p>
-<p><strong>2、基于背景差异的风格迁移</strong></p>
-<p>背景差异被认为是造成领域差异的主要因素之一,  将解决无监督领域自适应行人重识别问题的工作重点放在行人图像的背景上。该方法主要训练了一个应用于行人重识别的行人转换生成对抗网络(Person  Transfer  GAN, PTGAN),  该网络能够在尽可能保证行人前景不变的前提下,  将背景转换成期望数据集的图像背景风格。</p>
-<p><strong>3、基于相机差异的风格迁移</strong></p>
-<p>域间和域内摄像机间由于所在位置和角度的不同而产生的视角差异也是影响识别效果的重要因素。该种方法是对源域相同行人的图片作不同视角差异的风格迁移，生成的图片将用于数据增强以提升网络对因相机视角变化导致样本间特征差异的适应能力。</p>
-<p><strong>4、基于其他差异的风格迁移</strong></p>
-<p>基于无监督的领域自适应行人重识别中,  除了行人背景差异和相机差异对领域差异造成的巨大影响,  不同领域间行人图像也存在着其它差异, 诸如光照、行人姿势、分辨率的变化.这些差异也是加大领域间差异的原因之一。</p>
-
-        <h5 id="2-2-基于表示学习的方法">
-          <a href="#2-2-基于表示学习的方法" class="heading-link"><i class="fas fa-link"></i></a><a href="#2-2-基于表示学习的方法" class="headerlink" title="2.2 基于表示学习的方法"></a>2.2 基于表示学习的方法</h5>
-      <p>基于表示学习的无监督领域自适应行人重识别<strong>旨在让模型从未标记的跨域数据中学习有效的嵌入空间</strong>,  获得的嵌入特征具有与领域变化无关的高鉴别力和很好的领域适应性。</p>
-
-        <h6 id="2-2-1-基于损失函数的表示学习方法">
-          <a href="#2-2-1-基于损失函数的表示学习方法" class="heading-link"><i class="fas fa-link"></i></a><a href="#2-2-1-基于损失函数的表示学习方法" class="headerlink" title="2.2.1 基于损失函数的表示学习方法"></a>2.2.1 基于损失函数的表示学习方法</h6>
-      <p>基于损失函数的表示学习方法是数据训练过程中利用损失函数来约束网络,  让网络朝着损失函数减小的方向进行优化.基于无监督的领域自适应行人重识别常用的损失函数根据功能进行分类, 可分为分类损失函数、度量学习损失函数和分布损失函数三种类型。</p>
-<p>（1）、分类损失函数</p>
-<p>分类损失函数是将行人再识别问题看作一个多分类问题。分类损失函数是衡量网络预测和真实分类的一种损失函数,  通过训练使网络具有预测分类的能力。常见的有行人身份损失、行人属性损失和视角不变损失。</p>
-<p>行人身份损失是将源域中k个行人身份的N张图片看作K分类问题，用SoftMax进行计算分类损失函数。</p>
-<p>行人属性损失是将每张图片都具有M个属性的标注，则行人属性损失可看作是属性二分类预测的累加形式,  即预测图片𝑥是否拥有第𝑚个属性，该损失采用Sigmoid交叉熵损失函数。</p>
-<p>视角不变损失是为了增强补贴相机视角下的模型泛化性，减轻目标中不同视角风格的影响。实际工作是将不同摄像机的视角加入考虑，对摄像机进行标签标注，标注源域每张图片来自的摄像机标签。即预测图片来自的相机的索引。</p>
-<p>（2）、度量学习损失函数</p>
-<p>度量学习损失函数常用于评价数据分布中的距离,  其中对比损失函数(Contrastive loss)、三元组损失函数(Triplet  loss)和四元组损失函数（Quadruplet loss）[31]是行人重识别最常使用度量损失函数。</p>
-
-        <h6 id="2-2-2-基于注意力机制的表示学习方法">
-          <a href="#2-2-2-基于注意力机制的表示学习方法" class="heading-link"><i class="fas fa-link"></i></a><a href="#2-2-2-基于注意力机制的表示学习方法" class="headerlink" title="2.2.2 基于注意力机制的表示学习方法"></a>2.2.2 基于注意力机制的表示学习方法</h6>
-      <p>注意力机制（Attention Mechanism）是机器学习常用的数据处理方法之一,  被广泛应用于自然语言处理、计算机视觉、语音识别 等深度学习任务中。通过对人类注意机制的模仿和模型在大量数据上的训练,  能让模型具备在众多信息中关注对当前任务更关键的信息提取能力。</p>
-<p>注意力机制大多应用在弱化行人图像背景、增强行人目标信息等方面。</p>
-
-        <h6 id="2-2-3-基于局部特征的表示方法">
-          <a href="#2-2-3-基于局部特征的表示方法" class="heading-link"><i class="fas fa-link"></i></a><a href="#2-2-3-基于局部特征的表示方法" class="headerlink" title="2.2.3 基于局部特征的表示方法"></a>2.2.3 基于局部特征的表示方法</h6>
-      <p>在无监督领域自适应行人重识别研究中,  一些工作认为局部特征相比全局特征,  不容易受到领域差异的影响,  具有较高的领域适应能力。因此基于局部特征的方法也常作为有效的手段被研究人员所采用。局部特征最常见的获取方式有手动分块或人体关键点定位分块两种形式。</p>
-
-        <h5 id="2-3-基于伪标签生成的方法">
-          <a href="#2-3-基于伪标签生成的方法" class="heading-link"><i class="fas fa-link"></i></a><a href="#2-3-基于伪标签生成的方法" class="headerlink" title="2.3 基于伪标签生成的方法"></a>2.3 基于伪标签生成的方法</h5>
-      <p>由于基于无监督的领域自适应行人重识别中目标域图像不包含行人身份标签,  给基于无监督的领域自适应行人<br>重识别研究带来极大的挑战。</p>
-<p>基于伪标签生成的方法大多是训练模型自动在目标域上生成较为可靠的伪标签，利用生成的伪标签去有监督的指导网络优化，提高模型的泛化水平。这里的伪标签不仅仅局限在给予行人对应身份的身份标签（ID label）,  也可以以能够正确的区分样本的正例样本对和负例样本的样本关系形式存在以满足样本度量学习的需要。</p>
-<p>一类是基于样本特征间距离比较的排序建立伪标签；第二类是利用在特征空间聚类后形成的簇给予对应的伪标签；最后一类则是综合前两类的优势,  联合排序和聚类的伪标签生成方法。生成的这些伪标签将作为目标域中行人身份标签或正负样本对对已在源域训练后的模型进行微调,  最终获得模型。</p>
-
-        <h6 id="2-3-1-基于排序的伪标签生成方法">
-          <a href="#2-3-1-基于排序的伪标签生成方法" class="heading-link"><i class="fas fa-link"></i></a><a href="#2-3-1-基于排序的伪标签生成方法" class="headerlink" title="2.3.1 基于排序的伪标签生成方法"></a>2.3.1 基于排序的伪标签生成方法</h6>
-      <p>基于排序（Ranking-based）的伪标签生成方法也称为基于邻近（Neighbor-based）的伪标签生成方法,  是一种较易理解的伪标签生成方法,  即根据样本在特征空间间的距离排序来划分类别的一种方法。经过由源域训练后的神经网络模型提取出目标域行人图片的全部特征。并对目标域样本的特征以两两对应的形式作距离（相似度）的计算。距离可以使用马氏距离、欧氏距离以及余弦距离。距离计算之后对距离进行排序，常用的算法有K-近邻（K-NN),相互近邻（𝑘-reciprocal nearest neighbors, 𝑘-RNN ）排序算法以及𝑘互近邻编码（𝑘-reciprocal encoding）,大致的思路均是将距离最邻近的K个样本视为有可能相同的一类，并以此作为伪标签从而微调网络。</p>
-<p>而基于距离排序的伪标签生成工作又可以分为基于目标域与源域间的距离排序以及基于目标域的距离排序两种。基于目标域与源域之间的距离排序，由于源域中是有身份标签的。 对目标域无标签的行人图像可根据该图像特征与源域间的多细粒度特征间的余弦距离排序给予对应的源域身份标签.这些筛选过的目标域图像将和源域一起组成训练集,  共同指导模型微调。</p>
-<p>其它的基于距离排序的伪标签方法使用的是目标域间距离排序的方式。由于目标域的样本无身份标签,  因此基于目标域的距离排序生成的伪标签是伪关系标签。</p>
-
-        <h6 id="2-3-2-基于聚类的伪标签生成">
-          <a href="#2-3-2-基于聚类的伪标签生成" class="heading-link"><i class="fas fa-link"></i></a><a href="#2-3-2-基于聚类的伪标签生成" class="headerlink" title="2.3.2 基于聚类的伪标签生成"></a>2.3.2 基于聚类的伪标签生成</h6>
-      <p>基于聚类的伪标签生成算法会使用聚类算法, 例如𝐾-mean、DBSCAN,  通过样本间距离或者样本分布密度迭代完成聚类,  最终形成的同簇内样本对应相同的行人身份标签,  不同的簇间样本对应不同的行人身份标签。</p>
-<p>基于聚类的伪标签生成方法有着理解简单、容易实现的优势,  能够预测出具体的伪身份标签。但是聚类算法对噪声样本较为敏感,  容易对模型的优化和后续的聚类产生影响.因此噪声样本是所有基于聚类的伪标签生成方法亟待解决的挑战之一。</p>
-
-        <h4 id="三、数据集与性能评估指标">
-          <a href="#三、数据集与性能评估指标" class="heading-link"><i class="fas fa-link"></i></a><a href="#三、数据集与性能评估指标" class="headerlink" title="三、数据集与性能评估指标"></a>三、数据集与性能评估指标</h4>
-      
-        <h5 id="3-1-什么是图库集（Gallery-Set）和探针集-Probe-Set">
-          <a href="#3-1-什么是图库集（Gallery-Set）和探针集-Probe-Set" class="heading-link"><i class="fas fa-link"></i></a><a href="#3-1-什么是图库集（Gallery-Set）和探针集-Probe-Set" class="headerlink" title="3.1 什么是图库集（Gallery Set）和探针集(Probe Set)"></a>3.1 什么是图库集（Gallery Set）和探针集(Probe Set)</h5>
-      <p>一般来说图片数据集会分为<strong>训练集（Train Set）与测试集（Test Set)<strong>。而在Re-ID的数据集中一般</strong>测试集</strong>又会细分成<strong>图库集（Gallery Set）和探针集(Probe Set)或查询集</strong>。</p>
-<p><strong>无论是gallery还是probe都是仅在测试集出现的概念。</strong>Re-ID的任务是提供一张行人照片，从众多的数据库中寻找与之具有相同身份的图片。</p>
-<p>下面参考博客：原文链接：<span class="exturl"><a class="exturl__link" target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_44273380/article/details/108949031">https://blog.csdn.net/weixin_44273380/article/details/108949031</a><span class="exturl__icon"><i class="fas fa-external-link-alt"></i></span></span></p>
-<p>gallery<br>gallery原意：画廊，这里博主喜欢将它翻译为注册集，也有同学翻译为参考集。就像我们说的“注册”，它的作用就好比一个人脸识别系统，每个人都进去注册了几张自己脸的图像，并和自己的身份绑定起来，从而形成我们上面提到的这个巨大系统的“数据库”。测试的时候，我们需要把一张新的照片去“画廊”，也就是注册数据库中一个一个匹配，得到结果。</p>
-<p>这里注意，gallery是只有测试集才有的，因为训练的时候我们的期望是模型能根据两张标注好的图像更好地提取特征，以及判断相似度。这个过程的数据来源是标注好的图像，目标仅仅是训练模型对提供的图片的特征提取能力，也就不需要gallery来提供参考。</p>
-<p>probe<br>probe原意：探针、调查。这里博主就通俗地翻译为查询集，就是说，我们在测试的时候是在probe中选取元素来到gallery寻找的，最终测试阶段对模型性能的评估是根据probe中元素查询的效果来反映的。</p>
-
-        <h5 id="3-2-常用数据集">
-          <a href="#3-2-常用数据集" class="heading-link"><i class="fas fa-link"></i></a><a href="#3-2-常用数据集" class="headerlink" title="3.2 常用数据集"></a>3.2 常用数据集</h5>
-      <ul>
-<li><p>CUHK03 图像数据集<br>CUHK03是香港中文大学2014 年开源的第一个可供深度学习使用的大型图像行人重识别数据集.数据集采集自香港中文大学校园内的 10 个摄像头,总共收集包含 1467 个行人的 13164 张图片, 行人包围框由 DPM 和手工检测并标示. 在CUHK03 的行人重识别中,分为两种训练测试标准.第一种是随机选出 100 个行人作为测试集,1160个行人作为训练集,100 个行人作为验证集,重复二十次,这种训练测试标准被称为 Single-shot setting;第二种则是类似于 Market-1501,它将数据集分为包含 767 个行人的训练集和包含 700 个行人的测试集。</p>
-</li>
-<li><p>Market-1501 图像数据集</p>
-<p>Market-1501是清华大学 2015 年开源的图像行人重识别数据集。数据集中的行人图像采集自校园超市的6 个摄像头,包含1501 个行人的32668张行人图片。开源者采用 DPM 算法将图片检测和裁剪成128×64 大小的行人图片。数据集分为3 个集合,包括由751 个行人,总计12936 张图片组成的训练集;测试集中则包含剩余 750 个人,总计 12936张图片组成的图库集(Gallery Set),以及750 人的其它3368 张图片组成的探针集(Probe Set)。</p>
-</li>
-<li><p>DukeMTMC-Re-ID 图像数据集</p>
-<p>DukeMTMC-Re-ID是悉尼科技大学2017 年开源的图像行人重识别数据集。数据集采集自 8 个不同角度的摄像头,总计包含1812 个行人的36411张图片。数据集中行人边界框由人工手动裁剪。与Market1501 相同,数据集分为3 个集合,包括由702个行人的 16522 张图像组成的训练集;测试集包含1110 个行人的 17661 张图片组成的图库集和图库集中存在的702 个行人的其它2228 张图片组成探针集。</p>
-</li>
-<li><p>MSMT17 图像数据集</p>
-<p>MSMT17是由北京大学 2019 年开源的大型图像行人重识别数据集.数据集的采集涵盖了多个场景和多个时段,更接近于真实场景.数据集由 15个摄像头采集,包含 12 个户外摄像头和 3 个室内摄像头.采集过程中,选择了具有不同天气条件的 4天时间,涵盖每天早上、中午和下午三个时间段的3 个小时的视频,总计 180 个小时的视频.在数据集整理和标注上,采用 FasterRCNN[81]作为行人检测器,并用了 2 个月的时间进行人工标注,最终得到4101 个行人的 126441 张图片.与 Market1501 和DukeMTMC-Re-ID 不同,数据集中训练集和测试集的行人大约按照 1:3 的比例划分,其中训练集包含1041 个行人的 32621 个包围框,测试集包含 3060个行人的93820 个包围框.其中测试集中,随机选择11659 个包围框作为 ProbeSet,其它 82161 个包围框作为Gallery。        </p>
-</li>
-</ul>
-
-        <h5 id="3-3性能评价指标">
-          <a href="#3-3性能评价指标" class="heading-link"><i class="fas fa-link"></i></a><a href="#3-3性能评价指标" class="headerlink" title="3.3性能评价指标"></a>3.3性能评价指标</h5>
-      <p>行人重识别模型性能的评价指标通常采用累计匹配曲线(Cumulative  Match  Characteristics,CMC)和平均精度均值(Mean Average Precision,mAP)进行评估。</p>
-<p>累积匹配特征曲线 CMC[k]或 Rank-k表示在测试集中当查找的探针（Probe）在图库集（Gallery Set）中进行距离比较后,  将查询集中行人按照距离的远近由小到大进行排序,  前 k个搜索结果中行人匹配到的概率。例如 Rank-1 表示第一次就能在 Gallery  Set 中正确匹配的 Probe 数量与 Probe Set 数量之比,  Rank-5 表示前五次能在 Gallery  Set中正确匹配的Probe 数量与Probe Set 数量之比。假设测试集探针集总共包含𝑁个行人,  即共进行𝑁次查询和排序后,  每次查询目标行人能匹配到的排序结果用𝑟 = (𝑟1,𝑟2,…,𝑟A)表示,  𝑟i表示探针集中第𝑖个样本在Gallery Set 中正确匹配排序, CMC 曲线表示为：</p>
-<p><img src="/images/ReID-summary/image-20211207161911344.png" alt="image-20211207161911344"></p>
-<p>平均精度均值是对查询集中查询样本的平均精度（Average  Precision, AP）取平均值,  表示为： </p>
-<p><img src="/images/ReID-summary/image-20211207161941214.png" alt="image-20211207161941214"></p>
-</div></div></article><article class="postlist-item post"><header class="post-header"><h1 class="post-title"><a class="post-title__link" href="/2021/10/24/dalunwen/">《**基于深度学习跨模态行人再识别系统的研究与实现**》阅读</a></h1><div class="post-meta"><span class="post-meta-item post-meta-item--createtime"><span class="post-meta-item__icon"><i class="far fa-calendar-plus"></i></span><span class="post-meta-item__info">发表于</span><span class="post-meta-item__value">2021-10-24</span></span><span class="post-meta-item post-meta-item--updatetime"><span class="post-meta-item__icon"><i class="far fa-calendar-check"></i></span><span class="post-meta-item__info">更新于</span><span class="post-meta-item__value">2021-10-28</span></span></div></header><div class="post-body"><div class="post-excerpt">
-        <h3 id="师兄大论文《基于深度学习跨模态行人再识别系统的研究与实现》阅读">
-          <a href="#师兄大论文《基于深度学习跨模态行人再识别系统的研究与实现》阅读" class="heading-link"><i class="fas fa-link"></i></a><a href="#师兄大论文《基于深度学习跨模态行人再识别系统的研究与实现》阅读" class="headerlink" title="师兄大论文《基于深度学习跨模态行人再识别系统的研究与实现》阅读"></a>师兄大论文《<strong>基于深度学习跨模态行人再识别系统的研究与实现</strong>》阅读</h3>
-      
-        <h4 id="一、论文提出问题与名词解释">
-          <a href="#一、论文提出问题与名词解释" class="heading-link"><i class="fas fa-link"></i></a><a href="#一、论文提出问题与名词解释" class="headerlink" title="一、论文提出问题与名词解释"></a>一、论文提出问题与名词解释</h4>
-      
-        <h5 id="1-1-行人再识别-Re-ID">
-          <a href="#1-1-行人再识别-Re-ID" class="heading-link"><i class="fas fa-link"></i></a><a href="#1-1-行人再识别-Re-ID" class="headerlink" title="1.1 行人再识别 Re-ID"></a>1.1 行人再识别 Re-ID</h5>
-      <p>行人再识别的背景主要是判利用计算机视觉技术判断图像或者视频序列中是否存在特定的行人。其主要应当包括两个方面：行人检测与行人识别。</p>
-<p>行人检测方面主要完成利用计算机视觉相关技术判断图像或视频序列中是否包含行人，如果包含行人则对每个行人标注独立的行人框，并将这些行人框裁剪提供给行人再识别系统进行身份识别。</p>
-<p>行人再识别系统完成的功能是根据裁剪后输入的多个行人图片判断是否为同一行人。</p>
-
-        <h5 id="1-2-跨模态行人再识别-IV-ReID">
-          <a href="#1-2-跨模态行人再识别-IV-ReID" class="heading-link"><i class="fas fa-link"></i></a><a href="#1-2-跨模态行人再识别-IV-ReID" class="headerlink" title="1.2 跨模态行人再识别 IV-ReID"></a>1.2 跨模态行人再识别 IV-ReID</h5>
-      <p>当照明条件不佳的时候，RGB摄像头往往表现不佳，但是红外摄像头则可以良好工作。如果给定一个特定的人的可见（或红外图像），系统跨模态的从其他光谱相机中捕获的图库中搜索相应的红外（或可见光）图像可以实现更好的效果。这种交叉模态图像匹配任务称为跨模态行人再识别(IV-REID)</p>
-
-        <h4 id="二、行人检测部分">
-          <a href="#二、行人检测部分" class="heading-link"><i class="fas fa-link"></i></a><a href="#二、行人检测部分" class="headerlink" title="二、行人检测部分"></a>二、行人检测部分</h4>
-      <p>对于行人检测部分，应当归类为目标检测问题。师兄采用的行人检测网络是anchor free检测网络中的CenterNet网络。</p>
-
-        <h5 id="2-1-Anchor-free网络模型">
-          <a href="#2-1-Anchor-free网络模型" class="heading-link"><i class="fas fa-link"></i></a><a href="#2-1-Anchor-free网络模型" class="headerlink" title="2.1 Anchor free网络模型"></a>2.1 Anchor free网络模型</h5>
-      
-        <h6 id="2-1-1-什么是Anchor">
-          <a href="#2-1-1-什么是Anchor" class="heading-link"><i class="fas fa-link"></i></a><a href="#2-1-1-什么是Anchor" class="headerlink" title="2.1.1 什么是Anchor"></a>2.1.1 什么是Anchor</h6>
-      <p>Anchor是在图像上预设好的不同大小，不同长宽比的参照框。借助神经网络强大的拟合能力，不需要再计算Haar/Hog等特征。网络直接输出每个anchor包含（或者说与物体有较大重叠，也就是IoU较大的）物体的概率，以及被检测物体相对于本Anchor的中心点偏移以及长宽比例。如下图</p>
-<p><img src="/images/dalunwen/image-20211012094040232.png" alt="image-20211012094040232"></p>
-<p>因为anchor的位置都是固定的，所以就可以很容易的换算出来实际物体的位置。以图中的小猫为例，红色的anchor就以99%的概率认为它是一只猫，并同时给出了猫的实际位置相对于该anchor的偏移量，这样，我们将输出解码后就得到了实际猫的位置，如果它能通过NMS（非最大抑制）筛选，它就能顺利的输出来。但是，绿色的anchor就认为它是猫的概率就很小，紫色的anchor虽然与猫有重叠，但是概率只有26%。在训练的时候，也就是给每张图片的物体的Bounding Box，相对于anchor进行编码，如果物体的Bounding Box与某个anchor的IoU较大，例如大于0.5就认为是正样本，否则是负样本（当然，也有算法将大于0.7的设为正样本，小于0.3的算负样本，中间的不计算损失）。</p>
-
-        <h6 id="2-1-2-什么是IoU（Intersection-over-Union）">
-          <a href="#2-1-2-什么是IoU（Intersection-over-Union）" class="heading-link"><i class="fas fa-link"></i></a><a href="#2-1-2-什么是IoU（Intersection-over-Union）" class="headerlink" title="2.1.2 什么是IoU（Intersection over Union）"></a>2.1.2 什么是IoU（Intersection over Union）</h6>
-      <p>IoU是一种测量在特定数据集中检测相应物体准确度的一个标准。IoU是一个简单的测量标准，只要是在输出中得出一个预测范围(bounding boxex)的任务都可以用IoU来进行测量。为了可以使IoU用于测量任意大小形状的物体检测，我们需要：</p>
-<ul>
-<li><p>ground-truth bounding boxes（人为在训练集图像中标出要检测物体的大概范围）</p>
-</li>
-<li><p>我们的算法得出的结果范围。</p>
-</li>
-</ul>
-<p><strong>这个标准用于测量真实和预测之间的相关度，相关度越高该值越高。</strong>其<strong>计算方法是两个区域重叠的部分除以两个区域的集合部分得出的结果</strong>，通过设定的IoU阈值，与IoU计算结果进行比较。如图2所示：</p>
-<img src="/images/dalunwen/image-20211012202618543.png" alt="image-20211012202618543" style="zoom:50%;">
-
-<p>​                                                                                                                        图2 IoU的计算公式</p>
-<img src="/images/dalunwen/image-20211012202816848.png" alt="image-20211012202816848" style="zoom:75%;">
-
-
-        <h6 id="2-1-3-CenterNet">
-          <a href="#2-1-3-CenterNet" class="heading-link"><i class="fas fa-link"></i></a><a href="#2-1-3-CenterNet" class="headerlink" title="2.1.3 CenterNet"></a>2.1.3 CenterNet</h6>
-      <p>CenterNet正是Anchor Free的网络模型。CenterNet 首次提出了运用关键点检测算法确定目标中心点。<strong>CenterNet的基本思想是在确定目标中心点的前提下预测目标的宽高。</strong>CenterNet采用了关键点检测的方法，对特征的每个区域取8邻域最大值作为极值点，然后保留100个极值点，作为目标框的中心点，并且通过设置一定的阈值滤除低质量的目标中心点。CenterNet的网络框架如图所示：</p>
-<p><img src="/images/dalunwen/image-20211014212357048.png" alt="image-20211014212357048"></p>
-
-        <h5 id="2-2-本论文对CenterNet的改进">
-          <a href="#2-2-本论文对CenterNet的改进" class="heading-link"><i class="fas fa-link"></i></a><a href="#2-2-本论文对CenterNet的改进" class="headerlink" title="2.2 本论文对CenterNet的改进"></a>2.2 本论文对CenterNet的改进</h5>
-      <p>论文提出了两个对CenterNet的改进方向。由于CenterNet的基本思路是先利用预测中心点算法预测目标中心点，再在中心点的基础上预测宽高。出现检测不准的情况可能是1、网络未预测正确的目标中心点，后面宽高预测分支即使十分精准也会出现误检框，2、目标中心点预测精准但是而宽高预测分支未输出正确的宽高，那么也会造成误检框。并为此改进了网络的结构与损失函数。</p>
-
-        <h6 id="2-2-1-网络结构的改进">
-          <a href="#2-2-1-网络结构的改进" class="heading-link"><i class="fas fa-link"></i></a><a href="#2-2-1-网络结构的改进" class="headerlink" title="2.2.1 网络结构的改进"></a>2.2.1 网络结构的改进</h6>
-      <p>对于中心预测分支主要采取的方法是提取特征图8-临域内最大值作为目标的中心点。由于有时会出现极值点并不是目标的中心点的情况，师兄在上图的原有CenterNet的结构中加入了注意力网络中的全局上下文模块（Global Context Block）。</p>
-<p>注意力网络可以使局部区域加权后特征值变大，我们利用此特性进行训练并约束网络，使训练图片的目标中心点分配较高的权重，非目标中心点分配较低的权重，使特征图的极值点均为目标中心点，避免产生中心点误检的情况。</p>
-
-        <h6 id="2-2-2-损失函数改进">
-          <a href="#2-2-2-损失函数改进" class="heading-link"><i class="fas fa-link"></i></a><a href="#2-2-2-损失函数改进" class="headerlink" title="2.2.2 损失函数改进"></a>2.2.2 损失函数改进</h6>
-      <p>CenterNet的预测分支的损失函数是Smooth L1 loss，原理是对检测框进行宽高的回归优化，但是没有将检测框视作一个整体进行优化，导致检测网络的精度较低。</p>
-<p>CIOU loss，此损失函数兼顾了预测框与真实框的相交程度、欧式距离、长宽比等多个因素，且较为容易收敛，旨在使预测框更加符合真实框,其公式为：<img src="/images/dalunwen/image-20211024143007780.png" alt="image-20211024143007780">。</p>
-<p>其中，<img src="/images/dalunwen/image-20211024143042745.png" alt="image-20211024143042745" style="zoom:65%;">表示预测框与真实框中心点的欧式距离，c表示预测框和真实框的最小外接矩形的对角线距离。<img src="/images/dalunwen/image-20211024143117350.png" alt="image-20211024143117350" style="zoom:67%;">表示真实框与目标框长宽比的距离。</p>
-
-        <h4 id="三、跨模态行人再识别部分">
-          <a href="#三、跨模态行人再识别部分" class="heading-link"><i class="fas fa-link"></i></a><a href="#三、跨模态行人再识别部分" class="headerlink" title="三、跨模态行人再识别部分"></a>三、跨模态行人再识别部分</h4>
-      
-        <h5 id="3-1-评估指标">
-          <a href="#3-1-评估指标" class="heading-link"><i class="fas fa-link"></i></a><a href="#3-1-评估指标" class="headerlink" title="3.1 评估指标"></a>3.1 评估指标</h5>
-      
-        <h6 id="3-1-1-CMC曲线">
-          <a href="#3-1-1-CMC曲线" class="heading-link"><i class="fas fa-link"></i></a><a href="#3-1-1-CMC曲线" class="headerlink" title="3.1.1 CMC曲线"></a>3.1.1 CMC曲线</h6>
-      <p>CMC曲线全称为累计匹配曲线，是图像检索领域的重要检测指标。在行人再识别测试时，分别输入查询目标库的图片（query）和候选库图片（gallery），计算查询库中每一个行人与候选库中的每一个行人的相似度，并根据相似度进行排序，相似度列表由一个二维矩阵表示。相似度列表的横坐标为n，表示相似度排名，纵坐标为Rank_n，表示排序靠前的行人与目标行人具有相同ID的概率，例如，某个模型进行测试，取排序前十的图片进行分析，前十中共有5张正确图片被召回，这5张正确图片的排序下标为1，2，5，7，8，那么该模型的rank_1为100%，rank_5为60%，rank_10为50%。因此，可以根据此指标来判断模型的分类能力。</p>
-
-        <h6 id="3-1-2-mAP-平均检索精度">
-          <a href="#3-1-2-mAP-平均检索精度" class="heading-link"><i class="fas fa-link"></i></a><a href="#3-1-2-mAP-平均检索精度" class="headerlink" title="3.1.2 mAP 平均检索精度"></a>3.1.2 mAP 平均检索精度</h6>
-      <p>当gallery图库中出现大量的同一个行人的图片时，被召回率会大大提高，在rank机制下，误判的图片几乎不起作用，此时Rank就不能很好地判断模型的好坏，于是研究人员提出使用平均检索精度（mAP）来评估算法的优劣。mAP为查询目标库中所有图片的检索精度的平均值，即query中所有图片查准率的平均值。例如，有两个模型验证性能的好坏，我们进行测试，第一个模型有4个正确图片被召回，第二个模型也有4个正确图片被召回，第一个模型被召回的正确图片排序下标为1，2，3，5，第二个模型被召回的正确图片排序下标为1，3，5，6。那么第一个模型的平均准确率为（1/1+2/2+3/3+4/5）/4=0.95，第二个模型的平均准确率为（1/1+2/3+3/5+4/6）/4=0.75，从上述计算可以看出第一个模型效果更好，因此，此指标有力的弥补了Rank指标的缺陷。</p>
-
-        <h5 id="3-2-跨模态行人再识别算法的思路">
-          <a href="#3-2-跨模态行人再识别算法的思路" class="heading-link"><i class="fas fa-link"></i></a><a href="#3-2-跨模态行人再识别算法的思路" class="headerlink" title="3.2 跨模态行人再识别算法的思路"></a>3.2 跨模态行人再识别算法的思路</h5>
-      <p>跨模态行人再识别主要是使用RGB图片与红外图片做跨模态学习。RGB图片通常具有较高的空间分辨率和可观的细节和明暗对比，因此，它们适合于人类的视觉感知。然而，这些图像很容易受到恶劣条件的影响，如光照差、雾和恶劣天气。但是，描述物体热辐射的红外图像具有一定抗干扰的能力，但其通常分辨率较低，纹理较差。因此，红外图片与RGB图片所具有的共性集中在纹理、轮廓、图案等外观信息，比如同一个行人穿有一件带有logo图案的衣服，那么不管是他的红外图片还是他的RGB图片都会有显眼的logo图案，且图案纹理轮廓相似度极大。</p>
-<p>神经网络的较浅层提取的特征主要关注图像的纹理颜色等外观细节，而提取的深层特征则包含语义信息。我们认为红外图片和可见光图片的低层次的外观特征具有更高相似性，所以学习低层次特征能够得到更具有可辨性的共性特征。</p>
-
-        <h5 id="3-3-具体算法框架">
-          <a href="#3-3-具体算法框架" class="heading-link"><i class="fas fa-link"></i></a><a href="#3-3-具体算法框架" class="headerlink" title="3.3 具体算法框架"></a>3.3 具体算法框架</h5>
-      <p><img src="/images/dalunwen/image-20211024190307293.png" alt="image-20211024190307293"></p>
-<p>网络架构是采用常用的跨模态网络结构——双流网络，模型的骨干网络是ResNet-50，以前的方法只采用最深层的特征来编码图片，例如来自ResNet-50最后一个卷积层的输出。最后一个卷积层输出的是深层特征，即有关于图片的语义信息。尽管高级特征对于形成抽象概念用于物体识别确实有用，但它们可能会丢弃颜色和纹理等低级信号，这些信息是人物识别的重要线索。此外，卷积神经网络深层特征的分辨率较小，可能无法看到细节，如衣服上的图案，面部特征，细微的姿势差异等。这表明提取多层次特征，并且利用多层次特征的信息优势互补有利于行人重识别任务。</p>
-
-        <h6 id="3-3-1-特征提取">
-          <a href="#3-3-1-特征提取" class="heading-link"><i class="fas fa-link"></i></a><a href="#3-3-1-特征提取" class="headerlink" title="3.3.1 特征提取"></a>3.3.1 特征提取</h6>
-      <p>如上文所述，师兄认为深层特征会忽略图片的一些纹理细节，而这些细节对于身份识别是有帮助的。因此师兄分别提取RGB图像、红外图像在ResNet-50的block_2、block_3、block_4层的输出作为浅层特征、中层特征、深层特征，分别用X1、X2、X3、X4、X5、X6表示。然后分别对两种图片的浅层、中层、深层特征表示做向量拼接作为特征融合。融合后的特征分别用B1、B2、B3表示。公式如下。</p>
-<p><img src="/images/dalunwen/image-20211024204302667.png" alt="image-20211024204302667"></p>
-<p>concatenate表示向量拼接，相比特征直接相加，其主要优势是特征融合前后特征维度不变，保证信息不会丢失，X1、X4表示RGB图片和红外图片的浅层特征，X2、X5表示RGB图片和红外图片的中层特征，X3、X6表示RGB图片和红外图片的深层特征，0表示在batch维度上进行拼接，即RGB特征和红外特征进行融合，消除模态差异。</p>
-
-        <h6 id="3-3-2-特征分割">
-          <a href="#3-3-2-特征分割" class="heading-link"><i class="fas fa-link"></i></a><a href="#3-3-2-特征分割" class="headerlink" title="3.3.2 特征分割"></a>3.3.2 特征分割</h6>
-      <p><strong>将图像特征分割成不同的局部特征能够显著提高行人再识别的准确性。其次，全局特征能够捕捉最显著的外观特征，而局部特征可以捕捉图像的细节</strong>，将图像特征分成局部特征和全局特征已经得到广泛的应用。由于<strong>低层特征分辨率更高，包含更多位置、细节信息，但是由于经过的卷积更少，其语义性更低，噪声更多，而高层特征具有更强的语义信息，但是分辨率很低，对细节的感知能力较差，中层特征介于两者之间。</strong>因此对高层层和中层特征X3,X2做特征分割。对于X1不分割，对于X2分割为两个局部特征，对于X3分割为三个局部特征，这样分割更加符合人体结构构造，例如上半身，下半身（或头、上半身、下半身）。且通过实验结果表明，这种分割的方法达到的效果最好。其公式如下，</p>
-<p><img src="/images/dalunwen/image-20211024211727622.png" alt="image-20211024211727622"></p>
-<p>P1、P2为中层特征的局部特征，P3、P4、P5为深层特征的局部特征。同时将低层次特征、中层次特征和高层次特征的全局特征保留，其公式如下，</p>
-<p><img src="/images/dalunwen/image-20211024211859494.png" alt="image-20211024211859494"></p>
-<p>正如之前写的卷积神经网络那篇博文，池化操作的<strong>首要作用是降采样汇合结果中的一个元素对应于原输入数据的一个子区域（sub-region），因此汇合相当于在空间范围内做了维度约减（spatially dimension reduction），从而使模型可以抽取更广范围的特征。同时减小了下一层输入大小，进而减小计算量和参数个数。</strong>其次池化操作还具有<strong>降维、去除冗余信息、对特征进行压缩、简化网络复杂度、减小计算量、减小内存消耗等等。</strong>因此对B1,B2,B3做池化操作提取出三个层次的全局特征G1,G2,G3。</p>
-<p>同时，对分割出的局部特征P1-P5作降维操作得到局部特征。旨在减少运算量并滤除冗余信息，其公式如下，</p>
-<p><img src="/images/dalunwen/image-20211024212619478.png" alt="image-20211024212619478"></p>
-<p>其中，R1、R2、R3、R4、R5表示三个层次的局部特征，即分割后的特征在通道维度上降维为256得到局部特征。</p>
-
-        <h6 id="3-3-3-对于全局特征的损失函数">
-          <a href="#3-3-3-对于全局特征的损失函数" class="heading-link"><i class="fas fa-link"></i></a><a href="#3-3-3-对于全局特征的损失函数" class="headerlink" title="3.3.3 对于全局特征的损失函数"></a>3.3.3 对于全局特征的损失函数</h6>
-      <p>对于全局特征求两个损失函数，分别是用于度量学习的三元组损失（Triplet loss）和用于分类的交叉熵损失（Softmax loss）。对于全局特征B1、B2、B3采用交叉熵损失函数和三元组损失函数联合优化，其公式如下，</p>
-<p><img src="/images/dalunwen/image-20211024212738320.png" alt="image-20211024212738320"></p>
-<p>其中，L1、L3、L7表示三个层次的全局特征的三元组损失，L2、L4、L8表示三个层次的全局特征的交叉熵损失。</p>
-
-        <h6 id="3-3-4-对于局部特征的损失函数">
-          <a href="#3-3-4-对于局部特征的损失函数" class="heading-link"><i class="fas fa-link"></i></a><a href="#3-3-4-对于局部特征的损失函数" class="headerlink" title="3.3.4 对于局部特征的损失函数"></a>3.3.4 对于局部特征的损失函数</h6>
-      <p>对于局部特征仅仅采用交叉熵损失函数进行优化，原因是<strong>局部特征可能会出现特征未对齐问题，导致局部特征可能存在巨大变化，因此，三元组损失在训练期间可能会破坏模型优化。</strong>其公式如下，</p>
-<p><img src="/images/dalunwen/image-20211024212909969.png" alt="image-20211024212909969"></p>
-<p>其中，L5、L6表示中层局部特征的交叉熵损失，L9、L10、L11表示深层局部特征的交叉熵损失。</p>
-
-        <h6 id="3-3-5-总损失函数">
-          <a href="#3-3-5-总损失函数" class="heading-link"><i class="fas fa-link"></i></a><a href="#3-3-5-总损失函数" class="headerlink" title="3.3.5 总损失函数"></a>3.3.5 总损失函数</h6>
-      <p>由于学习低层次特征可以获得更多的跨模态共性特征，所以我们提取了网络中的多层次特征。然而，我们发现<strong>不同任务损失的尺度差异非常大，如果采取简单相加的方式，整体损失函数将不会是最佳的，导致网络模型得不到充分的优化</strong>。</p>
-<p>因此，我们采用多任务学习的方法，结合多个损失函数，利用同<strong>方差不确定性</strong>同时学习多个目标。我们将同方差不确定性解释为依赖于任务的加权。我们<strong>设置了三个可学习的超参数，分别集成到每个任务的损失中，三个噪声参数分别作为低层特征、中层特征和高层特征损失的权重因子。然后，将所有经过适当加权的损失相加，得到最优的总损失，从而达到对不同层次特征进行优化的目的</strong>。因此，我们最终的总损失函数为:</p>
-<p><img src="/images/dalunwen/image-20211024213329932.png" alt="image-20211024213329932"></p>
-
-        <h4 id="四-结论">
-          <a href="#四-结论" class="heading-link"><i class="fas fa-link"></i></a><a href="#四-结论" class="headerlink" title="四 结论"></a>四 结论</h4>
-      <p>师兄分别在行人再识别的两个部分进行改进，在行人检测部分对网络结构进行改进，在CenterNet的基础上加入了注意力模块，提升了预测目标中心点的精度。在损失函数部分将CenterNet的损失函数改进为CIOU，将检测框视作一个整体进行优化。</p>
-<p>在行人识别部分使用了跨模态的学习方法。采用了以ResNet-50为主干网络的双流网络去分别提取RGB图像与红外图像的低、中、高层特征。并采取向量拼接作为特征融合消除模态间差异。并采取特征分割将特征分为全局特征与局部特征。全局特征的提取方法是分别对特征融合后的低中高层特征作最大值池化操作。为了更好的提取细节特征，对中层与高层特征作特征分割之后将分割后的深层特征降维处理滤除冗余信息得到局部特征。并分别对局部特征与全局特征提出了对应的损失函数。最终取得了较好的效果</p>
-</div></div></article></section><nav class="paginator"><div class="paginator-inner"><a class="extend prev" rel="prev" href="/page/4/"><i class="fas fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/4/">4</a><span class="page-number current">5</span><a class="page-number" href="/page/6/">6</a><a class="extend next" rel="next" href="/page/6/"><i class="fas fa-angle-right"></i></a></div></nav></div></div><div class="sidebar-wrap" id="sidebar-wrap"><aside class="sidebar" id="sidebar"><section class="sidebar-toc hide"></section><!-- ov = overview--><section class="sidebar-ov"><div class="sidebar-ov-author"><div class="sidebar-ov-author__avatar"><img class="sidebar-ov-author__avatar_img" src="/images/icons/photo.png" alt="avatar"></div><p class="sidebar-ov-author__text">To be a great person.</p></div><div class="sidebar-ov-cc"><a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en" target="_blank" rel="noopener" data-popover="知识共享许可协议" data-popover-pos="up"><img src="/images/cc-by-nc-sa.svg"></a></div></section></aside></div><div class="clearfix"></div></div></main><footer class="footer" id="footer"><div class="footer-inner"><div><span>Copyright © 2022</span><span class="footer__icon"><i class="fas fa-heart"></i></span><span>Strive</span></div><div><span>由 <a href="http://hexo.io/" title="Hexo" target="_blank" rel="noopener">Hexo</a> 强力驱动</span><span> v5.4.0</span><span class="footer__devider">|</span><span>主题 - <a href="https://github.com/liuyib/hexo-theme-stun/" title="Stun" target="_blank" rel="noopener">Stun</a></span><span> v2.6.2</span></div></div></footer><div class="loading-bar" id="loading-bar"><div class="loading-bar__progress"></div></div><div class="back2top" id="back2top"><span class="back2top__icon"><i class="fas fa-rocket"></i></span></div></div><script src="https://cdn.jsdelivr.net/npm/jquery@v3.4.1/dist/jquery.min.js"></script><script src="https://cdn.jsdelivr.net/npm/velocity-animate@1.5.2/velocity.min.js"></script><script src="https://cdn.jsdelivr.net/npm/velocity-animate@1.5.2/velocity.ui.min.js"></script><script src="/js/utils.js?v=2.6.2"></script><script src="/js/stun-boot.js?v=2.6.2"></script><script src="/js/scroll.js?v=2.6.2"></script><script src="/js/header.js?v=2.6.2"></script><script src="/js/sidebar.js?v=2.6.2"></script></body></html>
+      <h4 id><a href="#" class="headerlink" title></a><img src="/2021/12/23/object-detect/images/object-detect/image-20211223100414222.png" alt="image-20211223100414222"></h4></div></div></article></section><nav class="paginator"><div class="paginator-inner"><a class="extend prev" rel="prev" href="/page/4/"><i class="fas fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/4/">4</a><span class="page-number current">5</span><a class="page-number" href="/page/6/">6</a><a class="page-number" href="/page/7/">7</a><a class="extend next" rel="next" href="/page/6/"><i class="fas fa-angle-right"></i></a></div></nav></div></div><div class="sidebar-wrap" id="sidebar-wrap"><aside class="sidebar" id="sidebar"><section class="sidebar-toc hide"></section><!-- ov = overview--><section class="sidebar-ov"><div class="sidebar-ov-author"><div class="sidebar-ov-author__avatar"><img class="sidebar-ov-author__avatar_img" src="/images/icons/photo.png" alt="avatar"></div><p class="sidebar-ov-author__text">To be a great person.</p></div><div class="sidebar-ov-cc"><a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en" target="_blank" rel="noopener" data-popover="知识共享许可协议" data-popover-pos="up"><img src="/images/cc-by-nc-sa.svg"></a></div></section></aside></div><div class="clearfix"></div></div></main><footer class="footer" id="footer"><div class="footer-inner"><div><span>Copyright © 2023</span><span class="footer__icon"><i class="fas fa-heart"></i></span><span>Strive</span></div><div><span>由 <a href="http://hexo.io/" title="Hexo" target="_blank" rel="noopener">Hexo</a> 强力驱动</span><span> v5.4.0</span><span class="footer__devider">|</span><span>主题 - <a href="https://github.com/liuyib/hexo-theme-stun/" title="Stun" target="_blank" rel="noopener">Stun</a></span><span> v2.6.2</span></div></div></footer><div class="loading-bar" id="loading-bar"><div class="loading-bar__progress"></div></div><div class="back2top" id="back2top"><span class="back2top__icon"><i class="fas fa-rocket"></i></span></div></div><script src="https://cdn.jsdelivr.net/npm/jquery@v3.4.1/dist/jquery.min.js"></script><script src="https://cdn.jsdelivr.net/npm/velocity-animate@1.5.2/velocity.min.js"></script><script src="https://cdn.jsdelivr.net/npm/velocity-animate@1.5.2/velocity.ui.min.js"></script><script src="/js/utils.js?v=2.6.2"></script><script src="/js/stun-boot.js?v=2.6.2"></script><script src="/js/scroll.js?v=2.6.2"></script><script src="/js/header.js?v=2.6.2"></script><script src="/js/sidebar.js?v=2.6.2"></script></body></html>
