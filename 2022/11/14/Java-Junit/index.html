@@ -1,72 +1,72 @@
 <!DOCTYPE html><html lang="zh-CN"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="format-detection" content="telephone=no"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="black"><link rel="icon" href="/images/icons/favicon-16x16.png?v=2.6.2" type="image/png" sizes="16x16"><link rel="icon" href="/images/icons/favicon-32x32.png?v=2.6.2" type="image/png" sizes="32x32"><meta name="description" content="Java基础之单元测试、XML、反射、注解                           一、单元测试       单元测试是针对最小的功能单元编写测试代码，单元测试就是针对Java方法的测试，进而检查方法的正确性。                      1.1 Junit单元测试框架       Junit就是使用Java语言实现的单元测试框架。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Java基础之单元测试、XML、反射、注解">
-<meta property="og:url" content="https://striveizu.top/2022/11/14/Java-Junit/index.html">
+<meta property="og:url" content="https://striveizu.tech/2022/11/14/Java-Junit/index.html">
 <meta property="og:site_name" content="Strive&#39;s Blog">
 <meta property="og:description" content="Java基础之单元测试、XML、反射、注解                           一、单元测试       单元测试是针对最小的功能单元编写测试代码，单元测试就是针对Java方法的测试，进而检查方法的正确性。                      1.1 Junit单元测试框架       Junit就是使用Java语言实现的单元测试框架。">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://striveizu.top/2022/11/14/Java-Junit/image-20221114145148236.png">
-<meta property="og:image" content="https://striveizu.top/2022/11/14/Java-Junit/image-20221114145436132.png">
-<meta property="og:image" content="https://striveizu.top/2022/11/14/Java-Junit/image-20221114153849168.png">
-<meta property="og:image" content="https://striveizu.top/2022/11/14/Java-Junit/image-20221114153931011.png">
-<meta property="og:image" content="https://striveizu.top/2022/11/14/Java-Junit/image-20221114154105624.png">
-<meta property="og:image" content="https://striveizu.top/2022/11/14/Java-Junit/image-20221114160817014.png">
-<meta property="og:image" content="https://striveizu.top/2022/11/14/Java-Junit/image-20221114160833101.png">
-<meta property="og:image" content="https://striveizu.top/2022/11/14/Java-Junit/image-20221114161817924.png">
-<meta property="og:image" content="https://striveizu.top/2022/11/14/Java-Junit/image-20221114162007061.png">
-<meta property="og:image" content="https://striveizu.top/2022/11/14/Java-Junit/image-20221114162046602.png">
-<meta property="og:image" content="https://striveizu.top/2022/11/14/Java-Junit/image-20221114162631330.png">
-<meta property="og:image" content="https://striveizu.top/2022/11/14/Java-Junit/image-20221114163559595.png">
-<meta property="og:image" content="https://striveizu.top/2022/11/14/Java-Junit/image-20221114163931161.png">
-<meta property="og:image" content="https://striveizu.top/2022/11/14/Java-Junit/image-20221114164019379.png">
-<meta property="og:image" content="https://striveizu.top/2022/11/14/Java-Junit/image-20221114164044930.png">
-<meta property="og:image" content="https://striveizu.top/2022/11/14/Java-Junit/image-20221114181637016.png">
-<meta property="og:image" content="https://striveizu.top/2022/11/14/Java-Junit/image-20221114181725865.png">
-<meta property="og:image" content="https://striveizu.top/2022/11/14/Java-Junit/image-20221114182600832.png">
-<meta property="og:image" content="https://striveizu.top/2022/11/14/Java-Junit/image-20221114182642895.png">
-<meta property="og:image" content="https://striveizu.top/2022/11/14/Java-Junit/image-20221114182818937.png">
-<meta property="og:image" content="https://striveizu.top/2022/11/14/Java-Junit/image-20221114182828323.png">
-<meta property="og:image" content="https://striveizu.top/2022/11/14/Java-Junit/image-20221114193523073.png">
-<meta property="og:image" content="https://striveizu.top/2022/11/14/Java-Junit/image-20221114193533821.png">
-<meta property="og:image" content="https://striveizu.top/2022/11/14/Java-Junit/image-20221114193506182.png">
-<meta property="og:image" content="https://striveizu.top/2022/11/14/Java-Junit/image-20221114193728679.png">
-<meta property="og:image" content="https://striveizu.top/2022/11/14/Java-Junit/image-20221114194205762.png">
-<meta property="og:image" content="https://striveizu.top/2022/11/14/Java-Junit/image-20221114194551608.png">
-<meta property="og:image" content="https://striveizu.top/2022/11/14/Java-Junit/image-20221114202428567.png">
-<meta property="og:image" content="https://striveizu.top/2022/11/14/Java-Junit/image-20221114202901922.png">
-<meta property="og:image" content="https://striveizu.top/2022/11/14/Java-Junit/image-20221114203342311.png">
-<meta property="og:image" content="https://striveizu.top/2022/11/14/Java-Junit/image-20221114203434336.png">
-<meta property="og:image" content="https://striveizu.top/2022/11/14/Java-Junit/image-20221114204238008.png">
-<meta property="og:image" content="https://striveizu.top/2022/11/14/Java-Junit/image-20221114204322964.png">
-<meta property="og:image" content="https://striveizu.top/2022/11/14/Java-Junit/image-20221114205440833.png">
-<meta property="og:image" content="https://striveizu.top/2022/11/14/Java-Junit/image-20221114211117905.png">
-<meta property="og:image" content="https://striveizu.top/2022/11/14/Java-Junit/image-20221114211402401.png">
-<meta property="og:image" content="https://striveizu.top/2022/11/14/Java-Junit/image-20221114212209602.png">
-<meta property="og:image" content="https://striveizu.top/2022/11/14/Java-Junit/image-20221114212347879.png">
-<meta property="og:image" content="https://striveizu.top/2022/11/14/Java-Junit/image-20221114214127920.png">
-<meta property="og:image" content="https://striveizu.top/2022/11/14/Java-Junit/image-20221114214215435.png">
-<meta property="og:image" content="https://striveizu.top/2022/11/14/Java-Junit/image-20221114220025678.png">
-<meta property="og:image" content="https://striveizu.top/2022/11/14/Java-Junit/image-20221115092701283.png">
-<meta property="og:image" content="https://striveizu.top/2022/11/14/Java-Junit/image-20221115094725280.png">
-<meta property="og:image" content="https://striveizu.top/2022/11/14/Java-Junit/image-20221115094749880.png">
-<meta property="og:image" content="https://striveizu.top/2022/11/14/Java-Junit/image-20221115094857628.png">
-<meta property="og:image" content="https://striveizu.top/2022/11/14/Java-Junit/image-20221115094908575.png">
-<meta property="og:image" content="https://striveizu.top/2022/11/14/Java-Junit/image-20221115095613520.png">
-<meta property="og:image" content="https://striveizu.top/2022/11/14/Java-Junit/image-20221115095933196.png">
-<meta property="og:image" content="https://striveizu.top/2022/11/14/Java-Junit/image-20221115100016516.png">
-<meta property="og:image" content="https://striveizu.top/2022/11/14/Java-Junit/image-20221115100036395.png">
-<meta property="og:image" content="https://striveizu.top/2022/11/14/Java-Junit/image-20221115100343962.png">
-<meta property="og:image" content="https://striveizu.top/2022/11/14/Java-Junit/image-20221115100518470.png">
-<meta property="og:image" content="https://striveizu.top/2022/11/14/Java-Junit/image-20221115100607354.png">
-<meta property="og:image" content="https://striveizu.top/2022/11/14/Java-Junit/image-20221115100706619.png">
-<meta property="og:image" content="https://striveizu.top/2022/11/14/Java-Junit/image-20221115100859464.png">
-<meta property="og:image" content="https://striveizu.top/2022/11/14/Java-Junit/image-20221115100913075.png">
+<meta property="og:image" content="https://striveizu.tech/2022/11/14/Java-Junit/image-20221114145148236.png">
+<meta property="og:image" content="https://striveizu.tech/2022/11/14/Java-Junit/image-20221114145436132.png">
+<meta property="og:image" content="https://striveizu.tech/2022/11/14/Java-Junit/image-20221114153849168.png">
+<meta property="og:image" content="https://striveizu.tech/2022/11/14/Java-Junit/image-20221114153931011.png">
+<meta property="og:image" content="https://striveizu.tech/2022/11/14/Java-Junit/image-20221114154105624.png">
+<meta property="og:image" content="https://striveizu.tech/2022/11/14/Java-Junit/image-20221114160817014.png">
+<meta property="og:image" content="https://striveizu.tech/2022/11/14/Java-Junit/image-20221114160833101.png">
+<meta property="og:image" content="https://striveizu.tech/2022/11/14/Java-Junit/image-20221114161817924.png">
+<meta property="og:image" content="https://striveizu.tech/2022/11/14/Java-Junit/image-20221114162007061.png">
+<meta property="og:image" content="https://striveizu.tech/2022/11/14/Java-Junit/image-20221114162046602.png">
+<meta property="og:image" content="https://striveizu.tech/2022/11/14/Java-Junit/image-20221114162631330.png">
+<meta property="og:image" content="https://striveizu.tech/2022/11/14/Java-Junit/image-20221114163559595.png">
+<meta property="og:image" content="https://striveizu.tech/2022/11/14/Java-Junit/image-20221114163931161.png">
+<meta property="og:image" content="https://striveizu.tech/2022/11/14/Java-Junit/image-20221114164019379.png">
+<meta property="og:image" content="https://striveizu.tech/2022/11/14/Java-Junit/image-20221114164044930.png">
+<meta property="og:image" content="https://striveizu.tech/2022/11/14/Java-Junit/image-20221114181637016.png">
+<meta property="og:image" content="https://striveizu.tech/2022/11/14/Java-Junit/image-20221114181725865.png">
+<meta property="og:image" content="https://striveizu.tech/2022/11/14/Java-Junit/image-20221114182600832.png">
+<meta property="og:image" content="https://striveizu.tech/2022/11/14/Java-Junit/image-20221114182642895.png">
+<meta property="og:image" content="https://striveizu.tech/2022/11/14/Java-Junit/image-20221114182818937.png">
+<meta property="og:image" content="https://striveizu.tech/2022/11/14/Java-Junit/image-20221114182828323.png">
+<meta property="og:image" content="https://striveizu.tech/2022/11/14/Java-Junit/image-20221114193523073.png">
+<meta property="og:image" content="https://striveizu.tech/2022/11/14/Java-Junit/image-20221114193533821.png">
+<meta property="og:image" content="https://striveizu.tech/2022/11/14/Java-Junit/image-20221114193506182.png">
+<meta property="og:image" content="https://striveizu.tech/2022/11/14/Java-Junit/image-20221114193728679.png">
+<meta property="og:image" content="https://striveizu.tech/2022/11/14/Java-Junit/image-20221114194205762.png">
+<meta property="og:image" content="https://striveizu.tech/2022/11/14/Java-Junit/image-20221114194551608.png">
+<meta property="og:image" content="https://striveizu.tech/2022/11/14/Java-Junit/image-20221114202428567.png">
+<meta property="og:image" content="https://striveizu.tech/2022/11/14/Java-Junit/image-20221114202901922.png">
+<meta property="og:image" content="https://striveizu.tech/2022/11/14/Java-Junit/image-20221114203342311.png">
+<meta property="og:image" content="https://striveizu.tech/2022/11/14/Java-Junit/image-20221114203434336.png">
+<meta property="og:image" content="https://striveizu.tech/2022/11/14/Java-Junit/image-20221114204238008.png">
+<meta property="og:image" content="https://striveizu.tech/2022/11/14/Java-Junit/image-20221114204322964.png">
+<meta property="og:image" content="https://striveizu.tech/2022/11/14/Java-Junit/image-20221114205440833.png">
+<meta property="og:image" content="https://striveizu.tech/2022/11/14/Java-Junit/image-20221114211117905.png">
+<meta property="og:image" content="https://striveizu.tech/2022/11/14/Java-Junit/image-20221114211402401.png">
+<meta property="og:image" content="https://striveizu.tech/2022/11/14/Java-Junit/image-20221114212209602.png">
+<meta property="og:image" content="https://striveizu.tech/2022/11/14/Java-Junit/image-20221114212347879.png">
+<meta property="og:image" content="https://striveizu.tech/2022/11/14/Java-Junit/image-20221114214127920.png">
+<meta property="og:image" content="https://striveizu.tech/2022/11/14/Java-Junit/image-20221114214215435.png">
+<meta property="og:image" content="https://striveizu.tech/2022/11/14/Java-Junit/image-20221114220025678.png">
+<meta property="og:image" content="https://striveizu.tech/2022/11/14/Java-Junit/image-20221115092701283.png">
+<meta property="og:image" content="https://striveizu.tech/2022/11/14/Java-Junit/image-20221115094725280.png">
+<meta property="og:image" content="https://striveizu.tech/2022/11/14/Java-Junit/image-20221115094749880.png">
+<meta property="og:image" content="https://striveizu.tech/2022/11/14/Java-Junit/image-20221115094857628.png">
+<meta property="og:image" content="https://striveizu.tech/2022/11/14/Java-Junit/image-20221115094908575.png">
+<meta property="og:image" content="https://striveizu.tech/2022/11/14/Java-Junit/image-20221115095613520.png">
+<meta property="og:image" content="https://striveizu.tech/2022/11/14/Java-Junit/image-20221115095933196.png">
+<meta property="og:image" content="https://striveizu.tech/2022/11/14/Java-Junit/image-20221115100016516.png">
+<meta property="og:image" content="https://striveizu.tech/2022/11/14/Java-Junit/image-20221115100036395.png">
+<meta property="og:image" content="https://striveizu.tech/2022/11/14/Java-Junit/image-20221115100343962.png">
+<meta property="og:image" content="https://striveizu.tech/2022/11/14/Java-Junit/image-20221115100518470.png">
+<meta property="og:image" content="https://striveizu.tech/2022/11/14/Java-Junit/image-20221115100607354.png">
+<meta property="og:image" content="https://striveizu.tech/2022/11/14/Java-Junit/image-20221115100706619.png">
+<meta property="og:image" content="https://striveizu.tech/2022/11/14/Java-Junit/image-20221115100859464.png">
+<meta property="og:image" content="https://striveizu.tech/2022/11/14/Java-Junit/image-20221115100913075.png">
 <meta property="article:published_time" content="2022-11-14T06:25:41.000Z">
 <meta property="article:modified_time" content="2022-11-15T02:10:57.547Z">
 <meta property="article:author" content="Strive">
 <meta property="article:tag" content="Java">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://striveizu.top/2022/11/14/Java-Junit/image-20221114145148236.png"><title>Java基础之单元测试、XML、反射、注解 | Strive's Blog</title><link ref="canonical" href="https://striveizu.top/2022/11/14/Java-Junit/"><link rel="dns-prefetch" href="https://cdn.jsdelivr.net"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.12.1/css/all.min.css" type="text/css"><link rel="stylesheet" href="/css/index.css?v=2.6.2"><script>var Stun = window.Stun || {};
+<meta name="twitter:image" content="https://striveizu.tech/2022/11/14/Java-Junit/image-20221114145148236.png"><title>Java基础之单元测试、XML、反射、注解 | Strive's Blog</title><link ref="canonical" href="https://striveizu.tech/2022/11/14/Java-Junit/"><link rel="dns-prefetch" href="https://cdn.jsdelivr.net"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.12.1/css/all.min.css" type="text/css"><link rel="stylesheet" href="/css/index.css?v=2.6.2"><script>var Stun = window.Stun || {};
 var CONFIG = {
   root: '/',
   algolia: undefined,
@@ -249,7 +249,7 @@ window.CONFIG = CONFIG;</script><meta name="generator" content="Hexo 5.4.0"></he
 
         <h5 id="5-3-XML解析">
           <a href="#5-3-XML解析" class="heading-link"><i class="fas fa-link"></i></a><a href="#5-3-XML解析" class="headerlink" title="5.3 XML解析"></a>5.3 XML解析</h5>
-      </div><footer class="post-footer"><div class="post-ending ending"><div class="ending__text">------ 本文结束，感谢您的阅读 ------</div></div><div class="post-copyright copyright"><div class="copyright-author"><span class="copyright-author__name">本文作者: </span><span class="copyright-author__value"><a href="https://striveizu.top">Strive</a></span></div><div class="copyright-link"><span class="copyright-link__name">本文链接: </span><span class="copyright-link__value"><a href="https://striveizu.top/2022/11/14/Java-Junit/">https://striveizu.top/2022/11/14/Java-Junit/</a></span></div><div class="copyright-notice"><span class="copyright-notice__name">版权声明: </span><span class="copyright-notice__value">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en" rel="external nofollow" target="_blank">BY-NC-SA</a> 许可协议。转载请注明出处！</span></div></div><div class="post-tags"><span class="post-tags-item"><span class="post-tags-item__icon"><i class="fas fa-tag"></i></span><a class="post-tags-item__link" href="https://striveizu.top/tags/Java/">Java</a></span></div><nav class="post-paginator paginator"><div class="paginator-prev"><a class="paginator-prev__link" href="/2022/11/16/JavaWeb-JDBC/"><span class="paginator-prev__icon"><i class="fas fa-angle-left"></i></span><span class="paginator-prev__text">JavaWeb-JDBC</span></a></div><div class="paginator-next"><a class="paginator-next__link" href="/2022/11/13/Java-network/"><span class="paginator-prev__text">Java网络通信</span><span class="paginator-next__icon"><i class="fas fa-angle-right"></i></span></a></div></nav></footer></div></div></div><div class="sidebar-wrap" id="sidebar-wrap"><aside class="sidebar" id="sidebar"><div class="sidebar-nav"><span class="sidebar-nav-toc current">文章目录</span><span class="sidebar-nav-ov">站点概览</span></div><section class="sidebar-toc"><ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#Java%E5%9F%BA%E7%A1%80%E4%B9%8B%E5%8D%95%E5%85%83%E6%B5%8B%E8%AF%95%E3%80%81XML%E3%80%81%E5%8F%8D%E5%B0%84%E3%80%81%E6%B3%A8%E8%A7%A3"><span class="toc-number">1.</span> <span class="toc-text">
+      </div><footer class="post-footer"><div class="post-ending ending"><div class="ending__text">------ 本文结束，感谢您的阅读 ------</div></div><div class="post-copyright copyright"><div class="copyright-author"><span class="copyright-author__name">本文作者: </span><span class="copyright-author__value"><a href="https://striveizu.tech">Strive</a></span></div><div class="copyright-link"><span class="copyright-link__name">本文链接: </span><span class="copyright-link__value"><a href="https://striveizu.tech/2022/11/14/Java-Junit/">https://striveizu.tech/2022/11/14/Java-Junit/</a></span></div><div class="copyright-notice"><span class="copyright-notice__name">版权声明: </span><span class="copyright-notice__value">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en" rel="external nofollow" target="_blank">BY-NC-SA</a> 许可协议。转载请注明出处！</span></div></div><div class="post-tags"><span class="post-tags-item"><span class="post-tags-item__icon"><i class="fas fa-tag"></i></span><a class="post-tags-item__link" href="https://striveizu.tech/tags/Java/">Java</a></span></div><nav class="post-paginator paginator"><div class="paginator-prev"><a class="paginator-prev__link" href="/2022/11/16/JavaWeb-JDBC/"><span class="paginator-prev__icon"><i class="fas fa-angle-left"></i></span><span class="paginator-prev__text">JavaWeb-JDBC</span></a></div><div class="paginator-next"><a class="paginator-next__link" href="/2022/11/13/Java-network/"><span class="paginator-prev__text">Java网络通信</span><span class="paginator-next__icon"><i class="fas fa-angle-right"></i></span></a></div></nav></footer></div></div></div><div class="sidebar-wrap" id="sidebar-wrap"><aside class="sidebar" id="sidebar"><div class="sidebar-nav"><span class="sidebar-nav-toc current">文章目录</span><span class="sidebar-nav-ov">站点概览</span></div><section class="sidebar-toc"><ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#Java%E5%9F%BA%E7%A1%80%E4%B9%8B%E5%8D%95%E5%85%83%E6%B5%8B%E8%AF%95%E3%80%81XML%E3%80%81%E5%8F%8D%E5%B0%84%E3%80%81%E6%B3%A8%E8%A7%A3"><span class="toc-number">1.</span> <span class="toc-text">
           Java基础之单元测试、XML、反射、注解</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%B8%80%E3%80%81%E5%8D%95%E5%85%83%E6%B5%8B%E8%AF%95"><span class="toc-number">1.1.</span> <span class="toc-text">
           一、单元测试</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#1-1-Junit%E5%8D%95%E5%85%83%E6%B5%8B%E8%AF%95%E6%A1%86%E6%9E%B6"><span class="toc-number">1.1.1.</span> <span class="toc-text">
           1.1 Junit单元测试框架</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#1-2-Junit%E5%B8%B8%E7%94%A8%E6%B3%A8%E8%A7%A3"><span class="toc-number">1.1.2.</span> <span class="toc-text">

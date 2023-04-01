@@ -1,71 +1,71 @@
 <!DOCTYPE html><html lang="zh-CN"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="format-detection" content="telephone=no"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="black"><link rel="icon" href="/images/icons/favicon-16x16.png?v=2.6.2" type="image/png" sizes="16x16"><link rel="icon" href="/images/icons/favicon-32x32.png?v=2.6.2" type="image/png" sizes="32x32"><meta name="description" content="SpringBoot简介                           一、创建一个SpringBoot程序                               1.1 快速启动                             1.2 概述                            1.3 起步依赖">
 <meta property="og:type" content="article">
 <meta property="og:title" content="SpringBoot&#x2F;MybatisPlus">
-<meta property="og:url" content="https://striveizu.top/2022/12/05/SpringBoot/index.html">
+<meta property="og:url" content="https://striveizu.tech/2022/12/05/SpringBoot/index.html">
 <meta property="og:site_name" content="Strive&#39;s Blog">
 <meta property="og:description" content="SpringBoot简介                           一、创建一个SpringBoot程序                               1.1 快速启动                             1.2 概述                            1.3 起步依赖">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://striveizu.top/2022/12/05/SpringBoot/image-20221205191524354.png">
-<meta property="og:image" content="https://striveizu.top/2022/12/05/SpringBoot/image-20221205191558381.png">
-<meta property="og:image" content="https://striveizu.top/2022/12/05/SpringBoot/image-20221205191607069.png">
-<meta property="og:image" content="https://striveizu.top/2022/12/05/SpringBoot/image-20221205191619931.png">
-<meta property="og:image" content="https://striveizu.top/2022/12/05/SpringBoot/image-20221205194242970.png">
-<meta property="og:image" content="https://striveizu.top/2022/12/05/SpringBoot/image-20221205194251581.png">
-<meta property="og:image" content="https://striveizu.top/2022/12/05/SpringBoot/image-20221205194437048.png">
-<meta property="og:image" content="https://striveizu.top/2022/12/05/SpringBoot/image-20221205201026824.png">
-<meta property="og:image" content="https://striveizu.top/2022/12/05/SpringBoot/image-20221205201119730.png">
-<meta property="og:image" content="https://striveizu.top/2022/12/05/SpringBoot/image-20221205201651279.png">
-<meta property="og:image" content="https://striveizu.top/2022/12/05/SpringBoot/image-20221205202300578.png">
-<meta property="og:image" content="https://striveizu.top/2022/12/05/SpringBoot/image-20221205202341271.png">
-<meta property="og:image" content="https://striveizu.top/2022/12/05/SpringBoot/image-20221205202540014.png">
-<meta property="og:image" content="https://striveizu.top/2022/12/05/SpringBoot/image-20221205202746462.png">
-<meta property="og:image" content="https://striveizu.top/2022/12/05/SpringBoot/image-20221205205713937.png">
-<meta property="og:image" content="https://striveizu.top/2022/12/05/SpringBoot/image-20221205205721262.png">
-<meta property="og:image" content="https://striveizu.top/2022/12/05/SpringBoot/image-20221205205752479.png">
-<meta property="og:image" content="https://striveizu.top/2022/12/05/SpringBoot/image-20221206102124108.png">
-<meta property="og:image" content="https://striveizu.top/2022/12/05/SpringBoot/image-20221206102303715.png">
-<meta property="og:image" content="https://striveizu.top/2022/12/05/SpringBoot/image-20221206102704945.png">
-<meta property="og:image" content="https://striveizu.top/2022/12/05/SpringBoot/image-20221206122446890.png">
-<meta property="og:image" content="https://striveizu.top/2022/12/05/SpringBoot/image-20221206122522001.png">
-<meta property="og:image" content="https://striveizu.top/2022/12/05/SpringBoot/image-20221206122540893.png">
-<meta property="og:image" content="https://striveizu.top/2022/12/05/SpringBoot/image-20221206125213321.png">
-<meta property="og:image" content="https://striveizu.top/2022/12/05/SpringBoot/image-20221206144532114.png">
-<meta property="og:image" content="https://striveizu.top/2022/12/05/SpringBoot/image-20221206150333479.png">
-<meta property="og:image" content="https://striveizu.top/2022/12/05/SpringBoot/image-20221206150340610.png">
-<meta property="og:image" content="https://striveizu.top/2022/12/05/SpringBoot/image-20221206150400104.png">
-<meta property="og:image" content="https://striveizu.top/2022/12/05/SpringBoot/image-20221206151540448.png">
-<meta property="og:image" content="https://striveizu.top/2022/12/05/SpringBoot/image-20221206151555110.png">
-<meta property="og:image" content="https://striveizu.top/2022/12/05/SpringBoot/image-20221206151602912.png">
-<meta property="og:image" content="https://striveizu.top/2022/12/05/SpringBoot/image-20221206161950055.png">
-<meta property="og:image" content="https://striveizu.top/2022/12/05/SpringBoot/image-20221206162018120.png">
-<meta property="og:image" content="https://striveizu.top/2022/12/05/SpringBoot/image-20221206163953271.png">
-<meta property="og:image" content="https://striveizu.top/2022/12/05/SpringBoot/image-20221206164518679.png">
-<meta property="og:image" content="https://striveizu.top/2022/12/05/SpringBoot/image-20221206212626262.png">
-<meta property="og:image" content="https://striveizu.top/2022/12/05/SpringBoot/image-20221206212636308.png">
-<meta property="og:image" content="https://striveizu.top/2022/12/05/SpringBoot/image-20221206212832621.png">
-<meta property="og:image" content="https://striveizu.top/2022/12/05/SpringBoot/image-20221206212919834.png">
-<meta property="og:image" content="https://striveizu.top/2022/12/05/SpringBoot/image-20221206213028609.png">
-<meta property="og:image" content="https://striveizu.top/2022/12/05/SpringBoot/image-20221206213102983.png">
-<meta property="og:image" content="https://striveizu.top/2022/12/05/SpringBoot/image-20221206213938629.png">
-<meta property="og:image" content="https://striveizu.top/2022/12/05/SpringBoot/image-20221206214143631.png">
-<meta property="og:image" content="https://striveizu.top/2022/12/05/SpringBoot/image-20221206215012418.png">
-<meta property="og:image" content="https://striveizu.top/2022/12/05/SpringBoot/image-20221207092859806.png">
-<meta property="og:image" content="https://striveizu.top/2022/12/05/SpringBoot/image-20221207100205117.png">
-<meta property="og:image" content="https://striveizu.top/2022/12/05/SpringBoot/image-20221207100235358.png">
-<meta property="og:image" content="https://striveizu.top/2022/12/05/SpringBoot/image-20221207100405988.png">
-<meta property="og:image" content="https://striveizu.top/2022/12/05/SpringBoot/image-20221207104119490.png">
-<meta property="og:image" content="https://striveizu.top/2022/12/05/SpringBoot/image-20221207104125133.png">
-<meta property="og:image" content="https://striveizu.top/2022/12/05/SpringBoot/image-20221207104134754.png">
-<meta property="og:image" content="https://striveizu.top/2022/12/05/SpringBoot/image-20221207104153644.png">
-<meta property="og:image" content="https://striveizu.top/2022/12/05/SpringBoot/image-20221207111309763.png">
+<meta property="og:image" content="https://striveizu.tech/2022/12/05/SpringBoot/image-20221205191524354.png">
+<meta property="og:image" content="https://striveizu.tech/2022/12/05/SpringBoot/image-20221205191558381.png">
+<meta property="og:image" content="https://striveizu.tech/2022/12/05/SpringBoot/image-20221205191607069.png">
+<meta property="og:image" content="https://striveizu.tech/2022/12/05/SpringBoot/image-20221205191619931.png">
+<meta property="og:image" content="https://striveizu.tech/2022/12/05/SpringBoot/image-20221205194242970.png">
+<meta property="og:image" content="https://striveizu.tech/2022/12/05/SpringBoot/image-20221205194251581.png">
+<meta property="og:image" content="https://striveizu.tech/2022/12/05/SpringBoot/image-20221205194437048.png">
+<meta property="og:image" content="https://striveizu.tech/2022/12/05/SpringBoot/image-20221205201026824.png">
+<meta property="og:image" content="https://striveizu.tech/2022/12/05/SpringBoot/image-20221205201119730.png">
+<meta property="og:image" content="https://striveizu.tech/2022/12/05/SpringBoot/image-20221205201651279.png">
+<meta property="og:image" content="https://striveizu.tech/2022/12/05/SpringBoot/image-20221205202300578.png">
+<meta property="og:image" content="https://striveizu.tech/2022/12/05/SpringBoot/image-20221205202341271.png">
+<meta property="og:image" content="https://striveizu.tech/2022/12/05/SpringBoot/image-20221205202540014.png">
+<meta property="og:image" content="https://striveizu.tech/2022/12/05/SpringBoot/image-20221205202746462.png">
+<meta property="og:image" content="https://striveizu.tech/2022/12/05/SpringBoot/image-20221205205713937.png">
+<meta property="og:image" content="https://striveizu.tech/2022/12/05/SpringBoot/image-20221205205721262.png">
+<meta property="og:image" content="https://striveizu.tech/2022/12/05/SpringBoot/image-20221205205752479.png">
+<meta property="og:image" content="https://striveizu.tech/2022/12/05/SpringBoot/image-20221206102124108.png">
+<meta property="og:image" content="https://striveizu.tech/2022/12/05/SpringBoot/image-20221206102303715.png">
+<meta property="og:image" content="https://striveizu.tech/2022/12/05/SpringBoot/image-20221206102704945.png">
+<meta property="og:image" content="https://striveizu.tech/2022/12/05/SpringBoot/image-20221206122446890.png">
+<meta property="og:image" content="https://striveizu.tech/2022/12/05/SpringBoot/image-20221206122522001.png">
+<meta property="og:image" content="https://striveizu.tech/2022/12/05/SpringBoot/image-20221206122540893.png">
+<meta property="og:image" content="https://striveizu.tech/2022/12/05/SpringBoot/image-20221206125213321.png">
+<meta property="og:image" content="https://striveizu.tech/2022/12/05/SpringBoot/image-20221206144532114.png">
+<meta property="og:image" content="https://striveizu.tech/2022/12/05/SpringBoot/image-20221206150333479.png">
+<meta property="og:image" content="https://striveizu.tech/2022/12/05/SpringBoot/image-20221206150340610.png">
+<meta property="og:image" content="https://striveizu.tech/2022/12/05/SpringBoot/image-20221206150400104.png">
+<meta property="og:image" content="https://striveizu.tech/2022/12/05/SpringBoot/image-20221206151540448.png">
+<meta property="og:image" content="https://striveizu.tech/2022/12/05/SpringBoot/image-20221206151555110.png">
+<meta property="og:image" content="https://striveizu.tech/2022/12/05/SpringBoot/image-20221206151602912.png">
+<meta property="og:image" content="https://striveizu.tech/2022/12/05/SpringBoot/image-20221206161950055.png">
+<meta property="og:image" content="https://striveizu.tech/2022/12/05/SpringBoot/image-20221206162018120.png">
+<meta property="og:image" content="https://striveizu.tech/2022/12/05/SpringBoot/image-20221206163953271.png">
+<meta property="og:image" content="https://striveizu.tech/2022/12/05/SpringBoot/image-20221206164518679.png">
+<meta property="og:image" content="https://striveizu.tech/2022/12/05/SpringBoot/image-20221206212626262.png">
+<meta property="og:image" content="https://striveizu.tech/2022/12/05/SpringBoot/image-20221206212636308.png">
+<meta property="og:image" content="https://striveizu.tech/2022/12/05/SpringBoot/image-20221206212832621.png">
+<meta property="og:image" content="https://striveizu.tech/2022/12/05/SpringBoot/image-20221206212919834.png">
+<meta property="og:image" content="https://striveizu.tech/2022/12/05/SpringBoot/image-20221206213028609.png">
+<meta property="og:image" content="https://striveizu.tech/2022/12/05/SpringBoot/image-20221206213102983.png">
+<meta property="og:image" content="https://striveizu.tech/2022/12/05/SpringBoot/image-20221206213938629.png">
+<meta property="og:image" content="https://striveizu.tech/2022/12/05/SpringBoot/image-20221206214143631.png">
+<meta property="og:image" content="https://striveizu.tech/2022/12/05/SpringBoot/image-20221206215012418.png">
+<meta property="og:image" content="https://striveizu.tech/2022/12/05/SpringBoot/image-20221207092859806.png">
+<meta property="og:image" content="https://striveizu.tech/2022/12/05/SpringBoot/image-20221207100205117.png">
+<meta property="og:image" content="https://striveizu.tech/2022/12/05/SpringBoot/image-20221207100235358.png">
+<meta property="og:image" content="https://striveizu.tech/2022/12/05/SpringBoot/image-20221207100405988.png">
+<meta property="og:image" content="https://striveizu.tech/2022/12/05/SpringBoot/image-20221207104119490.png">
+<meta property="og:image" content="https://striveizu.tech/2022/12/05/SpringBoot/image-20221207104125133.png">
+<meta property="og:image" content="https://striveizu.tech/2022/12/05/SpringBoot/image-20221207104134754.png">
+<meta property="og:image" content="https://striveizu.tech/2022/12/05/SpringBoot/image-20221207104153644.png">
+<meta property="og:image" content="https://striveizu.tech/2022/12/05/SpringBoot/image-20221207111309763.png">
 <meta property="article:published_time" content="2022-12-05T10:49:19.000Z">
-<meta property="article:modified_time" content="2022-12-07T14:00:15.519Z">
+<meta property="article:modified_time" content="2022-12-09T06:40:25.573Z">
 <meta property="article:author" content="Strive">
 <meta property="article:tag" content="Java">
 <meta property="article:tag" content="Spring">
 <meta property="article:tag" content="Maven">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://striveizu.top/2022/12/05/SpringBoot/image-20221205191524354.png"><title>SpringBoot/MybatisPlus | Strive's Blog</title><link ref="canonical" href="https://striveizu.top/2022/12/05/SpringBoot/"><link rel="dns-prefetch" href="https://cdn.jsdelivr.net"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.12.1/css/all.min.css" type="text/css"><link rel="stylesheet" href="/css/index.css?v=2.6.2"><script>var Stun = window.Stun || {};
+<meta name="twitter:image" content="https://striveizu.tech/2022/12/05/SpringBoot/image-20221205191524354.png"><title>SpringBoot/MybatisPlus | Strive's Blog</title><link ref="canonical" href="https://striveizu.tech/2022/12/05/SpringBoot/"><link rel="dns-prefetch" href="https://cdn.jsdelivr.net"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.12.1/css/all.min.css" type="text/css"><link rel="stylesheet" href="/css/index.css?v=2.6.2"><script>var Stun = window.Stun || {};
 var CONFIG = {
   root: '/',
   algolia: undefined,
@@ -89,7 +89,7 @@ var CONFIG = {
   sourcePath: {"js":"js","css":"css","images":"images"},
 };
 
-window.CONFIG = CONFIG;</script><meta name="generator" content="Hexo 5.4.0"></head><body><div class="container" id="container"><header class="header" id="header"><div class="header-inner"><nav class="header-nav header-nav--fixed"><div class="header-nav-inner"><div class="header-nav-menubtn"><i class="fas fa-bars"></i></div><div class="header-nav-menu"><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/"><span class="header-nav-menu-item__icon"><i class="fas fa-home"></i></span><span class="header-nav-menu-item__text">首页</span></a></div><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/about/"><span class="header-nav-menu-item__icon"><i class="fas fa-address-card"></i></span><span class="header-nav-menu-item__text">关于</span></a></div><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="javascript:;" onclick="return false;"><span class="header-nav-menu-item__icon"><i class="fas fa-edit"></i></span><span class="header-nav-menu-item__text">文章</span></a><div class="header-nav-submenu"><div class="header-nav-submenu-item"><a class="header-nav-submenu-item__link" href="/archives/"><span class="header-nav-submenu-item__icon"><i class="fas fa-folder-open"></i></span><span class="header-nav-submenu-item__text">归档</span></a></div><div class="header-nav-submenu-item"><a class="header-nav-submenu-item__link" href="/categories/"><span class="header-nav-submenu-item__icon"><i class="fas fa-layer-group"></i></span><span class="header-nav-submenu-item__text">分类</span></a></div><div class="header-nav-submenu-item"><a class="header-nav-submenu-item__link" href="/tags/"><span class="header-nav-submenu-item__icon"><i class="fas fa-tags"></i></span><span class="header-nav-submenu-item__text">标签</span></a></div></div></div></div><div class="header-nav-mode"><div class="mode"><div class="mode-track"><span class="mode-track-moon"></span><span class="mode-track-sun"></span></div><div class="mode-thumb"></div></div></div></div></nav><div class="header-banner"><div class="header-banner-info"><div class="header-banner-info__title">Strive's Blog</div><div class="header-banner-info__subtitle">你我期许的绝非遥不可及</div></div><div class="header-banner-arrow"><div class="header-banner-arrow__icon"><i class="fas fa-angle-down"></i></div></div></div></div></header><main class="main" id="main"><div class="main-inner"><div class="content-wrap" id="content-wrap"><div class="content" id="content"><!-- Just used to judge whether it is an article page--><div id="is-post"></div><div class="post"><header class="post-header"><h1 class="post-title">SpringBoot/MybatisPlus</h1><div class="post-meta"><span class="post-meta-item post-meta-item--createtime"><span class="post-meta-item__icon"><i class="far fa-calendar-plus"></i></span><span class="post-meta-item__info">发表于</span><span class="post-meta-item__value">2022-12-05</span></span><span class="post-meta-item post-meta-item--updatetime"><span class="post-meta-item__icon"><i class="far fa-calendar-check"></i></span><span class="post-meta-item__info">更新于</span><span class="post-meta-item__value">2022-12-07</span></span></div></header><div class="post-body">
+window.CONFIG = CONFIG;</script><meta name="generator" content="Hexo 5.4.0"></head><body><div class="container" id="container"><header class="header" id="header"><div class="header-inner"><nav class="header-nav header-nav--fixed"><div class="header-nav-inner"><div class="header-nav-menubtn"><i class="fas fa-bars"></i></div><div class="header-nav-menu"><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/"><span class="header-nav-menu-item__icon"><i class="fas fa-home"></i></span><span class="header-nav-menu-item__text">首页</span></a></div><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/about/"><span class="header-nav-menu-item__icon"><i class="fas fa-address-card"></i></span><span class="header-nav-menu-item__text">关于</span></a></div><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="javascript:;" onclick="return false;"><span class="header-nav-menu-item__icon"><i class="fas fa-edit"></i></span><span class="header-nav-menu-item__text">文章</span></a><div class="header-nav-submenu"><div class="header-nav-submenu-item"><a class="header-nav-submenu-item__link" href="/archives/"><span class="header-nav-submenu-item__icon"><i class="fas fa-folder-open"></i></span><span class="header-nav-submenu-item__text">归档</span></a></div><div class="header-nav-submenu-item"><a class="header-nav-submenu-item__link" href="/categories/"><span class="header-nav-submenu-item__icon"><i class="fas fa-layer-group"></i></span><span class="header-nav-submenu-item__text">分类</span></a></div><div class="header-nav-submenu-item"><a class="header-nav-submenu-item__link" href="/tags/"><span class="header-nav-submenu-item__icon"><i class="fas fa-tags"></i></span><span class="header-nav-submenu-item__text">标签</span></a></div></div></div></div><div class="header-nav-mode"><div class="mode"><div class="mode-track"><span class="mode-track-moon"></span><span class="mode-track-sun"></span></div><div class="mode-thumb"></div></div></div></div></nav><div class="header-banner"><div class="header-banner-info"><div class="header-banner-info__title">Strive's Blog</div><div class="header-banner-info__subtitle">你我期许的绝非遥不可及</div></div><div class="header-banner-arrow"><div class="header-banner-arrow__icon"><i class="fas fa-angle-down"></i></div></div></div></div></header><main class="main" id="main"><div class="main-inner"><div class="content-wrap" id="content-wrap"><div class="content" id="content"><!-- Just used to judge whether it is an article page--><div id="is-post"></div><div class="post"><header class="post-header"><h1 class="post-title">SpringBoot/MybatisPlus</h1><div class="post-meta"><span class="post-meta-item post-meta-item--createtime"><span class="post-meta-item__icon"><i class="far fa-calendar-plus"></i></span><span class="post-meta-item__info">发表于</span><span class="post-meta-item__value">2022-12-05</span></span><span class="post-meta-item post-meta-item--updatetime"><span class="post-meta-item__icon"><i class="far fa-calendar-check"></i></span><span class="post-meta-item__info">更新于</span><span class="post-meta-item__value">2022-12-09</span></span></div></header><div class="post-body">
         <h3 id="SpringBoot简介">
           <a href="#SpringBoot简介" class="heading-link"><i class="fas fa-link"></i></a><a href="#SpringBoot简介" class="headerlink" title="SpringBoot简介"></a>SpringBoot简介</h3>
       
@@ -244,7 +244,7 @@ window.CONFIG = CONFIG;</script><meta name="generator" content="Hexo 5.4.0"></he
 
         <h4 id="代码生成器">
           <a href="#代码生成器" class="heading-link"><i class="fas fa-link"></i></a><a href="#代码生成器" class="headerlink" title="代码生成器"></a>代码生成器</h4>
-      </div><footer class="post-footer"><div class="post-ending ending"><div class="ending__text">------ 本文结束，感谢您的阅读 ------</div></div><div class="post-copyright copyright"><div class="copyright-author"><span class="copyright-author__name">本文作者: </span><span class="copyright-author__value"><a href="https://striveizu.top">Strive</a></span></div><div class="copyright-link"><span class="copyright-link__name">本文链接: </span><span class="copyright-link__value"><a href="https://striveizu.top/2022/12/05/SpringBoot/">https://striveizu.top/2022/12/05/SpringBoot/</a></span></div><div class="copyright-notice"><span class="copyright-notice__name">版权声明: </span><span class="copyright-notice__value">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en" rel="external nofollow" target="_blank">BY-NC-SA</a> 许可协议。转载请注明出处！</span></div></div><div class="post-tags"><span class="post-tags-item"><span class="post-tags-item__icon"><i class="fas fa-tag"></i></span><a class="post-tags-item__link" href="https://striveizu.top/tags/Java/">Java</a></span><span class="post-tags-item"><span class="post-tags-item__icon"><i class="fas fa-tag"></i></span><a class="post-tags-item__link" href="https://striveizu.top/tags/Spring/">Spring</a></span><span class="post-tags-item"><span class="post-tags-item__icon"><i class="fas fa-tag"></i></span><a class="post-tags-item__link" href="https://striveizu.top/tags/Maven/">Maven</a></span></div><nav class="post-paginator paginator"><div class="paginator-prev"><a class="paginator-prev__link" href="/2022/12/09/springboot2/"><span class="paginator-prev__icon"><i class="fas fa-angle-left"></i></span><span class="paginator-prev__text">springboot2</span></a></div><div class="paginator-next"><a class="paginator-next__link" href="/2022/12/05/maven-plus/"><span class="paginator-prev__text">maven进阶</span><span class="paginator-next__icon"><i class="fas fa-angle-right"></i></span></a></div></nav></footer></div></div></div><div class="sidebar-wrap" id="sidebar-wrap"><aside class="sidebar" id="sidebar"><div class="sidebar-nav"><span class="sidebar-nav-toc current">文章目录</span><span class="sidebar-nav-ov">站点概览</span></div><section class="sidebar-toc"><ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#SpringBoot%E7%AE%80%E4%BB%8B"><span class="toc-number">1.</span> <span class="toc-text">
+      </div><footer class="post-footer"><div class="post-ending ending"><div class="ending__text">------ 本文结束，感谢您的阅读 ------</div></div><div class="post-copyright copyright"><div class="copyright-author"><span class="copyright-author__name">本文作者: </span><span class="copyright-author__value"><a href="https://striveizu.tech">Strive</a></span></div><div class="copyright-link"><span class="copyright-link__name">本文链接: </span><span class="copyright-link__value"><a href="https://striveizu.tech/2022/12/05/SpringBoot/">https://striveizu.tech/2022/12/05/SpringBoot/</a></span></div><div class="copyright-notice"><span class="copyright-notice__name">版权声明: </span><span class="copyright-notice__value">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en" rel="external nofollow" target="_blank">BY-NC-SA</a> 许可协议。转载请注明出处！</span></div></div><div class="post-tags"><span class="post-tags-item"><span class="post-tags-item__icon"><i class="fas fa-tag"></i></span><a class="post-tags-item__link" href="https://striveizu.tech/tags/Java/">Java</a></span><span class="post-tags-item"><span class="post-tags-item__icon"><i class="fas fa-tag"></i></span><a class="post-tags-item__link" href="https://striveizu.tech/tags/Spring/">Spring</a></span><span class="post-tags-item"><span class="post-tags-item__icon"><i class="fas fa-tag"></i></span><a class="post-tags-item__link" href="https://striveizu.tech/tags/Maven/">Maven</a></span></div><nav class="post-paginator paginator"><div class="paginator-prev"><a class="paginator-prev__link" href="/2022/12/09/springboot2/"><span class="paginator-prev__icon"><i class="fas fa-angle-left"></i></span><span class="paginator-prev__text">springboot2</span></a></div><div class="paginator-next"><a class="paginator-next__link" href="/2022/12/05/maven-plus/"><span class="paginator-prev__text">maven进阶</span><span class="paginator-next__icon"><i class="fas fa-angle-right"></i></span></a></div></nav></footer></div></div></div><div class="sidebar-wrap" id="sidebar-wrap"><aside class="sidebar" id="sidebar"><div class="sidebar-nav"><span class="sidebar-nav-toc current">文章目录</span><span class="sidebar-nav-ov">站点概览</span></div><section class="sidebar-toc"><ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#SpringBoot%E7%AE%80%E4%BB%8B"><span class="toc-number">1.</span> <span class="toc-text">
           SpringBoot简介</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%B8%80%E3%80%81%E5%88%9B%E5%BB%BA%E4%B8%80%E4%B8%AASpringBoot%E7%A8%8B%E5%BA%8F"><span class="toc-number">1.1.</span> <span class="toc-text">
           一、创建一个SpringBoot程序</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#1-1-%E5%BF%AB%E9%80%9F%E5%90%AF%E5%8A%A8"><span class="toc-number">1.1.0.1.</span> <span class="toc-text">
           1.1 快速启动</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#1-2-%E6%A6%82%E8%BF%B0"><span class="toc-number">1.1.0.2.</span> <span class="toc-text">

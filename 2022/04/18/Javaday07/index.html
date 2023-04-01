@@ -1,77 +1,77 @@
 <!DOCTYPE html><html lang="zh-CN"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="format-detection" content="telephone=no"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="black"><link rel="icon" href="/images/icons/favicon-16x16.png?v=2.6.2" type="image/png" sizes="16x16"><link rel="icon" href="/images/icons/favicon-32x32.png?v=2.6.2" type="image/png" sizes="32x32"><meta name="description" content="Java语法速通day07–集合                               1 集合体系结构                             2 Collection                                2.1 Collection集合常用api                            2.2">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Javaday07">
-<meta property="og:url" content="https://striveizu.top/2022/04/18/Javaday07/index.html">
+<meta property="og:url" content="https://striveizu.tech/2022/04/18/Javaday07/index.html">
 <meta property="og:site_name" content="Strive&#39;s Blog">
 <meta property="og:description" content="Java语法速通day07–集合                               1 集合体系结构                             2 Collection                                2.1 Collection集合常用api                            2.2">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://striveizu.top/2022/04/18/Javaday07/image-20220418192315137.png">
-<meta property="og:image" content="https://striveizu.top/2022/04/18/Javaday07/image-20220418192423471.png">
-<meta property="og:image" content="https://striveizu.top/2022/04/18/Javaday07/image-20220418193836902.png">
-<meta property="og:image" content="https://striveizu.top/2022/04/18/Javaday07/image-20220418194619212.png">
-<meta property="og:image" content="https://striveizu.top/2022/04/18/Javaday07/image-20220418195037694.png">
-<meta property="og:image" content="https://striveizu.top/2022/04/18/Javaday07/image-20220418195102364.png">
-<meta property="og:image" content="https://striveizu.top/2022/04/18/Javaday07/image-20220418204955125.png">
-<meta property="og:image" content="https://striveizu.top/2022/04/18/Javaday07/image-20220418205252477.png">
-<meta property="og:image" content="https://striveizu.top/2022/04/18/Javaday07/image-20220418210237066.png">
-<meta property="og:image" content="https://striveizu.top/2022/04/18/Javaday07/image-20220418210738288.png">
-<meta property="og:image" content="https://striveizu.top/2022/04/18/Javaday07/image-20220418212201531.png">
-<meta property="og:image" content="https://striveizu.top/2022/04/18/Javaday07/image-20220419085818295.png">
-<meta property="og:image" content="https://striveizu.top/2022/04/18/Javaday07/image-20220419090005546.png">
-<meta property="og:image" content="https://striveizu.top/2022/04/18/Javaday07/image-20220419090505958.png">
-<meta property="og:image" content="https://striveizu.top/2022/04/18/Javaday07/image-20220419091233993.png">
-<meta property="og:image" content="https://striveizu.top/2022/04/18/Javaday07/image-20220419091551161.png">
-<meta property="og:image" content="https://striveizu.top/2022/04/18/Javaday07/image-20220419093645446.png">
-<meta property="og:image" content="https://striveizu.top/2022/04/18/Javaday07/image-20220419093937489.png">
-<meta property="og:image" content="https://striveizu.top/2022/04/18/Javaday07/image-20220419124850093.png">
-<meta property="og:image" content="https://striveizu.top/2022/04/18/Javaday07/image-20220419130648297.png">
-<meta property="og:image" content="https://striveizu.top/2022/04/18/Javaday07/image-20220419130755202.png">
-<meta property="og:image" content="https://striveizu.top/2022/04/18/Javaday07/image-20220419133153668.png">
-<meta property="og:image" content="https://striveizu.top/2022/04/18/Javaday07/image-20220419133414078.png">
-<meta property="og:image" content="https://striveizu.top/2022/04/18/Javaday07/image-20220419134827371.png">
-<meta property="og:image" content="https://striveizu.top/2022/04/18/Javaday07/image-20220419141907469.png">
-<meta property="og:image" content="https://striveizu.top/2022/04/18/Javaday07/image-20220419143002429.png">
-<meta property="og:image" content="https://striveizu.top/2022/04/18/Javaday07/image-20220419143544131.png">
-<meta property="og:image" content="https://striveizu.top/2022/04/18/Javaday07/image-20220419151838918.png">
-<meta property="og:image" content="https://striveizu.top/2022/04/18/Javaday07/image-20220419151904263.png">
-<meta property="og:image" content="https://striveizu.top/2022/04/18/Javaday07/image-20220419151920775.png">
-<meta property="og:image" content="https://striveizu.top/2022/04/18/Javaday07/image-20220419152538412.png">
-<meta property="og:image" content="https://striveizu.top/2022/04/18/Javaday07/image-20220419154640940.png">
-<meta property="og:image" content="https://striveizu.top/2022/04/18/Javaday07/image-20220419154731784.png">
-<meta property="og:image" content="https://striveizu.top/2022/04/18/Javaday07/image-20220419160402790.png">
-<meta property="og:image" content="https://striveizu.top/2022/04/18/Javaday07/image-20220419160554513.png">
-<meta property="og:image" content="https://striveizu.top/2022/04/18/Javaday07/image-20220419161008228.png">
-<meta property="og:image" content="https://striveizu.top/2022/04/18/Javaday07/image-20220419181438717.png">
-<meta property="og:image" content="https://striveizu.top/2022/04/18/Javaday07/image-20220419181535985.png">
-<meta property="og:image" content="https://striveizu.top/2022/04/18/Javaday07/image-20220419181625744.png">
-<meta property="og:image" content="https://striveizu.top/2022/04/18/Javaday07/image-20220419194250069.png">
-<meta property="og:image" content="https://striveizu.top/2022/04/18/Javaday07/image-20220419194443805.png">
-<meta property="og:image" content="https://striveizu.top/2022/04/18/Javaday07/image-20220419194632140.png">
-<meta property="og:image" content="https://striveizu.top/2022/04/18/Javaday07/image-20220419195226572.png">
-<meta property="og:image" content="https://striveizu.top/2022/04/18/Javaday07/image-20220419203148831.png">
-<meta property="og:image" content="https://striveizu.top/2022/04/18/Javaday07/image-20220419203417025.png">
-<meta property="og:image" content="https://striveizu.top/2022/04/18/Javaday07/image-20220419203636915.png">
-<meta property="og:image" content="https://striveizu.top/2022/04/18/Javaday07/image-20220419205512887.png">
-<meta property="og:image" content="https://striveizu.top/2022/04/18/Javaday07/image-20220419205527393.png">
-<meta property="og:image" content="https://striveizu.top/2022/04/18/Javaday07/image-20220423133600239.png">
-<meta property="og:image" content="https://striveizu.top/2022/04/18/Javaday07/image-20220423135934133.png">
-<meta property="og:image" content="https://striveizu.top/2022/04/18/Javaday07/image-20220423140116638.png">
-<meta property="og:image" content="https://striveizu.top/2022/04/18/Javaday07/image-20220423140823453.png">
-<meta property="og:image" content="https://striveizu.top/2022/04/18/Javaday07/image-20220423140909581.png">
-<meta property="og:image" content="https://striveizu.top/2022/04/18/Javaday07/image-20220423143124726.png">
-<meta property="og:image" content="https://striveizu.top/2022/04/18/Javaday07/image-20220423152822159.png">
-<meta property="og:image" content="https://striveizu.top/2022/04/18/Javaday07/image-20220423154246973.png">
-<meta property="og:image" content="https://striveizu.top/2022/04/18/Javaday07/image-20220423164821328.png">
-<meta property="og:image" content="https://striveizu.top/2022/04/18/Javaday07/image-20220423165124223.png">
-<meta property="og:image" content="https://striveizu.top/2022/04/18/Javaday07/image-20220423165301936.png">
-<meta property="og:image" content="https://striveizu.top/2022/04/18/Javaday07/image-20220423165449349.png">
-<meta property="og:image" content="https://striveizu.top/2022/04/18/Javaday07/image-20220423171235299.png">
+<meta property="og:image" content="https://striveizu.tech/2022/04/18/Javaday07/image-20220418192315137.png">
+<meta property="og:image" content="https://striveizu.tech/2022/04/18/Javaday07/image-20220418192423471.png">
+<meta property="og:image" content="https://striveizu.tech/2022/04/18/Javaday07/image-20220418193836902.png">
+<meta property="og:image" content="https://striveizu.tech/2022/04/18/Javaday07/image-20220418194619212.png">
+<meta property="og:image" content="https://striveizu.tech/2022/04/18/Javaday07/image-20220418195037694.png">
+<meta property="og:image" content="https://striveizu.tech/2022/04/18/Javaday07/image-20220418195102364.png">
+<meta property="og:image" content="https://striveizu.tech/2022/04/18/Javaday07/image-20220418204955125.png">
+<meta property="og:image" content="https://striveizu.tech/2022/04/18/Javaday07/image-20220418205252477.png">
+<meta property="og:image" content="https://striveizu.tech/2022/04/18/Javaday07/image-20220418210237066.png">
+<meta property="og:image" content="https://striveizu.tech/2022/04/18/Javaday07/image-20220418210738288.png">
+<meta property="og:image" content="https://striveizu.tech/2022/04/18/Javaday07/image-20220418212201531.png">
+<meta property="og:image" content="https://striveizu.tech/2022/04/18/Javaday07/image-20220419085818295.png">
+<meta property="og:image" content="https://striveizu.tech/2022/04/18/Javaday07/image-20220419090005546.png">
+<meta property="og:image" content="https://striveizu.tech/2022/04/18/Javaday07/image-20220419090505958.png">
+<meta property="og:image" content="https://striveizu.tech/2022/04/18/Javaday07/image-20220419091233993.png">
+<meta property="og:image" content="https://striveizu.tech/2022/04/18/Javaday07/image-20220419091551161.png">
+<meta property="og:image" content="https://striveizu.tech/2022/04/18/Javaday07/image-20220419093645446.png">
+<meta property="og:image" content="https://striveizu.tech/2022/04/18/Javaday07/image-20220419093937489.png">
+<meta property="og:image" content="https://striveizu.tech/2022/04/18/Javaday07/image-20220419124850093.png">
+<meta property="og:image" content="https://striveizu.tech/2022/04/18/Javaday07/image-20220419130648297.png">
+<meta property="og:image" content="https://striveizu.tech/2022/04/18/Javaday07/image-20220419130755202.png">
+<meta property="og:image" content="https://striveizu.tech/2022/04/18/Javaday07/image-20220419133153668.png">
+<meta property="og:image" content="https://striveizu.tech/2022/04/18/Javaday07/image-20220419133414078.png">
+<meta property="og:image" content="https://striveizu.tech/2022/04/18/Javaday07/image-20220419134827371.png">
+<meta property="og:image" content="https://striveizu.tech/2022/04/18/Javaday07/image-20220419141907469.png">
+<meta property="og:image" content="https://striveizu.tech/2022/04/18/Javaday07/image-20220419143002429.png">
+<meta property="og:image" content="https://striveizu.tech/2022/04/18/Javaday07/image-20220419143544131.png">
+<meta property="og:image" content="https://striveizu.tech/2022/04/18/Javaday07/image-20220419151838918.png">
+<meta property="og:image" content="https://striveizu.tech/2022/04/18/Javaday07/image-20220419151904263.png">
+<meta property="og:image" content="https://striveizu.tech/2022/04/18/Javaday07/image-20220419151920775.png">
+<meta property="og:image" content="https://striveizu.tech/2022/04/18/Javaday07/image-20220419152538412.png">
+<meta property="og:image" content="https://striveizu.tech/2022/04/18/Javaday07/image-20220419154640940.png">
+<meta property="og:image" content="https://striveizu.tech/2022/04/18/Javaday07/image-20220419154731784.png">
+<meta property="og:image" content="https://striveizu.tech/2022/04/18/Javaday07/image-20220419160402790.png">
+<meta property="og:image" content="https://striveizu.tech/2022/04/18/Javaday07/image-20220419160554513.png">
+<meta property="og:image" content="https://striveizu.tech/2022/04/18/Javaday07/image-20220419161008228.png">
+<meta property="og:image" content="https://striveizu.tech/2022/04/18/Javaday07/image-20220419181438717.png">
+<meta property="og:image" content="https://striveizu.tech/2022/04/18/Javaday07/image-20220419181535985.png">
+<meta property="og:image" content="https://striveizu.tech/2022/04/18/Javaday07/image-20220419181625744.png">
+<meta property="og:image" content="https://striveizu.tech/2022/04/18/Javaday07/image-20220419194250069.png">
+<meta property="og:image" content="https://striveizu.tech/2022/04/18/Javaday07/image-20220419194443805.png">
+<meta property="og:image" content="https://striveizu.tech/2022/04/18/Javaday07/image-20220419194632140.png">
+<meta property="og:image" content="https://striveizu.tech/2022/04/18/Javaday07/image-20220419195226572.png">
+<meta property="og:image" content="https://striveizu.tech/2022/04/18/Javaday07/image-20220419203148831.png">
+<meta property="og:image" content="https://striveizu.tech/2022/04/18/Javaday07/image-20220419203417025.png">
+<meta property="og:image" content="https://striveizu.tech/2022/04/18/Javaday07/image-20220419203636915.png">
+<meta property="og:image" content="https://striveizu.tech/2022/04/18/Javaday07/image-20220419205512887.png">
+<meta property="og:image" content="https://striveizu.tech/2022/04/18/Javaday07/image-20220419205527393.png">
+<meta property="og:image" content="https://striveizu.tech/2022/04/18/Javaday07/image-20220423133600239.png">
+<meta property="og:image" content="https://striveizu.tech/2022/04/18/Javaday07/image-20220423135934133.png">
+<meta property="og:image" content="https://striveizu.tech/2022/04/18/Javaday07/image-20220423140116638.png">
+<meta property="og:image" content="https://striveizu.tech/2022/04/18/Javaday07/image-20220423140823453.png">
+<meta property="og:image" content="https://striveizu.tech/2022/04/18/Javaday07/image-20220423140909581.png">
+<meta property="og:image" content="https://striveizu.tech/2022/04/18/Javaday07/image-20220423143124726.png">
+<meta property="og:image" content="https://striveizu.tech/2022/04/18/Javaday07/image-20220423152822159.png">
+<meta property="og:image" content="https://striveizu.tech/2022/04/18/Javaday07/image-20220423154246973.png">
+<meta property="og:image" content="https://striveizu.tech/2022/04/18/Javaday07/image-20220423164821328.png">
+<meta property="og:image" content="https://striveizu.tech/2022/04/18/Javaday07/image-20220423165124223.png">
+<meta property="og:image" content="https://striveizu.tech/2022/04/18/Javaday07/image-20220423165301936.png">
+<meta property="og:image" content="https://striveizu.tech/2022/04/18/Javaday07/image-20220423165449349.png">
+<meta property="og:image" content="https://striveizu.tech/2022/04/18/Javaday07/image-20220423171235299.png">
 <meta property="article:published_time" content="2022-04-18T09:11:57.000Z">
 <meta property="article:modified_time" content="2022-04-24T01:11:06.703Z">
 <meta property="article:author" content="Strive">
 <meta property="article:tag" content="Java">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://striveizu.top/2022/04/18/Javaday07/image-20220418192315137.png"><title>Javaday07 | Strive's Blog</title><link ref="canonical" href="https://striveizu.top/2022/04/18/Javaday07/"><link rel="dns-prefetch" href="https://cdn.jsdelivr.net"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.12.1/css/all.min.css" type="text/css"><link rel="stylesheet" href="/css/index.css?v=2.6.2"><script>var Stun = window.Stun || {};
+<meta name="twitter:image" content="https://striveizu.tech/2022/04/18/Javaday07/image-20220418192315137.png"><title>Javaday07 | Strive's Blog</title><link ref="canonical" href="https://striveizu.tech/2022/04/18/Javaday07/"><link rel="dns-prefetch" href="https://cdn.jsdelivr.net"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.12.1/css/all.min.css" type="text/css"><link rel="stylesheet" href="/css/index.css?v=2.6.2"><script>var Stun = window.Stun || {};
 var CONFIG = {
   root: '/',
   algolia: undefined,
@@ -322,7 +322,7 @@ window.CONFIG = CONFIG;</script><meta name="generator" content="Hexo 5.4.0"></he
 
         <h4 id="9-集合嵌套">
           <a href="#9-集合嵌套" class="heading-link"><i class="fas fa-link"></i></a><a href="#9-集合嵌套" class="headerlink" title="9 集合嵌套"></a>9 集合嵌套</h4>
-      </div><footer class="post-footer"><div class="post-ending ending"><div class="ending__text">------ 本文结束，感谢您的阅读 ------</div></div><div class="post-copyright copyright"><div class="copyright-author"><span class="copyright-author__name">本文作者: </span><span class="copyright-author__value"><a href="https://striveizu.top">Strive</a></span></div><div class="copyright-link"><span class="copyright-link__name">本文链接: </span><span class="copyright-link__value"><a href="https://striveizu.top/2022/04/18/Javaday07/">https://striveizu.top/2022/04/18/Javaday07/</a></span></div><div class="copyright-notice"><span class="copyright-notice__name">版权声明: </span><span class="copyright-notice__value">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en" rel="external nofollow" target="_blank">BY-NC-SA</a> 许可协议。转载请注明出处！</span></div></div><div class="post-tags"><span class="post-tags-item"><span class="post-tags-item__icon"><i class="fas fa-tag"></i></span><a class="post-tags-item__link" href="https://striveizu.top/tags/Java/">Java</a></span></div><nav class="post-paginator paginator"><div class="paginator-prev"><a class="paginator-prev__link" href="/2022/04/24/leetcodeday01/"><span class="paginator-prev__icon"><i class="fas fa-angle-left"></i></span><span class="paginator-prev__text">力扣刷题笔记day1--链表双指针、快慢指针</span></a></div><div class="paginator-next"><a class="paginator-next__link" href="/2022/04/18/Javaday06/"><span class="paginator-prev__text">Javaday06</span><span class="paginator-next__icon"><i class="fas fa-angle-right"></i></span></a></div></nav></footer></div></div></div><div class="sidebar-wrap" id="sidebar-wrap"><aside class="sidebar" id="sidebar"><div class="sidebar-nav"><span class="sidebar-nav-toc current">文章目录</span><span class="sidebar-nav-ov">站点概览</span></div><section class="sidebar-toc"><ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#Java%E8%AF%AD%E6%B3%95%E9%80%9F%E9%80%9Aday07%E2%80%93%E9%9B%86%E5%90%88"><span class="toc-number">1.</span> <span class="toc-text">
+      </div><footer class="post-footer"><div class="post-ending ending"><div class="ending__text">------ 本文结束，感谢您的阅读 ------</div></div><div class="post-copyright copyright"><div class="copyright-author"><span class="copyright-author__name">本文作者: </span><span class="copyright-author__value"><a href="https://striveizu.tech">Strive</a></span></div><div class="copyright-link"><span class="copyright-link__name">本文链接: </span><span class="copyright-link__value"><a href="https://striveizu.tech/2022/04/18/Javaday07/">https://striveizu.tech/2022/04/18/Javaday07/</a></span></div><div class="copyright-notice"><span class="copyright-notice__name">版权声明: </span><span class="copyright-notice__value">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en" rel="external nofollow" target="_blank">BY-NC-SA</a> 许可协议。转载请注明出处！</span></div></div><div class="post-tags"><span class="post-tags-item"><span class="post-tags-item__icon"><i class="fas fa-tag"></i></span><a class="post-tags-item__link" href="https://striveizu.tech/tags/Java/">Java</a></span></div><nav class="post-paginator paginator"><div class="paginator-prev"><a class="paginator-prev__link" href="/2022/04/24/leetcodeday01/"><span class="paginator-prev__icon"><i class="fas fa-angle-left"></i></span><span class="paginator-prev__text">力扣刷题笔记day1--链表双指针、快慢指针</span></a></div><div class="paginator-next"><a class="paginator-next__link" href="/2022/04/18/Javaday06/"><span class="paginator-prev__text">Javaday06</span><span class="paginator-next__icon"><i class="fas fa-angle-right"></i></span></a></div></nav></footer></div></div></div><div class="sidebar-wrap" id="sidebar-wrap"><aside class="sidebar" id="sidebar"><div class="sidebar-nav"><span class="sidebar-nav-toc current">文章目录</span><span class="sidebar-nav-ov">站点概览</span></div><section class="sidebar-toc"><ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#Java%E8%AF%AD%E6%B3%95%E9%80%9F%E9%80%9Aday07%E2%80%93%E9%9B%86%E5%90%88"><span class="toc-number">1.</span> <span class="toc-text">
           Java语法速通day07–集合</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-%E9%9B%86%E5%90%88%E4%BD%93%E7%B3%BB%E7%BB%93%E6%9E%84"><span class="toc-number">1.1.</span> <span class="toc-text">
           1 集合体系结构</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-Collection"><span class="toc-number">1.2.</span> <span class="toc-text">
           2 Collection</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#2-1-Collection%E9%9B%86%E5%90%88%E5%B8%B8%E7%94%A8api"><span class="toc-number">1.2.1.</span> <span class="toc-text">
