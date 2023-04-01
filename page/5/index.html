@@ -28,7 +28,87 @@ var CONFIG = {
   sourcePath: {"js":"js","css":"css","images":"images"},
 };
 
-window.CONFIG = CONFIG;</script><meta name="generator" content="Hexo 5.4.0"></head><body><div class="container" id="container"><header class="header" id="header"><div class="header-inner"><nav class="header-nav header-nav--fixed"><div class="header-nav-inner"><div class="header-nav-menubtn"><i class="fas fa-bars"></i></div><div class="header-nav-menu"><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/"><span class="header-nav-menu-item__icon"><i class="fas fa-home"></i></span><span class="header-nav-menu-item__text">首页</span></a></div><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/about/"><span class="header-nav-menu-item__icon"><i class="fas fa-address-card"></i></span><span class="header-nav-menu-item__text">关于</span></a></div><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="javascript:;" onclick="return false;"><span class="header-nav-menu-item__icon"><i class="fas fa-edit"></i></span><span class="header-nav-menu-item__text">文章</span></a><div class="header-nav-submenu"><div class="header-nav-submenu-item"><a class="header-nav-submenu-item__link" href="/archives/"><span class="header-nav-submenu-item__icon"><i class="fas fa-folder-open"></i></span><span class="header-nav-submenu-item__text">归档</span></a></div><div class="header-nav-submenu-item"><a class="header-nav-submenu-item__link" href="/categories/"><span class="header-nav-submenu-item__icon"><i class="fas fa-layer-group"></i></span><span class="header-nav-submenu-item__text">分类</span></a></div><div class="header-nav-submenu-item"><a class="header-nav-submenu-item__link" href="/tags/"><span class="header-nav-submenu-item__icon"><i class="fas fa-tags"></i></span><span class="header-nav-submenu-item__text">标签</span></a></div></div></div></div><div class="header-nav-mode"><div class="mode"><div class="mode-track"><span class="mode-track-moon"></span><span class="mode-track-sun"></span></div><div class="mode-thumb"></div></div></div></div></nav><div class="header-banner"><div class="header-banner-info"><div class="header-banner-info__title">Strive's Blog</div><div class="header-banner-info__subtitle">你我期许的绝非遥不可及</div></div><div class="header-banner-arrow"><div class="header-banner-arrow__icon"><i class="fas fa-angle-down"></i></div></div></div></div></header><main class="main" id="main"><div class="main-inner"><div class="content-wrap" id="content-wrap"><div class="content content-home" id="content"><section class="postlist"><article class="postlist-item post"><header class="post-header"><h1 class="post-title"><a class="post-title__link" href="/2022/02/21/object-detect-EVALUATION-METRICS/">目标检测常用的评估指标</a></h1><div class="post-meta"><span class="post-meta-item post-meta-item--createtime"><span class="post-meta-item__icon"><i class="far fa-calendar-plus"></i></span><span class="post-meta-item__info">发表于</span><span class="post-meta-item__value">2022-02-21</span></span><span class="post-meta-item post-meta-item--updatetime"><span class="post-meta-item__icon"><i class="far fa-calendar-check"></i></span><span class="post-meta-item__info">更新于</span><span class="post-meta-item__value">2022-03-06</span></span></div></header><div class="post-body"><div class="post-excerpt"><p>目标检测常用的评估指标</p>
+window.CONFIG = CONFIG;</script><meta name="generator" content="Hexo 5.4.0"></head><body><div class="container" id="container"><header class="header" id="header"><div class="header-inner"><nav class="header-nav header-nav--fixed"><div class="header-nav-inner"><div class="header-nav-menubtn"><i class="fas fa-bars"></i></div><div class="header-nav-menu"><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/"><span class="header-nav-menu-item__icon"><i class="fas fa-home"></i></span><span class="header-nav-menu-item__text">首页</span></a></div><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/about/"><span class="header-nav-menu-item__icon"><i class="fas fa-address-card"></i></span><span class="header-nav-menu-item__text">关于</span></a></div><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="javascript:;" onclick="return false;"><span class="header-nav-menu-item__icon"><i class="fas fa-edit"></i></span><span class="header-nav-menu-item__text">文章</span></a><div class="header-nav-submenu"><div class="header-nav-submenu-item"><a class="header-nav-submenu-item__link" href="/archives/"><span class="header-nav-submenu-item__icon"><i class="fas fa-folder-open"></i></span><span class="header-nav-submenu-item__text">归档</span></a></div><div class="header-nav-submenu-item"><a class="header-nav-submenu-item__link" href="/categories/"><span class="header-nav-submenu-item__icon"><i class="fas fa-layer-group"></i></span><span class="header-nav-submenu-item__text">分类</span></a></div><div class="header-nav-submenu-item"><a class="header-nav-submenu-item__link" href="/tags/"><span class="header-nav-submenu-item__icon"><i class="fas fa-tags"></i></span><span class="header-nav-submenu-item__text">标签</span></a></div></div></div></div><div class="header-nav-mode"><div class="mode"><div class="mode-track"><span class="mode-track-moon"></span><span class="mode-track-sun"></span></div><div class="mode-thumb"></div></div></div></div></nav><div class="header-banner"><div class="header-banner-info"><div class="header-banner-info__title">Strive's Blog</div><div class="header-banner-info__subtitle">你我期许的绝非遥不可及</div></div><div class="header-banner-arrow"><div class="header-banner-arrow__icon"><i class="fas fa-angle-down"></i></div></div></div></div></header><main class="main" id="main"><div class="main-inner"><div class="content-wrap" id="content-wrap"><div class="content content-home" id="content"><section class="postlist"><article class="postlist-item post"><header class="post-header"><h1 class="post-title"><a class="post-title__link" href="/2022/02/26/CenterNet%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/">win11/Linux CenterNet环境配置记录</a></h1><div class="post-meta"><span class="post-meta-item post-meta-item--createtime"><span class="post-meta-item__icon"><i class="far fa-calendar-plus"></i></span><span class="post-meta-item__info">发表于</span><span class="post-meta-item__value">2022-02-26</span></span><span class="post-meta-item post-meta-item--updatetime"><span class="post-meta-item__icon"><i class="far fa-calendar-check"></i></span><span class="post-meta-item__info">更新于</span><span class="post-meta-item__value">2022-03-06</span></span></div></header><div class="post-body"><div class="post-excerpt">
+        <h3 id="win11-Linux-CenterNet环境配置记录">
+          <a href="#win11-Linux-CenterNet环境配置记录" class="heading-link"><i class="fas fa-link"></i></a><a href="#win11-Linux-CenterNet环境配置记录" class="headerlink" title="win11/Linux CenterNet环境配置记录"></a>win11/Linux CenterNet环境配置记录</h3>
+      
+        <h4 id="安装环境">
+          <a href="#安装环境" class="heading-link"><i class="fas fa-link"></i></a><a href="#安装环境" class="headerlink" title="安装环境:"></a>安装环境:</h4>
+      <p>RTX 3060+CUDA11.1+pytorch1.8</p>
+<p>windows版本：win11(10也兼容)</p>
+<p>ubuntu:16.04</p>
+
+        <h4 id="0-预备工作">
+          <a href="#0-预备工作" class="heading-link"><i class="fas fa-link"></i></a><a href="#0-预备工作" class="headerlink" title="0 预备工作"></a>0 预备工作</h4>
+      <p>下载vs2017/2015，编译DCN需要(仅windows需要)</p>
+<p>为CenterNet创建一个Conda环境（可选）</p>
+<p>注：pytorch版本需根据自身CUDA CUDNN版本实际选择，选择和CUDA版本匹配的即可</p>
+<figure class="highlight plaintext"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">conda create --name CenterNet python=3.6</span><br><span class="line">conda activate CenterNet</span><br><span class="line">conda install pytorch==1.8.0 torchvision==0.9.0 torchaudio==0.8.0 cudatoolkit=11.1 -c pytorch -c conda-forge</span><br></pre></td></tr></table></div></figure>
+
+
+
+
+        <h4 id="1-下载CenterNet代码">
+          <a href="#1-下载CenterNet代码" class="heading-link"><i class="fas fa-link"></i></a><a href="#1-下载CenterNet代码" class="headerlink" title="1 下载CenterNet代码"></a>1 下载CenterNet代码</h4>
+      <p><code>git clone https://github.com/xingyizhou/CenterNet.git</code></p>
+
+        <h4 id="2-安装相关的需求包">
+          <a href="#2-安装相关的需求包" class="heading-link"><i class="fas fa-link"></i></a><a href="#2-安装相关的需求包" class="headerlink" title="2 安装相关的需求包"></a>2 安装相关的需求包</h4>
+      <figure class="highlight plaintext"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cd CenterNet</span><br><span class="line">pip install -r requirements.txt</span><br></pre></td></tr></table></div></figure>
+
+
+        <h4 id="3-安装cocotools">
+          <a href="#3-安装cocotools" class="heading-link"><i class="fas fa-link"></i></a><a href="#3-安装cocotools" class="headerlink" title="3 安装cocotools"></a>3 安装cocotools</h4>
+      <figure class="highlight plaintext"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip install pycocotools</span><br></pre></td></tr></table></div></figure>
+
+
+        <h4 id="4-编译DCNv2">
+          <a href="#4-编译DCNv2" class="heading-link"><i class="fas fa-link"></i></a><a href="#4-编译DCNv2" class="headerlink" title="4 编译DCNv2"></a>4 编译DCNv2</h4>
+      <p>由于我选择的pytorch版本较高：1.8，因此从github上下载适合1.8的DCNv2源码</p>
+<figure class="highlight plaintext"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git clone https://github.com/jinfagang/DCNv2_latest.git</span><br></pre></td></tr></table></div></figure>
+
+<p>进入到CenterNet\src\lib\models\networks</p>
+<p>删除原有DCNv2文件夹</p>
+<p>将clone下来的DCNv2_latest文件夹重命名为DCNv2</p>
+<p>进入DCNv2文件夹</p>
+
+        <h5 id="4-1-windows系统编译DCNv2：">
+          <a href="#4-1-windows系统编译DCNv2：" class="heading-link"><i class="fas fa-link"></i></a><a href="#4-1-windows系统编译DCNv2：" class="headerlink" title="4.1 windows系统编译DCNv2："></a>4.1 windows系统编译DCNv2：</h5>
+      <p>编译之前确保已经安装了vs2015或vs2017，2019尝试不成功。</p>
+<p>在anaconda prompt中编译DCNv2</p>
+<p>激活CenterNet虚拟环境之后执行 <code>python setup.py build develop</code></p>
+<p><img src="/2022/02/26/CenterNet%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/image-20220225220337277.png" alt="image-20220225220337277"></p>
+<p>至此 windows环境下CenterNet环境搭建完成，NMS编译看自身需求，有需要可自行CSDN</p>
+
+        <h5 id="4-2-Linux系统编译DCNv2：">
+          <a href="#4-2-Linux系统编译DCNv2：" class="heading-link"><i class="fas fa-link"></i></a><a href="#4-2-Linux系统编译DCNv2：" class="headerlink" title="4.2 Linux系统编译DCNv2："></a>4.2 Linux系统编译DCNv2：</h5>
+      <p>确保CUDA CUDNN Pytorch等组件安装成功，首先打开terminal激活centernet环境。</p>
+<p>进入到DCNv2文件夹，如果没有sudo权限，可以用文件编辑器打开DCNv2文件夹下的make.sh文件，将文件中的sudo全部删除即可。</p>
+<p>在terminal中执行 <code>./make.sh</code></p>
+<p>至此，Linux环境下CenterNet环境搭建完成，NMS编译看自身需求，有需要可自行CSDN</p>
+
+        <h4 id="问题1：Windows下DCNv2编译，显示cl找不到指定文件。">
+          <a href="#问题1：Windows下DCNv2编译，显示cl找不到指定文件。" class="heading-link"><i class="fas fa-link"></i></a><a href="#问题1：Windows下DCNv2编译，显示cl找不到指定文件。" class="headerlink" title="问题1：Windows下DCNv2编译，显示cl找不到指定文件。"></a>问题1：Windows下DCNv2编译，显示cl找不到指定文件。</h4>
+      <p>问题截图如下：</p>
+<p><img src="/2022/02/26/CenterNet%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/image-20220225210626090.png" alt="image-20220225210626090"></p>
+<p><img src="/2022/02/26/CenterNet%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/image-20220225210639634.png" alt="image-20220225210639634"></p>
+<p>解决办法：安装vs2017，在vs2017的安装目录找到<img src="/2022/02/26/CenterNet%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/image-20220225212021136.png" alt="image-20220225212021136"></p>
+<p>找到cl.exe</p>
+<p><img src="/2022/02/26/CenterNet%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/image-20220225212115441.png" alt="image-20220225212115441"></p>
+<p>将这个地址添加到环境变量的Path中</p>
+<p><img src="/2022/02/26/CenterNet%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/image-20220225212225783.png" alt="image-20220225212225783"></p>
+<p>再执行，编译成功</p>
+<p><img src="/2022/02/26/CenterNet%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/image-20220225212301425.png" alt="image-20220225212301425"></p>
+<p><img src="/2022/02/26/CenterNet%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/image-20220225211739815.png" alt="image-20220225211739815"></p>
+
+        <h4 id="问题2：Linux下DCNv2编译，显示no-such-file-or-directory-usr-local-cuda-10-0等。">
+          <a href="#问题2：Linux下DCNv2编译，显示no-such-file-or-directory-usr-local-cuda-10-0等。" class="heading-link"><i class="fas fa-link"></i></a><a href="#问题2：Linux下DCNv2编译，显示no-such-file-or-directory-usr-local-cuda-10-0等。" class="headerlink" title="问题2：Linux下DCNv2编译，显示no such file or directory:/usr/local/cuda-10.0等。"></a>问题2：Linux下DCNv2编译，显示no such file or directory:/usr/local/cuda-10.0等。</h4>
+      <p>未留下问题截图，解决方法为找到自己的cuda安装目录，打开terminal执行：</p>
+<p>注意等号两边不能有空格</p>
+<figure class="highlight plaintext"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">export CUDA_HOME=你的cuda安装目录</span><br><span class="line">如：</span><br><span class="line">export CUDA_HOME=/dxs/cuda-10.2</span><br></pre></td></tr></table></div></figure>
+
+<p>执行完之后再进行编译</p>
+</div></div></article><article class="postlist-item post"><header class="post-header"><h1 class="post-title"><a class="post-title__link" href="/2022/02/21/object-detect-EVALUATION-METRICS/">目标检测常用的评估指标</a></h1><div class="post-meta"><span class="post-meta-item post-meta-item--createtime"><span class="post-meta-item__icon"><i class="far fa-calendar-plus"></i></span><span class="post-meta-item__info">发表于</span><span class="post-meta-item__value">2022-02-21</span></span><span class="post-meta-item post-meta-item--updatetime"><span class="post-meta-item__icon"><i class="far fa-calendar-check"></i></span><span class="post-meta-item__info">更新于</span><span class="post-meta-item__value">2022-03-06</span></span></div></header><div class="post-body"><div class="post-excerpt"><p>目标检测常用的评估指标</p>
 
         <h5 id="混淆矩阵">
           <a href="#混淆矩阵" class="heading-link"><i class="fas fa-link"></i></a><a href="#混淆矩阵" class="headerlink" title="混淆矩阵"></a>混淆矩阵</h5>
@@ -580,30 +660,4 @@ window.CONFIG = CONFIG;</script><meta name="generator" content="Hexo 5.4.0"></he
 <p>两种方式：</p>
 <figure class="highlight c++"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">typedef</span> <span class="keyword">double</span> wages; <span class="comment">//wages是double的同义词</span></span><br><span class="line"><span class="keyword">typedef</span> wages base, *p;  <span class="comment">//等价于double base;和double *p</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> SI = Sales_item;</span><br><span class="line">SI item;  <span class="comment">//等价于Sales_item item;</span></span><br></pre></td></tr></table></div></figure>
 
-</div></div></article><article class="postlist-item post"><header class="post-header"><h1 class="post-title"><a class="post-title__link" href="/2021/12/23/object-detect/">物体识别</a></h1><div class="post-meta"><span class="post-meta-item post-meta-item--createtime"><span class="post-meta-item__icon"><i class="far fa-calendar-plus"></i></span><span class="post-meta-item__info">发表于</span><span class="post-meta-item__value">2021-12-23</span></span><span class="post-meta-item post-meta-item--updatetime"><span class="post-meta-item__icon"><i class="far fa-calendar-check"></i></span><span class="post-meta-item__info">更新于</span><span class="post-meta-item__value">2021-12-24</span></span></div></header><div class="post-body"><div class="post-excerpt">
-        <h3 id="一、物体识别相关术语解释">
-          <a href="#一、物体识别相关术语解释" class="heading-link"><i class="fas fa-link"></i></a><a href="#一、物体识别相关术语解释" class="headerlink" title="一、物体识别相关术语解释"></a>一、物体识别相关术语解释</h3>
-      
-        <h4 id="1-1-锚框、边缘框">
-          <a href="#1-1-锚框、边缘框" class="heading-link"><i class="fas fa-link"></i></a><a href="#1-1-锚框、边缘框" class="headerlink" title="1.1 锚框、边缘框"></a>1.1 锚框、边缘框</h4>
-      <p><em>边界框</em>（bounding box）来描述对象的空间位置，一般描述的是物体的真实所在位置。 边界框是矩形的，由矩形左上角的以及右下角的x和y坐标决定。目标检测算法通常会在输入图像中采样大量的区域，然后判断这些区域中是否包含我们感兴趣的目标，并调整区域边界从而更准确地预测目标的<em>真实边界框</em>（ground-truth bounding box）。锚框（anchor box）一般是预测算法预先提出的一组框，它是以每个像素为中心，生成多个缩放比和宽高比（aspect ratio）不同的边界框。算法检测预设置的锚框内是否有关注的物体，如果有，预测锚框到真实边缘框的偏移，从而对锚框进行调整。</p>
-
-        <h5 id="1-1-1-锚框标注">
-          <a href="#1-1-1-锚框标注" class="heading-link"><i class="fas fa-link"></i></a><a href="#1-1-1-锚框标注" class="headerlink" title="1.1.1 锚框标注"></a>1.1.1 锚框标注</h5>
-      <p>对于一张图片来进行目标检测，我们可能会生成大量的锚框。对每个锚框来说都是一个训练样本。我们需要将每个锚框要么标注成背景，要么关联上一个真实的边缘框。因此我们需要对锚框进行标注，常用的做法是计算每个锚框与每个边缘框的IoU，分别取最大值将锚框标注成边缘框相同的标注。</p>
-
-        <h5 id="1-2-NMS非极大值抑制输出">
-          <a href="#1-2-NMS非极大值抑制输出" class="heading-link"><i class="fas fa-link"></i></a><a href="#1-2-NMS非极大值抑制输出" class="headerlink" title="1.2 NMS非极大值抑制输出"></a>1.2 NMS非极大值抑制输出</h5>
-      <p>因为每个锚框都预测一个边缘框，因此可能出现很多锚框预测一个相同的边缘框，如图所示</p>
-<p><img src="/2021/12/23/object-detect/images/object-detect/image-20211223100019550.png" alt="image-20211223100019550"></p>
-<p>这些框之间的区别仅仅在于覆盖的范围不同。使用NMS可以合并相似的预测，主要的流程是先选中非背景类的最大预测值，然后去掉所有其它和这个最大预测锚框的IoU值大于Theta值(一个自己设置的阈值)的预测，重复以上流程。</p>
-
-        <h4 id="1-2-比较锚框与真实框的相似度指标–IOU">
-          <a href="#1-2-比较锚框与真实框的相似度指标–IOU" class="heading-link"><i class="fas fa-link"></i></a><a href="#1-2-比较锚框与真实框的相似度指标–IOU" class="headerlink" title="1.2 比较锚框与真实框的相似度指标–IOU"></a>1.2 比较锚框与真实框的相似度指标–IOU</h4>
-      <p>IoU往往用来计算两个框之间的相似度，计算公式是给定两个集合A和B，用它的交集闭上并集。</p>
-<p><img src="/2021/12/23/object-detect/images/object-detect/image-20211223094115028.png" alt="image-20211223094115028"></p>
-<p><img src="/2021/12/23/object-detect/images/object-detect/image-20211223094125414.png" alt="image-20211223094125414"></p>
-
-        <h3 id="二、基于锚框的检测算法的流程">
-          <a href="#二、基于锚框的检测算法的流程" class="heading-link"><i class="fas fa-link"></i></a><a href="#二、基于锚框的检测算法的流程" class="headerlink" title="二、基于锚框的检测算法的流程"></a>二、基于锚框的检测算法的流程</h3>
-      <h4 id><a href="#" class="headerlink" title></a><img src="/2021/12/23/object-detect/images/object-detect/image-20211223100414222.png" alt="image-20211223100414222"></h4></div></div></article></section><nav class="paginator"><div class="paginator-inner"><a class="extend prev" rel="prev" href="/page/4/"><i class="fas fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/4/">4</a><span class="page-number current">5</span><a class="page-number" href="/page/6/">6</a><a class="page-number" href="/page/7/">7</a><a class="extend next" rel="next" href="/page/6/"><i class="fas fa-angle-right"></i></a></div></nav></div></div><div class="sidebar-wrap" id="sidebar-wrap"><aside class="sidebar" id="sidebar"><section class="sidebar-toc hide"></section><!-- ov = overview--><section class="sidebar-ov"><div class="sidebar-ov-author"><div class="sidebar-ov-author__avatar"><img class="sidebar-ov-author__avatar_img" src="/images/icons/photo.png" alt="avatar"></div><p class="sidebar-ov-author__text">To be a great person.</p></div><div class="sidebar-ov-cc"><a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en" target="_blank" rel="noopener" data-popover="知识共享许可协议" data-popover-pos="up"><img src="/images/cc-by-nc-sa.svg"></a></div></section></aside></div><div class="clearfix"></div></div></main><footer class="footer" id="footer"><div class="footer-inner"><div><span>Copyright © 2023</span><span class="footer__icon"><i class="fas fa-heart"></i></span><span>Strive</span></div><div><span>由 <a href="http://hexo.io/" title="Hexo" target="_blank" rel="noopener">Hexo</a> 强力驱动</span><span> v5.4.0</span><span class="footer__devider">|</span><span>主题 - <a href="https://github.com/liuyib/hexo-theme-stun/" title="Stun" target="_blank" rel="noopener">Stun</a></span><span> v2.6.2</span></div></div></footer><div class="loading-bar" id="loading-bar"><div class="loading-bar__progress"></div></div><div class="back2top" id="back2top"><span class="back2top__icon"><i class="fas fa-rocket"></i></span></div></div><script src="https://cdn.jsdelivr.net/npm/jquery@v3.4.1/dist/jquery.min.js"></script><script src="https://cdn.jsdelivr.net/npm/velocity-animate@1.5.2/velocity.min.js"></script><script src="https://cdn.jsdelivr.net/npm/velocity-animate@1.5.2/velocity.ui.min.js"></script><script src="/js/utils.js?v=2.6.2"></script><script src="/js/stun-boot.js?v=2.6.2"></script><script src="/js/scroll.js?v=2.6.2"></script><script src="/js/header.js?v=2.6.2"></script><script src="/js/sidebar.js?v=2.6.2"></script></body></html>
+</div></div></article></section><nav class="paginator"><div class="paginator-inner"><a class="extend prev" rel="prev" href="/page/4/"><i class="fas fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/4/">4</a><span class="page-number current">5</span><a class="page-number" href="/page/6/">6</a><a class="page-number" href="/page/7/">7</a><a class="extend next" rel="next" href="/page/6/"><i class="fas fa-angle-right"></i></a></div></nav></div></div><div class="sidebar-wrap" id="sidebar-wrap"><aside class="sidebar" id="sidebar"><section class="sidebar-toc hide"></section><!-- ov = overview--><section class="sidebar-ov"><div class="sidebar-ov-author"><div class="sidebar-ov-author__avatar"><img class="sidebar-ov-author__avatar_img" src="/images/icons/photo.png" alt="avatar"></div><p class="sidebar-ov-author__text">To be a great person.</p></div><div class="sidebar-ov-cc"><a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en" target="_blank" rel="noopener" data-popover="知识共享许可协议" data-popover-pos="up"><img src="/images/cc-by-nc-sa.svg"></a></div></section></aside></div><div class="clearfix"></div></div></main><footer class="footer" id="footer"><div class="footer-inner"><div><span>Copyright © 2023</span><span class="footer__icon"><i class="fas fa-heart"></i></span><span>Strive</span></div><div><span>由 <a href="http://hexo.io/" title="Hexo" target="_blank" rel="noopener">Hexo</a> 强力驱动</span><span> v5.4.0</span><span class="footer__devider">|</span><span>主题 - <a href="https://github.com/liuyib/hexo-theme-stun/" title="Stun" target="_blank" rel="noopener">Stun</a></span><span> v2.6.2</span></div></div></footer><div class="loading-bar" id="loading-bar"><div class="loading-bar__progress"></div></div><div class="back2top" id="back2top"><span class="back2top__icon"><i class="fas fa-rocket"></i></span></div></div><script src="https://cdn.jsdelivr.net/npm/jquery@v3.4.1/dist/jquery.min.js"></script><script src="https://cdn.jsdelivr.net/npm/velocity-animate@1.5.2/velocity.min.js"></script><script src="https://cdn.jsdelivr.net/npm/velocity-animate@1.5.2/velocity.ui.min.js"></script><script src="/js/utils.js?v=2.6.2"></script><script src="/js/stun-boot.js?v=2.6.2"></script><script src="/js/scroll.js?v=2.6.2"></script><script src="/js/header.js?v=2.6.2"></script><script src="/js/sidebar.js?v=2.6.2"></script></body></html>
