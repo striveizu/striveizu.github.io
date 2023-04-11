@@ -5,14 +5,13 @@
 <meta property="og:site_name" content="Strive&#39;s Blog">
 <meta property="og:description" content="面试复盘：美团测试开发（暑期实习）       面试时间：4月10日 一面 部门名称：到店平台技术部 到店平台质量保障部QA                     1、简单介绍项目（5分钟）                           2、做的过程中有没有遇到什么问题？怎么解决的。       瞎吹 扯到浏览器端多路视频管理，部分摄像头推流卡住 解">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://striveizu.tech/2023/04/11/%E9%9D%A2%E8%AF%95%E5%A4%8D%E7%9B%98001/Users/97854/AppData/Roaming/Typora/typora-user-images/image-20230411210308883.png">
 <meta property="og:image" content="https://striveizu.tech/2023/04/11/%E9%9D%A2%E8%AF%95%E5%A4%8D%E7%9B%98001/Users/97854/AppData/Roaming/Typora/typora-user-images/image-20230411213000483.png">
 <meta property="article:published_time" content="2023-04-11T12:49:46.000Z">
-<meta property="article:modified_time" content="2023-04-11T14:21:11.068Z">
+<meta property="article:modified_time" content="2023-04-11T14:26:43.047Z">
 <meta property="article:author" content="Strive">
 <meta property="article:tag" content="面试复盘">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://striveizu.tech/2023/04/11/%E9%9D%A2%E8%AF%95%E5%A4%8D%E7%9B%98001/Users/97854/AppData/Roaming/Typora/typora-user-images/image-20230411210308883.png"><title>面试复盘001-暑期实习 美团测开一面 | Strive's Blog</title><link ref="canonical" href="https://striveizu.tech/2023/04/11/%E9%9D%A2%E8%AF%95%E5%A4%8D%E7%9B%98001/"><link rel="dns-prefetch" href="https://cdn.jsdelivr.net"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.12.1/css/all.min.css" type="text/css"><link rel="stylesheet" href="/css/index.css?v=2.6.2"><script>var Stun = window.Stun || {};
+<meta name="twitter:image" content="https://striveizu.tech/2023/04/11/%E9%9D%A2%E8%AF%95%E5%A4%8D%E7%9B%98001/Users/97854/AppData/Roaming/Typora/typora-user-images/image-20230411213000483.png"><title>面试复盘001-暑期实习 美团测开一面 | Strive's Blog</title><link ref="canonical" href="https://striveizu.tech/2023/04/11/%E9%9D%A2%E8%AF%95%E5%A4%8D%E7%9B%98001/"><link rel="dns-prefetch" href="https://cdn.jsdelivr.net"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.12.1/css/all.min.css" type="text/css"><link rel="stylesheet" href="/css/index.css?v=2.6.2"><script>var Stun = window.Stun || {};
 var CONFIG = {
   root: '/',
   algolia: undefined,
@@ -62,7 +61,53 @@ window.CONFIG = CONFIG;</script><meta name="generator" content="Hexo 5.4.0"></he
         <h5 id="5、数据库-mysql增删改查命令-数据库的删除命令有哪些？删除数据表中的内容-保留表的结构删除数据内容">
           <a href="#5、数据库-mysql增删改查命令-数据库的删除命令有哪些？删除数据表中的内容-保留表的结构删除数据内容" class="heading-link"><i class="fas fa-link"></i></a><a href="#5、数据库-mysql增删改查命令-数据库的删除命令有哪些？删除数据表中的内容-保留表的结构删除数据内容" class="headerlink" title="5、数据库 mysql增删改查命令 数据库的删除命令有哪些？删除数据表中的内容 保留表的结构删除数据内容"></a>5、数据库 mysql增删改查命令 数据库的删除命令有哪些？删除数据表中的内容 保留表的结构删除数据内容</h5>
       <p>（删除一行 delete from  保留表结构删除内容：**truncate (截断)**）</p>
-<p><img src="/2023/04/11/%E9%9D%A2%E8%AF%95%E5%A4%8D%E7%9B%98001/Users\97854\AppData\Roaming\Typora\typora-user-images\image-20230411210308883.png" alt="image-20230411210308883"></p>
+<p>答在 MySQL 中，使用 truncate、delete 和 drop 都可以实现表删除，但它们 3 个的使用场景和执行效果完全不同，接下来我们来盘点一下。<br><strong>truncate、delete、drop区别概述</strong><br>它们 3 个的区别如下表所示：</p>
+<div class="table-container"><table>
+<thead>
+<tr>
+<th>区别点</th>
+<th>drop</th>
+<th>truncate</th>
+<th>delete</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>执行速度</td>
+<td>快</td>
+<td>较快</td>
+<td>慢</td>
+</tr>
+<tr>
+<td>命令分类</td>
+<td>DDL（数据定义语言）</td>
+<td>DDL（数据定义语言）</td>
+<td>DML（数据操作语言）</td>
+</tr>
+<tr>
+<td>删除对象</td>
+<td>删除整张表和表结构，以及表的索引、约束和触发器。</td>
+<td>只删除表数据，表的结构、索引、约束等会被保留。</td>
+<td>只删除表的全部或部分数据，表结构、索引、约束等会被保留。</td>
+</tr>
+<tr>
+<td>删除条件(where)</td>
+<td>不能用</td>
+<td>不能用</td>
+<td>可使用</td>
+</tr>
+<tr>
+<td>回滚</td>
+<td>不可回滚</td>
+<td>不可回滚</td>
+<td>可回滚</td>
+</tr>
+<tr>
+<td>自增初始值</td>
+<td>-</td>
+<td>重置</td>
+<td>不重置</td>
+</tr>
+</tbody></table></div>
 
         <h5 id="6、删除数据表？">
           <a href="#6、删除数据表？" class="heading-link"><i class="fas fa-link"></i></a><a href="#6、删除数据表？" class="headerlink" title="6、删除数据表？"></a>6、删除数据表？</h5>
