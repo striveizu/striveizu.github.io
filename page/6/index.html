@@ -28,7 +28,177 @@ var CONFIG = {
   sourcePath: {"js":"js","css":"css","images":"images"},
 };
 
-window.CONFIG = CONFIG;</script><meta name="generator" content="Hexo 5.4.0"></head><body><div class="container" id="container"><header class="header" id="header"><div class="header-inner"><nav class="header-nav header-nav--fixed"><div class="header-nav-inner"><div class="header-nav-menubtn"><i class="fas fa-bars"></i></div><div class="header-nav-menu"><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/"><span class="header-nav-menu-item__icon"><i class="fas fa-home"></i></span><span class="header-nav-menu-item__text">首页</span></a></div><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/about/"><span class="header-nav-menu-item__icon"><i class="fas fa-address-card"></i></span><span class="header-nav-menu-item__text">关于</span></a></div><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="javascript:;" onclick="return false;"><span class="header-nav-menu-item__icon"><i class="fas fa-edit"></i></span><span class="header-nav-menu-item__text">文章</span></a><div class="header-nav-submenu"><div class="header-nav-submenu-item"><a class="header-nav-submenu-item__link" href="/archives/"><span class="header-nav-submenu-item__icon"><i class="fas fa-folder-open"></i></span><span class="header-nav-submenu-item__text">归档</span></a></div><div class="header-nav-submenu-item"><a class="header-nav-submenu-item__link" href="/categories/"><span class="header-nav-submenu-item__icon"><i class="fas fa-layer-group"></i></span><span class="header-nav-submenu-item__text">分类</span></a></div><div class="header-nav-submenu-item"><a class="header-nav-submenu-item__link" href="/tags/"><span class="header-nav-submenu-item__icon"><i class="fas fa-tags"></i></span><span class="header-nav-submenu-item__text">标签</span></a></div></div></div></div><div class="header-nav-mode"><div class="mode"><div class="mode-track"><span class="mode-track-moon"></span><span class="mode-track-sun"></span></div><div class="mode-thumb"></div></div></div></div></nav><div class="header-banner"><div class="header-banner-info"><div class="header-banner-info__title">Strive's Blog</div><div class="header-banner-info__subtitle">你我期许的绝非遥不可及</div></div><div class="header-banner-arrow"><div class="header-banner-arrow__icon"><i class="fas fa-angle-down"></i></div></div></div></div></header><main class="main" id="main"><div class="main-inner"><div class="content-wrap" id="content-wrap"><div class="content content-home" id="content"><section class="postlist"><article class="postlist-item post"><header class="post-header"><h1 class="post-title"><a class="post-title__link" href="/2021/12/23/object-detect/">物体识别</a></h1><div class="post-meta"><span class="post-meta-item post-meta-item--createtime"><span class="post-meta-item__icon"><i class="far fa-calendar-plus"></i></span><span class="post-meta-item__info">发表于</span><span class="post-meta-item__value">2021-12-23</span></span><span class="post-meta-item post-meta-item--updatetime"><span class="post-meta-item__icon"><i class="far fa-calendar-check"></i></span><span class="post-meta-item__info">更新于</span><span class="post-meta-item__value">2021-12-24</span></span></div></header><div class="post-body"><div class="post-excerpt">
+window.CONFIG = CONFIG;</script><meta name="generator" content="Hexo 5.4.0"></head><body><div class="container" id="container"><header class="header" id="header"><div class="header-inner"><nav class="header-nav header-nav--fixed"><div class="header-nav-inner"><div class="header-nav-menubtn"><i class="fas fa-bars"></i></div><div class="header-nav-menu"><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/"><span class="header-nav-menu-item__icon"><i class="fas fa-home"></i></span><span class="header-nav-menu-item__text">首页</span></a></div><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/about/"><span class="header-nav-menu-item__icon"><i class="fas fa-address-card"></i></span><span class="header-nav-menu-item__text">关于</span></a></div><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="javascript:;" onclick="return false;"><span class="header-nav-menu-item__icon"><i class="fas fa-edit"></i></span><span class="header-nav-menu-item__text">文章</span></a><div class="header-nav-submenu"><div class="header-nav-submenu-item"><a class="header-nav-submenu-item__link" href="/archives/"><span class="header-nav-submenu-item__icon"><i class="fas fa-folder-open"></i></span><span class="header-nav-submenu-item__text">归档</span></a></div><div class="header-nav-submenu-item"><a class="header-nav-submenu-item__link" href="/categories/"><span class="header-nav-submenu-item__icon"><i class="fas fa-layer-group"></i></span><span class="header-nav-submenu-item__text">分类</span></a></div><div class="header-nav-submenu-item"><a class="header-nav-submenu-item__link" href="/tags/"><span class="header-nav-submenu-item__icon"><i class="fas fa-tags"></i></span><span class="header-nav-submenu-item__text">标签</span></a></div></div></div></div><div class="header-nav-mode"><div class="mode"><div class="mode-track"><span class="mode-track-moon"></span><span class="mode-track-sun"></span></div><div class="mode-thumb"></div></div></div></div></nav><div class="header-banner"><div class="header-banner-info"><div class="header-banner-info__title">Strive's Blog</div><div class="header-banner-info__subtitle">你我期许的绝非遥不可及</div></div><div class="header-banner-arrow"><div class="header-banner-arrow__icon"><i class="fas fa-angle-down"></i></div></div></div></div></header><main class="main" id="main"><div class="main-inner"><div class="content-wrap" id="content-wrap"><div class="content content-home" id="content"><section class="postlist"><article class="postlist-item post"><header class="post-header"><h1 class="post-title"><a class="post-title__link" href="/2021/12/24/C-Chapter2/">C++Primer 第二章学习笔记</a></h1><div class="post-meta"><span class="post-meta-item post-meta-item--createtime"><span class="post-meta-item__icon"><i class="far fa-calendar-plus"></i></span><span class="post-meta-item__info">发表于</span><span class="post-meta-item__value">2021-12-24</span></span><span class="post-meta-item post-meta-item--updatetime"><span class="post-meta-item__icon"><i class="far fa-calendar-check"></i></span><span class="post-meta-item__info">更新于</span><span class="post-meta-item__value">2021-12-30</span></span></div></header><div class="post-body"><div class="post-excerpt">
+        <h3 id="C-Primer第二章–变量和基本类型">
+          <a href="#C-Primer第二章–变量和基本类型" class="heading-link"><i class="fas fa-link"></i></a><a href="#C-Primer第二章–变量和基本类型" class="headerlink" title="C++ Primer第二章–变量和基本类型"></a>C++ Primer第二章–变量和基本类型</h3>
+      <p><em><strong>数据类型是程序的基础，它告诉了我们数据的意义以及我们能在数据上执行的操作。</strong></em></p>
+
+        <h4 id="一、基本内置类型">
+          <a href="#一、基本内置类型" class="heading-link"><i class="fas fa-link"></i></a><a href="#一、基本内置类型" class="headerlink" title="一、基本内置类型"></a>一、基本内置类型</h4>
+      <p>基本内置类型主要包括<strong>算术类型</strong>和<strong>空类型</strong></p>
+
+        <h5 id="1-1-算术类型">
+          <a href="#1-1-算术类型" class="heading-link"><i class="fas fa-link"></i></a><a href="#1-1-算术类型" class="headerlink" title="1.1 算术类型"></a>1.1 算术类型</h5>
+      <p>算术类型主要分为<strong>整型</strong>（integral type），和<strong>浮点型</strong>。其中<strong>字符类型</strong>与<strong>布尔类型</strong>均包括在整型之内。</p>
+<p><img src="/images/C++Chapter2/image-20211224201207827.png" alt="image-20211224201207827"></p>
+<p><strong>注：由于float类型精度有限，实际应用中常用的是double，并且二者在计算代价上相差无几。</strong></p>
+
+        <h5 id="1-2-带符号类型与不带符号类型">
+          <a href="#1-2-带符号类型与不带符号类型" class="heading-link"><i class="fas fa-link"></i></a><a href="#1-2-带符号类型与不带符号类型" class="headerlink" title="1.2 带符号类型与不带符号类型"></a>1.2 带符号类型与不带符号类型</h5>
+      <p>除去bool和扩展的字符类型之外，其它的整型可以划分为带符号和无符号的。带符号的可以表示正数、负数和0，无符号类型只能表示大于等于0的值。</p>
+<p>C++中需要无符号的值的时候，在前面加上<strong>unsinged</strong>即可，如int-&gt;unsigned int。</p>
+
+        <h5 id="1-3-字面值常量">
+          <a href="#1-3-字面值常量" class="heading-link"><i class="fas fa-link"></i></a><a href="#1-3-字面值常量" class="headerlink" title="1.3 字面值常量"></a>1.3 字面值常量</h5>
+      <p>字面值常量(literal)是指一类仅从字面上理解就能看出值的常量。每个字面值都对应一种数据类型。具体来说，字面值常量分为<strong>整型</strong>和<strong>浮点型</strong>字面值。</p>
+<p><strong>整型字面值常量</strong></p>
+<p>整型字面值可以写成十进制、八进制或者十六进制。以<strong>0开头的数表示八进制数，以0x开头的代表16进制数。</strong></p>
+<p>如：</p>
+<p><img src="/images/C++Chapter2/image-20211225195058728.png" alt="image-20211225195058728"></p>
+<p><strong>浮点型字面值</strong></p>
+<p>表现为一个小鼠或科学计数法表示的指数，指数部分用E或者e标识，但该指数实际上以10为底</p>
+<p><img src="/images/C++Chapter2/image-20211225200452808.png" alt="image-20211225200452808"></p>
+<p><strong>字符型字面值</strong></p>
+<p>表现为单引号括起来的字符或者双引号括起来的字符串。</p>
+<p>一个细节是字符串字面值实际上是由常量字符构成的数组，编译器在每个字符串的结尾处会添加一个空字符（’\0’），因此字符串的字面值的实际长度会比字符串的实际内容多1。</p>
+<p>如：</p>
+<p>‘A’ 表示一个字符型字面值，长度为1</p>
+<p>“A”表示一个字符串型字面值，长度为2</p>
+<p>可以通过添加前缀和后缀来改变字面值的默认类型</p>
+<p><img src="/images/C++Chapter2/image-20211225204253158.png" alt="image-20211225204253158"></p>
+<p><img src="/images/C++Chapter2/image-20211225204325836.png" alt="image-20211225204325836"></p>
+
+        <h4 id="二、变量">
+          <a href="#二、变量" class="heading-link"><i class="fas fa-link"></i></a><a href="#二、变量" class="headerlink" title="二、变量"></a>二、变量</h4>
+      <p><em><strong>变量实际上提供一个具名的、可供程序操作的存储空间。</strong></em>数据类型决定变量所占据的空间的大小和布局方式、以及该空间能存储的值的范围、变量能参与的运算。</p>
+<p><strong>对象是指一块能存储数据并且具有某种类型的内存空间。</strong></p>
+
+        <h5 id="2-1-变量的初始化">
+          <a href="#2-1-变量的初始化" class="heading-link"><i class="fas fa-link"></i></a><a href="#2-1-变量的初始化" class="headerlink" title="2.1 变量的初始化"></a>2.1 变量的初始化</h5>
+      
+        <h6 id="2-1-1-初始值">
+          <a href="#2-1-1-初始值" class="heading-link"><i class="fas fa-link"></i></a><a href="#2-1-1-初始值" class="headerlink" title="2.1.1 初始值"></a>2.1.1 初始值</h6>
+      <p>变量在创建的时候获得了一个特定的值，我们说这个对象被初始化了。</p>
+<p><strong>初始化不是赋值，初始化是在创建变量的时候赋予变量一个初始值。而赋值的定义是把对象的当前值擦除掉，用一个新的值替代。</strong></p>
+
+        <h6 id="2-1-2-列表初始化">
+          <a href="#2-1-2-列表初始化" class="heading-link"><i class="fas fa-link"></i></a><a href="#2-1-2-列表初始化" class="headerlink" title="2.1.2 列表初始化"></a>2.1.2 列表初始化</h6>
+      <p>使用一个大括号{}来对变量进行初始化的方式叫做列表初始化。主要有以下第二、第三种方式：</p>
+<p><img src="/images/C++Chapter2/image-20211225205300870.png" alt="image-20211225205300870"></p>
+<p>这种初始化的好处在于：<strong>如果我们使用列表初始化且初始值存在丢失信息的风险，编译器会报错且不予执行。在一定程度上避免了变量的类型与初始值类型不匹配类型强转导致的数值丢失</strong></p>
+<p><img src="/images/C++Chapter2/image-20211225205559552.png" alt="image-20211225205559552"></p>
+<p><img src="/images/C++Chapter2/image-20211225205729977.png" alt="image-20211225205729977"></p>
+
+        <h5 id="2-2-变量声明和定义">
+          <a href="#2-2-变量声明和定义" class="heading-link"><i class="fas fa-link"></i></a><a href="#2-2-变量声明和定义" class="headerlink" title="2.2 变量声明和定义"></a>2.2 变量声明和定义</h5>
+      <p>C++支持分离式编译，程序可以拆分成多个文件，一个文件可以使用其它文件中定义的函数和变量。但是使用其他文件中的变量需要在程序中声明。声明和定义是不同的。定义不仅会规定变量的类型与名字，而且会额外申请存储空间。而声明则不需要申请存储空间。声明需要在变量名前添加<strong>关键字extern</strong>，而且<strong>不能对声明的变量做显式初始化。</strong></p>
+<p><strong>extern语句如果包含了初始值就不再是声明，而是定义了。</strong></p>
+<p><img src="/images/C++Chapter2/image-20211225215525019.png" alt="image-20211225215525019"></p>
+<p><strong>一个变量只能定义一次，但可以多次声明。</strong></p>
+
+        <h5 id="2-3-标识符">
+          <a href="#2-3-标识符" class="heading-link"><i class="fas fa-link"></i></a><a href="#2-3-标识符" class="headerlink" title="2.3 标识符"></a>2.3 标识符</h5>
+      <p>C++中的标识符必须以字母或者下划线开头。定义在函数体外的标识符不能以下划线开头。</p>
+<p><img src="/images/C++Chapter2/image-20211225215816509.png" alt="image-20211225215816509"></p>
+
+        <h4 id="三、复合类型">
+          <a href="#三、复合类型" class="heading-link"><i class="fas fa-link"></i></a><a href="#三、复合类型" class="headerlink" title="三、复合类型"></a>三、复合类型</h4>
+      
+        <h5 id="3-1-引用">
+          <a href="#3-1-引用" class="heading-link"><i class="fas fa-link"></i></a><a href="#3-1-引用" class="headerlink" title="3.1 引用"></a>3.1 引用</h5>
+      <p>引用类型通过将声明符号写成&amp;d的形式来定义，d是被引用的变量名。但是引用并非创建了一个新对象，它实际上是一个已经定义的对象的<strong>别名</strong>。</p>
+<p><img src="/images/C++Chapter2/image-20211225220329035.png" alt="image-20211225220329035"></p>
+<p>程序是将引用与它的初始值<strong>绑定</strong>在一起，而不是直接把初始值拷贝过去。因此<strong>引用必须初始化。</strong>并且一旦初始化完成，无法令引用重新绑定到另外一个对象。</p>
+<p>定义了引用后，对引用对象所做的所有操作都是在被绑定的原对象上直接进行操作的。</p>
+<p>引用只能使用对象对其初始化，而且定义引用的类型要与被绑定的对象的类型完全一致。</p>
+<p><img src="/images/C++Chapter2/image-20211225220759531.png" alt="image-20211225220759531"></p>
+
+        <h5 id="3-2-指针">
+          <a href="#3-2-指针" class="heading-link"><i class="fas fa-link"></i></a><a href="#3-2-指针" class="headerlink" title="3.2 指针"></a>3.2 指针</h5>
+      <p>指针也是”指向”另外一种类型的对象的复合类型。它和引用都可以实现对其它对象的间接访问。但是它和指针有很多不同点，具体如下：</p>
+<p><strong>①、指针本身就是一个对象，而引用只是一个”别名”，并非创建了一个新对象。</strong></p>
+<p><strong>②、指针允许赋值和拷贝，而对引用实际上只是给被引用的对象赋值。</strong></p>
+<p><strong>③、指针在生命周期之内可以先后指向不同的对象，而引用只能绑定在一个对象上，不允许改变。</strong></p>
+<p><strong>④、指针不需要在定义的时候赋初值</strong></p>
+<p><strong>定义方法</strong></p>
+<p><img src="/images/C++Chapter2/image-20211225222534490.png" alt="image-20211225222534490"></p>
+<p><strong>指针对象实际上存放的是某个对象的地址，想要获取这个地址需要使用取地址符&amp;</strong></p>
+<p><img src="/images/C++Chapter2/image-20211225222656042.png" alt="image-20211225222656042"></p>
+<p>p是一个指针变量，指向变量ival，并且p实际上存放的是变量ival的地址。</p>
+<p><img src="/images/C++Chapter2/image-20211225222930490.png" alt="image-20211225222930490"></p>
+<p><img src="/images/C++Chapter2/image-20211225222957674.png" alt="image-20211225222957674"></p>
+<p><strong>利用指针访问对象</strong></p>
+<p>如果指针指向了一个对象，允许使用解引用符(操作符*)来访问该对象。对指针解引用会得到所指的对象。</p>
+<p><img src="/images/C++Chapter2/image-20211226133703807.png" alt="image-20211226133703807"></p>
+<p><strong>空指针</strong></p>
+<p>当暂时不知道指针应该指向何处的时候，应当先对指针初始化为空，空指针的初始化操作是：int *p = <strong>nullptr</strong>;。nullptr是一种特殊的字面值，它可以转化成任意的指针类型。</p>
+<p><strong>指向指针的指针</strong></p>
+<p>*的个数可以区分指针的级别，因此**表示指向指针对象的指针。</p>
+<p><img src="/images/C++Chapter2/image-20211226135121453.png" alt="image-20211226135121453"></p>
+<p>此时要通过ppi来访问原对象，需要两次解引用，即**ppi</p>
+
+        <h5 id="3-3-const限定符">
+          <a href="#3-3-const限定符" class="heading-link"><i class="fas fa-link"></i></a><a href="#3-3-const限定符" class="headerlink" title="3.3 const限定符"></a>3.3 const限定符</h5>
+      <p>使用const限定符修饰的变量是一种不可改变值的变量，也可称为const常量。任何对const常量赋值的操作都将报错。因为const常量一经定义就不可改变，因此const对象必须初始化。</p>
+<p>如：<code>const int bufSize = 512;</code></p>
+<p>默认状态下，const限定符仅对文件内生效，如果需要跨文件使用，需要对const常量的定义前加上extern</p>
+<p><code>extern const int bufSize = 512;</code></p>
+<p>当在当在其他文件中需要使用该变量的时候，也需要在文件中使用extern进行声明。</p>
+<p><code>extern const int bufSize;</code></p>
+
+        <h6 id="3-3-1-const的引用">
+          <a href="#3-3-1-const的引用" class="heading-link"><i class="fas fa-link"></i></a><a href="#3-3-1-const的引用" class="headerlink" title="3.3.1 const的引用"></a>3.3.1 const的引用</h6>
+      <p>和普通对象一样，我们也可以把引用绑定到const对象上，称之为<strong>对常量的引用</strong>。但是由于被绑定的对象是一个常量，因此<strong>不可以改变被引用对象的值。</strong></p>
+<p><code>const int c1 = 1024; </code></p>
+<p><code>const int &amp;r1 = c1;</code></p>
+<p>与一般的引用不同的是，常量引用的类型并不一定需要与其所引用的对象的类型完全一致。允许常量引用绑定一个非常量对象、字面值、甚至是一个表达式。<strong>因为编译器会自动创建一个与常量引用类型相同的临时常量，这个并将常量引用绑定的非常量对象、字面值、甚至是一个表达式的值拷贝给这个临时常量。最后将这个常量引用绑定到这个临时常量。</strong></p>
+<p><img src="/images/C++Chapter2/image-20211226152752659.png" alt="image-20211226152752659"></p>
+<p>常量引用仅仅对引用的操作做出了限定，但是对被引用绑定的对象是否是常量并未作规定。即不能通过常量引用这个别名来改变这个被绑定对象的值，常量引用也不能改变绑定的对象。但是因为被绑定对象并不是一个常量，可以通过其他方式改变这个值。</p>
+
+        <h6 id="3-3-2-指向常量的指针">
+          <a href="#3-3-2-指向常量的指针" class="heading-link"><i class="fas fa-link"></i></a><a href="#3-3-2-指向常量的指针" class="headerlink" title="3.3.2 指向常量的指针"></a>3.3.2 指向常量的指针</h6>
+      <p>const与指针结合可以结合成常量指针(const pointer)与指向常量的指针(pointer to const)。</p>
+<p><strong>指向常量的指针</strong>，<strong>不能用于改变其所指对象的值。</strong>因为其指向的对象是一个常量。由之前指针的描述，指针是一个对象，用于存放所指对象的地址。指向常量的指针就存放的是常量的地址。</p>
+<p>定义方式：</p>
+<figure class="highlight c++"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> 指针的数据类型 *指针名 = &amp;指向的对象地址;</span><br></pre></td></tr></table></div></figure>
+
+<p><img src="/images/C++Chapter2/image-20211227163615973.png" alt="image-20211227163615973"></p>
+<p><strong>指向常量的指针却允许指向一个非常量。</strong></p>
+<p><img src="/images/C++Chapter2/image-20211227163822295.png" alt="image-20211227163822295"></p>
+<p><strong>不管是常量的引用还是指向常量的指针，都只是禁止了通过这个引用或者指针去修改被指向的对象。</strong>当它们指向一个非常量时，并不禁止通过其它手段去修改这个非常量的值。</p>
+
+        <h6 id="3-3-3-const指针-常量指针">
+          <a href="#3-3-3-const指针-常量指针" class="heading-link"><i class="fas fa-link"></i></a><a href="#3-3-3-const指针-常量指针" class="headerlink" title="3.3.3 const指针/常量指针"></a>3.3.3 const指针/常量指针</h6>
+      <p>引用并不是一个对象，而指针是一个对象，因此指针本身允许被定义成一个常量。既然<strong>常量指针本身是一个常量</strong>，因此<strong>它就必须被初始化。而且它本身的值(即被常量指针指向的对象的地址)不允许改变。</strong></p>
+<p>定义方式：</p>
+<p>注意 const指针对象本身的类型是const，因此定义const指针应当把*号写在const前。</p>
+<figure class="highlight c++"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">被指向对象的类型 *<span class="keyword">const</span> 指针名 = &amp;被指向对象名;</span><br></pre></td></tr></table></div></figure>
+
+<p><img src="/images/C++Chapter2/image-20211227165429436.png" alt="image-20211227165429436"></p>
+<p>注意：</p>
+<p><strong>常量指针指的是指针本身是一个常量。也就是说这个指针保存的地址，也就是指向哪个对象是不允许改变的，但是这个地址指向的对象的值是可以改变的。</strong>可以通过常量指针修改被指向对象的值。</p>
+<p><img src="/images/C++Chapter2/image-20211227165809504.png" alt="image-20211227165809504"></p>
+
+        <h6 id="3-3-4-constexpr-变量">
+          <a href="#3-3-4-constexpr-变量" class="heading-link"><i class="fas fa-link"></i></a><a href="#3-3-4-constexpr-变量" class="headerlink" title="3.3.4 constexpr 变量"></a>3.3.4 constexpr 变量</h6>
+      <p>常量表达式是是一种特殊的表达式，它的计算过程发生在编译阶段，并且它的计算结果不会改变。因此对于一些确定不会改变的计算结果，与其将它的参数声明成一个普通const常量再计算。不如将该表达式声明成constexpr 类型，将计算阶段放在编译。加速代码执行。</p>
+<p>一个对象是否是一个常量表达式，由它的数据类型和参与计算结果的初始值共同决定。要求：计算结果的数据类型应当是常量类型，并且参与运算的都是字面值，也就是不需要计算阶段就可以得出的值</p>
+<figure class="highlight c++"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> max_files = <span class="number">20</span>;   <span class="comment">//max_files是一个常量表达式</span></span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> limit = max_files + <span class="number">1</span>; <span class="comment">//计算结果的数据类型是const，并且参与运算的max_files是一个确定的常量，故limit是常量表达式</span></span><br><span class="line"><span class="keyword">int</span> staff_size = <span class="number">27</span>;   <span class="comment">//数据类型不是常量，不是常量表达式</span></span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> sz = <span class="built_in">get_size</span>();  <span class="comment">//虽然数据类型声明成const，但是它的值需要在执行阶段计算，故不是常量表达式</span></span><br><span class="line">   </span><br></pre></td></tr></table></div></figure>
+
+<p>当都使用const来声明常量表达式，编译器很难确定变量的值是否是一个常量表达式。也就无法将计算阶段放在编译，加速代码执行。因此C++11引入了constexpr类型</p>
+<p><img src="/2021/12/24/C-Chapter2/images/C++Chapter2/image-20211230211752515.png" alt="image-20211230211752515"></p>
+<p>需要指出的是，如果constexpr声明中定义了一个指针，限定符constexpr仅对指针生效。也就是说仅仅指针被声明成了常量类型，其保存的地址不变，与它所指向的对象的值无关。</p>
+
+        <h4 id="四、处理类型">
+          <a href="#四、处理类型" class="heading-link"><i class="fas fa-link"></i></a><a href="#四、处理类型" class="headerlink" title="四、处理类型"></a>四、处理类型</h4>
+      
+        <h5 id="4-1-类型别名">
+          <a href="#4-1-类型别名" class="heading-link"><i class="fas fa-link"></i></a><a href="#4-1-类型别名" class="headerlink" title="4.1 类型别名"></a>4.1 类型别名</h5>
+      <p>类型别名就是给某种数据类型起一个同义词。它可以使复杂的类型名变得简单明了，便于理解和使用。</p>
+<p>两种方式：</p>
+<figure class="highlight c++"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">typedef</span> <span class="keyword">double</span> wages; <span class="comment">//wages是double的同义词</span></span><br><span class="line"><span class="keyword">typedef</span> wages base, *p;  <span class="comment">//等价于double base;和double *p</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> SI = Sales_item;</span><br><span class="line">SI item;  <span class="comment">//等价于Sales_item item;</span></span><br></pre></td></tr></table></div></figure>
+
+</div></div></article><article class="postlist-item post"><header class="post-header"><h1 class="post-title"><a class="post-title__link" href="/2021/12/23/object-detect/">物体识别</a></h1><div class="post-meta"><span class="post-meta-item post-meta-item--createtime"><span class="post-meta-item__icon"><i class="far fa-calendar-plus"></i></span><span class="post-meta-item__info">发表于</span><span class="post-meta-item__value">2021-12-23</span></span><span class="post-meta-item post-meta-item--updatetime"><span class="post-meta-item__icon"><i class="far fa-calendar-check"></i></span><span class="post-meta-item__info">更新于</span><span class="post-meta-item__value">2021-12-24</span></span></div></header><div class="post-body"><div class="post-excerpt">
         <h3 id="一、物体识别相关术语解释">
           <a href="#一、物体识别相关术语解释" class="heading-link"><i class="fas fa-link"></i></a><a href="#一、物体识别相关术语解释" class="headerlink" title="一、物体识别相关术语解释"></a>一、物体识别相关术语解释</h3>
       
@@ -265,6 +435,131 @@ window.CONFIG = CONFIG;</script><meta name="generator" content="Hexo 5.4.0"></he
 <p><img src="/images/labsever/image-20211211103242759.png" alt="image-20211211103242759"></p>
 <p>此时左边就是windows，右边是Linux服务器文件系统，两边可以互相直接拖曳文件以及文件夹实现文件互传</p>
 <p>到此，实验室服务器探索暂时告一段落，以后有需要会接着尝试。</p>
+</div></div></article><article class="postlist-item post"><header class="post-header"><h1 class="post-title"><a class="post-title__link" href="/2021/10/24/ReID-summary/">《无监督领域自适应行人重识别研究进展》阅读</a></h1><div class="post-meta"><span class="post-meta-item post-meta-item--createtime"><span class="post-meta-item__icon"><i class="far fa-calendar-plus"></i></span><span class="post-meta-item__info">发表于</span><span class="post-meta-item__value">2021-10-24</span></span><span class="post-meta-item post-meta-item--updatetime"><span class="post-meta-item__icon"><i class="far fa-calendar-check"></i></span><span class="post-meta-item__info">更新于</span><span class="post-meta-item__value">2021-12-07</span></span></div></header><div class="post-body"><div class="post-excerpt">
+        <h3 id="《无监督领域自适应行人重识别研究进展》阅读">
+          <a href="#《无监督领域自适应行人重识别研究进展》阅读" class="heading-link"><i class="fas fa-link"></i></a><a href="#《无监督领域自适应行人重识别研究进展》阅读" class="headerlink" title="《无监督领域自适应行人重识别研究进展》阅读"></a>《<strong>无监督领域自适应行人重识别研究进展</strong>》阅读</h3>
+      
+        <h4 id="一、无监督领域自适应行人重识别（Unsupervised-Domain-Adaptation-Person-Re">
+          <a href="#一、无监督领域自适应行人重识别（Unsupervised-Domain-Adaptation-Person-Re" class="heading-link"><i class="fas fa-link"></i></a><a href="#一、无监督领域自适应行人重识别（Unsupervised-Domain-Adaptation-Person-Re" class="headerlink" title="一、无监督领域自适应行人重识别（Unsupervised  Domain  Adaptation Person  Re-"></a>一、无监督领域自适应行人重识别（Unsupervised  Domain  Adaptation Person  Re-</h4>
+      <p>identification, UDA Re-ID）</p>
+
+        <h5 id="1-1-领域自适应-Domain-Adaption">
+          <a href="#1-1-领域自适应-Domain-Adaption" class="heading-link"><i class="fas fa-link"></i></a><a href="#1-1-领域自适应-Domain-Adaption" class="headerlink" title="1.1 领域自适应 Domain Adaption"></a>1.1 领域自适应 Domain Adaption</h5>
+      <p><em>Domain Adaption</em>是<em>transfer leanring</em>（迁移学习）中很重要的一项内容。主要目的是将具有不同分布的（<em>data distribution</em>）的具有标签（<em>label</em>）的源域（<em>source domain</em>）和不带标签的目标域（<em>target domain</em>） 映射（<em>map</em>）到同一个特征空间（<em>embedding mainfold</em>）。即使训练好的模型能够很好的泛化到其他领域中。</p>
+<p><em><strong>Domain</strong></em>可以看作是一个服从相同分布的一类数据，而训练集由一个或多个<em>Domain</em>组成。</p>
+<p>DA的一个基础理论如下图所示</p>
+<p><img src="/images/ReID-summary/image-20211206143021042.png" alt="image-20211206143021042"></p>
+<p>其中<em>Target risk</em>的上界由<em>Source risk，Complexity of H</em>,与<em>Source-target distribution divergence</em>组成，其中<em>Source risk</em>直接由源域给出，<em>Complexity of H</em>指的是模型的复杂程度，一般来说是一个常量，因此一般来说方便优化或者下降的点就是<em>Source-target distribution divergence</em>，即想办法减小源域与目标域分布的差距，所以在训练的过程中<em>DA</em>需要直接访问目标域的数据。</p>
+
+        <h5 id="1-2-无监督">
+          <a href="#1-2-无监督" class="heading-link"><i class="fas fa-link"></i></a><a href="#1-2-无监督" class="headerlink" title="1.2 无监督"></a>1.2 无监督</h5>
+      <p>要求其它领域中的数据样本没有与任务有关的标签信息,  无法参与对模型的微调。由于不同领域存在不同的数据分布,  一般将数据的分布差异认为是无监督领域自适应行人重识别的关键问题,  因此研究的重点是让模型可以适应不同领域之间的差异(<em>Domain Gap</em>),减少域差对模型性能的影响。</p>
+<p>无监督领域自适应一般包含两个领域（数据集），即训练集是带标签的（有监督的）源域（<em>source domain</em>），和无监督的目标域（<em>Target Domain</em>）。任务目标是能够在无重叠视阈的目标域中能够检索出同一行人.</p>
+
+        <h4 id="二、无监督领域自适应行人重识别的算法">
+          <a href="#二、无监督领域自适应行人重识别的算法" class="heading-link"><i class="fas fa-link"></i></a><a href="#二、无监督领域自适应行人重识别的算法" class="headerlink" title="二、无监督领域自适应行人重识别的算法"></a>二、无监督领域自适应行人重识别的算法</h4>
+      <p>无监督领域自适应行人重识别的研究方向大致可以分为以下三类：</p>
+<p>1）生成满足其它领域数据分布的伪样本,在数据增广的同时,  能够缩小不同领域之间的领域差异；常见的方法是基于图像的风格迁移，即通过图像的风格迁移模型将有标签的源域目标通过图像的风格迁移生成与目标域相近的风格图片作为满足目标领域数据分布的伪样本投入模型的训练。</p>
+<p>2）训练后的模型具有提取高鲁棒领域不变性特征的能力,  缓解领域间的差异；常见的方法是基于表示学习的无监<br>督领域自适应行人重识别。</p>
+<p>3）提高目标域中样本特征伪标签生成的准确度,  用于目标域中模型有监督的微调.常见的方法是基于伪标签生成的无监督领域自适应行人重识别。</p>
+<p><img src="/images/ReID-summary/image-20211206095839729.png" alt="image-20211206095839729"></p>
+<p>​                                                 图1 无监督领域自适应行人重识别的三类研究方向</p>
+
+        <h5 id="2-1-基于图像风格迁移的方法">
+          <a href="#2-1-基于图像风格迁移的方法" class="heading-link"><i class="fas fa-link"></i></a><a href="#2-1-基于图像风格迁移的方法" class="headerlink" title="2.1 基于图像风格迁移的方法"></a>2.1 基于图像风格迁移的方法</h5>
+      
+        <h6 id="2-1-1-问题的提出">
+          <a href="#2-1-1-问题的提出" class="heading-link"><i class="fas fa-link"></i></a><a href="#2-1-1-问题的提出" class="headerlink" title="2.1.1 问题的提出"></a>2.1.1 问题的提出</h6>
+      <p>一直以来,  在基于无监督的领域自适应行人重识别中,  不同领域内的光照、行人背景、相机角度、行人姿势、分辨率以及行人衣着风格等差异造成的领域差异被专家学者认为是造成重识别性能低的首要原因。因此如何缩小领域差异成为基于无监督的领域自适应行人重识别研究的一项关键科学问题。</p>
+
+        <h6 id="2-1-2-主要方法">
+          <a href="#2-1-2-主要方法" class="heading-link"><i class="fas fa-link"></i></a><a href="#2-1-2-主要方法" class="headerlink" title="2.1.2 主要方法"></a>2.1.2 主要方法</h6>
+      <p>基于图像风格迁移的主要思路是将有监督的源域图像通过神经网络生成具有目标域图像风格的源域图像投入训练，实现减小源域与目标域分布的差距。主要的思路大致有：</p>
+<p><strong>1、基于领域差异的风格迁移</strong></p>
+<p>生成较高质量的有着目标域图像风格的源域图像,  方便特征提取网络可以有监督的进行训练。</p>
+<p><strong>2、基于背景差异的风格迁移</strong></p>
+<p>背景差异被认为是造成领域差异的主要因素之一,  将解决无监督领域自适应行人重识别问题的工作重点放在行人图像的背景上。该方法主要训练了一个应用于行人重识别的行人转换生成对抗网络(Person  Transfer  GAN, PTGAN),  该网络能够在尽可能保证行人前景不变的前提下,  将背景转换成期望数据集的图像背景风格。</p>
+<p><strong>3、基于相机差异的风格迁移</strong></p>
+<p>域间和域内摄像机间由于所在位置和角度的不同而产生的视角差异也是影响识别效果的重要因素。该种方法是对源域相同行人的图片作不同视角差异的风格迁移，生成的图片将用于数据增强以提升网络对因相机视角变化导致样本间特征差异的适应能力。</p>
+<p><strong>4、基于其他差异的风格迁移</strong></p>
+<p>基于无监督的领域自适应行人重识别中,  除了行人背景差异和相机差异对领域差异造成的巨大影响,  不同领域间行人图像也存在着其它差异, 诸如光照、行人姿势、分辨率的变化.这些差异也是加大领域间差异的原因之一。</p>
+
+        <h5 id="2-2-基于表示学习的方法">
+          <a href="#2-2-基于表示学习的方法" class="heading-link"><i class="fas fa-link"></i></a><a href="#2-2-基于表示学习的方法" class="headerlink" title="2.2 基于表示学习的方法"></a>2.2 基于表示学习的方法</h5>
+      <p>基于表示学习的无监督领域自适应行人重识别<strong>旨在让模型从未标记的跨域数据中学习有效的嵌入空间</strong>,  获得的嵌入特征具有与领域变化无关的高鉴别力和很好的领域适应性。</p>
+
+        <h6 id="2-2-1-基于损失函数的表示学习方法">
+          <a href="#2-2-1-基于损失函数的表示学习方法" class="heading-link"><i class="fas fa-link"></i></a><a href="#2-2-1-基于损失函数的表示学习方法" class="headerlink" title="2.2.1 基于损失函数的表示学习方法"></a>2.2.1 基于损失函数的表示学习方法</h6>
+      <p>基于损失函数的表示学习方法是数据训练过程中利用损失函数来约束网络,  让网络朝着损失函数减小的方向进行优化.基于无监督的领域自适应行人重识别常用的损失函数根据功能进行分类, 可分为分类损失函数、度量学习损失函数和分布损失函数三种类型。</p>
+<p>（1）、分类损失函数</p>
+<p>分类损失函数是将行人再识别问题看作一个多分类问题。分类损失函数是衡量网络预测和真实分类的一种损失函数,  通过训练使网络具有预测分类的能力。常见的有行人身份损失、行人属性损失和视角不变损失。</p>
+<p>行人身份损失是将源域中k个行人身份的N张图片看作K分类问题，用SoftMax进行计算分类损失函数。</p>
+<p>行人属性损失是将每张图片都具有M个属性的标注，则行人属性损失可看作是属性二分类预测的累加形式,  即预测图片𝑥是否拥有第𝑚个属性，该损失采用Sigmoid交叉熵损失函数。</p>
+<p>视角不变损失是为了增强补贴相机视角下的模型泛化性，减轻目标中不同视角风格的影响。实际工作是将不同摄像机的视角加入考虑，对摄像机进行标签标注，标注源域每张图片来自的摄像机标签。即预测图片来自的相机的索引。</p>
+<p>（2）、度量学习损失函数</p>
+<p>度量学习损失函数常用于评价数据分布中的距离,  其中对比损失函数(Contrastive loss)、三元组损失函数(Triplet  loss)和四元组损失函数（Quadruplet loss）[31]是行人重识别最常使用度量损失函数。</p>
+
+        <h6 id="2-2-2-基于注意力机制的表示学习方法">
+          <a href="#2-2-2-基于注意力机制的表示学习方法" class="heading-link"><i class="fas fa-link"></i></a><a href="#2-2-2-基于注意力机制的表示学习方法" class="headerlink" title="2.2.2 基于注意力机制的表示学习方法"></a>2.2.2 基于注意力机制的表示学习方法</h6>
+      <p>注意力机制（Attention Mechanism）是机器学习常用的数据处理方法之一,  被广泛应用于自然语言处理、计算机视觉、语音识别 等深度学习任务中。通过对人类注意机制的模仿和模型在大量数据上的训练,  能让模型具备在众多信息中关注对当前任务更关键的信息提取能力。</p>
+<p>注意力机制大多应用在弱化行人图像背景、增强行人目标信息等方面。</p>
+
+        <h6 id="2-2-3-基于局部特征的表示方法">
+          <a href="#2-2-3-基于局部特征的表示方法" class="heading-link"><i class="fas fa-link"></i></a><a href="#2-2-3-基于局部特征的表示方法" class="headerlink" title="2.2.3 基于局部特征的表示方法"></a>2.2.3 基于局部特征的表示方法</h6>
+      <p>在无监督领域自适应行人重识别研究中,  一些工作认为局部特征相比全局特征,  不容易受到领域差异的影响,  具有较高的领域适应能力。因此基于局部特征的方法也常作为有效的手段被研究人员所采用。局部特征最常见的获取方式有手动分块或人体关键点定位分块两种形式。</p>
+
+        <h5 id="2-3-基于伪标签生成的方法">
+          <a href="#2-3-基于伪标签生成的方法" class="heading-link"><i class="fas fa-link"></i></a><a href="#2-3-基于伪标签生成的方法" class="headerlink" title="2.3 基于伪标签生成的方法"></a>2.3 基于伪标签生成的方法</h5>
+      <p>由于基于无监督的领域自适应行人重识别中目标域图像不包含行人身份标签,  给基于无监督的领域自适应行人<br>重识别研究带来极大的挑战。</p>
+<p>基于伪标签生成的方法大多是训练模型自动在目标域上生成较为可靠的伪标签，利用生成的伪标签去有监督的指导网络优化，提高模型的泛化水平。这里的伪标签不仅仅局限在给予行人对应身份的身份标签（ID label）,  也可以以能够正确的区分样本的正例样本对和负例样本的样本关系形式存在以满足样本度量学习的需要。</p>
+<p>一类是基于样本特征间距离比较的排序建立伪标签；第二类是利用在特征空间聚类后形成的簇给予对应的伪标签；最后一类则是综合前两类的优势,  联合排序和聚类的伪标签生成方法。生成的这些伪标签将作为目标域中行人身份标签或正负样本对对已在源域训练后的模型进行微调,  最终获得模型。</p>
+
+        <h6 id="2-3-1-基于排序的伪标签生成方法">
+          <a href="#2-3-1-基于排序的伪标签生成方法" class="heading-link"><i class="fas fa-link"></i></a><a href="#2-3-1-基于排序的伪标签生成方法" class="headerlink" title="2.3.1 基于排序的伪标签生成方法"></a>2.3.1 基于排序的伪标签生成方法</h6>
+      <p>基于排序（Ranking-based）的伪标签生成方法也称为基于邻近（Neighbor-based）的伪标签生成方法,  是一种较易理解的伪标签生成方法,  即根据样本在特征空间间的距离排序来划分类别的一种方法。经过由源域训练后的神经网络模型提取出目标域行人图片的全部特征。并对目标域样本的特征以两两对应的形式作距离（相似度）的计算。距离可以使用马氏距离、欧氏距离以及余弦距离。距离计算之后对距离进行排序，常用的算法有K-近邻（K-NN),相互近邻（𝑘-reciprocal nearest neighbors, 𝑘-RNN ）排序算法以及𝑘互近邻编码（𝑘-reciprocal encoding）,大致的思路均是将距离最邻近的K个样本视为有可能相同的一类，并以此作为伪标签从而微调网络。</p>
+<p>而基于距离排序的伪标签生成工作又可以分为基于目标域与源域间的距离排序以及基于目标域的距离排序两种。基于目标域与源域之间的距离排序，由于源域中是有身份标签的。 对目标域无标签的行人图像可根据该图像特征与源域间的多细粒度特征间的余弦距离排序给予对应的源域身份标签.这些筛选过的目标域图像将和源域一起组成训练集,  共同指导模型微调。</p>
+<p>其它的基于距离排序的伪标签方法使用的是目标域间距离排序的方式。由于目标域的样本无身份标签,  因此基于目标域的距离排序生成的伪标签是伪关系标签。</p>
+
+        <h6 id="2-3-2-基于聚类的伪标签生成">
+          <a href="#2-3-2-基于聚类的伪标签生成" class="heading-link"><i class="fas fa-link"></i></a><a href="#2-3-2-基于聚类的伪标签生成" class="headerlink" title="2.3.2 基于聚类的伪标签生成"></a>2.3.2 基于聚类的伪标签生成</h6>
+      <p>基于聚类的伪标签生成算法会使用聚类算法, 例如𝐾-mean、DBSCAN,  通过样本间距离或者样本分布密度迭代完成聚类,  最终形成的同簇内样本对应相同的行人身份标签,  不同的簇间样本对应不同的行人身份标签。</p>
+<p>基于聚类的伪标签生成方法有着理解简单、容易实现的优势,  能够预测出具体的伪身份标签。但是聚类算法对噪声样本较为敏感,  容易对模型的优化和后续的聚类产生影响.因此噪声样本是所有基于聚类的伪标签生成方法亟待解决的挑战之一。</p>
+
+        <h4 id="三、数据集与性能评估指标">
+          <a href="#三、数据集与性能评估指标" class="heading-link"><i class="fas fa-link"></i></a><a href="#三、数据集与性能评估指标" class="headerlink" title="三、数据集与性能评估指标"></a>三、数据集与性能评估指标</h4>
+      
+        <h5 id="3-1-什么是图库集（Gallery-Set）和探针集-Probe-Set">
+          <a href="#3-1-什么是图库集（Gallery-Set）和探针集-Probe-Set" class="heading-link"><i class="fas fa-link"></i></a><a href="#3-1-什么是图库集（Gallery-Set）和探针集-Probe-Set" class="headerlink" title="3.1 什么是图库集（Gallery Set）和探针集(Probe Set)"></a>3.1 什么是图库集（Gallery Set）和探针集(Probe Set)</h5>
+      <p>一般来说图片数据集会分为<strong>训练集（Train Set）与测试集（Test Set)<strong>。而在Re-ID的数据集中一般</strong>测试集</strong>又会细分成<strong>图库集（Gallery Set）和探针集(Probe Set)或查询集</strong>。</p>
+<p><strong>无论是gallery还是probe都是仅在测试集出现的概念。</strong>Re-ID的任务是提供一张行人照片，从众多的数据库中寻找与之具有相同身份的图片。</p>
+<p>下面参考博客：原文链接：<span class="exturl"><a class="exturl__link" target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_44273380/article/details/108949031">https://blog.csdn.net/weixin_44273380/article/details/108949031</a><span class="exturl__icon"><i class="fas fa-external-link-alt"></i></span></span></p>
+<p>gallery<br>gallery原意：画廊，这里博主喜欢将它翻译为注册集，也有同学翻译为参考集。就像我们说的“注册”，它的作用就好比一个人脸识别系统，每个人都进去注册了几张自己脸的图像，并和自己的身份绑定起来，从而形成我们上面提到的这个巨大系统的“数据库”。测试的时候，我们需要把一张新的照片去“画廊”，也就是注册数据库中一个一个匹配，得到结果。</p>
+<p>这里注意，gallery是只有测试集才有的，因为训练的时候我们的期望是模型能根据两张标注好的图像更好地提取特征，以及判断相似度。这个过程的数据来源是标注好的图像，目标仅仅是训练模型对提供的图片的特征提取能力，也就不需要gallery来提供参考。</p>
+<p>probe<br>probe原意：探针、调查。这里博主就通俗地翻译为查询集，就是说，我们在测试的时候是在probe中选取元素来到gallery寻找的，最终测试阶段对模型性能的评估是根据probe中元素查询的效果来反映的。</p>
+
+        <h5 id="3-2-常用数据集">
+          <a href="#3-2-常用数据集" class="heading-link"><i class="fas fa-link"></i></a><a href="#3-2-常用数据集" class="headerlink" title="3.2 常用数据集"></a>3.2 常用数据集</h5>
+      <ul>
+<li><p>CUHK03 图像数据集<br>CUHK03是香港中文大学2014 年开源的第一个可供深度学习使用的大型图像行人重识别数据集.数据集采集自香港中文大学校园内的 10 个摄像头,总共收集包含 1467 个行人的 13164 张图片, 行人包围框由 DPM 和手工检测并标示. 在CUHK03 的行人重识别中,分为两种训练测试标准.第一种是随机选出 100 个行人作为测试集,1160个行人作为训练集,100 个行人作为验证集,重复二十次,这种训练测试标准被称为 Single-shot setting;第二种则是类似于 Market-1501,它将数据集分为包含 767 个行人的训练集和包含 700 个行人的测试集。</p>
+</li>
+<li><p>Market-1501 图像数据集</p>
+<p>Market-1501是清华大学 2015 年开源的图像行人重识别数据集。数据集中的行人图像采集自校园超市的6 个摄像头,包含1501 个行人的32668张行人图片。开源者采用 DPM 算法将图片检测和裁剪成128×64 大小的行人图片。数据集分为3 个集合,包括由751 个行人,总计12936 张图片组成的训练集;测试集中则包含剩余 750 个人,总计 12936张图片组成的图库集(Gallery Set),以及750 人的其它3368 张图片组成的探针集(Probe Set)。</p>
+</li>
+<li><p>DukeMTMC-Re-ID 图像数据集</p>
+<p>DukeMTMC-Re-ID是悉尼科技大学2017 年开源的图像行人重识别数据集。数据集采集自 8 个不同角度的摄像头,总计包含1812 个行人的36411张图片。数据集中行人边界框由人工手动裁剪。与Market1501 相同,数据集分为3 个集合,包括由702个行人的 16522 张图像组成的训练集;测试集包含1110 个行人的 17661 张图片组成的图库集和图库集中存在的702 个行人的其它2228 张图片组成探针集。</p>
+</li>
+<li><p>MSMT17 图像数据集</p>
+<p>MSMT17是由北京大学 2019 年开源的大型图像行人重识别数据集.数据集的采集涵盖了多个场景和多个时段,更接近于真实场景.数据集由 15个摄像头采集,包含 12 个户外摄像头和 3 个室内摄像头.采集过程中,选择了具有不同天气条件的 4天时间,涵盖每天早上、中午和下午三个时间段的3 个小时的视频,总计 180 个小时的视频.在数据集整理和标注上,采用 FasterRCNN[81]作为行人检测器,并用了 2 个月的时间进行人工标注,最终得到4101 个行人的 126441 张图片.与 Market1501 和DukeMTMC-Re-ID 不同,数据集中训练集和测试集的行人大约按照 1:3 的比例划分,其中训练集包含1041 个行人的 32621 个包围框,测试集包含 3060个行人的93820 个包围框.其中测试集中,随机选择11659 个包围框作为 ProbeSet,其它 82161 个包围框作为Gallery。        </p>
+</li>
+</ul>
+
+        <h5 id="3-3性能评价指标">
+          <a href="#3-3性能评价指标" class="heading-link"><i class="fas fa-link"></i></a><a href="#3-3性能评价指标" class="headerlink" title="3.3性能评价指标"></a>3.3性能评价指标</h5>
+      <p>行人重识别模型性能的评价指标通常采用累计匹配曲线(Cumulative  Match  Characteristics,CMC)和平均精度均值(Mean Average Precision,mAP)进行评估。</p>
+<p>累积匹配特征曲线 CMC[k]或 Rank-k表示在测试集中当查找的探针（Probe）在图库集（Gallery Set）中进行距离比较后,  将查询集中行人按照距离的远近由小到大进行排序,  前 k个搜索结果中行人匹配到的概率。例如 Rank-1 表示第一次就能在 Gallery  Set 中正确匹配的 Probe 数量与 Probe Set 数量之比,  Rank-5 表示前五次能在 Gallery  Set中正确匹配的Probe 数量与Probe Set 数量之比。假设测试集探针集总共包含𝑁个行人,  即共进行𝑁次查询和排序后,  每次查询目标行人能匹配到的排序结果用𝑟 = (𝑟1,𝑟2,…,𝑟A)表示,  𝑟i表示探针集中第𝑖个样本在Gallery Set 中正确匹配排序, CMC 曲线表示为：</p>
+<p><img src="/images/ReID-summary/image-20211207161911344.png" alt="image-20211207161911344"></p>
+<p>平均精度均值是对查询集中查询样本的平均精度（Average  Precision, AP）取平均值,  表示为： </p>
+<p><img src="/images/ReID-summary/image-20211207161941214.png" alt="image-20211207161941214"></p>
 </div></div></article><article class="postlist-item post"><header class="post-header"><h1 class="post-title"><a class="post-title__link" href="/2021/10/24/dalunwen/">《**基于深度学习跨模态行人再识别系统的研究与实现**》阅读</a></h1><div class="post-meta"><span class="post-meta-item post-meta-item--createtime"><span class="post-meta-item__icon"><i class="far fa-calendar-plus"></i></span><span class="post-meta-item__info">发表于</span><span class="post-meta-item__value">2021-10-24</span></span><span class="post-meta-item post-meta-item--updatetime"><span class="post-meta-item__icon"><i class="far fa-calendar-check"></i></span><span class="post-meta-item__info">更新于</span><span class="post-meta-item__value">2021-10-28</span></span></div></header><div class="post-body"><div class="post-excerpt">
         <h3 id="师兄大论文《基于深度学习跨模态行人再识别系统的研究与实现》阅读">
           <a href="#师兄大论文《基于深度学习跨模态行人再识别系统的研究与实现》阅读" class="heading-link"><i class="fas fa-link"></i></a><a href="#师兄大论文《基于深度学习跨模态行人再识别系统的研究与实现》阅读" class="headerlink" title="师兄大论文《基于深度学习跨模态行人再识别系统的研究与实现》阅读"></a>师兄大论文《<strong>基于深度学习跨模态行人再识别系统的研究与实现</strong>》阅读</h3>
@@ -394,131 +689,6 @@ window.CONFIG = CONFIG;</script><meta name="generator" content="Hexo 5.4.0"></he
           <a href="#四-结论" class="heading-link"><i class="fas fa-link"></i></a><a href="#四-结论" class="headerlink" title="四 结论"></a>四 结论</h4>
       <p>师兄分别在行人再识别的两个部分进行改进，在行人检测部分对网络结构进行改进，在CenterNet的基础上加入了注意力模块，提升了预测目标中心点的精度。在损失函数部分将CenterNet的损失函数改进为CIOU，将检测框视作一个整体进行优化。</p>
 <p>在行人识别部分使用了跨模态的学习方法。采用了以ResNet-50为主干网络的双流网络去分别提取RGB图像与红外图像的低、中、高层特征。并采取向量拼接作为特征融合消除模态间差异。并采取特征分割将特征分为全局特征与局部特征。全局特征的提取方法是分别对特征融合后的低中高层特征作最大值池化操作。为了更好的提取细节特征，对中层与高层特征作特征分割之后将分割后的深层特征降维处理滤除冗余信息得到局部特征。并分别对局部特征与全局特征提出了对应的损失函数。最终取得了较好的效果</p>
-</div></div></article><article class="postlist-item post"><header class="post-header"><h1 class="post-title"><a class="post-title__link" href="/2021/10/24/ReID-summary/">《无监督领域自适应行人重识别研究进展》阅读</a></h1><div class="post-meta"><span class="post-meta-item post-meta-item--createtime"><span class="post-meta-item__icon"><i class="far fa-calendar-plus"></i></span><span class="post-meta-item__info">发表于</span><span class="post-meta-item__value">2021-10-24</span></span><span class="post-meta-item post-meta-item--updatetime"><span class="post-meta-item__icon"><i class="far fa-calendar-check"></i></span><span class="post-meta-item__info">更新于</span><span class="post-meta-item__value">2021-12-07</span></span></div></header><div class="post-body"><div class="post-excerpt">
-        <h3 id="《无监督领域自适应行人重识别研究进展》阅读">
-          <a href="#《无监督领域自适应行人重识别研究进展》阅读" class="heading-link"><i class="fas fa-link"></i></a><a href="#《无监督领域自适应行人重识别研究进展》阅读" class="headerlink" title="《无监督领域自适应行人重识别研究进展》阅读"></a>《<strong>无监督领域自适应行人重识别研究进展</strong>》阅读</h3>
-      
-        <h4 id="一、无监督领域自适应行人重识别（Unsupervised-Domain-Adaptation-Person-Re">
-          <a href="#一、无监督领域自适应行人重识别（Unsupervised-Domain-Adaptation-Person-Re" class="heading-link"><i class="fas fa-link"></i></a><a href="#一、无监督领域自适应行人重识别（Unsupervised-Domain-Adaptation-Person-Re" class="headerlink" title="一、无监督领域自适应行人重识别（Unsupervised  Domain  Adaptation Person  Re-"></a>一、无监督领域自适应行人重识别（Unsupervised  Domain  Adaptation Person  Re-</h4>
-      <p>identification, UDA Re-ID）</p>
-
-        <h5 id="1-1-领域自适应-Domain-Adaption">
-          <a href="#1-1-领域自适应-Domain-Adaption" class="heading-link"><i class="fas fa-link"></i></a><a href="#1-1-领域自适应-Domain-Adaption" class="headerlink" title="1.1 领域自适应 Domain Adaption"></a>1.1 领域自适应 Domain Adaption</h5>
-      <p><em>Domain Adaption</em>是<em>transfer leanring</em>（迁移学习）中很重要的一项内容。主要目的是将具有不同分布的（<em>data distribution</em>）的具有标签（<em>label</em>）的源域（<em>source domain</em>）和不带标签的目标域（<em>target domain</em>） 映射（<em>map</em>）到同一个特征空间（<em>embedding mainfold</em>）。即使训练好的模型能够很好的泛化到其他领域中。</p>
-<p><em><strong>Domain</strong></em>可以看作是一个服从相同分布的一类数据，而训练集由一个或多个<em>Domain</em>组成。</p>
-<p>DA的一个基础理论如下图所示</p>
-<p><img src="/images/ReID-summary/image-20211206143021042.png" alt="image-20211206143021042"></p>
-<p>其中<em>Target risk</em>的上界由<em>Source risk，Complexity of H</em>,与<em>Source-target distribution divergence</em>组成，其中<em>Source risk</em>直接由源域给出，<em>Complexity of H</em>指的是模型的复杂程度，一般来说是一个常量，因此一般来说方便优化或者下降的点就是<em>Source-target distribution divergence</em>，即想办法减小源域与目标域分布的差距，所以在训练的过程中<em>DA</em>需要直接访问目标域的数据。</p>
-
-        <h5 id="1-2-无监督">
-          <a href="#1-2-无监督" class="heading-link"><i class="fas fa-link"></i></a><a href="#1-2-无监督" class="headerlink" title="1.2 无监督"></a>1.2 无监督</h5>
-      <p>要求其它领域中的数据样本没有与任务有关的标签信息,  无法参与对模型的微调。由于不同领域存在不同的数据分布,  一般将数据的分布差异认为是无监督领域自适应行人重识别的关键问题,  因此研究的重点是让模型可以适应不同领域之间的差异(<em>Domain Gap</em>),减少域差对模型性能的影响。</p>
-<p>无监督领域自适应一般包含两个领域（数据集），即训练集是带标签的（有监督的）源域（<em>source domain</em>），和无监督的目标域（<em>Target Domain</em>）。任务目标是能够在无重叠视阈的目标域中能够检索出同一行人.</p>
-
-        <h4 id="二、无监督领域自适应行人重识别的算法">
-          <a href="#二、无监督领域自适应行人重识别的算法" class="heading-link"><i class="fas fa-link"></i></a><a href="#二、无监督领域自适应行人重识别的算法" class="headerlink" title="二、无监督领域自适应行人重识别的算法"></a>二、无监督领域自适应行人重识别的算法</h4>
-      <p>无监督领域自适应行人重识别的研究方向大致可以分为以下三类：</p>
-<p>1）生成满足其它领域数据分布的伪样本,在数据增广的同时,  能够缩小不同领域之间的领域差异；常见的方法是基于图像的风格迁移，即通过图像的风格迁移模型将有标签的源域目标通过图像的风格迁移生成与目标域相近的风格图片作为满足目标领域数据分布的伪样本投入模型的训练。</p>
-<p>2）训练后的模型具有提取高鲁棒领域不变性特征的能力,  缓解领域间的差异；常见的方法是基于表示学习的无监<br>督领域自适应行人重识别。</p>
-<p>3）提高目标域中样本特征伪标签生成的准确度,  用于目标域中模型有监督的微调.常见的方法是基于伪标签生成的无监督领域自适应行人重识别。</p>
-<p><img src="/images/ReID-summary/image-20211206095839729.png" alt="image-20211206095839729"></p>
-<p>​                                                 图1 无监督领域自适应行人重识别的三类研究方向</p>
-
-        <h5 id="2-1-基于图像风格迁移的方法">
-          <a href="#2-1-基于图像风格迁移的方法" class="heading-link"><i class="fas fa-link"></i></a><a href="#2-1-基于图像风格迁移的方法" class="headerlink" title="2.1 基于图像风格迁移的方法"></a>2.1 基于图像风格迁移的方法</h5>
-      
-        <h6 id="2-1-1-问题的提出">
-          <a href="#2-1-1-问题的提出" class="heading-link"><i class="fas fa-link"></i></a><a href="#2-1-1-问题的提出" class="headerlink" title="2.1.1 问题的提出"></a>2.1.1 问题的提出</h6>
-      <p>一直以来,  在基于无监督的领域自适应行人重识别中,  不同领域内的光照、行人背景、相机角度、行人姿势、分辨率以及行人衣着风格等差异造成的领域差异被专家学者认为是造成重识别性能低的首要原因。因此如何缩小领域差异成为基于无监督的领域自适应行人重识别研究的一项关键科学问题。</p>
-
-        <h6 id="2-1-2-主要方法">
-          <a href="#2-1-2-主要方法" class="heading-link"><i class="fas fa-link"></i></a><a href="#2-1-2-主要方法" class="headerlink" title="2.1.2 主要方法"></a>2.1.2 主要方法</h6>
-      <p>基于图像风格迁移的主要思路是将有监督的源域图像通过神经网络生成具有目标域图像风格的源域图像投入训练，实现减小源域与目标域分布的差距。主要的思路大致有：</p>
-<p><strong>1、基于领域差异的风格迁移</strong></p>
-<p>生成较高质量的有着目标域图像风格的源域图像,  方便特征提取网络可以有监督的进行训练。</p>
-<p><strong>2、基于背景差异的风格迁移</strong></p>
-<p>背景差异被认为是造成领域差异的主要因素之一,  将解决无监督领域自适应行人重识别问题的工作重点放在行人图像的背景上。该方法主要训练了一个应用于行人重识别的行人转换生成对抗网络(Person  Transfer  GAN, PTGAN),  该网络能够在尽可能保证行人前景不变的前提下,  将背景转换成期望数据集的图像背景风格。</p>
-<p><strong>3、基于相机差异的风格迁移</strong></p>
-<p>域间和域内摄像机间由于所在位置和角度的不同而产生的视角差异也是影响识别效果的重要因素。该种方法是对源域相同行人的图片作不同视角差异的风格迁移，生成的图片将用于数据增强以提升网络对因相机视角变化导致样本间特征差异的适应能力。</p>
-<p><strong>4、基于其他差异的风格迁移</strong></p>
-<p>基于无监督的领域自适应行人重识别中,  除了行人背景差异和相机差异对领域差异造成的巨大影响,  不同领域间行人图像也存在着其它差异, 诸如光照、行人姿势、分辨率的变化.这些差异也是加大领域间差异的原因之一。</p>
-
-        <h5 id="2-2-基于表示学习的方法">
-          <a href="#2-2-基于表示学习的方法" class="heading-link"><i class="fas fa-link"></i></a><a href="#2-2-基于表示学习的方法" class="headerlink" title="2.2 基于表示学习的方法"></a>2.2 基于表示学习的方法</h5>
-      <p>基于表示学习的无监督领域自适应行人重识别<strong>旨在让模型从未标记的跨域数据中学习有效的嵌入空间</strong>,  获得的嵌入特征具有与领域变化无关的高鉴别力和很好的领域适应性。</p>
-
-        <h6 id="2-2-1-基于损失函数的表示学习方法">
-          <a href="#2-2-1-基于损失函数的表示学习方法" class="heading-link"><i class="fas fa-link"></i></a><a href="#2-2-1-基于损失函数的表示学习方法" class="headerlink" title="2.2.1 基于损失函数的表示学习方法"></a>2.2.1 基于损失函数的表示学习方法</h6>
-      <p>基于损失函数的表示学习方法是数据训练过程中利用损失函数来约束网络,  让网络朝着损失函数减小的方向进行优化.基于无监督的领域自适应行人重识别常用的损失函数根据功能进行分类, 可分为分类损失函数、度量学习损失函数和分布损失函数三种类型。</p>
-<p>（1）、分类损失函数</p>
-<p>分类损失函数是将行人再识别问题看作一个多分类问题。分类损失函数是衡量网络预测和真实分类的一种损失函数,  通过训练使网络具有预测分类的能力。常见的有行人身份损失、行人属性损失和视角不变损失。</p>
-<p>行人身份损失是将源域中k个行人身份的N张图片看作K分类问题，用SoftMax进行计算分类损失函数。</p>
-<p>行人属性损失是将每张图片都具有M个属性的标注，则行人属性损失可看作是属性二分类预测的累加形式,  即预测图片𝑥是否拥有第𝑚个属性，该损失采用Sigmoid交叉熵损失函数。</p>
-<p>视角不变损失是为了增强补贴相机视角下的模型泛化性，减轻目标中不同视角风格的影响。实际工作是将不同摄像机的视角加入考虑，对摄像机进行标签标注，标注源域每张图片来自的摄像机标签。即预测图片来自的相机的索引。</p>
-<p>（2）、度量学习损失函数</p>
-<p>度量学习损失函数常用于评价数据分布中的距离,  其中对比损失函数(Contrastive loss)、三元组损失函数(Triplet  loss)和四元组损失函数（Quadruplet loss）[31]是行人重识别最常使用度量损失函数。</p>
-
-        <h6 id="2-2-2-基于注意力机制的表示学习方法">
-          <a href="#2-2-2-基于注意力机制的表示学习方法" class="heading-link"><i class="fas fa-link"></i></a><a href="#2-2-2-基于注意力机制的表示学习方法" class="headerlink" title="2.2.2 基于注意力机制的表示学习方法"></a>2.2.2 基于注意力机制的表示学习方法</h6>
-      <p>注意力机制（Attention Mechanism）是机器学习常用的数据处理方法之一,  被广泛应用于自然语言处理、计算机视觉、语音识别 等深度学习任务中。通过对人类注意机制的模仿和模型在大量数据上的训练,  能让模型具备在众多信息中关注对当前任务更关键的信息提取能力。</p>
-<p>注意力机制大多应用在弱化行人图像背景、增强行人目标信息等方面。</p>
-
-        <h6 id="2-2-3-基于局部特征的表示方法">
-          <a href="#2-2-3-基于局部特征的表示方法" class="heading-link"><i class="fas fa-link"></i></a><a href="#2-2-3-基于局部特征的表示方法" class="headerlink" title="2.2.3 基于局部特征的表示方法"></a>2.2.3 基于局部特征的表示方法</h6>
-      <p>在无监督领域自适应行人重识别研究中,  一些工作认为局部特征相比全局特征,  不容易受到领域差异的影响,  具有较高的领域适应能力。因此基于局部特征的方法也常作为有效的手段被研究人员所采用。局部特征最常见的获取方式有手动分块或人体关键点定位分块两种形式。</p>
-
-        <h5 id="2-3-基于伪标签生成的方法">
-          <a href="#2-3-基于伪标签生成的方法" class="heading-link"><i class="fas fa-link"></i></a><a href="#2-3-基于伪标签生成的方法" class="headerlink" title="2.3 基于伪标签生成的方法"></a>2.3 基于伪标签生成的方法</h5>
-      <p>由于基于无监督的领域自适应行人重识别中目标域图像不包含行人身份标签,  给基于无监督的领域自适应行人<br>重识别研究带来极大的挑战。</p>
-<p>基于伪标签生成的方法大多是训练模型自动在目标域上生成较为可靠的伪标签，利用生成的伪标签去有监督的指导网络优化，提高模型的泛化水平。这里的伪标签不仅仅局限在给予行人对应身份的身份标签（ID label）,  也可以以能够正确的区分样本的正例样本对和负例样本的样本关系形式存在以满足样本度量学习的需要。</p>
-<p>一类是基于样本特征间距离比较的排序建立伪标签；第二类是利用在特征空间聚类后形成的簇给予对应的伪标签；最后一类则是综合前两类的优势,  联合排序和聚类的伪标签生成方法。生成的这些伪标签将作为目标域中行人身份标签或正负样本对对已在源域训练后的模型进行微调,  最终获得模型。</p>
-
-        <h6 id="2-3-1-基于排序的伪标签生成方法">
-          <a href="#2-3-1-基于排序的伪标签生成方法" class="heading-link"><i class="fas fa-link"></i></a><a href="#2-3-1-基于排序的伪标签生成方法" class="headerlink" title="2.3.1 基于排序的伪标签生成方法"></a>2.3.1 基于排序的伪标签生成方法</h6>
-      <p>基于排序（Ranking-based）的伪标签生成方法也称为基于邻近（Neighbor-based）的伪标签生成方法,  是一种较易理解的伪标签生成方法,  即根据样本在特征空间间的距离排序来划分类别的一种方法。经过由源域训练后的神经网络模型提取出目标域行人图片的全部特征。并对目标域样本的特征以两两对应的形式作距离（相似度）的计算。距离可以使用马氏距离、欧氏距离以及余弦距离。距离计算之后对距离进行排序，常用的算法有K-近邻（K-NN),相互近邻（𝑘-reciprocal nearest neighbors, 𝑘-RNN ）排序算法以及𝑘互近邻编码（𝑘-reciprocal encoding）,大致的思路均是将距离最邻近的K个样本视为有可能相同的一类，并以此作为伪标签从而微调网络。</p>
-<p>而基于距离排序的伪标签生成工作又可以分为基于目标域与源域间的距离排序以及基于目标域的距离排序两种。基于目标域与源域之间的距离排序，由于源域中是有身份标签的。 对目标域无标签的行人图像可根据该图像特征与源域间的多细粒度特征间的余弦距离排序给予对应的源域身份标签.这些筛选过的目标域图像将和源域一起组成训练集,  共同指导模型微调。</p>
-<p>其它的基于距离排序的伪标签方法使用的是目标域间距离排序的方式。由于目标域的样本无身份标签,  因此基于目标域的距离排序生成的伪标签是伪关系标签。</p>
-
-        <h6 id="2-3-2-基于聚类的伪标签生成">
-          <a href="#2-3-2-基于聚类的伪标签生成" class="heading-link"><i class="fas fa-link"></i></a><a href="#2-3-2-基于聚类的伪标签生成" class="headerlink" title="2.3.2 基于聚类的伪标签生成"></a>2.3.2 基于聚类的伪标签生成</h6>
-      <p>基于聚类的伪标签生成算法会使用聚类算法, 例如𝐾-mean、DBSCAN,  通过样本间距离或者样本分布密度迭代完成聚类,  最终形成的同簇内样本对应相同的行人身份标签,  不同的簇间样本对应不同的行人身份标签。</p>
-<p>基于聚类的伪标签生成方法有着理解简单、容易实现的优势,  能够预测出具体的伪身份标签。但是聚类算法对噪声样本较为敏感,  容易对模型的优化和后续的聚类产生影响.因此噪声样本是所有基于聚类的伪标签生成方法亟待解决的挑战之一。</p>
-
-        <h4 id="三、数据集与性能评估指标">
-          <a href="#三、数据集与性能评估指标" class="heading-link"><i class="fas fa-link"></i></a><a href="#三、数据集与性能评估指标" class="headerlink" title="三、数据集与性能评估指标"></a>三、数据集与性能评估指标</h4>
-      
-        <h5 id="3-1-什么是图库集（Gallery-Set）和探针集-Probe-Set">
-          <a href="#3-1-什么是图库集（Gallery-Set）和探针集-Probe-Set" class="heading-link"><i class="fas fa-link"></i></a><a href="#3-1-什么是图库集（Gallery-Set）和探针集-Probe-Set" class="headerlink" title="3.1 什么是图库集（Gallery Set）和探针集(Probe Set)"></a>3.1 什么是图库集（Gallery Set）和探针集(Probe Set)</h5>
-      <p>一般来说图片数据集会分为<strong>训练集（Train Set）与测试集（Test Set)<strong>。而在Re-ID的数据集中一般</strong>测试集</strong>又会细分成<strong>图库集（Gallery Set）和探针集(Probe Set)或查询集</strong>。</p>
-<p><strong>无论是gallery还是probe都是仅在测试集出现的概念。</strong>Re-ID的任务是提供一张行人照片，从众多的数据库中寻找与之具有相同身份的图片。</p>
-<p>下面参考博客：原文链接：<span class="exturl"><a class="exturl__link" target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_44273380/article/details/108949031">https://blog.csdn.net/weixin_44273380/article/details/108949031</a><span class="exturl__icon"><i class="fas fa-external-link-alt"></i></span></span></p>
-<p>gallery<br>gallery原意：画廊，这里博主喜欢将它翻译为注册集，也有同学翻译为参考集。就像我们说的“注册”，它的作用就好比一个人脸识别系统，每个人都进去注册了几张自己脸的图像，并和自己的身份绑定起来，从而形成我们上面提到的这个巨大系统的“数据库”。测试的时候，我们需要把一张新的照片去“画廊”，也就是注册数据库中一个一个匹配，得到结果。</p>
-<p>这里注意，gallery是只有测试集才有的，因为训练的时候我们的期望是模型能根据两张标注好的图像更好地提取特征，以及判断相似度。这个过程的数据来源是标注好的图像，目标仅仅是训练模型对提供的图片的特征提取能力，也就不需要gallery来提供参考。</p>
-<p>probe<br>probe原意：探针、调查。这里博主就通俗地翻译为查询集，就是说，我们在测试的时候是在probe中选取元素来到gallery寻找的，最终测试阶段对模型性能的评估是根据probe中元素查询的效果来反映的。</p>
-
-        <h5 id="3-2-常用数据集">
-          <a href="#3-2-常用数据集" class="heading-link"><i class="fas fa-link"></i></a><a href="#3-2-常用数据集" class="headerlink" title="3.2 常用数据集"></a>3.2 常用数据集</h5>
-      <ul>
-<li><p>CUHK03 图像数据集<br>CUHK03是香港中文大学2014 年开源的第一个可供深度学习使用的大型图像行人重识别数据集.数据集采集自香港中文大学校园内的 10 个摄像头,总共收集包含 1467 个行人的 13164 张图片, 行人包围框由 DPM 和手工检测并标示. 在CUHK03 的行人重识别中,分为两种训练测试标准.第一种是随机选出 100 个行人作为测试集,1160个行人作为训练集,100 个行人作为验证集,重复二十次,这种训练测试标准被称为 Single-shot setting;第二种则是类似于 Market-1501,它将数据集分为包含 767 个行人的训练集和包含 700 个行人的测试集。</p>
-</li>
-<li><p>Market-1501 图像数据集</p>
-<p>Market-1501是清华大学 2015 年开源的图像行人重识别数据集。数据集中的行人图像采集自校园超市的6 个摄像头,包含1501 个行人的32668张行人图片。开源者采用 DPM 算法将图片检测和裁剪成128×64 大小的行人图片。数据集分为3 个集合,包括由751 个行人,总计12936 张图片组成的训练集;测试集中则包含剩余 750 个人,总计 12936张图片组成的图库集(Gallery Set),以及750 人的其它3368 张图片组成的探针集(Probe Set)。</p>
-</li>
-<li><p>DukeMTMC-Re-ID 图像数据集</p>
-<p>DukeMTMC-Re-ID是悉尼科技大学2017 年开源的图像行人重识别数据集。数据集采集自 8 个不同角度的摄像头,总计包含1812 个行人的36411张图片。数据集中行人边界框由人工手动裁剪。与Market1501 相同,数据集分为3 个集合,包括由702个行人的 16522 张图像组成的训练集;测试集包含1110 个行人的 17661 张图片组成的图库集和图库集中存在的702 个行人的其它2228 张图片组成探针集。</p>
-</li>
-<li><p>MSMT17 图像数据集</p>
-<p>MSMT17是由北京大学 2019 年开源的大型图像行人重识别数据集.数据集的采集涵盖了多个场景和多个时段,更接近于真实场景.数据集由 15个摄像头采集,包含 12 个户外摄像头和 3 个室内摄像头.采集过程中,选择了具有不同天气条件的 4天时间,涵盖每天早上、中午和下午三个时间段的3 个小时的视频,总计 180 个小时的视频.在数据集整理和标注上,采用 FasterRCNN[81]作为行人检测器,并用了 2 个月的时间进行人工标注,最终得到4101 个行人的 126441 张图片.与 Market1501 和DukeMTMC-Re-ID 不同,数据集中训练集和测试集的行人大约按照 1:3 的比例划分,其中训练集包含1041 个行人的 32621 个包围框,测试集包含 3060个行人的93820 个包围框.其中测试集中,随机选择11659 个包围框作为 ProbeSet,其它 82161 个包围框作为Gallery。        </p>
-</li>
-</ul>
-
-        <h5 id="3-3性能评价指标">
-          <a href="#3-3性能评价指标" class="heading-link"><i class="fas fa-link"></i></a><a href="#3-3性能评价指标" class="headerlink" title="3.3性能评价指标"></a>3.3性能评价指标</h5>
-      <p>行人重识别模型性能的评价指标通常采用累计匹配曲线(Cumulative  Match  Characteristics,CMC)和平均精度均值(Mean Average Precision,mAP)进行评估。</p>
-<p>累积匹配特征曲线 CMC[k]或 Rank-k表示在测试集中当查找的探针（Probe）在图库集（Gallery Set）中进行距离比较后,  将查询集中行人按照距离的远近由小到大进行排序,  前 k个搜索结果中行人匹配到的概率。例如 Rank-1 表示第一次就能在 Gallery  Set 中正确匹配的 Probe 数量与 Probe Set 数量之比,  Rank-5 表示前五次能在 Gallery  Set中正确匹配的Probe 数量与Probe Set 数量之比。假设测试集探针集总共包含𝑁个行人,  即共进行𝑁次查询和排序后,  每次查询目标行人能匹配到的排序结果用𝑟 = (𝑟1,𝑟2,…,𝑟A)表示,  𝑟i表示探针集中第𝑖个样本在Gallery Set 中正确匹配排序, CMC 曲线表示为：</p>
-<p><img src="/images/ReID-summary/image-20211207161911344.png" alt="image-20211207161911344"></p>
-<p>平均精度均值是对查询集中查询样本的平均精度（Average  Precision, AP）取平均值,  表示为： </p>
-<p><img src="/images/ReID-summary/image-20211207161941214.png" alt="image-20211207161941214"></p>
 </div></div></article><article class="postlist-item post"><header class="post-header"><h1 class="post-title"><a class="post-title__link" href="/2021/10/20/LeNet/">传统网络实现之LeNet</a></h1><div class="post-meta"><span class="post-meta-item post-meta-item--createtime"><span class="post-meta-item__icon"><i class="far fa-calendar-plus"></i></span><span class="post-meta-item__info">发表于</span><span class="post-meta-item__value">2021-10-20</span></span><span class="post-meta-item post-meta-item--updatetime"><span class="post-meta-item__icon"><i class="far fa-calendar-check"></i></span><span class="post-meta-item__info">更新于</span><span class="post-meta-item__value">2021-10-22</span></span></div></header><div class="post-body"><div class="post-excerpt">
         <h3 id="传统网络实现之LeNet">
           <a href="#传统网络实现之LeNet" class="heading-link"><i class="fas fa-link"></i></a><a href="#传统网络实现之LeNet" class="headerlink" title="传统网络实现之LeNet"></a>传统网络实现之LeNet</h3>
@@ -613,12 +783,6 @@ window.CONFIG = CONFIG;</script><meta name="generator" content="Hexo 5.4.0"></he
         <h4 id="4-总结">
           <a href="#4-总结" class="heading-link"><i class="fas fa-link"></i></a><a href="#4-总结" class="headerlink" title="4 总结"></a>4 总结</h4>
       <p>LeNet作为较早的卷积神经网络模型，比起只采用一层softmax的方法有了一定的提升。接下来可以尝试采取更深层的网络模型进一步提升精度。</p>
-</div></div></article><article class="postlist-item post"><header class="post-header"><h1 class="post-title"><a class="post-title__link" href="/2021/10/17/zip/">Python中的zip()函数</a></h1><div class="post-meta"><span class="post-meta-item post-meta-item--createtime"><span class="post-meta-item__icon"><i class="far fa-calendar-plus"></i></span><span class="post-meta-item__info">发表于</span><span class="post-meta-item__value">2021-10-17</span></span><span class="post-meta-item post-meta-item--updatetime"><span class="post-meta-item__icon"><i class="far fa-calendar-check"></i></span><span class="post-meta-item__info">更新于</span><span class="post-meta-item__value">2022-03-06</span></span></div></header><div class="post-body"><div class="post-excerpt">
-        <h4 id="Zip-函数">
-          <a href="#Zip-函数" class="heading-link"><i class="fas fa-link"></i></a><a href="#Zip-函数" class="headerlink" title="Zip()函数"></a>Zip()函数</h4>
-      <p><strong>zip()</strong> 函数用于将可迭代的对象作为参数，将对象中对应的元素打包成一个个元组，然后返回由这些元组组成的列表。</p>
-<p>如果各个迭代器的元素个数不一致，则返回列表长度与最短的对象相同，利用 * 号操作符，可以将元组解压为列表。</p>
-<p><img src="/images/zip/image-20211017104901386.png" alt="image-20211017104901386"></p>
 </div></div></article><article class="postlist-item post"><header class="post-header"><h1 class="post-title"><a class="post-title__link" href="/2021/10/17/week-summary002/">每周计划与总结002</a></h1><div class="post-meta"><span class="post-meta-item post-meta-item--createtime"><span class="post-meta-item__icon"><i class="far fa-calendar-plus"></i></span><span class="post-meta-item__info">发表于</span><span class="post-meta-item__value">2021-10-17</span></span><span class="post-meta-item post-meta-item--updatetime"><span class="post-meta-item__icon"><i class="far fa-calendar-check"></i></span><span class="post-meta-item__info">更新于</span><span class="post-meta-item__value">2021-10-17</span></span></div></header><div class="post-body"><div class="post-excerpt">
         <h4 id="上周总结">
           <a href="#上周总结" class="heading-link"><i class="fas fa-link"></i></a><a href="#上周总结" class="headerlink" title="上周总结"></a>上周总结</h4>
@@ -644,6 +808,12 @@ window.CONFIG = CONFIG;</script><meta name="generator" content="Hexo 5.4.0"></he
 </ul>
 <p>下周再摆烂直接tm抽自己。</p>
 <p><img src="/images/week%20summary001/image-20211009160233635.png" alt="image-20211009160233635"></p>
+</div></div></article><article class="postlist-item post"><header class="post-header"><h1 class="post-title"><a class="post-title__link" href="/2021/10/17/zip/">Python中的zip()函数</a></h1><div class="post-meta"><span class="post-meta-item post-meta-item--createtime"><span class="post-meta-item__icon"><i class="far fa-calendar-plus"></i></span><span class="post-meta-item__info">发表于</span><span class="post-meta-item__value">2021-10-17</span></span><span class="post-meta-item post-meta-item--updatetime"><span class="post-meta-item__icon"><i class="far fa-calendar-check"></i></span><span class="post-meta-item__info">更新于</span><span class="post-meta-item__value">2022-03-06</span></span></div></header><div class="post-body"><div class="post-excerpt">
+        <h4 id="Zip-函数">
+          <a href="#Zip-函数" class="heading-link"><i class="fas fa-link"></i></a><a href="#Zip-函数" class="headerlink" title="Zip()函数"></a>Zip()函数</h4>
+      <p><strong>zip()</strong> 函数用于将可迭代的对象作为参数，将对象中对应的元素打包成一个个元组，然后返回由这些元组组成的列表。</p>
+<p>如果各个迭代器的元素个数不一致，则返回列表长度与最短的对象相同，利用 * 号操作符，可以将元组解压为列表。</p>
+<p><img src="/images/zip/image-20211017104901386.png" alt="image-20211017104901386"></p>
 </div></div></article><article class="postlist-item post"><header class="post-header"><h1 class="post-title"><a class="post-title__link" href="/2021/10/11/Convolutional-Neural-Networks/">卷积神经网络</a></h1><div class="post-meta"><span class="post-meta-item post-meta-item--createtime"><span class="post-meta-item__icon"><i class="far fa-calendar-plus"></i></span><span class="post-meta-item__info">发表于</span><span class="post-meta-item__value">2021-10-11</span></span><span class="post-meta-item post-meta-item--updatetime"><span class="post-meta-item__icon"><i class="far fa-calendar-check"></i></span><span class="post-meta-item__info">更新于</span><span class="post-meta-item__value">2021-10-29</span></span></div></header><div class="post-body"><div class="post-excerpt">
         <h3 id="第六章-卷积神经网络">
           <a href="#第六章-卷积神经网络" class="heading-link"><i class="fas fa-link"></i></a><a href="#第六章-卷积神经网络" class="headerlink" title="第六章 卷积神经网络"></a>第六章 卷积神经网络</h3>
@@ -784,32 +954,4 @@ window.CONFIG = CONFIG;</script><meta name="generator" content="Hexo 5.4.0"></he
 <p>（3）实现非线性（这个可以想一下，relu函数，是不是有点类似的感觉？）。</p>
 <p>（4）可以扩大感知野。</p>
 <p>（5）可以实现不变性，其中不变形性包括，平移不变性、旋转不变性和尺度不变性。汇合操作使模型更关注是否存在某些特征而不是特征具体的位置<br>，可看作是一种很强的先验，使特征学习包含某种程度自由度，能容忍一些特征微小的位移。</p>
-</div></div></article><article class="postlist-item post"><header class="post-header"><h1 class="post-title"><a class="post-title__link" href="/2021/10/09/week-summary001/">每周计划与总结001</a></h1><div class="post-meta"><span class="post-meta-item post-meta-item--createtime"><span class="post-meta-item__icon"><i class="far fa-calendar-plus"></i></span><span class="post-meta-item__info">发表于</span><span class="post-meta-item__value">2021-10-09</span></span><span class="post-meta-item post-meta-item--updatetime"><span class="post-meta-item__icon"><i class="far fa-calendar-check"></i></span><span class="post-meta-item__info">更新于</span><span class="post-meta-item__value">2021-10-09</span></span></div></header><div class="post-body"><div class="post-excerpt">
-        <h4 id="前言">
-          <a href="#前言" class="heading-link"><i class="fas fa-link"></i></a><a href="#前言" class="headerlink" title="前言"></a>前言</h4>
-      <p>不知不觉就混吃等死混到了十月第一周都结束了。<del>本来打算十月开始就做一个，结果假期一拖就拖到了现在</del>。立个小目标每周不断更好吧TVT。</p>
-
-        <h4 id="上周总结">
-          <a href="#上周总结" class="heading-link"><i class="fas fa-link"></i></a><a href="#上周总结" class="headerlink" title="上周总结"></a>上周总结</h4>
-      <p><del>上周为祖国母亲庆生所以摸了。</del>除了稍微过了下数理统计与矩阵论的课本与课件，和结束了长达半个月的《动手学深度学习》第五章。</p>
-<p><img src="/images/week%20summary001/image-20211009160317243.png" alt="image-20211009160317243"></p>
-
-        <h4 id="下周（10-11-10-17）计划">
-          <a href="#下周（10-11-10-17）计划" class="heading-link"><i class="fas fa-link"></i></a><a href="#下周（10-11-10-17）计划" class="headerlink" title="下周（10.11-10.17）计划"></a>下周（10.11-10.17）计划</h4>
-      <ul>
-<li><p>《动手学深度学习》第六章结束</p>
-</li>
-<li><p>六级试卷*2</p>
-</li>
-<li><p>《算法导论》1-3章</p>
-</li>
-<li><p>《c++ Primer》3-4章</p>
-</li>
-<li><p>矩阵论、数理统计复习</p>
-</li>
-<li><p>睡前半小时《平凡的世界》<del>半年读了7章。。。从这周开始一定好好读书</del></p>
-</li>
-</ul>
-<p>十月绝不摆烂！！！！</p>
-<p><img src="/images/week%20summary001/image-20211009160233635.png" alt="image-20211009160233635"></p>
 </div></div></article></section><nav class="paginator"><div class="paginator-inner"><a class="extend prev" rel="prev" href="/page/5/"><i class="fas fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/5/">5</a><span class="page-number current">6</span><a class="page-number" href="/page/7/">7</a><a class="extend next" rel="next" href="/page/7/"><i class="fas fa-angle-right"></i></a></div></nav></div></div><div class="sidebar-wrap" id="sidebar-wrap"><aside class="sidebar" id="sidebar"><section class="sidebar-toc hide"></section><!-- ov = overview--><section class="sidebar-ov"><div class="sidebar-ov-author"><div class="sidebar-ov-author__avatar"><img class="sidebar-ov-author__avatar_img" src="/images/icons/photo.png" alt="avatar"></div><p class="sidebar-ov-author__text">To be a great person.</p></div><div class="sidebar-ov-cc"><a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en" target="_blank" rel="noopener" data-popover="知识共享许可协议" data-popover-pos="up"><img src="/images/cc-by-nc-sa.svg"></a></div></section></aside></div><div class="clearfix"></div></div></main><footer class="footer" id="footer"><div class="footer-inner"><div><span>Copyright © 2023</span><span class="footer__icon"><i class="fas fa-heart"></i></span><span>Strive</span></div><div><span>由 <a href="http://hexo.io/" title="Hexo" target="_blank" rel="noopener">Hexo</a> 强力驱动</span><span> v5.4.0</span><span class="footer__devider">|</span><span>主题 - <a href="https://github.com/liuyib/hexo-theme-stun/" title="Stun" target="_blank" rel="noopener">Stun</a></span><span> v2.6.2</span></div></div></footer><div class="loading-bar" id="loading-bar"><div class="loading-bar__progress"></div></div><div class="back2top" id="back2top"><span class="back2top__icon"><i class="fas fa-rocket"></i></span></div></div><script src="https://cdn.jsdelivr.net/npm/jquery@v3.4.1/dist/jquery.min.js"></script><script src="https://cdn.jsdelivr.net/npm/velocity-animate@1.5.2/velocity.min.js"></script><script src="https://cdn.jsdelivr.net/npm/velocity-animate@1.5.2/velocity.ui.min.js"></script><script src="/js/utils.js?v=2.6.2"></script><script src="/js/stun-boot.js?v=2.6.2"></script><script src="/js/scroll.js?v=2.6.2"></script><script src="/js/header.js?v=2.6.2"></script><script src="/js/sidebar.js?v=2.6.2"></script></body></html>
