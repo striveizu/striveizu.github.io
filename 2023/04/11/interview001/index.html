@@ -1,0 +1,343 @@
+<!DOCTYPE html><html lang="zh-CN"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="format-detection" content="telephone=no"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="black"><link rel="icon" href="/images/icons/favicon-16x16.png?v=2.6.2" type="image/png" sizes="16x16"><link rel="icon" href="/images/icons/favicon-32x32.png?v=2.6.2" type="image/png" sizes="32x32"><meta name="description" content="面试复盘：美团测试开发（暑期实习）       面试时间：4月10日 一面 部门名称：到店平台技术部 到店平台质量保障部QA                     1、简单介绍项目（5分钟）                           2、做的过程中有没有遇到什么问题？怎么解决的。       瞎吹 扯到浏览器端多路视频管理，部分摄像头推流卡住 解">
+<meta property="og:type" content="article">
+<meta property="og:title" content="面试复盘001-暑期实习 美团测开一面">
+<meta property="og:url" content="https://striveizu.tech/2023/04/11/interview001/index.html">
+<meta property="og:site_name" content="Strive&#39;s Blog">
+<meta property="og:description" content="面试复盘：美团测试开发（暑期实习）       面试时间：4月10日 一面 部门名称：到店平台技术部 到店平台质量保障部QA                     1、简单介绍项目（5分钟）                           2、做的过程中有没有遇到什么问题？怎么解决的。       瞎吹 扯到浏览器端多路视频管理，部分摄像头推流卡住 解">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://striveizu.tech/2023/04/11/interview001/image-20230412113330663.png">
+<meta property="og:image" content="https://striveizu.tech/interview001/image-20230412151042955.png">
+<meta property="og:image" content="https://striveizu.tech/interview001/image-20230411213000483.png">
+<meta property="article:published_time" content="2023-04-11T12:49:46.000Z">
+<meta property="article:modified_time" content="2023-04-12T07:12:03.471Z">
+<meta property="article:author" content="Strive">
+<meta property="article:tag" content="面试复盘">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://striveizu.tech/2023/04/11/interview001/image-20230412113330663.png"><title>面试复盘001-暑期实习 美团测开一面 | Strive's Blog</title><link ref="canonical" href="https://striveizu.tech/2023/04/11/interview001/"><link rel="dns-prefetch" href="https://cdn.jsdelivr.net"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.12.1/css/all.min.css" type="text/css"><link rel="stylesheet" href="/css/index.css?v=2.6.2"><script>var Stun = window.Stun || {};
+var CONFIG = {
+  root: '/',
+  algolia: undefined,
+  assistSearch: undefined,
+  fontIcon: {"prompt":{"success":"fas fa-check-circle","info":"fas fa-arrow-circle-right","warning":"fas fa-exclamation-circle","error":"fas fa-times-circle"},"copyBtn":"fas fa-copy"},
+  sidebar: {"offsetTop":"20px","tocMaxDepth":6},
+  header: {"enable":true,"showOnPost":true,"scrollDownIcon":true},
+  postWidget: {"endText":true},
+  nightMode: {"enable":true},
+  back2top: {"enable":true},
+  codeblock: {"style":"default","highlight":"light","wordWrap":false},
+  reward: false,
+  fancybox: false,
+  zoomImage: {"gapAside":"20px"},
+  galleryWaterfall: undefined,
+  lazyload: false,
+  pjax: undefined,
+  externalLink: {"icon":{"enable":true,"name":"fas fa-external-link-alt"}},
+  shortcuts: undefined,
+  prompt: {"copyButton":"复制","copySuccess":"复制成功","copyError":"复制失败"},
+  sourcePath: {"js":"js","css":"css","images":"images"},
+};
+
+window.CONFIG = CONFIG;</script><meta name="generator" content="Hexo 5.4.0"></head><body><div class="container" id="container"><header class="header" id="header"><div class="header-inner"><nav class="header-nav header-nav--fixed"><div class="header-nav-inner"><div class="header-nav-menubtn"><i class="fas fa-bars"></i></div><div class="header-nav-menu"><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/"><span class="header-nav-menu-item__icon"><i class="fas fa-home"></i></span><span class="header-nav-menu-item__text">首页</span></a></div><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/about/"><span class="header-nav-menu-item__icon"><i class="fas fa-address-card"></i></span><span class="header-nav-menu-item__text">关于</span></a></div><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="javascript:;" onclick="return false;"><span class="header-nav-menu-item__icon"><i class="fas fa-edit"></i></span><span class="header-nav-menu-item__text">文章</span></a><div class="header-nav-submenu"><div class="header-nav-submenu-item"><a class="header-nav-submenu-item__link" href="/archives/"><span class="header-nav-submenu-item__icon"><i class="fas fa-folder-open"></i></span><span class="header-nav-submenu-item__text">归档</span></a></div><div class="header-nav-submenu-item"><a class="header-nav-submenu-item__link" href="/categories/"><span class="header-nav-submenu-item__icon"><i class="fas fa-layer-group"></i></span><span class="header-nav-submenu-item__text">分类</span></a></div><div class="header-nav-submenu-item"><a class="header-nav-submenu-item__link" href="/tags/"><span class="header-nav-submenu-item__icon"><i class="fas fa-tags"></i></span><span class="header-nav-submenu-item__text">标签</span></a></div></div></div></div><div class="header-nav-mode"><div class="mode"><div class="mode-track"><span class="mode-track-moon"></span><span class="mode-track-sun"></span></div><div class="mode-thumb"></div></div></div></div></nav><div class="header-banner"><div class="header-banner-info"><div class="header-banner-info__title">Strive's Blog</div><div class="header-banner-info__subtitle">你我期许的绝非遥不可及</div></div><div class="header-banner-arrow"><div class="header-banner-arrow__icon"><i class="fas fa-angle-down"></i></div></div></div></div></header><main class="main" id="main"><div class="main-inner"><div class="content-wrap" id="content-wrap"><div class="content" id="content"><!-- Just used to judge whether it is an article page--><div id="is-post"></div><div class="post"><header class="post-header"><h1 class="post-title">面试复盘001-暑期实习 美团测开一面</h1><div class="post-meta"><span class="post-meta-item post-meta-item--createtime"><span class="post-meta-item__icon"><i class="far fa-calendar-plus"></i></span><span class="post-meta-item__info">发表于</span><span class="post-meta-item__value">2023-04-11</span></span><span class="post-meta-item post-meta-item--updatetime"><span class="post-meta-item__icon"><i class="far fa-calendar-check"></i></span><span class="post-meta-item__info">更新于</span><span class="post-meta-item__value">2023-04-12</span></span></div></header><div class="post-body">
+        <h3 id="面试复盘：美团测试开发（暑期实习）">
+          <a href="#面试复盘：美团测试开发（暑期实习）" class="heading-link"><i class="fas fa-link"></i></a><a href="#面试复盘：美团测试开发（暑期实习）" class="headerlink" title="面试复盘：美团测试开发（暑期实习）"></a>面试复盘：美团测试开发（暑期实习）</h3>
+      <p><strong>面试时间：4月10日 一面</strong></p>
+<p><strong>部门名称：到店平台技术部 到店平台质量保障部QA</strong></p>
+
+        <h5 id="1、简单介绍项目（5分钟）">
+          <a href="#1、简单介绍项目（5分钟）" class="heading-link"><i class="fas fa-link"></i></a><a href="#1、简单介绍项目（5分钟）" class="headerlink" title="1、简单介绍项目（5分钟）"></a>1、简单介绍项目（5分钟）</h5>
+      
+        <h5 id="2、做的过程中有没有遇到什么问题？怎么解决的。">
+          <a href="#2、做的过程中有没有遇到什么问题？怎么解决的。" class="heading-link"><i class="fas fa-link"></i></a><a href="#2、做的过程中有没有遇到什么问题？怎么解决的。" class="headerlink" title="2、做的过程中有没有遇到什么问题？怎么解决的。"></a>2、做的过程中有没有遇到什么问题？怎么解决的。</h5>
+      <p>瞎吹 扯到浏览器端多路视频管理，部分摄像头推流卡住 解决：多线程思想实现</p>
+
+        <h5 id="3、项目有应用效果？">
+          <a href="#3、项目有应用效果？" class="heading-link"><i class="fas fa-link"></i></a><a href="#3、项目有应用效果？" class="headerlink" title="3、项目有应用效果？"></a>3、项目有应用效果？</h5>
+      <p>无 只是作为实验室内部应用阶段 尚未上线（做都没做完）</p>
+
+        <h5 id="4、Linux指令-打开一个目录-目录下名叫a的文件-查看a文件的后10行">
+          <a href="#4、Linux指令-打开一个目录-目录下名叫a的文件-查看a文件的后10行" class="heading-link"><i class="fas fa-link"></i></a><a href="#4、Linux指令-打开一个目录-目录下名叫a的文件-查看a文件的后10行" class="headerlink" title="4、Linux指令 打开一个目录 目录下名叫a的文件 查看a文件的后10行"></a>4、Linux指令 打开一个目录 目录下名叫a的文件 查看a文件的后10行</h5>
+      <p>瞎扯 cd ls vim。。。。</p>
+<p>正确答案：</p>
+<figure class="highlight plaintext"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cat -n a.c | tail -10</span><br></pre></td></tr></table></div></figure>
+
+<p><img src="/2023/04/11/interview001/image-20230412113330663.png" alt="image-20230412113330663"> </p>
+<p>面试官提示：使用管道相关</p>
+<p>补充知识：管道</p>
+<p>Shell 还有一种功能，就是可以将两个或者多个命令（程序或者进程）连接到一起，把一个命令的输出作为下一个命令的输入，以这种方式连接的两个或者多个命令就形成了<strong>管道（pipe）</strong>。</p>
+<p>Linux 管道使用竖线<code>|</code>连接多个命令，这被称为管道符。Linux 管道的具体语法格式如下：</p>
+<p>command1 | command2<br>command1 | command2 [ | commandN… ]</p>
+<p>当在两个命令之间设置管道时，管道符<code>|</code>左边命令的输出就变成了右边命令的输入。只要第一个命令向标准输出写入，而第二个命令是从标准输入读取，那么这两个命令就可以形成一个管道。大部分的 Linux 命令都可以用来形成管道。</p>
+<blockquote>
+<p>这里需要注意，command1 必须有正确输出，而 command2 必须可以处理 command2 的输出结果；而且 command2 只能处理 command1 的正确输出结果，不能处理 command1 的错误信息。</p>
+</blockquote>
+<figure class="highlight plaintext"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">// 查看日志异常信息</span><br><span class="line">cat - n all.log ｜ grep &#x27;exception&#x27;</span><br></pre></td></tr></table></div></figure>
+
+<p>上次一面问题：一行命令找出tmp文件夹下最大的10个文件</p>
+<p>du命令-计算出单个文件或者文件夹的磁盘空间占用</p>
+<figure class="highlight plaintext"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">-a或--all：包含全部的文件系统；</span><br><span class="line">--block-size=&lt;区块大小&gt;：以指定的区块大小来显示区块数目；</span><br><span class="line">-h或--human-readable：以可读性较高的方式来显示信息；</span><br><span class="line">-H或--si：与-h参数相同，但在计算时是以1000 Bytes为换算单位而非1024 Bytes；</span><br><span class="line">-i或--inodes：显示inode的信息；</span><br><span class="line">-k或--kilobytes：指定区块大小为1024字节；</span><br><span class="line">-l或--local：仅显示本地端的文件系统；</span><br><span class="line">-m或--megabytes：指定区块大小为1048576字节；</span><br><span class="line">--no-sync：在取得磁盘使用信息前，不要执行sync指令，此为预设值；</span><br><span class="line">-P或--portability：使用POSIX的输出格式；</span><br><span class="line">--sync：在取得磁盘使用信息前，先执行sync指令；</span><br><span class="line">-t&lt;文件系统类型&gt;或--type=&lt;文件系统类型&gt;：仅显示指定文件系统类型的磁盘信息；</span><br><span class="line">-T或--print-type：显示文件系统的类型；</span><br><span class="line">-x&lt;文件系统类型&gt;或--exclude-type=&lt;文件系统类型&gt;：不要显示指定文件系统类型的磁盘信息；</span><br><span class="line">--help：显示帮助；</span><br><span class="line">--version：显示版本信息。</span><br></pre></td></tr></table></div></figure>
+
+<figure class="highlight plaintext"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">du -am | sort -nr | head -n 10</span><br></pre></td></tr></table></div></figure>
+
+<p>sort：</p>
+<p>　　-n  : 按照字符串表示的数字值来排序</p>
+<p>　　-r ：按照反序排列</p>
+<p>head :</p>
+<p>　　-n : 取出前多少行</p>
+<p><img src="/interview001/image-20230412151042955.png" alt="image-20230412151042955"></p>
+
+        <h5 id="5、数据库-mysql增删改查命令-数据库的删除命令有哪些？删除数据表中的内容-保留表的结构删除数据内容">
+          <a href="#5、数据库-mysql增删改查命令-数据库的删除命令有哪些？删除数据表中的内容-保留表的结构删除数据内容" class="heading-link"><i class="fas fa-link"></i></a><a href="#5、数据库-mysql增删改查命令-数据库的删除命令有哪些？删除数据表中的内容-保留表的结构删除数据内容" class="headerlink" title="5、数据库 mysql增删改查命令 数据库的删除命令有哪些？删除数据表中的内容 保留表的结构删除数据内容"></a>5、数据库 mysql增删改查命令 数据库的删除命令有哪些？删除数据表中的内容 保留表的结构删除数据内容</h5>
+      <p>（删除一行 delete from  保留表结构删除内容：**truncate (截断)**）</p>
+<p>答在 MySQL 中，使用 truncate、delete 和 drop 都可以实现表删除，但它们 3 个的使用场景和执行效果完全不同，接下来我们来盘点一下。<br><strong>truncate、delete、drop区别概述</strong><br>它们 3 个的区别如下表所示：</p>
+<div class="table-container"><table>
+<thead>
+<tr>
+<th>区别点</th>
+<th>drop</th>
+<th>truncate</th>
+<th>delete</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>执行速度</td>
+<td>快</td>
+<td>较快</td>
+<td>慢</td>
+</tr>
+<tr>
+<td>命令分类</td>
+<td>DDL（数据定义语言）</td>
+<td>DDL（数据定义语言）</td>
+<td>DML（数据操作语言）</td>
+</tr>
+<tr>
+<td>删除对象</td>
+<td>删除整张表和表结构，以及表的索引、约束和触发器。</td>
+<td>只删除表数据，表的结构、索引、约束等会被保留。</td>
+<td>只删除表的全部或部分数据，表结构、索引、约束等会被保留。</td>
+</tr>
+<tr>
+<td>删除条件(where)</td>
+<td>不能用</td>
+<td>不能用</td>
+<td>可使用</td>
+</tr>
+<tr>
+<td>回滚</td>
+<td>不可回滚</td>
+<td>不可回滚</td>
+<td>可回滚</td>
+</tr>
+<tr>
+<td>自增初始值</td>
+<td>-</td>
+<td>重置</td>
+<td>不重置</td>
+</tr>
+</tbody></table></div>
+
+        <h5 id="6、删除数据表？">
+          <a href="#6、删除数据表？" class="heading-link"><i class="fas fa-link"></i></a><a href="#6、删除数据表？" class="headerlink" title="6、删除数据表？"></a>6、删除数据表？</h5>
+      <p>drop table</p>
+
+        <h5 id="7、假如数据表的数据量非常大，使用什么样的方式去优化数据库的读写性能？">
+          <a href="#7、假如数据表的数据量非常大，使用什么样的方式去优化数据库的读写性能？" class="heading-link"><i class="fas fa-link"></i></a><a href="#7、假如数据表的数据量非常大，使用什么样的方式去优化数据库的读写性能？" class="headerlink" title="7、假如数据表的数据量非常大，使用什么样的方式去优化数据库的读写性能？"></a>7、假如数据表的数据量非常大，使用什么样的方式去优化数据库的读写性能？</h5>
+      <p>答：索引、缓存</p>
+
+        <h5 id="8、你提到了索引，有什么常见的方法验证索引的有效性？">
+          <a href="#8、你提到了索引，有什么常见的方法验证索引的有效性？" class="heading-link"><i class="fas fa-link"></i></a><a href="#8、你提到了索引，有什么常见的方法验证索引的有效性？" class="headerlink" title="8、你提到了索引，有什么常见的方法验证索引的有效性？"></a>8、你提到了索引，有什么常见的方法验证索引的有效性？</h5>
+      <p>答：最左匹配原则×</p>
+<p>正确：</p>
+<p><strong>explain 显示了MySql 如何使用索引来处理select语句以及连接表.</strong></p>
+<p><strong>使用方式在select 前面加上 explain就可以了</strong></p>
+<figure class="highlight plaintext"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">示例:explain select id , name table where name like &#x27;abc%&#x27;</span><br></pre></td></tr></table></div></figure>
+
+<div class="table-container"><table>
+<thead>
+<tr>
+<th><strong>字段</strong></th>
+<th><strong>说明</strong></th>
+</tr>
+</thead>
+<tbody><tr>
+<td><em>table</em></td>
+<td><em>显示这一行的数据是关于哪张表的</em></td>
+</tr>
+<tr>
+<td>type</td>
+<td>显示连接使用了何种类型,从最好到最差的连接类型为const、eq_reg、ref、range、indexhe和ALL</td>
+</tr>
+<tr>
+<td>possible_keys</td>
+<td>显示可能应用在这张表中的索引。如果为空，没有可能的索引。可以为相关的域从WHERE语句中选择一个合适的语句</td>
+</tr>
+<tr>
+<td>key</td>
+<td>实际使用的索引。如果为NULL，则没有使用索引。很少的情况下，MYSQL会选择优化不足的索引。这种情况下，可以在SELECT语句中使用USE INDEX（indexname）来强制使用一个索引或者用IGNORE INDEX（indexname）来强制MYSQL忽略索引</td>
+</tr>
+<tr>
+<td>key_len</td>
+<td>使用的索引的长度。在不损失精确性的情况下，长度越短越好</td>
+</tr>
+<tr>
+<td>ref</td>
+<td>显示索引的哪一列被使用了，如果可能的话，是一个常数</td>
+</tr>
+<tr>
+<td>rows</td>
+<td>MYSQL认为必须检查的用来返回请求数据的行数</td>
+</tr>
+<tr>
+<td>Extra</td>
+<td>关于MYSQL如何解析查询的额外信息。将在表4.3中讨论，但这里可以看到的坏的例子是Using temporary和Using filesort，意思MYSQL根本不能使用索引，结果是检索会很慢</td>
+</tr>
+<tr>
+<td>extra</td>
+<td>列返回的描述的意义</td>
+</tr>
+<tr>
+<td>Distinct</td>
+<td>一旦MYSQL找到了与行相联合匹配的行，就不再搜索了</td>
+</tr>
+<tr>
+<td>Not exists</td>
+<td>MYSQL优化了LEFT JOIN，一旦它找到了匹配LEFT JOIN标准的行，就不再搜索了</td>
+</tr>
+<tr>
+<td>ange checked for each Record（index map:#）</td>
+<td>没有找到理想的索引，因此对于从前面表中来的每一个行组合，MYSQL检查使用哪个索引，并用它来从表中返回行。这是使用索引的最慢的连接之一</td>
+</tr>
+</tbody></table></div>
+
+        <h5 id="9、还有其他的方法进一步提高数据库读写性能吗？">
+          <a href="#9、还有其他的方法进一步提高数据库读写性能吗？" class="heading-link"><i class="fas fa-link"></i></a><a href="#9、还有其他的方法进一步提高数据库读写性能吗？" class="headerlink" title="9、还有其他的方法进一步提高数据库读写性能吗？"></a>9、还有其他的方法进一步提高数据库读写性能吗？</h5>
+      <p>答：使用缓存，比如redis这种基于内存的nosql数据库提前存储热点数据，避免大量的请求同时打到数据库。因为像redis这种缓存数据库一般来说都是基于内存的，而mysql是存储在磁盘上的，读写速度自然就会较慢。</p>
+
+        <h5 id="10、你提到了redis，redis一般来说是采取什么样的存储结构呢？">
+          <a href="#10、你提到了redis，redis一般来说是采取什么样的存储结构呢？" class="heading-link"><i class="fas fa-link"></i></a><a href="#10、你提到了redis，redis一般来说是采取什么样的存储结构呢？" class="headerlink" title="10、你提到了redis，redis一般来说是采取什么样的存储结构呢？"></a>10、你提到了redis，redis一般来说是采取什么样的存储结构呢？</h5>
+      <p>答：键值对</p>
+<p><strong>redis是一种支持Key-Value等多种<span class="exturl"><a class="exturl__link" target="_blank" rel="noopener" href="https://so.csdn.net/so/search?q=%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84&spm=1001.2101.3001.7020">数据结构</a><span class="exturl__icon"><i class="fas fa-external-link-alt"></i></span></span>的存储系统。可用于缓存、事件发布或订阅、高速队列等场景。该数据库使用ANSI C语言编写，支持网络，提供字符串、哈希、列表、队列、集合结构直接存取，基于内存，可持久化，支持多种开发语言。</strong></p>
+<p>11、一般来说什么样的数据结构会使用键值对来存储呢？</p>
+<p>答非所问胡言乱语环节、、、、、扯到redis的基本数据类型zset\hashset..</p>
+<p>面试官再次提示：一般来说什么样的数据结构会使用键值对来存储，而不是什么样的数据类型去使用键值对存储。</p>
+<p>再次答非所问。。。</p>
+<p>面试官再次提示：就是我存储一个数据，redis在底层是使用什么样的数据结构帮我存储的?</p>
+<p>再次答非所问：扯到了redis 自编写的string</p>
+<p>面试官无语了。。。换个问题</p>
+
+        <h5 id="12、学过数据结构吗？列举一些常用的数据结构">
+          <a href="#12、学过数据结构吗？列举一些常用的数据结构" class="heading-link"><i class="fas fa-link"></i></a><a href="#12、学过数据结构吗？列举一些常用的数据结构" class="headerlink" title="12、学过数据结构吗？列举一些常用的数据结构"></a>12、学过数据结构吗？列举一些常用的数据结构</h5>
+      <p>数组、链表、树、图、栈、队列。。。</p>
+
+        <h5 id="13、你觉得哪些数据结构是刚才redis使用的呢？">
+          <a href="#13、你觉得哪些数据结构是刚才redis使用的呢？" class="heading-link"><i class="fas fa-link"></i></a><a href="#13、你觉得哪些数据结构是刚才redis使用的呢？" class="headerlink" title="13、你觉得哪些数据结构是刚才redis使用的呢？"></a>13、你觉得哪些数据结构是刚才redis使用的呢？</h5>
+      <p>。。。。。懵了 扯了个可能是基于数组的吧因为数组它具有随机访问的性质 访问速度较快</p>
+<p>然后车轱辘又扯到redis的五种数据类型 扯到了hash</p>
+
+        <h5 id="14、你终于说到hash了，我之前问什么样的数据结构会使用键值对，其实就是hash表，你可以说一下hash表的实现吗，什么样的内部结构组成了哈希表？">
+          <a href="#14、你终于说到hash了，我之前问什么样的数据结构会使用键值对，其实就是hash表，你可以说一下hash表的实现吗，什么样的内部结构组成了哈希表？" class="heading-link"><i class="fas fa-link"></i></a><a href="#14、你终于说到hash了，我之前问什么样的数据结构会使用键值对，其实就是hash表，你可以说一下hash表的实现吗，什么样的内部结构组成了哈希表？" class="headerlink" title="14、你终于说到hash了，我之前问什么样的数据结构会使用键值对，其实就是hash表，你可以说一下hash表的实现吗，什么样的内部结构组成了哈希表？"></a>14、你终于说到hash了，我之前问什么样的数据结构会使用键值对，其实就是hash表，你可以说一下hash表的实现吗，什么样的内部结构组成了哈希表？</h5>
+      <p>。。。懵了1分钟 胡言乱语瞎扯到数组 乱扯30s</p>
+<p><strong>数据+链表结合</strong></p>
+
+        <h5 id="15、Java类加载机制是？（上次失败的一面也问到了-经典问题）">
+          <a href="#15、Java类加载机制是？（上次失败的一面也问到了-经典问题）" class="heading-link"><i class="fas fa-link"></i></a><a href="#15、Java类加载机制是？（上次失败的一面也问到了-经典问题）" class="headerlink" title="15、Java类加载机制是？（上次失败的一面也问到了 经典问题）"></a>15、Java类加载机制是？（上次失败的一面也问到了 经典问题）</h5>
+      <p>瞎扯一气。。。</p>
+<p>标准答案：</p>
+<p><strong>Class 文件需要加载到虚拟机中之后才能运行和使用，那么虚拟机是如何加载这些 Class 文件呢？</strong></p>
+<p>系统加载 Class 类型的文件主要三步：<strong>加载-&gt;连接-&gt;初始化</strong>。连接过程又可分为三步：<strong>验证-&gt;准备-&gt;解析</strong>。</p>
+<p><img src="/interview001/image-20230411213000483.png" alt="image-20230411213000483"></p>
+<hr>
+
+        <h3 id="加载">
+          <a href="#加载" class="heading-link"><i class="fas fa-link"></i></a><a href="#加载" class="headerlink" title="加载"></a>加载</h3>
+      <p>类加载过程的第一步，主要完成下面 3 件事情：</p>
+<ol>
+<li>通过全类名获取定义此类的二进制字节流。</li>
+<li>将字节流所代表的静态存储结构转换为方法区的运行时数据结构。</li>
+<li>在内存中生成一个代表该类的 <code>Class</code> 对象，作为方法区这些数据的访问入口。</li>
+</ol>
+<p>虚拟机规范上面这 3 点并不具体，因此是非常灵活的。比如：”通过全类名获取定义此类的二进制字节流” 并没有指明具体从哪里获取（ <code>ZIP</code> 、 <code>JAR</code>、<code>EAR</code>、<code>WAR</code> 、网络、动态代理技术运行时动态生成、其他文件生成比如 <code>JSP</code>…）、怎样获取。</p>
+<p>加载这一步主要是通过我们后面要讲到的 <strong>类加载器</strong> 完成的。类加载器有很多种，当我们想要加载一个类的时候，具体是哪个类加载器加载由 <strong>双亲委派模型</strong> 决定（不过，我们也能打破由双亲委派模型）。</p>
+<blockquote>
+<p>类加载器、双亲委派模型也是非常重要的知识点，这部分内容在<span class="exturl"><a class="exturl__link" target="_blank" rel="noopener" href="https://javaguide.cn/java/jvm/classloader.html">类加载器详解open in new window</a><span class="exturl__icon"><i class="fas fa-external-link-alt"></i></span></span>这篇文章中有详细介绍到。阅读本篇文章的时候，大家知道有这么个东西就可以了。</p>
+</blockquote>
+<p>每个 Java 类都有一个引用指向加载它的 <code>ClassLoader</code>。不过，数组类不是通过 <code>ClassLoader</code> 创建的，而是 JVM 在需要的时候自动创建的，数组类通过<code>getClassLoader()</code>方法获取 <code>ClassLoader</code> 的时候和该数组的元素类型的 <code>ClassLoader</code> 是一致的。</p>
+<p>一个非数组类的加载阶段（加载阶段获取类的二进制字节流的动作）是可控性最强的阶段，这一步我们可以去完成还可以自定义类加载器去控制字节流的获取方式（重写一个类加载器的 <code>loadClass()</code> 方法）。</p>
+<p>加载阶段与连接阶段的部分动作(如一部分字节码文件格式验证动作)是交叉进行的，加载阶段尚未结束，连接阶段可能就已经开始了。</p>
+
+        <h5 id="16、我看你有写到AOP，实现切面有哪几部分内容？有几个组成部分能够完成一次切面">
+          <a href="#16、我看你有写到AOP，实现切面有哪几部分内容？有几个组成部分能够完成一次切面" class="heading-link"><i class="fas fa-link"></i></a><a href="#16、我看你有写到AOP，实现切面有哪几部分内容？有几个组成部分能够完成一次切面" class="headerlink" title="16、我看你有写到AOP，实现切面有哪几部分内容？有几个组成部分能够完成一次切面"></a>16、我看你有写到AOP，实现切面有哪几部分内容？有几个组成部分能够完成一次切面</h5>
+      <p>切入点+通知组成了一个切面√</p>
+<p>面试官：还有其他的吗？</p>
+<p>我：红豆泥私密马赛！这块儿有点久了记不清了</p>
+
+        <h5 id="17、那我们换个话题，AOP有哪些应用的场景？">
+          <a href="#17、那我们换个话题，AOP有哪些应用的场景？" class="heading-link"><i class="fas fa-link"></i></a><a href="#17、那我们换个话题，AOP有哪些应用的场景？" class="headerlink" title="17、那我们换个话题，AOP有哪些应用的场景？"></a>17、那我们换个话题，AOP有哪些应用的场景？</h5>
+      <p>扯。。。。扯到了之前日志</p>
+<p>面试官引导：AOP主要解决了什么样的问题呢？</p>
+<p><strong>AOP(Aspect-Oriented Programming:面向切面编程)能够将那些与业务无关，却为业务模块所共同调用的逻辑或责任（例如事务处理、日志管理、权限控制等）封装起来，便于减少系统的重复代码，降低模块间的耦合度，并有利于未来的可拓展性和可维护性。</strong></p>
+<hr>
+
+        <h5 id="18、经典问题-Java接口和抽象类的区别">
+          <a href="#18、经典问题-Java接口和抽象类的区别" class="heading-link"><i class="fas fa-link"></i></a><a href="#18、经典问题-Java接口和抽象类的区别" class="headerlink" title="18、经典问题 Java接口和抽象类的区别"></a>18、经典问题 Java接口和抽象类的区别</h5>
+      <p><strong>共同点</strong> ：</p>
+<ul>
+<li>都不能被实例化。</li>
+<li>都可以包含抽象方法。</li>
+<li>都可以有默认实现的方法（Java 8 可以用 <code>default</code> 关键字在接口中定义默认方法）。</li>
+</ul>
+<p><strong>区别</strong> ：</p>
+<ul>
+<li>接口主要用于对类的行为进行约束，你实现了某个接口就具有了对应的行为。抽象类主要用于代码复用，强调的是所属关系。</li>
+<li>一个类只能继承一个类，但是可以实现多个接口。</li>
+<li>接口中的成员变量只能是 <code>public static final</code> 类型的，不能被修改且必须有初始值，而抽象类的成员变量默认 default，可在子类中被重新定义，也可被重新赋值。</li>
+</ul>
+<hr>
+<p>至此30min左右</p>
+
+        <h5 id="19、手写算法-15min">
+          <a href="#19、手写算法-15min" class="heading-link"><i class="fas fa-link"></i></a><a href="#19、手写算法-15min" class="headerlink" title="19、手写算法 15min"></a>19、手写算法 15min</h5>
+      <p>比较两个map是否完全一致。。。</p>
+<p>搞一对map测试一下+写各种用例</p>
+
+        <h5 id="20、写SQL">
+          <a href="#20、写SQL" class="heading-link"><i class="fas fa-link"></i></a><a href="#20、写SQL" class="headerlink" title="20、写SQL"></a>20、写SQL</h5>
+      <p>–Student(S#,Sname,Sage,Ssex) 学生表<br>–Course(C#,Cname,T#) 课程表<br>–SC(S#,C#,score) 成绩表<br>–Teacher(T#,Tname) 教师表<br>1.查询至少有一门课与学号为“1001”的同学所学相同的同学的学号和姓名；</p>
+<figure class="highlight sql"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span>  <span class="keyword">DISTINCT</span>(sc.SId), student.StuName </span><br><span class="line"><span class="keyword">FROM</span></span><br><span class="line">	(<span class="keyword">SELECT</span> CId <span class="keyword">FROM</span> sc <span class="keyword">WHERE</span> SId <span class="operator">=</span> <span class="string">&#x27;1001&#x27;</span>)a,</span><br><span class="line">	sc,student</span><br><span class="line"><span class="keyword">WHERE</span> </span><br><span class="line">	a.CId <span class="operator">=</span> sc.CId </span><br><span class="line">	<span class="keyword">AND</span> sc.SId <span class="operator">=</span> student.SId </span><br><span class="line">	<span class="keyword">AND</span> sc.SId <span class="operator">&lt;&gt;</span> <span class="string">&#x27;1001&#x27;</span> </span><br><span class="line"><span class="keyword">ORDER</span> <span class="keyword">BY</span> sc.SId</span><br></pre></td></tr></table></div></figure>
+
+<p>2.查询课程号=‘ABC’的成绩 &gt; 80分的学生的姓名</p>
+<figure class="highlight sql"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> name <span class="keyword">from</span> student <span class="keyword">where</span> s# <span class="keyword">in</span>(<span class="keyword">select</span> s# <span class="keyword">from</span> sc <span class="keyword">where</span> c# <span class="operator">=</span> <span class="string">&#x27;ABC&#x27;</span> <span class="keyword">AND</span> score <span class="operator">&gt;</span> <span class="number">80</span>);</span><br></pre></td></tr></table></div></figure>
+
+
+        <h5 id="21、HTTP和HTTPS的区别">
+          <a href="#21、HTTP和HTTPS的区别" class="heading-link"><i class="fas fa-link"></i></a><a href="#21、HTTP和HTTPS的区别" class="headerlink" title="21、HTTP和HTTPS的区别"></a>21、HTTP和HTTPS的区别</h5>
+      <ul>
+<li><strong>端口号</strong> ：HTTP 默认是 80，HTTPS 默认是 443。</li>
+<li><strong>URL 前缀</strong> ：HTTP 的 URL 前缀是 <code>http://</code>，HTTPS 的 URL 前缀是 <code>https://</code>。</li>
+<li><strong>安全性和资源消耗</strong> ： HTTP 协议运行在 TCP 之上，所有传输的内容都是明文，客户端和服务器端都无法验证对方的身份。HTTPS 是运行在 SSL/TLS 之上的 HTTP 协议，SSL/TLS 运行在 TCP 之上。所有传输的内容都经过加密，加密采用对称加密，但对称加密的密钥用服务器方的证书进行了非对称加密。所以说，HTTP 安全性没有 HTTPS 高，但是 HTTPS 比 HTTP 耗费更多服务器资源。</li>
+</ul>
+<p>反问环节</p>
+<p>已约下周二二面，第一次通过面试，算是对之前的一些肯定吧。来点好运！</p>
+</div><footer class="post-footer"><div class="post-ending ending"><div class="ending__text">------ 本文结束，感谢您的阅读 ------</div></div><div class="post-copyright copyright"><div class="copyright-author"><span class="copyright-author__name">本文作者: </span><span class="copyright-author__value"><a href="https://striveizu.tech">Strive</a></span></div><div class="copyright-link"><span class="copyright-link__name">本文链接: </span><span class="copyright-link__value"><a href="https://striveizu.tech/2023/04/11/interview001/">https://striveizu.tech/2023/04/11/interview001/</a></span></div><div class="copyright-notice"><span class="copyright-notice__name">版权声明: </span><span class="copyright-notice__value">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en" rel="external nofollow" target="_blank">BY-NC-SA</a> 许可协议。转载请注明出处！</span></div></div><div class="post-tags"><span class="post-tags-item"><span class="post-tags-item__icon"><i class="fas fa-tag"></i></span><a class="post-tags-item__link" href="https://striveizu.tech/tags/%E9%9D%A2%E8%AF%95%E5%A4%8D%E7%9B%98/">面试复盘</a></span></div><nav class="post-paginator paginator"><div class="paginator-next"><a class="paginator-next__link" href="/2023/03/31/codeReview001/"><span class="paginator-prev__text">笔试复盘001-变种股票买卖（含股票数量）-某生电子集团</span><span class="paginator-next__icon"><i class="fas fa-angle-right"></i></span></a></div></nav></footer></div></div></div><div class="sidebar-wrap" id="sidebar-wrap"><aside class="sidebar" id="sidebar"><div class="sidebar-nav"><span class="sidebar-nav-toc current">文章目录</span><span class="sidebar-nav-ov">站点概览</span></div><section class="sidebar-toc"><ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%9D%A2%E8%AF%95%E5%A4%8D%E7%9B%98%EF%BC%9A%E7%BE%8E%E5%9B%A2%E6%B5%8B%E8%AF%95%E5%BC%80%E5%8F%91%EF%BC%88%E6%9A%91%E6%9C%9F%E5%AE%9E%E4%B9%A0%EF%BC%89"><span class="toc-number">1.</span> <span class="toc-text">
+          面试复盘：美团测试开发（暑期实习）</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#1%E3%80%81%E7%AE%80%E5%8D%95%E4%BB%8B%E7%BB%8D%E9%A1%B9%E7%9B%AE%EF%BC%885%E5%88%86%E9%92%9F%EF%BC%89"><span class="toc-number">1.0.1.</span> <span class="toc-text">
+          1、简单介绍项目（5分钟）</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#2%E3%80%81%E5%81%9A%E7%9A%84%E8%BF%87%E7%A8%8B%E4%B8%AD%E6%9C%89%E6%B2%A1%E6%9C%89%E9%81%87%E5%88%B0%E4%BB%80%E4%B9%88%E9%97%AE%E9%A2%98%EF%BC%9F%E6%80%8E%E4%B9%88%E8%A7%A3%E5%86%B3%E7%9A%84%E3%80%82"><span class="toc-number">1.0.2.</span> <span class="toc-text">
+          2、做的过程中有没有遇到什么问题？怎么解决的。</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#3%E3%80%81%E9%A1%B9%E7%9B%AE%E6%9C%89%E5%BA%94%E7%94%A8%E6%95%88%E6%9E%9C%EF%BC%9F"><span class="toc-number">1.0.3.</span> <span class="toc-text">
+          3、项目有应用效果？</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#4%E3%80%81Linux%E6%8C%87%E4%BB%A4-%E6%89%93%E5%BC%80%E4%B8%80%E4%B8%AA%E7%9B%AE%E5%BD%95-%E7%9B%AE%E5%BD%95%E4%B8%8B%E5%90%8D%E5%8F%ABa%E7%9A%84%E6%96%87%E4%BB%B6-%E6%9F%A5%E7%9C%8Ba%E6%96%87%E4%BB%B6%E7%9A%84%E5%90%8E10%E8%A1%8C"><span class="toc-number">1.0.4.</span> <span class="toc-text">
+          4、Linux指令 打开一个目录 目录下名叫a的文件 查看a文件的后10行</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#5%E3%80%81%E6%95%B0%E6%8D%AE%E5%BA%93-mysql%E5%A2%9E%E5%88%A0%E6%94%B9%E6%9F%A5%E5%91%BD%E4%BB%A4-%E6%95%B0%E6%8D%AE%E5%BA%93%E7%9A%84%E5%88%A0%E9%99%A4%E5%91%BD%E4%BB%A4%E6%9C%89%E5%93%AA%E4%BA%9B%EF%BC%9F%E5%88%A0%E9%99%A4%E6%95%B0%E6%8D%AE%E8%A1%A8%E4%B8%AD%E7%9A%84%E5%86%85%E5%AE%B9-%E4%BF%9D%E7%95%99%E8%A1%A8%E7%9A%84%E7%BB%93%E6%9E%84%E5%88%A0%E9%99%A4%E6%95%B0%E6%8D%AE%E5%86%85%E5%AE%B9"><span class="toc-number">1.0.5.</span> <span class="toc-text">
+          5、数据库 mysql增删改查命令 数据库的删除命令有哪些？删除数据表中的内容 保留表的结构删除数据内容</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#6%E3%80%81%E5%88%A0%E9%99%A4%E6%95%B0%E6%8D%AE%E8%A1%A8%EF%BC%9F"><span class="toc-number">1.0.6.</span> <span class="toc-text">
+          6、删除数据表？</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#7%E3%80%81%E5%81%87%E5%A6%82%E6%95%B0%E6%8D%AE%E8%A1%A8%E7%9A%84%E6%95%B0%E6%8D%AE%E9%87%8F%E9%9D%9E%E5%B8%B8%E5%A4%A7%EF%BC%8C%E4%BD%BF%E7%94%A8%E4%BB%80%E4%B9%88%E6%A0%B7%E7%9A%84%E6%96%B9%E5%BC%8F%E5%8E%BB%E4%BC%98%E5%8C%96%E6%95%B0%E6%8D%AE%E5%BA%93%E7%9A%84%E8%AF%BB%E5%86%99%E6%80%A7%E8%83%BD%EF%BC%9F"><span class="toc-number">1.0.7.</span> <span class="toc-text">
+          7、假如数据表的数据量非常大，使用什么样的方式去优化数据库的读写性能？</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#8%E3%80%81%E4%BD%A0%E6%8F%90%E5%88%B0%E4%BA%86%E7%B4%A2%E5%BC%95%EF%BC%8C%E6%9C%89%E4%BB%80%E4%B9%88%E5%B8%B8%E8%A7%81%E7%9A%84%E6%96%B9%E6%B3%95%E9%AA%8C%E8%AF%81%E7%B4%A2%E5%BC%95%E7%9A%84%E6%9C%89%E6%95%88%E6%80%A7%EF%BC%9F"><span class="toc-number">1.0.8.</span> <span class="toc-text">
+          8、你提到了索引，有什么常见的方法验证索引的有效性？</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#9%E3%80%81%E8%BF%98%E6%9C%89%E5%85%B6%E4%BB%96%E7%9A%84%E6%96%B9%E6%B3%95%E8%BF%9B%E4%B8%80%E6%AD%A5%E6%8F%90%E9%AB%98%E6%95%B0%E6%8D%AE%E5%BA%93%E8%AF%BB%E5%86%99%E6%80%A7%E8%83%BD%E5%90%97%EF%BC%9F"><span class="toc-number">1.0.9.</span> <span class="toc-text">
+          9、还有其他的方法进一步提高数据库读写性能吗？</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#10%E3%80%81%E4%BD%A0%E6%8F%90%E5%88%B0%E4%BA%86redis%EF%BC%8Credis%E4%B8%80%E8%88%AC%E6%9D%A5%E8%AF%B4%E6%98%AF%E9%87%87%E5%8F%96%E4%BB%80%E4%B9%88%E6%A0%B7%E7%9A%84%E5%AD%98%E5%82%A8%E7%BB%93%E6%9E%84%E5%91%A2%EF%BC%9F"><span class="toc-number">1.0.10.</span> <span class="toc-text">
+          10、你提到了redis，redis一般来说是采取什么样的存储结构呢？</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#12%E3%80%81%E5%AD%A6%E8%BF%87%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%90%97%EF%BC%9F%E5%88%97%E4%B8%BE%E4%B8%80%E4%BA%9B%E5%B8%B8%E7%94%A8%E7%9A%84%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84"><span class="toc-number">1.0.11.</span> <span class="toc-text">
+          12、学过数据结构吗？列举一些常用的数据结构</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#13%E3%80%81%E4%BD%A0%E8%A7%89%E5%BE%97%E5%93%AA%E4%BA%9B%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E6%98%AF%E5%88%9A%E6%89%8Dredis%E4%BD%BF%E7%94%A8%E7%9A%84%E5%91%A2%EF%BC%9F"><span class="toc-number">1.0.12.</span> <span class="toc-text">
+          13、你觉得哪些数据结构是刚才redis使用的呢？</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#14%E3%80%81%E4%BD%A0%E7%BB%88%E4%BA%8E%E8%AF%B4%E5%88%B0hash%E4%BA%86%EF%BC%8C%E6%88%91%E4%B9%8B%E5%89%8D%E9%97%AE%E4%BB%80%E4%B9%88%E6%A0%B7%E7%9A%84%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%BC%9A%E4%BD%BF%E7%94%A8%E9%94%AE%E5%80%BC%E5%AF%B9%EF%BC%8C%E5%85%B6%E5%AE%9E%E5%B0%B1%E6%98%AFhash%E8%A1%A8%EF%BC%8C%E4%BD%A0%E5%8F%AF%E4%BB%A5%E8%AF%B4%E4%B8%80%E4%B8%8Bhash%E8%A1%A8%E7%9A%84%E5%AE%9E%E7%8E%B0%E5%90%97%EF%BC%8C%E4%BB%80%E4%B9%88%E6%A0%B7%E7%9A%84%E5%86%85%E9%83%A8%E7%BB%93%E6%9E%84%E7%BB%84%E6%88%90%E4%BA%86%E5%93%88%E5%B8%8C%E8%A1%A8%EF%BC%9F"><span class="toc-number">1.0.13.</span> <span class="toc-text">
+          14、你终于说到hash了，我之前问什么样的数据结构会使用键值对，其实就是hash表，你可以说一下hash表的实现吗，什么样的内部结构组成了哈希表？</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#15%E3%80%81Java%E7%B1%BB%E5%8A%A0%E8%BD%BD%E6%9C%BA%E5%88%B6%E6%98%AF%EF%BC%9F%EF%BC%88%E4%B8%8A%E6%AC%A1%E5%A4%B1%E8%B4%A5%E7%9A%84%E4%B8%80%E9%9D%A2%E4%B9%9F%E9%97%AE%E5%88%B0%E4%BA%86-%E7%BB%8F%E5%85%B8%E9%97%AE%E9%A2%98%EF%BC%89"><span class="toc-number">1.0.14.</span> <span class="toc-text">
+          15、Java类加载机制是？（上次失败的一面也问到了 经典问题）</span></a></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8A%A0%E8%BD%BD"><span class="toc-number">2.</span> <span class="toc-text">
+          加载</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#16%E3%80%81%E6%88%91%E7%9C%8B%E4%BD%A0%E6%9C%89%E5%86%99%E5%88%B0AOP%EF%BC%8C%E5%AE%9E%E7%8E%B0%E5%88%87%E9%9D%A2%E6%9C%89%E5%93%AA%E5%87%A0%E9%83%A8%E5%88%86%E5%86%85%E5%AE%B9%EF%BC%9F%E6%9C%89%E5%87%A0%E4%B8%AA%E7%BB%84%E6%88%90%E9%83%A8%E5%88%86%E8%83%BD%E5%A4%9F%E5%AE%8C%E6%88%90%E4%B8%80%E6%AC%A1%E5%88%87%E9%9D%A2"><span class="toc-number">2.0.1.</span> <span class="toc-text">
+          16、我看你有写到AOP，实现切面有哪几部分内容？有几个组成部分能够完成一次切面</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#17%E3%80%81%E9%82%A3%E6%88%91%E4%BB%AC%E6%8D%A2%E4%B8%AA%E8%AF%9D%E9%A2%98%EF%BC%8CAOP%E6%9C%89%E5%93%AA%E4%BA%9B%E5%BA%94%E7%94%A8%E7%9A%84%E5%9C%BA%E6%99%AF%EF%BC%9F"><span class="toc-number">2.0.2.</span> <span class="toc-text">
+          17、那我们换个话题，AOP有哪些应用的场景？</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#18%E3%80%81%E7%BB%8F%E5%85%B8%E9%97%AE%E9%A2%98-Java%E6%8E%A5%E5%8F%A3%E5%92%8C%E6%8A%BD%E8%B1%A1%E7%B1%BB%E7%9A%84%E5%8C%BA%E5%88%AB"><span class="toc-number">2.0.3.</span> <span class="toc-text">
+          18、经典问题 Java接口和抽象类的区别</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#19%E3%80%81%E6%89%8B%E5%86%99%E7%AE%97%E6%B3%95-15min"><span class="toc-number">2.0.4.</span> <span class="toc-text">
+          19、手写算法 15min</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#20%E3%80%81%E5%86%99SQL"><span class="toc-number">2.0.5.</span> <span class="toc-text">
+          20、写SQL</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#21%E3%80%81HTTP%E5%92%8CHTTPS%E7%9A%84%E5%8C%BA%E5%88%AB"><span class="toc-number">2.0.6.</span> <span class="toc-text">
+          21、HTTP和HTTPS的区别</span></a></li></ol></li></ol></li></ol></section><!-- ov = overview--><section class="sidebar-ov hide"><div class="sidebar-ov-author"><div class="sidebar-ov-author__avatar"><img class="sidebar-ov-author__avatar_img" src="/images/icons/photo.png" alt="avatar"></div><p class="sidebar-ov-author__text">To be a great person.</p></div><div class="sidebar-ov-cc"><a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en" target="_blank" rel="noopener" data-popover="知识共享许可协议" data-popover-pos="up"><img src="/images/cc-by-nc-sa.svg"></a></div></section><div class="sidebar-reading"><div class="sidebar-reading-info"><span class="sidebar-reading-info__text">你已阅读了 </span><span class="sidebar-reading-info__num">0</span><span class="sidebar-reading-info__perc">%</span></div><div class="sidebar-reading-line"></div></div></aside></div><div class="clearfix"></div></div></main><footer class="footer" id="footer"><div class="footer-inner"><div><span>Copyright © 2023</span><span class="footer__icon"><i class="fas fa-heart"></i></span><span>Strive</span></div><div><span>由 <a href="http://hexo.io/" title="Hexo" target="_blank" rel="noopener">Hexo</a> 强力驱动</span><span> v5.4.0</span><span class="footer__devider">|</span><span>主题 - <a href="https://github.com/liuyib/hexo-theme-stun/" title="Stun" target="_blank" rel="noopener">Stun</a></span><span> v2.6.2</span></div></div></footer><div class="loading-bar" id="loading-bar"><div class="loading-bar__progress"></div></div><div class="back2top" id="back2top"><span class="back2top__icon"><i class="fas fa-rocket"></i></span></div></div><script src="https://cdn.jsdelivr.net/npm/jquery@v3.4.1/dist/jquery.min.js"></script><script src="https://cdn.jsdelivr.net/npm/velocity-animate@1.5.2/velocity.min.js"></script><script src="https://cdn.jsdelivr.net/npm/velocity-animate@1.5.2/velocity.ui.min.js"></script><script src="/js/utils.js?v=2.6.2"></script><script src="/js/stun-boot.js?v=2.6.2"></script><script src="/js/scroll.js?v=2.6.2"></script><script src="/js/header.js?v=2.6.2"></script><script src="/js/sidebar.js?v=2.6.2"></script></body></html>
